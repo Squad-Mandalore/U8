@@ -1,6 +1,6 @@
 # Overall Game Concept
 
-Roguelite -> Meta Vortschritt, Runs welche man abschließt, \
+Roguelite -> Meta Fortschritt, Runs welche man abschließt, \
 Orientierung an Hades \ Binding of Isaac \ Dead Cells \ Risk of Rain 2
 
 ## Game Leitlinie: 
@@ -15,7 +15,7 @@ Orientierung an Hades \ Binding of Isaac \ Dead Cells \ Risk of Rain 2
     - werden erst im Laufe des spielens durch bestimmte Dinge freigeschalten
 - Ganz links gibt es den 'Ausgang' -> fungiert als Save and Exit
 - Bahnsteig Schilder auf denen in RL Dinge wie Busse, Straßen, etc. angezeigt werden verweisen auf Gebäude \ den Ausgang
-- Hier auch Meta Vortschritt Inhalte zugänglich - upgradebar
+- Hier auch Meta Fortschritt Inhalte zugänglich - upgradebar
 - Die U8 steht die gesamte Zeit über am Bahnsteig - Beim betreten geht ein neuer Run los
 
 ### Die Bahn
@@ -23,7 +23,7 @@ Orientierung an Hades \ Binding of Isaac \ Dead Cells \ Risk of Rain 2
 - Von Links nach Rechts
 - Es gibt eine große Vielzahl an Wagon - Themen, welche wiederum prozedural generiert werden
 - Verschiedenste Encounter mit NPCs - auch abhängig vom Wagon
-- Combat tbd - unsure - wär schon ehrlich nice
+- Combat teilweise - nicht hauptsächlich -> dann wie in Oktopath Travaler
 - Keine time pressure - also kein side scrolling oder sonstiges
 - Events \ encounter werden beim vorbeigehen getriggert
 - Man muss bis ans Ende des Wagons, um das level abzuschließen
@@ -32,3 +32,10 @@ Orientierung an Hades \ Binding of Isaac \ Dead Cells \ Risk of Rain 2
 - Hier gibts Shops nochmal Shops oder so
 - Außerdem kann man sich aussuchen in welchen Wagon der U-Bahn man einsteigen möchte (äußerlich sichtbar welcher Wagon Typ)
 
+## Inventar
+- Besteht aus 4x4 Kacheln (wird größer durch verschiedenste Dinge, prob Meta Fortschritt)
+- Items haben verschiedene größen
+- Items die Stats geben (maybe nen Pullover (Rüstung)) müssen nur im Inventar liegen und geben die Stats -> es gibt keine Equipment Slots
+
+## Anderes Zeug
+- Immer abrunden
