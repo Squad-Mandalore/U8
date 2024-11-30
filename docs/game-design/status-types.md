@@ -1,20 +1,30 @@
 # Status Types
 - Ähnlich wie bei Dark Souls, es gibt eine Leiste \ Prozentzahl, erst wenn die voll ist tritt der Status-Typ ein. Leiste nimmt durch Aktionen \ Items \ Stationsabschlüssen wieder ab. Wenn bei 0% geht der Status-Typ wieder weg bzw. wechselt zur niederigen Stufe.
 - Die Abstufungen könnten genutzt werden, um verschiedenste Dialogoptionen \ Effekte oder sonstiges zu ermöglichen
-- Bei Drogen ab Stufe 3 ist man abhängig und kriegt irgendwelche nachteile, wenn man weiter konsumiert ( wenn man wieder auf Stufe 2 ist geht dieser Effekt weg).
+- Wird Stufe 3 erreicht, blurry kamera. 
+    - Wenn man dann wieder unter Stufe drei kommmt -> Simulation von Abhängigkeit durch pochenden dunkleren Screen Effekt.
+    - Bei Stufe 0 ist dann alles wieder fine
+    - Bei Stufe 3 ist pochender, dunkler Screen Effekt weg, aber wieder blurry Kamera
 
 ## Vergiftet
 Halt Damage über Zeit i guess
+
 ### Stufe 1
+3 dmg - (3dmg * Blutresistenz)
 ### Stufe 2
+6 dmg - (6dmg * Blutresistenz)
 ### Stufe 3
+9 dmg - (9dmg * Blutresistenz)
 
 ## Blutent
 Halt Damage über Zeit i guess \
 Wenn man länger nicht dagegen tut bekommt man Status Blutverlust
 ### Stufe 1
+3 dmg - (3dmg * Vergiftungsresistenz)
 ### Stufe 2
+6 dmg - (6dmg * Vergiftungsresistenz)
 ### Stufe 3
+9 dmg - (9dmg * Vergiftungsresistenz)
 
 Folgend Drogen, erstmal nur wage beschreibungen - noch keine Effekte \ Einschränkungen
 

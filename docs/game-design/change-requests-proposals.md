@@ -4,10 +4,11 @@ Wär Propably auch dope wenn ihr Namen dazu schreibt, dass man bei Rückfragen q
 Danki
 
 ## Change Requests
-(Mike)
-Bei Drogen ab Stufe 3 ist man abhängig und kriegt irgendwelche nachteile, wenn man weiter konsumiert ( wenn man wieder auf Stufe 2 ist geht dieser Effekt weg).
-Ändern zu
-Wird Stufe 3 erreicht, blurry kamera. Wenn man dann wieder unter Stufe drei kommmt -> Simulation von Abhängigkeit durch pochenden dunkleren screen effekt bis stufe 0 erreicht oder wieder stufe 3 erreicht wird.
+**Hier bitte Dinge rein die ihr Arsch findet \ irgendwelche Probleme \ Sachen die ihr gern representiert haben möchtet \
+Aber noch keine Idee habt wie man sie lösen \ umsetzen könnte. \
+Wenn ihr schon eine Idee dafür habt bitte direkt beides nach Change Proposal.**
+
 
 ## Change Proposal
+**Hier bitte Lösungsvorschläge rein für Change Requests, bzw. wenn ihr Probleme und eine mögliche Lösungsidee habt hier auch einfach beides mitrein.** 
 
