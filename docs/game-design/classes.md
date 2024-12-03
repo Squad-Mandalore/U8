@@ -4,11 +4,15 @@ erstmal nur eine i guess, kann man ja später immer noch erweitern
 ## Ehrlicher Burgy
 ### Stats
 Gesundheit: 50 \
+Max Gesundheit: 50 \
 Rüstung: 0 \
 Initiative: 10 \
 Stärke: 3 \
 Coolnes: 3 \
 Attraktivität: 3 \
+Intelligenz: 3 \
+Kreativität: 3 \
+Radikalität: 0 \
 Glück: 10 \
 Vergiftungsresistenz: 0% \
 Blutungsresistenz: 0% \

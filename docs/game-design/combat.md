@@ -5,8 +5,10 @@
 - Initiative Wert + d3 bestimmt wer anfängt
     - Der mit mehr fängt an
 - Jede Partei hat eine 'Kampfhaltung'
-    - Stärke \ Coolnes \ Attraktivität
+    - Stärke \ Coolnes \ Attraktivität \ Intelligenz \ Kreativität \ Radikalität
     - Stärke > Attraktiv > Coolnes > Stärke
+    - Intelligenz -> Kreativität -> Intelligenz
+    - Radikalität (keine Schwächen \ Stärken)
 - Der erste Angriff entscheidet Kampfhaltung
 - Jede Attacke gibt Kampfhaltungs-Token
 - Kapfhaltung ändert sich nach sammeln von 2 Tokens einer anderen Kampfhaltung

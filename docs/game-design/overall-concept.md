@@ -38,4 +38,67 @@ Orientierung an Hades \ Binding of Isaac \ Dead Cells \ Risk of Rain 2
 - Items die Stats geben (maybe nen Pullover (Rüstung)) müssen nur im Inventar liegen und geben die Stats -> es gibt keine Equipment Slots
 
 ## Anderes Zeug
-- Immer abrunden
+- Alle Zahlen immer abrunden
+
+## Run Stages
+Alle Bosse aufm Bahnsteig \
+Jede Stage (Zeitraum bevor Boss Nummer x) hat mind. 1, max. 2 Shops \
+Die sind dann einfach aufm Bahnsteig \
+Auf den restlichen Bahnsteigen ist sonst erstmal einfach nichts i would say 
+
+---
+
+1.  Wittenau -> HUB
+    - Wagen
+2.  Rathaus Reinickendorf
+    - Wagen
+3.  Karl-Bonhoeffer-Nervenklinik
+    - Wagen
+4.  Lindauer Allee
+    - Wagen
+5.  Paracelsus-Bad
+    - Wagen
+6.  Residenzstr.
+    - Boss 1
+    - ---
+    - Wagen
+7.  Franz-Neumann-Platz
+    - Wagen
+8.  Osloer Str. 
+    - Wagen
+9.  Pankstr.
+    - Wagen
+10. Gesundbrunnen
+    - Wagen
+11. Voltastr.
+    - Wagen
+12. Bernauer Str.
+    - Boss 2
+    - ---
+    - Wagen
+13. Rosenthaler Platz
+    - Wagen
+14. Weinmeisterstr.
+    - Wagen
+15. Alexanderplatz
+    - Wagen
+16. Jannowitzbrücke
+    - Wagen
+17. Heinrich-Heine-Str.
+    - Wagen
+18. Moritzplatz (lul, ich will da ein NPC sein - oder der boss :) )
+    - Boss 3
+    - ---
+    - Wagen
+19. Kottbusser Tor
+    - Wagen
+20. Schönleinstr.
+    - Wagen
+21. Hermannplatz
+    - Wagen
+22. Boddinstr.
+    - Wagen
+23. Leinestr.
+    - Wagen
+24. Hermannstr.
+    - Endboss
