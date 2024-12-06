@@ -20,20 +20,20 @@
 
 ## Kampfhaltungsboni ( KH )
 
-Stärke KH: +10% Schaden ( Nach Angriff nochmal oben drauf gerechnet )
-Coolnes KH: +10% Ausweichchance
-Attraktivität KH: +20% auf alle Resistenzen
-Intelligenz KH: Angriffe ignoriere 15% Rüstung des Gegners
-Kreativität KH: +3 Rüstung
+Stärke KH: +10% Schaden ( Nach Angriff nochmal oben drauf gerechnet ) \
+Coolnes KH: +10% Ausweichchance \
+Attraktivität KH: +20% auf alle Resistenzen \
+Intelligenz KH: Angriffe ignoriere 15% Rüstung des Gegners \
+Kreativität KH: +3 Rüstung \
 Radikalität KH: +5% Schaden bei jedem Angriff ( stackt, resetet sich nach wechseln der KH )
 
 ## Kampfhaltungboniwechsel
 
 Welche Boni man bekommt wenn man von dieser KH in eine andere wechselt (egal welche)
 
-Stärke KH: Heilung von 10% der Max Gesundheit
-Coolnes KH: Erhält zusätzlich ein Token ( von dem Angriff mit dem er gewechselt ist - wenn mehrere, dann von jedem halt einen )
-Attraktivität KH: Gegner verliert ein Token jeder KH
-Intelligenz KH: +1 Intelligenz (Bis Ende des Kampfes)
-Kreativität KH: +10% Ausweichen für 3 Runden (über Status effekt oder so)
+Stärke KH: Heilung von 10% der Max Gesundheit \
+Coolnes KH: Erhält zusätzlich ein Token ( von dem Angriff mit dem er gewechselt ist - wenn mehrere, dann von jedem halt einen ) \
+Attraktivität KH: Gegner verliert ein Token jeder KH \
+Intelligenz KH: +1 Intelligenz (Bis zum Ende des Runs -> Kampf übergreifend) \
+Kreativität KH: Gegner bekommt 1 Token nach Spielers wahl (bei KI dann vllt random oder so) \
 Radikalität KH: +5% auf alle Resistenzen (bis Ende des Kampfes)
