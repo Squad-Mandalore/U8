@@ -102,3 +102,6 @@ Auf den restlichen Bahnsteigen ist sonst erstmal einfach nichts i would say
     - Wagen
 24. Hermannstr.
     - Endboss
+
+## Economy
+Haupt Währung ist "Euronen" 
