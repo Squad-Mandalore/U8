@@ -27,6 +27,22 @@
 - +5 Rüstung
 - +2 Radikalität (R)
 
+### Regenmantel
+
+- +2 Rüstung
+- +1 Coolness
+- Effekt: +5% Ausweichchance (weil Angriffe abprallen)
+
+### Hawaiihemd
+
+- +1 Rüstung
+- +3 Attraktivität
+
+### Abgeranzter Hoodie
+
+- +2 Rüstung
+- +1 Radikalität
+
 ## Waffen
 
 ### Baseballschläger
@@ -49,7 +65,27 @@
 
 - Angriff: Bemalen: Schaden = 30% der Kreativität - Kreativitäts Schaden - Kreativitäts Token
 
+### Gitarrensaite
+
+- Angriff: Erwürgen: Schade = 30% der Stärke - Stärke Schaden - Stärke Token
+
+### Feuerzeug
+
+- Angriff: Entzünden: Schaden = 10% der Stärke + 20% der Kreativität - Kreativitäts Schaden - Kreativitäts Token
+
+### Megafon
+
+- Angriff: Überzeugen: 40% der Inteligenz - Intelligenz Schaden - Intelligenz Token
+
 ## Accessoires
+
+### Notizbuch
+
+- +1 Intelligenz
+
+### Handschuhe
+
+- +2 Stärke
 
 ### Waffenschein
 
@@ -68,6 +104,15 @@
 - +1 Coolnes
 
 ## Essen
+
+### Energydrink
+
+- +10 Gesundheit
+- +1 Initiative (für 2 encounter)
+
+### Pizzastück
+
+- +15 Gesundheit
 
 ### Döner
 

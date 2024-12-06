@@ -13,6 +13,7 @@
 - Jede Attacke gibt Kampfhaltungs-Token
 - Kapfhaltung ändert sich nach sammeln von 2 Tokens einer anderen Kampfhaltung
 - Gesammelte Tokens zum wechseln der Kampfhaltung verschwinden nachdem man mit einer Attacke anegriffen hat, welche die aktuelle Kampfhaltung als Schadenstyp hat
+- Wenn man Tokens zur aktuellen Kampfhaltung sammeln würde sammelt man die halt einfach nicht, weil man hat die halt schon lol
 - Schadensarten haben Vor- oder Nachteile (oder gar nichts weil gleich) gegen andere Schadensarten \
    -> 30% mehr Schaden
 
