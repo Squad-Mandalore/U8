@@ -5,7 +5,19 @@ Es gibt NPC Bundles.
 - Maybe haben dann manche NPC Bundles noch Quests mit andern NPC Bundles, die dann aber quasi ranndom autreten
 - NPC Bundles können auch nur aus einem NPC bestehen
 
-Im folgenden bitte NPC's als Bundles auflisten
+Im folgenden bitte NPC's als Bundles auflisten  
+
+## Statisten / Ideenentwicklung
+
+- Obdachlose
+- Politiker
+- Öko-Anhänger
+- Gothic-Anhänger
+- Pride-Anhänger
+- Familiengruppe
+- Musiker
+- Sportfans (Fussball-Fan, Eishockey-Fan...)
+- Junkie
 
 ## Radikalität Bundle
 ### Greta Thunberg
