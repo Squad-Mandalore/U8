@@ -11,7 +11,7 @@ Im folgenden bitte NPC's als Bundles auflisten
 ### Greta Thunberg
 - Setzt Radikalitätsorientierung auf Links
 
-### Tino Chrupalla
+### Maximilian Krah
 - Setzt Radikalitätsorientierung auf Rechts
 
 ## Bundle Dishonest Brothers
