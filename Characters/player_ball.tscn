@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Characters/player_ball.gd" id="1_ule6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5x0p"]
-size = Vector2(30, 15.5)
+size = Vector2(20, 3.5)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lmc35"]
 animation = &"RESET"
@@ -112,7 +112,7 @@ texture = ExtResource("1_hommk")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7.75)
+position = Vector2(0, 13.75)
 shape = SubResource("RectangleShape2D_d5x0p")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
