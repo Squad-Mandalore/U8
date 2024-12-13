@@ -1,29 +1,22 @@
 extends CharacterBody2D
 
+@export var speed: float = 102
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+var animation_to_play: String = "RESET"
 
-@export var speed: float = 300.0
-@onready var animation_tree = $AnimationTree
-@onready var state_machine = animation_tree.get("parameters/playback")
+func _ready():
+    animation_player.stop()
+    animation_player.play(animation_to_play)
 
 func _physics_process(_delta: float) -> void:
-    # Get the input direction and handle the movement/deceleration.
-    # As good practice, you should replace UI actions with custom gameplay actions.
-    var direction := Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
+    var direction: Vector2 = Input.get_vector("left", "right", "up", "down")
 
-    update_animation_parameters(direction)
     velocity = direction * speed
 
-    move_and_slide()
-
-    pick_state()
-
-func update_animation_parameters(movement: Vector2) -> void:
-    if(movement != Vector2.ZERO):
-        animation_tree.set("parameters/Walk/blend_position", movement)
-        animation_tree.set("parameters/Idle/blend_position", movement)
-
-func pick_state() -> void:
-    if(velocity != Vector2.ZERO):
-        state_machine.travel("Walk")
+    if direction != Vector2.ZERO:
+        animation_to_play = "walk"
     else:
-        state_machine.travel("Idle")
+        animation_to_play = "RESET"
+
+    animation_player.play(animation_to_play)
+    move_and_slide()

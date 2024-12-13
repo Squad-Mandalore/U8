@@ -1,70 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://dd3y8hg3c718w"]
+[gd_scene load_steps=7 format=3 uid="uid://dd3y8hg3c718w"]
 
 [ext_resource type="Texture2D" uid="uid://caq73llo7bly8" path="res://Art/Characters/Main.png" id="1_hommk"]
 [ext_resource type="Script" path="res://Characters/player_ball.gd" id="1_ule6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5x0p"]
 size = Vector2(20, 3.5)
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lmc35"]
-animation = &"RESET"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f6toe"]
-animation = &"RESET"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_giegl"]
-animation = &"RESET"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6chek"]
-animation = &"RESET"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_575bl"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_lmc35")
-blend_point_0/pos = Vector2(0, 1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_f6toe")
-blend_point_1/pos = Vector2(-1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_giegl")
-blend_point_2/pos = Vector2(0, -1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_6chek")
-blend_point_3/pos = Vector2(1, 0)
-blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lmhsf"]
-animation = &"walk"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_145s8"]
-animation = &"walk"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c7cxt"]
-animation = &"walk"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1jlnf"]
-animation = &"walk"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_w0ubl"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_lmhsf")
-blend_point_0/pos = Vector2(0, 1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_145s8")
-blend_point_1/pos = Vector2(0, -1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_c7cxt")
-blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_1jlnf")
-blend_point_3/pos = Vector2(1, 0)
-blend_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_awy02"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ibd2f"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7ek46"]
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qx380"]
-states/Idle/node = SubResource("AnimationNodeBlendSpace2D_575bl")
-states/Idle/position = Vector2(369, 100)
-states/Walk/node = SubResource("AnimationNodeBlendSpace2D_w0ubl")
-states/Walk/position = Vector2(600, 100)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_awy02"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_ibd2f"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_7ek46")]
 
 [sub_resource type="Animation" id="Animation_aiivy"]
 length = 0.001
@@ -114,12 +54,6 @@ hframes = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 13.75)
 shape = SubResource("RectangleShape2D_d5x0p")
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_qx380")
-anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
