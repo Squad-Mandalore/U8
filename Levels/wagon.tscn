@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://d0swauspdeb8t"]
+[gd_scene load_steps=6 format=4 uid="uid://d0swauspdeb8t"]
 
 [ext_resource type="PackedScene" uid="uid://dd3y8hg3c718w" path="res://Characters/player_ball.tscn" id="1_u3qo0"]
 [ext_resource type="Texture2D" uid="uid://d1upqrokt1cxy" path="res://Art/Tilesets/Train.png" id="2_oglfo"]
+[ext_resource type="PackedScene" uid="uid://ytijw0kgormp" path="res://Characters/door.tscn" id="3_iha2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hip1l"]
 texture = ExtResource("2_oglfo")
@@ -10,6 +11,7 @@ use_texture_padding = false
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17, -17, 17, -17, 17, 17, -17, 17)
+2:0/next_alternative_id = 2
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17, 11.3333, 17, 11.3333, 17, 17, -17, 17)
 
@@ -33,9 +35,12 @@ tile_set = SubResource("TileSet_ouj1p")
 rendering_quadrant_size = 34
 metadata/_edit_lock_ = true
 
+[node name="Door" parent="." instance=ExtResource("3_iha2o")]
+position = Vector2(186, 452)
+scale = Vector2(0.75, 0.75)
+
 [node name="PlayerBall" parent="." instance=ExtResource("1_u3qo0")]
-y_sort_enabled = true
-position = Vector2(156, 453)
+position = Vector2(183, 363)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerBall"]
 scale = Vector2(-43.4693, 1330.72)
@@ -52,4 +57,3 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAAAA0AAAACAAAAAAABAA0AAAACAAAAAAACAA0AAAACAAAAAAADAA0AAAACAAAAAAAIAA0AAAACAAAAAAAJAA0AAAACAAAAAAAKAA0AAAACAAAAAAALAA0AAAACAAAAAAAMAA0AAAACAAAAAAANAA0AAAACAAAAAAAOAA0AAAACAAAAAAAPAA0AAAACAAAAAAAQAA0AAAACAAAAAAARAA0AAAACAAAAAAASAA0AAAACAAAAAAATAA0AAAACAAAAAAAUAA0AAAACAAAAAAAVAA0AAAACAAAAAAAWAA0AAAACAAAAAAAXAA0AAAACAAAAAAAYAA0AAAACAAAAAAAZAA0AAAACAAAAAAAaAA0AAAACAAAAAAAbAA0AAAACAAAAAAAcAA0AAAACAAAAAAAdAA0AAAACAAAAAAAeAA0AAAACAAAAAAAfAA0AAAACAAAAAAAgAA0AAAACAAAAAAAhAA0AAAACAAAAAAAiAA0AAAACAAAAAAAjAA0AAAACAAAAAAAkAA0AAAACAAAAAAAlAA0AAAACAAAAAAAmAA0AAAACAAAAAAAnAA0AAAACAAAAAAAoAA0AAAACAAAAAAApAA0AAAACAAAAAAAqAA0AAAACAAAAAAArAA0AAAACAAAAAAAsAA0AAAACAAAAAAAtAA0AAAACAAAAAAAuAA0AAAACAAAAAAAvAA0AAAACAAAAAAAwAA0AAAACAAAAAAAxAA0AAAACAAAAAAAyAA0AAAACAAAAAAAzAA0AAAACAAAAAAA0AA0AAAACAAAAAAA1AA0AAAACAAAAAAA2AA0AAAACAAAAAAA3AA0AAAACAAAAAAAHAA0AAAACAAAAAAA=")
 tile_set = SubResource("TileSet_ouj1p")
 rendering_quadrant_size = 34
-metadata/_edit_lock_ = true
