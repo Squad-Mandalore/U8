@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=12 format=3 uid="uid://2p6mgnqih68g"]
 
 [ext_resource type="Script" path="res://background.gd" id="1_akvd2"]
 [ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://models/tracks/background.png" id="1_fxphb"]
 [ext_resource type="Texture2D" uid="uid://cncgraansifi4" path="res://models/train/inside.png" id="3_y5phg"]
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="4_mdtst"]
+[ext_resource type="Script" path="res://forground.gd" id="5_gv5oj"]
+[ext_resource type="Texture2D" uid="uid://cap1pqfhi5gb0" path="res://models/train/outside_back.png" id="7_h6xp5"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_btftc"]
 b = Vector2(596, 0)
@@ -16,6 +18,9 @@ b = Vector2(-20, 46)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_o7tt6"]
 b = Vector2(0, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evlrq"]
+size = Vector2(329, 49)
 
 [node name="Node2D" type="Node2D"]
 
@@ -62,3 +67,16 @@ limit_right = 800
 limit_bottom = 270
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="ForgroundBack" type="Area2D" parent="."]
+script = ExtResource("5_gv5oj")
+
+[node name="Sprite2D" type="Sprite2D" parent="ForgroundBack"]
+position = Vector2(400, 135)
+texture = ExtResource("7_h6xp5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ForgroundBack"]
+position = Vector2(502.5, 163.5)
+shape = SubResource("RectangleShape2D_evlrq")
+
+[connection signal="body_entered" from="ForgroundBack" to="ForgroundBack" method="_on_body_entered"]
