@@ -1,3 +1,64 @@
-[gd_scene format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=9 format=3 uid="uid://2p6mgnqih68g"]
+
+[ext_resource type="Script" path="res://background.gd" id="1_akvd2"]
+[ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://models/tracks/background.png" id="1_fxphb"]
+[ext_resource type="Texture2D" uid="uid://cncgraansifi4" path="res://models/train/inside.png" id="3_y5phg"]
+[ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="4_mdtst"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_btftc"]
+b = Vector2(596, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_p5jjr"]
+b = Vector2(616, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ygxmx"]
+b = Vector2(-20, 46)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_o7tt6"]
+b = Vector2(0, 46)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(800, 0)
+script = ExtResource("1_akvd2")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(400, 135)
+texture = ExtResource("1_fxphb")
+
+[node name="StaticBodyTrainInside" type="StaticBody2D" parent="."]
+position = Vector2(400, 135)
+
+[node name="SpriteTrainInside" type="Sprite2D" parent="StaticBodyTrainInside"]
+texture = ExtResource("3_y5phg")
+
+[node name="CollisionBackwall" type="CollisionShape2D" parent="StaticBodyTrainInside"]
+position = Vector2(-331, 6)
+shape = SubResource("SegmentShape2D_btftc")
+
+[node name="CollisionFrontwall" type="CollisionShape2D" parent="StaticBodyTrainInside"]
+position = Vector2(-351, 52)
+shape = SubResource("SegmentShape2D_p5jjr")
+
+[node name="CollisionLeftwall" type="CollisionShape2D" parent="StaticBodyTrainInside"]
+position = Vector2(-331, 6)
+shape = SubResource("SegmentShape2D_ygxmx")
+
+[node name="CollisionRightwall" type="CollisionShape2D" parent="StaticBodyTrainInside"]
+position = Vector2(265, 6)
+shape = SubResource("SegmentShape2D_o7tt6")
+
+[node name="Player" parent="." instance=ExtResource("4_mdtst")]
+position = Vector2(92, 159)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 0
+limit_right = 800
+limit_bottom = 270
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
