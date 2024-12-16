@@ -40,6 +40,25 @@ Orientierung an Hades \ Binding of Isaac \ Dead Cells \ Risk of Rain 2
 ## Anderes Zeug
 - Alle Zahlen immer abrunden
 
+## Rüstungsformel
+Rüstung blockt nach dieser Formel Schaden ab: \
+(1 + 1 / c) x - a ln(ℯ^(x / a) + ℯ^b) + a b
+
+mit \
+a = 5 \
+b = 5 \
+c = 23,4
+
+(abrunden nicht vergessen)
+
+Beispiel: \
+Gegner macht 10 Schaden. \
+Spieler hat 5 Rüstung. \
+5 Rüstung bockt 5,12... -> 5 dmg ab. \
+Spieler bekommt 10 - 5 = 5 Schaden.
+
+ca. 15 Rüstung SC und 30 Rüstung HC
+
 ## Run Stages
 Alle Bosse aufm Bahnsteig \
 Jede Stage (Zeitraum bevor Boss Nummer x) hat mind. 1, max. 2 Shops \
