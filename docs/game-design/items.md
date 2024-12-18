@@ -43,6 +43,11 @@
 - +2 Rüstung
 - +1 Radikalität
 
+### Rosa Sonnenbrille
+- +2 Kreativität
+- +2 Attraktivität
+
+
 ## Waffen
 
 ### Baseballschläger
