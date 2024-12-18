@@ -130,3 +130,21 @@
 ### Normale Kartoffel
 
 - +5 Gesundheit
+
+### Hashbrownies
+
+- Drogenresistenz
+- +2 Abhängigkeit
+
+### Wasser
+
+- +3 Gesundheit
+- -1 Abhängigkeit
+
+### Bier
+- +2 Initiative (für 2 encounter)
+- +1 Abhängigkeit
+
+### Lungenbrötchen (Zigarette)
+- +2 Coolness
+- +2 Abhängigkeit
