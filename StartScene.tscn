@@ -31,6 +31,7 @@ y_sort_enabled = true
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(800, 0)
 script = ExtResource("1_akvd2")
+speed = -340
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(400, 135)
@@ -63,7 +64,7 @@ z_index = 1
 position = Vector2(76, 145)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
+zoom = Vector2(6.5, 6.5)
 limit_left = 0
 limit_top = 0
 limit_right = 800
