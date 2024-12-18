@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cap1pqfhi5gb0"
-path="res://.godot/imported/outside_back.png-3751aa719880cebec508a9157dd0fdb7.ctex"
+uid="uid://dumywhs1cii7s"
+path="res://.godot/imported/inside_left.png-7d6e7f910e0584ffdb8705c93d4bfc56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/train/outside_back.png"
-dest_files=["res://.godot/imported/outside_back.png-3751aa719880cebec508a9157dd0fdb7.ctex"]
+source_file="res://models/train/inside_left.png"
+dest_files=["res://.godot/imported/inside_left.png-7d6e7f910e0584ffdb8705c93d4bfc56.ctex"]
 
 [params]
 

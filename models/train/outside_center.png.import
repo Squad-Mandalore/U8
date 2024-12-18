@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cncgraansifi4"
-path="res://.godot/imported/inside.png-f4dea5ae9a194c5977d97226cad9341f.ctex"
+uid="uid://dcuf6bj0fdc77"
+path="res://.godot/imported/outside_center.png-80b4c1036f1a74b2299cbe439bf0ab5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/train/inside.png"
-dest_files=["res://.godot/imported/inside.png-f4dea5ae9a194c5977d97226cad9341f.ctex"]
+source_file="res://models/train/outside_center.png"
+dest_files=["res://.godot/imported/outside_center.png-80b4c1036f1a74b2299cbe439bf0ab5a.ctex"]
 
 [params]
 

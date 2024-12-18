@@ -1,27 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=8 format=3 uid="uid://2p6mgnqih68g"]
 
 [ext_resource type="Script" path="res://background.gd" id="1_akvd2"]
 [ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://models/tracks/background.png" id="1_fxphb"]
-[ext_resource type="Texture2D" uid="uid://cncgraansifi4" path="res://models/train/inside.png" id="3_y5phg"]
+[ext_resource type="PackedScene" uid="uid://c6lryjxjclq03" path="res://models/train/inside_left.tscn" id="3_rmona"]
+[ext_resource type="PackedScene" uid="uid://c8l8bcwfbquvm" path="res://models/train/center.tscn" id="4_7ssj6"]
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="4_mdtst"]
-[ext_resource type="Script" path="res://forground.gd" id="5_gv5oj"]
 [ext_resource type="PackedScene" uid="uid://bkaths3irgi7c" path="res://characters/npcs/chris/chris.tscn" id="5_inwmy"]
-[ext_resource type="Texture2D" uid="uid://cap1pqfhi5gb0" path="res://models/train/outside_back.png" id="7_h6xp5"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_btftc"]
-b = Vector2(596, 0)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_p5jjr"]
-b = Vector2(616, 0)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ygxmx"]
-b = Vector2(-20, 46)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_o7tt6"]
-b = Vector2(0, 46)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_evlrq"]
-size = Vector2(329, 49)
+[ext_resource type="PackedScene" uid="uid://c2xs2hjyqqtav" path="res://models/train/right.tscn" id="5_l5oa4"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -29,63 +14,33 @@ y_sort_enabled = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(800, 0)
+motion_mirroring = Vector2(1200, 0)
 script = ExtResource("1_akvd2")
 speed = -340
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(400, 135)
+position = Vector2(600, 135)
 texture = ExtResource("1_fxphb")
 
-[node name="StaticBodyTrainInside" type="StaticBody2D" parent="."]
-position = Vector2(400, 135)
+[node name="StaticBody2D" parent="." instance=ExtResource("3_rmona")]
+position = Vector2(600, 135)
 
-[node name="SpriteTrainInside" type="Sprite2D" parent="StaticBodyTrainInside"]
-texture = ExtResource("3_y5phg")
+[node name="Center" parent="." instance=ExtResource("4_7ssj6")]
+position = Vector2(600, 135)
 
-[node name="CollisionBackwall" type="CollisionShape2D" parent="StaticBodyTrainInside"]
-position = Vector2(-331, 6)
-shape = SubResource("SegmentShape2D_btftc")
-
-[node name="CollisionFrontwall" type="CollisionShape2D" parent="StaticBodyTrainInside"]
-position = Vector2(-351, 52)
-shape = SubResource("SegmentShape2D_p5jjr")
-
-[node name="CollisionLeftwall" type="CollisionShape2D" parent="StaticBodyTrainInside"]
-position = Vector2(-331, 6)
-shape = SubResource("SegmentShape2D_ygxmx")
-
-[node name="CollisionRightwall" type="CollisionShape2D" parent="StaticBodyTrainInside"]
-position = Vector2(265, 6)
-shape = SubResource("SegmentShape2D_o7tt6")
+[node name="Right" parent="." instance=ExtResource("5_l5oa4")]
+position = Vector2(600, 135)
 
 [node name="Player" parent="." instance=ExtResource("4_mdtst")]
-z_index = 1
 position = Vector2(76, 145)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(6.5, 6.5)
 limit_left = 0
 limit_top = 0
-limit_right = 800
 limit_bottom = 270
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_inwmy")]
-z_index = 1
 position = Vector2(646, 150)
-
-[node name="ForgroundBack" type="Area2D" parent="."]
-z_index = 2
-script = ExtResource("5_gv5oj")
-
-[node name="Sprite2D" type="Sprite2D" parent="ForgroundBack"]
-position = Vector2(400, 135)
-texture = ExtResource("7_h6xp5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ForgroundBack"]
-position = Vector2(502.5, 163.5)
-shape = SubResource("RectangleShape2D_evlrq")
-
-[connection signal="body_entered" from="ForgroundBack" to="ForgroundBack" method="_on_body_entered"]

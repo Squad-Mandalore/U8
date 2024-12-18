@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw5dhry3n6d0c"]
+
+[ext_resource type="Texture2D" uid="uid://dfbdioi6odgwx" path="res://models/train/inside_center.png" id="1_4goka"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_v40dq"]
+b = Vector2(329, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vejam"]
+b = Vector2(314, 0)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4goka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-263, 52)
+shape = SubResource("SegmentShape2D_v40dq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-256, 6)
+shape = SubResource("SegmentShape2D_vejam")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-256, 8, -259, 9, -262, 10, -263, 10, -256, 7)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(58, 8, 60, 9, 64, 10, 66, 10, 58, 7)
+
+[node name="Node2D" type="Node2D" parent="."]

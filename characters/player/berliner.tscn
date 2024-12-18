@@ -7,6 +7,7 @@
 size = Vector2(20, 4)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 50
 script = ExtResource("1_pkp7h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
