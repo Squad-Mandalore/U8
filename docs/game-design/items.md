@@ -43,11 +43,6 @@
 - +2 Rüstung
 - +1 Radikalität
 
-### Rosa Sonnenbrille
-- +2 Kreativität
-- +2 Attraktivität
-
-
 ## Waffen
 
 ### Baseballschläger
@@ -83,6 +78,11 @@
 - Angriff: Überzeugen: 40% der Inteligenz - Intelligenz Schaden - Intelligenz Token
 
 ## Accessoires
+
+### Rosa Sonnenbrille
+
+- +1 Kreativität
+- +1 Attraktivität
 
 ### Notizbuch
 
@@ -131,20 +131,21 @@
 
 - +5 Gesundheit
 
-### Hashbrownies
+### Hashbrownies (verfügbar für alle Drogenformen)
 
-- Drogenresistenz
-- +2 Abhängigkeit
+- +x Abhängigkeit fortschritt (entsprechende droge)
 
 ### Wasser
 
 - +3 Gesundheit
-- -1 Abhängigkeit
+- -x Abhängigkeit fortschritt (alle drogen)
 
 ### Bier
+
 - +2 Initiative (für 2 encounter)
-- +1 Abhängigkeit
+- +x Abhängigkeit fortschritt (Alkohol)
 
 ### Lungenbrötchen (Zigarette)
+
 - +2 Coolness
-- +2 Abhängigkeit
+- +x Abhängigkeit fortschritt (vergiftung)
