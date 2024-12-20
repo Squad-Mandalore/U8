@@ -14,3 +14,8 @@ Shop den man mit Items welche Bosse beim ersten mal besiegen dropen upgraden kan
 Steht am HUB Bahnsteig (immer) \
 Vielleicht nimmt man die viel zu nette Kassiererin von der Hochschul-Cafeteria als Shopkeeper
 - Kann ja maybe zusätzlich auch ne Run übergreifende Questline haben
+
+## Fahrkarten Shop
+Man braucht Fahrkarten, um nicht vom Kontrolleur erwischt zu werden. \
+Hier kann man verschiedene Fahrkarten mit Euronen kaufen. \
+Man kann im laufe der Zeit neue Fahrkarten freischalten, welche neue Boni bringen.
