@@ -143,4 +143,4 @@ Der Spieler kann sich den naechsten Wagon selbst aussuchen.
 Wenn kein Shop/Boss nach einem Wagon ist, kommt der Spieler in eine herausgeszoomte und verinfachte Ansicht der U Bahn mit 4 Wagons. \
 Man kann sich dann entscheiden in welchen Wagon man moechte (mit nem grossen Pfeil darueber oder so) \
 Der 4. Wagon ist immer Random (halt maybe bisschen Grau mit nem Fragezeichen drauf) \
-Er gibt ausserdem 10% per Euronen.
+Man verdient während dieses Wagons zudem 10% mehr Euronen.
