@@ -79,6 +79,8 @@
 
 ## Accessoires
 
+### Flugblatt der Taubenrevolution
+
 ### Rosa Sonnenbrille
 
 - +1 Kreativität
