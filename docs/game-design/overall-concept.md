@@ -45,6 +45,8 @@ Orientierung an Hades \ Binding of Isaac \ Dead Cells \ Risk of Rain 2
 ## Anderes Zeug
 
 - Alle Zahlen immer abrunden
+- NPC's die am Bahnsteig sind für zb Questlines sollen überall spawnen können, also zb auf irgendwelchen Bänken, an irgendwelchen Imbissbuden die vielleicht sogar auch wiederrum Teile anderer Questlines sind.
+  Für besseres immersives Spielerlebnis und so.
 
 ## Rüstungsformel
 
