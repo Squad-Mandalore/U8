@@ -61,7 +61,12 @@ Effektiv gegen Intelligant
 Wie radikal der Character ist. \
 Wichtig für Scalings von Angriffen \ Dialogoptionen
 Effektiv gegen nichts \
-Man kann sich zudem irgendwie für eine Richtung (Rechts \ Links \ ...) entscheiden und bekommt dann entsprechend Vor- und Nachteile
+Ist Anfangs für den Spieler ersteinmal geblockt - unerreichbar. \
+Erst mit einer bestimmten Klasse / freischalten im HUB kann man es spielen. \
+Radikalität als skalierende Leiste. (- Bereich bis + Bereich) \
+NPC interaktionen und entscheidungen pushen einen dann mehr in eine der beiden Richtungen. \
+Am Ende gibts echaniken wo man auf den Skalen ist. \
+TBD.
 
 ## Glück
 

@@ -79,6 +79,13 @@
 
 ## Accessoires
 
+### Flugblatt der Taubenrevolution
+
+### Rosa Sonnenbrille
+
+- +1 Kreativität
+- +1 Attraktivität
+
 ### Notizbuch
 
 - +1 Intelligenz
@@ -125,3 +132,22 @@
 ### Normale Kartoffel
 
 - +5 Gesundheit
+
+### Hashbrownies (verfügbar für alle Drogenformen)
+
+- +x Abhängigkeit fortschritt (entsprechende droge)
+
+### Wasser
+
+- +3 Gesundheit
+- -x Abhängigkeit fortschritt (alle drogen)
+
+### Bier
+
+- +2 Initiative (für 2 encounter)
+- +x Abhängigkeit fortschritt (Alkohol)
+
+### Lungenbrötchen (Zigarette)
+
+- +2 Coolness
+- +x Abhängigkeit fortschritt (vergiftung)
