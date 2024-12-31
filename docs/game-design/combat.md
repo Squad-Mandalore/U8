@@ -19,6 +19,13 @@
 
 (somit wärs ne Strategie anfangen zu wollen, weil man zuerst Schaden macht oder zweiter sein zu wollen, damit man auf die Kampfhaltung des Gegners reagieren kann.)
 
+## Visual (Ideen - kann man drüber reden)
+
+Maybe Pokemonkampf vibes mit Perspektive und so. \
+Obvious eigenen Flare von unserem Game mit reinbringen, aber so von Positonierung der beiden Kämpfer her. \
+Mögliche Angriffe / Aktionen im Halbkreis um Character. (Scrollbar - blendede dann halt neue mögliche Aktionen aus / ein) \
+Beispiel: Shin Megami Tensei 5's Auswahl Menü unten Links - nur halt in etwas größer um den Character herum.
+
 ## Kampfhaltungsboni ( KH )
 
 Stärke KH: +10% Schaden ( Nach Angriff nochmal oben drauf gerechnet ) \
