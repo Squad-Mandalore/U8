@@ -38,7 +38,7 @@ Orientierung an Hades \ Binding of Isaac \ Dead Cells \ Risk of Rain 2
 
 ## Inventar
 
-- Besteht aus 4x4 Kacheln (wird größer durch verschiedenste Dinge, prob Meta Fortschritt)
+- Besteht aus 4x4 Kacheln (wird größer durch bessere Rucksäcke)
 - Items haben verschiedene größen
 - Items die Stats geben (maybe nen Pullover (Rüstung)) müssen nur im Inventar liegen und geben die Stats -> es gibt keine Equipment Slots
 
@@ -141,8 +141,14 @@ Auf den restlichen Bahnsteigen ist sonst erstmal einfach nichts i would say
 
 ## Wagon Auswahl
 
-Der Spieler kann sich den naechsten Wagon selbst aussuchen.
+Der Spieler kann sich den naechsten Wagon selbst aussuchen. \
 Wenn kein Shop/Boss nach einem Wagon ist, kommt der Spieler in eine herausgeszoomte und verinfachte Ansicht der U Bahn mit 4 Wagons. \
 Man kann sich dann entscheiden in welchen Wagon man moechte (mit nem grossen Pfeil darueber oder so) \
 Der 4. Wagon ist immer Random (halt maybe bisschen Grau mit nem Fragezeichen drauf) \
 Man verdient während dieses Wagons zudem 10% mehr Euronen.
+
+## Kreativität und Intelligenz
+
+Die benötigten Werte für Dialogoptionen sind etwas höher als zb für Stärke / Coolnes / Attraktivität, dafür muss der Spieler den NPC aber noch zusätzlich im Dialog überzeugen. \
+Dann bewertet KI über den NPC und um was es geht den Überzeugungsversuch und addiert entsprechenden Wert auf eigenen Stat rauf und überprüft dann, ob erwartete Werte erreicht wurden oder nicht. \
+Für Kreativ muss man sich etwas kreatives einfallen lassen. Für Intelligenz eben sehr gut schlussfolgernd begründen.
