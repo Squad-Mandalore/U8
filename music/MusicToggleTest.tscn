@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4m8h13ixgu5a"]
+
+[ext_resource type="Script" path="res://music/TestMusic.gd" id="1_v5os6"]
+[ext_resource type="AudioStream" uid="uid://c50apsvlyi3dc" path="res://music/Track 1 - WiP(1).mp3" id="2_gdngf"]
+[ext_resource type="AudioStream" uid="uid://dtwss0ugdsyv6" path="res://music/Boss Track 1 - WiP.mp3" id="3_ijamr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_v5os6")
+background_music = ExtResource("2_gdngf")
+battle_music = ExtResource("3_ijamr")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 391.0
+offset_right = 1110.0
+offset_bottom = 550.0
+text = "Play Battle Music"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]

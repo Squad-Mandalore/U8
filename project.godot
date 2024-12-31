@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.562897, 0.464578, 0.118422, 1)
 config/icon="res://icon.svg"
 
+[autoload]
+
+MusicManager="*res://scripts/music/MusicManager.gd"
+
 [display]
 
 window/size/viewport_width=1920
