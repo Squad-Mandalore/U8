@@ -59,13 +59,13 @@ Effektiv gegen Intelligant
 ## Radikalität
 
 Wie radikal der Character ist. \
-Wichtig für Scalings von Angriffen \ Dialogoptionen
+Wichtig für Scalings von Angriffen / irrelevant für Dialogoptionen \
 Effektiv gegen nichts \
-Ist Anfangs für den Spieler ersteinmal geblockt - unerreichbar. \
+Ist Anfangs für den Spieler ersteinmal geblockt - ist irrelevant. \
 Erst mit einer bestimmten Klasse / freischalten im HUB kann man es spielen. \
 Radikalität als skalierende Leiste. (- Bereich bis + Bereich) \
 NPC interaktionen und entscheidungen pushen einen dann mehr in eine der beiden Richtungen. \
-Am Ende gibts echaniken wo man auf den Skalen ist. \
+Am Ende gibts Mechaniken wo man auf den Skalen ist. \
 TBD.
 
 ## Glück
