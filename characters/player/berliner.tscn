@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://csgdo87mltoha"]
+
+[ext_resource type="Texture2D" uid="uid://djr0g000tl7vr" path="res://characters/player/berliner.png" id="1_8a2ba"]
+[ext_resource type="Script" path="res://characters/player/berliner.gd" id="1_pkp7h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpkiy"]
+size = Vector2(20, 4)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 50
+script = ExtResource("1_pkp7h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8a2ba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_dpkiy")

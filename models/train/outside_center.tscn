@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b46ii0fqwu3ur"]
+
+[ext_resource type="Script" path="res://forground.gd" id="1_hevv5"]
+[ext_resource type="Texture2D" uid="uid://dcuf6bj0fdc77" path="res://models/train/outside_center.png" id="2_qw8mj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evlrq"]
+size = Vector2(34, 49)
+
+[node name="ForgroundBack" type="Area2D"]
+script = ExtResource("1_hevv5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qw8mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-237, 28.5)
+shape = SubResource("RectangleShape2D_evlrq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
