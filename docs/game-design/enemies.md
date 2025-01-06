@@ -3,4 +3,6 @@
 ## Normale Gegner
 
 ## NPC Gegner
-### Andreas (Bundle Dishonest Brothers)
+### Andreas (Questline Dishonest Brothers)
+
+### Chris (Questline Dishonest Brothers)
