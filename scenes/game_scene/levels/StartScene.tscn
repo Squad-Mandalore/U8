@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://2p6mgnqih68g"]
+
+[ext_resource type="Script" path="res://scenes/game_scene/levels/train.gd" id="1_wkcem"]
+[ext_resource type="Script" path="res://background.gd" id="2_ooi5o"]
+[ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://models/tracks/background.png" id="3_55edj"]
+[ext_resource type="PackedScene" uid="uid://c6lryjxjclq03" path="res://models/train/inside_left.tscn" id="4_jdu33"]
+[ext_resource type="PackedScene" uid="uid://c8l8bcwfbquvm" path="res://models/train/center.tscn" id="5_tnl40"]
+[ext_resource type="PackedScene" uid="uid://c2xs2hjyqqtav" path="res://models/train/right.tscn" id="6_jw6n8"]
+[ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="7_gdsk5"]
+[ext_resource type="PackedScene" uid="uid://bkaths3irgi7c" path="res://characters/npcs/chris/chris.tscn" id="8_icujl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77qi7"]
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_wkcem")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1200, 0)
+script = ExtResource("2_ooi5o")
+speed = -340
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(600, 135)
+texture = ExtResource("3_55edj")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("4_jdu33")]
+position = Vector2(600, 135)
+
+[node name="Center" parent="." instance=ExtResource("5_tnl40")]
+position = Vector2(600, 135)
+
+[node name="Right" parent="." instance=ExtResource("6_jw6n8")]
+position = Vector2(600, 135)
+
+[node name="Player" parent="." instance=ExtResource("7_gdsk5")]
+position = Vector2(77, 147)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(6.5, 6.5)
+limit_left = 0
+limit_top = 0
+limit_bottom = 270
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("8_icujl")]
+position = Vector2(433, 153)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(897, 159)
+shape = SubResource("RectangleShape2D_77qi7")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

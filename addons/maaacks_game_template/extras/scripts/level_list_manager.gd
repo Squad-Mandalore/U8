@@ -4,7 +4,7 @@ extends Node
 ##
 ## A helper script to assign to a node in a scene.
 ## It works with a level list loader and a loading screen
-## to advance levels and open menus when players win or lose. 
+## to advance levels and open menus when players win or lose.
 
 ## Required reference to a level list loader in the scene.
 @export var level_list_loader : LevelListLoader
@@ -16,6 +16,8 @@ extends Node
 @export_group("Screens")
 ## Optional reference to a loading screen in the scene.
 @export var level_loading_screen : LoadingScreen
+## Optional reference to a loading screen in the scene.
+@export var train_select_scene : PackedScene
 ## Optional win screen to be shown after the last level is won.
 @export var game_won_scene : PackedScene
 ## Optional lose screen to be shown after the level is lost.
@@ -68,6 +70,19 @@ func _on_level_lost():
 	else:
 		_reload_level()
 
+func _on_train_enter():
+	if train_select_scene:
+		var instance = train_select_scene.instantiate()
+		get_tree().current_scene.add_child(instance)
+		_try_connecting_signal_to_node(instance, &"continue_pressed", _load_selected_train)
+		_try_connecting_signal_to_node(instance, &"restart_pressed", _reload_level)
+		_try_connecting_signal_to_node(instance, &"main_menu_pressed", _load_main_menu)
+	else:
+		_load_selected_train()
+
+func _load_selected_train():
+	level_list_loader.load_level_path("res://scenes/game_scene/levels/StartScene.tscn")
+
 func get_current_level_id() -> int:
 	return current_level_id if force_level == -1 else force_level
 
@@ -108,7 +123,9 @@ func _load_level_complete_screen_or_next_level():
 		_load_next_level()
 
 func is_on_last_level():
-	return get_current_level_id() + 1 >= level_list_loader.files.size()
+	if get_current_level_id() + 1 >= level_list_loader.files.size() :
+		current_level_id = 0
+	return false
 
 func _on_level_won():
 	if is_on_last_level():
@@ -117,6 +134,7 @@ func _on_level_won():
 		_load_level_complete_screen_or_next_level()
 
 func _connect_level_signals():
+	_try_connecting_signal_to_level(&"train_enter", _on_train_enter)
 	_try_connecting_signal_to_level(&"level_won", _on_level_won)
 	_try_connecting_signal_to_level(&"level_lost", _on_level_lost)
 	_try_connecting_signal_to_level(&"level_skipped", _load_next_level)
