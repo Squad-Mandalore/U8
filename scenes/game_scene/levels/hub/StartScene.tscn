@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://2p6mgnqih68g"]
+
+[ext_resource type="Script" path="res://background.gd" id="1_unb5a"]
+[ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://models/tracks/background.png" id="2_1ygpn"]
+[ext_resource type="PackedScene" uid="uid://c6lryjxjclq03" path="res://models/train/inside_left.tscn" id="3_ytm7b"]
+[ext_resource type="PackedScene" uid="uid://c8l8bcwfbquvm" path="res://models/train/center.tscn" id="4_f035f"]
+[ext_resource type="PackedScene" uid="uid://c2xs2hjyqqtav" path="res://models/train/right.tscn" id="5_m4yl8"]
+[ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="6_e1d0g"]
+[ext_resource type="PackedScene" uid="uid://bkaths3irgi7c" path="res://characters/npcs/chris/chris.tscn" id="7_a8ibd"]
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1200, 0)
+script = ExtResource("1_unb5a")
+speed = -340
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(600, 135)
+texture = ExtResource("2_1ygpn")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_ytm7b")]
+position = Vector2(600, 135)
+
+[node name="Center" parent="." instance=ExtResource("4_f035f")]
+position = Vector2(600, 135)
+
+[node name="Right" parent="." instance=ExtResource("5_m4yl8")]
+position = Vector2(600, 135)
+
+[node name="Player" parent="." instance=ExtResource("6_e1d0g")]
+position = Vector2(77, 147)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(6.5, 6.5)
+limit_left = 0
+limit_top = 0
+limit_bottom = 270
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("7_a8ibd")]
+position = Vector2(433, 153)
