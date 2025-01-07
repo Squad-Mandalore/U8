@@ -25,6 +25,11 @@ window/size/mode=2
 window/stretch/scale_mode="integer"
 window/vsync/vsync_mode=0
 
+[global_group]
+
+Player="Main Character"
+NPC="Non Playable Character"
+
 [input]
 
 ui_left={

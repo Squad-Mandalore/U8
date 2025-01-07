@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 
 const SPEED: float = 102.0
+var _slowdown_entities: int = 0 
 
 @onready var _animated_sprite_2d = $AnimatedSprite2D
 enum State {IDLE, WALK, TALK}
@@ -12,6 +13,10 @@ func _physics_process(_delta: float) -> void:
 	if _current_state == State.TALK:
 		return
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	
+	var speed = SPEED
+	if _slowdown_entities > 0:
+		speed = SPEED / 2
 
 	if direction.x < 0:
 		_animated_sprite_2d.flip_h = true
@@ -19,10 +24,10 @@ func _physics_process(_delta: float) -> void:
 		_animated_sprite_2d.flip_h = false
 
 	if direction:
-		velocity = direction * SPEED
+		velocity = direction * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.y = move_toward(velocity.y, 0, speed)
 	
 	if velocity:
 		switch_state(State.WALK)
@@ -47,3 +52,13 @@ func switch_state(new_state: State):
 			_animated_sprite_2d.play("walk")
 		if _current_state == State.IDLE:
 			_animated_sprite_2d.play("idle")
+
+
+
+func _on_slowdown_area_body_entered(body):
+	if body.is_in_group("NPC"):
+		_slowdown_entities = _slowdown_entities + 1
+
+func _on_slowdown_area_body_exited(body):
+	if body.is_in_group("NPC"):
+		_slowdown_entities = _slowdown_entities - 1
