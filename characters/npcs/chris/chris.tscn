@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bkaths3irgi7c"]
+[gd_scene load_steps=24 format=3 uid="uid://bkaths3irgi7c"]
 
 [ext_resource type="Script" path="res://characters/npcs/chris/chris.gd" id="1_muxck"]
 [ext_resource type="Texture2D" uid="uid://cajfrevr2nqwd" path="res://characters/player/berlinv3anim-Sheet.png" id="2_si83u"]
@@ -150,7 +150,11 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lrsox"]
+radius = 6.0
+height = 32.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["NPC"]]
 z_index = 50
 script = ExtResource("1_muxck")
 
@@ -164,5 +168,12 @@ shape = SubResource("RectangleShape2D_bg0ao")
 sprite_frames = SubResource("SpriteFrames_7wqtt")
 animation = &"walk"
 autoplay = "idle"
+
+[node name="SlowdownArea" type="Area2D" parent="." groups=["NPC"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlowdownArea"]
+position = Vector2(0, 16)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_lrsox")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddnbkdifk8c85"]
+[gd_scene load_steps=9 format=3 uid="uid://2p6mgnqih68g"]
 
 [ext_resource type="Script" path="res://background.gd" id="1_unb5a"]
 [ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://models/tracks/background.png" id="2_1ygpn"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c2xs2hjyqqtav" path="res://models/train/right.tscn" id="5_m4yl8"]
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="6_e1d0g"]
 [ext_resource type="PackedScene" uid="uid://bkaths3irgi7c" path="res://characters/npcs/chris/chris.tscn" id="7_a8ibd"]
+[ext_resource type="PackedScene" uid="uid://cph57sst3icgu" path="res://characters/npcs/bettler1/bettler1.tscn" id="8_okg6g"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -42,5 +43,8 @@ limit_bottom = 270
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("7_a8ibd")]
+[node name="Chris" parent="." instance=ExtResource("7_a8ibd")]
 position = Vector2(433, 153)
+
+[node name="Bettler1" parent="." instance=ExtResource("8_okg6g")]
+position = Vector2(486, 140)
