@@ -50,3 +50,28 @@ Der Berliner Bär ist seit 1280 das Wappentier Berlins. Als lebende Wappentiere 
 
 ### Ideen
 - gruseliger großer schwarzer Bär
+
+
+# Minibosse
+
+Minibosse werden werden nach erstmaligem besiegen des Endbosses freigeschaltet. Sie können zufällig an den gegebenen Stages erscheinen.
+
+## Stage 3 Karl-Bonhoeffer-Nervenklinik - Der Doktor
+
+### Lore
+Nach Jahren in der Karl-Bonhoeffer-Nervenklinik bleibt auch er psychisch nicht stabil. Nach dem er fünf Patienten umgebracht hat und die Morde einem anderen Patienten in die Schuhe geschoben hat macht er sich auf den Heimweg. Der Wahnsinn steht ins seinen Augen. Als er den Spieler erblickt läuft im der Speichel aus dem Mund und er greift an.
+
+## Stage 8 Osloer Straße - Der Yeti
+
+### Lore
+Dem Yeti wird es zu warm in Norwegen. Schuld daran ist der Klimawandel. Motiviert die Ursache zu bekämpfen macht sich der Yeti auf nach Europa um die Menschen zu bekämpfen, die für den von ihm gehassten Klimawandel verantwortlich sind. Der einzige Flieger in dem auch Yetis mitfliegen dürfen geht von Oslo nach Berlin. Dort angekommen möchte er ein Exemple an der Osloer Straße statuieren. Er fängt an den Bahnhof in Schut und Asche zu legen. Irgendwer muss ihn aufhalten.
+
+## Stage 13 Rosenthaler Platz - Lucio101
+
+### Lore
+Der bekannte Berliner Rapper chillt wie üblich am Rosi. Wenn ihm dein Gesicht nicht passt macht er auf dicke Hose und fängt an dich zu schlagen und zu schuppsen.
+
+## Stage 18 Moritzplatz - Moritz
+
+### Lore
+Eigentlich ein echt entspannter Typ. Doch als im sein Burrito auseinanderfällt und er ihn mit Messer und gabel essen muss wird er stink sauer. Eine falsche Bemerkung und du stirbst...
