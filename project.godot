@@ -36,6 +36,11 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")
 
+[global_group]
+
+Player="Main Character"
+NPC="Non Playable Character"
+
 [input]
 
 ui_left={

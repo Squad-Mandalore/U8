@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://csgdo87mltoha"]
+[gd_scene load_steps=24 format=3 uid="uid://csgdo87mltoha"]
 
 [ext_resource type="Script" path="res://characters/player/berliner.gd" id="1_pkp7h"]
 [ext_resource type="Texture2D" uid="uid://cajfrevr2nqwd" path="res://characters/player/berlinv3anim-Sheet.png" id="2_wdk3b"]
@@ -150,7 +150,10 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjqwy"]
+height = 36.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 z_index = 50
 script = ExtResource("1_pkp7h")
 
@@ -162,3 +165,13 @@ shape = SubResource("RectangleShape2D_dpkiy")
 sprite_frames = SubResource("SpriteFrames_v3pdd")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="SlowdownArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlowdownArea"]
+position = Vector2(0, 16)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_cjqwy")
+
+[connection signal="body_entered" from="SlowdownArea" to="." method="_on_slowdown_area_body_entered"]
+[connection signal="body_exited" from="SlowdownArea" to="." method="_on_slowdown_area_body_exited"]
