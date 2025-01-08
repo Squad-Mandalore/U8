@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cajfrevr2nqwd"
-path="res://.godot/imported/berlinv3anim-Sheet.png-508586efb7928dfb812c677646676015.ctex"
+uid="uid://mtrlbx66wkpj"
+path="res://.godot/imported/berlinv3anim.png-e79f9b4690ece5b1289cb71947183557.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/berlinv3anim-Sheet.png"
-dest_files=["res://.godot/imported/berlinv3anim-Sheet.png-508586efb7928dfb812c677646676015.ctex"]
+source_file="res://characters/player/berlinv3anim.png"
+dest_files=["res://.godot/imported/berlinv3anim.png-e79f9b4690ece5b1289cb71947183557.ctex"]
 
 [params]
 
