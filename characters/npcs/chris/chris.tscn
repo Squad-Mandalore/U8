@@ -158,11 +158,16 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lrsox"]
-radius = 6.0
-height = 32.0
+radius = 9.0
+height = 42.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["NPC"]]
 z_index = 50
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_snap_length = 0.0
+platform_on_leave = 2
 script = ExtResource("1_muxck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -183,4 +188,15 @@ position = Vector2(0, 16)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_lrsox")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 9.0
+offset_top = -20.0
+offset_right = 17.0
+offset_bottom = 3.0
+text = "E"
+fit_content = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="SlowdownArea" to="." method="_on_slowdown_area_body_entered"]
+[connection signal="body_exited" from="SlowdownArea" to="." method="_on_slowdown_area_body_exited"]

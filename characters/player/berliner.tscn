@@ -162,6 +162,11 @@ height = 36.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 z_index = 50
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_snap_length = 0.0
+platform_on_leave = 2
 script = ExtResource("1_pkp7h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
