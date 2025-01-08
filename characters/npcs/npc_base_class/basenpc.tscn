@@ -93,7 +93,6 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6rf0"]
-radius = 10.0
 height = 42.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["NPC"]]
