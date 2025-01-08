@@ -39,7 +39,7 @@ func _physics_process(_delta: float) -> void:
     else:
         switch_state(State.IDLE)
 
-    move_and_slide()
+    move_and_collide(velocity * _delta)
 
 
 func _unhandled_input(event: InputEvent):

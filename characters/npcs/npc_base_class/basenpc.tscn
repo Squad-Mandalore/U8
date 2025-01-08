@@ -1,49 +1,49 @@
-[gd_scene load_steps=16 format=3 uid="uid://cph57sst3icgu"]
+[gd_scene load_steps=16 format=3 uid="uid://bty12pwf3uotq"]
 
-[ext_resource type="Script" path="res://characters/npcs/bettler1/bettler.gd" id="1_jd2co"]
-[ext_resource type="Texture2D" uid="uid://btahse7qq1uhd" path="res://characters/npcs/bettler1/bettler1.png" id="2_q4hgs"]
+[ext_resource type="Script" path="res://characters/npcs/npc_base_class/npc.gd" id="1_pda6j"]
+[ext_resource type="Texture2D" uid="uid://btahse7qq1uhd" path="res://characters/npcs/bettler1/bettler1.png" id="2_l0vg7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
 size = Vector2(20, 4)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_213rf"]
-atlas = ExtResource("2_q4hgs")
+atlas = ExtResource("2_l0vg7")
 region = Rect2(204, 2, 33, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6kioh"]
-atlas = ExtResource("2_q4hgs")
+atlas = ExtResource("2_l0vg7")
 region = Rect2(238, 2, 33, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i5bqd"]
-atlas = ExtResource("2_q4hgs")
+atlas = ExtResource("2_l0vg7")
 region = Rect2(272, 2, 33, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q3fmd"]
-atlas = ExtResource("2_q4hgs")
+atlas = ExtResource("2_l0vg7")
 region = Rect2(306, 2, 33, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6w6bn"]
-atlas = ExtResource("2_q4hgs")
+atlas = ExtResource("2_l0vg7")
 region = Rect2(0, 2, 33, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmwnn"]
-atlas = ExtResource("2_q4hgs")
+atlas = ExtResource("2_l0vg7")
 region = Rect2(34, 2, 33, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ebjyn"]
-atlas = ExtResource("2_q4hgs")
+atlas = ExtResource("2_l0vg7")
 region = Rect2(68, 2, 33, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3oyg8"]
-atlas = ExtResource("2_q4hgs")
+atlas = ExtResource("2_l0vg7")
 region = Rect2(102, 2, 33, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gkk2c"]
-atlas = ExtResource("2_q4hgs")
+atlas = ExtResource("2_l0vg7")
 region = Rect2(136, 2, 33, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8uhm1"]
-atlas = ExtResource("2_q4hgs")
+atlas = ExtResource("2_l0vg7")
 region = Rect2(170, 2, 33, 33)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7wqtt"]
@@ -93,17 +93,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6rf0"]
-radius = 9.0
-height = 40.0
+radius = 10.0
+height = 42.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["NPC"]]
 z_index = 50
-slide_on_ceiling = false
-floor_stop_on_slope = false
-floor_block_on_wall = false
-floor_snap_length = 0.0
-platform_on_leave = 2
-script = ExtResource("1_jd2co")
+script = ExtResource("1_pda6j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 16)
@@ -125,7 +120,6 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_n6rf0")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
 offset_left = 9.0
 offset_top = -20.0
 offset_right = 17.0
