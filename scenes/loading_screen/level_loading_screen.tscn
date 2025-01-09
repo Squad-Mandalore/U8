@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://duxb6t4ycj6x4"]
 
-[ext_resource type="PackedScene" path="res://addons/maaacks_game_template/base/scenes/loading_screen/loading_screen.tscn" id="1_4twgx"]
+[ext_resource type="PackedScene" uid="uid://cd0jbh4metflb" path="res://addons/maaacks_game_template/base/scenes/loading_screen/loading_screen.tscn" id="1_4twgx"]
 [ext_resource type="Script" path="res://scenes/loading_screen/loading_screen.gd" id="2_lgcdx"]
 
 [node name="LevelLoadingScreen" instance=ExtResource("1_4twgx")]
