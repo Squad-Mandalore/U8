@@ -7,6 +7,9 @@ var _slowdown_entities: int = 0:
         _slowdown_entities = max(value, 0)
 
 @onready var _animated_sprite_2d = $AnimatedSprite2D
+var _talkable = false
+signal talk_started(player: Player)
+signal talk_stopped(player: Player)
 
 enum State {IDLE, WALK, TALK}
 var _current_state: State = State.IDLE
@@ -47,40 +50,49 @@ func switch_state(new_state: State):
             State.IDLE:
                 _animated_sprite_2d.play("idle")
 
-func _on_slowdown_area_area_entered(_area: Area2D):
+func _on_slowdown_area_body_entered(body: Node2D):
     # If we meet an NPC, slow down the player
     _slowdown_entities += 1
+    var npc: NPC = body
+    if not npc.is_connected("talk_started", _on_npc_talk_started):
+        npc.connect("talk_started", _on_npc_talk_started)
 
-func _on_slowdown_area_area_exited(_area: Area2D):
+    if not npc.is_connected("talk_stopped", _on_npc_talk_started):
+        npc.connect("talk_stopped", _on_npc_talk_stopped)
+
+    _talkable = true
+
+
+func _on_slowdown_area_body_exited(body: Node2D):
     # If the NPC leaves, reduce slowdown count
     _slowdown_entities -= 1
+    var npc: NPC = body
+    if npc.is_connected("talk_started", _on_npc_talk_started):
+        npc.disconnect("talk_started", _on_npc_talk_started)
 
-func _on_slowdown_area_body_entered(body: Node):
-    if body is NPC:
-        # Connect signals so we know when the NPC starts/stops talking
-        var npc: NPC = body
-        if not npc.is_connected("npc_started_talking", _on_npc_started_talking):
-            npc.connect("npc_started_talking", _on_npc_started_talking)
+    if npc.is_connected("talk_stopped", _on_npc_talk_started):
+        npc.disconnect("talk_stopped", _on_npc_talk_stopped)
 
-        if not npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
-            npc.connect("npc_stopped_talking", _on_npc_stopped_talking)
+    _talkable = false
 
-func _on_slowdown_area_body_exited(body: Node):
-    if body is NPC:
-        # Disconnect signals
-        var npc: NPC = body
-        if npc.is_connected("npc_started_talking", _on_npc_started_talking):
-            npc.disconnect("npc_started_talking", _on_npc_started_talking)
 
-        if npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
-            npc.disconnect("npc_stopped_talking", _on_npc_stopped_talking)
+func _unhandled_input(event: InputEvent) -> void:
+    if not event.is_action_pressed("talk") || not _talkable:
+        return
+    if _current_state != State.TALK:
+        switch_state(State.TALK)
+        talk_started.emit(self)
+    else:
+        switch_state(State.IDLE)
+        talk_stopped.emit(self)
 
-func _on_npc_started_talking(npc: NPC):
+
+func _on_npc_talk_started(npc: NPC):
     # If NPC started talking, the player also enters TALK mode
     switch_state(State.TALK)
     print("NPC started talking to you")
 
-func _on_npc_stopped_talking(npc: NPC):
+func _on_npc_talk_stopped(npc: NPC):
     # If NPC stopped talking, the player reverts to IDLE (or WALK if moving)
     switch_state(State.IDLE)
     print("NPC stopped talking to you")

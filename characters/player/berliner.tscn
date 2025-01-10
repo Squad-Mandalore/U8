@@ -162,7 +162,7 @@ height = 36.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 z_index = 50
-collision_layer = 9
+collision_layer = 11
 slide_on_ceiling = false
 floor_stop_on_slope = false
 floor_block_on_wall = false
@@ -181,7 +181,7 @@ autoplay = "idle"
 frame_progress = 0.546964
 
 [node name="SlowdownArea" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlowdownArea"]
@@ -189,7 +189,5 @@ position = Vector2(0, 16)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_cjqwy")
 
-[connection signal="area_entered" from="SlowdownArea" to="." method="_on_slowdown_area_area_entered"]
-[connection signal="area_exited" from="SlowdownArea" to="." method="_on_slowdown_area_area_exited"]
 [connection signal="body_entered" from="SlowdownArea" to="." method="_on_slowdown_area_body_entered"]
 [connection signal="body_exited" from="SlowdownArea" to="." method="_on_slowdown_area_body_exited"]

@@ -7,5 +7,4 @@
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_27f3r")]
 
-[node name="ForgroundBack" parent="." instance=ExtResource("2_3uhei")]
-z_index = 100
+[node name="ForegroundCenter" parent="." instance=ExtResource("2_3uhei")]
