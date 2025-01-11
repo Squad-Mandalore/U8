@@ -6,7 +6,9 @@ const SPEED: float = 68.0
 
 var _direction: Vector2 = Vector2.ZERO
 var _current_state: State = State.IDLE
-var _slowdown_entities: int = 0
+var _slowdown_entities: int = 0:
+    set(value):
+        _slowdown_entities = max(value, 0)
 var _talking: bool = false
 
 @onready var _sprite = $AnimatedSprite2D
@@ -103,8 +105,6 @@ func _on_slowdown_area_body_exited(body: Node2D):
     # If the Player leaves, restore normal speed (if no more slowdown entities)
     if body.is_in_group("Player"):
         _slowdown_entities -= 1
-        if _slowdown_entities < 0:
-            _slowdown_entities = 0
 
         if _slowdown_entities == 0:
             _rich_text_label.visible = false

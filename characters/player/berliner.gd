@@ -2,7 +2,9 @@ class_name Player
 extends CharacterBody2D
 
 const SPEED: float = 102.0
-var _slowdown_entities: int = 0
+var _slowdown_entities: int = 0:
+    set(value):
+        _slowdown_entities = max(value, 0)
 
 @onready var _animated_sprite_2d = $AnimatedSprite2D
 
@@ -63,8 +65,6 @@ func _on_slowdown_area_body_exited(body: Node):
     if body is NPC:
         # If the NPC leaves, reduce slowdown count
         _slowdown_entities -= 1
-        if _slowdown_entities < 0:
-            _slowdown_entities = 0
 
         # Disconnect signals
         var npc: NPC = body
