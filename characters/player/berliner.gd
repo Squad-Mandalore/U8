@@ -53,13 +53,11 @@ func _on_slowdown_area_body_entered(body: Node):
 
         # Connect signals so we know when the NPC starts/stops talking
         var npc: NPC = body
-        var start_talk_callable = Callable(self, "_on_npc_started_talking")
-        if not npc.is_connected("npc_started_talking", start_talk_callable):
-            npc.connect("npc_started_talking", start_talk_callable)
+        if not npc.is_connected("npc_started_talking", _on_npc_started_talking):
+            npc.connect("npc_started_talking", _on_npc_started_talking)
 
-        var stop_talk_callable = Callable(self, "_on_npc_stopped_talking")
-        if not npc.is_connected("npc_stopped_talking", stop_talk_callable):
-            npc.connect("npc_stopped_talking", stop_talk_callable)
+        if not npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
+            npc.connect("npc_stopped_talking", _on_npc_stopped_talking)
 
 func _on_slowdown_area_body_exited(body: Node):
     if body is NPC:
@@ -70,13 +68,11 @@ func _on_slowdown_area_body_exited(body: Node):
 
         # Disconnect signals
         var npc: NPC = body
-        var start_talk_callable = Callable(self, "_on_npc_started_talking")
-        if npc.is_connected("npc_started_talking", start_talk_callable):
-            npc.disconnect("npc_started_talking", start_talk_callable)
+        if npc.is_connected("npc_started_talking", _on_npc_started_talking):
+            npc.disconnect("npc_started_talking", _on_npc_started_talking)
 
-        var stop_talk_callable = Callable(self, "_on_npc_stopped_talking")
-        if npc.is_connected("npc_stopped_talking", stop_talk_callable):
-            npc.disconnect("npc_stopped_talking", stop_talk_callable)
+        if npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
+            npc.disconnect("npc_stopped_talking", _on_npc_stopped_talking)
 
 func _on_npc_started_talking(npc: NPC):
     # If NPC started talking, the player also enters TALK mode
