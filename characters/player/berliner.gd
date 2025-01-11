@@ -2,7 +2,9 @@ class_name Player
 extends CharacterBody2D
 
 const SPEED: float = 102.0
-var _slowdown_entities: int = 0
+var _slowdown_entities: int = 0:
+    set(value):
+        _slowdown_entities = max(value, 0)
 
 @onready var _animated_sprite_2d = $AnimatedSprite2D
 
@@ -46,37 +48,29 @@ func switch_state(new_state: State):
                 _animated_sprite_2d.play("idle")
 
 
-func _on_slowdown_area_body_entered(body: Node):
-    if body is NPC:
-        # If we meet an NPC, slow down the player
-        _slowdown_entities += 1
+func _on_slowdown_area_body_entered(body: Node2D):
+    # If we meet an NPC, slow down the player
+    _slowdown_entities += 1
 
-        # Connect signals so we know when the NPC starts/stops talking
-        var npc: NPC = body
-        var start_talk_callable = Callable(self, "_on_npc_started_talking")
-        if not npc.is_connected("npc_started_talking", start_talk_callable):
-            npc.connect("npc_started_talking", start_talk_callable)
+    # Connect signals so we know when the NPC starts/stops talking
+    var npc: NPC = body
+    if not npc.is_connected("npc_started_talking", _on_npc_started_talking):
+        npc.connect("npc_started_talking", _on_npc_started_talking)
 
-        var stop_talk_callable = Callable(self, "_on_npc_stopped_talking")
-        if not npc.is_connected("npc_stopped_talking", stop_talk_callable):
-            npc.connect("npc_stopped_talking", stop_talk_callable)
+    if not npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
+        npc.connect("npc_stopped_talking", _on_npc_stopped_talking)
 
-func _on_slowdown_area_body_exited(body: Node):
-    if body is NPC:
-        # If the NPC leaves, reduce slowdown count
-        _slowdown_entities -= 1
-        if _slowdown_entities < 0:
-            _slowdown_entities = 0
+func _on_slowdown_area_body_exited(body: Node2D):
+    # If the NPC leaves, reduce slowdown count
+    _slowdown_entities -= 1
 
-        # Disconnect signals
-        var npc: NPC = body
-        var start_talk_callable = Callable(self, "_on_npc_started_talking")
-        if npc.is_connected("npc_started_talking", start_talk_callable):
-            npc.disconnect("npc_started_talking", start_talk_callable)
+    # Disconnect signals
+    var npc: NPC = body
+    if npc.is_connected("npc_started_talking", _on_npc_started_talking):
+        npc.disconnect("npc_started_talking", _on_npc_started_talking)
 
-        var stop_talk_callable = Callable(self, "_on_npc_stopped_talking")
-        if npc.is_connected("npc_stopped_talking", stop_talk_callable):
-            npc.disconnect("npc_stopped_talking", stop_talk_callable)
+    if npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
+        npc.disconnect("npc_stopped_talking", _on_npc_stopped_talking)
 
 func _on_npc_started_talking(npc: NPC):
     # If NPC started talking, the player also enters TALK mode

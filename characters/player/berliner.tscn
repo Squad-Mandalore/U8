@@ -162,6 +162,7 @@ height = 36.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 z_index = 50
+collision_layer = 3
 slide_on_ceiling = false
 floor_stop_on_slope = false
 floor_block_on_wall = false
@@ -180,6 +181,8 @@ autoplay = "idle"
 frame_progress = 0.546964
 
 [node name="SlowdownArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlowdownArea"]
 position = Vector2(0, 16)

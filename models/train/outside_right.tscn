@@ -1,12 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgyaiggj66j2e"]
 
 [ext_resource type="Texture2D" uid="uid://n1wwn6rt65bi" path="res://models/train/outside_right.png" id="1_qs1i2"]
-[ext_resource type="Script" path="res://forground.gd" id="2_nd3qw"]
+[ext_resource type="Script" path="res://foreground.gd" id="2_nd3qw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeqew"]
 size = Vector2(34, 49)
 
 [node name="Area2D" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("2_nd3qw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
