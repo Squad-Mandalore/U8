@@ -67,7 +67,7 @@ func _start_talking() -> void:
     _direction = Vector2.ZERO
     _current_state = State.TALK
 
-    emit_signal("npc_started_talking", self)
+    npc_started_talking.emit(self)
 
 func _stop_talking() -> void:
     # This function needs to be called in order for player character to be able to walk again.
@@ -76,7 +76,7 @@ func _stop_talking() -> void:
     # Resume normal walking after a small delay or immediately
     _timer.start(1.0)
 
-    emit_signal("npc_stopped_talking", self)
+    npc_stopped_talking.emit(self)
 
 func _new_direction() -> void:
     _direction = Vector2(randi_range(-1, 1), randi_range(-1, 1))
