@@ -48,31 +48,29 @@ func switch_state(new_state: State):
                 _animated_sprite_2d.play("idle")
 
 
-func _on_slowdown_area_body_entered(body: Node):
-    if body is NPC:
-        # If we meet an NPC, slow down the player
-        _slowdown_entities += 1
+func _on_slowdown_area_body_entered(body: Node2D):
+    # If we meet an NPC, slow down the player
+    _slowdown_entities += 1
 
-        # Connect signals so we know when the NPC starts/stops talking
-        var npc: NPC = body
-        if not npc.is_connected("npc_started_talking", _on_npc_started_talking):
-            npc.connect("npc_started_talking", _on_npc_started_talking)
+    # Connect signals so we know when the NPC starts/stops talking
+    var npc: NPC = body
+    if not npc.is_connected("npc_started_talking", _on_npc_started_talking):
+        npc.connect("npc_started_talking", _on_npc_started_talking)
 
-        if not npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
-            npc.connect("npc_stopped_talking", _on_npc_stopped_talking)
+    if not npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
+        npc.connect("npc_stopped_talking", _on_npc_stopped_talking)
 
-func _on_slowdown_area_body_exited(body: Node):
-    if body is NPC:
-        # If the NPC leaves, reduce slowdown count
-        _slowdown_entities -= 1
+func _on_slowdown_area_body_exited(body: Node2D):
+    # If the NPC leaves, reduce slowdown count
+    _slowdown_entities -= 1
 
-        # Disconnect signals
-        var npc: NPC = body
-        if npc.is_connected("npc_started_talking", _on_npc_started_talking):
-            npc.disconnect("npc_started_talking", _on_npc_started_talking)
+    # Disconnect signals
+    var npc: NPC = body
+    if npc.is_connected("npc_started_talking", _on_npc_started_talking):
+        npc.disconnect("npc_started_talking", _on_npc_started_talking)
 
-        if npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
-            npc.disconnect("npc_stopped_talking", _on_npc_stopped_talking)
+    if npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
+        npc.disconnect("npc_stopped_talking", _on_npc_stopped_talking)
 
 func _on_npc_started_talking(npc: NPC):
     # If NPC started talking, the player also enters TALK mode

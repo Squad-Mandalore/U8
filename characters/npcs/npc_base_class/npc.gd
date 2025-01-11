@@ -97,14 +97,12 @@ func _on_timer_timeout() -> void:
 
 func _on_slowdown_area_body_entered(body: Node2D):
     # If the Player enters this NPC's slowdown area, NPC speed is halved
-    if body.is_in_group("Player"):
-        _slowdown_entities += 1
-        _rich_text_label.visible = true
+    _slowdown_entities += 1
+    _rich_text_label.visible = true
 
 func _on_slowdown_area_body_exited(body: Node2D):
     # If the Player leaves, restore normal speed (if no more slowdown entities)
-    if body.is_in_group("Player"):
-        _slowdown_entities -= 1
+    _slowdown_entities -= 1
 
-        if _slowdown_entities == 0:
-            _rich_text_label.visible = false
+    if _slowdown_entities == 0:
+        _rich_text_label.visible = false
