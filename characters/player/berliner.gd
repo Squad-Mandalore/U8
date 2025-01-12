@@ -10,6 +10,8 @@ var _slowdown_entities: int = 0:
 
 enum State {IDLE, WALK, TALK}
 var _current_state: State = State.IDLE
+signal talk_enabled()
+signal talk_disabled()
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK:
@@ -60,6 +62,8 @@ func _on_slowdown_area_body_entered(body: Node2D):
     if not npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
         npc.connect("npc_stopped_talking", _on_npc_stopped_talking)
 
+    talk_enabled.emit()
+
 func _on_slowdown_area_body_exited(body: Node2D):
     # If the NPC leaves, reduce slowdown count
     _slowdown_entities -= 1
@@ -71,6 +75,8 @@ func _on_slowdown_area_body_exited(body: Node2D):
 
     if npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
         npc.disconnect("npc_stopped_talking", _on_npc_stopped_talking)
+
+    talk_disabled.emit()
 
 func _on_npc_started_talking(npc: NPC):
     # If NPC started talking, the player also enters TALK mode
