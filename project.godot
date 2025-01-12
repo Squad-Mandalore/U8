@@ -14,7 +14,9 @@ config/name="U8"
 config/version="0.1.0"
 run/main_scene="res://scenes/opening/opening_with_logo.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-boot_splash/bg_color=Color(0.562897, 0.464578, 0.118422, 1)
+boot_splash/bg_color=Color(0.984314, 0.94902, 0.211765, 1)
+boot_splash/image="res://characters/player/berliner.png"
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -28,9 +30,11 @@ ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/autolo
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=2
+window/size/mode=4
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"
-window/vsync/vsync_mode=0
+window/vsync/vsync_mode=2
 
 [editor_plugins]
 
