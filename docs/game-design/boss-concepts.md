@@ -1,6 +1,20 @@
 # Boss Concepts
 erste Sammlung an Boss Ideen für angegebene Stages
 
+## Base Boss stats
+Gesundheit: 100
+Rüstung: 10
+Initiative: 5
+Ausweichchance: 0
+Stärke: 50
+Coolnes: 0
+Attraktivität: 0
+Intelligenz: 0
+Vergiftungsresistenz: Nein
+Blutungsresistenz: Nein
+Drogenresistenz: Nein
+
+
 ## Stage 5 Paracelsus-Bad - Der Bademeister
 
 ### Lore
@@ -12,6 +26,20 @@ Der erste Boss, welcher uns während unserer Fahrt in der U8 begegnet ist der Ba
 - aber ab 2. oder 3. Run machbar
 - ist Vergiftet
 
+### Stats
+
+Gesundheit: 50
+Rüstung: 0
+Initiative: 10
+Ausweichchance: 5
+Stärke: 50
+Coolnes: 10
+Attraktivität: 20
+Intelligenz: 0
+Vergiftungsresistenz: Nein
+Blutungsresistenz: Nein
+Drogenresistenz: Nein
+
 ## Stage 10 Gesundbrunnen - Steroider Pumper
 
 ### Lore
@@ -21,6 +49,20 @@ Der zweite Boss, welcher sich mit uns anlegen möchte, ist der Pumper auf Steroi
 - stats stark physisch
 - viel Leben
 - bisschen vergiftung maybe
+
+### Stats
+
+Gesundheit: 70
+Rüstung: 0
+Initiative: 10
+Ausweichchance: 5
+Stärke: 70
+Coolnes: 0
+Attraktivität: 20
+Intelligenz: 0
+Vergiftungsresistenz: Ja
+Blutungsresistenz: Nein
+Drogenresistenz: Nein
 
 ## Stage 15 Alexanderplatz - Touristen Masse
 
@@ -34,6 +76,20 @@ Der Alexanderplatz ist das Herzstück in Berlin. Direkt nebenan kann man das Rot
 - random beklaut werden, wenige Euronen gehen verloren
 - Touristen Masse hat viel Leben
 
+### Stats
+
+Gesundheit: 100
+Rüstung: 0
+Initiative: 20
+Ausweichchance: 0
+Stärke: 40
+Coolnes: 0
+Attraktivität: 0
+Intelligenz: 20
+Vergiftungsresistenz: Nein
+Blutungsresistenz: Nein
+Drogenresistenz: Ja
+
 ## Stage 19 Kottbusser Tor - Zombiekönig
 
 ### Lore
@@ -43,6 +99,20 @@ Du suchst Drogen? Am Kottbusser Tor wirst du fündig! Auf dem Boden liegen Spriz
 - fetter Zombiekönig
 - sehr starker Boss (hilfe durch Taubenquestline später möglich)
 
+### Stats
+
+Gesundheit: 80
+Rüstung: 0
+Initiative: 0
+Ausweichchance: 0
+Stärke: 50
+Coolnes: 0
+Attraktivität: 0
+Intelligenz: 0
+Vergiftungsresistenz: Ja
+Blutungsresistenz: Ja
+Drogenresistenz: Ja
+
 ## Stage 24 Hermannstraße - Berliner Bär
 
 ### Lore
@@ -51,27 +121,96 @@ Der Berliner Bär ist seit 1280 das Wappentier Berlins. Als lebende Wappentiere 
 ### Ideen
 - gruseliger großer schwarzer Bär
 
+### Stats
+
+Gesundheit: 150
+Rüstung: 20
+Initiative: 20
+Ausweichchance: 15
+Stärke: 80
+Coolnes: 0
+Attraktivität: 0
+Intelligenz: 15
+Vergiftungsresistenz: Ja
+Blutungsresistenz: Ja
+Drogenresistenz: Nein
 
 # Minibosse
 
-Minibosse werden werden nach erstmaligem besiegen des Endbosses freigeschaltet. Sie können zufällig an den gegebenen Stages erscheinen.
+Minibosse werden werden nach erstmaligem besiegen der Stagebosse freigeschaltet. Wenn z.B. der erste Boss, der Bademeister einmal besiegt wurde, dann taucht ab dem nächsten Run bei der Stage 3 der Miniboss, der Dokotor, auf.
 
 ## Stage 3 Karl-Bonhoeffer-Nervenklinik - Der Doktor
 
 ### Lore
 Nach Jahren in der Karl-Bonhoeffer-Nervenklinik bleibt auch er psychisch nicht stabil. Nach dem er fünf Patienten umgebracht hat und die Morde einem anderen Patienten in die Schuhe geschoben hat macht er sich auf den Heimweg. Der Wahnsinn steht ins seinen Augen. Als er den Spieler erblickt läuft im der Speichel aus dem Mund und er greift an.
 
+### Stats
+
+Gesundheit: 50
+Rüstung: 0
+Initiative: 10
+Ausweichchance: 3
+Stärke: 30
+Coolnes: 10
+Attraktivität: 0
+Intelligenz: 10
+Vergiftungsresistenz: Nein
+Blutungsresistenz: Nein
+Drogenresistenz: Ja
+
 ## Stage 8 Osloer Straße - Der Yeti
 
 ### Lore
 Dem Yeti wird es zu warm in Norwegen. Schuld daran ist der Klimawandel. Motiviert die Ursache zu bekämpfen macht sich der Yeti auf nach Europa um die Menschen zu bekämpfen, die für den von ihm gehassten Klimawandel verantwortlich sind. Der einzige Flieger in dem auch Yetis mitfliegen dürfen geht von Oslo nach Berlin. Dort angekommen möchte er ein Exemple an der Osloer Straße statuieren. Er fängt an den Bahnhof in Schut und Asche zu legen. Irgendwer muss ihn aufhalten.
+
+### Stats
+
+Gesundheit: 60
+Rüstung: 10
+Initiative: 10
+Ausweichchance: 5
+Stärke: 40
+Coolnes: 20
+Attraktivität: 0
+Intelligenz: 0
+Vergiftungsresistenz: Nein
+Blutungsresistenz: Nein
+Drogenresistenz: Nein
 
 ## Stage 13 Rosenthaler Platz - Lucio101
 
 ### Lore
 Der bekannte Berliner Rapper chillt wie üblich am Rosi. Wenn ihm dein Gesicht nicht passt macht er auf dicke Hose und fängt an dich zu schlagen und zu schuppsen.
 
+### Stats
+
+Gesundheit: 40
+Rüstung: 0
+Initiative: 20
+Ausweichchance: 25
+Stärke: 30
+Coolnes: 50
+Attraktivität: 20
+Intelligenz: 0
+Vergiftungsresistenz: Nein
+Blutungsresistenz: Nein
+Drogenresistenz: Ja
+
 ## Stage 18 Moritzplatz - Moritz
 
 ### Lore
-Eigentlich ein echt entspannter Typ. Doch als im sein Burrito auseinanderfällt und er ihn mit Messer und gabel essen muss wird er stink sauer. Eine falsche Bemerkung und du stirbst...
+Moritz war einmal ein ganz harmloser Informatikstudent. Er lebte auf dem Dorf, weshalb im nichts anderes übrig blieb als in den tiefer der digitalen Welt umher zu Wandeln, um die stetige Langeweile zu bekämpfen. Eines Tages startete er auf seinem PC ein Spiel. Seine Begeisterung war grenzlos. Obwohl es ein hartes Spiel war und er dutzende, wenn nicht hunderte Male starb, gab er nie auf. Er sammlte Erfahrung und wurde stärker und stärker. Er bezwang das Spiel und im Laufe der Jahre spielte er auch die Nachgänger dieses Spiels. Auch dort Blicke er dem Tod tausende Male ins Gesicht. Irgendwann verschmolzen für ihn die Grenzen zwischen der Wirklichkeit der Spielreihe und unserer. Moritz ist nun ein gefürchteter Ritter, der es mit jedem noch so starken gegner Aufnehmen kann. Der Name dieses Spiels lautete.... Dark Souls.
+
+### Stats
+
+Gesundheit: 60
+Rüstung: 10
+Initiative: 10
+Ausweichchance: 10
+Stärke: 40
+Coolnes: 0
+Attraktivität: 20
+Intelligenz: 40
+Vergiftungsresistenz: Nein
+Blutungsresistenz: Ja
+Drogenresistenz: Nein
