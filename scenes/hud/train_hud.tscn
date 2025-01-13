@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkquoqbrb6bh2"]
+[gd_scene load_steps=3 format=3 uid="uid://bkquoqbrb6bh2"]
 
 [ext_resource type="Script" path="res://scenes/hud/train_hud.gd" id="1_asv8f"]
+[ext_resource type="PackedScene" uid="uid://b2utiw3nl1pqr" path="res://scenes/hud/status_panel.tscn" id="2_k8b6u"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_asv8f")
@@ -26,3 +27,13 @@ alignment = 2
 [node name="Interaction" type="Button" parent="MarginContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
+
+[node name="StatusPanel" parent="." instance=ExtResource("2_k8b6u")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_top = -110.0
+offset_bottom = -110.0
+grow_horizontal = 1
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)

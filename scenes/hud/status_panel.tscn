@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2utiw3nl1pqr"]
+
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_22btv"]
+[ext_resource type="Texture2D" uid="uid://v30tygcfyudp" path="res://assets/hud/progressovertexture.svg" id="2_73vt0"]
+[ext_resource type="Texture2D" uid="uid://o5oq3c4kxsi0" path="res://assets/hud/coin.svg" id="3_pneu6"]
+[ext_resource type="Texture2D" uid="uid://bnevchla4cibe" path="res://assets/hud/blood.svg" id="4_cowbk"]
+[ext_resource type="Texture2D" uid="uid://cbfifuovsjj1k" path="res://assets/hud/flask.svg" id="5_lp0dp"]
+[ext_resource type="Texture2D" uid="uid://dl3j2c5kqoiqt" path="res://assets/hud/syringe.svg" id="6_lp7yt"]
+
+[node name="StatusPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 547.0
+color = Color(0.217701, 0.217701, 0.217701, 1)
+
+[node name="RowsVBox" type="VBoxContainer" parent="BackgroundColorRect"]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 547.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FirstRowMarginBox" type="MarginContainer" parent="BackgroundColorRect/RowsVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 82
+theme_override_constants/margin_top = 41
+theme_override_constants/margin_right = 82
+
+[node name="FirstRowHBox" type="HBoxContainer" parent="BackgroundColorRect/RowsVBox/FirstRowMarginBox"]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="BackgroundColorRect/RowsVBox/FirstRowMarginBox/FirstRowHBox"]
+custom_minimum_size = Vector2(0, 132)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_22btv")
+theme_override_font_sizes/font_size = 132
+text = "Gesundheit"
+
+[node name="CurFromMaxHealthLabel" type="Label" parent="BackgroundColorRect/RowsVBox/FirstRowMarginBox/FirstRowHBox"]
+custom_minimum_size = Vector2(0, 132)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_22btv")
+theme_override_font_sizes/font_size = 132
+text = "100/100"
+horizontal_alignment = 2
+
+[node name="SecondRowMarginBox" type="MarginContainer" parent="BackgroundColorRect/RowsVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 82
+theme_override_constants/margin_top = 41
+theme_override_constants/margin_right = 82
+
+[node name="HealthBar" type="TextureProgressBar" parent="BackgroundColorRect/RowsVBox/SecondRowMarginBox"]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+value = 100.0
+texture_progress = ExtResource("2_73vt0")
+
+[node name="HealthBarBottomMarginBox" type="MarginContainer" parent="BackgroundColorRect/RowsVBox/SecondRowMarginBox"]
+layout_mode = 2
+theme_override_constants/margin_top = 82
+
+[node name="ThirdRowMarginBox" type="MarginContainer" parent="BackgroundColorRect/RowsVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 82
+theme_override_constants/margin_right = 82
+theme_override_constants/margin_bottom = 41
+
+[node name="ThirdRowHBox" type="HBoxContainer" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox"]
+layout_mode = 2
+
+[node name="CoinTexture" type="TextureRect" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+texture = ExtResource("3_pneu6")
+stretch_mode = 6
+
+[node name="CoinCountMarginBox" type="MarginContainer" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 78
+
+[node name="CoinCountLabel" type="Label" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+custom_minimum_size = Vector2(0, 132)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_22btv")
+theme_override_font_sizes/font_size = 132
+text = "132 Euronen"
+
+[node name="ThirdRowHBoxStatusEffects" type="HBoxContainer" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="BloodTexture" type="TextureRect" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+texture = ExtResource("4_cowbk")
+stretch_mode = 4
+
+[node name="FlaskTexture" type="TextureRect" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+texture = ExtResource("5_lp0dp")
+stretch_mode = 4
+
+[node name="SyringeTexture" type="TextureRect" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+texture = ExtResource("6_lp7yt")
+stretch_mode = 4
