@@ -171,7 +171,6 @@ platform_on_leave = 2
 script = ExtResource("1_pkp7h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_dpkiy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -179,8 +178,10 @@ sprite_frames = SubResource("SpriteFrames_v3pdd")
 animation = &"walk"
 autoplay = "idle"
 frame_progress = 0.546964
+offset = Vector2(0, -16)
 
 [node name="SlowdownArea" type="Area2D" parent="."]
+position = Vector2(0, -16)
 collision_layer = 0
 collision_mask = 4
 
