@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwhe6gna3hbr"]
+
+[ext_resource type="Script" path="res://models/station/tower.gd" id="1_fnt1f"]
+[ext_resource type="Texture2D" uid="uid://dstjcktwqx64" path="res://assets/hub/tower_wittenau.png" id="1_t63v6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fb3fl"]
+size = Vector2(30, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp1t3"]
+size = Vector2(30, 78)
+
+[node name="Tower" type="StaticBody2D"]
+script = ExtResource("1_fnt1f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t63v6")
+offset = Vector2(0, -55.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_fb3fl")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_gp1t3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(15, -90, 16, -90, 16, -92, 17, -92, 17, -94, 18, -94, 18, -95, 19, -95, 19, -97, 20, -97, 20, -98, 21, -98, 21, -99, 22, -99, 22, -106, 21, -106, 21, -107, 20, -107, 20, -108, 18, -108, 18, -109, 17, -109, 17, -110, 16, -110, 16, -111, 15, -111, 15, -112, -15, -112, -15, -111, -16, -111, -16, -110, -17, -110, -17, -109, -18, -109, -18, -108, -20, -108, -20, -107, -21, -107, -21, -106, -22, -106, -22, -99, -21, -99, -21, -98, -20, -98, -20, -98, -20, -97, -19, -97, -19, -95, -18, -95, -18, -94, -17, -94, -17, -92, -16, -92, -16, -90)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
