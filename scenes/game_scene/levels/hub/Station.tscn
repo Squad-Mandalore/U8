@@ -73,70 +73,70 @@ drag_vertical_enabled = true
 y_sort_enabled = true
 
 [node name="Tower" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(239, 252)
+position = Vector2(239, 251)
 
 [node name="Tower2" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(407, 252)
+position = Vector2(407, 251)
 
 [node name="Tower3" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(576, 252)
+position = Vector2(576, 251)
 
 [node name="Tower4" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(743, 252)
+position = Vector2(743, 251)
 
 [node name="Tower6" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1097, 252)
+position = Vector2(1097, 251)
 
 [node name="Tower5" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(930, 252)
+position = Vector2(930, 251)
 
 [node name="Tower7" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1266, 252)
+position = Vector2(1266, 251)
 
 [node name="Tower8" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1433, 252)
+position = Vector2(1433, 251)
 
 [node name="Tower9" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1434, 252)
+position = Vector2(1434, 251)
 
 [node name="Tower10" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1602, 252)
+position = Vector2(1602, 251)
 
 [node name="Tower11" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1769, 252)
+position = Vector2(1769, 251)
 
 [node name="Tower12" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(239, 421.5)
+position = Vector2(239, 420.5)
 
 [node name="Tower13" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(407, 421.5)
+position = Vector2(407, 420.5)
 
 [node name="Towe14" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(576, 421.5)
+position = Vector2(576, 420.5)
 
 [node name="Tower15" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(743, 421.5)
+position = Vector2(743, 420.5)
 
 [node name="Tower16" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(930, 421.5)
+position = Vector2(930, 420.5)
 
 [node name="Tower17" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1097, 421.5)
+position = Vector2(1097, 420.5)
 
 [node name="Tower18" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1266, 421.5)
+position = Vector2(1266, 420.5)
 
 [node name="Tower19" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1433, 421.5)
+position = Vector2(1433, 420.5)
 
 [node name="Tower20" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1434, 421.5)
+position = Vector2(1434, 420.5)
 
 [node name="Tower21" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1602, 421.5)
+position = Vector2(1602, 420.5)
 
 [node name="Tower22" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1769, 421.5)
+position = Vector2(1769, 420.5)
 
 [node name="TrainDoor" type="Area2D" parent="."]
 position = Vector2(962, 186)
