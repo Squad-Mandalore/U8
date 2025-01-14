@@ -66,4 +66,5 @@ position = Vector2(486, 132)
 [node name="Politiker" parent="." instance=ExtResource("10_rky5v")]
 position = Vector2(264, 163)
 
+[connection signal="ready" from="." to="Player" method="_disable_scooting"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
