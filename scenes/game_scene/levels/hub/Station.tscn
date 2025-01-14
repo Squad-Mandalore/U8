@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
 [ext_resource type="Texture2D" uid="uid://b36noacmhtswo" path="res://assets/hub/hub.png" id="2_c8rit"]
 [ext_resource type="Script" path="res://scenes/game_scene/levels/hub/station.gd" id="3_08vcd"]
-[ext_resource type="FontFile" uid="uid://btwbpdhvloch1" path="res://assets/fonts/pixeled/Pixeled.ttf" id="3_p05xt"]
+[ext_resource type="LabelSettings" uid="uid://vt8vv8530qgd" path="res://assets/hub/station_name_label_settings.tres" id="3_hxi0m"]
 [ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://models/station/tower.tscn" id="4_wvqyq"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
@@ -62,10 +62,9 @@ offset_bottom = -236.0
 [node name="StationName" type="Label" parent="Background/CenterContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_p05xt")
-theme_override_font_sizes/font_size = 5
 text = "Wittenau
 Wilhelmsruher Damm"
+label_settings = ExtResource("3_hxi0m")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
