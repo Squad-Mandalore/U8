@@ -172,7 +172,6 @@ platform_on_leave = 2
 script = ExtResource("1_muxck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_bg0ao")
 
 [node name="Timer" type="Timer" parent="."]
@@ -181,13 +180,13 @@ shape = SubResource("RectangleShape2D_bg0ao")
 sprite_frames = SubResource("SpriteFrames_bdfr3")
 animation = &"walk"
 autoplay = "idle"
+offset = Vector2(0, -16)
 
 [node name="SlowdownArea" type="Area2D" parent="." groups=["NPC"]]
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlowdownArea"]
-position = Vector2(0, 16)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_lrsox")
 
