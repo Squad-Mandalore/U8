@@ -49,14 +49,18 @@ func _physics_process(delta: float) -> void:
 
 	# Changed to move_and_collide instead of move_and_slide
 	# As slide thing caused the sticking to each other bug
-	move_and_collide(velocity * delta)
+	move_and_collide(velocity * delta)	
+		
+	
 
 func _input(event: InputEvent) -> void:
 	# If the label is visible and the player presses "talk", toggle _talking
-	if event.is_action_pressed("talk") and _rich_text_label.visible:
-		if _talking:
+	if _talking:
+		if event.is_action("end_chat"):
 			_stop_talking()
-		else:
+			get_viewport().set_input_as_handled()
+	if event.is_action_pressed("talk") and _rich_text_label.visible:
+		if not _talking:
 			_start_talking()
 
 func _start_talking() -> void:
