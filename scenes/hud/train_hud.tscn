@@ -29,11 +29,3 @@ visible = false
 layout_mode = 2
 
 [node name="StatusPanel" parent="." instance=ExtResource("2_k8b6u")]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_right = 0.0
-offset_top = -110.0
-offset_bottom = -110.0
-grow_horizontal = 1
-grow_vertical = 0
-scale = Vector2(0.2, 0.2)

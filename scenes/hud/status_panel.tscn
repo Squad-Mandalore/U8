@@ -9,42 +9,49 @@
 
 [node name="StatusPanel" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 2
+anchor_top = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
-[node name="BackgroundColorRect" type="ColorRect" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 547.0
+offset_top = -754.0
+offset_right = 2127.0
+theme_override_constants/margin_left = 207
+theme_override_constants/margin_bottom = 207
+
+[node name="BackgroundColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
 color = Color(0.217701, 0.217701, 0.217701, 1)
 
-[node name="RowsVBox" type="VBoxContainer" parent="BackgroundColorRect"]
+[node name="RowsVBox" type="VBoxContainer" parent="MarginContainer/BackgroundColorRect"]
 layout_mode = 2
 offset_right = 1920.0
 offset_bottom = 547.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FirstRowMarginBox" type="MarginContainer" parent="BackgroundColorRect/RowsVBox"]
+[node name="FirstRowMarginBox" type="MarginContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 82
 theme_override_constants/margin_top = 41
 theme_override_constants/margin_right = 82
 
-[node name="FirstRowHBox" type="HBoxContainer" parent="BackgroundColorRect/RowsVBox/FirstRowMarginBox"]
+[node name="FirstRowHBox" type="HBoxContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox/FirstRowMarginBox"]
 layout_mode = 2
 
-[node name="HealthLabel" type="Label" parent="BackgroundColorRect/RowsVBox/FirstRowMarginBox/FirstRowHBox"]
+[node name="HealthLabel" type="Label" parent="MarginContainer/BackgroundColorRect/RowsVBox/FirstRowMarginBox/FirstRowHBox"]
 custom_minimum_size = Vector2(0, 132)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_22btv")
 theme_override_font_sizes/font_size = 132
 text = "Gesundheit"
 
-[node name="CurFromMaxHealthLabel" type="Label" parent="BackgroundColorRect/RowsVBox/FirstRowMarginBox/FirstRowHBox"]
+[node name="CurFromMaxHealthLabel" type="Label" parent="MarginContainer/BackgroundColorRect/RowsVBox/FirstRowMarginBox/FirstRowHBox"]
 custom_minimum_size = Vector2(0, 132)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -53,42 +60,42 @@ theme_override_font_sizes/font_size = 132
 text = "100/100"
 horizontal_alignment = 2
 
-[node name="SecondRowMarginBox" type="MarginContainer" parent="BackgroundColorRect/RowsVBox"]
+[node name="SecondRowMarginBox" type="MarginContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 82
 theme_override_constants/margin_top = 41
 theme_override_constants/margin_right = 82
 
-[node name="HealthBar" type="TextureProgressBar" parent="BackgroundColorRect/RowsVBox/SecondRowMarginBox"]
+[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/BackgroundColorRect/RowsVBox/SecondRowMarginBox"]
 custom_minimum_size = Vector2(0, 29)
 layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("2_73vt0")
 
-[node name="HealthBarBottomMarginBox" type="MarginContainer" parent="BackgroundColorRect/RowsVBox/SecondRowMarginBox"]
+[node name="HealthBarBottomMarginBox" type="MarginContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox/SecondRowMarginBox"]
 layout_mode = 2
 theme_override_constants/margin_top = 82
 
-[node name="ThirdRowMarginBox" type="MarginContainer" parent="BackgroundColorRect/RowsVBox"]
+[node name="ThirdRowMarginBox" type="MarginContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 82
 theme_override_constants/margin_right = 82
 theme_override_constants/margin_bottom = 41
 
-[node name="ThirdRowHBox" type="HBoxContainer" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox"]
+[node name="ThirdRowHBox" type="HBoxContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox"]
 layout_mode = 2
 
-[node name="CoinTexture" type="TextureRect" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+[node name="CoinTexture" type="TextureRect" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 texture = ExtResource("3_pneu6")
 stretch_mode = 6
 
-[node name="CoinCountMarginBox" type="MarginContainer" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+[node name="CoinCountMarginBox" type="MarginContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 78
 
-[node name="CoinCountLabel" type="Label" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+[node name="CoinCountLabel" type="Label" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 custom_minimum_size = Vector2(0, 132)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -96,24 +103,24 @@ theme_override_fonts/font = ExtResource("1_22btv")
 theme_override_font_sizes/font_size = 132
 text = "132 Euronen"
 
-[node name="ThirdRowHBoxStatusEffects" type="HBoxContainer" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+[node name="ThirdRowHBoxStatusEffects" type="HBoxContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 2
 
-[node name="BloodTexture" type="TextureRect" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+[node name="BloodTexture" type="TextureRect" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 texture = ExtResource("4_cowbk")
 stretch_mode = 4
 
-[node name="FlaskTexture" type="TextureRect" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+[node name="FlaskTexture" type="TextureRect" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 texture = ExtResource("5_lp0dp")
 stretch_mode = 4
 
-[node name="SyringeTexture" type="TextureRect" parent="BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+[node name="SyringeTexture" type="TextureRect" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 texture = ExtResource("6_lp7yt")
