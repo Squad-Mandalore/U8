@@ -1,30 +1,169 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxtsv1xtfd42n"]
+[gd_scene load_steps=12 format=3 uid="uid://dxtsv1xtfd42n"]
 
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
-[ext_resource type="PackedScene" uid="uid://c8l8bcwfbquvm" path="res://models/train/center.tscn" id="2_ne1wo"]
+[ext_resource type="Texture2D" uid="uid://b36noacmhtswo" path="res://assets/hub/hub.png" id="2_c8rit"]
 [ext_resource type="Script" path="res://scenes/game_scene/levels/hub/station.gd" id="3_08vcd"]
+[ext_resource type="LabelSettings" uid="uid://vt8vv8530qgd" path="res://assets/hub/station_name_label_settings.tres" id="3_hxi0m"]
+[ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://models/station/tower.tscn" id="4_wvqyq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wlaj"]
-size = Vector2(418.195, 180.142)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
+b = Vector2(822, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fyc4f"]
+b = Vector2(1125, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w2mii"]
+b = Vector2(0, 310)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_luigf"]
+b = Vector2(-1945, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_a187x"]
+b = Vector2(-1, 312)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0h8n"]
+size = Vector2(33, 20)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("3_08vcd")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_gtc8i")]
-position = Vector2(280, 268)
+[node name="Background" type="StaticBody2D" parent="."]
+position = Vector2(1000, 330)
 
-[node name="Center" parent="." instance=ExtResource("2_ne1wo")]
-position = Vector2(259, 111)
-rotation = -0.623083
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+texture = ExtResource("2_c8rit")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(267, 119)
-rotation = -0.623083
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
+position = Vector2(-969, -143)
+shape = SubResource("SegmentShape2D_hgaoi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background"]
+position = Vector2(-148, -140)
+shape = SubResource("SegmentShape2D_fyc4f")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Background"]
+position = Vector2(977, -138)
+shape = SubResource("SegmentShape2D_w2mii")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Background"]
+position = Vector2(976, 170)
+shape = SubResource("SegmentShape2D_luigf")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Background"]
+position = Vector2(-969, -142)
+shape = SubResource("SegmentShape2D_a187x")
+
+[node name="CenterContainer" type="CenterContainer" parent="Background"]
+offset_left = 311.0
+offset_top = -267.0
+offset_right = 403.0
+offset_bottom = -236.0
+
+[node name="StationName" type="Label" parent="Background/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Wittenau
+Wilhelmsruher Damm"
+label_settings = ExtResource("3_hxi0m")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="CharacterBody2D" parent="Node2D" instance=ExtResource("1_gtc8i")]
+z_index = 0
+position = Vector2(961, 210)
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/CharacterBody2D"]
+zoom = Vector2(4, 4)
+limit_left = 32
+limit_top = 0
+limit_right = 1979
+limit_bottom = 654
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="Towers" type="CanvasGroup" parent="Node2D"]
+y_sort_enabled = true
+
+[node name="Tower" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(239, 251)
+
+[node name="Tower2" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(407, 251)
+
+[node name="Tower3" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(576, 251)
+
+[node name="Tower4" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(743, 251)
+
+[node name="Tower6" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1097, 251)
+
+[node name="Tower5" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(930, 251)
+
+[node name="Tower7" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1266, 251)
+
+[node name="Tower8" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1433, 251)
+
+[node name="Tower9" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1434, 251)
+
+[node name="Tower10" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1602, 251)
+
+[node name="Tower11" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1769, 251)
+
+[node name="Tower12" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(239, 420.5)
+
+[node name="Tower13" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(407, 420.5)
+
+[node name="Towe14" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(576, 420.5)
+
+[node name="Tower15" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(743, 420.5)
+
+[node name="Tower16" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(930, 420.5)
+
+[node name="Tower17" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1097, 420.5)
+
+[node name="Tower18" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1266, 420.5)
+
+[node name="Tower19" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1433, 420.5)
+
+[node name="Tower20" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1434, 420.5)
+
+[node name="Tower21" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1602, 420.5)
+
+[node name="Tower22" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1769, 420.5)
+
+[node name="TrainDoor" type="Area2D" parent="."]
+position = Vector2(962, 186)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-107.492, -13.2081)
-shape = SubResource("RectangleShape2D_1wlaj")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrainDoor"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_t0h8n")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="ready" from="." to="Node2D/CharacterBody2D" method="_enable_scooting"]
+[connection signal="body_entered" from="TrainDoor" to="." method="_on_area_2d_body_entered"]

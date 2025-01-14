@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2utiw3nl1pqr"]
+[gd_scene load_steps=8 format=3 uid="uid://b2utiw3nl1pqr"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_22btv"]
+[ext_resource type="Script" path="res://scenes/hud/status_panel.gd" id="1_28hqb"]
 [ext_resource type="Texture2D" uid="uid://v30tygcfyudp" path="res://assets/hud/progressovertexture.svg" id="2_73vt0"]
 [ext_resource type="Texture2D" uid="uid://o5oq3c4kxsi0" path="res://assets/hud/coin.svg" id="3_pneu6"]
 [ext_resource type="Texture2D" uid="uid://bnevchla4cibe" path="res://assets/hud/blood.svg" id="4_cowbk"]
@@ -16,6 +17,7 @@ grow_vertical = 0
 scale = Vector2(0.2, 0.2)
 size_flags_horizontal = 0
 size_flags_vertical = 0
+script = ExtResource("1_28hqb")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -52,6 +54,7 @@ theme_override_font_sizes/font_size = 132
 text = "Gesundheit"
 
 [node name="CurFromMaxHealthLabel" type="Label" parent="MarginContainer/BackgroundColorRect/RowsVBox/FirstRowMarginBox/FirstRowHBox"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 132)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -67,6 +70,7 @@ theme_override_constants/margin_top = 41
 theme_override_constants/margin_right = 82
 
 [node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/BackgroundColorRect/RowsVBox/SecondRowMarginBox"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 29)
 layout_mode = 2
 value = 100.0
@@ -91,17 +95,18 @@ layout_mode = 2
 texture = ExtResource("3_pneu6")
 stretch_mode = 6
 
-[node name="CoinCountMarginBox" type="MarginContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+[node name="BalanceMarginBox" type="MarginContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 78
 
-[node name="CoinCountLabel" type="Label" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+[node name="BalanceLabel" type="Label" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 132)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_22btv")
 theme_override_font_sizes/font_size = 132
-text = "132 Euronen"
+text = "100000 Euronen"
 
 [node name="ThirdRowHBoxStatusEffects" type="HBoxContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 layout_mode = 2
@@ -109,18 +114,21 @@ size_flags_horizontal = 3
 alignment = 2
 
 [node name="BloodTexture" type="TextureRect" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 texture = ExtResource("4_cowbk")
 stretch_mode = 4
 
 [node name="FlaskTexture" type="TextureRect" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 texture = ExtResource("5_lp0dp")
 stretch_mode = 4
 
 [node name="SyringeTexture" type="TextureRect" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 texture = ExtResource("6_lp7yt")
