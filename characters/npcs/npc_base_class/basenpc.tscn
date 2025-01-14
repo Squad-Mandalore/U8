@@ -100,7 +100,6 @@ z_index = 50
 script = ExtResource("1_pda6j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_bg0ao")
 
 [node name="Timer" type="Timer" parent="."]
@@ -110,11 +109,11 @@ position = Vector2(-4, 0)
 sprite_frames = SubResource("SpriteFrames_7wqtt")
 animation = &"idle"
 autoplay = "idle"
+offset = Vector2(0, -16)
 
 [node name="SlowdownArea" type="Area2D" parent="." groups=["NPC"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlowdownArea"]
-position = Vector2(0, 16)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_n6rf0")
 
