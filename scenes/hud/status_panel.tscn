@@ -26,7 +26,7 @@ theme_override_constants/margin_bottom = 207
 
 [node name="BackgroundColorRect" type="ColorRect" parent="MarginContainer"]
 layout_mode = 2
-color = Color(0.217701, 0.217701, 0.217701, 1)
+color = Color(0.0823529, 0.0823529, 0.0823529, 1)
 
 [node name="RowsVBox" type="VBoxContainer" parent="MarginContainer/BackgroundColorRect"]
 layout_mode = 2
