@@ -2,6 +2,8 @@ class_name Player
 extends CharacterBody2D
 
 const SPEED: float = 102.0
+signal started_talking(npc: NPC)
+signal stopped_talking(npc: NPC)
 var _slowdown_entities: int = 0:
 	set(value):
 		_slowdown_entities = max(value, 0)
@@ -76,8 +78,10 @@ func _on_npc_started_talking(npc: NPC):
 	# If NPC started talking, the player also enters TALK mode
 	switch_state(State.TALK)
 	print("NPC started talking to you")
+	started_talking.emit(npc)
 
 func _on_npc_stopped_talking(npc: NPC):
 	# If NPC stopped talking, the player reverts to IDLE (or WALK if moving)
 	switch_state(State.IDLE)
 	print("NPC stopped talking to you")
+	stopped_talking.emit(npc)

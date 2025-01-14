@@ -1,6 +1,7 @@
 extends Node2D
 
 signal level_won
+signal conversation_started
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -15,10 +16,11 @@ func _on_area_2d_body_entered(body:Node2D) -> void:
 func _ready():
 	$DialogueBox.hide()
 
-func _on_world_start_conversation(character_name):
+func _on_world_start_conversation(character:NPC):
 	$DialogueBox.show()
+	conversation_started.emit(character)
 
-func _on_world_end_conversation(character_name):
+func _on_world_end_conversation(character:NPC):
 	$DialogueBox.hide()
 	
 func _on_dialogue_box_send_message(message):
