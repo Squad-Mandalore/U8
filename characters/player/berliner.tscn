@@ -233,11 +233,9 @@ shape = SubResource("RectangleShape2D_dpkiy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v3pdd")
-animation = &"scooting_upwards"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.546964
 offset = Vector2(0, -16)
-
 
 [node name="SlowdownArea" type="Area2D" parent="."]
 position = Vector2(0, -16)
