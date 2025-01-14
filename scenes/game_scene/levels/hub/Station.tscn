@@ -77,7 +77,7 @@ z_index = 0
 position = Vector2(961, 210)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/CharacterBody2D"]
-zoom = Vector2(6.5, 6.5)
+zoom = Vector2(4, 4)
 limit_left = 32
 limit_top = 0
 limit_right = 1979
@@ -163,7 +163,5 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrainDoor"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_t0h8n")
-
-[node name="BorderBox" type="Node" parent="."]
 
 [connection signal="body_entered" from="TrainDoor" to="." method="_on_area_2d_body_entered"]
