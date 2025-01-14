@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="U8"
-config/version="0.1.0"
+config/version="0.2.0"
 run/main_scene="res://scenes/opening/opening_with_logo.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.984314, 0.94902, 0.211765, 1)
