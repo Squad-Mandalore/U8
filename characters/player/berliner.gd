@@ -2,9 +2,11 @@ class_name Player
 extends CharacterBody2D
 
 const SPEED: float = 102.0
+signal started_talking(npc: NPC)
+signal stopped_talking(npc: NPC)
 var _slowdown_entities: int = 0:
-    set(value):
-        _slowdown_entities = max(value, 0)
+	set(value):
+		_slowdown_entities = max(value, 0)
 
 @onready var _animated_sprite_2d = $AnimatedSprite2D
 
@@ -41,6 +43,7 @@ func _physics_process(delta: float) -> void:
         switch_state(State.IDLE)
 
     move_and_collide(velocity * delta)
+
 
 func _handle_scooting(delta: float) -> void:
     var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -118,38 +121,40 @@ func _unhandled_input(event: InputEvent):
             _animated_sprite_2d.play("scooting_horizontal")
 
 func _on_slowdown_area_body_entered(body: Node2D):
-    # If we meet an NPC, slow down the player
-    _slowdown_entities += 1
+	# If we meet an NPC, slow down the player
+	_slowdown_entities += 1
 
-    # Connect signals so we know when the NPC starts/stops talking
-    var npc: NPC = body
-    if not npc.is_connected("npc_started_talking", _on_npc_started_talking):
-        npc.connect("npc_started_talking", _on_npc_started_talking)
+	# Connect signals so we know when the NPC starts/stops talking
+	var npc: NPC = body
+	if not npc.is_connected("npc_started_talking", _on_npc_started_talking):
+		npc.connect("npc_started_talking", _on_npc_started_talking)
 
-    if not npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
-        npc.connect("npc_stopped_talking", _on_npc_stopped_talking)
+	if not npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
+		npc.connect("npc_stopped_talking", _on_npc_stopped_talking)
 
 func _on_slowdown_area_body_exited(body: Node2D):
-    # If the NPC leaves, reduce slowdown count
-    _slowdown_entities -= 1
+	# If the NPC leaves, reduce slowdown count
+	_slowdown_entities -= 1
 
-    # Disconnect signals
-    var npc: NPC = body
-    if npc.is_connected("npc_started_talking", _on_npc_started_talking):
-        npc.disconnect("npc_started_talking", _on_npc_started_talking)
+	# Disconnect signals
+	var npc: NPC = body
+	if npc.is_connected("npc_started_talking", _on_npc_started_talking):
+		npc.disconnect("npc_started_talking", _on_npc_started_talking)
 
-    if npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
-        npc.disconnect("npc_stopped_talking", _on_npc_stopped_talking)
+	if npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
+		npc.disconnect("npc_stopped_talking", _on_npc_stopped_talking)
 
 func _on_npc_started_talking(npc: NPC):
-    # If NPC started talking, the player also enters TALK mode
-    switch_state(State.TALK)
-    print("NPC started talking to you")
+	# If NPC started talking, the player also enters TALK mode
+	switch_state(State.TALK)
+	print("NPC started talking to you")
+	started_talking.emit(npc)
 
 func _on_npc_stopped_talking(npc: NPC):
     # If NPC stopped talking, the player reverts to IDLE (or WALK if moving)
     switch_state(State.IDLE)
     print("NPC stopped talking to you")
+    stopped_talking.emit(npc)
     
 func _disable_scooting():
     _scooting_enabled = false
