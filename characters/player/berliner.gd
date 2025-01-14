@@ -10,7 +10,8 @@ var _slowdown_entities: int = 0:
 
 enum State {IDLE, WALK, TALK, SCOOT}
 var _current_state: State = State.IDLE
-var DEBUG_SCOOT: bool = true  # Set to false to disable SHIFT toggling for scoot mode
+var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
+
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK:
@@ -106,7 +107,7 @@ func switch_state(new_state: State):
                 _animated_sprite_2d.play("idle")
                 
 func _unhandled_input(event: InputEvent):
-    if not DEBUG_SCOOT:
+    if not _scooting_enabled:
         return
 
     if event.is_action_pressed("scoot"):
@@ -114,7 +115,7 @@ func _unhandled_input(event: InputEvent):
             switch_state(State.IDLE)
         else:
             switch_state(State.SCOOT)
-
+            _animated_sprite_2d.play("scooting_horizontal")
 
 func _on_slowdown_area_body_entered(body: Node2D):
     # If we meet an NPC, slow down the player
@@ -149,3 +150,11 @@ func _on_npc_stopped_talking(npc: NPC):
     # If NPC stopped talking, the player reverts to IDLE (or WALK if moving)
     switch_state(State.IDLE)
     print("NPC stopped talking to you")
+    
+func _disable_scooting():
+    _scooting_enabled = false
+    print("Scooting disabled")
+    
+func _enable_scooting():
+    _scooting_enabled = true
+    print("Scooting enabled")

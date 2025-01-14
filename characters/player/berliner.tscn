@@ -238,7 +238,6 @@ autoplay = "idle"
 frame_progress = 0.546964
 offset = Vector2(0, -16)
 
-
 [node name="SlowdownArea" type="Area2D" parent="."]
 position = Vector2(0, -16)
 collision_layer = 0
