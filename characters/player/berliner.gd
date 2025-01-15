@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
     if _current_state == State.TALK:
         # If talking, skip movement
         return
-        
+
     if _current_state == State.SCOOT:
         _handle_scooting(delta)
         return
@@ -106,7 +106,7 @@ func switch_state(new_state: State):
                 _animated_sprite_2d.play("walk")
             State.IDLE:
                 _animated_sprite_2d.play("idle")
-                
+
 func _unhandled_input(event: InputEvent):
     if not _scooting_enabled:
         return
@@ -151,11 +151,11 @@ func _on_npc_stopped_talking(npc: NPC):
     # If NPC stopped talking, the player reverts to IDLE (or WALK if moving)
     switch_state(State.IDLE)
     print("NPC stopped talking to you")
-    
+
 func _disable_scooting():
     _scooting_enabled = false
     print("Scooting disabled")
-    
+
 func _enable_scooting():
     _scooting_enabled = true
     print("Scooting enabled")
