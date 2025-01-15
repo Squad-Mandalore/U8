@@ -98,7 +98,12 @@ text = "Gesundheit"
 [node name="LabelHealthStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Health"]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
 text = "100/100"
+
+[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="HealthBar" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -126,7 +131,12 @@ text = "Ausweichchance
 [node name="LabelDodgeStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DodgeChance"]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
 text = "20/50"
+
+[node name="MarginContainer7" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="DodgeChanceBar" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -154,6 +164,8 @@ text = "Rüstung"
 [node name="LabelArmorStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Armor"]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
 text = "6"
 
 [node name="Seperator1" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -172,6 +184,8 @@ text = "Initiative"
 [node name="LabelInitiativeStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Initiative"]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
 text = "5"
 
 [node name="Seperator2" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -190,6 +204,8 @@ text = "Stärke"
 [node name="LabelStrengthStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Strength"]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
 text = "11"
 
 [node name="Seperator3" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -208,6 +224,8 @@ text = "Coolness"
 [node name="LabelCoolnessStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Coolness"]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
 text = "5"
 
 [node name="Seperator4" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -226,6 +244,8 @@ text = "Attraktivität"
 [node name="LabelAttractiveness2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Attractiveness"]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
 text = "7"
 
 [node name="Seperator5" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -244,6 +264,8 @@ text = "Intelligenz"
 [node name="LabelIntelligenceStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Intelligence"]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
 text = "4"
 
 [node name="Seperator6" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -262,6 +284,8 @@ text = "Kreativität"
 [node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Creativity"]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
 text = "4"
 
 [node name="Seperator7" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -280,6 +304,8 @@ text = "Glück"
 [node name="labelLuckStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Luck"]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
 text = "1000"
 
 [node name="Seperator8" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -288,8 +314,7 @@ theme_override_styles/separator = SubResource("StyleBoxLine_fw74r")
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_bottom = 18
 
 [node name="LabelResistance" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
