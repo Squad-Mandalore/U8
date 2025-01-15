@@ -63,10 +63,10 @@ func update_luck(luck: int):
     (%LabelLuckStat as Label).text = str(luck)
 
 func update_bleedResistance(bleedResistance: int):
-    (%LabelBleedResistanceStat as Label).text = str(bleedResistance)
+    (%LabelBleedResistanceStat as Label).text = str(bleedResistance) + "%"
 
 func update_poisonResistance(poisonResistance: int):
-    (%LabelPoisonResistanceStat as Label).text = str(poisonResistance)
+    (%LabelPoisonResistanceStat as Label).text = str(poisonResistance) + "%"
 
 func update_drugResistance(drugResistance: int):
-    (%LabelDrugResistanceStat as Label).text = str(drugResistance)
+    (%LabelDrugResistanceStat as Label).text = str(drugResistance) + "%"
