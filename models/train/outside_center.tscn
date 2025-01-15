@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b46ii0fqwu3ur"]
 
 [ext_resource type="Script" path="res://foreground.gd" id="1_hevv5"]
-[ext_resource type="Texture2D" uid="uid://dcuf6bj0fdc77" path="res://models/train/outside_center.png" id="2_qw8mj"]
+[ext_resource type="Texture2D" uid="uid://ckj0legbu2g3" path="res://assets/train/ubahn-v4-mitte-außen.png" id="2_pn8cr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evlrq"]
 size = Vector2(34, 49)
@@ -12,10 +12,11 @@ collision_mask = 2
 script = ExtResource("1_hevv5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qw8mj")
+texture = ExtResource("2_pn8cr")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-237, 28.5)
+position = Vector2(26, 68)
 shape = SubResource("RectangleShape2D_evlrq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

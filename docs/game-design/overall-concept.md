@@ -90,44 +90,46 @@ Auf den restlichen Bahnsteigen ist sonst erstmal einfach nichts i would say
     - Wagen
 3.  Karl-Bonhoeffer-Nervenklinik
     - Wagen
+    - Miniboss: der Doktor
 4.  Lindauer Allee
     - Wagen
 5.  Paracelsus-Bad
     - Wagen
+    - Boss 1: der Bademeister
 6.  Residenzstr.
-    - Boss 1
-    ***
     - Wagen
 7.  Franz-Neumann-Platz
     - Wagen
 8.  Osloer Str.
     - Wagen
+    - Miniboss: der Yeti
 9.  Pankstr.
     - Wagen
 10. Gesundbrunnen
     - Wagen
+    - Boss 2: Sterioder Pumper
 11. Voltastr.
     - Wagen
 12. Bernauer Str.
-    - Boss 2
-    ***
     - Wagen
 13. Rosenthaler Platz
     - Wagen
+    - Miniboss: Lucio101
 14. Weinmeisterstr.
     - Wagen
 15. Alexanderplatz
     - Wagen
+    - Boss 3: Touristenmasse
 16. Jannowitzbrücke
     - Wagen
 17. Heinrich-Heine-Str.
     - Wagen
 18. Moritzplatz (lul, ich will da ein NPC sein - oder der boss :) )
-    - Boss 3
-    ***
     - Wagen
+    - Miniboss: Moritz
 19. Kottbusser Tor
     - Wagen
+    - Boss 4: der Zombiekönig
 20. Schönleinstr.
     - Wagen
 21. Hermannplatz
@@ -137,7 +139,7 @@ Auf den restlichen Bahnsteigen ist sonst erstmal einfach nichts i would say
 23. Leinestr.
     - Wagen
 24. Hermannstr.
-    - Endboss
+    - Endboss: Berliner Bär
 
 ## Wagon Auswahl
 
