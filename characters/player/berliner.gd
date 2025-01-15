@@ -14,13 +14,13 @@ func _ready() -> void:
 
 enum State {IDLE, WALK, TALK, SCOOT}
 var _current_state: State = State.IDLE
+var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
 
 signal talk_enabled()
 signal talk_disabled()
 signal hud_toggled(visible: bool)
 signal stats_changed(stats: StatsSpecifier, balance: int)
 
-var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
 
 @export var stats: StatsSpecifier
 var balance: int
