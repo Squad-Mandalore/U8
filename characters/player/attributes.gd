@@ -1,5 +1,5 @@
+extends Node
 class_name Attributes
-extends Resource
 
 @export var max_health: int
 @export var health: int
@@ -13,7 +13,7 @@ extends Resource
 @export var creativity: int
 # @export var radicality: int
 @export var luck: int
-# Resistances in %. 100% Resistance means no dmg taken anymore.
+# Resistances in Percentage. 100% Resistance = No Damage taken anymore.
 @export var poison_resistance: int
 @export var bleed_resistance: int
 @export var drug_resistance: int
