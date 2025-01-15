@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v30tygcfyudp"
-path="res://.godot/imported/progressovertexture.svg-f06aea4d5b210289704e1386d561e460.ctex"
+uid="uid://dxuvcb4qof7fk"
+path="res://.godot/imported/flask_resistance.svg-ada72cc7265df748cf4848c44288e232.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hud/progressovertexture.svg"
-dest_files=["res://.godot/imported/progressovertexture.svg-f06aea4d5b210289704e1386d561e460.ctex"]
+source_file="res://assets/hud/flask_resistance.svg"
+dest_files=["res://.godot/imported/flask_resistance.svg-ada72cc7265df748cf4848c44288e232.ctex"]
 
 [params]
 
@@ -32,6 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=4.13
+svg/scale=1.0
 editor/scale_with_editor_scale=false
 editor/convert_colors_with_editor_theme=false
