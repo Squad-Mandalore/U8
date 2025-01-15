@@ -15,7 +15,6 @@ var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for
 @export var stats: Attributes
 
 func _physics_process(delta: float) -> void:
-    print(stats)
     if _current_state == State.TALK:
         # If talking, skip movement
         return
