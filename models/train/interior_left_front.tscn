@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw6fq4ff3l51v"]
+
+[ext_resource type="Texture2D" uid="uid://cgna4tyuk5eas" path="res://assets/train/ubahn-v4-links-sitze-vorne.png" id="1_ydksa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8b4q0"]
+size = Vector2(69, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vejp"]
+size = Vector2(69, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhgaw"]
+size = Vector2(30, 12)
+
+[node name="InteriorLeftFront" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ydksa")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(112.5, 85.5)
+shape = SubResource("RectangleShape2D_8b4q0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(217.5, 85)
+shape = SubResource("RectangleShape2D_3vejp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(303, 85)
+shape = SubResource("RectangleShape2D_hhgaw")

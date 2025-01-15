@@ -7,11 +7,10 @@
 size = Vector2(30, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gp1t3"]
-size = Vector2(30, 78)
+size = Vector2(26, 79)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ibok6"]
-radius = 11.0
-height = 46.0
+height = 42.0
 
 [node name="Tower" type="StaticBody2D"]
 script = ExtResource("1_fnt1f")
@@ -29,7 +28,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -51)
+position = Vector2(0, -51.5)
 shape = SubResource("RectangleShape2D_gp1t3")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]

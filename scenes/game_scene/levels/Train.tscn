@@ -29,13 +29,13 @@ position = Vector2(600, 135)
 texture = ExtResource("3_dfgt4")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("4_q3h5r")]
-position = Vector2(600, 135)
+position = Vector2(0, 95)
 
 [node name="Center" parent="." instance=ExtResource("5_x185i")]
-position = Vector2(600, 135)
+position = Vector2(329, 95)
 
 [node name="Right" parent="." instance=ExtResource("6_ykx2a")]
-position = Vector2(600, 135)
+position = Vector2(658, 95)
 
 [node name="Player" parent="." instance=ExtResource("7_c73gc")]
 position = Vector2(77, 147)

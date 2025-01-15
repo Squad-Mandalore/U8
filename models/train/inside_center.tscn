@@ -1,30 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw5dhry3n6d0c"]
+[gd_scene load_steps=6 format=3 uid="uid://dw5dhry3n6d0c"]
 
-[ext_resource type="Texture2D" uid="uid://dfbdioi6odgwx" path="res://models/train/inside_center.png" id="1_4goka"]
+[ext_resource type="Texture2D" uid="uid://dtmgac6m0mgik" path="res://assets/train/ubahn-v4-mitte.png" id="1_l7scf"]
+[ext_resource type="PackedScene" uid="uid://c8viibwcd8eui" path="res://models/train/interior_center.tscn" id="2_qxi0a"]
+[ext_resource type="PackedScene" uid="uid://c2bx878j5u7b7" path="res://models/train/interior_center_front.tscn" id="3_sls71"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_v40dq"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3wvq4"]
 b = Vector2(329, 0)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_vejam"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lmyyd"]
 b = Vector2(314, 0)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_4goka")
+[node name="Train" type="Sprite2D" parent="."]
+texture = ExtResource("1_l7scf")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-263, 52)
-shape = SubResource("SegmentShape2D_v40dq")
+position = Vector2(0, 92)
+shape = SubResource("SegmentShape2D_3wvq4")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(-256, 6)
-shape = SubResource("SegmentShape2D_vejam")
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-256, 8, -259, 9, -262, 10, -263, 10, -256, 7)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(7, 46)
+shape = SubResource("SegmentShape2D_lmyyd")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(58, 8, 60, 9, 64, 10, 66, 10, 58, 7)
+polygon = PackedVector2Array(329, 50, 327, 50, 323, 49, 321, 48, 321, 47)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 50, 1, 50, 4, 49, 7, 48, 7, 47)
+
+[node name="InteriorCenter" parent="." instance=ExtResource("2_qxi0a")]
+
+[node name="InteriorCenterFront" parent="." instance=ExtResource("3_sls71")]
+z_index = 75
