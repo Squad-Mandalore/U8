@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkquoqbrb6bh2"]
+[gd_scene load_steps=4 format=3 uid="uid://bkquoqbrb6bh2"]
 
 [ext_resource type="Script" path="res://scenes/hud/train_hud.gd" id="1_asv8f"]
 [ext_resource type="PackedScene" uid="uid://b2utiw3nl1pqr" path="res://scenes/hud/status_panel.tscn" id="2_k8b6u"]
+[ext_resource type="PackedScene" uid="uid://elbl6b2655i1" path="res://scenes/hud/button_hud.tscn" id="3_nbdse"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_asv8f")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -29,3 +31,5 @@ visible = false
 layout_mode = 2
 
 [node name="StatusPanel" parent="." instance=ExtResource("2_k8b6u")]
+
+[node name="ButtonHud" parent="." instance=ExtResource("3_nbdse")]

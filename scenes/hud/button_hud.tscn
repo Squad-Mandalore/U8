@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://elbl6b2655i1"]
+
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_j4tit"]
+[ext_resource type="Texture2D" uid="uid://bw7xbhcfj6laq" path="res://assets/hud/Keybinding.svg" id="2_3lr1t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41yh1"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 10
+shadow_offset = Vector2(20, 20)
+
+[node name="ButtonHud" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1133.0
+offset_top = -405.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 207
+theme_override_constants/margin_bottom = 207
+
+[node name="Button" type="Button" parent="MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_j4tit")
+theme_override_font_sizes/font_size = 132
+theme_override_styles/normal = SubResource("StyleBoxFlat_41yh1")
+text = "Intergieren "
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Button"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 175.0
+offset_bottom = 175.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Button/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_3lr1t")
+stretch_mode = 4
