@@ -8,8 +8,8 @@ size = Vector2(69, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sjbm"]
 size = Vector2(65, 10)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwmbr"]
-size = Vector2(69, 10)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oewsm"]
+size = Vector2(29, 10)
 
 [sub_resource type="Gradient" id="Gradient_1q3vl"]
 offsets = PackedFloat32Array(0)
@@ -39,7 +39,7 @@ shape = SubResource("RectangleShape2D_1sjbm")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2(303.5, 49)
-shape = SubResource("RectangleShape2D_xwmbr")
+shape = SubResource("RectangleShape2D_oewsm")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = 75

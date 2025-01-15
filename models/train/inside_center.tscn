@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw5dhry3n6d0c"]
+[gd_scene load_steps=6 format=3 uid="uid://dw5dhry3n6d0c"]
 
 [ext_resource type="Texture2D" uid="uid://dtmgac6m0mgik" path="res://assets/train/ubahn-v4-mitte.png" id="1_l7scf"]
 [ext_resource type="PackedScene" uid="uid://c8viibwcd8eui" path="res://models/train/interior_center.tscn" id="2_qxi0a"]
+[ext_resource type="PackedScene" uid="uid://c2bx878j5u7b7" path="res://models/train/interior_center_front.tscn" id="3_sls71"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3wvq4"]
 b = Vector2(329, 0)
@@ -30,3 +31,6 @@ polygon = PackedVector2Array(329, 50, 327, 50, 323, 49, 321, 48, 321, 47)
 polygon = PackedVector2Array(0, 50, 1, 50, 4, 49, 7, 48, 7, 47)
 
 [node name="InteriorCenter" parent="." instance=ExtResource("2_qxi0a")]
+
+[node name="InteriorCenterFront" parent="." instance=ExtResource("3_sls71")]
+z_index = 75

@@ -77,7 +77,7 @@ z_index = 0
 position = Vector2(961, 210)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/CharacterBody2D"]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.5, 3.5)
 limit_left = 32
 limit_top = 0
 limit_right = 1979
@@ -86,6 +86,10 @@ limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
 
 [node name="Towers" type="CanvasGroup" parent="Node2D"]
 y_sort_enabled = true
