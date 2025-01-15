@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcad5rbgw7rsl"]
+
+[ext_resource type="Texture2D" uid="uid://drt0nqrqgo4ky" path="res://assets/train/ubahn-v4-rechts-innen.png" id="1_fac5u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oawvb"]
+size = Vector2(29, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehy3q"]
+size = Vector2(65, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwmbr"]
+size = Vector2(69, 10)
+
+[sub_resource type="Gradient" id="Gradient_1q3vl"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.984314, 0.94902, 0.211765, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2ftdd"]
+gradient = SubResource("Gradient_1q3vl")
+width = 31
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vld3e"]
+gradient = SubResource("Gradient_1q3vl")
+width = 32
+
+[node name="InteriorRight" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fac5u")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(26.5, 49)
+shape = SubResource("RectangleShape2D_oawvb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(104.5, 49)
+shape = SubResource("RectangleShape2D_ehy3q")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(203.5, 49)
+shape = SubResource("RectangleShape2D_xwmbr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 75
+position = Vector2(41, 22)
+texture = SubResource("GradientTexture1D_2ftdd")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = 75
+position = Vector2(137, 22)
+texture = SubResource("GradientTexture1D_vld3e")
+centered = false

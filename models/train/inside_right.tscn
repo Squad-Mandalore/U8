@@ -1,32 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://caiu5xur7uhtq"]
+[gd_scene load_steps=6 format=3 uid="uid://caiu5xur7uhtq"]
 
-[ext_resource type="Texture2D" uid="uid://yu0ql28s2rgu" path="res://models/train/inside_right.png" id="1_kcr3g"]
+[ext_resource type="Texture2D" uid="uid://xjborux7ri1v" path="res://assets/train/ubahn-v4-rechts.png" id="1_c4eui"]
+[ext_resource type="PackedScene" uid="uid://dcad5rbgw7rsl" path="res://models/train/interior_right.tscn" id="2_dkd3d"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_vh3md"]
-b = Vector2(260, 0)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_agbu6"]
+b = Vector2(290, 0)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_14fql"]
-b = Vector2(22, 46)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5fddw"]
+b = Vector2(-21, -46)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_wq406"]
-b = Vector2(-289, 0)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_t6ifu"]
+b = Vector2(-261, 0)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_kcr3g")
+texture = ExtResource("1_c4eui")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 92)
+shape = SubResource("SegmentShape2D_agbu6")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(73, 6)
-shape = SubResource("SegmentShape2D_vh3md")
+position = Vector2(290, 92)
+shape = SubResource("SegmentShape2D_5fddw")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(333, 6)
-shape = SubResource("SegmentShape2D_14fql")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-position = Vector2(355, 52)
-shape = SubResource("SegmentShape2D_wq406")
+position = Vector2(269, 46)
+shape = SubResource("SegmentShape2D_t6ifu")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(73, 7, 73, 8, 70, 9, 67, 10, 66, 10)
+polygon = PackedVector2Array(0, 50, 2, 50, 5, 49, 8, 48, 8, 47)
+
+[node name="InteriorRight" parent="." instance=ExtResource("2_dkd3d")]
