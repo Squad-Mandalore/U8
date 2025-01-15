@@ -14,10 +14,10 @@ events = [SubResource("InputEventAction_tu4tk")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10kd4"]
 bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="ButtonHud" type="Control"]
 layout_mode = 3
@@ -26,9 +26,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1920.0
+offset_top = -1080.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.2, 0.2)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -37,17 +38,18 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1133.0
-offset_top = -405.0
+offset_left = -166.0
+offset_top = -94.0
+offset_right = 60.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_constants/margin_right = 207
-theme_override_constants/margin_bottom = 207
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 50
 
 [node name="Button" type="Button" parent="MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_j4tit")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 20
 theme_override_styles/hover_pressed = ExtResource("2_ilf4p")
 theme_override_styles/hover = ExtResource("2_km251")
 theme_override_styles/normal = ExtResource("3_4pbjd")
@@ -57,17 +59,20 @@ alignment = 2
 
 [node name="InteractionKeyMarginBox" type="MarginContainer" parent="MarginContainer/Button"]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 25.0
-offset_right = 175.0
-offset_bottom = 175.0
+offset_left = 1.0
+offset_right = 45.0
+offset_bottom = 44.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
 [node name="InteractionKeyLabel" type="Label" parent="MarginContainer/Button/InteractionKeyMarginBox"]
-custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_i8byh")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_10kd4")
 text = "w"
 horizontal_alignment = 1
