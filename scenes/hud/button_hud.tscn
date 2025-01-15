@@ -1,22 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://elbl6b2655i1"]
+[gd_scene load_steps=6 format=3 uid="uid://elbl6b2655i1"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_j4tit"]
 [ext_resource type="Texture2D" uid="uid://bw7xbhcfj6laq" path="res://assets/hud/Keybinding.svg" id="2_3lr1t"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41yh1"]
-bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-shadow_color = Color(1, 1, 1, 1)
-shadow_size = 10
-shadow_offset = Vector2(20, 20)
+[ext_resource type="StyleBox" uid="uid://dt3uwvil3u2tn" path="res://assets/hud/button_hover_pressed_hud.tres" id="2_ilf4p"]
+[ext_resource type="StyleBox" uid="uid://boduqgpheugx5" path="res://assets/hud/button_hover_hud.tres" id="2_km251"]
+[ext_resource type="StyleBox" uid="uid://dpeve5o3s6gky" path="res://assets/hud/button_hud.tres" id="3_4pbjd"]
 
 [node name="ButtonHud" type="Control"]
 layout_mode = 3
@@ -47,7 +35,9 @@ theme_override_constants/margin_bottom = 207
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_j4tit")
 theme_override_font_sizes/font_size = 132
-theme_override_styles/normal = SubResource("StyleBoxFlat_41yh1")
+theme_override_styles/hover_pressed = ExtResource("2_ilf4p")
+theme_override_styles/hover = ExtResource("2_km251")
+theme_override_styles/normal = ExtResource("3_4pbjd")
 text = "Intergieren "
 alignment = 2
 
