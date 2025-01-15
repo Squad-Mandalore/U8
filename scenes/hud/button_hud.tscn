@@ -1,16 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://elbl6b2655i1"]
+[gd_scene load_steps=9 format=3 uid="uid://elbl6b2655i1"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_j4tit"]
-[ext_resource type="Texture2D" uid="uid://bw7xbhcfj6laq" path="res://assets/hud/Keybinding.svg" id="2_3lr1t"]
-[ext_resource type="StyleBox" path="res://assets/hud/button_hover_pressed_hud.tres" id="2_ilf4p"]
-[ext_resource type="StyleBox" path="res://assets/hud/button_hover_hud.tres" id="2_km251"]
-[ext_resource type="StyleBox" path="res://assets/hud/button_hud.tres" id="3_4pbjd"]
+[ext_resource type="StyleBox" uid="uid://dt3uwvil3u2tn" path="res://assets/hud/button_hover_pressed_hud.tres" id="2_ilf4p"]
+[ext_resource type="StyleBox" uid="uid://boduqgpheugx5" path="res://assets/hud/button_hover_hud.tres" id="2_km251"]
+[ext_resource type="StyleBox" uid="uid://dpeve5o3s6gky" path="res://assets/hud/button_hud.tres" id="3_4pbjd"]
+[ext_resource type="FontFile" uid="uid://di5o0daj6dcb8" path="res://assets/fonts/nippo/OTF/Nippo-Bold.otf" id="5_i8byh"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_tu4tk"]
 action = &"talk"
 
 [sub_resource type="Shortcut" id="Shortcut_aewtt"]
 events = [SubResource("InputEventAction_tu4tk")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10kd4"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="ButtonHud" type="Control"]
 layout_mode = 3
@@ -48,14 +55,21 @@ shortcut = SubResource("Shortcut_aewtt")
 text = "Intergieren "
 alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Button"]
+[node name="InteractionKeyMarginBox" type="MarginContainer" parent="MarginContainer/Button"]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 25.0
 offset_right = 175.0
 offset_bottom = 175.0
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Button/MarginContainer"]
+[node name="InteractionKeyLabel" type="Label" parent="MarginContainer/Button/InteractionKeyMarginBox"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-texture = ExtResource("2_3lr1t")
-stretch_mode = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_i8byh")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_10kd4")
+text = "w"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

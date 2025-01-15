@@ -5,6 +5,7 @@ var talk_action_key: String
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     talk_action_key = InputMap.action_get_events("talk")[0].as_text()[0]
+    ($ButtonHud/MarginContainer/Button/InteractionKeyMarginBox/InteractionKeyLabel as Label).text = talk_action_key
     $ButtonHud.hide()
 
 
