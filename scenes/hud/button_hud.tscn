@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://elbl6b2655i1"]
+[gd_scene load_steps=8 format=3 uid="uid://elbl6b2655i1"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_j4tit"]
 [ext_resource type="Texture2D" uid="uid://bw7xbhcfj6laq" path="res://assets/hud/Keybinding.svg" id="2_3lr1t"]
-[ext_resource type="StyleBox" uid="uid://dt3uwvil3u2tn" path="res://assets/hud/button_hover_pressed_hud.tres" id="2_ilf4p"]
-[ext_resource type="StyleBox" uid="uid://boduqgpheugx5" path="res://assets/hud/button_hover_hud.tres" id="2_km251"]
-[ext_resource type="StyleBox" uid="uid://dpeve5o3s6gky" path="res://assets/hud/button_hud.tres" id="3_4pbjd"]
+[ext_resource type="StyleBox" path="res://assets/hud/button_hover_pressed_hud.tres" id="2_ilf4p"]
+[ext_resource type="StyleBox" path="res://assets/hud/button_hover_hud.tres" id="2_km251"]
+[ext_resource type="StyleBox" path="res://assets/hud/button_hud.tres" id="3_4pbjd"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_tu4tk"]
+action = &"talk"
+
+[sub_resource type="Shortcut" id="Shortcut_aewtt"]
+events = [SubResource("InputEventAction_tu4tk")]
 
 [node name="ButtonHud" type="Control"]
 layout_mode = 3
@@ -38,6 +44,7 @@ theme_override_font_sizes/font_size = 132
 theme_override_styles/hover_pressed = ExtResource("2_ilf4p")
 theme_override_styles/hover = ExtResource("2_km251")
 theme_override_styles/normal = ExtResource("3_4pbjd")
+shortcut = SubResource("Shortcut_aewtt")
 text = "Intergieren "
 alignment = 2
 
