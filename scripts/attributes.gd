@@ -1,4 +1,4 @@
-class_name Attributes
+class_name StatsSpecifier
 extends Resource
 
 @export var max_health: int

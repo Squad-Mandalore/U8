@@ -12,7 +12,7 @@ enum State {IDLE, WALK, TALK, SCOOT}
 var _current_state: State = State.IDLE
 var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
 
-@export var stats: Attributes
+@export var stats: StatsSpecifier
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK:
