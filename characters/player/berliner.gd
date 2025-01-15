@@ -14,6 +14,7 @@ signal talk_enabled()
 signal talk_disabled()
 var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
 
+@export var stats: StatsSpecifier
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK:
