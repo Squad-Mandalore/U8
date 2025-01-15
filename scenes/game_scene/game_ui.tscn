@@ -1,12 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://cg2mx5g7rsevc"]
+[gd_scene load_steps=11 format=3 uid="uid://cg2mx5g7rsevc"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/pause_menu_controller.gd" id="1_ljn6m"]
 [ext_resource type="PackedScene" uid="uid://c53q3lkal5pmk" path="res://scenes/overlaid_menus/pause_menu.tscn" id="2_t4jtf"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/level_list_loader.gd" id="3_42ucf"]
+[ext_resource type="Script" path="res://scripts/station_settings.gd" id="4_5em8a"]
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/scenes/music_players/background_music_player.tscn" id="4_bbb8h"]
 [ext_resource type="PackedScene" uid="uid://duxb6t4ycj6x4" path="res://scenes/loading_screen/level_loading_screen.tscn" id="5_u4na7"]
 [ext_resource type="Script" path="res://scenes/game_scene/configurable_sub_viewport.gd" id="6_o8n2l"]
 [ext_resource type="Script" path="res://scripts/level_list_state_manager.gd" id="8_lvsfu"]
+
+[sub_resource type="Resource" id="Resource_76f8c"]
+script = ExtResource("4_5em8a")
+path = "res://scenes/game_scene/levels/hub/Station.tscn"
+name = "Wittenau"
+subtitle = "Wilelmsruher Damm"
+doener = true
+
+[sub_resource type="Resource" id="Resource_qcbof"]
+script = ExtResource("4_5em8a")
+path = "res://scenes/game_scene/levels/hub/Station.tscn"
+name = "Rathaus Reinickendorf"
+subtitle = ""
+doener = false
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -24,8 +39,7 @@ focused_viewport = NodePath("../ViewportContainer/ConfigurableSubViewport")
 [node name="LevelLoader" type="Node" parent="." node_paths=PackedStringArray("level_container")]
 script = ExtResource("3_42ucf")
 level_container = NodePath("../ViewportContainer/ConfigurableSubViewport")
-files = Array[String](["res://scenes/game_scene/levels/hub/Station.tscn"])
-directory = "res://scenes/game_scene/levels/hub"
+files = Array[ExtResource("4_5em8a")]([SubResource("Resource_76f8c"), SubResource("Resource_qcbof")])
 
 [node name="BackgroundMusicPlayer" parent="." instance=ExtResource("4_bbb8h")]
 bus = &"Master"
