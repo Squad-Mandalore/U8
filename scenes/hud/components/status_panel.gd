@@ -9,8 +9,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
     pass
 
-func update_health(new_health: int) -> void:
-    var max_health: int = 100
+func update_stats(stats: StatsSpecifier, balance: int):
+    update_health(stats.health, stats.max_health)
+    update_balance(balance)
+    # TODO: status types
+    # update_blood(stats.)
+    # update_flask(stats.)
+    # update_syringe(stats.)
+
+func update_health(new_health: int, max_health: int) -> void:
     new_health = min(new_health, max_health)
     (%HealthBar as TextureProgressBar).max_value = max_health
     (%CurFromMaxHealthLabel as Label).text = "%d/%d" % [new_health, max_health]

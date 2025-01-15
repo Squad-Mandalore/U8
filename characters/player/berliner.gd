@@ -10,14 +10,20 @@ var _slowdown_entities: int = 0:
 
 func _ready() -> void:
     $Inventory.hide()
+    stats_changed.emit(stats, balance)
 
 enum State {IDLE, WALK, TALK, SCOOT}
 var _current_state: State = State.IDLE
+
 signal talk_enabled()
 signal talk_disabled()
+signal hud_toggled(visible: bool)
+signal stats_changed(stats: StatsSpecifier, balance: int)
+
 var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
 
 @export var stats: StatsSpecifier
+var balance: int
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK:
@@ -126,10 +132,10 @@ func _unhandled_input(event: InputEvent):
 func _input(event: InputEvent):
     if event.is_action_pressed("inventory"):
         var canvas_layer: CanvasLayer = ($Inventory as CanvasLayer)
-        if canvas_layer.visible:
-            canvas_layer.hide()
-        else:
-            canvas_layer.show()
+        var toggle: bool = canvas_layer.visible
+
+        hud_toggled.emit(toggle)
+        canvas_layer.visible = !toggle
 
 func _on_slowdown_area_body_entered(body: Node2D):
     # If we meet an NPC, slow down the player
@@ -176,3 +182,11 @@ func _disable_scooting():
 func _enable_scooting():
     _scooting_enabled = true
     print("Scooting enabled")
+
+func damage(damage_taken: int):
+    stats.health -= damage_taken
+    stats_changed.emit(stats)
+
+func _on_stats_changed(stats: StatsSpecifier, balance: int) -> void:
+    ($Inventory as CanvasLayer).update_stats(stats, balance)
+

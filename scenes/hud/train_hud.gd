@@ -18,3 +18,7 @@ func show_interaction_button() -> void:
 
 func hide_interaction_button() -> void:
     $ButtonHud.hide()
+
+func _on_player_stats_changed(stats: StatsSpecifier, balance: int) -> void:
+    ($StatusPanel as Control).update_stats(stats, balance)
+

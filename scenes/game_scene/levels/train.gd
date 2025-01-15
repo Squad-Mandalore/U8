@@ -23,3 +23,5 @@ func _on_player_talk_enabled() -> void:
 func _on_player_talk_disabled() -> void:
     $HUD.hide_interaction_button()
 
+func _on_player_hud_toggled(visible: bool) -> void:
+    $HUD.visible = visible

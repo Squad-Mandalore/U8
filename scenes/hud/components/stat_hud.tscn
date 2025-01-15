@@ -96,6 +96,7 @@ theme_override_font_sizes/font_size = 20
 text = "Gesundheit"
 
 [node name="LabelHealthStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Health"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("1_el7fl")
@@ -109,6 +110,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HealthBar"]
+unique_name_in_owner = true
 layout_mode = 2
 value = 100.0
 texture_under = ExtResource("2_pg2fv")
@@ -121,14 +123,15 @@ theme_override_constants/margin_bottom = 18
 [node name="DodgeChance" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="LabelDodge" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DodgeChance"]
+[node name="LabelDodgeChance" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DodgeChance"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "Ausweichchance
 "
 
-[node name="LabelDodgeStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DodgeChance"]
+[node name="LabelDodgeChanceStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DodgeChance"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("1_el7fl")
@@ -141,7 +144,8 @@ layout_mode = 2
 [node name="DodgeChanceBar" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="DodgeBar" type="TextureProgressBar" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DodgeChanceBar"]
+[node name="DodgeChanceBar" type="TextureProgressBar" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DodgeChanceBar"]
+unique_name_in_owner = true
 layout_mode = 2
 max_value = 50.0
 value = 20.0
@@ -162,6 +166,7 @@ theme_override_font_sizes/font_size = 20
 text = "Rüstung"
 
 [node name="LabelArmorStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Armor"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("1_el7fl")
@@ -182,6 +187,7 @@ theme_override_font_sizes/font_size = 20
 text = "Initiative"
 
 [node name="LabelInitiativeStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Initiative"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("1_el7fl")
@@ -202,6 +208,7 @@ theme_override_font_sizes/font_size = 20
 text = "Stärke"
 
 [node name="LabelStrengthStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Strength"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("1_el7fl")
@@ -222,6 +229,7 @@ theme_override_font_sizes/font_size = 20
 text = "Coolness"
 
 [node name="LabelCoolnessStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Coolness"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("1_el7fl")
@@ -241,7 +249,8 @@ theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "Attraktivität"
 
-[node name="LabelAttractiveness2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Attractiveness"]
+[node name="LabelAttractivenessStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Attractiveness"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("1_el7fl")
@@ -262,6 +271,7 @@ theme_override_font_sizes/font_size = 20
 text = "Intelligenz"
 
 [node name="LabelIntelligenceStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Intelligence"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("1_el7fl")
@@ -275,13 +285,14 @@ theme_override_styles/separator = SubResource("StyleBoxLine_fk8u0")
 [node name="Creativity" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Creativity"]
+[node name="LabelCreativity" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Creativity"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "Kreativität"
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Creativity"]
+[node name="LabelCreativityStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Creativity"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("1_el7fl")
@@ -301,7 +312,8 @@ theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "Glück"
 
-[node name="labelLuckStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Luck"]
+[node name="LabelLuckStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Luck"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("1_el7fl")
@@ -338,7 +350,8 @@ custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 texture = ExtResource("5_31p3o")
 
-[node name="BleedResistanceStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances/BleedResistance"]
+[node name="LabelBleedResistanceStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances/BleedResistance"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
@@ -353,7 +366,8 @@ custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 texture = ExtResource("6_avhbx")
 
-[node name="PoisonResistanceStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances/PoisonResistance"]
+[node name="LabelPoisonResistanceStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances/PoisonResistance"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
@@ -368,7 +382,8 @@ custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 texture = ExtResource("7_e8f2f")
 
-[node name="DrugResistanceStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances/DrugResistance"]
+[node name="LabelDrugResistanceStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances/DrugResistance"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20

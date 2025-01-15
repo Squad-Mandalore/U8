@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh8a5067wese3"]
+[gd_scene load_steps=4 format=3 uid="uid://dh8a5067wese3"]
 
+[ext_resource type="Script" path="res://scenes/hud/inventory.gd" id="1_gj1qs"]
 [ext_resource type="PackedScene" uid="uid://cy1iar1dkomyr" path="res://scenes/hud/components/stat_hud.tscn" id="1_w07gl"]
+[ext_resource type="Script" path="res://scenes/hud/components/stat_hud.gd" id="3_4eaba"]
 
 [node name="Inventory" type="CanvasLayer"]
+script = ExtResource("1_gj1qs")
 
 [node name="StatHud" parent="." instance=ExtResource("1_w07gl")]
+script = ExtResource("3_4eaba")
