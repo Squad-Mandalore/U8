@@ -13,7 +13,6 @@ var _talking: bool = false
 
 @onready var _sprite = $AnimatedSprite2D
 @onready var _timer = $Timer
-@onready var _rich_text_label = $RichTextLabel
 
 signal npc_started_talking(npc: NPC)
 signal npc_stopped_talking(npc: NPC)
@@ -53,7 +52,7 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
     # If the label is visible and the player presses "talk", toggle _talking
-    if event.is_action_pressed("talk") and _rich_text_label.visible:
+    if event.is_action_pressed("talk"):
         if _talking:
             _stop_talking()
         else:
@@ -98,11 +97,9 @@ func _on_timer_timeout() -> void:
 func _on_slowdown_area_body_entered(body: Node2D):
     # If the Player enters this NPC's slowdown area, NPC speed is halved
     _slowdown_entities += 1
-    _rich_text_label.visible = true
 
 func _on_slowdown_area_body_exited(body: Node2D):
     # If the Player leaves, restore normal speed (if no more slowdown entities)
     _slowdown_entities -= 1
 
-    if _slowdown_entities == 0:
-        _rich_text_label.visible = false
+    # if _slowdown_entities == 0:
