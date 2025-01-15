@@ -30,7 +30,7 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -176.0
+offset_top = -169.0
 offset_right = 515.0
 grow_vertical = 0
 theme_override_constants/margin_left = 50
@@ -97,6 +97,7 @@ layout_mode = 2
 
 [node name="ThirdRowHBox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="CoinTexture" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 custom_minimum_size = Vector2(24, 24)
@@ -106,7 +107,7 @@ texture = ExtResource("3_pneu6")
 
 [node name="BalanceMarginBox" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 layout_mode = 2
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 15
 
 [node name="BalanceLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 unique_name_in_owner = true

@@ -51,6 +51,7 @@ theme_override_fonts/font = ExtResource("1_j4tit")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/hover_pressed = ExtResource("2_ilf4p")
 theme_override_styles/hover = ExtResource("2_km251")
+theme_override_styles/pressed = ExtResource("2_ilf4p")
 theme_override_styles/normal = ExtResource("3_4pbjd")
 shortcut = SubResource("Shortcut_aewtt")
 text = "Intergieren   "
