@@ -35,6 +35,11 @@ window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 window/vsync/vsync_mode=2
 
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")
