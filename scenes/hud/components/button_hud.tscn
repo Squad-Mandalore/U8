@@ -47,12 +47,12 @@ theme_override_constants/margin_bottom = 207
 [node name="Button" type="Button" parent="MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_j4tit")
-theme_override_font_sizes/font_size = 132
+theme_override_font_sizes/font_size = 100
 theme_override_styles/hover_pressed = ExtResource("2_ilf4p")
 theme_override_styles/hover = ExtResource("2_km251")
 theme_override_styles/normal = ExtResource("3_4pbjd")
 shortcut = SubResource("Shortcut_aewtt")
-text = "Intergieren "
+text = "Intergieren   "
 alignment = 2
 
 [node name="InteractionKeyMarginBox" type="MarginContainer" parent="MarginContainer/Button"]

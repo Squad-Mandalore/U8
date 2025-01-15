@@ -1,135 +1,153 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2utiw3nl1pqr"]
+[gd_scene load_steps=9 format=3 uid="uid://b2utiw3nl1pqr"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_22btv"]
 [ext_resource type="Script" path="res://scenes/hud/components/status_panel.gd" id="1_28hqb"]
-[ext_resource type="Texture2D" uid="uid://o5oq3c4kxsi0" path="res://assets/hud/coin.svg" id="3_pneu6"]
-[ext_resource type="Texture2D" uid="uid://bnevchla4cibe" path="res://assets/hud/blood.svg" id="4_cowbk"]
-[ext_resource type="Texture2D" uid="uid://chvegn0rcqq1j" path="res://assets/hud/health_progressbar.svg" id="4_kocoe"]
-[ext_resource type="Texture2D" uid="uid://cbfifuovsjj1k" path="res://assets/hud/flask.svg" id="5_lp0dp"]
-[ext_resource type="Texture2D" uid="uid://dl3j2c5kqoiqt" path="res://assets/hud/syringe.svg" id="6_lp7yt"]
+[ext_resource type="Texture2D" uid="uid://dn0jfcq1ly2go" path="res://assets/hud/coin.svg" id="3_pneu6"]
+[ext_resource type="Texture2D" uid="uid://co1tygwevb7v" path="res://assets/hud/blood.svg" id="4_cowbk"]
+[ext_resource type="Texture2D" uid="uid://c5wvjsj1orm8c" path="res://assets/hud/health_progressbar.svg" id="4_kocoe"]
+[ext_resource type="Texture2D" uid="uid://bojvc66432jr2" path="res://assets/hud/flask.svg" id="5_lp0dp"]
+[ext_resource type="Texture2D" uid="uid://bq6j3q2bphy6y" path="res://assets/hud/syringe.svg" id="6_lp7yt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i74p8"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="StatusPanel" type="Control"]
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_top = -1080.0
+offset_right = 1920.0
 grow_vertical = 0
-scale = Vector2(0.2, 0.2)
-size_flags_horizontal = 0
-size_flags_vertical = 0
 script = ExtResource("1_28hqb")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_top = -754.0
-offset_right = 2127.0
-theme_override_constants/margin_left = 207
-theme_override_constants/margin_bottom = 207
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -174.0
+offset_right = 554.0
+offset_bottom = 2.0
+grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 50
 
-[node name="BackgroundColorRect" type="ColorRect" parent="MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
-color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_i74p8")
 
-[node name="RowsVBox" type="VBoxContainer" parent="MarginContainer/BackgroundColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
-offset_right = 1920.0
-offset_bottom = 547.0
-grow_horizontal = 2
-grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
 
-[node name="FirstRowMarginBox" type="MarginContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox"]
+[node name="RowsVBox" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 82
-theme_override_constants/margin_top = 41
-theme_override_constants/margin_right = 82
+theme_override_constants/separation = 0
 
-[node name="FirstRowHBox" type="HBoxContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox/FirstRowMarginBox"]
+[node name="FirstRowMarginBox" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox"]
 layout_mode = 2
 
-[node name="HealthLabel" type="Label" parent="MarginContainer/BackgroundColorRect/RowsVBox/FirstRowMarginBox/FirstRowHBox"]
-custom_minimum_size = Vector2(0, 132)
+[node name="FirstRowHBox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/FirstRowMarginBox"]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/FirstRowMarginBox/FirstRowHBox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_22btv")
-theme_override_font_sizes/font_size = 132
+theme_override_font_sizes/font_size = 24
 text = "Gesundheit"
 
-[node name="CurFromMaxHealthLabel" type="Label" parent="MarginContainer/BackgroundColorRect/RowsVBox/FirstRowMarginBox/FirstRowHBox"]
+[node name="CurFromMaxHealthLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/FirstRowMarginBox/FirstRowHBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 132)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_22btv")
-theme_override_font_sizes/font_size = 132
+theme_override_font_sizes/font_size = 24
 text = "100/100"
 horizontal_alignment = 2
 
-[node name="SecondRowMarginBox" type="MarginContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox"]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox"]
 layout_mode = 2
-theme_override_constants/margin_left = 82
-theme_override_constants/margin_top = 41
-theme_override_constants/margin_right = 82
+theme_override_constants/margin_top = 10
 
-[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/BackgroundColorRect/RowsVBox/SecondRowMarginBox"]
+[node name="SecondRowMarginBox" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox"]
+layout_mode = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/SecondRowMarginBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 29)
 layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("4_kocoe")
 
-[node name="HealthBarBottomMarginBox" type="MarginContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox/SecondRowMarginBox"]
-layout_mode = 2
-theme_override_constants/margin_top = 82
-
-[node name="ThirdRowMarginBox" type="MarginContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox"]
-layout_mode = 2
-theme_override_constants/margin_left = 82
-theme_override_constants/margin_right = 82
-theme_override_constants/margin_bottom = 41
-
-[node name="ThirdRowHBox" type="HBoxContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox"]
+[node name="HealthBarBottomMarginBox" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/SecondRowMarginBox"]
 layout_mode = 2
 
-[node name="CoinTexture" type="TextureRect" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
-custom_minimum_size = Vector2(160, 0)
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox"]
 layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="ThirdRowMarginBox" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox"]
+layout_mode = 2
+
+[node name="ThirdRowHBox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox"]
+layout_mode = 2
+
+[node name="CoinTexture" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
 texture = ExtResource("3_pneu6")
-stretch_mode = 6
 
-[node name="BalanceMarginBox" type="MarginContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+[node name="BalanceMarginBox" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 layout_mode = 2
-theme_override_constants/margin_left = 78
+theme_override_constants/margin_left = 10
 
-[node name="BalanceLabel" type="Label" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+[node name="BalanceLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 132)
 layout_mode = 2
-size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_22btv")
-theme_override_font_sizes/font_size = 132
-text = "100000 Euronen"
+theme_override_font_sizes/font_size = 24
+text = "132 Euronen"
 
-[node name="ThirdRowHBoxStatusEffects" type="HBoxContainer" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+[node name="ThirdRowHBoxStatusEffects" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 0
 alignment = 2
 
-[node name="BloodTexture" type="TextureRect" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+[node name="BloodTexture" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(160, 0)
+custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
+size_flags_vertical = 4
 texture = ExtResource("4_cowbk")
-stretch_mode = 4
 
-[node name="FlaskTexture" type="TextureRect" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(160, 0)
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
 layout_mode = 2
+theme_override_constants/margin_left = 15
+
+[node name="FlaskTexture" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
 texture = ExtResource("5_lp0dp")
-stretch_mode = 4
 
-[node name="SyringeTexture" type="TextureRect" parent="MarginContainer/BackgroundColorRect/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(160, 0)
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
 layout_mode = 2
+theme_override_constants/margin_left = 15
+
+[node name="SyringeTexture" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
 texture = ExtResource("6_lp7yt")
-stretch_mode = 4
