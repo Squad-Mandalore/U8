@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cy1iar1dkomyr"]
+[gd_scene load_steps=17 format=3 uid="uid://cy1iar1dkomyr"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_el7fl"]
 [ext_resource type="Texture2D" uid="uid://cok6af1uuonbi" path="res://assets/hud/under_progressbar.svg" id="2_pg2fv"]
@@ -10,6 +10,34 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a162o"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_js15a"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_cgtou"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jd458"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rmbjm"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_2i1o3"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fk8u0"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_hmkcx"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fw74r"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
 
 [node name="StatHud" type="Control"]
 layout_mode = 3
@@ -58,24 +86,24 @@ layout_mode = 2
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Health" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="LabelHealth" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Health"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "Gesundheit"
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="LabelHealthStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Health"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "100/100"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HealthBar" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HealthBar"]
 layout_mode = 2
 value = 100.0
 texture_under = ExtResource("2_pg2fv")
@@ -83,27 +111,27 @@ texture_progress = ExtResource("3_qah0u")
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_bottom = 18
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="DodgeChance" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+[node name="LabelDodge" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DodgeChance"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
-text = "Dodgechance"
+text = "Ausweichchance
+"
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+[node name="LabelDodgeStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DodgeChance"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "20/50"
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="DodgeChanceBar" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+[node name="DodgeBar" type="TextureProgressBar" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DodgeChanceBar"]
 layout_mode = 2
 max_value = 50.0
 value = 20.0
@@ -112,199 +140,210 @@ texture_progress = ExtResource("4_n3hml")
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_bottom = 18
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Armor" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+[node name="LabelArmor" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Armor"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
-text = "Armor"
+text = "Rüstung"
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+[node name="LabelArmorStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Armor"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "6"
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Seperator1" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_js15a")
+
+[node name="Initiative" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer7"]
+[node name="LabelInitiative" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Initiative"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "Initiative"
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer7"]
+[node name="LabelInitiativeStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Initiative"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "5"
 
-[node name="HSeparator2" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Seperator2" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_cgtou")
+
+[node name="Strength" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer8" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer8"]
+[node name="LabelStrength" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Strength"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
-text = "Strength"
+text = "Stärke"
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer8"]
+[node name="LabelStrengthStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Strength"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "11"
 
-[node name="HSeparator3" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Seperator3" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_jd458")
+
+[node name="Coolness" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer9" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer9"]
+[node name="LabelCoolness" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Coolness"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
-text = "Collness"
+text = "Coolness"
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer9"]
+[node name="LabelCoolnessStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Coolness"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "5"
 
-[node name="HSeparator4" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Seperator4" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_rmbjm")
+
+[node name="Attractiveness" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer10" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer10"]
+[node name="LabelAttractiveness" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Attractiveness"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
-text = "Attraktivity"
+text = "Attraktivität"
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer10"]
+[node name="LabelAttractiveness2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Attractiveness"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "7"
 
-[node name="HSeparator5" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Seperator5" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_2i1o3")
+
+[node name="Intelligence" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer11" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer11"]
+[node name="LabelIntelligence" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Intelligence"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "Intelligenz"
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer11"]
+[node name="LabelIntelligenceStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Intelligence"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "4"
 
-[node name="HSeparator6" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Seperator6" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_fk8u0")
+
+[node name="Creativity" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer12" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer12"]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Creativity"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
-text = "Creativity"
+text = "Kreativität"
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer12"]
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Creativity"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "4"
 
-[node name="HSeparator7" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Seperator7" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_hmkcx")
+
+[node name="Luck" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer13" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer13"]
+[node name="LabelLuck" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Luck"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
-text = "Luck"
+text = "Glück"
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer13"]
+[node name="labelLuckStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Luck"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "1000"
 
-[node name="HSeparator8" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Seperator8" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_fw74r")
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="LabelResistance" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "Resistenzen"
 
-[node name="HBoxContainer14" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="Resistances" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer14"]
+[node name="BleedResistance" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer14/HBoxContainer"]
+[node name="BleedResistanceIcon" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances/BleedResistance"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 texture = ExtResource("5_31p3o")
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer14/HBoxContainer"]
+[node name="BleedResistanceStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances/BleedResistance"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "100%"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer14"]
+[node name="PoisonResistance" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances"]
 layout_mode = 2
 size_flags_horizontal = 6
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer14/HBoxContainer2"]
+[node name="PoisonResistanceIcon" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances/PoisonResistance"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 texture = ExtResource("6_avhbx")
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer14/HBoxContainer2"]
+[node name="PoisonResistanceStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances/PoisonResistance"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "100%"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer14"]
+[node name="DrugResistance" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances"]
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer14/HBoxContainer3"]
+[node name="DrugResistanceIcon" type="NinePatchRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances/DrugResistance"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 texture = ExtResource("7_e8f2f")
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer14/HBoxContainer3"]
+[node name="DrugResistanceStat" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Resistances/DrugResistance"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
