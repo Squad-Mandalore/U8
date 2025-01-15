@@ -65,9 +65,10 @@ horizontal_alignment = 1
 [node name="InputActionsList" parent="VBoxContainer/InputMappingContainer" instance=ExtResource("4_lj2f4")]
 unique_name_in_owner = true
 layout_mode = 2
-input_action_names = Array[StringName]([&"move_up", &"move_down", &"move_left", &"move_right", &"talk", &"scoot"])
-readable_action_names = Array[String](["Move Up", "Move Down", "Move Left", "Move Right", "Talk", "Scoot"])
+input_action_names = Array[StringName]([&"move_up", &"move_down", &"move_left", &"move_right", &"talk", &"scoot", &"inventory"])
+readable_action_names = Array[String](["Move Up", "Move Down", "Move Left", "Move Right", "Talk", "Scoot", "Inventory"])
 action_name_map = {
+"inventory": "Inventory",
 "move_down": "Move Down",
 "move_left": "Move Left",
 "move_right": "Move Right",
