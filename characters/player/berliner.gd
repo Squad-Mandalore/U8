@@ -8,6 +8,9 @@ var _slowdown_entities: int = 0:
 
 @onready var _animated_sprite_2d = $AnimatedSprite2D
 
+func _ready() -> void:
+    $Inventory.hide()
+
 enum State {IDLE, WALK, TALK, SCOOT}
 var _current_state: State = State.IDLE
 signal talk_enabled()
@@ -119,6 +122,14 @@ func _unhandled_input(event: InputEvent):
         else:
             switch_state(State.SCOOT)
             _animated_sprite_2d.play("scooting_horizontal")
+
+func _input(event: InputEvent):
+    if event.is_action_pressed("inventory"):
+        var canvas_layer: CanvasLayer = ($Inventory as CanvasLayer)
+        if canvas_layer.visible:
+            canvas_layer.hide()
+        else:
+            canvas_layer.show()
 
 func _on_slowdown_area_body_entered(body: Node2D):
     # If we meet an NPC, slow down the player

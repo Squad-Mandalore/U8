@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b2utiw3nl1pqr"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_22btv"]
-[ext_resource type="Script" path="res://scenes/hud/status_panel.gd" id="1_28hqb"]
+[ext_resource type="Script" path="res://scenes/hud/components/status_panel.gd" id="1_28hqb"]
 [ext_resource type="Texture2D" uid="uid://o5oq3c4kxsi0" path="res://assets/hud/coin.svg" id="3_pneu6"]
 [ext_resource type="Texture2D" uid="uid://bnevchla4cibe" path="res://assets/hud/blood.svg" id="4_cowbk"]
 [ext_resource type="Texture2D" uid="uid://chvegn0rcqq1j" path="res://assets/hud/health_progressbar.svg" id="4_kocoe"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkquoqbrb6bh2"]
 
 [ext_resource type="Script" path="res://scenes/hud/train_hud.gd" id="1_asv8f"]
-[ext_resource type="PackedScene" uid="uid://b2utiw3nl1pqr" path="res://scenes/hud/status_panel.tscn" id="2_k8b6u"]
-[ext_resource type="PackedScene" uid="uid://elbl6b2655i1" path="res://scenes/hud/button_hud.tscn" id="3_nbdse"]
+[ext_resource type="PackedScene" uid="uid://b2utiw3nl1pqr" path="res://scenes/hud/components/status_panel.tscn" id="2_k8b6u"]
+[ext_resource type="PackedScene" uid="uid://elbl6b2655i1" path="res://scenes/hud/components/button_hud.tscn" id="3_nbdse"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_asv8f")

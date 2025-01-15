@@ -15,9 +15,6 @@ func _process(delta: float) -> void:
 
 func show_interaction_button() -> void:
     $ButtonHud.show()
-    # $MarginContainer/HBoxContainer/Interaction.text = talk_action_key + " - " + discription
-    # $MarginContainer/HBoxContainer/Interaction.show()
 
 func hide_interaction_button() -> void:
     $ButtonHud.hide()
-    # $MarginContainer/HBoxContainer/Interaction.hide()
