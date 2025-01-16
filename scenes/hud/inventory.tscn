@@ -5,11 +5,11 @@
 [ext_resource type="Script" path="res://scenes/hud/components/stat_hud.gd" id="3_4eaba"]
 [ext_resource type="PackedScene" uid="uid://b4s3pgrykws8i" path="res://scenes/hud/components/button_hud.tscn" id="4_qjhs6"]
 
-[sub_resource type="InputEventAction" id="InputEventAction_6qoiq"]
+[sub_resource type="InputEventAction" id="InputEventAction_oa5r2"]
 action = &"inventory"
 
-[sub_resource type="Shortcut" id="Shortcut_xh8jf"]
-events = [SubResource("InputEventAction_6qoiq")]
+[sub_resource type="Shortcut" id="Shortcut_7nrh5"]
+events = [SubResource("InputEventAction_oa5r2")]
 
 [node name="Inventory" type="CanvasLayer"]
 script = ExtResource("1_gj1qs")
@@ -54,12 +54,15 @@ layout_mode = 2
 theme_override_constants/margin_right = 50
 
 [node name="InventoryButton" parent="ButtonHudMargin/HBoxContainer" instance=ExtResource("4_qjhs6")]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-shortcut = SubResource("Shortcut_xh8jf")
+shortcut = SubResource("Shortcut_7nrh5")
 text = "Zurück zum Spiel   "
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 visible = false
 offset_right = 40.0
 offset_bottom = 40.0
+
+[connection signal="pressed" from="ButtonHudMargin/HBoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]

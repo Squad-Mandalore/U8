@@ -22,3 +22,9 @@ func hide_interaction_button() -> void:
 func _on_player_stats_changed(stats: StatsSpecifier, balance: int) -> void:
     (%StatusPanel as Control).update_stats(stats, balance)
 
+func _on_button_hud_pressed() -> void:
+    if !%ButtonHud.is_activated_by_shortcut("talk"):
+        var action_event = InputEventAction.new()
+        action_event.action = "talk"
+        action_event.pressed = true
+        Input.parse_input_event(action_event)

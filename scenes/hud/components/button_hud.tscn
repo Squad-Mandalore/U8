@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4s3pgrykws8i"]
+[gd_scene load_steps=8 format=3 uid="uid://b4s3pgrykws8i"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_j4tit"]
 [ext_resource type="StyleBox" uid="uid://dt3uwvil3u2tn" path="res://assets/hud/button_hover_pressed_hud.tres" id="2_ilf4p"]
 [ext_resource type="StyleBox" uid="uid://boduqgpheugx5" path="res://assets/hud/button_hover_hud.tres" id="2_km251"]
 [ext_resource type="StyleBox" uid="uid://dpeve5o3s6gky" path="res://assets/hud/button_hud.tres" id="3_4pbjd"]
 [ext_resource type="FontFile" uid="uid://di5o0daj6dcb8" path="res://assets/fonts/nippo/OTF/Nippo-Bold.otf" id="5_i8byh"]
+[ext_resource type="Script" path="res://scenes/hud/components/button_hud.gd" id="5_uwjp3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10kd4"]
 bg_color = Color(1, 1, 1, 1)
@@ -26,6 +27,7 @@ theme_override_styles/normal = ExtResource("3_4pbjd")
 shortcut_in_tooltip = false
 text = "Intergieren  "
 alignment = 2
+script = ExtResource("5_uwjp3")
 
 [node name="InteractionKeyMarginBox" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(44, 44)
