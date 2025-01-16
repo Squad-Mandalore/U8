@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmd87ow3onp7x"]
+
+[ext_resource type="Texture2D" uid="uid://dgtiqbt4vrq0i" path="res://assets/hub/escalator-front.png" id="1_4dgmr"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mnh0c"]
+a = Vector2(-33, 16)
+b = Vector2(32, 16)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0ji8s"]
+a = Vector2(54, 7)
+b = Vector2(37, 18)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q30lc"]
+a = Vector2(51, 7)
+b = Vector2(52, 29)
+
+[node name="EscalatorFrontRight" type="Node2D"]
+
+[node name="Escalator-front" type="Sprite2D" parent="."]
+position = Vector2(32, 0)
+texture = ExtResource("1_4dgmr")
+offset = Vector2(0, -17)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -34)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(33, 17)
+shape = SubResource("SegmentShape2D_mnh0c")
+debug_color = Color(0.906287, 0.238013, 0.481607, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(12, 15)
+shape = SubResource("SegmentShape2D_0ji8s")
+debug_color = Color(0.906287, 0.238013, 0.481607, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(10, -3)
+shape = SubResource("SegmentShape2D_q30lc")
+debug_color = Color(0.906287, 0.238013, 0.481607, 0.42)

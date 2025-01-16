@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxtsv1xtfd42n"]
+[gd_scene load_steps=14 format=3 uid="uid://dxtsv1xtfd42n"]
 
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
 [ext_resource type="Texture2D" uid="uid://b36noacmhtswo" path="res://assets/hub/hub.png" id="2_c8rit"]
 [ext_resource type="Script" path="res://scenes/game_scene/levels/hub/station.gd" id="3_08vcd"]
 [ext_resource type="LabelSettings" uid="uid://vt8vv8530qgd" path="res://assets/hub/station_name_label_settings.tres" id="3_hxi0m"]
 [ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://models/station/tower.tscn" id="4_wvqyq"]
+[ext_resource type="PackedScene" uid="uid://cp3cgd3f2ta0g" path="res://models/station/escalatorFrontLeft.tscn" id="6_fup5h"]
+[ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://models/station/escalatorFrontRight.tscn" id="7_5owx3"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
 b = Vector2(822, 0)
@@ -74,6 +76,7 @@ y_sort_enabled = true
 
 [node name="CharacterBody2D" parent="Node2D" instance=ExtResource("1_gtc8i")]
 z_index = 0
+y_sort_enabled = true
 position = Vector2(961, 210)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/CharacterBody2D"]
@@ -159,6 +162,36 @@ position = Vector2(1602, 420.5)
 
 [node name="Tower22" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(1769, 420.5)
+
+[node name="Escalators" type="CanvasGroup" parent="Node2D"]
+y_sort_enabled = true
+position = Vector2(31, 277)
+
+[node name="EscalatorFront" parent="Node2D/Escalators" instance=ExtResource("6_fup5h")]
+position = Vector2(0, 14)
+
+[node name="EscalatorFront2" parent="Node2D/Escalators" instance=ExtResource("6_fup5h")]
+position = Vector2(0, 76)
+
+[node name="EscalatorFront3" parent="Node2D/Escalators" instance=ExtResource("7_5owx3")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1881, 14)
+
+[node name="EscalatorFront5" parent="Node2D/Escalators" instance=ExtResource("7_5owx3")]
+position = Vector2(1881, -6)
+
+[node name="EscalatorFront4" parent="Node2D/Escalators" instance=ExtResource("7_5owx3")]
+position = Vector2(1882, 56)
+
+[node name="EscalatorFront6" parent="Node2D/Escalators" instance=ExtResource("7_5owx3")]
+position = Vector2(1881, 76)
+
+[node name="EscalatorFront7" parent="Node2D/Escalators" instance=ExtResource("6_fup5h")]
+position = Vector2(0, 34)
+
+[node name="EscalatorFront8" parent="Node2D/Escalators" instance=ExtResource("6_fup5h")]
+position = Vector2(0, 96)
 
 [node name="TrainDoor" type="Area2D" parent="."]
 position = Vector2(962, 186)
