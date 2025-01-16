@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh8a5067wese3"]
+[gd_scene load_steps=10 format=3 uid="uid://dh8a5067wese3"]
 
 [ext_resource type="Script" path="res://scenes/hud/inventory.gd" id="1_gj1qs"]
 [ext_resource type="PackedScene" uid="uid://cy1iar1dkomyr" path="res://scenes/hud/components/stat_hud.tscn" id="1_w07gl"]
 [ext_resource type="Script" path="res://scenes/hud/components/stat_hud.gd" id="3_4eaba"]
 [ext_resource type="PackedScene" uid="uid://b4s3pgrykws8i" path="res://scenes/hud/components/button_hud.tscn" id="4_qjhs6"]
+[ext_resource type="Texture2D" uid="uid://dn0jfcq1ly2go" path="res://assets/hud/coin.svg" id="5_rpfif"]
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="6_whn6t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vu06r"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.74902)
 
 [sub_resource type="InputEventAction" id="InputEventAction_oa5r2"]
 action = &"inventory"
@@ -13,6 +18,14 @@ events = [SubResource("InputEventAction_oa5r2")]
 
 [node name="Inventory" type="CanvasLayer"]
 script = ExtResource("1_gj1qs")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vu06r")
 
 [node name="StatHudMargin" type="MarginContainer" parent="."]
 anchors_preset = 9
@@ -40,29 +53,59 @@ grow_vertical = 0
 theme_override_constants/margin_right = 157
 theme_override_constants/margin_bottom = 50
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ButtonHudMargin"]
+[node name="ButtonHBox" type="HBoxContainer" parent="ButtonHudMargin"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="MapButton" parent="ButtonHudMargin/HBoxContainer" instance=ExtResource("4_qjhs6")]
+[node name="MapButton" parent="ButtonHudMargin/ButtonHBox" instance=ExtResource("4_qjhs6")]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 44)
 layout_mode = 2
 text = "Karte   "
 
-[node name="MapInventoryMargin" type="MarginContainer" parent="ButtonHudMargin/HBoxContainer"]
+[node name="MapInventoryMargin" type="MarginContainer" parent="ButtonHudMargin/ButtonHBox"]
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="InventoryButton" parent="ButtonHudMargin/HBoxContainer" instance=ExtResource("4_qjhs6")]
+[node name="InventoryButton" parent="ButtonHudMargin/ButtonHBox" instance=ExtResource("4_qjhs6")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 shortcut = SubResource("Shortcut_7nrh5")
 text = "Zurück zum Spiel   "
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="BalanceMargin" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -91.0
+offset_right = 316.0
+grow_vertical = 0
+theme_override_constants/margin_left = 95
+theme_override_constants/margin_bottom = 50
 
-[connection signal="pressed" from="ButtonHudMargin/HBoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]
+[node name="BalanceHBox" type="HBoxContainer" parent="BalanceMargin"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CoinIcon" type="NinePatchRect" parent="BalanceMargin/BalanceHBox"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_rpfif")
+
+[node name="CoinBalanceMargin" type="MarginContainer" parent="BalanceMargin/BalanceHBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+
+[node name="BalanceLabel" type="Label" parent="BalanceMargin/BalanceHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_whn6t")
+theme_override_font_sizes/font_size = 32
+text = "100 Euronen"
+
+[connection signal="pressed" from="ButtonHudMargin/ButtonHBox/MapButton" to="." method="_on_map_button_pressed"]
+[connection signal="pressed" from="ButtonHudMargin/ButtonHBox/InventoryButton" to="." method="_on_inventory_button_pressed"]
