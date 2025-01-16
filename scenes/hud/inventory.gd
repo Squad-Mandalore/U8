@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
     pass
 
 func update_stats(stats: StatsSpecifier, balance: int):
-    ($StatHudMargin/StatHud as Control).update_stats(stats)
+    (%StatHud as Control).update_stats(stats)
     update_balance(balance)
 
 func update_balance(new_balance: int) -> void:
