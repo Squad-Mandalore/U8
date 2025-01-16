@@ -7,29 +7,33 @@
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_asv8f")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
+[node name="ButtonHudMargin" type="MarginContainer" parent="."]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -243.0
-offset_top = -81.0
+offset_left = -226.0
+offset_top = -94.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 25
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 50
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 25
-alignment = 2
-
-[node name="Interaction" type="Button" parent="MarginContainer/HBoxContainer"]
-visible = false
+[node name="ButtonHud" parent="ButtonHudMargin" instance=ExtResource("3_nbdse")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="StatusPanel" parent="." instance=ExtResource("2_k8b6u")]
+[node name="StatusPanelMargin" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -169.0
+offset_right = 515.0
+grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 50
 
-[node name="ButtonHud" parent="." instance=ExtResource("3_nbdse")]
+[node name="StatusPanel" parent="StatusPanelMargin" instance=ExtResource("2_k8b6u")]
+unique_name_in_owner = true
+layout_mode = 2

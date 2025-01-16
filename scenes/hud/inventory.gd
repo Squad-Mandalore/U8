@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
     pass
 
 func update_stats(stats: StatsSpecifier, balance: int):
-    ($StatHud as Control).update_stats(stats)
+    ($MarginContainer/StatHud as Control).update_stats(stats)
