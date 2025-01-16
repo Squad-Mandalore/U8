@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dh8a5067wese3"]
+[gd_scene load_steps=12 format=3 uid="uid://dh8a5067wese3"]
 
 [ext_resource type="Script" path="res://scenes/hud/inventory.gd" id="1_gj1qs"]
 [ext_resource type="PackedScene" uid="uid://cy1iar1dkomyr" path="res://scenes/hud/components/stat_hud.tscn" id="1_w07gl"]
 [ext_resource type="Script" path="res://scenes/hud/components/stat_hud.gd" id="3_4eaba"]
 [ext_resource type="PackedScene" uid="uid://b6qdv1d0kofyo" path="res://scenes/hud/components/inventory_hud.tscn" id="4_ahg8d"]
 [ext_resource type="PackedScene" uid="uid://b4s3pgrykws8i" path="res://scenes/hud/components/button_hud.tscn" id="4_qjhs6"]
+[ext_resource type="PackedScene" uid="uid://c5u8dk88a3txs" path="res://scenes/hud/components/item_description.tscn" id="5_l8nab"]
 [ext_resource type="Texture2D" uid="uid://dn0jfcq1ly2go" path="res://assets/hud/coin.svg" id="5_rpfif"]
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="6_whn6t"]
 
@@ -58,6 +59,16 @@ theme_override_constants/margin_bottom = 201
 
 [node name="InventoryHud" parent="HBoxContainer/MarginContainer" instance=ExtResource("4_ahg8d")]
 custom_minimum_size = Vector2(662, 678)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 201
+theme_override_constants/margin_right = 137
+theme_override_constants/margin_bottom = 201
+
+[node name="ItemDescription" parent="HBoxContainer/MarginContainer2" instance=ExtResource("5_l8nab")]
 layout_mode = 2
 
 [node name="ButtonHudMargin" type="MarginContainer" parent="."]
