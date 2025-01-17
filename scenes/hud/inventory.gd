@@ -23,12 +23,13 @@ func update_balance(new_balance: int) -> void:
     (%BalanceLabel as Label).text = "%d Euronen" % [new_balance]
 
 func _on_inventory_button_pressed() -> void:
-    const local_action_event: String = "inventory"
-    if !(%InventoryButton as Button).is_activated_by_shortcut(local_action_event):
-        var action_event = InputEventAction.new()
-        action_event.action = local_action_event
-        action_event.pressed = true
-        Input.parse_input_event(action_event)
+    # const local_action_event: String = "inventory"
+    # if !(%InventoryButton as Button).is_activated_by_shortcut(local_action_event):
+    (get_parent() as Player).toggle_inventory()
+        # var action_event = InputEventAction.new()
+        # action_event.action = local_action_event
+        # action_event.pressed = true
+        # Input.parse_input_event(action_event)
 
 func _on_map_button_pressed() -> void:
     const local_action_event: String = "map"

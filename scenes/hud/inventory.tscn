@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dh8a5067wese3"]
+[gd_scene load_steps=10 format=3 uid="uid://dh8a5067wese3"]
 
 [ext_resource type="Script" path="res://scenes/hud/inventory.gd" id="1_gj1qs"]
 [ext_resource type="PackedScene" uid="uid://cy1iar1dkomyr" path="res://scenes/hud/components/stat_hud.tscn" id="1_w07gl"]
@@ -11,12 +11,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vu06r"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.74902)
-
-[sub_resource type="InputEventAction" id="InputEventAction_oa5r2"]
-action = &"inventory"
-
-[sub_resource type="Shortcut" id="Shortcut_7nrh5"]
-events = [SubResource("InputEventAction_oa5r2")]
 
 [node name="Inventory" type="CanvasLayer"]
 script = ExtResource("1_gj1qs")
@@ -40,7 +34,7 @@ theme_override_constants/separation = 0
 [node name="StatHudMargin" type="MarginContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(570, 0)
 layout_mode = 2
-theme_override_constants/margin_left = 95
+theme_override_constants/margin_left = 116
 theme_override_constants/margin_top = 201
 theme_override_constants/margin_bottom = 201
 
@@ -66,7 +60,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_top = 201
-theme_override_constants/margin_right = 137
+theme_override_constants/margin_right = 116
 theme_override_constants/margin_bottom = 201
 
 [node name="ItemDescription" parent="HBoxContainer/MarginContainer2" instance=ExtResource("5_l8nab")]
@@ -83,11 +77,12 @@ offset_left = -550.0
 offset_top = -94.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_constants/margin_right = 157
+theme_override_constants/margin_right = 116
 theme_override_constants/margin_bottom = 50
 
 [node name="ButtonHBox" type="HBoxContainer" parent="ButtonHudMargin"]
 layout_mode = 2
+size_flags_horizontal = 8
 theme_override_constants/separation = 0
 
 [node name="MapButton" parent="ButtonHudMargin/ButtonHBox" instance=ExtResource("4_qjhs6")]
@@ -104,7 +99,6 @@ theme_override_constants/margin_right = 50
 unique_name_in_owner = true
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-shortcut = SubResource("Shortcut_7nrh5")
 text = "Zurück zum Spiel   "
 
 [node name="BalanceMargin" type="MarginContainer" parent="."]
@@ -114,7 +108,7 @@ anchor_bottom = 1.0
 offset_top = -91.0
 offset_right = 316.0
 grow_vertical = 0
-theme_override_constants/margin_left = 95
+theme_override_constants/margin_left = 116
 theme_override_constants/margin_bottom = 50
 
 [node name="BalanceHBox" type="HBoxContainer" parent="BalanceMargin"]
@@ -137,7 +131,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("6_whn6t")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "100 Euronen"
 
 [connection signal="pressed" from="ButtonHudMargin/ButtonHBox/MapButton" to="." method="_on_map_button_pressed"]

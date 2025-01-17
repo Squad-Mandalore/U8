@@ -131,11 +131,7 @@ func _unhandled_input(event: InputEvent):
 
 func _input(event: InputEvent):
     if event.is_action_pressed("inventory"):
-        var canvas_layer: CanvasLayer = ($Inventory as CanvasLayer)
-        var toggle: bool = canvas_layer.visible
-
-        hud_toggled.emit(toggle)
-        canvas_layer.visible = !toggle
+        toggle_inventory()
 
 func _on_slowdown_area_body_entered(_body: Node2D):
     # If we meet an NPC, slow down the player
@@ -174,3 +170,10 @@ func toggle_talking():
     else:
         switch_state(State.IDLE)
         (bodies[0] as NPC)._stop_talking()
+
+func toggle_inventory():
+    var canvas_layer: CanvasLayer = ($Inventory as CanvasLayer)
+    var toggle: bool = canvas_layer.visible
+
+    hud_toggled.emit(toggle)
+    canvas_layer.visible = !toggle
