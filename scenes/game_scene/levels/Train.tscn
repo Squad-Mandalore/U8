@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=13 format=3 uid="uid://2p6mgnqih68g"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/levels/train.gd" id="1_1jt1h"]
 [ext_resource type="Script" path="res://background.gd" id="2_20w01"]
@@ -10,12 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://bkaths3irgi7c" path="res://characters/npcs/chris/chris.tscn" id="8_sempk"]
 [ext_resource type="PackedScene" uid="uid://cph57sst3icgu" path="res://characters/npcs/bettler1/bettler1.tscn" id="9_xenwl"]
 [ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politiker1/politiker1.tscn" id="10_rky5v"]
+[ext_resource type="PackedScene" uid="uid://bkquoqbrb6bh2" path="res://scenes/hud/train_hud.tscn" id="10_t7xje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77qi7"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_1jt1h")
+
+[node name="HUD" parent="." instance=ExtResource("10_t7xje")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -45,7 +48,6 @@ zoom = Vector2(6.5, 6.5)
 limit_left = 0
 limit_top = 0
 limit_bottom = 270
-limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
@@ -68,4 +70,8 @@ position = Vector2(488, 157)
 position = Vector2(264, 163)
 
 [connection signal="ready" from="." to="Player" method="_disable_scooting"]
+[connection signal="hud_toggled" from="Player" to="." method="_on_player_hud_toggled"]
+[connection signal="stats_changed" from="Player" to="HUD" method="_on_player_stats_changed"]
+[connection signal="talk_disabled" from="Player" to="." method="_on_player_talk_disabled"]
+[connection signal="talk_enabled" from="Player" to="." method="_on_player_talk_enabled"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

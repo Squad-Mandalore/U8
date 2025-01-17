@@ -1,8 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://csgdo87mltoha"]
+[gd_scene load_steps=34 format=3 uid="uid://csgdo87mltoha"]
 
 [ext_resource type="Script" path="res://characters/player/berliner.gd" id="1_pkp7h"]
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/berlinv3anim.png" id="2_ddcmo"]
+[ext_resource type="Resource" uid="uid://ce3f1ohuwurv" path="res://classes/player/honest_burgy.tres" id="2_t0nad"]
 [ext_resource type="Texture2D" uid="uid://kytixtu7vost" path="res://characters/player/riding.png" id="3_l50yj"]
+[ext_resource type="PackedScene" uid="uid://dh8a5067wese3" path="res://scenes/hud/inventory.tscn" id="4_s04kq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpkiy"]
 size = Vector2(20, 4)
@@ -227,6 +229,7 @@ floor_block_on_wall = false
 floor_snap_length = 0.0
 platform_on_leave = 2
 script = ExtResource("1_pkp7h")
+stats = ExtResource("2_t0nad")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dpkiy")
@@ -247,5 +250,8 @@ position = Vector2(0, 16)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_cjqwy")
 
+[node name="Inventory" parent="." instance=ExtResource("4_s04kq")]
+
+[connection signal="stats_changed" from="." to="." method="_on_stats_changed"]
 [connection signal="body_entered" from="SlowdownArea" to="." method="_on_slowdown_area_body_entered"]
 [connection signal="body_exited" from="SlowdownArea" to="." method="_on_slowdown_area_body_exited"]

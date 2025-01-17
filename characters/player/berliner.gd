@@ -8,17 +8,28 @@ var _slowdown_entities: int = 0:
 
 @onready var _animated_sprite_2d = $AnimatedSprite2D
 
+func _ready() -> void:
+    $Inventory.hide()
+    stats_changed.emit(stats, balance)
+
 enum State {IDLE, WALK, TALK, SCOOT}
 var _current_state: State = State.IDLE
 var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
 
+signal talk_enabled()
+signal talk_disabled()
+signal hud_toggled(visible: bool)
+signal stats_changed(stats: StatsSpecifier, balance: int)
+
+
 @export var stats: StatsSpecifier
+var balance: int
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK:
         # If talking, skip movement
         return
-        
+
     if _current_state == State.SCOOT:
         _handle_scooting(delta)
         return
@@ -106,7 +117,7 @@ func switch_state(new_state: State):
                 _animated_sprite_2d.play("walk")
             State.IDLE:
                 _animated_sprite_2d.play("idle")
-                
+
 func _unhandled_input(event: InputEvent):
     if not _scooting_enabled:
         return
@@ -117,6 +128,14 @@ func _unhandled_input(event: InputEvent):
         else:
             switch_state(State.SCOOT)
             _animated_sprite_2d.play("scooting_horizontal")
+
+func _input(event: InputEvent):
+    if event.is_action_pressed("inventory"):
+        var canvas_layer: CanvasLayer = ($Inventory as CanvasLayer)
+        var toggle: bool = canvas_layer.visible
+
+        hud_toggled.emit(toggle)
+        canvas_layer.visible = !toggle
 
 func _on_slowdown_area_body_entered(body: Node2D):
     # If we meet an NPC, slow down the player
@@ -130,6 +149,8 @@ func _on_slowdown_area_body_entered(body: Node2D):
     if not npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
         npc.connect("npc_stopped_talking", _on_npc_stopped_talking)
 
+    talk_enabled.emit()
+
 func _on_slowdown_area_body_exited(body: Node2D):
     # If the NPC leaves, reduce slowdown count
     _slowdown_entities -= 1
@@ -142,6 +163,8 @@ func _on_slowdown_area_body_exited(body: Node2D):
     if npc.is_connected("npc_stopped_talking", _on_npc_stopped_talking):
         npc.disconnect("npc_stopped_talking", _on_npc_stopped_talking)
 
+    talk_disabled.emit()
+
 func _on_npc_started_talking(npc: NPC):
     # If NPC started talking, the player also enters TALK mode
     switch_state(State.TALK)
@@ -151,11 +174,19 @@ func _on_npc_stopped_talking(npc: NPC):
     # If NPC stopped talking, the player reverts to IDLE (or WALK if moving)
     switch_state(State.IDLE)
     print("NPC stopped talking to you")
-    
+
 func _disable_scooting():
     _scooting_enabled = false
     print("Scooting disabled")
-    
+
 func _enable_scooting():
     _scooting_enabled = true
     print("Scooting enabled")
+
+func damage(damage_taken: int):
+    stats.health -= damage_taken
+    stats_changed.emit(stats)
+
+func _on_stats_changed(stats: StatsSpecifier, balance: int) -> void:
+    ($Inventory as CanvasLayer).update_stats(stats, balance)
+
