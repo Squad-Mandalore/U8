@@ -5,7 +5,7 @@ var item
 func set_item(new_item):
     item = new_item
     if is_enabled():
-        (%ItemFrame as TextureRect).texture = load(item.texture)
+        (%ItemFrame as TextureRect).texture = load(item)
 
 func is_enabled() -> bool:
     var item_slot: StyleBoxFlat = get_theme_stylebox("panel")

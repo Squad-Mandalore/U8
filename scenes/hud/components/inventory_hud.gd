@@ -6,6 +6,8 @@ var max_inventory_size: int = 16
 
 func _ready() -> void:
     # load_meta_items()
+    print("hello")
+    item_slots.append("res://assets/hud/coin.svg")
     load_items()
 
 func load_items():
@@ -15,7 +17,8 @@ func load_items():
             item_slot.disable()
         else:
             item_slot.enable()
-            # item_slot.set_item(item_slots[i])
+            if i < len(item_slots):
+                item_slot.set_item(item_slots[i])
 
 func load_meta_items():
     cur_inventory_size = %BackpackItemSlot.inventory_size
