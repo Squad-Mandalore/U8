@@ -9,6 +9,7 @@ var _current_state: State = State.IDLE
 var _talking: bool = false
 var _player_nearby: bool = false
 
+
 @onready var _sprite = $AnimatedSprite2D
 @onready var _timer = $Timer
 @export var _name : String = "Random Dude"
@@ -66,6 +67,7 @@ func stop_talking() -> void:
 	# Resume normal walking after a small delay or immediately
 	_timer.start(1.0)
 	enable_outline(Color(0, 1, 0, 1))
+
 
 func _new_direction() -> void:
 	_direction = Vector2(randi_range(-1, 1), randi_range(-1, 1))

@@ -173,7 +173,6 @@ func _on_npc_stopped_talking(npc: NPC):
 	switch_state(State.IDLE)
 	print("You are no longer talking to %s." % npc._name)
 
-
 func _disable_scooting():
 	_scooting_enabled = false
 	print("Scooting disabled")
@@ -242,3 +241,14 @@ func _update_talkable_npc() -> void:
 		talk_enabled.emit()
 	else:
 		talk_disabled.emit()
+
+func toggle_talking():
+    var bodies = $SlowdownArea.get_overlapping_bodies()
+    if bodies.size() < 1:
+        return
+    if !_current_state == State.TALK:
+        switch_state(State.TALK)
+        (bodies[0] as NPC)._start_talking()
+    else:
+        switch_state(State.IDLE)
+        (bodies[0] as NPC)._stop_talking()
