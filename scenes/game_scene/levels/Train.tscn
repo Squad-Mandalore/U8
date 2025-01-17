@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=11 format=3 uid="uid://2p6mgnqih68g"]
 
 [ext_resource type="Script" path="res://scenes/game_scene/levels/train.gd" id="1_1jt1h"]
-[ext_resource type="Script" path="res://background.gd" id="2_20w01"]
+[ext_resource type="Script" path="res://scenes/game_scene/levels/background.gd" id="2_20w01"]
 [ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://models/tracks/background.png" id="3_dfgt4"]
 [ext_resource type="PackedScene" uid="uid://c6lryjxjclq03" path="res://models/train/inside_left.tscn" id="4_q3h5r"]
-[ext_resource type="PackedScene" uid="uid://ba4thewjhp2ni" path="res://models/train/right.tscn" id="6_ykx2a"]
+[ext_resource type="PackedScene" uid="uid://c2xs2hjyqqtav" path="res://models/train/right.tscn" id="6_ykx2a"]
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="7_c73gc"]
 [ext_resource type="PackedScene" uid="uid://bkaths3irgi7c" path="res://characters/npcs/chris/chris.tscn" id="8_sempk"]
 [ext_resource type="PackedScene" uid="uid://cph57sst3icgu" path="res://characters/npcs/bettler1/bettler1.tscn" id="9_xenwl"]
