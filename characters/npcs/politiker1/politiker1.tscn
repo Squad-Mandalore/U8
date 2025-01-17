@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://1qondgntsrqj"]
+[gd_scene load_steps=17 format=3 uid="uid://1qondgntsrqj"]
 
 [ext_resource type="Script" path="res://characters/npcs/politiker1/politiker.gd" id="1_2022g"]
 [ext_resource type="Texture2D" uid="uid://cjyyhybqiea5t" path="res://characters/npcs/politiker1/politik1anim.png" id="2_xo3q8"]
@@ -103,10 +103,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6rf0"]
-radius = 11.0
-height = 44.0
-
 [node name="Politiker" type="CharacterBody2D" groups=["NPC"]]
 z_index = 50
 collision_layer = 5
@@ -130,14 +126,4 @@ autoplay = "idle"
 frame_progress = 0.759044
 offset = Vector2(0, -16)
 
-[node name="SlowdownArea" type="Area2D" parent="." groups=["NPC"]]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SlowdownArea"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_n6rf0")
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="SlowdownArea" to="." method="_on_slowdown_area_body_entered"]
-[connection signal="body_exited" from="SlowdownArea" to="." method="_on_slowdown_area_body_exited"]
