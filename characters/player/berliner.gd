@@ -183,6 +183,3 @@ func toggle_inventory():
 
     hud_toggled.emit(toggle)
     canvas_layer.visible = !toggle
-
-func get_viewport_texture() -> ViewportTexture:
-    return $SubViewportContainer/SubViewport.get_texture()

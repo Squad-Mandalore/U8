@@ -253,27 +253,6 @@ shape = SubResource("CapsuleShape2D_cjqwy")
 [node name="Inventory" parent="." instance=ExtResource("4_s04kq")]
 visible = false
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-offset_left = 1000.0
-offset_right = 1034.0
-offset_bottom = 34.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(34, 34)
-render_target_update_mode = 4
-
-[node name="InventoryCamera" type="Camera2D" parent="SubViewportContainer/SubViewport"]
-unique_name_in_owner = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/InventoryCamera"]
-sprite_frames = SubResource("SpriteFrames_v3pdd")
-animation = &"walk"
-autoplay = "idle"
-
 [connection signal="stats_changed" from="." to="." method="_on_stats_changed"]
 [connection signal="body_entered" from="SlowdownArea" to="." method="_on_slowdown_area_body_entered"]
 [connection signal="body_exited" from="SlowdownArea" to="." method="_on_slowdown_area_body_exited"]
