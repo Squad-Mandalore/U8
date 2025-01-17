@@ -6,7 +6,6 @@ const SPEED: float = 68.0
 
 var _direction: Vector2 = Vector2.ZERO
 var _current_state: State = State.IDLE
-var _talking: bool = false
 var _player_nearby: bool = false
 
 
@@ -54,7 +53,6 @@ func _physics_process(delta: float) -> void:
     move_and_collide(velocity * delta)
 
 func start_talking() -> void:
-    _talking = true
     _timer.stop()
     velocity = Vector2.ZERO
     _direction = Vector2.ZERO
@@ -62,7 +60,6 @@ func start_talking() -> void:
     enable_outline(Color(0, 0, 1, 1))
 
 func stop_talking() -> void:
-    _talking = false
     _current_state = State.IDLE
     # Resume normal walking after a small delay or immediately
     _timer.start(1.0)

@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 const SPEED: float = 102.0
-var _slowdown_entities: Array[NPC] = []
+var _talkable_npc: NPC = null
 
 @onready var _animated_sprite_2d = $AnimatedSprite2D
 @onready var inventory: CanvasLayer = $Inventory
@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 
     var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
     var speed = SPEED
-    if _slowdown_entities.size() > 0:
+    if _talkable_npc:
         speed = SPEED / 2
 
     if direction.x < 0:
@@ -136,33 +136,18 @@ func _input(event: InputEvent):
         hud_toggled.emit(toggle)
         canvas_layer.visible = !toggle
 
-    # 1) If the player presses "talk" and at least one NPC is nearby,
-    #    pick the best NPC according to facing & distance, talk to it only.
-    if event.is_action_pressed("talk") and _slowdown_entities.size() > 0:
-        var talkable := _get_best_npc()
-        if talkable == null:
-            return  # No valid NPC in front or something else
-
-        print("Talking")
-        if _current_state == State.TALK:
-            talkable.stop_talking()
-            _on_npc_stopped_talking(talkable)
-        else:
-            talkable.start_talking()
-            _on_npc_started_talking(talkable)
-
 func _on_slowdown_area_body_entered(body: Node2D):
     var npc: NPC = body
-    _slowdown_entities.append(npc)
     npc.set_player_nearby(true)
-    _update_talkable_npc()
+    if _current_state != State.TALK:
+        _update_talkable_npc($SlowdownArea.get_overlapping_bodies())
 
 func _on_slowdown_area_body_exited(body: Node2D):
     var npc: NPC = body
     npc.set_player_nearby(false)
     npc.disable_outline()
-    _slowdown_entities.erase(npc)
-    _update_talkable_npc()
+    if _current_state != State.TALK:
+        _update_talkable_npc($SlowdownArea.get_overlapping_bodies())
 
 
 func _on_npc_started_talking(npc: NPC):
@@ -189,8 +174,8 @@ func _on_stats_changed(stats: StatsSpecifier, balance: int) -> void:
     inventory.update_stats(stats, balance)
 
 
-func _get_best_npc() -> NPC:
-    if _slowdown_entities.is_empty():
+func _get_best_npc(npcs: Array[Node2D]) -> NPC:
+    if npcs.is_empty():
         return null
 
     var x_dir = -1.0 if _animated_sprite_2d.flip_h else 1.0
@@ -200,15 +185,15 @@ func _get_best_npc() -> NPC:
     #  Then pick the closest among them. If none in front, pick the closest overall.
     var best_npc: NPC = null
     var best_dist = INF
-    var my_pos = global_position
+    var my_pos: Vector2 = global_position
 
     # We'll track if we found at least one in front
     var found_in_front = false
 
-    for npc in _slowdown_entities:
-        var diff = npc.global_position - my_pos
-        var dot_val = facing_dir.dot(diff)
-        var dist = diff.length()
+    for npc: NPC in npcs:
+        var diff: Vector2 = npc.global_position - my_pos
+        var dot_val: float = facing_dir.dot(diff)
+        var dist: float = diff.length()
 
         if dot_val > 0:
             # NPC is in front
@@ -225,30 +210,30 @@ func _get_best_npc() -> NPC:
 
     return best_npc
 
-func _update_talkable_npc() -> void:
+func _update_talkable_npc(npcs: Array[Node2D]) -> void:
     # Clear outline on all
-    for ent in _slowdown_entities:
+    for ent: NPC in npcs:
         ent.disable_outline()
 
-    if _slowdown_entities.is_empty():
-        talk_disabled.emit()
-        return
 
     # Get the NPC we want to talk to
-    var best = _get_best_npc()
-    if best:
-        best.enable_outline(Color(0, 1, 0, 1))
-        talk_enabled.emit()
-    else:
+    _talkable_npc = _get_best_npc(npcs)
+    if !_talkable_npc:
         talk_disabled.emit()
+        return
+
+    _talkable_npc.enable_outline(Color(0, 1, 0, 1))
+    talk_enabled.emit()
 
 func toggle_talking():
-    var bodies = $SlowdownArea.get_overlapping_bodies()
-    if bodies.size() < 1:
+    if !_talkable_npc:
         return
+
     if !_current_state == State.TALK:
         switch_state(State.TALK)
-        (bodies[0] as NPC)._start_talking()
+        _talkable_npc.start_talking()
+        _on_npc_started_talking(_talkable_npc)
     else:
         switch_state(State.IDLE)
-        (bodies[0] as NPC)._stop_talking()
+        _talkable_npc.stop_talking()
+        _on_npc_stopped_talking(_talkable_npc)
