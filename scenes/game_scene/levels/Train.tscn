@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bkaths3irgi7c" path="res://characters/npcs/chris/chris.tscn" id="8_sempk"]
 [ext_resource type="PackedScene" uid="uid://cph57sst3icgu" path="res://characters/npcs/bettler1/bettler1.tscn" id="9_xenwl"]
 [ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politiker1/politiker1.tscn" id="10_rky5v"]
+[ext_resource type="PackedScene" uid="uid://bkquoqbrb6bh2" path="res://scenes/hud/train_hud.tscn" id="10_t7xje"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -39,19 +40,25 @@ zoom = Vector2(6.5, 6.5)
 limit_left = 0
 limit_top = 0
 limit_bottom = 270
-limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="HUD" parent="Player" instance=ExtResource("10_t7xje")]
+unique_name_in_owner = true
 
 [node name="Chris" parent="." instance=ExtResource("8_sempk")]
 position = Vector2(433, 153)
 
 [node name="Bettler1" parent="." instance=ExtResource("9_xenwl")]
-position = Vector2(488, 157)
+position = Vector2(295, 161)
 
 [node name="Politiker" parent="." instance=ExtResource("10_rky5v")]
 position = Vector2(264, 163)
 
 [connection signal="ready" from="." to="Player" method="_disable_scooting"]
 [connection signal="body_entered" from="Right" to="." method="_on_area_2d_body_entered"]
+[connection signal="hud_toggled" from="Player" to="." method="_on_player_hud_toggled"]
+[connection signal="stats_changed" from="Player" to="Player/HUD" method="_on_player_stats_changed"]
+[connection signal="talk_disabled" from="Player" to="." method="_on_player_talk_disabled"]
+[connection signal="talk_enabled" from="Player" to="." method="_on_player_talk_enabled"]

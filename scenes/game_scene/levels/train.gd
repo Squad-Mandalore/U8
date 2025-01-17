@@ -29,3 +29,14 @@ func _enter_tree() -> void:
 
     ($Right as Node2D).position.x = _right_x(train_length)
 
+
+func _on_player_talk_enabled() -> void:
+    %HUD.show_interaction_button()
+
+
+func _on_player_talk_disabled() -> void:
+    %HUD.hide_interaction_button()
+
+
+func _on_player_hud_toggled(visible: bool) -> void:
+    %HUD.visible = visible

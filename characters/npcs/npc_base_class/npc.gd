@@ -9,11 +9,9 @@ var _current_state: State = State.IDLE
 var _slowdown_entities: int = 0:
     set(value):
         _slowdown_entities = max(value, 0)
-var _talking: bool = false
 
 @onready var _sprite = $AnimatedSprite2D
 @onready var _timer = $Timer
-@onready var _rich_text_label = $RichTextLabel
 
 signal npc_started_talking(npc: NPC)
 signal npc_stopped_talking(npc: NPC)
@@ -51,17 +49,9 @@ func _physics_process(delta: float) -> void:
     # As slide thing caused the sticking to each other bug
     move_and_collide(velocity * delta)
 
-func _input(event: InputEvent) -> void:
-    # If the label is visible and the player presses "talk", toggle _talking
-    if event.is_action_pressed("talk") and _rich_text_label.visible:
-        if _talking:
-            _stop_talking()
-        else:
-            _start_talking()
 
 func _start_talking() -> void:
     # This function sends a notification to Player script so that Player can talk to this npc.
-    _talking = true
     _timer.stop()
     velocity = Vector2.ZERO
     _direction = Vector2.ZERO
@@ -71,7 +61,6 @@ func _start_talking() -> void:
 
 func _stop_talking() -> void:
     # This function needs to be called in order for player character to be able to walk again.
-    _talking = false
     _current_state = State.IDLE
     # Resume normal walking after a small delay or immediately
     _timer.start(1.0)
@@ -95,14 +84,10 @@ func _on_timer_timeout() -> void:
     if _current_state != State.TALK:
         _new_state()
 
-func _on_slowdown_area_body_entered(body: Node2D):
+func _on_slowdown_area_body_entered(_body: Node2D):
     # If the Player enters this NPC's slowdown area, NPC speed is halved
     _slowdown_entities += 1
-    _rich_text_label.visible = true
 
-func _on_slowdown_area_body_exited(body: Node2D):
+func _on_slowdown_area_body_exited(_body: Node2D):
     # If the Player leaves, restore normal speed (if no more slowdown entities)
     _slowdown_entities -= 1
-
-    if _slowdown_entities == 0:
-        _rich_text_label.visible = false

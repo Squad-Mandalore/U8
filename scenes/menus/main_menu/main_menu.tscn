@@ -64,7 +64,7 @@ offset_left = -88.0
 offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "v0.1.0"
+text = "v0.2.0"
 horizontal_alignment = 2
 script = ExtResource("6_hwiir")
 
@@ -112,7 +112,7 @@ anchor_right = 1.0
 offset_bottom = 34.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 24
-text = "Subtitle"
+text = "Der realistischste Berliner U-Bahn Simulator"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -150,13 +150,13 @@ script = ExtResource("8_d2jpe")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
-text = "New Game"
+text = "Neues Spiel"
 
 [node name="OptionsButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
-text = "Options"
+text = "Optionen"
 
 [node name="CreditsButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer"]
 unique_name_in_owner = true
@@ -168,7 +168,7 @@ text = "Credits"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
-text = "Exit"
+text = "Beenden"
 
 [node name="OptionsContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
