@@ -6,6 +6,7 @@ var _talkable_npc: NPC = null
 
 @onready var _animated_sprite_2d = $AnimatedSprite2D
 @onready var inventory: CanvasLayer = $Inventory
+@onready var _slowdown_area: Area2D = $SlowdownArea
 
 func _ready() -> void:
     inventory.hide()
@@ -38,10 +39,14 @@ func _physics_process(delta: float) -> void:
     if _talkable_npc:
         speed = SPEED / 2
 
-    if direction.x < 0:
+    if direction.x < 0 and not _animated_sprite_2d.flip_h:
         _animated_sprite_2d.flip_h = true
-    elif direction.x > 0:
+        if _talkable_npc:
+            _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
+    elif direction.x > 0 and _animated_sprite_2d.flip_h:
         _animated_sprite_2d.flip_h = false
+        if _talkable_npc:
+            _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
     if direction != Vector2.ZERO:
         velocity = direction * speed
@@ -130,7 +135,7 @@ func _unhandled_input(event: InputEvent):
 
 func _input(event: InputEvent):
     if event.is_action_pressed("inventory"):
-        var canvas_layer: CanvasLayer = ($Inventory as CanvasLayer)
+        var canvas_layer: CanvasLayer = inventory
         var toggle: bool = canvas_layer.visible
 
         hud_toggled.emit(toggle)
@@ -140,14 +145,14 @@ func _on_slowdown_area_body_entered(body: Node2D):
     var npc: NPC = body
     npc.set_player_nearby(true)
     if _current_state != State.TALK:
-        _update_talkable_npc($SlowdownArea.get_overlapping_bodies())
+        _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
 func _on_slowdown_area_body_exited(body: Node2D):
     var npc: NPC = body
     npc.set_player_nearby(false)
     npc.disable_outline()
     if _current_state != State.TALK:
-        _update_talkable_npc($SlowdownArea.get_overlapping_bodies())
+        _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
 
 func _on_npc_started_talking(npc: NPC):
