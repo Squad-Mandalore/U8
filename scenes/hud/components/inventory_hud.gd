@@ -4,10 +4,12 @@ var item_slots: Array = []
 var cur_inventory_size: int = 4
 var max_inventory_size: int = 16
 
-# TODO: Load backback item_slots
+signal set_player_up()
+
 func _ready() -> void:
     # load_meta_items()
     load_items()
+    set_player_up.emit()
 
 func load_items():
     for i in range(max_inventory_size):
@@ -39,3 +41,6 @@ func load_stat_level(stat_name: String, new_stat_level: int):
         else:
             stat_label.add_theme_color_override("font_color", red)
             stat_level.add_theme_stylebox_override("panel", load("res://assets/hud/debuff_level_enabled.tres"))
+
+func _on_inventory_set_player_down(texture: ViewportTexture) -> void:
+    %PlayerDisplay.texture = texture

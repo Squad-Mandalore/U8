@@ -25,6 +25,12 @@ signal stats_changed(stats: StatsSpecifier, balance: int)
 @export var stats: StatsSpecifier
 var balance: int
 
+func _process(delta):
+    pass
+    # print("Player Position: " + str(self.global_position))
+    # print("Camera Position: " + str(%InventoryCamera.global_position))
+    # %InventoryCamera.position = self.global_position
+
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK:
         # If talking, skip movement
@@ -177,3 +183,6 @@ func toggle_inventory():
 
     hud_toggled.emit(toggle)
     canvas_layer.visible = !toggle
+
+func get_viewport_texture() -> ViewportTexture:
+    return $SubViewportContainer/SubViewport.get_texture()

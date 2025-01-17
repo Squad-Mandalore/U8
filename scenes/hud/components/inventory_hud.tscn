@@ -19,7 +19,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo202"]
-bg_color = Color(0.74902, 0.74902, 0.74902, 1)
+bg_color = Color(0.74902, 0.74902, 0.74902, 0)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -83,7 +83,8 @@ custom_minimum_size = Vector2(201, 293)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jo202")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+[node name="PlayerDisplay" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(201, 293)
 layout_mode = 2
 size_flags_horizontal = 4

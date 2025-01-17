@@ -134,5 +134,7 @@ theme_override_fonts/font = ExtResource("6_whn6t")
 theme_override_font_sizes/font_size = 24
 text = "100 Euronen"
 
+[connection signal="set_player_down" from="." to="HBoxContainer/MarginContainer/InventoryHud" method="_on_inventory_set_player_down"]
+[connection signal="set_player_up" from="HBoxContainer/MarginContainer/InventoryHud" to="." method="_on_inventory_hud_set_player_up"]
 [connection signal="pressed" from="ButtonHudMargin/ButtonHBox/MapButton" to="." method="_on_map_button_pressed"]
 [connection signal="pressed" from="ButtonHudMargin/ButtonHBox/InventoryButton" to="." method="_on_inventory_button_pressed"]

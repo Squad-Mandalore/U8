@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 var action_key: String
+signal set_player_down(texture: ViewportTexture)
 
 func _ready() -> void:
     action_key = InputMap.action_get_events("inventory")[0].as_text()[0]
@@ -38,3 +39,8 @@ func _on_map_button_pressed() -> void:
         action_event.action = local_action_event
         action_event.pressed = true
         Input.parse_input_event(action_event)
+
+func _on_inventory_hud_set_player_up() -> void:
+    var player = (get_parent() as Player)
+    set_player_down.emit(player.get_viewport_texture())
+
