@@ -1,6 +1,7 @@
-[gd_resource type="StyleBoxFlat" format=3 uid="uid://dwwr440bb80fk"]
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://e6ow8dgmgh2i"]
 
 [resource]
+resource_name = "enabled"
 bg_color = Color(1, 0.262745, 0.27451, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2

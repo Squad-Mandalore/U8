@@ -58,6 +58,7 @@ theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 201
 
 [node name="InventoryHud" parent="HBoxContainer/MarginContainer" instance=ExtResource("4_ahg8d")]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(662, 678)
 layout_mode = 2
 
@@ -69,6 +70,7 @@ theme_override_constants/margin_right = 137
 theme_override_constants/margin_bottom = 201
 
 [node name="ItemDescription" parent="HBoxContainer/MarginContainer2" instance=ExtResource("5_l8nab")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="ButtonHudMargin" type="MarginContainer" parent="."]

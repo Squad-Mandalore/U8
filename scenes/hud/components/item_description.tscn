@@ -96,18 +96,6 @@ theme_override_constants/margin_bottom = 30
 [node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-visible = false
-custom_minimum_size = Vector2(0, 192)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/line_spacing = -2
-theme_override_fonts/font = ExtResource("4_rmtf4")
-theme_override_font_sizes/font_size = 20
-text = "Die Jacke erhöht die physische Schadensreduktion erheblich, sodass der Spieler Angriffen von Gegnern länger standhalten kann. Sie ist besonders effektiv gegen Projektil-Angriffe wie Pfeile oder Kugeln."
-autowrap_mode = 2
-clip_text = true
-
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(0, 192)
 layout_mode = 2

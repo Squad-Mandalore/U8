@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
     pass
 
 func update_stats(stats: StatsSpecifier, balance: int):
+    %InventoryHud.load_stats(stats)
     (%StatHud as Control).update_stats(stats)
     update_balance(balance)
 

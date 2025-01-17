@@ -66,16 +66,16 @@ func update_bleedResistance(bleedResistance: int):
     (%LabelBleedResistanceStat as Label).text = str(bleedResistance) + "%"
     if bleedResistance == 100:
         const light_blue: Color = Color("79B8FF")
-        (%LabelBleedResistanceStat as Label).set("theme_override_colors/font_color", light_blue)
+        (%LabelBleedResistanceStat as Label).add_theme_color_override("font_color", light_blue)
 
 func update_poisonResistance(poisonResistance: int):
     (%LabelPoisonResistanceStat as Label).text = str(poisonResistance) + "%"
     if poisonResistance == 100:
         const light_blue: Color = Color("79B8FF")
-        (%LabelPoisonResistanceStat as Label).set("theme_override_colors/font_color", light_blue)
+        (%LabelPoisonResistanceStat as Label).add_theme_color_override("font_color", light_blue)
 
 func update_drugResistance(drugResistance: int):
     (%LabelDrugResistanceStat as Label).text = str(drugResistance) + "%"
     if drugResistance == 100:
         const light_blue: Color = Color("79B8FF")
-        (%LabelDrugResistanceStat as Label).set("theme_override_colors/font_color", light_blue)
+        (%LabelDrugResistanceStat as Label).add_theme_color_override("font_color", light_blue)
