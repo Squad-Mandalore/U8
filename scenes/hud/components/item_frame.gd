@@ -1,6 +1,5 @@
 extends TextureRect
 
-
 func _get_drag_data(at_position: Vector2) -> Variant:
     var data = {}
 
@@ -12,14 +11,13 @@ func _get_drag_data(at_position: Vector2) -> Variant:
     drag_texture.size = Vector2(62, 62)
 
     set_drag_preview(drag_texture)
+    self.texture = null
 
     return data
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-    print("I am not called from the item frame")
-    return true
+    return get_parent().is_enabled()
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
-    print("thus i also am not called")
     self.texture = data["drag_texture"]
 
