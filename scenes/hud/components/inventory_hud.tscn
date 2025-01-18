@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://s0a53et15ukx" path="res://assets/hud/white_blood.svg" id="3_kdlbu"]
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/berlinv3anim.png" id="4_gluvy"]
 [ext_resource type="Texture2D" uid="uid://kytixtu7vost" path="res://characters/player/riding.png" id="5_cx61w"]
-[ext_resource type="StyleBox" uid="uid://e6ow8dgmgh2i" path="res://assets/hud/debuff_level_enabled.tres" id="5_qry0c"]
+[ext_resource type="StyleBox" uid="uid://cph7qb53nqag" path="res://assets/hud/debuff_level_enabled.tres" id="5_qry0c"]
 [ext_resource type="Texture2D" uid="uid://rwuw0vie61sr" path="res://assets/hud/white_flask.svg" id="6_se0kj"]
-[ext_resource type="StyleBox" uid="uid://cscr0vfbsv2ia" path="res://assets/hud/debuff_level_disabled.tres" id="6_yc6lu"]
+[ext_resource type="StyleBox" uid="uid://cqwignq5q6i1c" path="res://assets/hud/debuff_level_disabled.tres" id="6_yc6lu"]
 [ext_resource type="Texture2D" uid="uid://bwf8rc7n22rne" path="res://assets/hud/white_syringe.svg" id="7_xaubm"]
 [ext_resource type="PackedScene" uid="uid://da2j1exv2p488" path="res://scenes/hud/components/item_slot.tscn" id="8_rpjsw"]
 [ext_resource type="StyleBox" uid="uid://dw47tyut8uwd7" path="res://assets/hud/item_slot_disabled.tres" id="9_whkaq"]
@@ -643,7 +643,6 @@ theme_override_constants/margin_right = 10
 [node name="ItemSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
 unique_name_in_owner = true
 layout_mode = 2
-mouse_filter = 0
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
