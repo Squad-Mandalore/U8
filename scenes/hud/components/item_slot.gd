@@ -49,8 +49,10 @@ func _get_drag_data(at_position: Vector2) -> Variant:
     return data
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+    print("I am not called from the item slot")
     return true
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
+    print("thus i also am not called")
     self.get_child(0).texture = data["drag_texture"]
 

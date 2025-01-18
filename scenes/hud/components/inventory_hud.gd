@@ -6,7 +6,6 @@ var max_inventory_size: int = 16
 
 func _ready() -> void:
     # load_meta_items()
-    print("hello")
     item_slots.append("res://assets/hud/coin.svg")
     load_items()
 
