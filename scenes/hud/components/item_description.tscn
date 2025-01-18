@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scenes/hud/components/item_description.gd" id="1_i6sq6"]
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_t71cl"]
-[ext_resource type="Texture2D" uid="uid://dfc0y6albyid" path="res://assets/hud/info.svg" id="2_o2yuy"]
 [ext_resource type="FontFile" uid="uid://pxyfff4ijb64" path="res://assets/fonts/nippo/OTF/Nippo-Medium.otf" id="3_afdey"]
+[ext_resource type="Texture2D" uid="uid://u68l1bngaa7u" path="res://assets/hud/ck_3_bar.svg" id="3_obykl"]
 [ext_resource type="FontFile" uid="uid://bkvompws14vh5" path="res://assets/fonts/hind/Hind-Regular.ttf" id="4_rmtf4"]
 [ext_resource type="Texture2D" uid="uid://bqofv3cuwda0p" path="res://assets/hud/up.svg" id="5_2ycev"]
 [ext_resource type="Texture2D" uid="uid://cjydvftrvv6bv" path="res://assets/hud/armor.svg" id="6_qbcwn"]
@@ -66,12 +66,15 @@ layout_mode = 2
 size_flags_horizontal = 10
 theme_override_constants/separation = 0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
+[node name="Ck3ProgressBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_o2yuy")
+max_value = 60.0
+fill_mode = 4
+texture_progress = ExtResource("3_obykl")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -101,7 +104,7 @@ layout_mode = 2
 
 [node name="ItemDescriptionLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 192)
+custom_minimum_size = Vector2(0, 127)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/line_separation = -2
@@ -112,11 +115,12 @@ text = "Die Jacke erhöht die physische Schadensreduktion erheblich, sodass der 
 
 [node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_bottom = 60
+theme_override_constants/margin_bottom = 30
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 206)
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_v0bep")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]

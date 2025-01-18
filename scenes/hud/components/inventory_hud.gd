@@ -1,25 +1,27 @@
 extends Control
 
-var cur_inventory_size: int = 4
+var cur_inventory_size: int = 16
 var max_inventory_size: int = 16
 var item_slots: Array[Item]
 
 func _ready() -> void:
+    SignalDispatcher.update_item_slots.connect(load_item_slots)
+    SignalDispatcher.swap_inventory_items.connect(swap_item)
     # load_meta_items()
     # item_slots.append("res://assets/hud/coin.svg")
-    # load_items()
+    # load_item_slots()
     item_slots.resize(max_inventory_size)
     item_slots.fill(null)
 
-func load_items():
+func load_item_slots():
     for i in range(max_inventory_size):
         var item_slot = get_node("%ItemSlot" + str(i + 1))
+        item_slot.index = i
         if i + 1 > cur_inventory_size:
             item_slot.disable()
         else:
             item_slot.enable()
-            if item_slots[i] != null:
-                item_slot.set_item(item_slots[i])
+            item_slot.set_item(item_slots[i])
 
 func load_meta_items():
     cur_inventory_size = %BackpackItemSlot.inventory_size
@@ -48,12 +50,16 @@ func add_item(item: Item):
     for i in range(len(item_slots)):
         if item_slots[i] == null:
             item_slots[i] = item
-            load_items()
+            load_item_slots()
             return
 
 func remove_item(i: int):
     if i < len(item_slots):
         item_slots[i] = null
-        load_items()
+        load_item_slots()
         return
 
+func swap_item(from: int, to: int):
+    var tmp = item_slots[from]
+    item_slots[from] = item_slots[to]
+    item_slots[to] = tmp

@@ -12,6 +12,15 @@ func _ready() -> void:
     $Inventory.hide()
     var new_item = load("res://classes/item/hawaiihemd.tres")
     $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(new_item)
+    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(new_item)
+    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(new_item)
+    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(new_item)
+    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(new_item)
+    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(new_item)
+    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(new_item)
+    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(new_item)
+    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(new_item)
+    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(new_item)
     stats_changed.emit(stats, balance)
 
 enum State {IDLE, WALK, TALK, SCOOT}
