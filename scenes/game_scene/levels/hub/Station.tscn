@@ -5,8 +5,8 @@
 [ext_resource type="Script" path="res://scenes/game_scene/levels/hub/station.gd" id="3_08vcd"]
 [ext_resource type="LabelSettings" uid="uid://vt8vv8530qgd" path="res://assets/hub/station_name_label_settings.tres" id="3_hxi0m"]
 [ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://models/station/tower.tscn" id="4_wvqyq"]
-[ext_resource type="PackedScene" path="res://models/station/escalator_front_left.tscn" id="6_fup5h"]
-[ext_resource type="PackedScene" path="res://models/station/escalator_front_right.tscn" id="7_5owx3"]
+[ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://models/station/escalator_front_left.tscn" id="6_fup5h"]
+[ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://models/station/escalator_front_right.tscn" id="7_5owx3"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
 b = Vector2(822, 0)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cy1iar1dkomyr"]
+[gd_scene load_steps=18 format=3 uid="uid://cy1iar1dkomyr"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_el7fl"]
+[ext_resource type="Script" path="res://scenes/hud/components/stat_hud.gd" id="1_q4hdo"]
 [ext_resource type="Texture2D" uid="uid://cok6af1uuonbi" path="res://assets/hud/under_progressbar.svg" id="2_pg2fv"]
 [ext_resource type="Texture2D" uid="uid://d3gmnm8ak662y" path="res://assets/hud/big_health_progressbar.svg" id="3_qah0u"]
 [ext_resource type="Texture2D" uid="uid://cxmd500i2iyjs" path="res://assets/hud/dodge_chance_progressbar.svg" id="4_n3hml"]
@@ -47,6 +48,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
+script = ExtResource("1_q4hdo")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
