@@ -25,3 +25,4 @@ script = ExtResource("2_30t0t")
 name = "Lederjacke"
 description = "Die einzig wahre Uniform für jemanden, der in der U8 nicht einfach nur mitfährt, sondern das Abenteuer sucht. Eine Lederjacke macht dich automatisch 20% mysteriöser und 80% unangreifbarer – auch wenn du eigentlich nur zum nächsten Späti willst."
 properties = SubResource("Resource_hodkb")
+texture = "res://assets/hud/coin.svg"

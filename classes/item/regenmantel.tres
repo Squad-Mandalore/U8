@@ -25,3 +25,4 @@ script = ExtResource("2_tg3l3")
 name = "Regenmantel"
 description = "Es gibt kein schlechtes Wetter, nur schlechte Ausweichwerte! Und in Berlin regnet es oft. Auch drinnen. In der Bahn. Von der Decke."
 properties = SubResource("Resource_hodkb")
+texture = "res://assets/hud/coin.svg"

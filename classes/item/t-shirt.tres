@@ -25,3 +25,4 @@ script = ExtResource("2_m2oou")
 name = "T-Shirt"
 description = "StatsSpecifier"
 properties = SubResource("Resource_hodkb")
+texture = "res://assets/hud/coin.svg"

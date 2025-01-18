@@ -25,3 +25,4 @@ script = ExtResource("2_saj77")
 name = "Hawaiihemd"
 description = "as Kleidungsstück, das sowohl 'Ich bin im Urlaub' als auch 'Ich habe die Kontrolle über mein Leben verloren' schreit – perfekt für einen Ausflug in die Tiefen der U8."
 properties = SubResource("Resource_hodkb")
+texture = "res://assets/hud/coin.svg"

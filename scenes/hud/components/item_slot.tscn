@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://da2j1exv2p488"]
+[gd_scene load_steps=3 format=3 uid="uid://da2j1exv2p488"]
 
 [ext_resource type="StyleBox" uid="uid://cjhr522il1ma6" path="res://assets/hud/item_slot_enabled.tres" id="1_0wmqr"]
 [ext_resource type="Script" path="res://scenes/hud/components/item_slot.gd" id="2_muhkd"]
-[ext_resource type="Script" path="res://scenes/hud/components/item_frame.gd" id="3_wbkfh"]
 
 [node name="ItemSlot" type="PanelContainer"]
 offset_right = 64.0
@@ -18,7 +17,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 stretch_mode = 5
-script = ExtResource("3_wbkfh")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

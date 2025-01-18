@@ -25,3 +25,4 @@ script = ExtResource("2_wjiuo")
 name = "Pullover"
 description = "Ein Kleidungsstück, das so gemütlich ist, dass du es nie wieder ausziehen willst – und genau das scheint sein letzter Besitzer auch gedacht zu haben. Ideal für das vollkommene 'Mir doch egal'-Feeling im Waggon."
 properties = SubResource("Resource_hodkb")
+texture = "res://assets/hud/coin.svg"

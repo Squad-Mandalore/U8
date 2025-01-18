@@ -25,3 +25,4 @@ script = ExtResource("2_jnwwi")
 name = "Abgeranzter Hoodie"
 description = "Für den authentischen Neukölln-Vibe. Niemand weiß, was du darunter trägst – und niemand will es wissen."
 properties = SubResource("Resource_hodkb")
+texture = "res://assets/hud/coin.svg"

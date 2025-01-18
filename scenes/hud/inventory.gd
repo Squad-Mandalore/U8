@@ -8,12 +8,7 @@ func _ready() -> void:
     action_key = InputMap.action_get_events("map")[0].as_text()[0]
     (%MapButton/InteractionKeyMarginBox/InteractionKeyLabel as Label).text = action_key
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-    pass
-
 func update_stats(stats: StatsSpecifier, balance: int):
-    print("update stats")
     %InventoryHud.load_stats(stats)
     (%StatHud as Control).update_stats(stats)
     update_balance(balance)
