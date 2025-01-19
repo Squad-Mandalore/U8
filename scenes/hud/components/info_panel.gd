@@ -6,16 +6,33 @@ var interval: float = 0.001
 var timer: float = 0.0
 var is_timer_active: bool = false
 var progress_bar: TextureProgressBar = null
-var item_hud_scene = preload("res://scenes/hud/components/item_description.tscn")
+var item_hud_scene = preload("res://scenes/hud/components/item_info.tscn")
+var resistance_hud_scene = preload("res://scenes/hud/components/resistance_info.tscn")
 
 func _ready() -> void:
-    SignalDispatcher.start_timer.connect(start_timer)
+    # SignalDispatcher.start_timer.connect(start_timer)
     SignalDispatcher.toggle_item_hud.connect(toggle_item_hud)
+    SignalDispatcher.toggle_resistance_hud.connect(toggle_resistance_hud)
     hide()
 
 func remove_all_children(parent: Node):
     for child in parent.get_children():
         child.queue_free()
+
+func toggle_resistance_hud(stats: StatsSpecifier):
+    remove_all_children(%InfoFrame)
+    if stats == null:
+        stop_timer()
+        hide()
+        progress_bar = null
+        return
+    var resistance_hud = resistance_hud_scene.instantiate()
+    %InfoFrame.add_child(resistance_hud)
+    progress_bar = resistance_hud.get_ck3_progress_bar()
+    SignalDispatcher.set_ck3_progress_bar_value.emit(progress_bar.value)
+    # resistance_hud.update_component(stats)
+    start_timer()
+    show()
 
 func toggle_item_hud(item: Item):
     remove_all_children(%InfoFrame)
@@ -27,7 +44,9 @@ func toggle_item_hud(item: Item):
     var item_hud = item_hud_scene.instantiate()
     %InfoFrame.add_child(item_hud)
     progress_bar = item_hud.get_ck3_progress_bar()
+    SignalDispatcher.set_ck3_progress_bar_value.emit(progress_bar.value)
     item_hud.update_component(item)
+    start_timer()
     show()
 
 func _process(delta: float) -> void:

@@ -1,5 +1,4 @@
 extends Control
-class_name ItemDescriptionStatRow
 
 func set_stat_label(value: int, stat_specifyer: String):
     const red: Color = Color("FF4346")

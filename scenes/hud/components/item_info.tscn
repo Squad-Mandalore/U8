@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bf7f6kv02vipi"]
 
-[ext_resource type="Script" path="res://scenes/hud/components/item_description.gd" id="1_i6sq6"]
-[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_t71cl"]
-[ext_resource type="FontFile" uid="uid://pxyfff4ijb64" path="res://assets/fonts/nippo/OTF/Nippo-Medium.otf" id="3_afdey"]
-[ext_resource type="Texture2D" uid="uid://u68l1bngaa7u" path="res://assets/hud/ck_3_bar.svg" id="3_obykl"]
-[ext_resource type="FontFile" uid="uid://bkvompws14vh5" path="res://assets/fonts/hind/Hind-Regular.ttf" id="4_rmtf4"]
-[ext_resource type="Script" path="res://scenes/hud/components/ck_3_progress_bar.gd" id="4_vfj7q"]
+[ext_resource type="Script" path="res://scenes/hud/components/item_info.gd" id="1_gkd7v"]
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="2_ui6pw"]
+[ext_resource type="Texture2D" uid="uid://u68l1bngaa7u" path="res://assets/hud/ck_3_bar.svg" id="3_2phnt"]
+[ext_resource type="Script" path="res://scenes/hud/components/ck_3_progress_bar.gd" id="4_d2fwc"]
+[ext_resource type="FontFile" uid="uid://pxyfff4ijb64" path="res://assets/fonts/nippo/OTF/Nippo-Medium.otf" id="5_0enwk"]
+[ext_resource type="FontFile" uid="uid://bkvompws14vh5" path="res://assets/fonts/hind/Hind-Regular.ttf" id="6_n3jf5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_470qu"]
 bg_color = Color(0.129412, 0.129412, 0.129412, 1)
@@ -18,7 +18,7 @@ corner_radius_bottom_left = 5
 offset_right = 393.0
 offset_bottom = 598.0
 theme_override_constants/separation = 0
-script = ExtResource("1_i6sq6")
+script = ExtResource("1_gkd7v")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -26,7 +26,7 @@ theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_t71cl")
+theme_override_fonts/font = ExtResource("2_ui6pw")
 theme_override_font_sizes/font_size = 32
 text = "Item-Info"
 
@@ -43,8 +43,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 max_value = 60.0
 fill_mode = 4
-texture_progress = ExtResource("3_obykl")
-script = ExtResource("4_vfj7q")
+texture_progress = ExtResource("3_2phnt")
+script = ExtResource("4_d2fwc")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -61,7 +61,7 @@ theme_override_constants/separation = 0
 [node name="ItemNameLabel" type="Label" parent="HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_afdey")
+theme_override_fonts/font = ExtResource("5_0enwk")
 theme_override_font_sizes/font_size = 20
 text = "Regenmantel"
 
@@ -78,7 +78,7 @@ custom_minimum_size = Vector2(0, 127)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/line_separation = -2
-theme_override_fonts/normal_font = ExtResource("4_rmtf4")
+theme_override_fonts/normal_font = ExtResource("6_n3jf5")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Die Jacke erhöht die physische Schadensreduktion erheblich, sodass der Spieler Angriffen von Gegnern länger standhalten kann. Sie ist besonders effektiv gegen Projektil-Angriffe wie Pfeile oder Kugeln."
@@ -93,17 +93,19 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_470qu")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer"]
 layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="StatVBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer"]
+[node name="StatVBox" type="VBoxContainer" parent="PanelContainer/ScrollContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3

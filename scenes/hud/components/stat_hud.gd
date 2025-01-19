@@ -1,6 +1,16 @@
 extends Control
 
+var stats: StatsSpecifier = null
+var ck3_progress_bar_value: int
+
+func _ready() -> void:
+    SignalDispatcher.set_ck3_progress_bar_value.connect(set_ck3_progress_bar_value)
+
+func set_ck3_progress_bar_value(value: int):
+    ck3_progress_bar_value = value
+
 func update_inventory_stat_hud(stats: StatsSpecifier):
+    self.stats = stats
     update_health(stats.health, stats.max_health)
     update_dodge_chance(stats.dodge_chance, 50)
     update_armor(stats.armor)
@@ -18,15 +28,17 @@ func update_inventory_stat_hud(stats: StatsSpecifier):
 
 func update_health(new_health: int, max_health: int) -> void:
     new_health = min(new_health, max_health)
-    (%HealthBar as TextureProgressBar).max_value = max_health
-    (%LabelHealthStat as Label).text = "%d/%d" % [new_health, max_health]
-    (%HealthBar as TextureProgressBar).value = new_health
+    %HealthBar.set_max_value(max_health)
+    %HealthBar.set_stat_name("Gesundheit")
+    %HealthBar.set_stat_number("%d/%d" % [new_health, max_health])
+    %HealthBar.set_cur_value(new_health)
 
 func update_dodge_chance(new_dodge_chance: int, max_dodge_chance: int) -> void:
     new_dodge_chance = min(new_dodge_chance, max_dodge_chance)
-    (%DodgeChanceBar as TextureProgressBar).max_value = max_dodge_chance
-    (%LabelDodgeChanceStat as Label).text = "%d/%d" % [new_dodge_chance, max_dodge_chance]
-    (%DodgeChanceBar as TextureProgressBar).value = new_dodge_chance
+    %DodgeChanceBar.set_max_value(max_dodge_chance)
+    %DodgeChanceBar.set_stat_name("Ausweichchance")
+    %DodgeChanceBar.set_stat_number("%d/%d" % [new_dodge_chance, max_dodge_chance])
+    %DodgeChanceBar.set_cur_value(new_dodge_chance)
 
 func update_armor(armor: int):
     (%LabelArmorStat as Label).text = str(armor)
@@ -69,3 +81,11 @@ func update_drugResistance(drugResistance: int):
     if drugResistance == 100:
         const light_blue: Color = Color("79B8FF")
         (%LabelDrugResistanceStat as Label).add_theme_color_override("font_color", light_blue)
+
+func _on_resistance_info_v_box_mouse_exited() -> void:
+    if ck3_progress_bar_value != 60:
+        SignalDispatcher.toggle_resistance_hud.emit(null)
+
+func _on_resistance_info_v_box_mouse_entered() -> void:
+    SignalDispatcher.toggle_resistance_hud.emit(stats)
+
