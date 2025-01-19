@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/attributes.gd" id="1_oam7n"]
 [ext_resource type="Script" path="res://scripts/items.gd" id="2_tmpph"]
+[ext_resource type="Texture2D" uid="uid://s0a53et15ukx" path="res://assets/hud/white_blood.svg" id="3_e7r2y"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
 script = ExtResource("1_oam7n")
@@ -19,12 +20,13 @@ luck = 0
 poison_resistance = 0
 bleed_resistance = 0
 drug_resistance = 0
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ty2y4"]
+poison_level = 0
+bleed_level = 0
+drug_level = 0
 
 [resource]
 script = ExtResource("2_tmpph")
 name = "Hemd"
 description = "Das Kleidungsstück, das signalisiert: 'Ich habe mein Leben im Griff' – auch wenn du eigentlich gerade erst aufgewacht bist und deine Schuhe nicht zusammenpassen. Macht dich automatisch seriöser als alle anderen im Waggon, selbst wenn du unter dem Hemd ein Bandshirt von einer Trash-Metal-Band trägst."
 properties = SubResource("Resource_hodkb")
-texture = SubResource("PlaceholderTexture2D_ty2y4")
+texture = ExtResource("3_e7r2y")

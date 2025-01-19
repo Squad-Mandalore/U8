@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/attributes.gd" id="1_jahjs"]
 [ext_resource type="Script" path="res://scripts/items.gd" id="2_tg3l3"]
+[ext_resource type="Texture2D" uid="uid://jlhwn8jhrrab" path="res://assets/hud/ck_3_bar_full.svg" id="3_r0sif"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
 script = ExtResource("1_jahjs")
@@ -23,11 +24,9 @@ poison_level = 0
 bleed_level = 0
 drug_level = 0
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_j7n3u"]
-
 [resource]
 script = ExtResource("2_tg3l3")
 name = "Regenmantel"
 description = "Es gibt kein schlechtes Wetter, nur schlechte Ausweichwerte! Und in Berlin regnet es oft. Auch drinnen. In der Bahn. Von der Decke."
 properties = SubResource("Resource_hodkb")
-texture = SubResource("PlaceholderTexture2D_j7n3u")
+texture = ExtResource("3_r0sif")

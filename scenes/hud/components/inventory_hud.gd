@@ -1,6 +1,6 @@
 extends Control
 
-var cur_inventory_size: int = 16
+var cur_inventory_size: int = 4
 var max_inventory_size: int = 16
 var item_slots: Array[Item]
 var ck3_progress_bar_value: int
