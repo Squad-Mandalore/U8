@@ -6,6 +6,9 @@ const _LEFT_WIDTH: int = 329
 const _CENTER_WIDTH: int = 329
 const Y: int = 95
 
+@onready var _right: Node2D = $Right
+@onready var _hud: CanvasLayer = %HUD
+
 var _rng = RandomNumberGenerator.new()
 var center: PackedScene  = preload("res://models/train/center.tscn")
 
@@ -27,16 +30,16 @@ func _enter_tree() -> void:
         center_scene.position = Vector2(_center_x(i), Y)
         self.add_child(center_scene)
 
-    ($Right as Node2D).position.x = _right_x(train_length)
+    _right.position.x = _right_x(train_length)
 
 
 func _on_player_talk_enabled() -> void:
-    %HUD.show_interaction_button()
+    _hud.show_interaction_button()
 
 
 func _on_player_talk_disabled() -> void:
-    %HUD.hide_interaction_button()
+    _hud.hide_interaction_button()
 
 
 func _on_player_hud_toggled(visible: bool) -> void:
-    %HUD.visible = visible
+    _hud.visible = visible
