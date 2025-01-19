@@ -142,6 +142,9 @@ func _unhandled_input(event: InputEvent):
             _animated_sprite_2d.play("scooting_horizontal")
 
 func _input(event: InputEvent):
+    if event is InputEventMouseButton and event.pressed:
+        if event.button_index == MOUSE_BUTTON_LEFT:
+            SignalDispatcher.toggle_item_hud.emit(null)
     if event.is_action_pressed("inventory"):
         toggle_inventory()
 

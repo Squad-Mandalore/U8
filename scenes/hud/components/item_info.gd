@@ -73,7 +73,7 @@ var stats_dict = {
 
 var new_stat_row_scene = preload("res://scenes/hud/components/item_info_stat_row.tscn")
 
-func update_component(item: Item):
+func update_item_info(item: Item):
     # show()
     # %Ck3ProgressBar.texture_progress = load("res://assets/hud/ck_3_bar.svg")
     # SignalDispatcher.set_ck3_progress_bar_value.emit(%Ck3ProgressBar.value)

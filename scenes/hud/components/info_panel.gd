@@ -30,7 +30,7 @@ func toggle_resistance_hud(stats: StatsSpecifier):
     %InfoFrame.add_child(resistance_hud)
     progress_bar = resistance_hud.get_ck3_progress_bar()
     SignalDispatcher.set_ck3_progress_bar_value.emit(progress_bar.value)
-    # resistance_hud.update_component(stats)
+    resistance_hud.update_resistance_info(stats)
     start_timer()
     show()
 
@@ -45,7 +45,7 @@ func toggle_item_hud(item: Item):
     %InfoFrame.add_child(item_hud)
     progress_bar = item_hud.get_ck3_progress_bar()
     SignalDispatcher.set_ck3_progress_bar_value.emit(progress_bar.value)
-    item_hud.update_component(item)
+    item_hud.update_item_info(item)
     start_timer()
     show()
 

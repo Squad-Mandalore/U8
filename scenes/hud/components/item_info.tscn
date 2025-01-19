@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf7f6kv02vipi"]
+[gd_scene load_steps=7 format=3 uid="uid://bf7f6kv02vipi"]
 
 [ext_resource type="Script" path="res://scenes/hud/components/item_info.gd" id="1_gkd7v"]
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="2_ui6pw"]
 [ext_resource type="Texture2D" uid="uid://u68l1bngaa7u" path="res://assets/hud/ck_3_bar.svg" id="3_2phnt"]
-[ext_resource type="Script" path="res://scenes/hud/components/ck_3_progress_bar.gd" id="4_d2fwc"]
 [ext_resource type="FontFile" uid="uid://pxyfff4ijb64" path="res://assets/fonts/nippo/OTF/Nippo-Medium.otf" id="5_0enwk"]
 [ext_resource type="FontFile" uid="uid://bkvompws14vh5" path="res://assets/fonts/hind/Hind-Regular.ttf" id="6_n3jf5"]
 
@@ -44,7 +43,6 @@ size_flags_vertical = 4
 max_value = 60.0
 fill_mode = 4
 texture_progress = ExtResource("3_2phnt")
-script = ExtResource("4_d2fwc")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/HBoxContainer2"]
 layout_mode = 2
