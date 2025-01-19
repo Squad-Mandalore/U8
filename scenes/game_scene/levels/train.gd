@@ -29,7 +29,9 @@ func _enter_tree() -> void:
         var center_scene: Node2D = center.instantiate()
         center_scene.position = Vector2(_center_x(i), Y)
         self.add_child(center_scene)
-
+        
+    if not _right:
+        _right = $Right
     _right.position.x = _right_x(train_length)
 
 
