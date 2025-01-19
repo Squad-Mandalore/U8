@@ -3,8 +3,11 @@ extends Control
 var cur_inventory_size: int = 16
 var max_inventory_size: int = 16
 var item_slots: Array[Item]
+var ck3_progress_bar_value: int
+var stats: StatsSpecifier = null
 
 func _ready() -> void:
+    SignalDispatcher.set_ck3_progress_bar_value.connect(set_ck3_progress_bar_value)
     SignalDispatcher.update_item_slots.connect(load_item_slots)
     SignalDispatcher.swap_inventory_items.connect(swap_item)
     # load_meta_items()
@@ -12,6 +15,9 @@ func _ready() -> void:
     # load_item_slots()
     item_slots.resize(max_inventory_size)
     item_slots.fill(null)
+
+func set_ck3_progress_bar_value(value: int):
+    ck3_progress_bar_value = value
 
 func load_item_slots():
     for i in range(max_inventory_size):
@@ -27,6 +33,7 @@ func load_meta_items():
     cur_inventory_size = %BackpackItemSlot.inventory_size
 
 func update_debuff_stats(stats: StatsSpecifier):
+    self.stats = stats
     load_stat_level("Bleed", stats.bleed_level)
     load_stat_level("Poison", stats.poison_level)
     load_stat_level("Drug", stats.drug_level)
@@ -63,3 +70,11 @@ func swap_item(from: int, to: int):
     var tmp = item_slots[from]
     item_slots[from] = item_slots[to]
     item_slots[to] = tmp
+
+func _on_debuff_info_v_box_mouse_exited() -> void:
+    if ck3_progress_bar_value != 60:
+        SignalDispatcher.toggle_status_types_hud.emit(null)
+
+func _on_debuff_info_v_box_mouse_entered() -> void:
+    SignalDispatcher.toggle_status_types_hud.emit(stats)
+
