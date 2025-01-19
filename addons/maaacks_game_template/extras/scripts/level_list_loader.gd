@@ -18,7 +18,6 @@ func get_level_file(level_id : int):
         return
     if level_id >= files.size():
         push_error("level_id is out of bounds of the levels list")
-        level_id = files.size() - 1
     return files[level_id]
 
 func _attach_level(level_resource : Resource, level_file: StationSettings = null):
