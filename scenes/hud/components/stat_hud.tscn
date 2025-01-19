@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://cy1iar1dkomyr"]
+[gd_scene load_steps=19 format=3 uid="uid://cy1iar1dkomyr"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_el7fl"]
+[ext_resource type="Script" path="res://scenes/hud/components/stat_hud.gd" id="1_q4hdo"]
 [ext_resource type="Texture2D" uid="uid://cok6af1uuonbi" path="res://assets/hud/under_progressbar.svg" id="2_pg2fv"]
-[ext_resource type="Texture2D" uid="uid://d3gmnm8ak662y" path="res://assets/hud/big_health_progressbar.svg" id="3_qah0u"]
+[ext_resource type="PackedScene" uid="uid://c7pdclqtpglet" path="res://scenes/hud/components/progress_bar.tscn" id="3_x4y3t"]
 [ext_resource type="Texture2D" uid="uid://cxmd500i2iyjs" path="res://assets/hud/dodge_chance_progressbar.svg" id="4_n3hml"]
 [ext_resource type="Texture2D" uid="uid://cqbuach1xakxp" path="res://assets/hud/blood_resistance.svg" id="5_31p3o"]
+[ext_resource type="Texture2D" uid="uid://c5wvjsj1orm8c" path="res://assets/hud/health_progressbar.svg" id="5_luw3b"]
 [ext_resource type="Texture2D" uid="uid://dxuvcb4qof7fk" path="res://assets/hud/flask_resistance.svg" id="6_avhbx"]
 [ext_resource type="Texture2D" uid="uid://ce68w0bjcy2ci" path="res://assets/hud/drug_resistance.svg" id="7_e8f2f"]
 
@@ -47,6 +49,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
+script = ExtResource("1_q4hdo")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -79,81 +82,19 @@ text = "Deine Stats"
 layout_mode = 2
 theme_override_constants/margin_bottom = 40
 
-[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="LabelHealth" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Health"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_el7fl")
-theme_override_font_sizes/font_size = 20
-text = "Gesundheit"
-
-[node name="LabelHealthStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Health"]
+[node name="HealthBar" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_x4y3t")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("1_el7fl")
-theme_override_font_sizes/font_size = 20
-text = "100/100"
-
-[node name="MarginContainer6" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 10
-
-[node name="HealthBar" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="HealthBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer/VBoxContainer/HealthBar"]
-unique_name_in_owner = true
-layout_mode = 2
-value = 100.0
 texture_under = ExtResource("2_pg2fv")
-texture_progress = ExtResource("3_qah0u")
+texture_progress = ExtResource("5_luw3b")
+nine_patch_margins = Vector4(0, 0, 393, 7)
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 18
-
-[node name="DodgeChance" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="LabelDodgeChance" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/DodgeChance"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_el7fl")
-theme_override_font_sizes/font_size = 20
-text = "Ausweichchance
-"
-
-[node name="LabelDodgeChanceStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/DodgeChance"]
+[node name="DodgeChanceBar" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_x4y3t")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("1_el7fl")
-theme_override_font_sizes/font_size = 20
-text = "20/50"
-
-[node name="MarginContainer7" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 10
-
-[node name="DodgeChanceBar" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="DodgeChanceBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer/VBoxContainer/DodgeChanceBar"]
-unique_name_in_owner = true
-layout_mode = 2
-max_value = 50.0
-value = 20.0
 texture_under = ExtResource("2_pg2fv")
 texture_progress = ExtResource("4_n3hml")
-
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 18
+nine_patch_margins = Vector4(0, 0, 393, 7)
 
 [node name="Armor" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -403,85 +344,92 @@ theme_override_styles/separator = SubResource("StyleBoxLine_fw74r")
 layout_mode = 2
 theme_override_constants/margin_bottom = 18
 
-[node name="LabelResistance" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ResistanceInfoVBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LabelResistance" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "Resistenzen"
 
-[node name="MarginContainer5" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer5" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 10
 
-[node name="Resistances" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Resistances" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="BleedResistance" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Resistances"]
+[node name="BleedResistance" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="BleedResistanceIcon" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/Resistances/BleedResistance"]
+[node name="BleedResistanceIcon" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/BleedResistance"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_31p3o")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Resistances/BleedResistance"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/BleedResistance"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="LabelBleedResistanceStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Resistances/BleedResistance"]
+[node name="LabelBleedResistanceStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/BleedResistance"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "100%"
 
-[node name="PoisonResistance" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Resistances"]
+[node name="PoisonResistance" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances"]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_constants/separation = 0
 
-[node name="PoisonResistanceIcon" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/Resistances/PoisonResistance"]
+[node name="PoisonResistanceIcon" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/PoisonResistance"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("6_avhbx")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Resistances/PoisonResistance"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/PoisonResistance"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="LabelPoisonResistanceStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Resistances/PoisonResistance"]
+[node name="LabelPoisonResistanceStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/PoisonResistance"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "100%"
 
-[node name="DrugResistance" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Resistances"]
+[node name="DrugResistance" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances"]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_constants/separation = 0
 
-[node name="DrugResistanceIcon" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/Resistances/DrugResistance"]
+[node name="DrugResistanceIcon" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/DrugResistance"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("7_e8f2f")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Resistances/DrugResistance"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/DrugResistance"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="LabelDrugResistanceStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Resistances/DrugResistance"]
+[node name="LabelDrugResistanceStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/DrugResistance"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_el7fl")
 theme_override_font_sizes/font_size = 20
 text = "100%"
+
+[connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox" to="." method="_on_resistance_info_v_box_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox" to="." method="_on_resistance_info_v_box_mouse_exited"]

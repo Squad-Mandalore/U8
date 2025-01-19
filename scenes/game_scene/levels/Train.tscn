@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://background.gd" id="2_20w01"]
 [ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://models/tracks/background.png" id="3_dfgt4"]
 [ext_resource type="PackedScene" uid="uid://c6lryjxjclq03" path="res://models/train/inside_left.tscn" id="4_q3h5r"]
-[ext_resource type="PackedScene" uid="uid://dbj8no1okov2u" path="res://models/train/center.tscn" id="5_x185i"]
+[ext_resource type="PackedScene" uid="uid://c8l8bcwfbquvm" path="res://models/train/center.tscn" id="5_x185i"]
 [ext_resource type="PackedScene" uid="uid://c2xs2hjyqqtav" path="res://models/train/right.tscn" id="6_ykx2a"]
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="7_c73gc"]
 [ext_resource type="PackedScene" uid="uid://bkaths3irgi7c" path="res://characters/npcs/chris/chris.tscn" id="8_sempk"]
@@ -78,7 +78,6 @@ RANDOM_NAME = false
 
 [connection signal="ready" from="." to="Player" method="_disable_scooting"]
 [connection signal="hud_toggled" from="Player" to="." method="_on_player_hud_toggled"]
-[connection signal="stats_changed" from="Player" to="Player/HUD" method="_on_player_stats_changed"]
 [connection signal="talk_disabled" from="Player" to="." method="_on_player_talk_disabled"]
 [connection signal="talk_enabled" from="Player" to="." method="_on_player_talk_enabled"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

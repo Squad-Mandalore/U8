@@ -19,6 +19,9 @@ luck = 0
 poison_resistance = 0
 bleed_resistance = 0
 drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cvpp7"]
 

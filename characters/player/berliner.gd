@@ -9,8 +9,15 @@ var _talkable_npc: NPC = null
 @onready var _slowdown_area: Area2D = $SlowdownArea
 
 func _ready() -> void:
+    SignalDispatcher.stats_changed.connect(_on_stats_changed)
     inventory.hide()
-    stats_changed.emit(stats, balance)
+    var hawaiihemd = load("res://classes/item/hawaiihemd.tres")
+    var hemd = load("res://classes/item/hemd.tres")
+    var regenmantel = load("res://classes/item/regenmantel.tres")
+    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(hawaiihemd)
+    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(hemd)
+    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(regenmantel)
+    SignalDispatcher.stats_changed.emit(stats, balance)
 
 enum State {IDLE, WALK, TALK, SCOOT}
 var _current_state: State = State.IDLE
@@ -19,11 +26,16 @@ var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for
 signal talk_enabled()
 signal talk_disabled()
 signal hud_toggled(visible: bool)
-signal stats_changed(stats: StatsSpecifier, balance: int)
 
 
 @export var stats: StatsSpecifier
 var balance: int
+
+func _process(delta):
+    pass
+    # print("Player Position: " + str(self.global_position))
+    # print("Camera Position: " + str(%InventoryCamera.global_position))
+    # %InventoryCamera.position = self.global_position
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK:
@@ -134,12 +146,11 @@ func _unhandled_input(event: InputEvent):
             _animated_sprite_2d.play("scooting_horizontal")
 
 func _input(event: InputEvent):
+    if event is InputEventMouseButton and event.pressed:
+        if event.button_index == MOUSE_BUTTON_LEFT:
+            SignalDispatcher.toggle_item_hud.emit(null)
     if event.is_action_pressed("inventory"):
-        var canvas_layer: CanvasLayer = inventory
-        var toggle: bool = canvas_layer.visible
-
-        hud_toggled.emit(toggle)
-        canvas_layer.visible = !toggle
+        toggle_inventory()
 
 func _on_slowdown_area_body_entered(body: Node2D):
     var npc: NPC = body
@@ -153,7 +164,6 @@ func _on_slowdown_area_body_exited(body: Node2D):
     npc.disable_outline()
     if _current_state != State.TALK:
         _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
-
 
 func _on_npc_started_talking(npc: NPC):
     switch_state(State.TALK)
@@ -173,10 +183,10 @@ func _enable_scooting():
 
 func damage(damage_taken: int):
     stats.health -= damage_taken
-    stats_changed.emit(stats)
+    SignalDispatcher.stats_changed.emit(stats, balance)
 
 func _on_stats_changed(stats: StatsSpecifier, balance: int) -> void:
-    inventory.update_stats(stats, balance)
+    inventory.update_inventory_stats(stats, balance)
 
 
 func _get_best_npc(npcs: Array[Node2D]) -> NPC:
@@ -242,3 +252,9 @@ func toggle_talking():
         switch_state(State.IDLE)
         _talkable_npc.stop_talking()
         _on_npc_stopped_talking(_talkable_npc)
+
+func toggle_inventory():
+    var toggle: bool = inventory.visible
+
+    hud_toggled.emit(toggle)
+    inventory.visible = !toggle

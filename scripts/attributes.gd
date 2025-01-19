@@ -17,3 +17,6 @@ extends Resource
 @export var poison_resistance: int
 @export var bleed_resistance: int
 @export var drug_resistance: int
+@export var poison_level: int
+@export var bleed_level: int
+@export var drug_level: int

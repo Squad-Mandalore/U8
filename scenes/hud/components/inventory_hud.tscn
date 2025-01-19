@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://b6qdv1d0kofyo"]
+[gd_scene load_steps=42 format=3 uid="uid://b6qdv1d0kofyo"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_1ep7u"]
-[ext_resource type="Texture2D" uid="uid://djr0g000tl7vr" path="res://characters/player/berliner.png" id="2_2l5ag"]
+[ext_resource type="Script" path="res://scenes/hud/components/inventory_hud.gd" id="1_frglc"]
 [ext_resource type="Texture2D" uid="uid://s0a53et15ukx" path="res://assets/hud/white_blood.svg" id="3_kdlbu"]
-[ext_resource type="StyleBox" uid="uid://dwwr440bb80fk" path="res://assets/hud/debuff_level_true.tres" id="4_u0g0o"]
-[ext_resource type="StyleBox" uid="uid://dqn1iib8rdkpp" path="res://assets/hud/debuff_level_false.tres" id="5_bicfe"]
+[ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/berlinv3anim.png" id="4_gluvy"]
+[ext_resource type="Texture2D" uid="uid://kytixtu7vost" path="res://characters/player/riding.png" id="5_cx61w"]
+[ext_resource type="StyleBox" uid="uid://cph7qb53nqag" path="res://assets/hud/debuff_level_enabled.tres" id="5_qry0c"]
 [ext_resource type="Texture2D" uid="uid://rwuw0vie61sr" path="res://assets/hud/white_flask.svg" id="6_se0kj"]
+[ext_resource type="StyleBox" uid="uid://cqwignq5q6i1c" path="res://assets/hud/debuff_level_disabled.tres" id="6_yc6lu"]
 [ext_resource type="Texture2D" uid="uid://bwf8rc7n22rne" path="res://assets/hud/white_syringe.svg" id="7_xaubm"]
 [ext_resource type="PackedScene" uid="uid://da2j1exv2p488" path="res://scenes/hud/components/item_slot.tscn" id="8_rpjsw"]
 [ext_resource type="StyleBox" uid="uid://dw47tyut8uwd7" path="res://assets/hud/item_slot_disabled.tres" id="9_whkaq"]
@@ -17,12 +19,216 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo202"]
-bg_color = Color(0.74902, 0.74902, 0.74902, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7sgh"]
+draw_center = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8u2k"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(206, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa6sf"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(240, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ocxq"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(274, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1c66"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(308, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhcdy"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(342, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv05y"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(376, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76ww5"]
+atlas = ExtResource("5_cx61w")
+region = Rect2(107, 1, 34, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2kr2"]
+atlas = ExtResource("5_cx61w")
+region = Rect2(142, 1, 34, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsr1w"]
+atlas = ExtResource("5_cx61w")
+region = Rect2(2, 1, 34, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_picn0"]
+atlas = ExtResource("5_cx61w")
+region = Rect2(37, 1, 34, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2gsf"]
+atlas = ExtResource("5_cx61w")
+region = Rect2(72, 1, 34, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cntf"]
+atlas = ExtResource("5_cx61w")
+region = Rect2(177, 1, 34, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig71a"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(410, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b46vg"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(444, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42svl"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(478, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1uxo"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(512, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4tac"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(546, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vqip"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(580, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdlf1"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(614, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fbds"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(36, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icgnx"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(70, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d75yy"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(104, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyy3g"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(138, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulxa0"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(172, 1, 33, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tf0v"]
+atlas = ExtResource("4_gluvy")
+region = Rect2(2, 1, 33, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t54fp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8u2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sa6sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ocxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1c66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhcdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv05y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76ww5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2kr2")
+}],
+"loop": true,
+"name": &"scooting_downwards",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsr1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_picn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2gsf")
+}],
+"loop": true,
+"name": &"scooting_horizontal",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cntf")
+}],
+"loop": true,
+"name": &"scooting_upwards",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ig71a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b46vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42svl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1uxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4tac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vqip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdlf1")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fbds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icgnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d75yy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyy3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulxa0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tf0v")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 6.0
+}]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_lm7xt"]
 color = Color(0.254902, 0.254902, 0.254902, 1)
@@ -38,6 +244,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_frglc")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -79,15 +286,15 @@ theme_override_constants/margin_bottom = 20
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(201, 293)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_jo202")
+theme_override_styles/panel = SubResource("StyleBoxFlat_p7sgh")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
-custom_minimum_size = Vector2(201, 293)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_2l5ag")
-stretch_mode = 5
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+position = Vector2(81.9375, 261.814)
+scale = Vector2(7.32955, 7.32954)
+sprite_frames = SubResource("SpriteFrames_t54fp")
+animation = &"walk"
+autoplay = "idle"
+offset = Vector2(0, -16)
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -112,178 +319,195 @@ text = "Aktive Effekte"
 layout_mode = 2
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="DebuffInfoVBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_kdlbu")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+[node name="BleedLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.262745, 0.27451, 1)
 theme_override_fonts/font = ExtResource("1_1ep7u")
 theme_override_font_sizes/font_size = 20
 text = "blutend"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_constants/separation = 0
 
-[node name="Panel" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2/HBoxContainer"]
+[node name="BleedLevel1" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("4_u0g0o")
+theme_override_styles/panel = ExtResource("5_qry0c")
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="Panel2" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2/HBoxContainer"]
+[node name="BleedLevel2" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("5_bicfe")
+theme_override_styles/panel = ExtResource("6_yc6lu")
 
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2/HBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="Panel3" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2/HBoxContainer"]
+[node name="BleedLevel3" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("5_bicfe")
+theme_override_styles/panel = ExtResource("6_yc6lu")
 
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("6_se0kj")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+[node name="PoisonLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_1ep7u")
 theme_override_font_sizes/font_size = 20
 text = "vergiftet"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_constants/separation = 0
 
-[node name="Panel" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer3/HBoxContainer"]
+[node name="PoisonLevel1" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("4_u0g0o")
+theme_override_styles/panel = ExtResource("6_yc6lu")
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer3/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="Panel2" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer3/HBoxContainer"]
+[node name="PoisonLevel2" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("5_bicfe")
+theme_override_styles/panel = ExtResource("6_yc6lu")
 
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer3/HBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="Panel3" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer3/HBoxContainer"]
+[node name="PoisonLevel3" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("5_bicfe")
+theme_override_styles/panel = ExtResource("6_yc6lu")
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer4"]
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("7_xaubm")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer4"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer4"]
+[node name="DrugLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_1ep7u")
 theme_override_font_sizes/font_size = 20
 text = "unter Drogen"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer4"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_constants/separation = 0
 
-[node name="Panel" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer4/HBoxContainer"]
+[node name="DrugLevel1" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("4_u0g0o")
+theme_override_styles/panel = ExtResource("6_yc6lu")
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer4/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="Panel2" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer4/HBoxContainer"]
+[node name="DrugLevel2" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("5_bicfe")
+theme_override_styles/panel = ExtResource("6_yc6lu")
 
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer4/HBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="Panel3" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer4/HBoxContainer"]
+[node name="DrugLevel3" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("5_bicfe")
+theme_override_styles/panel = ExtResource("6_yc6lu")
 
 [node name="MarginContainer4" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -312,24 +536,30 @@ theme_override_constants/separation = 0
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="ItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
+[node name="BackpackItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="ItemSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
+[node name="MapItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="ItemSlot3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
+[node name="DiaryItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer"]
@@ -340,8 +570,10 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="ItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+[node name="ManualItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2"]
@@ -350,6 +582,7 @@ theme_override_constants/margin_right = 10
 
 [node name="ItemSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
 layout_mode = 2
+mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2"]
@@ -358,6 +591,7 @@ theme_override_constants/margin_right = 10
 
 [node name="ItemSlot3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
 layout_mode = 2
+mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5"]
@@ -373,10 +607,11 @@ theme_override_styles/separator = SubResource("StyleBoxLine_7k27a")
 layout_mode = 2
 theme_override_constants/margin_right = 32
 
-[node name="ItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5" instance=ExtResource("8_rpjsw")]
+[node name="TicketItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5" instance=ExtResource("8_rpjsw")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
@@ -398,16 +633,19 @@ custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="ItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+[node name="ItemSlot1" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
 [node name="ItemSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
@@ -415,42 +653,54 @@ layout_mode = 2
 theme_override_constants/margin_right = 10
 
 [node name="ItemSlot3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
 [node name="ItemSlot4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer4" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
 [node name="ItemSlot5" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer5" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
 [node name="ItemSlot6" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer6" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
 [node name="ItemSlot7" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer7" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
 [node name="ItemSlot8" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -461,56 +711,75 @@ custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="ItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+[node name="ItemSlot9" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="ItemSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+[node name="ItemSlot10" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="ItemSlot3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+[node name="ItemSlot11" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="ItemSlot4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+[node name="ItemSlot12" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer4" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="ItemSlot5" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+[node name="ItemSlot13" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer5" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="ItemSlot6" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+[node name="ItemSlot14" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer6" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="ItemSlot7" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+[node name="ItemSlot15" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer7" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_constants/margin_right = 10
 
-[node name="ItemSlot8" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+[node name="ItemSlot16" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
+
+[connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox" to="." method="_on_debuff_info_v_box_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox" to="." method="_on_debuff_info_v_box_mouse_exited"]

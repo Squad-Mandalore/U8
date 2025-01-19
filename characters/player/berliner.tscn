@@ -253,6 +253,5 @@ shape = SubResource("CapsuleShape2D_cjqwy")
 [node name="Inventory" parent="." instance=ExtResource("4_s04kq")]
 visible = false
 
-[connection signal="stats_changed" from="." to="." method="_on_stats_changed"]
 [connection signal="body_entered" from="SlowdownArea" to="." method="_on_slowdown_area_body_entered"]
 [connection signal="body_exited" from="SlowdownArea" to="." method="_on_slowdown_area_body_exited"]
