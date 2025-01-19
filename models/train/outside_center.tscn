@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b46ii0fqwu3ur"]
 
-[ext_resource type="Script" path="res://foreground.gd" id="1_hevv5"]
+[ext_resource type="Script" path="res://models/train/foreground.gd" id="1_hevv5"]
 [ext_resource type="Texture2D" uid="uid://ckj0legbu2g3" path="res://assets/train/ubahn-v4-mitte-außen.png" id="2_pn8cr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evlrq"]
