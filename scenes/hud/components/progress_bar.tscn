@@ -12,6 +12,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 script = ExtResource("1_u2gnd")
+margin_bottom = 18
+font_size = 20
 
 [node name="StatInfoHBox" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -50,6 +52,7 @@ stretch_margin_bottom = 7
 texture_under = ExtResource("2_sb6xm")
 texture_progress = ExtResource("3_338ew")
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="MarginBottom" type="MarginContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/margin_bottom = 18
