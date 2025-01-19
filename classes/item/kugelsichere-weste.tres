@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://chevkbqrl42xk"]
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://chevkbqrl42xk"]
 
 [ext_resource type="Script" path="res://scripts/attributes.gd" id="1_7ftyy"]
 [ext_resource type="Script" path="res://scripts/items.gd" id="2_qfq6o"]
@@ -20,8 +20,11 @@ poison_resistance = 0
 bleed_resistance = 0
 drug_resistance = 0
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nw8fe"]
+
 [resource]
 script = ExtResource("2_qfq6o")
 name = "Kugelsichere Weste"
 description = "Weil man in Berlin nie wissen kann, was hinter der nächsten Haltestelle auf einen wartet. Sicher ist sicher – und in der U8 bist du definitiv nicht sicher."
 properties = SubResource("Resource_hodkb")
+texture = SubResource("PlaceholderTexture2D_nw8fe")
