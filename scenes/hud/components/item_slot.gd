@@ -37,13 +37,13 @@ func _on_mouse_entered() -> void:
     if is_enabled():
         add_theme_stylebox_override("panel", load("res://assets/hud/item_slot_enabled_hovered.tres"))
         if item != null:
-            SignalDispatcher.update_item_hud.emit(item)
+            SignalDispatcher.toggle_item_hud.emit(item)
 
 func _on_mouse_exited() -> void:
     if is_enabled():
         add_theme_stylebox_override("panel", load("res://assets/hud/item_slot_enabled.tres"))
         if ck3_progress_bar_value != 60:
-            SignalDispatcher.update_item_hud.emit(null)
+            SignalDispatcher.toggle_item_hud.emit(null)
 
 func _get_drag_data(at_position: Vector2) -> Variant:
     var data = {}
