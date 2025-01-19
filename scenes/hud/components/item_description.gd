@@ -7,24 +7,75 @@ var timer: float = 0.0
 var is_timer_active: bool = false
 
 var stats_dict = {
-    "max_health": "res://assets/hud/coin.svg",
-    "health": "res://assets/hud/coin.svg",
-    "armor": "res://assets/hud/coin.svg",
-    "initiative": "res://assets/hud/coin.svg",
-    "dodge_chance": "res://assets/hud/coin.svg",
-    "strength": "res://assets/hud/coin.svg",
-    "coolness": "res://assets/hud/coin.svg",
-    "attractiveness": "res://assets/hud/coin.svg",
-    "intelligence": "res://assets/hud/coin.svg",
-    "creativity": "res://assets/hud/coin.svg",
-    "luck": "res://assets/hud/coin.svg",
-    "poison_resistance": "res://assets/hud/coin.svg",
-    "bleed_resistance": "res://assets/hud/coin.svg",
-    "drug_resistance": "res://assets/hud/coin.svg",
-    "poison_level": "res://assets/hud/coin.svg",
-    "bleed_level": "res://assets/hud/coin.svg",
-    "drug_level": "res://assets/hud/ck_3_bar.svg"
-}
+    "max_health": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Maximale Gesundheit"
+    },
+    "health": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Gesundheit"
+    },
+    "armor": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Rüstung"
+    },
+    "initiative": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Initiative"
+    },
+    "dodge_chance": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Ausweichchance"
+    },
+    "strength": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Stärke"
+    },
+    "coolness": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Coolness"
+    },
+    "attractiveness": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Attraktivität"
+    },
+    "intelligence": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Intelligenz"
+    },
+    "creativity": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Kreativität"
+    },
+    "luck": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Glück"
+    },
+    "poison_resistance": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Giftresistenz"
+    },
+    "bleed_resistance": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Blutungsresistenz"
+    },
+    "drug_resistance": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Drogenresistenz"
+    },
+    "poison_level": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Giftlevel"
+    },
+    "bleed_level": {
+        "texture": "res://assets/hud/coin.svg",
+        "display_name": "Blutungslevel"
+    },
+    "drug_level": {
+        "texture": "res://assets/hud/ck_3_bar.svg",
+        "display_name": "Drogenlevel"
+    }
+};
 
 func _ready() -> void:
     hide()
@@ -71,8 +122,8 @@ func set_stats(item: Item):
                 var new_stat_row_scene = preload("res://scenes/hud/components/item_description_stat_row.tscn")
                 var new_stat_row = new_stat_row_scene.instantiate()
                 %StatVBox.add_child(new_stat_row)
-                new_stat_row.set_stat_label(property_value, property.name)
-                new_stat_row.set_stat_icon(stats_dict[property.name])
+                new_stat_row.set_stat_label(property_value, stats_dict[property.name]["display_name"])
+                new_stat_row.set_stat_icon(stats_dict[property.name]["texture"])
 
 func _on_timer_timeout() -> void:
     if %Ck3ProgressBar.value == %Ck3ProgressBar.max_value:
