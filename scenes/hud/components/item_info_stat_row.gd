@@ -6,7 +6,7 @@ func set_stat_label(value: int, stat_specifyer: String):
     if value < 0:
         %StatNumberLabel.add_theme_color_override("font_color", red)
         %StatNameLabel.add_theme_color_override("font_color", red)
-        %StatNumberLabel.text = "-" + str(value)
+        %StatNumberLabel.text = str(value)
     else:
         %StatNumberLabel.add_theme_color_override("font_color", green)
         %StatNameLabel.add_theme_color_override("font_color", green)
