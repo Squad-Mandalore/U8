@@ -6,18 +6,21 @@ const SPEED: float = 68.0
 
 var _direction: Vector2 = Vector2.ZERO
 var _current_state: State = State.IDLE
-var _slowdown_entities: int = 0:
-    set(value):
-        _slowdown_entities = max(value, 0)
+var _player_nearby: bool = false
+
 
 @onready var _sprite = $AnimatedSprite2D
 @onready var _timer = $Timer
-
-signal npc_started_talking(npc: NPC)
-signal npc_stopped_talking(npc: NPC)
+@export var _name : String = "Random Dude"
+@export var RANDOM_NAME : bool = true
+@export_enum("Male", "Female", "Diverse") var _gender : String
+const outline_shader = preload("res://assets/npcs/npc.gdshader")
 
 func _ready() -> void:
     _new_state()
+    if RANDOM_NAME:
+        _name = NameGeneratorNode.get_random_name(_gender)
+
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK:
@@ -26,7 +29,7 @@ func _physics_process(delta: float) -> void:
         return
 
     var speed = SPEED
-    if _slowdown_entities > 0:
+    if _player_nearby:
         speed = SPEED / 2
 
     if _direction.x < 0:
@@ -49,23 +52,19 @@ func _physics_process(delta: float) -> void:
     # As slide thing caused the sticking to each other bug
     move_and_collide(velocity * delta)
 
-
-func _start_talking() -> void:
-    # This function sends a notification to Player script so that Player can talk to this npc.
+func start_talking() -> void:
     _timer.stop()
     velocity = Vector2.ZERO
     _direction = Vector2.ZERO
     _current_state = State.TALK
+    enable_outline(Color(0, 0, 1, 1))
 
-    npc_started_talking.emit(self)
-
-func _stop_talking() -> void:
-    # This function needs to be called in order for player character to be able to walk again.
+func stop_talking() -> void:
     _current_state = State.IDLE
     # Resume normal walking after a small delay or immediately
     _timer.start(1.0)
+    enable_outline(Color(0, 1, 0, 1))
 
-    npc_stopped_talking.emit(self)
 
 func _new_direction() -> void:
     _direction = Vector2(randi_range(-1, 1), randi_range(-1, 1))
@@ -80,14 +79,25 @@ func _new_state() -> void:
         _direction = Vector2.ZERO
         _timer.start(5.0)
 
+func enable_outline(color : Color = Color(0, 1, 0, 1)) -> void:
+    # Create and assign a ShaderMaterial with the given outline shader
+    if outline_shader:
+        var mat = ShaderMaterial.new()
+        mat.shader = outline_shader
+        # Adjust parameters as needed
+        mat.set_shader_parameter("outline_thickness", 0.5)
+        mat.set_shader_parameter("outline_color", color)
+        _sprite.material = mat
+    else:
+        # No shader assigned
+        _sprite.material = null
+
+func set_player_nearby(is_player_nearby : bool):
+    _player_nearby = is_player_nearby
+
+func disable_outline() -> void:
+    _sprite.material = null
+
 func _on_timer_timeout() -> void:
     if _current_state != State.TALK:
         _new_state()
-
-func _on_slowdown_area_body_entered(_body: Node2D):
-    # If the Player enters this NPC's slowdown area, NPC speed is halved
-    _slowdown_entities += 1
-
-func _on_slowdown_area_body_exited(_body: Node2D):
-    # If the Player leaves, restore normal speed (if no more slowdown entities)
-    _slowdown_entities -= 1

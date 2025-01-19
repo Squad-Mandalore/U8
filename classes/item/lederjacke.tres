@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bkjg0tfdse47l"]
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://bkjg0tfdse47l"]
 
 [ext_resource type="Script" path="res://scripts/attributes.gd" id="1_b1xnu"]
 [ext_resource type="Script" path="res://scripts/items.gd" id="2_30t0t"]
@@ -20,9 +20,11 @@ poison_resistance = 0
 bleed_resistance = 0
 drug_resistance = 0
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pr430"]
+
 [resource]
 script = ExtResource("2_30t0t")
 name = "Lederjacke"
 description = "Die einzig wahre Uniform für jemanden, der in der U8 nicht einfach nur mitfährt, sondern das Abenteuer sucht. Eine Lederjacke macht dich automatisch 20% mysteriöser und 80% unangreifbarer – auch wenn du eigentlich nur zum nächsten Späti willst."
 properties = SubResource("Resource_hodkb")
-texture = "res://assets/hud/coin.svg"
+texture = SubResource("PlaceholderTexture2D_pr430")

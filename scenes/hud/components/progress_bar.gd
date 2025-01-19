@@ -19,8 +19,8 @@ func _ready():
 func set_stat_name(name: String):
     %StatNameLabel.text = name
 
-func set_stat_number(name: String):
-    %StatNumberLabel.text = name
+func set_stat_number(number: String):
+    %StatNumberLabel.text = number
 
 func set_max_value(max_value: int):
     %ProgressBar.max_value = max_value

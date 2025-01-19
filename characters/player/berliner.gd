@@ -2,15 +2,15 @@ class_name Player
 extends CharacterBody2D
 
 const SPEED: float = 102.0
-var _slowdown_entities: int = 0:
-    set(value):
-        _slowdown_entities = max(value, 0)
+var _talkable_npc: NPC = null
 
 @onready var _animated_sprite_2d = $AnimatedSprite2D
+@onready var inventory: CanvasLayer = $Inventory
+@onready var _slowdown_area: Area2D = $SlowdownArea
 
 func _ready() -> void:
     SignalDispatcher.stats_changed.connect(_on_stats_changed)
-    $Inventory.hide()
+    inventory.hide()
     var hawaiihemd = load("res://classes/item/hawaiihemd.tres")
     var hemd = load("res://classes/item/hemd.tres")
     var regenmantel = load("res://classes/item/regenmantel.tres")
@@ -48,13 +48,17 @@ func _physics_process(delta: float) -> void:
 
     var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
     var speed = SPEED
-    if _slowdown_entities > 0:
+    if _talkable_npc:
         speed = SPEED / 2
 
-    if direction.x < 0:
+    if direction.x < 0 and not _animated_sprite_2d.flip_h:
         _animated_sprite_2d.flip_h = true
-    elif direction.x > 0:
+        if _talkable_npc:
+            _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
+    elif direction.x > 0 and _animated_sprite_2d.flip_h:
         _animated_sprite_2d.flip_h = false
+        if _talkable_npc:
+            _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
     if direction != Vector2.ZERO:
         velocity = direction * speed
@@ -148,17 +152,26 @@ func _input(event: InputEvent):
     if event.is_action_pressed("inventory"):
         toggle_inventory()
 
-func _on_slowdown_area_body_entered(_body: Node2D):
-    # If we meet an NPC, slow down the player
-    _slowdown_entities += 1
+func _on_slowdown_area_body_entered(body: Node2D):
+    var npc: NPC = body
+    npc.set_player_nearby(true)
+    if _current_state != State.TALK:
+        _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
-    talk_enabled.emit()
+func _on_slowdown_area_body_exited(body: Node2D):
+    var npc: NPC = body
+    npc.set_player_nearby(false)
+    npc.disable_outline()
+    if _current_state != State.TALK:
+        _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
-func _on_slowdown_area_body_exited(_body: Node2D):
-    # If the NPC leaves, reduce slowdown count
-    _slowdown_entities -= 1
+func _on_npc_started_talking(npc: NPC):
+    switch_state(State.TALK)
+    print("You are now talking to %s." % npc._name)
 
-    talk_disabled.emit()
+func _on_npc_stopped_talking(npc: NPC):
+    switch_state(State.IDLE)
+    print("You are no longer talking to %s." % npc._name)
 
 func _disable_scooting():
     _scooting_enabled = false
@@ -173,21 +186,74 @@ func damage(damage_taken: int):
     SignalDispatcher.stats_changed.emit(stats, balance)
 
 func _on_stats_changed(stats: StatsSpecifier, balance: int) -> void:
-    ($Inventory as CanvasLayer).update_inventory_stats(stats, balance)
+    inventory.update_inventory_stats(stats, balance)
+
+
+func _get_best_npc(npcs: Array[Node2D]) -> NPC:
+    if npcs.is_empty():
+        return null
+
+    var x_dir = -1.0 if _animated_sprite_2d.flip_h else 1.0
+    var facing_dir = Vector2(x_dir, 0.0)
+
+    #  Among all NPCs, pick those "in front" of the player
+    #  Then pick the closest among them. If none in front, pick the closest overall.
+    var best_npc: NPC = null
+    var best_dist = INF
+    var my_pos: Vector2 = global_position
+
+    # We'll track if we found at least one in front
+    var found_in_front = false
+
+    for npc: NPC in npcs:
+        var diff: Vector2 = npc.global_position - my_pos
+        var dot_val: float = facing_dir.dot(diff)
+        var dist: float = diff.length()
+
+        if dot_val > 0:
+            # NPC is in front
+            found_in_front = true
+            if dist < best_dist:
+                best_dist = dist
+                best_npc = npc
+        else:
+            # NPC is behind or to the side
+            # We'll only consider it if we have no in-front NPC at all
+            if not found_in_front and dist < best_dist:
+                best_dist = dist
+                best_npc = npc
+
+    return best_npc
+
+func _update_talkable_npc(npcs: Array[Node2D]) -> void:
+    # Clear outline on all
+    for ent: NPC in npcs:
+        ent.disable_outline()
+
+
+    # Get the NPC we want to talk to
+    _talkable_npc = _get_best_npc(npcs)
+    if !_talkable_npc:
+        talk_disabled.emit()
+        return
+
+    _talkable_npc.enable_outline(Color(0, 1, 0, 1))
+    talk_enabled.emit()
 
 func toggle_talking():
-    var bodies = $SlowdownArea.get_overlapping_bodies()
-    if bodies.size() < 1:
+    if !_talkable_npc:
         return
+
     if !_current_state == State.TALK:
         switch_state(State.TALK)
-        (bodies[0] as NPC)._start_talking()
+        _talkable_npc.start_talking()
+        _on_npc_started_talking(_talkable_npc)
     else:
         switch_state(State.IDLE)
-        (bodies[0] as NPC)._stop_talking()
+        _talkable_npc.stop_talking()
+        _on_npc_stopped_talking(_talkable_npc)
 
 func toggle_inventory():
-    var inventory: CanvasLayer = ($Inventory as CanvasLayer)
     var toggle: bool = inventory.visible
 
     hud_toggled.emit(toggle)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmptivo27x86p"]
+[gd_scene load_steps=13 format=3 uid="uid://cmptivo27x86p"]
 
 [ext_resource type="Script" path="res://scenes/hud/components/resistance_info.gd" id="1_6hyc8"]
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="2_qhoxw"]
@@ -6,8 +6,11 @@
 [ext_resource type="FontFile" uid="uid://pxyfff4ijb64" path="res://assets/fonts/nippo/OTF/Nippo-Medium.otf" id="5_hq22r"]
 [ext_resource type="FontFile" uid="uid://bkvompws14vh5" path="res://assets/fonts/hind/Hind-Regular.ttf" id="6_fnn2d"]
 [ext_resource type="PackedScene" uid="uid://c7pdclqtpglet" path="res://scenes/hud/components/progress_bar.tscn" id="6_t6mx6"]
+[ext_resource type="Texture2D" uid="uid://cqbuach1xakxp" path="res://assets/hud/blood_resistance.svg" id="6_wmwr2"]
 [ext_resource type="Texture2D" uid="uid://cok6af1uuonbi" path="res://assets/hud/under_progressbar.svg" id="7_yl4jj"]
 [ext_resource type="Texture2D" uid="uid://cxmd500i2iyjs" path="res://assets/hud/dodge_chance_progressbar.svg" id="8_g7fh3"]
+[ext_resource type="Texture2D" uid="uid://dxuvcb4qof7fk" path="res://assets/hud/flask_resistance.svg" id="10_ecmql"]
+[ext_resource type="Texture2D" uid="uid://ce68w0bjcy2ci" path="res://assets/hud/drug_resistance.svg" id="11_uai4j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_470qu"]
 bg_color = Color(0.129412, 0.129412, 0.129412, 1)
@@ -111,25 +114,73 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="BleedResistanceBar" parent="PanelContainer/MarginContainer/StatVBox" instance=ExtResource("6_t6mx6")]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/StatVBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/StatVBox/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 18
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/StatVBox/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_wmwr2")
+stretch_mode = 5
+
+[node name="BleedResistanceBar" parent="PanelContainer/MarginContainer/StatVBox/HBoxContainer" instance=ExtResource("6_t6mx6")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
 texture_under = ExtResource("7_yl4jj")
 texture_progress = ExtResource("8_g7fh3")
-nine_patch_margins = Vector4(0, 0, 393, 7)
+nine_patch_margins = Vector4(0, 0, 309, 7)
 
-[node name="PoisonResistanceBar" parent="PanelContainer/MarginContainer/StatVBox" instance=ExtResource("6_t6mx6")]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/StatVBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/StatVBox/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 18
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/StatVBox/HBoxContainer2/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_ecmql")
+stretch_mode = 5
+
+[node name="PoisonResistanceBar" parent="PanelContainer/MarginContainer/StatVBox/HBoxContainer2" instance=ExtResource("6_t6mx6")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
 texture_under = ExtResource("7_yl4jj")
 texture_progress = ExtResource("8_g7fh3")
-nine_patch_margins = Vector4(0, 0, 393, 7)
+nine_patch_margins = Vector4(0, 0, 309, 7)
 
-[node name="DrugResistanceBar" parent="PanelContainer/MarginContainer/StatVBox" instance=ExtResource("6_t6mx6")]
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/StatVBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/StatVBox/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 18
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/StatVBox/HBoxContainer3/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_uai4j")
+stretch_mode = 5
+
+[node name="DrugResistanceBar" parent="PanelContainer/MarginContainer/StatVBox/HBoxContainer3" instance=ExtResource("6_t6mx6")]
 unique_name_in_owner = true
 layout_mode = 2
 texture_under = ExtResource("7_yl4jj")
 texture_progress = ExtResource("8_g7fh3")
-nine_patch_margins = Vector4(0, 0, 393, 7)
+nine_patch_margins = Vector4(0, 0, 309, 7)
