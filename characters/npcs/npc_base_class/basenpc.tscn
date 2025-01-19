@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bty12pwf3uotq"]
+[gd_scene load_steps=15 format=3 uid="uid://bty12pwf3uotq"]
 
 [ext_resource type="Script" path="res://characters/npcs/npc_base_class/npc.gd" id="1_pda6j"]
 [ext_resource type="Texture2D" uid="uid://btahse7qq1uhd" path="res://characters/npcs/bettler1/bettler1.png" id="2_l0vg7"]
@@ -92,9 +92,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6rf0"]
-height = 42.0
-
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["NPC"]]
 z_index = 50
 script = ExtResource("1_pda6j")
@@ -111,12 +108,4 @@ animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0, -16)
 
-[node name="SlowdownArea" type="Area2D" parent="." groups=["NPC"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SlowdownArea"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_n6rf0")
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="SlowdownArea" to="." method="_on_slowdown_area_body_entered"]
-[connection signal="body_exited" from="SlowdownArea" to="." method="_on_slowdown_area_body_exited"]

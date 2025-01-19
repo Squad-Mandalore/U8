@@ -46,7 +46,6 @@ zoom = Vector2(6.5, 6.5)
 limit_left = 0
 limit_top = 0
 limit_bottom = 270
-position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
@@ -55,6 +54,9 @@ unique_name_in_owner = true
 
 [node name="Chris" parent="." instance=ExtResource("8_sempk")]
 position = Vector2(433, 153)
+_name = "Chris Chistead"
+RANDOM_NAME = false
+_gender = "Male"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
@@ -65,10 +67,14 @@ position = Vector2(897, 159)
 shape = SubResource("RectangleShape2D_77qi7")
 
 [node name="Bettler1" parent="." instance=ExtResource("9_xenwl")]
-position = Vector2(295, 161)
+position = Vector2(488, 157)
+_gender = "Male"
+
 
 [node name="Politiker" parent="." instance=ExtResource("10_rky5v")]
 position = Vector2(264, 163)
+_name = "Olof Scholtz"
+RANDOM_NAME = false
 
 [connection signal="ready" from="." to="Player" method="_disable_scooting"]
 [connection signal="hud_toggled" from="Player" to="." method="_on_player_hud_toggled"]
