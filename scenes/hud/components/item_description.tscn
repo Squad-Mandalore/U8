@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c5u8dk88a3txs"]
+[gd_scene load_steps=12 format=3 uid="uid://c5u8dk88a3txs"]
 
 [ext_resource type="Script" path="res://scenes/hud/components/item_description.gd" id="1_i6sq6"]
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_t71cl"]
 [ext_resource type="FontFile" uid="uid://pxyfff4ijb64" path="res://assets/fonts/nippo/OTF/Nippo-Medium.otf" id="3_afdey"]
 [ext_resource type="Texture2D" uid="uid://u68l1bngaa7u" path="res://assets/hud/ck_3_bar.svg" id="3_obykl"]
 [ext_resource type="FontFile" uid="uid://bkvompws14vh5" path="res://assets/fonts/hind/Hind-Regular.ttf" id="4_rmtf4"]
+[ext_resource type="Script" path="res://scenes/hud/components/ck_3_progress_bar.gd" id="4_vfj7q"]
 [ext_resource type="Texture2D" uid="uid://bqofv3cuwda0p" path="res://assets/hud/up.svg" id="5_2ycev"]
 [ext_resource type="Texture2D" uid="uid://cjydvftrvv6bv" path="res://assets/hud/armor.svg" id="6_qbcwn"]
 
@@ -75,6 +76,7 @@ size_flags_vertical = 4
 max_value = 60.0
 fill_mode = 4
 texture_progress = ExtResource("3_obykl")
+script = ExtResource("4_vfj7q")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -130,85 +132,101 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="StatVBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_t71cl")
 theme_override_font_sizes/font_size = 20
 text = "+1 Radikalität"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_constants/separation = 0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox/HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_2ycev")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_top = 7
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 0
 theme_override_styles/separator = SubResource("StyleBoxLine_vvs56")
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_bottom = 7
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox/HBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_t71cl")
 theme_override_font_sizes/font_size = 20
 text = "+2 Rüstung"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_constants/separation = 0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox/HBoxContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("6_qbcwn")
 
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_top = 7
 
-[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 0
 theme_override_styles/separator = SubResource("StyleBoxLine_vvs56")
 
-[node name="MarginContainer4" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_bottom = 7
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/StatVBox/HBoxContainer3"]
+visible = false
 custom_minimum_size = Vector2(0, 81)
 layout_mode = 2
 size_flags_horizontal = 3

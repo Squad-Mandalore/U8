@@ -25,4 +25,4 @@ script = ExtResource("2_tmpph")
 name = "Hemd"
 description = "Das Kleidungsstück, das signalisiert: 'Ich habe mein Leben im Griff' – auch wenn du eigentlich gerade erst aufgewacht bist und deine Schuhe nicht zusammenpassen. Macht dich automatisch seriöser als alle anderen im Waggon, selbst wenn du unter dem Hemd ein Bandshirt von einer Trash-Metal-Band trägst."
 properties = SubResource("Resource_hodkb")
-texture = "res://assets/hud/coin.svg"
+texture = "res://assets/hud/ck_3_bar_full.svg"

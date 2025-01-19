@@ -67,3 +67,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
     var from: int = data["index"]
     SignalDispatcher.swap_inventory_items.emit(from, index)
     SignalDispatcher.update_item_slots.emit()
+
+func _notification(what: int) -> void:
+    if what == NOTIFICATION_DRAG_END and not is_drag_successful():
+        SignalDispatcher.update_item_slots.emit()
