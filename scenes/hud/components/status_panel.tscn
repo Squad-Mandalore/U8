@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2utiw3nl1pqr"]
+[gd_scene load_steps=11 format=3 uid="uid://b2utiw3nl1pqr"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_22btv"]
 [ext_resource type="Script" path="res://scenes/hud/components/status_panel.gd" id="1_28hqb"]
+[ext_resource type="PackedScene" uid="uid://c7pdclqtpglet" path="res://scenes/hud/components/progress_bar.tscn" id="2_b8j1u"]
+[ext_resource type="Texture2D" uid="uid://cok6af1uuonbi" path="res://assets/hud/under_progressbar.svg" id="3_g1bt0"]
 [ext_resource type="Texture2D" uid="uid://dn0jfcq1ly2go" path="res://assets/hud/coin.svg" id="3_pneu6"]
 [ext_resource type="Texture2D" uid="uid://co1tygwevb7v" path="res://assets/hud/blood.svg" id="4_cowbk"]
 [ext_resource type="Texture2D" uid="uid://c5wvjsj1orm8c" path="res://assets/hud/health_progressbar.svg" id="4_kocoe"]
@@ -42,46 +44,14 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="FirstRowMarginBox" type="MarginContainer" parent="PanelContainer/MarginContainer/RowsVBox"]
-layout_mode = 2
-
-[node name="FirstRowHBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/RowsVBox/FirstRowMarginBox"]
-layout_mode = 2
-
-[node name="HealthLabel" type="Label" parent="PanelContainer/MarginContainer/RowsVBox/FirstRowMarginBox/FirstRowHBox"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_22btv")
-theme_override_font_sizes/font_size = 24
-text = "Gesundheit"
-
-[node name="CurFromMaxHealthLabel" type="Label" parent="PanelContainer/MarginContainer/RowsVBox/FirstRowMarginBox/FirstRowHBox"]
+[node name="HealthBar" parent="PanelContainer/MarginContainer/RowsVBox" instance=ExtResource("2_b8j1u")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("1_22btv")
-theme_override_font_sizes/font_size = 24
-text = "100/100"
-horizontal_alignment = 2
-
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/RowsVBox"]
-layout_mode = 2
-theme_override_constants/margin_top = 10
-
-[node name="SecondRowMarginBox" type="MarginContainer" parent="PanelContainer/MarginContainer/RowsVBox"]
-layout_mode = 2
-
-[node name="HealthBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer/RowsVBox/SecondRowMarginBox"]
-unique_name_in_owner = true
-layout_mode = 2
-value = 100.0
+texture_under = ExtResource("3_g1bt0")
 texture_progress = ExtResource("4_kocoe")
-
-[node name="HealthBarBottomMarginBox" type="MarginContainer" parent="PanelContainer/MarginContainer/RowsVBox/SecondRowMarginBox"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/RowsVBox"]
-layout_mode = 2
-theme_override_constants/margin_top = 20
+nine_patch_margins = Vector4(0, 0, 425, 7)
+margin_bottom = 20
+font_size = 24
 
 [node name="ThirdRowMarginBox" type="MarginContainer" parent="PanelContainer/MarginContainer/RowsVBox"]
 layout_mode = 2
@@ -93,6 +63,7 @@ theme_override_constants/separation = 0
 [node name="CoinTexture" type="NinePatchRect" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_pneu6")
 

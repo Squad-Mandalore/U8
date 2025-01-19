@@ -13,9 +13,10 @@ func update_status_panel(stats: StatsSpecifier, balance: int):
 
 func update_health(new_health: int, max_health: int) -> void:
     new_health = min(new_health, max_health)
-    (%HealthBar as TextureProgressBar).max_value = max_health
-    (%CurFromMaxHealthLabel as Label).text = "%d/%d" % [new_health, max_health]
-    (%HealthBar as TextureProgressBar).value = new_health
+    %HealthBar.set_max_value(max_health)
+    %HealthBar.set_stat_name("Gesundheit")
+    %HealthBar.set_stat_number("%d/%d" % [new_health, max_health])
+    %HealthBar.set_cur_value(new_health)
 
 func update_balance(new_balance: int) -> void:
     var min_balance: int
