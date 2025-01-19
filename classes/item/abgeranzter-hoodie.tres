@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/attributes.gd" id="1_hlgds"]
 [ext_resource type="Script" path="res://scripts/items.gd" id="2_jnwwi"]
+[ext_resource type="Texture2D" uid="uid://dn0jfcq1ly2go" path="res://assets/hud/coin.svg" id="3_abvr6"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
 script = ExtResource("1_hlgds")
@@ -20,11 +21,9 @@ poison_resistance = 0
 bleed_resistance = 0
 drug_resistance = 0
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ft30h"]
-
 [resource]
 script = ExtResource("2_jnwwi")
 name = "Abgeranzter Hoodie"
 description = "Für den authentischen Neukölln-Vibe. Niemand weiß, was du darunter trägst – und niemand will es wissen."
 properties = SubResource("Resource_hodkb")
-texture = SubResource("PlaceholderTexture2D_ft30h")
+texture = ExtResource("3_abvr6")
