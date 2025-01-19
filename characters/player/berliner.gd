@@ -9,20 +9,15 @@ var _slowdown_entities: int = 0:
 @onready var _animated_sprite_2d = $AnimatedSprite2D
 
 func _ready() -> void:
+    SignalDispatcher.stats_changed.connect(_on_stats_changed)
     $Inventory.hide()
     var hawaiihemd = load("res://classes/item/hawaiihemd.tres")
     var hemd = load("res://classes/item/hemd.tres")
+    var regenmantel = load("res://classes/item/regenmantel.tres")
     $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(hawaiihemd)
     $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(hemd)
-    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(hawaiihemd)
-    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(hawaiihemd)
-    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(hawaiihemd)
-    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(hawaiihemd)
-    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(hawaiihemd)
-    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(hawaiihemd)
-    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(hawaiihemd)
-    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(hawaiihemd)
-    stats_changed.emit(stats, balance)
+    $Inventory/HBoxContainer/MarginContainer/InventoryHud.add_item(regenmantel)
+    SignalDispatcher.stats_changed.emit(stats, balance)
 
 enum State {IDLE, WALK, TALK, SCOOT}
 var _current_state: State = State.IDLE
@@ -31,7 +26,6 @@ var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for
 signal talk_enabled()
 signal talk_disabled()
 signal hud_toggled(visible: bool)
-signal stats_changed(stats: StatsSpecifier, balance: int)
 
 
 @export var stats: StatsSpecifier
@@ -173,10 +167,10 @@ func _enable_scooting():
 
 func damage(damage_taken: int):
     stats.health -= damage_taken
-    stats_changed.emit(stats)
+    SignalDispatcher.stats_changed.emit(stats, balance)
 
 func _on_stats_changed(stats: StatsSpecifier, balance: int) -> void:
-    ($Inventory as CanvasLayer).update_stats(stats, balance)
+    ($Inventory as CanvasLayer).update_inventory_stats(stats, balance)
 
 func toggle_talking():
     var bodies = $SlowdownArea.get_overlapping_bodies()
@@ -190,8 +184,8 @@ func toggle_talking():
         (bodies[0] as NPC)._stop_talking()
 
 func toggle_inventory():
-    var canvas_layer: CanvasLayer = ($Inventory as CanvasLayer)
-    var toggle: bool = canvas_layer.visible
+    var inventory: CanvasLayer = ($Inventory as CanvasLayer)
+    var toggle: bool = inventory.visible
 
     hud_toggled.emit(toggle)
-    canvas_layer.visible = !toggle
+    inventory.visible = !toggle

@@ -19,6 +19,9 @@ luck = 0
 poison_resistance = 0
 bleed_resistance = 0
 drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
 
 [resource]
 script = ExtResource("2_wjiuo")

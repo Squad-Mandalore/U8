@@ -1,16 +1,6 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-    pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-    pass
-
-func update_stats(stats: StatsSpecifier):
+func update_inventory_stat_hud(stats: StatsSpecifier):
     update_health(stats.health, stats.max_health)
     update_dodge_chance(stats.dodge_chance, 50)
     update_armor(stats.armor)

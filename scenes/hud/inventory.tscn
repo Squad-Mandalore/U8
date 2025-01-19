@@ -37,7 +37,7 @@ theme_override_constants/margin_left = 116
 theme_override_constants/margin_top = 201
 theme_override_constants/margin_bottom = 201
 
-[node name="StatHud" parent="HBoxContainer/StatHudMargin" instance=ExtResource("1_w07gl")]
+[node name="InventoryStatHud" parent="HBoxContainer/StatHudMargin" instance=ExtResource("1_w07gl")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(475, 0)
 layout_mode = 2

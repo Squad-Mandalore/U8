@@ -1,15 +1,9 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    pass
+    SignalDispatcher.stats_changed.connect(update_status_panel)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-    pass
-
-func update_stats(stats: StatsSpecifier, balance: int):
+func update_status_panel(stats: StatsSpecifier, balance: int):
     update_health(stats.health, stats.max_health)
     update_balance(balance)
     # TODO: status types

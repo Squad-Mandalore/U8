@@ -26,7 +26,7 @@ func load_item_slots():
 func load_meta_items():
     cur_inventory_size = %BackpackItemSlot.inventory_size
 
-func load_stats(stats: StatsSpecifier):
+func update_debuff_stats(stats: StatsSpecifier):
     load_stat_level("Bleed", stats.bleed_level)
     load_stat_level("Poison", stats.poison_level)
     load_stat_level("Drug", stats.drug_level)
