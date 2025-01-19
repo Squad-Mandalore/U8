@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bkaths3irgi7c"]
+[gd_scene load_steps=24 format=3 uid="uid://bkaths3irgi7c"]
 
 [ext_resource type="Script" path="res://characters/npcs/chris/chris.gd" id="1_muxck"]
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/berlinv3anim.png" id="2_nqlp7"]
@@ -157,10 +157,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lrsox"]
-radius = 9.0
-height = 42.0
-
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["NPC"]]
 z_index = 50
 collision_layer = 5
@@ -178,27 +174,9 @@ shape = SubResource("RectangleShape2D_bg0ao")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bdfr3")
-animation = &"walk"
+animation = &"talk"
 autoplay = "idle"
+frame_progress = 0.798715
 offset = Vector2(0, -16)
 
-[node name="SlowdownArea" type="Area2D" parent="." groups=["NPC"]]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SlowdownArea"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_lrsox")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
-offset_left = 9.0
-offset_top = -20.0
-offset_right = 17.0
-offset_bottom = 3.0
-text = "E"
-fit_content = true
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="SlowdownArea" to="." method="_on_slowdown_area_body_entered"]
-[connection signal="body_exited" from="SlowdownArea" to="." method="_on_slowdown_area_body_exited"]

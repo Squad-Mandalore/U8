@@ -419,7 +419,7 @@ offset_left = -88.0
 offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "v0.1.0"
+text = "v0.2.0"
 horizontal_alignment = 2
 script = ExtResource("6_6j8k6")
 
