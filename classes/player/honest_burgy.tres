@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Attributes" load_steps=2 format=3 uid="uid://ce3f1ohuwurv"]
+[gd_resource type="Resource" script_class="StatsSpecifier" load_steps=2 format=3 uid="uid://ce3f1ohuwurv"]
 
 [ext_resource type="Script" path="res://scripts/attributes.gd" id="1_x6ckg"]
 
@@ -18,3 +18,6 @@ luck = 10
 poison_resistance = 0
 bleed_resistance = 0
 drug_resistance = 0
+poison_level = 3
+bleed_level = 0
+drug_level = 0

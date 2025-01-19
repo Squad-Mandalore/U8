@@ -26,6 +26,8 @@ SceneLoader="*res://addons/maaacks_game_template/base/scenes/autoloads/scene_loa
 AppConfig="*res://addons/maaacks_game_template/base/scenes/autoloads/app_config.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/autoloads/project_music_controller.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/autoloads/project_ui_sound_controller.tscn"
+SignalDispatcher="*res://scripts/signal_dispatcher.gd"
+NameGeneratorNode="*res://assets/npcs/name_generator.gd"
 
 [display]
 
