@@ -56,7 +56,6 @@ _gender = "Male"
 position = Vector2(488, 157)
 _gender = "Male"
 
-
 [node name="Politiker" parent="." instance=ExtResource("10_rky5v")]
 position = Vector2(264, 163)
 _name = "Olof Scholtz"
