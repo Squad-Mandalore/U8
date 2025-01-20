@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-    SignalDispatcher.stats_changed.connect(update_status_panel)
+    SignalDispatcher.update_status_panel_stat.connect(update_status_panel)
 
 func update_status_panel(stats: StatsSpecifier, balance: int):
     update_health(stats.health, stats.max_health)

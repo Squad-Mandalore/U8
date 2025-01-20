@@ -193,6 +193,7 @@ func _on_stats_changed(stats: StatsSpecifier, balance: int) -> void:
     self.stats.add(stats)
     self.balance += balance
     inventory.update_inventory_stats(self.stats, self.balance)
+    SignalDispatcher.update_status_panel_stat.emit(self.stats, self.balance)
 
 func _get_best_npc(npcs: Array[Node2D]) -> NPC:
     if npcs.is_empty():
