@@ -1,11 +1,11 @@
 extends Node
 
-const light_blue: Color = Color("79B8FF")
-const red: Color = Color("FF4346")
-const green: Color = Color("71F87A")
-const white: Color = Color("FFFFFF")
+const LIGHT_BLUE: Color = Color("79B8FF")
+const RED: Color = Color("FF4346")
+const GREEN: Color = Color("71F87A")
+const WHITE: Color = Color("FFFFFF")
 
-const stats_dict = {
+const STATS_DICT = {
     "max_health": {
         "texture": "res://assets/hud/coin.svg",
         "display_name": "Maximale Gesundheit"

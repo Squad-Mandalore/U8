@@ -42,14 +42,14 @@ func update_debuff_stats(stats: StatsSpecifier):
 
 func load_stat_level(stat_name: String, new_stat_level: int):
     var stat_label = get_node("%" + stat_name + "Label")
-    stat_label.add_theme_color_override("font_color", Utils.white)
+    stat_label.add_theme_color_override("font_color", Utils.WHITE)
 
     for i in range(3):
         var stat_level = get_node("%" + stat_name + "Level" + str(i + 1))
         if i + 1 > new_stat_level:
             stat_level.add_theme_stylebox_override("panel", load("res://assets/hud/debuff_level_disabled.tres"))
         else:
-            stat_label.add_theme_color_override("font_color", Utils.red)
+            stat_label.add_theme_color_override("font_color", Utils.RED)
             stat_level.add_theme_stylebox_override("panel", load("res://assets/hud/debuff_level_enabled.tres"))
 
 func add_item(item: Item):

@@ -21,13 +21,13 @@ func set_item_description(item: Item):
 func set_stats(item: Item):
     for property in item.properties.get_property_list():
         # Check if the property name exists in stats_dict
-        if Utils.stats_dict.has(property.name):
+        if Utils.STATS_DICT.has(property.name):
             var property_value = item.properties.get(property.name)
             if property_value != 0:
                 var new_stat_row = new_stat_row_scene.instantiate()
                 %StatVBox.add_child(new_stat_row)
-                new_stat_row.set_stat_label(property_value, Utils.stats_dict[property.name]["display_name"])
-                new_stat_row.set_stat_icon(Utils.stats_dict[property.name]["texture"])
+                new_stat_row.set_stat_label(property_value, Utils.STATS_DICT[property.name]["display_name"])
+                new_stat_row.set_stat_icon(Utils.STATS_DICT[property.name]["texture"])
 
 func get_ck3_progress_bar() -> TextureProgressBar:
     %Ck3ProgressBar.value = 0

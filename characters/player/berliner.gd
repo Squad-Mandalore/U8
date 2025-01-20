@@ -188,7 +188,8 @@ func reset_stats():
 
 func _on_stats_changed(stats: StatsSpecifier, balance: int) -> void:
     self.stats.add(stats)
-    inventory.update_inventory_stats(self.stats, balance)
+    self.balance += balance
+    inventory.update_inventory_stats(self.stats, self.balance)
 
 func _get_best_npc(npcs: Array[Node2D]) -> NPC:
     if npcs.is_empty():
