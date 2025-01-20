@@ -146,6 +146,9 @@ func _unhandled_input(event: InputEvent):
             _animated_sprite_2d.play("scooting_horizontal")
 
 func _input(event: InputEvent):
+    if event.is_action_pressed("ui_cancel"):
+        toggle_inventory(false)
+
     if event is InputEventMouseButton and event.pressed:
         if event.button_index == MOUSE_BUTTON_LEFT:
             SignalDispatcher.toggle_item_hud.emit(null)
@@ -253,8 +256,10 @@ func toggle_talking():
         _talkable_npc.stop_talking()
         _on_npc_stopped_talking(_talkable_npc)
 
-func toggle_inventory():
-    var toggle: bool = inventory.visible
+func toggle_inventory(set = null):
+    var toggle = set
+    if set == null:
+        toggle = !inventory.visible
 
-    hud_toggled.emit(toggle)
-    inventory.visible = !toggle
+    hud_toggled.emit(!toggle)
+    inventory.visible = toggle
