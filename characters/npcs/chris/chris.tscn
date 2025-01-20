@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://bkaths3irgi7c"]
 
 [ext_resource type="Script" path="res://characters/npcs/chris/chris.gd" id="1_muxck"]
-[ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/berlinv3anim.png" id="2_nqlp7"]
+[ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="2_nqlp7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
 size = Vector2(20, 4)

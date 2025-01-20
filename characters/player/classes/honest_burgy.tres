@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="StatsSpecifier" load_steps=2 format=3 uid="uid://ce3f1ohuwurv"]
+
+[ext_resource type="Script" path="res://globals/attributes.gd" id="1_x6ckg"]
+
+[resource]
+script = ExtResource("1_x6ckg")
+max_health = 50
+health = 50
+armor = 0
+initiative = 10
+dodge_chance = 0
+strength = 3
+coolness = 3
+attractiveness = 3
+intelligence = 3
+creativity = 3
+luck = 10
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 3
+bleed_level = 0
+drug_level = 0

@@ -1,0 +1,435 @@
+[gd_scene load_steps=19 format=3 uid="uid://cy1iar1dkomyr"]
+
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_el7fl"]
+[ext_resource type="Script" path="res://ui/inventory/subscenes/stat_hud.gd" id="1_q4hdo"]
+[ext_resource type="Texture2D" uid="uid://cok6af1uuonbi" path="res://ui/hud/assets/under_progressbar.svg" id="2_pg2fv"]
+[ext_resource type="PackedScene" uid="uid://c7pdclqtpglet" path="res://ui/inventory/subscenes/progress_bar.tscn" id="3_x4y3t"]
+[ext_resource type="Texture2D" uid="uid://cxmd500i2iyjs" path="res://ui/hud/assets/dodge_chance_progressbar.svg" id="4_n3hml"]
+[ext_resource type="Texture2D" uid="uid://cqbuach1xakxp" path="res://ui/hud/assets/blood_resistance.svg" id="5_31p3o"]
+[ext_resource type="Texture2D" uid="uid://c5wvjsj1orm8c" path="res://ui/hud/assets/health_progressbar.svg" id="5_luw3b"]
+[ext_resource type="Texture2D" uid="uid://dxuvcb4qof7fk" path="res://ui/hud/assets/flask_resistance.svg" id="6_avhbx"]
+[ext_resource type="Texture2D" uid="uid://ce68w0bjcy2ci" path="res://ui/hud/assets/drug_resistance.svg" id="7_e8f2f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a162o"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_js15a"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_cgtou"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jd458"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rmbjm"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_2i1o3"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fk8u0"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_hmkcx"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fw74r"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[node name="StatHud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+script = ExtResource("1_q4hdo")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 473.0
+offset_bottom = 678.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a162o")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 32
+text = "Deine Stats"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 40
+
+[node name="HealthBar" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_x4y3t")]
+unique_name_in_owner = true
+layout_mode = 2
+texture_under = ExtResource("2_pg2fv")
+texture_progress = ExtResource("5_luw3b")
+nine_patch_margins = Vector4(0, 0, 393, 7)
+
+[node name="DodgeChanceBar" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_x4y3t")]
+unique_name_in_owner = true
+layout_mode = 2
+texture_under = ExtResource("2_pg2fv")
+texture_progress = ExtResource("4_n3hml")
+nine_patch_margins = Vector4(0, 0, 393, 7)
+
+[node name="Armor" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LabelArmor" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Armor"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "Rüstung"
+
+[node name="LabelArmorStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Armor"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "6"
+
+[node name="MarginContainer8" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Seperator1" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_js15a")
+
+[node name="MarginContainer9" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Initiative" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LabelInitiative" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Initiative"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "Initiative"
+
+[node name="LabelInitiativeStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Initiative"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "5"
+
+[node name="MarginContainer10" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Seperator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_cgtou")
+
+[node name="MarginContainer11" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Strength" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LabelStrength" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Strength"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "Stärke"
+
+[node name="LabelStrengthStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Strength"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "11"
+
+[node name="MarginContainer12" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Seperator3" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_jd458")
+
+[node name="MarginContainer13" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Coolness" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LabelCoolness" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Coolness"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "Coolness"
+
+[node name="LabelCoolnessStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Coolness"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "5"
+
+[node name="MarginContainer14" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Seperator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_rmbjm")
+
+[node name="MarginContainer15" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Attractiveness" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LabelAttractiveness" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Attractiveness"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "Attraktivität"
+
+[node name="LabelAttractivenessStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Attractiveness"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "7"
+
+[node name="MarginContainer16" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Seperator5" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_2i1o3")
+
+[node name="MarginContainer17" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Intelligence" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LabelIntelligence" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Intelligence"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "Intelligenz"
+
+[node name="LabelIntelligenceStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Intelligence"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "4"
+
+[node name="MarginContainer18" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Seperator6" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_fk8u0")
+
+[node name="MarginContainer19" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Creativity" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LabelCreativity" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Creativity"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "Kreativität"
+
+[node name="LabelCreativityStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Creativity"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "4"
+
+[node name="MarginContainer21" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Seperator7" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_hmkcx")
+
+[node name="MarginContainer20" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Luck" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LabelLuck" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Luck"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "Glück"
+
+[node name="LabelLuckStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Luck"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "1000"
+
+[node name="MarginContainer22" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="Seperator8" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_fw74r")
+
+[node name="MarginContainer4" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 18
+
+[node name="ResistanceInfoVBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LabelResistance" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "Resistenzen"
+
+[node name="MarginContainer5" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="Resistances" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="BleedResistance" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="BleedResistanceIcon" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/BleedResistance"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_31p3o")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/BleedResistance"]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="LabelBleedResistanceStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/BleedResistance"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "100%"
+
+[node name="PoisonResistance" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = 0
+
+[node name="PoisonResistanceIcon" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/PoisonResistance"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_avhbx")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/PoisonResistance"]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="LabelPoisonResistanceStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/PoisonResistance"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "100%"
+
+[node name="DrugResistance" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 0
+
+[node name="DrugResistanceIcon" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/DrugResistance"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_e8f2f")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/DrugResistance"]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="LabelDrugResistanceStat" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox/Resistances/DrugResistance"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_el7fl")
+theme_override_font_sizes/font_size = 20
+text = "100%"
+
+[connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox" to="." method="_on_resistance_info_v_box_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/MarginContainer/VBoxContainer/ResistanceInfoVBox" to="." method="_on_resistance_info_v_box_mouse_exited"]

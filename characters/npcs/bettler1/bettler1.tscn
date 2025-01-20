@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://cph57sst3icgu"]
 
 [ext_resource type="Script" path="res://characters/npcs/bettler1/bettler.gd" id="1_jd2co"]
-[ext_resource type="Texture2D" uid="uid://btahse7qq1uhd" path="res://characters/npcs/bettler1/bettler1.png" id="2_q4hgs"]
+[ext_resource type="Texture2D" uid="uid://btahse7qq1uhd" path="res://characters/npcs/bettler1/assets/bettler1.png" id="2_q4hgs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
 size = Vector2(20, 4)

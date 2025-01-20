@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3puqvt0uujfs"]
+
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_mfw57"]
+[ext_resource type="Script" path="res://ui/inventory/subscenes/item_info_stat_row.gd" id="1_rfv8t"]
+[ext_resource type="Texture2D" uid="uid://bqofv3cuwda0p" path="res://ui/hud/assets/up.svg" id="2_qfn5w"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_abded"]
+color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[node name="ItemDescriptionStatRow" type="Control"]
+custom_minimum_size = Vector2(353, 40)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 353.0
+offset_bottom = 40.0
+script = ExtResource("1_rfv8t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="StatNumberLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mfw57")
+theme_override_font_sizes/font_size = 20
+text = "+999"
+
+[node name="StatNameLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mfw57")
+theme_override_font_sizes/font_size = 20
+text = "Radikalität"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 0
+
+[node name="StatSymbol" type="NinePatchRect" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_qfn5w")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_abded")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7

@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7pdclqtpglet"]
+
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_k2p2q"]
+[ext_resource type="Script" path="res://ui/inventory/subscenes/progress_bar.gd" id="1_u2gnd"]
+[ext_resource type="Texture2D" uid="uid://cok6af1uuonbi" path="res://ui/hud/assets/under_progressbar.svg" id="2_sb6xm"]
+[ext_resource type="Texture2D" uid="uid://d3gmnm8ak662y" path="res://ui/hud/assets/big_health_progressbar.svg" id="3_338ew"]
+
+[node name="ProgressBar" type="VBoxContainer"]
+offset_right = 393.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_u2gnd")
+margin_bottom = 18
+font_size = 20
+
+[node name="StatInfoHBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="StatNameLabel" type="Label" parent="StatInfoHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_k2p2q")
+theme_override_font_sizes/font_size = 20
+text = "Gesundheit"
+
+[node name="StatNumberLabel" type="Label" parent="StatInfoHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_k2p2q")
+theme_override_font_sizes/font_size = 20
+text = "100/100"
+
+[node name="MarginContainer6" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="ProgressBar" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ProgressBar" type="TextureProgressBar" parent="ProgressBar"]
+unique_name_in_owner = true
+layout_mode = 2
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_right = 10
+stretch_margin_bottom = 7
+texture_under = ExtResource("2_sb6xm")
+texture_progress = ExtResource("3_338ew")
+
+[node name="MarginBottom" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_bottom = 18
