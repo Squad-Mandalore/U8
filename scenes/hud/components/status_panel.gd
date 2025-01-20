@@ -1,15 +1,18 @@
 extends Control
 
+var bleed_texture = load("res://assets/hud/blood.svg")
+var poison_texture = load("res://assets/hud/flask.svg")
+var drug_texture = load("res://assets/hud/syringe.svg")
+
 func _ready() -> void:
     SignalDispatcher.update_status_panel_stat.connect(update_status_panel)
 
 func update_status_panel(stats: StatsSpecifier, balance: int):
     update_health(stats.health, stats.max_health)
     update_balance(balance)
-    # TODO: status types
-    # update_blood(stats.)
-    # update_flask(stats.)
-    # update_syringe(stats.)
+    update_bleed(stats.bleed_level)
+    update_poison(stats.poison_level)
+    update_drug(stats.drug_level)
 
 func update_health(new_health: int, max_health: int) -> void:
     new_health = min(new_health, max_health)
@@ -23,11 +26,23 @@ func update_balance(new_balance: int) -> void:
     new_balance = max(min_balance, new_balance)
     (%BalanceLabel as Label).text = "%d Euronen" % [new_balance]
 
-func update_blood(toggle: bool) -> void:
-    (%BloodTexture as TextureRect).visible = toggle
+func update_bleed(level: int) -> void:
+    if level > 0:
+        %BleedTexture.texture = bleed_texture
+        %BleedTexture.visible = true
+    else:
+        %BleedTexture.texture = null
 
-func update_flask(toggle: bool) -> void:
-    (%FlaskTexture as TextureRect).visible = toggle
+func update_poison(level: int) -> void:
+    if level > 0:
+        %PoisonTexture.texture = poison_texture
+        %PoisonTexture.visible = true
+    else:
+        %PoisonTexture.texture = null
 
-func update_syringe(toggle: bool) -> void:
-    (%SyringeTexture as TextureRect).visible = toggle
+func update_drug(level: int) -> void:
+    if level > 0:
+        %DrugTexture.texture = drug_texture
+        %DrugTexture.visible = true
+    else:
+        %DrugTexture.texture = null
