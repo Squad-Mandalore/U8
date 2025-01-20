@@ -28,6 +28,7 @@ ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/autoload
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/autoloads/project_ui_sound_controller.tscn"
 SignalDispatcher="*res://scripts/signal_dispatcher.gd"
 NameGeneratorNode="*res://assets/npcs/name_generator.gd"
+Utils="*res://scripts/utils.gd"
 
 [display]
 

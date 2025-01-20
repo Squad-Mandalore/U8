@@ -18,12 +18,8 @@ func _ready() -> void:
     SignalDispatcher.toggle_status_types_hud.connect(toggle_status_types_hud)
     hide()
 
-func remove_all_children(parent: Node):
-    for child in parent.get_children():
-        child.queue_free()
-
 func toggle_resistance_hud(stats: StatsSpecifier):
-    remove_all_children(%InfoFrame)
+    Utils.remove_all_children(%InfoFrame)
     if stats == null:
         stop_timer()
         hide()
@@ -38,7 +34,7 @@ func toggle_resistance_hud(stats: StatsSpecifier):
     show()
 
 func toggle_status_types_hud(stats: StatsSpecifier):
-    remove_all_children(%InfoFrame)
+    Utils.remove_all_children(%InfoFrame)
     if stats == null:
         stop_timer()
         hide()
@@ -53,7 +49,7 @@ func toggle_status_types_hud(stats: StatsSpecifier):
     show()
 
 func toggle_item_hud(item: Item):
-    remove_all_children(%InfoFrame)
+    Utils.remove_all_children(%InfoFrame)
     if item == null:
         stop_timer()
         hide()
