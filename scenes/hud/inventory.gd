@@ -23,9 +23,5 @@ func _on_inventory_button_pressed() -> void:
     (get_parent() as Player).toggle_inventory()
 
 func _on_map_button_pressed() -> void:
-    const local_action_event: String = "map"
-    if !(%MapButton as Button).is_activated_by_shortcut(local_action_event):
-        var action_event = InputEventAction.new()
-        action_event.action = local_action_event
-        action_event.pressed = true
-        Input.parse_input_event(action_event)
+    var regenmantel = load("res://classes/item/regenmantel.tres")
+    SignalDispatcher.item_added.emit(regenmantel)

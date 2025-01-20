@@ -13,6 +13,7 @@ func set_ck3_progress_bar_value(value: int):
 func set_item(new_item: Item):
     item = new_item
     if is_enabled() && item != null:
+        SignalDispatcher.stats_changed.emit(item.properties, 0)
         (%ItemFrame as TextureRect).texture = item.texture
 
 func is_enabled() -> bool:

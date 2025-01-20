@@ -67,20 +67,17 @@ func update_luck(luck: int):
 func update_bleed_resistance(bleedResistance: int):
     (%LabelBleedResistanceStat as Label).text = str(bleedResistance) + "%"
     if bleedResistance == 100:
-        const light_blue: Color = Color("79B8FF")
-        (%LabelBleedResistanceStat as Label).add_theme_color_override("font_color", light_blue)
+        (%LabelBleedResistanceStat as Label).add_theme_color_override("font_color", Utils.light_blue)
 
 func update_poison_resistance(poisonResistance: int):
     (%LabelPoisonResistanceStat as Label).text = str(poisonResistance) + "%"
     if poisonResistance == 100:
-        const light_blue: Color = Color("79B8FF")
-        (%LabelPoisonResistanceStat as Label).add_theme_color_override("font_color", light_blue)
+        (%LabelPoisonResistanceStat as Label).add_theme_color_override("font_color", Utils.light_blue)
 
 func update_drug_resistance(drugResistance: int):
     (%LabelDrugResistanceStat as Label).text = str(drugResistance) + "%"
     if drugResistance == 100:
-        const light_blue: Color = Color("79B8FF")
-        (%LabelDrugResistanceStat as Label).add_theme_color_override("font_color", light_blue)
+        (%LabelDrugResistanceStat as Label).add_theme_color_override("font_color", Utils.light_blue)
 
 func _on_resistance_info_v_box_mouse_exited() -> void:
     if ck3_progress_bar_value != 60:

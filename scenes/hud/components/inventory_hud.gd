@@ -10,6 +10,7 @@ func _ready() -> void:
     SignalDispatcher.set_ck3_progress_bar_value.connect(set_ck3_progress_bar_value)
     SignalDispatcher.update_item_slots.connect(load_item_slots)
     SignalDispatcher.swap_inventory_items.connect(swap_item)
+    SignalDispatcher.item_added.connect(add_item)
     # load_meta_items()
     # item_slots.append("res://assets/hud/coin.svg")
     # load_item_slots()
@@ -20,6 +21,7 @@ func set_ck3_progress_bar_value(value: int):
     ck3_progress_bar_value = value
 
 func load_item_slots():
+    SignalDispatcher.reset_stats.emit()
     for i in range(max_inventory_size):
         var item_slot = get_node("%ItemSlot" + str(i + 1))
         item_slot.index = i
@@ -39,22 +41,20 @@ func update_debuff_stats(stats: StatsSpecifier):
     load_stat_level("Drug", stats.drug_level)
 
 func load_stat_level(stat_name: String, new_stat_level: int):
-    const white: Color = Color("FFFFFF")
-    const red: Color = Color("FF4346")
     var stat_label = get_node("%" + stat_name + "Label")
-    stat_label.add_theme_color_override("font_color", white)
+    stat_label.add_theme_color_override("font_color", Utils.white)
 
     for i in range(3):
         var stat_level = get_node("%" + stat_name + "Level" + str(i + 1))
         if i + 1 > new_stat_level:
             stat_level.add_theme_stylebox_override("panel", load("res://assets/hud/debuff_level_disabled.tres"))
         else:
-            stat_label.add_theme_color_override("font_color", red)
+            stat_label.add_theme_color_override("font_color", Utils.red)
             stat_level.add_theme_stylebox_override("panel", load("res://assets/hud/debuff_level_enabled.tres"))
 
 func add_item(item: Item):
     # TODO: else case
-    for i in range(len(item_slots)):
+    for i in range(cur_inventory_size):
         if item_slots[i] == null:
             item_slots[i] = item
             load_item_slots()
