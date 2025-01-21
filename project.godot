@@ -29,6 +29,7 @@ ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/autolo
 SignalDispatcher="*res://globals/signal_dispatcher.gd"
 Utils="*res://globals/utils.gd"
 NameGenerator="*res://globals/name_generator.gd"
+SourceOfTruth="*res://globals/source_of_truth.gd"
 
 [display]
 
