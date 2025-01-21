@@ -42,13 +42,33 @@ func post_message(message: String):
 	$HTTPSSEClient.set_outgoing_request(method, url, headers, body)
 	new_message.emit()
 	
+#func _set_process_id(result, response_code, headers, body):
+	#var json = JSON.new()
+	#json.parse(body.get_string_from_utf8())
+	#var response = json.get_data()
+	#process_id = response.process_id
+	#get_process_id.emit(process_id)
+	#_connect_sse()
+	
 func _set_process_id(result, response_code, headers, body):
 	var json = JSON.new()
-	json.parse(body.get_string_from_utf8())
-	var response = json.get_data()
-	process_id = response.process_id
-	get_process_id.emit(process_id)
-	_connect_sse()
+	var response
+	var process_id
+
+	var parse_error = json.parse(body.get_string_from_utf8())
+	if parse_error != OK:
+		print("Error parsing JSON: " + str(parse_error))
+		return 
+
+	response = json.get_data()
+
+	if response.has("process_id"):
+		process_id = response["process_id"]
+		get_process_id.emit(process_id)
+		_connect_sse()
+	else:
+		print("process_id not found in the response. Response: ", response)
+
 
 func _connect_sse():
 	var sub_url = "" # Add the "/sub_list_url" stuff here, including query parameters as needed; for demo purposes, I use the list path in my Firebase database, combined with ".json?auth=" and whatever the auth token is.
