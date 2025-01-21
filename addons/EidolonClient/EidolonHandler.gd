@@ -42,32 +42,22 @@ func post_message(message: String):
 	$HTTPSSEClient.set_outgoing_request(method, url, headers, body)
 	new_message.emit()
 	
-#func _set_process_id(result, response_code, headers, body):
-	#var json = JSON.new()
-	#json.parse(body.get_string_from_utf8())
-	#var response = json.get_data()
-	#process_id = response.process_id
-	#get_process_id.emit(process_id)
-	#_connect_sse()
-	
+
 func _set_process_id(result, response_code, headers, body):
 	var json = JSON.new()
-	var response
-	var process_id
+	
+	if json.parse(body.get_string_from_utf8()) != OK:
+		print("Failed to parse JSON. Response body:", body.get_string_from_utf8())
+	
+	var response = json.get_data()
 
-	var parse_error = json.parse(body.get_string_from_utf8())
-	if parse_error != OK:
-		print("Error parsing JSON: " + str(parse_error))
-		return 
-
-	response = json.get_data()
-
-	if response.has("process_id"):
-		process_id = response["process_id"]
+	if typeof(response) == TYPE_DICTIONARY and response.has("process_id"):
+		process_id = response.process_id
 		get_process_id.emit(process_id)
 		_connect_sse()
 	else:
-		print("process_id not found in the response. Response: ", response)
+		print("No 'process_id' in response or response is invalid. Response:", response)
+
 
 
 func _connect_sse():
