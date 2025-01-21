@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://u68l1bngaa7u" path="res://ui/hud/assets/ck_3_bar.svg" id="3_jw7oo"]
 [ext_resource type="FontFile" uid="uid://pxyfff4ijb64" path="res://assets/fonts/nippo/OTF/Nippo-Medium.otf" id="5_hq22r"]
 [ext_resource type="FontFile" uid="uid://bkvompws14vh5" path="res://assets/fonts/hind/Hind-Regular.ttf" id="6_fnn2d"]
-[ext_resource type="PackedScene" uid="uid://c7pdclqtpglet" path="res://ui/inventory/subscenes/progress_bar.tscn" id="6_t6mx6"]
+[ext_resource type="PackedScene" uid="uid://taiib681wkvl" path="res://ui/subscenes/progress_bar.tscn" id="6_t6mx6"]
 [ext_resource type="Texture2D" uid="uid://cqbuach1xakxp" path="res://ui/hud/assets/blood_resistance.svg" id="6_wmwr2"]
 [ext_resource type="Texture2D" uid="uid://cok6af1uuonbi" path="res://ui/hud/assets/under_progressbar.svg" id="7_yl4jj"]
 [ext_resource type="Texture2D" uid="uid://cxmd500i2iyjs" path="res://ui/hud/assets/dodge_chance_progressbar.svg" id="8_g7fh3"]

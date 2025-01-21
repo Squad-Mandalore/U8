@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_22btv"]
 [ext_resource type="Script" path="res://ui/hud/subscenes/status_panel.gd" id="1_28hqb"]
-[ext_resource type="PackedScene" uid="uid://c7pdclqtpglet" path="res://ui/inventory/subscenes/progress_bar.tscn" id="2_b8j1u"]
+[ext_resource type="PackedScene" uid="uid://taiib681wkvl" path="res://ui/subscenes/progress_bar.tscn" id="2_b8j1u"]
 [ext_resource type="Texture2D" uid="uid://cok6af1uuonbi" path="res://ui/hud/assets/under_progressbar.svg" id="3_g1bt0"]
 [ext_resource type="Texture2D" uid="uid://dn0jfcq1ly2go" path="res://ui/hud/assets/coin.svg" id="3_pneu6"]
 [ext_resource type="Texture2D" uid="uid://co1tygwevb7v" path="res://ui/hud/assets/blood.svg" id="4_cowbk"]

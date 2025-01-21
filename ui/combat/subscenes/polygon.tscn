@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ceimwy6mx66vq"]
 
-[ext_resource type="Script" path="res://scenes/hud/components/polygon.gd" id="1_667sa"]
+[ext_resource type="Script" path="res://ui/combat/subscenes/polygon.gd" id="1_667sa"]
 
 [node name="Polygon" type="Control"]
 layout_mode = 3
