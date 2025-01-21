@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://1qondgntsrqj"]
 
 [ext_resource type="Script" path="res://characters/npcs/politiker1/politiker.gd" id="1_2022g"]
-[ext_resource type="Texture2D" uid="uid://cjyyhybqiea5t" path="res://characters/npcs/politiker1/politik1anim.png" id="2_xo3q8"]
+[ext_resource type="Texture2D" uid="uid://cjyyhybqiea5t" path="res://characters/npcs/politiker1/assets/politik1anim.png" id="2_xo3q8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
 size = Vector2(20, 4)

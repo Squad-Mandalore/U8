@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://2p6mgnqih68g"]
+
+[ext_resource type="Script" path="res://scenes/trains/basic_train/train.gd" id="1_1jt1h"]
+[ext_resource type="Script" path="res://scenes/trains/background.gd" id="2_20w01"]
+[ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://scenes/trains/assets/background.png" id="3_dfgt4"]
+[ext_resource type="PackedScene" uid="uid://c6lryjxjclq03" path="res://scenes/trains/basic_train/subscenes/inside_left.tscn" id="4_q3h5r"]
+[ext_resource type="PackedScene" uid="uid://c2xs2hjyqqtav" path="res://scenes/trains/basic_train/subscenes/right.tscn" id="6_ykx2a"]
+[ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="7_c73gc"]
+[ext_resource type="PackedScene" uid="uid://bkaths3irgi7c" path="res://characters/npcs/chris/chris.tscn" id="8_sempk"]
+[ext_resource type="PackedScene" uid="uid://cph57sst3icgu" path="res://characters/npcs/bettler1/bettler1.tscn" id="9_xenwl"]
+[ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politiker1/politiker1.tscn" id="10_rky5v"]
+[ext_resource type="PackedScene" uid="uid://bkquoqbrb6bh2" path="res://ui/hud/train_hud.tscn" id="10_t7xje"]
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_1jt1h")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1200, 0)
+script = ExtResource("2_20w01")
+speed = -340
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(600, 135)
+texture = ExtResource("3_dfgt4")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("4_q3h5r")]
+position = Vector2(0, 95)
+
+[node name="Right" parent="." instance=ExtResource("6_ykx2a")]
+position = Vector2(329, 95)
+
+[node name="Player" parent="." instance=ExtResource("7_c73gc")]
+position = Vector2(77, 147)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(6.5, 6.5)
+limit_left = 0
+limit_top = 0
+limit_bottom = 270
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="HUD" parent="Player" instance=ExtResource("10_t7xje")]
+unique_name_in_owner = true
+
+[node name="Chris" parent="." instance=ExtResource("8_sempk")]
+position = Vector2(433, 153)
+_name = "Chris Chistead"
+RANDOM_NAME = false
+_gender = "Male"
+
+[node name="Bettler1" parent="." instance=ExtResource("9_xenwl")]
+position = Vector2(488, 157)
+_gender = "Male"
+
+[node name="Politiker" parent="." instance=ExtResource("10_rky5v")]
+position = Vector2(264, 163)
+_name = "Olof Scholtz"
+RANDOM_NAME = false
+
+[connection signal="ready" from="." to="Player" method="_disable_scooting"]
+[connection signal="body_entered" from="Right" to="." method="_on_area_2d_body_entered"]
+[connection signal="hud_toggled" from="Player" to="." method="_on_player_hud_toggled"]
+[connection signal="talk_disabled" from="Player" to="." method="_on_player_talk_disabled"]
+[connection signal="talk_enabled" from="Player" to="." method="_on_player_talk_enabled"]

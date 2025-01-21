@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://bgr3g32dgkjnh"]
+
+[ext_resource type="Script" path="res://globals/attributes.gd" id="1_4c6jl"]
+[ext_resource type="Script" path="res://items/items.gd" id="2_saj77"]
+[ext_resource type="Texture2D" uid="uid://dn0jfcq1ly2go" path="res://ui/hud/assets/coin.svg" id="3_144gp"]
+
+[sub_resource type="Resource" id="Resource_hodkb"]
+script = ExtResource("1_4c6jl")
+max_health = 0
+health = 0
+armor = 1
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 1
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("2_saj77")
+name = "Hawaiihemd"
+description = "Das Kleidungsstück, das sowohl 'Ich bin im Urlaub' als auch 'Ich habe die Kontrolle über mein Leben verloren' schreit – perfekt für einen Ausflug in die Tiefen der U8."
+properties = SubResource("Resource_hodkb")
+texture = ExtResource("3_144gp")

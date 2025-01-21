@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3ntibgwuo4dv"]
+
+[ext_resource type="Script" path="res://scenes/stations/01_wittenau/subscenes/tower.gd" id="1_04paf"]
+[ext_resource type="Texture2D" uid="uid://fwlne5yajsji" path="res://scenes/stations/05_paracelsus_bad/assets/tower.png" id="2_5nlji"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fb3fl"]
+size = Vector2(30, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp1t3"]
+size = Vector2(26, 78)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ibok6"]
+radius = 12.0
+height = 34.0
+
+[node name="Tower" type="StaticBody2D"]
+script = ExtResource("1_04paf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5nlji")
+offset = Vector2(0, -55.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_fb3fl")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -51)
+shape = SubResource("RectangleShape2D_gp1t3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -99)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ibok6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

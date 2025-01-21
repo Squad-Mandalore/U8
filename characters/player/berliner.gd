@@ -23,8 +23,8 @@ func _ready() -> void:
     SignalDispatcher.reset_stats.connect(reset_stats)
     SignalDispatcher.stats_changed.connect(_on_stats_changed)
     inventory.hide()
-    var hawaiihemd = load("res://classes/item/hawaiihemd.tres")
-    var hemd = load("res://classes/item/hemd.tres")
+    var hawaiihemd = load("res://items/armor/hawaiihemd.tres")
+    var hemd = load("res://items/armor/hemd.tres")
     SignalDispatcher.item_added.emit(hawaiihemd)
     SignalDispatcher.item_added.emit(hemd)
 

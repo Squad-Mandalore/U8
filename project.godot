@@ -12,11 +12,11 @@ config_version=5
 
 config/name="U8"
 config/version="0.2.0"
-run/main_scene="res://scenes/opening/opening_with_logo.tscn"
+run/main_scene="res://ui/opening/opening_with_logo.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0.984314, 0.94902, 0.211765, 1)
-boot_splash/image="res://characters/player/berliner.png"
+boot_splash/image="res://characters/player/assets/berliner.png"
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
@@ -26,9 +26,9 @@ SceneLoader="*res://addons/maaacks_game_template/base/scenes/autoloads/scene_loa
 AppConfig="*res://addons/maaacks_game_template/base/scenes/autoloads/app_config.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/autoloads/project_music_controller.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/autoloads/project_ui_sound_controller.tscn"
-SignalDispatcher="*res://scripts/signal_dispatcher.gd"
-NameGeneratorNode="*res://assets/npcs/name_generator.gd"
-Utils="*res://scripts/utils.gd"
+SignalDispatcher="*res://globals/signal_dispatcher.gd"
+Utils="*res://globals/utils.gd"
+NameGenerator="*res://globals/name_generator.gd"
 
 [display]
 
