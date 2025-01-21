@@ -25,8 +25,8 @@ func _ready() -> void:
     inventory.hide()
     var hawaiihemd = load("res://items/armor/hawaiihemd.tres")
     var hemd = load("res://items/armor/hemd.tres")
-    # SignalDispatcher.item_added.emit(hawaiihemd)
-    # SignalDispatcher.item_added.emit(hemd)
+    SignalDispatcher.item_added.emit(hawaiihemd)
+    SignalDispatcher.item_added.emit(hemd)
 
 
 func _process(delta):
