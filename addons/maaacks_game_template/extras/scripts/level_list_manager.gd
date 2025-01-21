@@ -81,7 +81,7 @@ func _on_train_enter():
 		_load_selected_train()
 
 func _load_selected_train():
-	level_list_loader.load_level_path("res://scenes/game_scene/levels/Train.tscn")
+	level_list_loader.load_level_path("res://scenes/trains/basic_train/train.tscn")
 
 func get_current_level_id() -> int:
 	return current_level_id if force_level == -1 else force_level

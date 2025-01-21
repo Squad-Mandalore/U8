@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6lryjxjclq03"]
+
+[ext_resource type="Texture2D" uid="uid://bdmamn8owc1yn" path="res://assets/train/ubahn-v4-links.png" id="1_xls3d"]
+[ext_resource type="PackedScene" uid="uid://hkaxsjnqyfba" path="res://models/train/interior_left.tscn" id="2_6746k"]
+[ext_resource type="PackedScene" uid="uid://bw6fq4ff3l51v" path="res://models/train/interior_left_front.tscn" id="3_14l7k"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_puun8"]
+b = Vector2(-21, 46)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q68c1"]
+b = Vector2(260, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b3h4x"]
+b = Vector2(289, 0)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xls3d")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(62, 46)
+shape = SubResource("SegmentShape2D_puun8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(62, 46)
+shape = SubResource("SegmentShape2D_q68c1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(40, 92)
+shape = SubResource("SegmentShape2D_b3h4x")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(322, 48, 324, 49, 328, 50, 329, 50, 322, 47)
+
+[node name="InteriorLeft" parent="." instance=ExtResource("2_6746k")]
+
+[node name="InteriorLeftFront" parent="." instance=ExtResource("3_14l7k")]
+z_index = 75

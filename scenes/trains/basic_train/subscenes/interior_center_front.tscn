@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2bx878j5u7b7"]
+
+[ext_resource type="Texture2D" uid="uid://cu5cndwxekajp" path="res://assets/train/ubahn-v4-mitte-sitze-vorne.png" id="1_qug1p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1e8mi"]
+size = Vector2(30, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c26kh"]
+size = Vector2(67, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alin5"]
+size = Vector2(68, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht7ai"]
+size = Vector2(30, 12)
+
+[node name="InteriorCenterFront" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qug1p")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(27, 85)
+shape = SubResource("RectangleShape2D_1e8mi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(112.5, 85)
+shape = SubResource("RectangleShape2D_c26kh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(217, 85)
+shape = SubResource("RectangleShape2D_alin5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(302, 85)
+shape = SubResource("RectangleShape2D_ht7ai")

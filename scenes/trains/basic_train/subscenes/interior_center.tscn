@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8viibwcd8eui"]
+
+[ext_resource type="Texture2D" uid="uid://cpnqt6gti5es2" path="res://assets/train/ubahn-v4-mitte-innen.png" id="1_g0617"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1aqu"]
+size = Vector2(32, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpgfg"]
+size = Vector2(69, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnbvo"]
+size = Vector2(70, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8th66"]
+size = Vector2(31, 10)
+
+[sub_resource type="Gradient" id="Gradient_1q3vl"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.984314, 0.94902, 0.211765, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0l3ql"]
+gradient = SubResource("Gradient_1q3vl")
+width = 35
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_iarve"]
+gradient = SubResource("Gradient_1q3vl")
+width = 34
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ygb0g"]
+gradient = SubResource("Gradient_1q3vl")
+width = 35
+
+[node name="InteriorCenter" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g0617")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(27, 49)
+shape = SubResource("RectangleShape2D_l1aqu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(112.5, 49)
+shape = SubResource("RectangleShape2D_vpgfg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(217, 49)
+shape = SubResource("RectangleShape2D_hnbvo")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(301.5, 49)
+shape = SubResource("RectangleShape2D_8th66")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 75
+position = Vector2(43, 22)
+texture = SubResource("GradientTexture1D_0l3ql")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = 75
+position = Vector2(252, 22)
+texture = SubResource("GradientTexture1D_iarve")
+centered = false
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+z_index = 75
+position = Vector2(147, 22)
+texture = SubResource("GradientTexture1D_ygb0g")
+centered = false

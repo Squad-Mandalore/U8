@@ -1,0 +1,230 @@
+[gd_scene load_steps=15 format=3 uid="uid://c53q3lkal5pmk"]
+
+[ext_resource type="Script" path="res://ui/pause_menu/pause_menu.gd" id="2_j652y"]
+[ext_resource type="PackedScene" uid="uid://cnbxg6k45wmfm" path="res://ui/overlaid_menus/mini_options_overlaid_menu.tscn" id="3_5v3qd"]
+[ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="3_m7uhm"]
+[ext_resource type="Texture2D" uid="uid://uofg354rmvxe" path="res://ui/pause_menu/assets/pause.svg" id="4_gedng"]
+[ext_resource type="FontFile" uid="uid://b7fumj2g7rf8x" path="res://assets/fonts/hind/Hind-Light.ttf" id="5_ge20k"]
+[ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="6_sbka7"]
+[ext_resource type="StyleBox" path="res://ui/pause_menu/assets/color_eraser.tres" id="7_ujxx7"]
+[ext_resource type="Texture2D" uid="uid://8oud6btte508" path="res://ui/pause_menu/assets/settings.svg" id="8_des7t"]
+[ext_resource type="Texture2D" uid="uid://3k3hlu5px7ud" path="res://ui/pause_menu/assets/home.svg" id="9_dqn3c"]
+[ext_resource type="Texture2D" uid="uid://dobruk7bnwixi" path="res://ui/pause_menu/assets/log-out.svg" id="10_3rbax"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsa76"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.207843, 0.207843, 0.207843, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_bum8b"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxxt2"]
+bg_color = Color(0.168627, 0.168627, 0.168627, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ld42"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_j652y")
+options_packed_scene = ExtResource("3_5v3qd")
+main_menu_scene = "res://scenes/menus/main_menu/main_menu_with_animations.tscn"
+pauses_game = true
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0823529, 0.0823529, 0.0823529, 0.74902)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 750
+theme_override_constants/margin_top = 293
+theme_override_constants/margin_right = 750
+theme_override_constants/margin_bottom = 293
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vsa76")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_m7uhm")
+theme_override_font_sizes/font_size = 24
+text = "Pause"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = ExtResource("4_gedng")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(316, 54)
+layout_mode = 2
+theme_override_constants/line_spacing = -12
+theme_override_fonts/font = ExtResource("5_ge20k")
+theme_override_font_sizes/font_size = 20
+text = "Hier kannst du kleine Einstellungen vornehmen oder das Spiel pausieren."
+autowrap_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 40
+
+[node name="MenuButtons" type="BoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+vertical = true
+script = ExtResource("6_sbka7")
+
+[node name="RestartButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons"]
+visible = false
+layout_mode = 2
+theme_override_styles/normal = ExtResource("7_ujxx7")
+text = "Restart"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_m7uhm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("7_ujxx7")
+text = "Einstellungen"
+icon = ExtResource("8_des7t")
+alignment = 0
+icon_alignment = 2
+
+[node name="Seperator1" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_bum8b")
+
+[node name="MainMenuButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_m7uhm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("7_ujxx7")
+text = "Zum Hauptmenü"
+icon = ExtResource("9_dqn3c")
+alignment = 0
+icon_alignment = 2
+
+[node name="Seperator2" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_bum8b")
+
+[node name="ExitButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_m7uhm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("7_ujxx7")
+text = "Exit Game"
+icon = ExtResource("10_3rbax")
+alignment = 0
+icon_alignment = 2
+
+[node name="Seperator3" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_bum8b")
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="CloseButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_fonts/font = ExtResource("3_m7uhm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_fxxt2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ld42")
+text = "Weiterspielen"
+
+[node name="ConfirmRestart" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+auto_translate_mode = 1
+dialog_text = "Restart the game?"
+
+[node name="ConfirmMainMenu" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+auto_translate_mode = 1
+dialog_text = "Go back to main menu?"
+
+[node name="ConfirmExit" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+auto_translate_mode = 1
+dialog_text = "Quit the game?"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="confirmed" from="ConfirmRestart" to="." method="_on_confirm_restart_confirmed"]
+[connection signal="confirmed" from="ConfirmMainMenu" to="." method="_on_confirm_main_menu_confirmed"]
+[connection signal="confirmed" from="ConfirmExit" to="." method="_on_confirm_exit_confirmed"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b46ii0fqwu3ur"]
+
+[ext_resource type="Script" path="res://scenes/trains/basic_train/subscenes/foreground.gd" id="1_hevv5"]
+[ext_resource type="Texture2D" uid="uid://ckj0legbu2g3" path="res://scenes/trains/basic_train/assets/ubahn-v4-mitte-außen.png" id="2_pn8cr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evlrq"]
+size = Vector2(34, 49)
+
+[node name="ForegroundBack" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_hevv5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pn8cr")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(26, 68)
+shape = SubResource("RectangleShape2D_evlrq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
