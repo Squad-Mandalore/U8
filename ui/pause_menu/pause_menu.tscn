@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://ui/pause_menu/pause_menu.gd" id="2_j652y"]
 [ext_resource type="PackedScene" uid="uid://cnbxg6k45wmfm" path="res://ui/overlaid_menus/mini_options_overlaid_menu.tscn" id="3_5v3qd"]
 [ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="3_m7uhm"]
-[ext_resource type="Texture2D" uid="uid://uofg354rmvxe" path="res://ui/hud/assets/pause.svg" id="4_gedng"]
+[ext_resource type="Texture2D" uid="uid://uofg354rmvxe" path="res://ui/pause_menu/assets/pause.svg" id="4_gedng"]
 [ext_resource type="FontFile" uid="uid://b7fumj2g7rf8x" path="res://assets/fonts/hind/Hind-Light.ttf" id="5_ge20k"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="6_sbka7"]
 [ext_resource type="StyleBox" path="res://ui/pause_menu/assets/color_eraser.tres" id="7_ujxx7"]
-[ext_resource type="Texture2D" uid="uid://8oud6btte508" path="res://ui/hud/assets/settings.svg" id="8_des7t"]
-[ext_resource type="Texture2D" uid="uid://3k3hlu5px7ud" path="res://ui/hud/assets/home.svg" id="9_dqn3c"]
-[ext_resource type="Texture2D" uid="uid://dobruk7bnwixi" path="res://ui/hud/assets/log-out.svg" id="10_3rbax"]
+[ext_resource type="Texture2D" uid="uid://8oud6btte508" path="res://ui/pause_menu/assets/settings.svg" id="8_des7t"]
+[ext_resource type="Texture2D" uid="uid://3k3hlu5px7ud" path="res://ui/pause_menu/assets/home.svg" id="9_dqn3c"]
+[ext_resource type="Texture2D" uid="uid://dobruk7bnwixi" path="res://ui/pause_menu/assets/log-out.svg" id="10_3rbax"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsa76"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
