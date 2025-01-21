@@ -198,6 +198,7 @@ level_container = NodePath("../ViewportContainer/ConfigurableSubViewport")
 files = Array[ExtResource("4_5em8a")]([SubResource("Resource_76f8c"), SubResource("Resource_qcbof"), SubResource("Resource_ati3o"), SubResource("Resource_u5w1i"), SubResource("Resource_xc7g7"), SubResource("Resource_8dwdu"), SubResource("Resource_jo56u"), SubResource("Resource_hx1jk"), SubResource("Resource_dm5ny"), SubResource("Resource_8hf2s"), SubResource("Resource_bvoy2"), SubResource("Resource_7sk3i"), SubResource("Resource_63o7y"), SubResource("Resource_hsclt"), SubResource("Resource_qb7e6"), SubResource("Resource_24kxm"), SubResource("Resource_64hvw"), SubResource("Resource_dwflk"), SubResource("Resource_7qiwr"), SubResource("Resource_u3mes"), SubResource("Resource_ep1g4"), SubResource("Resource_4vedw"), SubResource("Resource_rt8pt"), SubResource("Resource_8xhxn")])
 
 [node name="BackgroundMusicPlayer" parent="." instance=ExtResource("4_bbb8h")]
+autoplay = false
 script = ExtResource("6_ie45f")
 
 [node name="LevelLoadingScreen" parent="." instance=ExtResource("5_u4na7")]

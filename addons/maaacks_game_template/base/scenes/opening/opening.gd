@@ -95,7 +95,6 @@ func _show_next_image(animated : bool = true):
     _wait_and_fade_out(texture_rect)
 
 func _ready():
-    SignalDispatcher.sound_music.emit("main_menu")
     SceneLoader.load_scene(next_scene, true)
     _add_textures_to_container(images)
     _transition_in()

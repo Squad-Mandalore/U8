@@ -43,10 +43,13 @@ func _input(event):
     super._input(event)
 
 func _ready():
-    SignalDispatcher.sound_music.emit("main_menu")
     super._ready()
+    fick_godot()
     sub_title_label.text = SUB_TITLE_TEXTS[randi_range(0, SUB_TITLE_TEXTS.size() - 1)]
     animation_state_machine = $MenuAnimationTree.get("parameters/playback")
+
+func fick_godot() -> void:
+    SignalDispatcher.sound_music.emit("main_menu")
 
 
 func _setup_game_buttons():
