@@ -42,6 +42,30 @@ func add(stats: StatsSpecifier):
     bleed_level += stats.bleed_level
     drug_level += stats.drug_level
 
+func negate() -> StatsSpecifier:
+    var negated_stats = StatsSpecifier.new()
+    negated_stats.max_health = -max_health
+    negated_stats.health = -health
+    negated_stats.armor = -armor
+    negated_stats.initiative = -initiative
+    negated_stats.dodge_chance = -dodge_chance
+    negated_stats.strength = -strength
+    negated_stats.coolness = -coolness
+    negated_stats.attractiveness = -attractiveness
+    negated_stats.intelligence = -intelligence
+    negated_stats.creativity = -creativity
+    # Uncomment if radicality is added in future
+    # negated_stats.radicality = -radicality
+    negated_stats.luck = -luck
+    negated_stats.poison_resistance = -poison_resistance
+    negated_stats.bleed_resistance = -bleed_resistance
+    negated_stats.drug_resistance = -drug_resistance
+    negated_stats.poison_level = -poison_level
+    negated_stats.bleed_level = -bleed_level
+    negated_stats.drug_level = -drug_level
+
+    return negated_stats
+
 func _to_string() -> String:
     return """Stats:
     Max Health: %d

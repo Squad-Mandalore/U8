@@ -5,7 +5,7 @@ var poison_texture = load("res://ui/hud/assets/flask.svg")
 var drug_texture = load("res://ui/hud/assets/syringe.svg")
 
 func _ready() -> void:
-    SignalDispatcher.update_status_panel_stat.connect(update_status_panel)
+    SignalDispatcher.reload_ui.connect(update_status_panel)
 
 func update_status_panel(stats: StatsSpecifier, balance: int):
     update_health(stats.health, stats.max_health)

@@ -4,13 +4,12 @@ extends CharacterBody2D
 @onready var _animated_sprite_2d = $AnimatedSprite2D
 @onready var inventory: CanvasLayer = $Inventory
 @onready var _slowdown_area: Area2D = $SlowdownArea
-var stats: StatsSpecifier = StatsSpecifier.new()
-@export var base_stats: StatsSpecifier
+# var stats: StatsSpecifier = StatsSpecifier.new()
+# var base_stats: StatsSpecifier
 
 enum State {IDLE, WALK, TALK, SCOOT}
 var _current_state: State = State.IDLE
 var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
-var balance: int
 
 const SPEED: float = 102.0
 var _talkable_npc: NPC = null
@@ -20,20 +19,17 @@ signal talk_disabled()
 signal hud_toggled(visible: bool)
 
 func _ready() -> void:
-    SignalDispatcher.reset_stats.connect(reset_stats)
-    SignalDispatcher.stats_changed.connect(_on_stats_changed)
     inventory.hide()
-    var hawaiihemd = load("res://items/armor/hawaiihemd.tres")
-    var hemd = load("res://items/armor/hemd.tres")
-    SignalDispatcher.item_added.emit(hawaiihemd)
-    SignalDispatcher.item_added.emit(hemd)
+    SignalDispatcher.reload_ui.emit(SourceOfTruth.stats, SourceOfTruth.balance)
+    # var hawaiihemd = load("res://items/armor/hawaiihemd.tres")
+    # var hemd = load("res://items/armor/hemd.tres")
+    # SourceOfTruth.add_item(hawaiihemd)
+    # SourceOfTruth.add_item(hemd)
 
-
-func _process(delta):
-    pass
+# func _process(delta):
+#     pass
     # print("Player Position: " + str(self.global_position))
     # print("Camera Position: " + str(%InventoryCamera.global_position))
-    # %InventoryCamera.position = self.global_position
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK:
@@ -181,19 +177,6 @@ func _disable_scooting():
 func _enable_scooting():
     _scooting_enabled = true
     print("Scooting enabled")
-
-func damage(damage_taken: int):
-    stats.health -= damage_taken
-    SignalDispatcher.stats_changed.emit(stats, balance)
-
-func reset_stats():
-    self.stats = base_stats.duplicate()
-
-func _on_stats_changed(stats: StatsSpecifier, balance: int) -> void:
-    self.stats.add(stats)
-    self.balance += balance
-    inventory.update_inventory_stats(self.stats, self.balance)
-    SignalDispatcher.update_status_panel_stat.emit(self.stats, self.balance)
 
 func _get_best_npc(npcs: Array[Node2D]) -> NPC:
     if npcs.is_empty():
