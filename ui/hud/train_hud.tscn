@@ -31,7 +31,6 @@ unique_name_in_owner = true
 layout_mode = 2
 shortcut = SubResource("Shortcut_8icef")
 text = "Intergieren   "
-script = null
 
 [node name="StatusPanelMargin" type="MarginContainer" parent="."]
 anchors_preset = 2
@@ -46,6 +45,5 @@ theme_override_constants/margin_bottom = 50
 [node name="StatusPanel" parent="StatusPanelMargin" instance=ExtResource("2_k8b6u")]
 unique_name_in_owner = true
 layout_mode = 2
-script = null
 
 [connection signal="pressed" from="ButtonHudMargin/ButtonHud" to="." method="_on_button_hud_pressed"]

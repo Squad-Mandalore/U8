@@ -84,29 +84,30 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 0
 alignment = 2
 
-[node name="BloodTexture" type="NinePatchRect" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+[node name="BleedTexture" type="NinePatchRect" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
 unique_name_in_owner = true
+clip_contents = true
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("4_cowbk")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+[node name="BleedMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 
-[node name="FlaskTexture" type="NinePatchRect" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+[node name="PoisonTexture" type="NinePatchRect" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("5_lp0dp")
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+[node name="PoisonMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 
-[node name="SyringeTexture" type="NinePatchRect" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
+[node name="DrugTexture" type="NinePatchRect" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
