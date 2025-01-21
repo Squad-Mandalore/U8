@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cg2mx5g7rsevc"]
+[gd_scene load_steps=34 format=3 uid="uid://cg2mx5g7rsevc"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/pause_menu_controller.gd" id="1_ljn6m"]
 [ext_resource type="PackedScene" uid="uid://c53q3lkal5pmk" path="res://ui/pause_menu/pause_menu.tscn" id="2_t4jtf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://duxb6t4ycj6x4" path="res://ui/loading_screen/level_loading_screen.tscn" id="5_u4na7"]
 [ext_resource type="Script" path="res://ui/configurable_sub_viewport.gd" id="6_o8n2l"]
 [ext_resource type="Script" path="res://globals/level_list_state_manager.gd" id="8_lvsfu"]
+[ext_resource type="Script" path="res://ui/sound_effect_player.gd" id="9_uu4yx"]
 
 [sub_resource type="Resource" id="Resource_76f8c"]
 script = ExtResource("4_5em8a")
@@ -226,6 +227,9 @@ level_list_loader = NodePath("../LevelLoader")
 main_menu_scene = "res://scenes/menus/main_menu/main_menu_with_animations.tscn"
 ending_scene = "res://scenes/end_credits/end_credits.tscn"
 level_loading_screen = NodePath("../LevelLoadingScreen")
+
+[node name="SoundEffectPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("9_uu4yx")
 
 [connection signal="level_load_started" from="LevelLoader" to="." method="_on_level_loader_level_load_started"]
 [connection signal="level_loaded" from="LevelLoader" to="." method="_on_level_loader_level_loaded"]

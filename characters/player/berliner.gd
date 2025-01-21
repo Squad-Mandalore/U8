@@ -263,6 +263,11 @@ func toggle_inventory(set = null):
     var toggle = set
     if set == null:
         toggle = !inventory.visible
+    if toggle:
+        SignalDispatcher.sound_effect.emit("open_inventory")
+    else:
+        SignalDispatcher.sound_effect.emit("exit_inventory")
+
 
     hud_toggled.emit(!toggle)
     inventory.visible = toggle
