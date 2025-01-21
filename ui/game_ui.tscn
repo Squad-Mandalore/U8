@@ -18,21 +18,21 @@ doener = true
 
 [sub_resource type="Resource" id="Resource_qcbof"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Rathaus Reinickendorf"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_ati3o"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Karl-Bonhoeffer-Nervenklinik"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_u5w1i"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Lindauer Allee"
 subtitle = ""
 doener = false
@@ -46,133 +46,133 @@ doener = false
 
 [sub_resource type="Resource" id="Resource_8dwdu"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Residenzstrasse"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_jo56u"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Franz-Neumann-Platz"
 subtitle = "-Am Schäfersee-"
 doener = false
 
 [sub_resource type="Resource" id="Resource_hx1jk"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Osloer Straße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_dm5ny"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Pankstrasse"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_8hf2s"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Gesundbrunnen"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_bvoy2"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Voltastraße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_7sk3i"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Bernauer Straße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_63o7y"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Rosenthaler Platz"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_hsclt"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Weinmeisterstraße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_qb7e6"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Alexanderplatz"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_24kxm"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Jannowitzbrücke"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_64hvw"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Heinrich-Heine-Straße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_dwflk"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Moritzplatz"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_7qiwr"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Kottbusser Tor"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_u3mes"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Schönleinstraße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_ep1g4"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Hermannplatz"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_4vedw"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Boddinstraße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_rt8pt"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Leinestraße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_8xhxn"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Hermann-"
 subtitle = "straße"
 doener = false
