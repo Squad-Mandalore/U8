@@ -54,7 +54,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_j652y")
 options_packed_scene = ExtResource("3_5v3qd")
-main_menu_scene = "res://scenes/menus/main_menu/main_menu_with_animations.tscn"
+main_menu_scene = "res://ui/main_menu/main_menu_with_animations.tscn"
 pauses_game = true
 
 [node name="BackgroundColor" type="ColorRect" parent="."]

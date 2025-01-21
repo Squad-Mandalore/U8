@@ -5,8 +5,7 @@ const STATE_NAME : String = "GameState"
 const FILE_PATH = "res://globals/game_state.gd"
 
 @export var level_states : Dictionary = {}
-@export var max_level_reached : int
-@export var current_level : int
+@export var current_station : int
 @export var times_played : int
 
 static func get_level_state(level_state_key : String) -> LevelState:
@@ -25,25 +24,17 @@ static func has_game_state() -> bool:
 static func get_game_state() -> GameState:
 	return GlobalState.get_state(STATE_NAME, FILE_PATH)
 
-static func get_current_level() -> int:
+static func get_current_station() -> int:
 	var game_state = get_game_state()
 	if not game_state:
 		return 0
-	return game_state.current_level
+	return game_state.current_station
 
-static func level_reached(level_number):
+static func set_current_station(station_number: int):
 	var game_state = get_game_state()
 	if not game_state:
 		return
-	game_state.max_level_reached = max(level_number, game_state.max_level_reached)
-	game_state.current_level = level_number
-	GlobalState.save()
-
-static func set_current_level(level_number):
-	var game_state = get_game_state()
-	if not game_state:
-		return
-	game_state.current_level = level_number
+	game_state.current_station = station_number
 	GlobalState.save()
 
 static func start_game():

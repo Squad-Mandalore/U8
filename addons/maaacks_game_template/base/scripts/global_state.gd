@@ -41,7 +41,6 @@ static func open():
 
 static func save():
 	if current is GlobalStateData:
-		var what_is_state = current
 		ResourceSaver.save(current, SAVE_STATE_PATH)
 
 static func has_state(state_key : String) -> bool:
