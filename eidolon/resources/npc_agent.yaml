@@ -16,7 +16,7 @@ spec:
   "
   apu:
     llm_unit:
-      implementation: "gpt-4o-mini"
+      implementation: OpenAIGPT
       model:
         name: "gpt-4o-mini"
         human_name: "GPT-4o-mini"

@@ -72,8 +72,8 @@ position = Vector2(264, 163)
 
 [node name="DialogueBox" parent="." instance=ExtResource("12_3hv2i")]
 
-[connection signal="ready" from="." to="Player" method="_disable_scooting"]
 [connection signal="conversation_started" from="." to="DialogueBox" method="_on_node_2d_conversation_started"]
+[connection signal="ready" from="." to="Player" method="_disable_scooting"]
 [connection signal="finish_message" from="EidolonHandler" to="." method="_on_eidolon_handler_finish_message"]
 [connection signal="get_message" from="EidolonHandler" to="." method="_on_eidolon_handler_get_message"]
 [connection signal="get_process_id" from="EidolonHandler" to="." method="_on_eidolon_handler_get_process_id"]
