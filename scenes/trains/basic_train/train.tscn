@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=11 format=3 uid="uid://2p6mgnqih68g"]
 
 [ext_resource type="Script" path="res://scenes/trains/basic_train/train.gd" id="1_1jt1h"]
 [ext_resource type="Script" path="res://scenes/trains/background.gd" id="2_20w01"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cph57sst3icgu" path="res://characters/npcs/bettler1/bettler1.tscn" id="9_xenwl"]
 [ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politiker1/politiker1.tscn" id="10_rky5v"]
 [ext_resource type="PackedScene" uid="uid://bkquoqbrb6bh2" path="res://ui/hud/train_hud.tscn" id="10_t7xje"]
-[ext_resource type="AudioStream" uid="uid://bxai0avroja5g" path="res://assets/sounds/music/d_d_Battle_music.mp3" id="11_te5dh"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -61,11 +60,6 @@ _gender = "Male"
 position = Vector2(264, 163)
 _name = "Olof Scholtz"
 RANDOM_NAME = false
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_te5dh")
-autoplay = true
-bus = &"Music"
 
 [connection signal="ready" from="." to="Player" method="_disable_scooting"]
 [connection signal="body_entered" from="Right" to="." method="_on_area_2d_body_entered"]

@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 var action_key: String
-@onready var inventory_sound_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
     SignalDispatcher.stats_changed.connect(update_inventory_stats)
