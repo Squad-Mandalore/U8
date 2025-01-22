@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://scenes/stations/01_wittenau/subscenes/tower.tscn" id="4_wvqyq"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="6_fup5h"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="7_5owx3"]
-[ext_resource type="AudioStream" uid="uid://32l6x6wdlhbt" path="res://assets/sounds/music/main-menu-music.mp3" id="8_3lejw"]
+[ext_resource type="AudioStream" uid="uid://brdipk6bapgml" path="res://assets/sounds/music/slappbass_backgroundmusic.wav" id="8_4q2iq"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
 b = Vector2(822, 0)
@@ -200,9 +200,9 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_t0h8n")
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_3lejw")
+stream = ExtResource("8_4q2iq")
 autoplay = true
 bus = &"Music"
 
 [connection signal="ready" from="." to="Node2D/CharacterBody2D" method="_enable_scooting"]
-[connection signal="body_entered" from="TrainDoor" to="." method="_on_area_2d_body_enterd"]
+[connection signal="body_entered" from="TrainDoor" to="." method="_on_area_2d_body_entered"]

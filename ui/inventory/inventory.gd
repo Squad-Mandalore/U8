@@ -21,7 +21,7 @@ func update_inventory_balance(new_balance: int) -> void:
     (%BalanceLabel as Label).text = "%d Euronen" % [new_balance]
 
 func _on_inventory_button_pressed() -> void:
-    # (get_parent() as Player).toggle_inventory()
+    (get_parent() as Player).toggle_inventory()
     SourceOfTruth.remove_item(3)
 
 func _on_map_button_pressed() -> void:

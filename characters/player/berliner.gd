@@ -147,12 +147,15 @@ func _unhandled_input(event: InputEvent):
 func _input(event: InputEvent):
     if event.is_action_pressed("ui_cancel"):
         toggle_inventory(false)
+        SignalDispatcher.sound_effect.emit("exit")
 
     if event is InputEventMouseButton and event.pressed:
         if event.button_index == MOUSE_BUTTON_LEFT:
             SignalDispatcher.toggle_item_hud.emit(null)
     if event.is_action_pressed("inventory"):
         toggle_inventory()
+        SignalDispatcher.sound_effect.emit("pop")
+
 
 func _on_slowdown_area_body_entered(body: Node2D):
     var npc: NPC = body
@@ -241,6 +244,7 @@ func toggle_talking():
     if !_current_state == State.TALK:
         switch_state(State.TALK)
         _talkable_npc.start_talking()
+        SignalDispatcher.sound_effect.emit("villager")
         _on_npc_started_talking(_talkable_npc)
     else:
         switch_state(State.IDLE)
@@ -251,11 +255,6 @@ func toggle_inventory(set = null):
     var toggle = set
     if set == null:
         toggle = !inventory.visible
-    if toggle:
-        SignalDispatcher.sound_effect.emit("open_inventory")
-    else:
-        SignalDispatcher.sound_effect.emit("exit_inventory")
-
 
     hud_toggled.emit(!toggle)
     inventory.visible = toggle
