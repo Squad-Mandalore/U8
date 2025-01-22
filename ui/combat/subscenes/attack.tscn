@@ -37,7 +37,8 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="NameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_5j7t4")
 theme_override_font_sizes/font_size = 24
@@ -47,14 +48,16 @@ text = "vergiften"
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="DamageLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.262745, 0.27451, 1)
 theme_override_fonts/font = ExtResource("1_5j7t4")
 theme_override_font_sizes/font_size = 16
 text = "10 Schaden"
 
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="TypeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.980392, 0.443137, 1, 1)
 theme_override_fonts/font = ExtResource("1_5j7t4")
@@ -65,7 +68,8 @@ text = "Attraktiviät"
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="TokenLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.47451, 0.721569, 1, 1)
@@ -73,7 +77,8 @@ theme_override_fonts/font = ExtResource("1_5j7t4")
 theme_override_font_sizes/font_size = 16
 text = "Intelligenz"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="EffectIcon" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 size_flags_horizontal = 10

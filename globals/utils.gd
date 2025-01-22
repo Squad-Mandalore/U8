@@ -5,6 +5,16 @@ const RED: Color = Color("FF4346")
 const GREEN: Color = Color("71F87A")
 const WHITE: Color = Color("FFFFFF")
 const PINK: Color = Color("fa71ff")
+const MAGENTA: Color = Color("e20074")
+const YELLOW: Color = Color("f1c40f")
+
+const ATTACK_DICT = {
+    "Attraktiviät": PINK,
+    "Stärke": RED,
+    "Coolness": YELLOW,
+    "Intelligenz": LIGHT_BLUE,
+    "Kreativität": MAGENTA
+}
 
 const STATS_DICT = {
     "max_health": {
