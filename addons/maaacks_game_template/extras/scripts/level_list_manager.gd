@@ -31,131 +31,129 @@ extends Node
 ## Reference to the current level node.
 var current_level
 var current_level_id : int :
-	set = set_current_level_id
+    set = set_current_level_id
 
 func set_current_level_id(value):
-	current_level_id = value
+    current_level_id = value
 
 func _try_connecting_signal_to_node(node : Node, signal_name : String, callable : Callable):
-	if node.has_signal(signal_name) and not node.is_connected(signal_name, callable):
-		node.connect(signal_name, callable)
+    if node.has_signal(signal_name) and not node.is_connected(signal_name, callable):
+        node.connect(signal_name, callable)
 
 func _try_connecting_signal_to_level(signal_name : String, callable : Callable):
-	_try_connecting_signal_to_node(current_level, signal_name, callable)
+    _try_connecting_signal_to_node(current_level, signal_name, callable)
 
 func _load_main_menu():
-	SceneLoader.load_scene(main_menu_scene)
+    SceneLoader.load_scene(main_menu_scene)
 
 func _advance_level() -> bool:
-	if is_on_last_level(): return false
-	current_level_id += 1
-	return true
+    if is_on_last_level(): return false
+    current_level_id += 1
+    return true
 
 func _advance_and_load_main_menu():
-	_advance_level()
-	_load_main_menu()
+    _advance_level()
+    _load_main_menu()
 
 func _load_ending():
-	if ending_scene:
-		SceneLoader.load_scene(ending_scene)
-	else:
-		_load_main_menu()
+    if ending_scene:
+        SceneLoader.load_scene(ending_scene)
+    else:
+        _load_main_menu()
 
 func _on_level_lost():
-	if level_lost_scene:
-		var instance = level_lost_scene.instantiate()
-		get_tree().current_scene.add_child(instance)
-		_try_connecting_signal_to_node(instance, &"restart_pressed", _reload_level)
-		_try_connecting_signal_to_node(instance, &"main_menu_pressed", _load_main_menu)
-	else:
-		_reload_level()
+    if level_lost_scene:
+        var instance = level_lost_scene.instantiate()
+        get_tree().current_scene.add_child(instance)
+        _try_connecting_signal_to_node(instance, &"restart_pressed", _reload_level)
+        _try_connecting_signal_to_node(instance, &"main_menu_pressed", _load_main_menu)
+    else:
+        _reload_level()
 
 func _on_train_enter():
-	if train_select_scene:
-		var instance = train_select_scene.instantiate()
-		get_tree().current_scene.add_child(instance)
-		_try_connecting_signal_to_node(instance, &"continue_pressed", _load_selected_train)
-		_try_connecting_signal_to_node(instance, &"restart_pressed", _reload_level)
-		_try_connecting_signal_to_node(instance, &"main_menu_pressed", _load_main_menu)
-	else:
-		_load_selected_train()
+    if train_select_scene:
+        var instance = train_select_scene.instantiate()
+        get_tree().current_scene.add_child(instance)
+        _try_connecting_signal_to_node(instance, &"continue_pressed", _load_selected_train)
+        _try_connecting_signal_to_node(instance, &"restart_pressed", _reload_level)
+        _try_connecting_signal_to_node(instance, &"main_menu_pressed", _load_main_menu)
+    else:
+        _load_selected_train()
 
 func _load_selected_train():
-	level_list_loader.load_level_path("res://scenes/trains/basic_train/train.tscn")
+    level_list_loader.load_level_path("res://scenes/trains/basic_train/train.tscn")
 
 func get_current_level_id() -> int:
-	return current_level_id if force_level == -1 else force_level
+    return current_level_id if force_level == -1 else force_level
 
 func load_current_level():
-	level_list_loader.load_level(get_current_level_id())
+    level_list_loader.load_level(get_current_level_id())
 
 func _advance_and_reload():
-	var _prior_level_id = get_current_level_id()
-	_advance_level()
-	current_level_id = _prior_level_id
-	load_current_level()
+    var _prior_level_id = get_current_level_id()
+    _advance_level()
+    current_level_id = _prior_level_id
+    load_current_level()
 
 func _load_next_level():
-	_advance_level()
-	load_current_level()
+    _advance_level()
+    load_current_level()
 
 func _reload_level():
-	load_current_level()
+    load_current_level()
 
 func _load_win_screen_or_ending():
-	if game_won_scene:
-		var instance = game_won_scene.instantiate()
-		get_tree().current_scene.add_child(instance)
-		_try_connecting_signal_to_node(instance, &"continue_pressed", _load_ending)
-		_try_connecting_signal_to_node(instance, &"restart_pressed", _reload_level)
-		_try_connecting_signal_to_node(instance, &"main_menu_pressed", _load_main_menu)
-	else:
-		_load_ending()
+    if game_won_scene:
+        var instance = game_won_scene.instantiate()
+        get_tree().current_scene.add_child(instance)
+        _try_connecting_signal_to_node(instance, &"continue_pressed", _load_ending)
+        _try_connecting_signal_to_node(instance, &"restart_pressed", _reload_level)
+        _try_connecting_signal_to_node(instance, &"main_menu_pressed", _load_main_menu)
+    else:
+        _load_ending()
 
 func _load_level_complete_screen_or_next_level():
-	if level_won_scene:
-		var instance = level_won_scene.instantiate()
-		get_tree().current_scene.add_child(instance)
-		_try_connecting_signal_to_node(instance, &"continue_pressed", _load_next_level)
-		_try_connecting_signal_to_node(instance, &"restart_pressed", _advance_and_reload)
-		_try_connecting_signal_to_node(instance, &"main_menu_pressed", _advance_and_load_main_menu)
-	else:
-		_load_next_level()
+    if level_won_scene:
+        var instance = level_won_scene.instantiate()
+        get_tree().current_scene.add_child(instance)
+        _try_connecting_signal_to_node(instance, &"continue_pressed", _load_next_level)
+        _try_connecting_signal_to_node(instance, &"restart_pressed", _advance_and_reload)
+        _try_connecting_signal_to_node(instance, &"main_menu_pressed", _advance_and_load_main_menu)
+    else:
+        _load_next_level()
 
 func is_on_last_level():
-	if get_current_level_id() + 1 >= level_list_loader.files.size() :
-		current_level_id = 0
-	return false
+    return get_current_level_id() + 1 >= level_list_loader.files.size()
 
 func _on_level_won():
-	if is_on_last_level():
-		_load_win_screen_or_ending()
-	else:
-		_load_level_complete_screen_or_next_level()
+    if is_on_last_level():
+        _load_win_screen_or_ending()
+    else:
+        _load_level_complete_screen_or_next_level()
 
 func _connect_level_signals():
-	_try_connecting_signal_to_level(&"train_enter", _on_train_enter)
-	_try_connecting_signal_to_level(&"level_won", _on_level_won)
-	_try_connecting_signal_to_level(&"level_lost", _on_level_lost)
-	_try_connecting_signal_to_level(&"level_skipped", _load_next_level)
+    _try_connecting_signal_to_level(&"train_enter", _on_train_enter)
+    _try_connecting_signal_to_level(&"level_won", _on_level_won)
+    _try_connecting_signal_to_level(&"level_lost", _on_level_lost)
+    _try_connecting_signal_to_level(&"level_skipped", _load_next_level)
 
 func _on_level_loader_level_loaded():
-	current_level = level_list_loader.current_level
-	await current_level.ready
-	_connect_level_signals()
-	if level_loading_screen:
-		level_loading_screen.close()
+    current_level = level_list_loader.current_level
+    await current_level.ready
+    _connect_level_signals()
+    if level_loading_screen:
+        level_loading_screen.close()
 
 func _on_level_loader_levels_finished():
-	_load_win_screen_or_ending()
+    _load_win_screen_or_ending()
 
 func _on_level_loader_level_load_started():
-	if level_loading_screen:
-		level_loading_screen.reset()
+    if level_loading_screen:
+        level_loading_screen.reset()
 
 func _ready():
-	level_list_loader.level_loaded.connect(_on_level_loader_level_loaded)
-	level_list_loader.levels_finished.connect(_on_level_loader_levels_finished)
-	level_list_loader.level_load_started.connect(_on_level_loader_level_load_started)
-	if auto_load:
-		load_current_level()
+    level_list_loader.level_loaded.connect(_on_level_loader_level_loaded)
+    level_list_loader.levels_finished.connect(_on_level_loader_levels_finished)
+    level_list_loader.level_load_started.connect(_on_level_loader_level_load_started)
+    if auto_load:
+        load_current_level()
