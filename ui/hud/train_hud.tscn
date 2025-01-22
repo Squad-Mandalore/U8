@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bkquoqbrb6bh2"]
 
 [ext_resource type="Script" path="res://ui/hud/train_hud.gd" id="1_asv8f"]
-[ext_resource type="PackedScene" uid="uid://b4s3pgrykws8i" path="res://ui/inventory/subscenes/button_hud.tscn" id="2_7ixmm"]
-[ext_resource type="PackedScene" uid="uid://b2utiw3nl1pqr" path="res://ui/inventory/subscenes/status_panel.tscn" id="2_k8b6u"]
+[ext_resource type="PackedScene" uid="uid://b4s3pgrykws8i" path="res://ui/subscenes/button_hud.tscn" id="2_7ixmm"]
+[ext_resource type="PackedScene" uid="uid://b2utiw3nl1pqr" path="res://ui/hud/subscenes/status_panel.tscn" id="2_k8b6u"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_pnlg5"]
 action = &"talk"
