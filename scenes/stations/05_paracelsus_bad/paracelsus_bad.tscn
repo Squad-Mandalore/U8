@@ -1,255 +1,47 @@
-[gd_scene load_steps=19 format=3 uid="uid://dnueionl57e3i"]
+[gd_scene load_steps=4 format=3 uid="uid://dnueionl57e3i"]
 
 [ext_resource type="Script" path="res://scenes/stations/05_paracelsus_bad/paracelsus_bad.gd" id="1_086u8"]
-[ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="1_u6bbd"]
-[ext_resource type="Texture2D" uid="uid://cu657kuv6vc5n" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-floor.png" id="2_207ep"]
-[ext_resource type="PackedScene" uid="uid://dbbc33em4xtbm" path="res://scenes/stations/subscenes/animation_train.tscn" id="3_1srga"]
-[ext_resource type="FontFile" uid="uid://btwbpdhvloch1" path="res://assets/fonts/pixeled/Pixeled.ttf" id="3_bqvuu"]
-[ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="3_i4iju"]
-[ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="4_d580m"]
-[ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="5_4jdap"]
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_q4mp0"]
 [ext_resource type="PackedScene" uid="uid://d3ntibgwuo4dv" path="res://scenes/stations/05_paracelsus_bad/subscenes/tower.tscn" id="5_rp8qx"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_8dhr1"]
-a = Vector2(-432, -1)
-b = Vector2(734, 0)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_5ivaj"]
-b = Vector2(0, 310)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_3nxsn"]
-a = Vector2(-390, 1)
-b = Vector2(-1553, 1)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_xl27r"]
-b = Vector2(-1, 312)
-
-[sub_resource type="LabelSettings" id="LabelSettings_inq4a"]
-line_spacing = 0.0
-font = ExtResource("3_bqvuu")
-font_size = 5
-font_color = Color(0, 0, 0, 1)
-shadow_color = Color(0, 0, 0, 0.137255)
-
-[sub_resource type="Animation" id="Animation_qeml4"]
-resource_name = "train_enter"
-length = 4.0
-step = 0.333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background/AnimationTrain:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(0.25, 1),
-"update": 0,
-"values": [Vector2(-1700, -234), Vector2(-500, -234)]
-}
-
-[sub_resource type="Animation" id="Animation_g3uxa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background/AnimationTrain:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1700, -234)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/CharacterBody2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(536, 252)]
-}
-
-[sub_resource type="Animation" id="Animation_prgsr"]
-resource_name = "train_leave"
-length = 4.0
-step = 0.333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background/AnimationTrain:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.996),
-"transitions": PackedFloat32Array(4, 1),
-"update": 0,
-"values": [Vector2(-500, -234), Vector2(750, -234)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/CharacterBody2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(4, 1),
-"update": 0,
-"values": [Vector2(536, 252), Vector2(2000, 252)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rasma"]
-_data = {
-"RESET": SubResource("Animation_g3uxa"),
-"train_enter": SubResource("Animation_qeml4"),
-"train_leave": SubResource("Animation_prgsr")
-}
-
-[node name="ParacelsusBad" type="Node2D"]
+[node name="ParacelsusBad" instance=ExtResource("1_q4mp0")]
 script = ExtResource("1_086u8")
 
-[node name="Background" type="StaticBody2D" parent="."]
-position = Vector2(579, 330)
-
-[node name="BackgroundWalls" type="Sprite2D" parent="Background"]
-texture = ExtResource("1_u6bbd")
-
-[node name="AnimationTrain" parent="Background" instance=ExtResource("3_1srga")]
-position = Vector2(-1700, -234)
-
-[node name="Floor" type="Sprite2D" parent="Background"]
-texture = ExtResource("2_207ep")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background"]
-position = Vector2(-148, -140)
-shape = SubResource("SegmentShape2D_8dhr1")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Background"]
-position = Vector2(586, -138)
-shape = SubResource("SegmentShape2D_5ivaj")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Background"]
-position = Vector2(976, 170)
-shape = SubResource("SegmentShape2D_3nxsn")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Background"]
-position = Vector2(-578, -142)
-shape = SubResource("SegmentShape2D_xl27r")
-
-[node name="CenterContainer" type="CenterContainer" parent="Background"]
-offset_left = -86.0
-offset_top = -271.0
-offset_right = 6.0
-offset_bottom = -240.0
-
-[node name="StationName" type="Label" parent="Background/CenterContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Paracelsus - Bad"
-label_settings = SubResource("LabelSettings_inq4a")
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Towers" type="CanvasGroup" parent="Node2D" index="2"]
 y_sort_enabled = true
 
-[node name="CharacterBody2D" parent="Node2D" instance=ExtResource("3_i4iju")]
-z_index = 0
-y_sort_enabled = true
-position = Vector2(536, 252)
+[node name="Tower" parent="Node2D/Towers" index="0" instance=ExtResource("5_rp8qx")]
+position = Vector2(148, 250)
 
-[node name="Camera2D" type="Camera2D" parent="Node2D/CharacterBody2D"]
-zoom = Vector2(3.5, 3.5)
-limit_left = 2
-limit_top = 0
-limit_right = 1180
-limit_bottom = 654
-limit_smoothed = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.1
-drag_top_margin = 0.1
-drag_right_margin = 0.1
-drag_bottom_margin = 0.1
+[node name="Tower2" parent="Node2D/Towers" index="1" instance=ExtResource("5_rp8qx")]
+position = Vector2(316, 250)
 
-[node name="Towers" type="CanvasGroup" parent="Node2D"]
-y_sort_enabled = true
+[node name="Tower3" parent="Node2D/Towers" index="2" instance=ExtResource("5_rp8qx")]
+position = Vector2(484, 250)
 
-[node name="Tower" parent="Node2D/Towers" instance=ExtResource("5_rp8qx")]
-position = Vector2(118, 251)
+[node name="Tower4" parent="Node2D/Towers" index="3" instance=ExtResource("5_rp8qx")]
+position = Vector2(652, 250)
 
-[node name="Tower2" parent="Node2D/Towers" instance=ExtResource("5_rp8qx")]
-position = Vector2(286, 251)
+[node name="Tower5" parent="Node2D/Towers" index="4" instance=ExtResource("5_rp8qx")]
+position = Vector2(820, 250)
 
-[node name="Tower3" parent="Node2D/Towers" instance=ExtResource("5_rp8qx")]
-position = Vector2(454, 251)
+[node name="Tower6" parent="Node2D/Towers" index="5" instance=ExtResource("5_rp8qx")]
+position = Vector2(988, 250)
 
-[node name="Tower4" parent="Node2D/Towers" instance=ExtResource("5_rp8qx")]
-position = Vector2(622, 251)
+[node name="Tower7" parent="Node2D/Towers" index="6" instance=ExtResource("5_rp8qx")]
+position = Vector2(148, 420)
 
-[node name="Tower5" parent="Node2D/Towers" instance=ExtResource("5_rp8qx")]
-position = Vector2(790, 251)
+[node name="Tower8" parent="Node2D/Towers" index="7" instance=ExtResource("5_rp8qx")]
+position = Vector2(316, 420)
 
-[node name="Tower6" parent="Node2D/Towers" instance=ExtResource("5_rp8qx")]
-position = Vector2(958, 251)
+[node name="Tower9" parent="Node2D/Towers" index="8" instance=ExtResource("5_rp8qx")]
+position = Vector2(484, 420)
 
-[node name="Tower7" parent="Node2D/Towers" instance=ExtResource("5_rp8qx")]
-position = Vector2(118, 421)
+[node name="Tower10" parent="Node2D/Towers" index="9" instance=ExtResource("5_rp8qx")]
+position = Vector2(652, 420)
 
-[node name="Tower8" parent="Node2D/Towers" instance=ExtResource("5_rp8qx")]
-position = Vector2(286, 421)
+[node name="Tower11" parent="Node2D/Towers" index="10" instance=ExtResource("5_rp8qx")]
+position = Vector2(820, 420)
 
-[node name="Tower9" parent="Node2D/Towers" instance=ExtResource("5_rp8qx")]
-position = Vector2(454, 421)
-
-[node name="Tower10" parent="Node2D/Towers" instance=ExtResource("5_rp8qx")]
-position = Vector2(622, 421)
-
-[node name="Tower11" parent="Node2D/Towers" instance=ExtResource("5_rp8qx")]
-position = Vector2(790, 421)
-
-[node name="Tower12" parent="Node2D/Towers" instance=ExtResource("5_rp8qx")]
-position = Vector2(958, 421)
-
-[node name="Escalators" type="CanvasGroup" parent="Node2D"]
-y_sort_enabled = true
-
-[node name="EscalatorFront" parent="Node2D/Escalators" instance=ExtResource("4_d580m")]
-position = Vector2(34, 292)
-
-[node name="EscalatorFront2" parent="Node2D/Escalators" instance=ExtResource("4_d580m")]
-position = Vector2(34, 354)
-
-[node name="EscalatorFront3" parent="Node2D/Escalators" instance=ExtResource("5_4jdap")]
-position = Vector2(1132, 312)
-
-[node name="EscalatorFront5" parent="Node2D/Escalators" instance=ExtResource("5_4jdap")]
-position = Vector2(1133, 292)
-
-[node name="EscalatorFront4" parent="Node2D/Escalators" instance=ExtResource("5_4jdap")]
-position = Vector2(1133, 354)
-
-[node name="EscalatorFront6" parent="Node2D/Escalators" instance=ExtResource("5_4jdap")]
-position = Vector2(1132, 374)
-
-[node name="EscalatorFront7" parent="Node2D/Escalators" instance=ExtResource("4_d580m")]
-position = Vector2(36, 312)
-
-[node name="EscalatorFront8" parent="Node2D/Escalators" instance=ExtResource("4_d580m")]
-position = Vector2(36, 374)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_rasma")
-}
-
-[connection signal="ready" from="." to="Node2D/CharacterBody2D" method="_enable_scooting"]
-[connection signal="body_entered" from="Background/AnimationTrain" to="." method="_on_area_2d_body_entered"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("5_rp8qx")]
+position = Vector2(988, 420)

@@ -1,7 +1,6 @@
-[gd_scene load_steps=34 format=3 uid="uid://csgdo87mltoha"]
+[gd_scene load_steps=33 format=3 uid="uid://csgdo87mltoha"]
 
 [ext_resource type="Script" path="res://characters/player/berliner.gd" id="1_pkp7h"]
-[ext_resource type="Resource" uid="uid://ce3f1ohuwurv" path="res://characters/player/classes/honest_burgy.tres" id="2_0iq8x"]
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="2_ddcmo"]
 [ext_resource type="Texture2D" uid="uid://kytixtu7vost" path="res://characters/player/assets/riding.png" id="3_l50yj"]
 [ext_resource type="PackedScene" uid="uid://dh8a5067wese3" path="res://ui/inventory/inventory.tscn" id="4_s04kq"]
@@ -220,7 +219,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjqwy"]
 height = 36.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+[node name="Berliner" type="CharacterBody2D" groups=["Player"]]
 z_index = 50
 collision_layer = 3
 slide_on_ceiling = false
@@ -229,7 +228,6 @@ floor_block_on_wall = false
 floor_snap_length = 0.0
 platform_on_leave = 2
 script = ExtResource("1_pkp7h")
-base_stats = ExtResource("2_0iq8x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dpkiy")

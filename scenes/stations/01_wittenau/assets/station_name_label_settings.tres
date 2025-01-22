@@ -1,9 +1,0 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://vt8vv8530qgd"]
-
-[ext_resource type="FontFile" uid="uid://btwbpdhvloch1" path="res://assets/fonts/pixeled/Pixeled.ttf" id="1_vxqvr"]
-
-[resource]
-line_spacing = 0.0
-font = ExtResource("1_vxqvr")
-font_size = 5
-shadow_color = Color(0, 0, 0, 0.137255)

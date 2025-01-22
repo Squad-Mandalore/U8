@@ -11,8 +11,15 @@ enum State {IDLE, WALK, TALK, SCOOT}
 var _current_state: State = State.IDLE
 var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
 
-var speed: float = 102.0
-var _talkable_npc: NPC = null
+const SPEED: float = 102.0
+var speed_multiplier: float = 1.0
+var _talkable_npc: NPC = null:
+    set(value):
+        if value:
+            speed_multiplier = 0.5
+        else:
+            speed_multiplier = 1.0
+        _talkable_npc = value
 
 signal talk_enabled()
 signal talk_disabled()
@@ -41,9 +48,7 @@ func _physics_process(delta: float) -> void:
         return
 
     var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-    var speed = speed
-    if _talkable_npc:
-        speed = speed / 2
+    var speed = SPEED * speed_multiplier
 
     if direction.x < 0 and not _animated_sprite_2d.flip_h:
         _animated_sprite_2d.flip_h = true
@@ -72,7 +77,7 @@ func _handle_scooting(delta: float) -> void:
     elif direction.x > 0:
         _animated_sprite_2d.flip_h = false
 
-    var speed = speed * 2
+    var speed = SPEED * 2
 
     if direction != Vector2.ZERO:
         velocity = direction * speed

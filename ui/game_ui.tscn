@@ -18,7 +18,7 @@ doener = true
 
 [sub_resource type="Resource" id="Resource_qcbof"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
+path = "res://scenes/stations/02_rathaus_reinickendorf/rathaus_reinickendorf.tscn"
 name = "Rathaus Reinickendorf"
 subtitle = ""
 doener = false
