@@ -11,7 +11,7 @@ enum State {IDLE, WALK, TALK, SCOOT}
 var _current_state: State = State.IDLE
 var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
 
-const SPEED: float = 102.0
+var speed: float = 102.0
 var _talkable_npc: NPC = null
 
 signal talk_enabled()
@@ -41,9 +41,9 @@ func _physics_process(delta: float) -> void:
         return
 
     var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-    var speed = SPEED
+    var speed = speed
     if _talkable_npc:
-        speed = SPEED / 2
+        speed = speed / 2
 
     if direction.x < 0 and not _animated_sprite_2d.flip_h:
         _animated_sprite_2d.flip_h = true
@@ -72,7 +72,7 @@ func _handle_scooting(delta: float) -> void:
     elif direction.x > 0:
         _animated_sprite_2d.flip_h = false
 
-    var speed = SPEED * 2
+    var speed = speed * 2
 
     if direction != Vector2.ZERO:
         velocity = direction * speed
@@ -103,9 +103,9 @@ func _handle_scooting(delta: float) -> void:
         _animated_sprite_2d.play()
 
     # -- Adjust animation speed based on how fast we’re moving --
-    # The maximum length at top scoot speed is SPEED*2.
+    # The maximum length at top scoot speed is speed*2.
     # At top speed, we want 8 FPS; at zero speed, 0 FPS.
-    var max_speed = float(SPEED * 2)
+    var max_speed = float(speed * 2)
     var current_speed = velocity.length()
     # Normalize (0.0 to 1.0)
     var speed_ratio = current_speed / max_speed
