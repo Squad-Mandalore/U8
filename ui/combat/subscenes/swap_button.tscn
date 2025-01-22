@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://lxoq5niymfyo"]
+
+[ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="1_ypf2h"]
+[ext_resource type="Texture2D" uid="uid://dsjubb4ylndq4" path="res://ui/combat/assets/swap_left.svg" id="2_em76q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xnxj"]
+bg_color = Color(0.215686, 0.215686, 0.215686, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.380392, 0.380392, 0.380392, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="SwapButton" type="Button"]
+custom_minimum_size = Vector2(47, 68)
+offset_right = 47.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("1_ypf2h")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_2xnxj")
+icon = ExtResource("2_em76q")
+icon_alignment = 1

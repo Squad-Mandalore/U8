@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmb5wwmu2hgkm"]
+
+[ext_resource type="PackedScene" uid="uid://efuguptvmwgt" path="res://ui/combat/subscenes/attack.tscn" id="1_miyym"]
+[ext_resource type="PackedScene" uid="uid://lxoq5niymfyo" path="res://ui/combat/subscenes/swap_button.tscn" id="2_tcsvr"]
+[ext_resource type="Texture2D" uid="uid://duhkkvw53qryt" path="res://ui/combat/assets/swap_right.svg" id="3_k6ywn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3p0db"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="AttackSwapper" type="Control"]
+custom_minimum_size = Vector2(627, 169)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(627, 169)
+layout_mode = 0
+offset_right = 627.0
+offset_bottom = 169.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_3p0db")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Attack" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_miyym")]
+layout_mode = 2
+
+[node name="Attack2" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_miyym")]
+layout_mode = 2
+
+[node name="Attack3" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_miyym")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="SwapButton" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_tcsvr")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+icon = ExtResource("3_k6ywn")
+
+[node name="SwapButton2" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_tcsvr")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
