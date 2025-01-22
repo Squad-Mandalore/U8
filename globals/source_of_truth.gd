@@ -1,6 +1,6 @@
 extends Node
 
-var stats: StatsSpecifier = load("res://characters/player/classes/honest_burgy.tres")
+var stats: StatsSpecifier = preload("res://characters/player/classes/honest_burgy.tres")
 
 var balance: int
 

@@ -73,7 +73,7 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
     if progress_bar.value == progress_bar.max_value:
-        progress_bar.texture_progress = load("res://ui/hud/assets/ck_3_bar_close.svg")
+        progress_bar.texture_progress = preload("res://ui/hud/assets/ck_3_bar_close.svg")
         SignalDispatcher.set_ck3_progress_bar_value.emit(progress_bar.value)
         stop_timer()
         return

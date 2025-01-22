@@ -39,10 +39,10 @@ func load_stat_level(stat_name: String, new_stat_level: int):
     for i in range(3):
         var stat_level = get_node("%" + stat_name + "Level" + str(i + 1))
         if i + 1 > new_stat_level:
-            stat_level.add_theme_stylebox_override("panel", load("res://ui/hud/assets/debuff_level_disabled.tres"))
+            stat_level.add_theme_stylebox_override("panel", preload("res://ui/hud/assets/debuff_level_disabled.tres"))
         else:
             stat_label.add_theme_color_override("font_color", Utils.RED)
-            stat_level.add_theme_stylebox_override("panel", load("res://ui/hud/assets/debuff_level_enabled.tres"))
+            stat_level.add_theme_stylebox_override("panel", preload("res://ui/hud/assets/debuff_level_enabled.tres"))
 
 func _on_debuff_info_v_box_mouse_exited() -> void:
     if ck3_progress_bar_value != 60:
