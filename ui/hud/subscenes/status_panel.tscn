@@ -81,7 +81,7 @@ text = "132 Euronen"
 [node name="ThirdRowHBoxStatusEffects" type="HBoxContainer" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 0
+theme_override_constants/separation = 15
 alignment = 2
 
 [node name="BleedTexture" type="NinePatchRect" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
@@ -92,20 +92,12 @@ layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("4_cowbk")
 
-[node name="BleedMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-
 [node name="PoisonTexture" type="NinePatchRect" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("5_lp0dp")
-
-[node name="PoisonMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
-layout_mode = 2
-theme_override_constants/margin_left = 15
 
 [node name="DrugTexture" type="NinePatchRect" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/ThirdRowHBoxStatusEffects"]
 unique_name_in_owner = true
