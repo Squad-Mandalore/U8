@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://scenes/stations/01_wittenau/subscenes/tower.tscn" id="4_wvqyq"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="6_fup5h"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="7_5owx3"]
-[ext_resource type="AudioStream" uid="uid://luwumt2jf55b" path="res://assets/sounds/music/backgroundmusic.mp3" id="8_7lydy"]
+[ext_resource type="AudioStream" uid="uid://32l6x6wdlhbt" path="res://assets/sounds/music/main-menu-music.mp3" id="8_3lejw"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
 b = Vector2(822, 0)
@@ -199,8 +199,8 @@ collision_mask = 2
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_t0h8n")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_7lydy")
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_3lejw")
 autoplay = true
 bus = &"Music"
 
