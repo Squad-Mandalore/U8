@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="1_q1w2b"]
 [ext_resource type="PackedScene" uid="uid://dbbc33em4xtbm" path="res://scenes/stations/subscenes/animation_train.tscn" id="2_xadlq"]
 [ext_resource type="Texture2D" uid="uid://cu657kuv6vc5n" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-floor.png" id="3_l3pjy"]
-[ext_resource type="LabelSettings" uid="uid://vt8vv8530qgd" path="res://scenes/stations/01_wittenau/assets/station_name_label_settings.tres" id="5_cfu4s"]
+[ext_resource type="LabelSettings" uid="uid://baukomuw01ajv" path="res://scenes/stations/assets/station_name_label_settings_black.tres" id="5_0teva"]
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="6_h3ce4"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="7_m0iis"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="8_xs470"]
@@ -35,6 +35,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-1121, 104)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Berliner/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_sdd82"]
 resource_name = "train_enter"
@@ -51,6 +63,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-1121, 95), Vector2(121, 95)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Berliner/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(-1200, 0), Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ygpp7"]
 resource_name = "train_leave"
@@ -66,6 +90,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(4, 1),
 "update": 0,
 "values": [Vector2(121, 95), Vector2(1371, 95)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Berliner/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1200, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6ecwe"]
@@ -119,7 +155,7 @@ grow_horizontal = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "StationName"
-label_settings = ExtResource("5_cfu4s")
+label_settings = ExtResource("5_0teva")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -132,7 +168,7 @@ y_sort_enabled = true
 [node name="Berliner" parent="Node2D" instance=ExtResource("6_h3ce4")]
 z_index = 0
 y_sort_enabled = true
-position = Vector2(147, 328)
+position = Vector2(180, 211)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/Berliner"]
 zoom = Vector2(3.5, 3.5)

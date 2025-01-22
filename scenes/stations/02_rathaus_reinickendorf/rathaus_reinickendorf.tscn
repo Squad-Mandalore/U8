@@ -1,5 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://vj01awpscehx"]
+[gd_scene load_steps=3 format=3 uid="uid://vj01awpscehx"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_jboli"]
+[ext_resource type="Script" path="res://scenes/stations/02_rathaus_reinickendorf/rathaus_reinickendorf.gd" id="2_dif4s"]
 
 [node name="RathausReinickendorf" instance=ExtResource("1_jboli")]
+script = ExtResource("2_dif4s")

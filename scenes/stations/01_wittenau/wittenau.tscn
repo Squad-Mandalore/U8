@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
 [ext_resource type="Script" path="res://scenes/stations/01_wittenau/wittenau.gd" id="1_vdt2h"]
 [ext_resource type="Texture2D" uid="uid://b36noacmhtswo" path="res://scenes/stations/01_wittenau/assets/hub.png" id="2_c8rit"]
-[ext_resource type="LabelSettings" uid="uid://vt8vv8530qgd" path="res://scenes/stations/01_wittenau/assets/station_name_label_settings.tres" id="3_hxi0m"]
+[ext_resource type="LabelSettings" uid="uid://c0xesi3rt8odi" path="res://scenes/stations/assets/station_name_label_settings_white.tres" id="3_job2n"]
 [ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://scenes/stations/01_wittenau/subscenes/tower.tscn" id="4_wvqyq"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="6_fup5h"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="7_5owx3"]
@@ -66,7 +66,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Wittenau
 Wilhelmsruher Damm"
-label_settings = ExtResource("3_hxi0m")
+label_settings = ExtResource("3_job2n")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
