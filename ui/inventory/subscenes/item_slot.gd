@@ -13,9 +13,11 @@ func set_ck3_progress_bar_value(value: int):
 
 func set_item(new_item: Item):
     item = new_item
-    if is_enabled() && item != null:
-        SignalDispatcher.stats_changed.emit(item.properties, 0)
-        (%ItemFrame as TextureRect).texture = item.texture
+    if is_enabled():
+        if item != null:
+            (%ItemFrame as TextureRect).texture = item.texture
+        else:
+            (%ItemFrame as TextureRect).texture = null
 
 func is_enabled() -> bool:
     var item_slot: StyleBoxFlat = get_theme_stylebox("panel")
@@ -68,7 +70,7 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
     var from: int = data["index"]
-    SignalDispatcher.swap_inventory_items.emit(from, index)
+    SourceOfTruth.swap_item(from, index)
     SignalDispatcher.update_item_slots.emit()
 
 func _notification(what: int) -> void:
