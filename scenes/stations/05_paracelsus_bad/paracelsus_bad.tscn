@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnueionl57e3i"]
+[gd_scene load_steps=5 format=3 uid="uid://dnueionl57e3i"]
 
 [ext_resource type="Script" path="res://scenes/stations/05_paracelsus_bad/paracelsus_bad.gd" id="1_086u8"]
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_q4mp0"]
+[ext_resource type="PackedScene" uid="uid://b4v2kxxwx22uq" path="res://characters/npcs/bademeister/bademeister_2d.tscn" id="3_cnday"]
 [ext_resource type="PackedScene" uid="uid://d3ntibgwuo4dv" path="res://scenes/stations/05_paracelsus_bad/subscenes/tower.tscn" id="5_rp8qx"]
 
 [node name="ParacelsusBad" instance=ExtResource("1_q4mp0")]
 script = ExtResource("1_086u8")
 
-[node name="Towers" type="CanvasGroup" parent="Node2D" index="2"]
+[node name="Bademeister2d" parent="Node2D" index="0" instance=ExtResource("3_cnday")]
+position = Vector2(600, 231)
+
+[node name="Towers" type="CanvasGroup" parent="Node2D" index="3"]
 y_sort_enabled = true
 
 [node name="Tower" parent="Node2D/Towers" index="0" instance=ExtResource("5_rp8qx")]

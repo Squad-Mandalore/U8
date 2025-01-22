@@ -1,1 +1,1 @@
-extends NPC
+extends WALKING_NPC
