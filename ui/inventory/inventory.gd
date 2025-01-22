@@ -21,9 +21,9 @@ func update_inventory_balance(new_balance: int) -> void:
     (%BalanceLabel as Label).text = "%d Euronen" % [new_balance]
 
 func _on_inventory_button_pressed() -> void:
-    (get_parent() as Player).toggle_inventory()
+    # (get_parent() as Player).toggle_inventory()
     SourceOfTruth.remove_item(3)
 
 func _on_map_button_pressed() -> void:
-    var regenmantel = load("res://items/armor/regenmantel.tres")
+    var regenmantel = preload("res://items/armor/regenmantel.tres")
     SourceOfTruth.add_item(regenmantel)

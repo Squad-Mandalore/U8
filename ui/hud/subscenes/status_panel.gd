@@ -1,8 +1,8 @@
 extends Control
 
-var bleed_texture = load("res://ui/hud/assets/blood.svg")
-var poison_texture = load("res://ui/hud/assets/flask.svg")
-var drug_texture = load("res://ui/hud/assets/syringe.svg")
+var bleed_texture = preload("res://ui/hud/assets/blood.svg")
+var poison_texture = preload("res://ui/hud/assets/flask.svg")
+var drug_texture = preload("res://ui/hud/assets/syringe.svg")
 
 func _ready() -> void:
     SignalDispatcher.reload_ui.connect(update_status_panel)

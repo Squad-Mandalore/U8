@@ -17,6 +17,6 @@ func hide_separator_and_margin():
     $VBoxContainer/HSeparator.hide()
     $VBoxContainer/MarginContainer2.hide()
 
-func set_stat_icon(texture: String):
-    %StatSymbol.texture = load(texture)
+func set_stat_icon(texture: Texture):
+    %StatSymbol.texture = texture
     %StatSymbol.size = Vector2(24, 24)

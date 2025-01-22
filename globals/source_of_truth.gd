@@ -42,9 +42,6 @@ static func balance_changed(delta_balance: int):
 #     stats.health -= damage_taken
 #     SignalDispatcher.stats_changed.emit(stats, balance)
 
-# func reset_stats():
-#     stats = base_stats.duplicate()
-
 static func add_item(item: Item):
     # TODO: else case
     for i in range(cur_inventory_size):

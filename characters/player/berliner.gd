@@ -28,10 +28,6 @@ signal hud_toggled(visible: bool)
 func _ready() -> void:
     inventory.hide()
     SignalDispatcher.reload_ui.emit(SourceOfTruth.stats, SourceOfTruth.balance)
-    # var hawaiihemd = load("res://items/armor/hawaiihemd.tres")
-    # var hemd = load("res://items/armor/hemd.tres")
-    # SourceOfTruth.add_item(hawaiihemd)
-    # SourceOfTruth.add_item(hemd)
 
 # func _process(delta):
 #     pass
