@@ -10,6 +10,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="FeedbackBox" type="Control"]
+custom_minimum_size = Vector2(627, 169)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,6 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(627, 169)
 offset_right = 627.0
 offset_bottom = 169.0
 size_flags_horizontal = 4
