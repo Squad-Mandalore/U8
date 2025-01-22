@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://vj01awpscehx"]
+
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_jboli"]
+
+[node name="RathausReinickendorf" instance=ExtResource("1_jboli")]

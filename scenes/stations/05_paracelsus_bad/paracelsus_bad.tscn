@@ -31,23 +31,6 @@ font_size = 5
 font_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 0.137255)
 
-[sub_resource type="Animation" id="Animation_qeml4"]
-resource_name = "train_enter"
-length = 4.0
-step = 0.333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background/AnimationTrain:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(0.25, 1),
-"update": 0,
-"values": [Vector2(-1700, -234), Vector2(-500, -234)]
-}
-
 [sub_resource type="Animation" id="Animation_g3uxa"]
 length = 0.001
 tracks/0/type = "value"
@@ -73,6 +56,23 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(536, 252)]
+}
+
+[sub_resource type="Animation" id="Animation_qeml4"]
+resource_name = "train_enter"
+length = 4.0
+step = 0.333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/AnimationTrain:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(-1700, -234), Vector2(-500, -234)]
 }
 
 [sub_resource type="Animation" id="Animation_prgsr"]

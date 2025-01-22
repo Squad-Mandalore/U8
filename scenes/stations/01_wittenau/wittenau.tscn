@@ -99,6 +99,9 @@ y_sort_enabled = true
 [node name="Tower" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(239, 251)
 
+[node name="Tower6" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1097, 251)
+
 [node name="Tower2" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(407, 251)
 
@@ -107,9 +110,6 @@ position = Vector2(576, 251)
 
 [node name="Tower4" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(743, 251)
-
-[node name="Tower6" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1097, 251)
 
 [node name="Tower5" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(930, 251)
@@ -199,4 +199,4 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_t0h8n")
 
 [connection signal="ready" from="." to="Node2D/CharacterBody2D" method="_enable_scooting"]
-[connection signal="body_entered" from="TrainDoor" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="TrainDoor" to="." method="_on_area_2d_body_enterd"]

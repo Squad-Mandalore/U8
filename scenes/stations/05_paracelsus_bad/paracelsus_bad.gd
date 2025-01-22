@@ -1,8 +1,8 @@
 extends Station
 
 @onready var animation_train_collision = $Background/AnimationTrain/CollisionShape2D
-@onready var animation_player = $AnimationPlayer
 @onready var player = $Node2D/CharacterBody2D
+@onready var animation_player = $AnimationPlayer
 
 func _ready() -> void:
     animation_player.play("train_enter")

@@ -1,0 +1,174 @@
+[gd_scene load_steps=17 format=3 uid="uid://cr0oss7rkk1ta"]
+
+[ext_resource type="Script" path="res://scenes/stations/station.gd" id="1_ppg4l"]
+[ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="1_q1w2b"]
+[ext_resource type="PackedScene" uid="uid://dbbc33em4xtbm" path="res://scenes/stations/subscenes/animation_train.tscn" id="2_xadlq"]
+[ext_resource type="Texture2D" uid="uid://cu657kuv6vc5n" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-floor.png" id="3_l3pjy"]
+[ext_resource type="LabelSettings" uid="uid://vt8vv8530qgd" path="res://scenes/stations/01_wittenau/assets/station_name_label_settings.tres" id="5_cfu4s"]
+[ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="6_h3ce4"]
+[ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="7_m0iis"]
+[ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="8_xs470"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kke8e"]
+b = Vector2(1163, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_63p1v"]
+b = Vector2(0, 314)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3grgy"]
+b = Vector2(1163, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gdhde"]
+b = Vector2(0, 314)
+
+[sub_resource type="Animation" id="Animation_g22sf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/AnimationTrain:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1121, 104)]
+}
+
+[sub_resource type="Animation" id="Animation_sdd82"]
+resource_name = "train_enter"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/AnimationTrain:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(-1121, 95), Vector2(121, 95)]
+}
+
+[sub_resource type="Animation" id="Animation_ygpp7"]
+resource_name = "train_leave"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/AnimationTrain:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector2(121, 95), Vector2(1371, 95)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ecwe"]
+_data = {
+"RESET": SubResource("Animation_g22sf"),
+"train_enter": SubResource("Animation_sdd82"),
+"train_leave": SubResource("Animation_ygpp7")
+}
+
+[node name="Station" type="Node2D"]
+script = ExtResource("1_ppg4l")
+
+[node name="Background" type="StaticBody2D" parent="."]
+
+[node name="BackgroundWall" type="Sprite2D" parent="Background"]
+texture = ExtResource("1_q1w2b")
+centered = false
+
+[node name="AnimationTrain" parent="Background" instance=ExtResource("2_xadlq")]
+position = Vector2(-1121, 104)
+
+[node name="Floor" type="Sprite2D" parent="Background"]
+texture = ExtResource("3_l3pjy")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
+position = Vector2(32, 188)
+shape = SubResource("SegmentShape2D_kke8e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background"]
+position = Vector2(32, 188)
+shape = SubResource("SegmentShape2D_63p1v")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Background"]
+position = Vector2(32, 502)
+shape = SubResource("SegmentShape2D_3grgy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Background"]
+position = Vector2(1195, 188)
+shape = SubResource("SegmentShape2D_gdhde")
+
+[node name="CenterContainer" type="CenterContainer" parent="Background"]
+custom_minimum_size = Vector2(94, 31)
+offset_left = 521.0
+offset_top = 58.0
+offset_right = 615.0
+offset_bottom = 89.0
+grow_horizontal = 2
+
+[node name="StationName" type="Label" parent="Background/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "StationName"
+label_settings = ExtResource("5_cfu4s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6ecwe")
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Berliner" parent="Node2D" instance=ExtResource("6_h3ce4")]
+z_index = 0
+y_sort_enabled = true
+position = Vector2(147, 328)
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/Berliner"]
+zoom = Vector2(3.5, 3.5)
+limit_left = 32
+limit_top = 0
+limit_right = 1195
+limit_bottom = 658
+
+[node name="Escalator" type="CanvasGroup" parent="Node2D"]
+y_sort_enabled = true
+
+[node name="EscalatorFrontLeft" parent="Node2D/Escalator" instance=ExtResource("7_m0iis")]
+position = Vector2(64, 291)
+
+[node name="EscalatorFrontLeft2" parent="Node2D/Escalator" instance=ExtResource("7_m0iis")]
+position = Vector2(66, 311)
+
+[node name="EscalatorFrontLeft3" parent="Node2D/Escalator" instance=ExtResource("7_m0iis")]
+position = Vector2(64, 353)
+
+[node name="EscalatorFrontLeft4" parent="Node2D/Escalator" instance=ExtResource("7_m0iis")]
+position = Vector2(66, 373)
+
+[node name="EscalatorFrontRight" parent="Node2D/Escalator" instance=ExtResource("8_xs470")]
+position = Vector2(1163, 291)
+
+[node name="EscalatorFrontRight2" parent="Node2D/Escalator" instance=ExtResource("8_xs470")]
+position = Vector2(1162, 311)
+
+[node name="EscalatorFrontRight3" parent="Node2D/Escalator" instance=ExtResource("8_xs470")]
+position = Vector2(1163, 353)
+
+[node name="EscalatorFrontRight4" parent="Node2D/Escalator" instance=ExtResource("8_xs470")]
+position = Vector2(1162, 373)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="Background/AnimationTrain" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
