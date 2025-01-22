@@ -2,6 +2,7 @@ extends Node
 class_name SourceOfTruth
 
 static var _run_state = GameState.get_run_state()
+static var _game_state = GameState.get_game_state()
 static var stats: StatsSpecifier:
     set(value):
         _run_state.stats = value
@@ -10,9 +11,9 @@ static var stats: StatsSpecifier:
 
 static var balance: int:
     set(value):
-        _run_state.balance = value
+        _game_state.balance = value
     get():
-        return _run_state.balance
+        return _game_state.balance
 
 static var inventory_slots: Array[Item]:
     set(value):
@@ -21,14 +22,10 @@ static var inventory_slots: Array[Item]:
         return _run_state.inventory_slots
 static var cur_inventory_size: int:
     set(value):
-        _run_state.cur_inventory_size = value
+        _game_state.cur_inventory_size = value
     get():
-        return _run_state.cur_inventory_size
-static var max_inventory_size: int:
-    set(value):
-        _run_state.max_inventory_size = value
-    get():
-        return _run_state.max_inventory_size
+        return _game_state.cur_inventory_size
+const MAX_INVENTORY_SIZE: int = 16
 
 static func stats_changed(delta_stats: StatsSpecifier):
     # print("Before: " + str(stats))

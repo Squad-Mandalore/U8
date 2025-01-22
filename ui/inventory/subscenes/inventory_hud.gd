@@ -14,7 +14,7 @@ func set_ck3_progress_bar_value(value: int):
     ck3_progress_bar_value = value
 
 func load_item_slots():
-    for i in range(SourceOfTruth.max_inventory_size):
+    for i in range(SourceOfTruth.MAX_INVENTORY_SIZE):
         var item_slot = get_node("%ItemSlot" + str(i + 1))
         item_slot.index = i
         if i + 1 > SourceOfTruth.cur_inventory_size:
