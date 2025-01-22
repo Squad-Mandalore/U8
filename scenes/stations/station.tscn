@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cr0oss7rkk1ta"]
+[gd_scene load_steps=18 format=3 uid="uid://cr0oss7rkk1ta"]
 
 [ext_resource type="Script" path="res://scenes/stations/station.gd" id="1_ppg4l"]
 [ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="1_q1w2b"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="6_h3ce4"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="7_m0iis"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="8_xs470"]
+[ext_resource type="AudioStream" uid="uid://brdipk6bapgml" path="res://assets/sounds/music/slappbass_backgroundmusic.wav" id="9_6r4ry"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kke8e"]
 b = Vector2(1163, 0)
@@ -204,7 +205,10 @@ position = Vector2(1163, 353)
 [node name="EscalatorFrontRight4" parent="Node2D/Escalator" instance=ExtResource("8_xs470")]
 position = Vector2(1162, 373)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_6r4ry")
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="Background/AnimationTrain" to="." method="_on_area_2d_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

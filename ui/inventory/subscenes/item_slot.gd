@@ -4,6 +4,7 @@ var index: int
 var item: Item
 var ck3_progress_bar_value: int
 
+
 func _ready() -> void:
     SignalDispatcher.set_ck3_progress_bar_value.connect(set_ck3_progress_bar_value)
 
@@ -39,6 +40,7 @@ func toggle_frame():
 func _on_mouse_entered() -> void:
     if is_enabled():
         add_theme_stylebox_override("panel", preload("res://ui/inventory/assets/item_slot_enabled_hovered.tres"))
+        SignalDispatcher.sound_effect.emit("hover_item")
         if item != null:
             SignalDispatcher.toggle_item_hud.emit(item)
 
