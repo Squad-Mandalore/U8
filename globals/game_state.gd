@@ -46,7 +46,4 @@ static func start_game():
     if not game_state:
         return
     game_state.times_played += 1
-    for item: Item in game_state.run_state.inventory_slots:
-        if item:
-            game_state.run_state.stats.add(item.properties)
     GlobalState.save()

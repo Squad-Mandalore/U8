@@ -6,7 +6,7 @@ extends Resource
 @export var inventory_slots: Array[Item]
 
 func _init():
-    stats = preload("res://characters/player/classes/honest_burgy.tres")
+    stats = preload("res://characters/player/classes/honest_burgy.tres").duplicate()
 
     inventory_slots.resize(16)
     inventory_slots.fill(null)
