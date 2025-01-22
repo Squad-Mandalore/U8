@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkj14wl5ofnkb"]
+[gd_scene load_steps=6 format=3 uid="uid://bkj14wl5ofnkb"]
 
+[ext_resource type="Script" path="res://ui/combat/combat_hud.gd" id="1_gfe85"]
 [ext_resource type="PackedScene" uid="uid://c0m65l7xddw64" path="res://ui/combat/subscenes/round_descriptor.tscn" id="1_vipps"]
 [ext_resource type="PackedScene" uid="uid://c2sg1i523d8qr" path="res://ui/combat/subscenes/status_panel.tscn" id="2_h7yt2"]
 [ext_resource type="PackedScene" uid="uid://q4yxjjlox2rt" path="res://ui/combat/subscenes/feedback_box.tscn" id="3_tt32e"]
 [ext_resource type="PackedScene" uid="uid://dmb5wwmu2hgkm" path="res://ui/combat/subscenes/attack_swapper.tscn" id="4_o6eoc"]
 
 [node name="CombatHud" type="CanvasLayer"]
+script = ExtResource("1_gfe85")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15

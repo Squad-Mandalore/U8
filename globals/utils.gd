@@ -4,6 +4,7 @@ const LIGHT_BLUE: Color = Color("79B8FF")
 const RED: Color = Color("FF4346")
 const GREEN: Color = Color("71F87A")
 const WHITE: Color = Color("FFFFFF")
+const PINK: Color = Color("fa71ff")
 
 const STATS_DICT = {
     "max_health": {
