@@ -10,7 +10,7 @@ signal set_ck3_progress_bar_value(value: int)
 signal stats_changed(delta_stats: StatsSpecifier, delta_balance: int)
 signal reload_ui(stats: StatsSpecifier, balance: int)
 signal update_item_slots()
-signal add_attack_hover(position: Vector2)
+signal add_attack_hover(position: Vector2, attack: Attack)
 signal remove_attack_hover()
 
 signal sound_effect(name: String)

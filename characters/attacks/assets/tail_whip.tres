@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://bte0kpmn4dqic"]
+
+[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="1_co1ok"]
+
+[resource]
+script = ExtResource("1_co1ok")
+name = "Tail Whip"
+damage = 187
+type = "Coolness"
+token = "Attraktiviät"
+effect = "Zu Deutsch Cock Schelle"
