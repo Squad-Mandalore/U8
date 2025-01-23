@@ -6,7 +6,6 @@ enum State {IDLE, WALK, TALK}
 var _current_state: State = State.IDLE
 var _player_nearby: bool = false
 
-
 @onready var _sprite = $AnimatedSprite2D
 @export var _name : String = "Random Dude"
 @export var RANDOM_NAME : bool = true
@@ -17,7 +16,6 @@ func _ready() -> void:
     _current_state = State.IDLE
     if RANDOM_NAME:
         _name = NameGenerator.get_random_name(_gender)
-
 
 func start_talking() -> void:
     _current_state = State.TALK

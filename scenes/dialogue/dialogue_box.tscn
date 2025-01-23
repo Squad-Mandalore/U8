@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://de01h04q55cgs"]
+
+[ext_resource type="Script" path="res://scenes/dialogue/dialogue_box.gd" id="1_cl2i0"]
+[ext_resource type="Texture2D" uid="uid://djr0g000tl7vr" path="res://characters/player/assets/berliner.png" id="1_wed4i"]
+[ext_resource type="PackedScene" uid="uid://diaisyb0c0sqg" path="res://scenes/dialogue/message_container.tscn" id="2_ug7xi"]
+[ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="4_w1pu5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa0q1"]
+atlas = ExtResource("4_w1pu5")
+region = Rect2(205, 0, 33, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4d7f"]
+atlas = ExtResource("4_w1pu5")
+region = Rect2(239, 0, 33, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as0oy"]
+atlas = ExtResource("4_w1pu5")
+region = Rect2(273, 0, 33, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xh1nj"]
+atlas = ExtResource("4_w1pu5")
+region = Rect2(307, 0, 33, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrleg"]
+atlas = ExtResource("4_w1pu5")
+region = Rect2(341, 0, 33, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf3s4"]
+atlas = ExtResource("4_w1pu5")
+region = Rect2(375, 0, 33, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7wtdw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fa0q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4d7f")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_as0oy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xh1nj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrleg")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_jf3s4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DialogueBox" type="CanvasLayer"]
+script = ExtResource("1_cl2i0")
+message_container_scene = ExtResource("2_ug7xi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(75, 905)
+scale = Vector2(5, 4.763)
+texture = ExtResource("1_wed4i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(70, 882)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_7wtdw")
+autoplay = "default"
+frame_progress = 0.185363
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 138.0
+offset_top = 832.0
+offset_right = 1038.0
+offset_bottom = 982.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+offset_left = 955.0
+offset_top = 985.0
+offset_right = 1025.0
+offset_bottom = 1022.0
+text = "Speak"
+
+[node name="MessageInput" type="LineEdit" parent="."]
+offset_left = 29.0
+offset_top = 991.0
+offset_right = 946.0
+offset_bottom = 1022.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
