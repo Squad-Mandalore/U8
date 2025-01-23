@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qkqvul6j2ky5"
-path="res://.godot/imported/background.png-46ef47854896bdd261684d2c4aacf51b.ctex"
+uid="uid://6cc22tmjjjyy"
+path.s3tc="res://.godot/imported/Ubahn-dach-fight.png-bf61472174785f715ea28ccf1f4d08bf.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://scenes/trains/assets/background.png"
-dest_files=["res://.godot/imported/background.png-46ef47854896bdd261684d2c4aacf51b.ctex"]
+source_file="res://scenes/combats/assets/Ubahn-dach-fight.png"
+dest_files=["res://.godot/imported/Ubahn-dach-fight.png-bf61472174785f715ea28ccf1f4d08bf.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

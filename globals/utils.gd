@@ -13,29 +13,34 @@ enum AttackTypes {
     Stark,
     Cool,
     Intelligent,
-    Kreativ
+    Kreativ,
+    Null = -1
 }
 
 const ATTACK_DICT = {
     "Attraktiv": {
         "color": PINK,
-        "stance_texture": preload("res://ui/combat/assets/stance_token_pink.svg")
+        "texture": preload("res://ui/combat/assets/stance_token_pink.svg")
     },
     "Stark": {
         "color": RED,
-        "stance_texture": preload("res://ui/combat/assets/stance_token_red.svg")
+        "texture": preload("res://ui/combat/assets/stance_token_red.svg")
     },
     "Cool": {
         "color": YELLOW,
-        "stance_texture": preload("res://ui/combat/assets/stance_token_yellow.svg")
+        "texture": preload("res://ui/combat/assets/stance_token_yellow.svg")
     },
     "Intelligent": {
         "color": BLUE,
-        "stance_texture": preload("res://ui/combat/assets/stance_token_blue.svg")
+        "texture": preload("res://ui/combat/assets/stance_token_blue.svg")
     },
     "Kreativ": {
         "color": MAGENTA,
-        "stance_texture": preload("res://ui/combat/assets/stance_token_magenta.svg")
+        "texture": preload("res://ui/combat/assets/stance_token_magenta.svg")
+    },
+    "Null": {
+        "color": WHITE,
+        "texture": preload("res://ui/combat/assets/stance_token_white.svg")
     }
 };
 

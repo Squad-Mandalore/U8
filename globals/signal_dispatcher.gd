@@ -15,3 +15,6 @@ signal remove_attack_hover()
 
 signal sound_effect(name: String)
 signal sound_music(name: String)
+
+signal combat_enter()
+signal combat_exit(to_free: Node)

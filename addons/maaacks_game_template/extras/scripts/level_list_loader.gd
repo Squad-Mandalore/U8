@@ -12,6 +12,10 @@ signal levels_finished
 
 var current_level : Node
 
+func _ready() -> void:
+    SignalDispatcher.combat_enter.connect(_on_combat_enter)
+    SignalDispatcher.combat_exit.connect(_on_combat_exit)
+
 func get_level_file(level_id : int):
     if files.is_empty():
         push_error("levels list is empty")
@@ -19,6 +23,16 @@ func get_level_file(level_id : int):
     if level_id >= files.size():
         push_error("level_id is out of bounds of the levels list")
     return files[level_id]
+
+func _on_combat_enter():
+    var combat_scene = preload("res://scenes/combats/combat.tscn")
+    level_container.call_deferred("remove_child", current_level)
+    var instance = combat_scene.instantiate()
+    level_container.call_deferred("add_child", instance)
+
+func _on_combat_exit(to_free: Node):
+    to_free.queue_free()
+    level_container.call_deferred("add_child", current_level)
 
 func _attach_level(level_resource : Resource, level_file: StationSettings = null):
     assert(level_container != null, "level_container is null")
