@@ -221,6 +221,7 @@ height = 36.0
 
 [node name="Berliner" type="CharacterBody2D" groups=["Player"]]
 z_index = 50
+position = Vector2(0, 8)
 collision_layer = 3
 slide_on_ceiling = false
 floor_stop_on_slope = false

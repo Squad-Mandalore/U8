@@ -3,7 +3,7 @@ class_name SourceOfTruth
 
 static var _run_state = GameState.get_run_state()
 static var _game_state = GameState.get_game_state()
-static var stats: StatsSpecifier:
+static var stats: Class:
     set(value):
         _run_state.stats = value
     get():
@@ -28,11 +28,8 @@ static var cur_inventory_size: int:
 const MAX_INVENTORY_SIZE: int = 16
 
 static func stats_changed(delta_stats: StatsSpecifier):
-    # print("Before: " + str(stats))
     stats.add(delta_stats)
-    # print("After: " + str(stats))
     SignalDispatcher.reload_ui.emit()
-    # SignalDispatcher.update_status_panel_stat.emit(stats, balance)
 
 static func balance_changed(delta_balance: int):
     balance += delta_balance

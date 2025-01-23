@@ -10,3 +10,4 @@ type = 2
 token = 0
 token_number = 2
 effect = "Zu Deutsch Cock Schelle"
+damage_multiplier = 1
