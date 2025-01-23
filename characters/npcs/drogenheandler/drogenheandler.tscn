@@ -1,0 +1,155 @@
+[gd_scene load_steps=22 format=3 uid="uid://bymkmcgp2ky2o"]
+
+[ext_resource type="Texture2D" uid="uid://bg1cxujjsrhvf" path="res://characters/npcs/drogenheandler/assets/Obdachloser.png" id="1_1s75y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enw8h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3hc1"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksg4y"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03o3g"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2hwl"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q53ya"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h4so"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcvhw"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t0it"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj1nj"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d62w"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32s2d"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr6aw"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwdat"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw8jf"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3jyn"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2q3a"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31ptx"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp7va"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdmse"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3hc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksg4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03o3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2hwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q53ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h4so")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcvhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0t0it")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj1nj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d62w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32s2d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr6aw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwdat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw8jf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3jyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2q3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31ptx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rp7va")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[node name="Drogenheandler" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_enw8h")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kdmse")
+animation = &"walk"
