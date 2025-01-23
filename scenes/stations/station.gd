@@ -12,10 +12,6 @@ func _ready() -> void:
     player.hide()
     animation_player.play("train_enter")
 
-func change_station_label(title: String, second_title: String = ""):
-    var tmp: String = title + "\n" + second_title
-    %StationName.text = tmp
-
 func _on_animation_player_animation_finished(anim_name:StringName) -> void:
     match anim_name:
         "train_enter":

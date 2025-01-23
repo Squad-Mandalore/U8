@@ -20,11 +20,9 @@ func get_level_file(level_id : int):
         push_error("level_id is out of bounds of the levels list")
     return files[level_id]
 
-func _attach_level(level_resource : Resource, level_file: StationSettings = null):
+func _attach_level(level_resource : Resource):
     assert(level_container != null, "level_container is null")
     var instance = level_resource.instantiate()
-    if instance is Station:
-        instance.change_station_label(level_file.name, level_file.subtitle)
     level_container.call_deferred("add_child", instance)
     return instance
 
@@ -40,7 +38,7 @@ func load_level(level_id : int):
     SceneLoader.load_scene(level_file.path, true)
     level_load_started.emit()
     await SceneLoader.scene_loaded
-    current_level = _attach_level(SceneLoader.get_resource(), level_file)
+    current_level = _attach_level(SceneLoader.get_resource())
     level_loaded.emit()
 
 func load_level_path(scene_path : String):

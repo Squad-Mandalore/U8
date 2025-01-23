@@ -153,7 +153,6 @@ offset_bottom = 89.0
 grow_horizontal = 2
 
 [node name="StationName" type="Label" parent="Background/CenterContainer"]
-unique_name_in_owner = true
 layout_mode = 2
 text = "StationName"
 label_settings = ExtResource("5_0teva")
