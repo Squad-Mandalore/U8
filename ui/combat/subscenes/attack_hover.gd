@@ -21,11 +21,13 @@ func update_name(name: String):
 func update_damage(damage: int):
     %DamageLabel.text = str(damage)+ " Schaden"
 
-func update_type(type: String):
+func update_type(type_index: Utils.AttackTypes):
+    var type: String = Utils.AttackTypes.find_key(type_index)
     %TypeLabel.text = type
     %TypeLabel.add_theme_color_override("font_color", Utils.ATTACK_DICT[type])
 
-func update_token(token: String, token_number: int):
+func update_token(token_index: Utils.AttackTypes, token_number: int):
+    var token: String = Utils.AttackTypes.find_key(token_index)
     %TokenLabel.text = "+" + str(token_number) + " " + token
     %TokenLabel.add_theme_color_override("font_color", Utils.ATTACK_DICT[token])
 

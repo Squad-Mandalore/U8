@@ -8,6 +8,14 @@ const PINK: Color = Color("fa71ff")
 const MAGENTA: Color = Color("e20074")
 const YELLOW: Color = Color("f1c40f")
 
+enum AttackTypes {
+    Attraktiv,
+    Stark,
+    Cool,
+    Intelligent,
+    Kreativ
+}
+
 const ATTACK_DICT = {
     "Attraktiv": PINK,
     "Stark": RED,
