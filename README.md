@@ -88,3 +88,9 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
   ```bash
   docker run -p 8080:8080 -e OPENAI_API_KEY=<YOUR OPENAI API KEY> godot-agent
   ```
+### Alternative docker compose
+1. Have your OPENAI_API_KEY defined in ./eidolon/.env
+2. Run
+    ```bash
+    docker compose -f ./eidolon/compose.yaml up
+    ```
