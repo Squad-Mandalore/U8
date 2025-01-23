@@ -6,6 +6,7 @@
 script = ExtResource("1_co1ok")
 name = "Tail Whip"
 damage = 187
-type = "Coolness"
-token = "Attraktiviät"
+type = "Cool"
+token = "Attraktiv"
+token_number = 2
 effect = "Zu Deutsch Cock Schelle"

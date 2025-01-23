@@ -9,11 +9,11 @@ const MAGENTA: Color = Color("e20074")
 const YELLOW: Color = Color("f1c40f")
 
 const ATTACK_DICT = {
-    "Attraktiviät": PINK,
-    "Stärke": RED,
-    "Coolness": YELLOW,
-    "Intelligenz": LIGHT_BLUE,
-    "Kreativität": MAGENTA
+    "Attraktiv": PINK,
+    "Stark": RED,
+    "Cool": YELLOW,
+    "Intelligent": LIGHT_BLUE,
+    "Kreativ": MAGENTA
 }
 
 const STATS_DICT = {

@@ -6,7 +6,7 @@ var attack: Attack:
         update_name(attack.name)
         update_type(attack.type)
         update_damage(attack.damage)
-        update_token(attack.token)
+        update_token(attack.token, attack.token_number)
         update_icon(attack.effect)
 
 func _ready() -> void:
@@ -36,8 +36,8 @@ func update_type(type: String):
     %TypeLabel.text = type
     %TypeLabel.add_theme_color_override("font_color", Utils.ATTACK_DICT[type])
 
-func update_token(token: String):
-    %TokenLabel.text = token
+func update_token(token: String, token_number: int):
+    %TokenLabel.text = "+" + str(token_number) + " " + token
     %TokenLabel.add_theme_color_override("font_color", Utils.ATTACK_DICT[token])
 
 func update_icon(effect: String):
