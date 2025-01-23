@@ -27,7 +27,6 @@ func stop_talking() -> void:
     enable_outline(Color(0, 1, 0, 1))
 
 func enable_outline(color : Color = Color(0, 1, 0, 1)) -> void:
-    print("wuff")
     # Create and assign a ShaderMaterial with the given outline shader
     if outline_shader:
         var mat = ShaderMaterial.new()

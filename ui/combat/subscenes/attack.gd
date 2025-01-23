@@ -9,6 +9,7 @@ var attack: Attack:
         update_token(attack.token, attack.token_number)
         update_icon(attack.effect)
 
+# DEBUG
 func _ready() -> void:
     attack = preload("res://characters/attacks/assets/tail_whip.tres")
 

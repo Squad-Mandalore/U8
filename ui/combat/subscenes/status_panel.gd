@@ -39,7 +39,6 @@ func update_tokens():
     for i in range(len(tokens)):
         var cur_token: NinePatchRect = get_node("%Token" + str(i + 1))
         var cur_token_str = Utils.AttackTypes.find_key(tokens[i])
-        print(cur_token_str)
         cur_token.texture = Utils.ATTACK_DICT[cur_token_str]["texture"]
 
 func all_items_are_same(array: Array) -> bool:
