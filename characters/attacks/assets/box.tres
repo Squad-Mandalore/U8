@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://d16o80yo04b0b"]
+
+[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="1_trmon"]
+
+[resource]
+script = ExtResource("1_trmon")
+name = "Boxen"
+damage = 0
+type = 1
+token = 1
+token_number = 1
+effect = ""
+damage_multiplier = 1.3

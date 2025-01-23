@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmoaj2p4qjjmv"
-path="res://.godot/imported/strength_white.svg-7c071064b6fb654d1d77b23ab7ee473e.ctex"
+uid="uid://druqr4cv3o1v6"
+path="res://.godot/imported/stance_token_blue.svg-c6c18b4a3d01f437cbb6a6361317512b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/combat/assets/strength_white.svg"
-dest_files=["res://.godot/imported/strength_white.svg-7c071064b6fb654d1d77b23ab7ee473e.ctex"]
+source_file="res://ui/combat/assets/stance_token_blue.svg"
+dest_files=["res://.godot/imported/stance_token_blue.svg-c6c18b4a3d01f437cbb6a6361317512b.ctex"]
 
 [params]
 

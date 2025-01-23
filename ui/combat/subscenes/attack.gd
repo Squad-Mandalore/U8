@@ -4,9 +4,10 @@ var attack: Attack:
     set(value):
         attack = value
         update_name(attack.name)
+        print(attack.type)
         update_type(attack.type)
         update_damage(attack.damage)
-        update_token(attack.token)
+        update_token(attack.token, attack.token_number)
         update_icon(attack.effect)
 
 func _ready() -> void:
@@ -32,13 +33,15 @@ func update_name(name: String):
 func update_damage(damage: int):
     %DamageLabel.text = str(damage)+ " Schaden"
 
-func update_type(type: String):
+func update_type(type_index: Utils.AttackTypes):
+    var type: String = Utils.AttackTypes.find_key(type_index)
     %TypeLabel.text = type
-    %TypeLabel.add_theme_color_override("font_color", Utils.ATTACK_DICT[type])
+    %TypeLabel.add_theme_color_override("font_color", Utils.ATTACK_DICT[type]["color"])
 
-func update_token(token: String):
-    %TokenLabel.text = token
-    %TokenLabel.add_theme_color_override("font_color", Utils.ATTACK_DICT[token])
+func update_token(token_index: Utils.AttackTypes, token_number: int):
+    var token: String = Utils.AttackTypes.find_key(token_index)
+    %TokenLabel.text = "+" + str(token_number) + " " + token
+    %TokenLabel.add_theme_color_override("font_color", Utils.ATTACK_DICT[token]["color"])
 
 func update_icon(effect: String):
     if effect.is_empty():

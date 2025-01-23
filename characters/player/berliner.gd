@@ -27,7 +27,7 @@ signal hud_toggled(visible: bool)
 
 func _ready() -> void:
     inventory.hide()
-    SignalDispatcher.reload_ui.emit(SourceOfTruth.stats, SourceOfTruth.balance)
+    SignalDispatcher.reload_ui.emit()
 
 # func _process(delta):
 #     pass

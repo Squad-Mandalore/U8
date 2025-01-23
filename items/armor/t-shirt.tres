@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://clqcpxppquqw4"]
 
 [ext_resource type="Script" path="res://globals/attributes.gd" id="1_hr1n8"]
-[ext_resource type="Script" path="res://items/items.gd" id="2_m2oou"]
+[ext_resource type="Script" path="res://items/item.gd" id="2_m2oou"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
 script = ExtResource("1_hr1n8")
@@ -29,5 +29,5 @@ drug_level = 0
 script = ExtResource("2_m2oou")
 name = "T-Shirt"
 description = "StatsSpecifier"
-properties = SubResource("Resource_hodkb")
+stats = SubResource("Resource_hodkb")
 texture = SubResource("PlaceholderTexture2D_502b6")
