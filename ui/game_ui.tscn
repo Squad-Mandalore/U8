@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://c53q3lkal5pmk" path="res://ui/pause_menu/pause_menu.tscn" id="2_t4jtf"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/level_list_loader.gd" id="3_42ucf"]
 [ext_resource type="Script" path="res://globals/station_settings.gd" id="4_5em8a"]
-[ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/scenes/music_players/background_music_player.tscn" id="4_bbb8h"]
 [ext_resource type="PackedScene" uid="uid://duxb6t4ycj6x4" path="res://ui/loading_screen/level_loading_screen.tscn" id="5_u4na7"]
 [ext_resource type="Script" path="res://ui/configurable_sub_viewport.gd" id="6_o8n2l"]
 [ext_resource type="Script" path="res://globals/level_list_state_manager.gd" id="8_lvsfu"]
+[ext_resource type="Script" path="res://ui/sound_effect_player.gd" id="9_uu4yx"]
 
 [sub_resource type="Resource" id="Resource_76f8c"]
 script = ExtResource("4_5em8a")
@@ -18,21 +18,21 @@ doener = true
 
 [sub_resource type="Resource" id="Resource_qcbof"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/02_rathaus_reinickendorf/rathaus_reinickendorf.tscn"
 name = "Rathaus Reinickendorf"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_ati3o"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/10_gesundbrunnen/gesundbrunnen.tscn"
 name = "Karl-Bonhoeffer-Nervenklinik"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_u5w1i"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Lindauer Allee"
 subtitle = ""
 doener = false
@@ -46,133 +46,133 @@ doener = false
 
 [sub_resource type="Resource" id="Resource_8dwdu"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Residenzstrasse"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_jo56u"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Franz-Neumann-Platz"
 subtitle = "-Am Schäfersee-"
 doener = false
 
 [sub_resource type="Resource" id="Resource_hx1jk"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Osloer Straße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_dm5ny"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Pankstrasse"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_8hf2s"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/10_gesundbrunnen/gesundbrunnen.tscn"
 name = "Gesundbrunnen"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_bvoy2"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Voltastraße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_7sk3i"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Bernauer Straße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_63o7y"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Rosenthaler Platz"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_hsclt"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Weinmeisterstraße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_qb7e6"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Alexanderplatz"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_24kxm"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Jannowitzbrücke"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_64hvw"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Heinrich-Heine-Straße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_dwflk"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Moritzplatz"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_7qiwr"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Kottbusser Tor"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_u3mes"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Schönleinstraße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_ep1g4"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Hermannplatz"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_4vedw"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Boddinstraße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_rt8pt"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Leinestraße"
 subtitle = ""
 doener = false
 
 [sub_resource type="Resource" id="Resource_8xhxn"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
+path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
 name = "Hermann-"
 subtitle = "straße"
 doener = false
@@ -194,9 +194,6 @@ focused_viewport = NodePath("../ViewportContainer/ConfigurableSubViewport")
 script = ExtResource("3_42ucf")
 level_container = NodePath("../ViewportContainer/ConfigurableSubViewport")
 files = Array[ExtResource("4_5em8a")]([SubResource("Resource_76f8c"), SubResource("Resource_qcbof"), SubResource("Resource_ati3o"), SubResource("Resource_u5w1i"), SubResource("Resource_xc7g7"), SubResource("Resource_8dwdu"), SubResource("Resource_jo56u"), SubResource("Resource_hx1jk"), SubResource("Resource_dm5ny"), SubResource("Resource_8hf2s"), SubResource("Resource_bvoy2"), SubResource("Resource_7sk3i"), SubResource("Resource_63o7y"), SubResource("Resource_hsclt"), SubResource("Resource_qb7e6"), SubResource("Resource_24kxm"), SubResource("Resource_64hvw"), SubResource("Resource_dwflk"), SubResource("Resource_7qiwr"), SubResource("Resource_u3mes"), SubResource("Resource_ep1g4"), SubResource("Resource_4vedw"), SubResource("Resource_rt8pt"), SubResource("Resource_8xhxn")])
-
-[node name="BackgroundMusicPlayer" parent="." instance=ExtResource("4_bbb8h")]
-bus = &"Master"
 
 [node name="LevelLoadingScreen" parent="." instance=ExtResource("5_u4na7")]
 visible = false
@@ -226,6 +223,9 @@ level_list_loader = NodePath("../LevelLoader")
 main_menu_scene = "res://scenes/menus/main_menu/main_menu_with_animations.tscn"
 ending_scene = "res://scenes/end_credits/end_credits.tscn"
 level_loading_screen = NodePath("../LevelLoadingScreen")
+
+[node name="SoundEffectPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("9_uu4yx")
 
 [connection signal="level_load_started" from="LevelLoader" to="." method="_on_level_loader_level_load_started"]
 [connection signal="level_loaded" from="LevelLoader" to="." method="_on_level_loader_level_loaded"]

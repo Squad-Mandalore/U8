@@ -31,8 +31,8 @@ func _ready() -> void:
         var center_scene: Node2D = center.instantiate()
         center_scene.position = Vector2(_center_x(i), Y)
         self.add_child(center_scene)
-
     _right.position.x = _right_x(train_length)
+    SignalDispatcher.sound_music.emit("train")
 
 func _on_player_talk_enabled() -> void:
     _hud.show_interaction_button()

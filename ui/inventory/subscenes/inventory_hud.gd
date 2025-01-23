@@ -14,7 +14,7 @@ func set_ck3_progress_bar_value(value: int):
     ck3_progress_bar_value = value
 
 func load_item_slots():
-    for i in range(SourceOfTruth.max_inventory_size):
+    for i in range(SourceOfTruth.MAX_INVENTORY_SIZE):
         var item_slot = get_node("%ItemSlot" + str(i + 1))
         item_slot.index = i
         if i + 1 > SourceOfTruth.cur_inventory_size:
@@ -26,8 +26,8 @@ func load_item_slots():
 func load_meta_items():
     SourceOfTruth.cur_inventory_size = %BackpackItemSlot.inventory_size
 
-func update_debuff_stats(stats: StatsSpecifier):
-    self.stats = stats
+func update_debuff_stats():
+    self.stats = SourceOfTruth.stats
     load_stat_level("Bleed", stats.bleed_level)
     load_stat_level("Poison", stats.poison_level)
     load_stat_level("Drug", stats.drug_level)
@@ -39,10 +39,10 @@ func load_stat_level(stat_name: String, new_stat_level: int):
     for i in range(3):
         var stat_level = get_node("%" + stat_name + "Level" + str(i + 1))
         if i + 1 > new_stat_level:
-            stat_level.add_theme_stylebox_override("panel", load("res://ui/hud/assets/debuff_level_disabled.tres"))
+            stat_level.add_theme_stylebox_override("panel", preload("res://ui/hud/assets/debuff_level_disabled.tres"))
         else:
             stat_label.add_theme_color_override("font_color", Utils.RED)
-            stat_level.add_theme_stylebox_override("panel", load("res://ui/hud/assets/debuff_level_enabled.tres"))
+            stat_level.add_theme_stylebox_override("panel", preload("res://ui/hud/assets/debuff_level_enabled.tres"))
 
 func _on_debuff_info_v_box_mouse_exited() -> void:
     if ck3_progress_bar_value != 60:

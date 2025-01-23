@@ -26,7 +26,7 @@ static func _load_or_new(new_state : Resource = null):
 		current = ResourceLoader.load(SAVE_STATE_PATH)
 		if not current:
 			push_error("Failed to load save state from file")
-		else: 
+		else:
 			return
 	if new_state:
 		current = new_state
@@ -41,7 +41,6 @@ static func open():
 
 static func save():
 	if current is GlobalStateData:
-		var what_is_state = current
 		ResourceSaver.save(current, SAVE_STATE_PATH)
 
 static func has_state(state_key : String) -> bool:

@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0m65l7xddw64"]
+
+[ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="1_otl22"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qi54"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="RoundDescriptor" type="Control"]
+custom_minimum_size = Vector2(113, 51)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(113, 51)
+layout_mode = 2
+offset_right = 113.0
+offset_bottom = 51.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_6qi54")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="RoundDescriptorLabel" type="Label" parent="PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_otl22")
+theme_override_font_sizes/font_size = 24
+text = "Runde 1"

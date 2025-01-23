@@ -1,0 +1,26 @@
+extends NPC
+class_name BOSS
+
+func _ready() -> void:
+    _current_state = State.IDLE
+    if RANDOM_NAME:
+        _name = NameGenerator.get_random_name(_gender)
+
+# TODO: Use functions below do start boss fight in the future
+func start_talking() -> void:
+    _current_state = State.TALK
+    enable_outline(Color(0, 0, 1, 1))
+
+func stop_talking() -> void:
+    _current_state = State.IDLE
+    enable_outline(Color(0, 1, 0, 1))
+
+func enable_outline(color : Color = Color(1, 0, 0, 1)) -> void:
+    if outline_shader:
+        var mat = ShaderMaterial.new()
+        mat.shader = outline_shader
+        mat.set_shader_parameter("outline_thickness", 0.5)
+        mat.set_shader_parameter("outline_color", color)
+        _sprite.material = mat
+    else:
+        _sprite.material = null

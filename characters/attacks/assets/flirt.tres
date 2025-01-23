@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://d4k5i6ua3pp0h"]
+
+[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="1_xp7r5"]
+
+[resource]
+script = ExtResource("1_xp7r5")
+name = "Flirten"
+damage = 0
+type = 0
+token = 0
+token_number = 1
+effect = ""
+damage_multiplier = 1.3
