@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1yn58qi28tmj"]
 
 [ext_resource type="Script" path="res://scenes/stations/01_wittenau/subscenes/tower.gd" id="1_g7c1x"]
-[ext_resource type="Texture2D" uid="uid://cwnlwxy1ktqev" path="res://scenes/stations/09_gesundbrunnen/assets/Tower_Gesundbrunnen.png" id="2_d2dbt"]
+[ext_resource type="Texture2D" uid="uid://cwnlwxy1ktqev" path="res://scenes/stations/10_gesundbrunnen/assets/Tower_Gesundbrunnen.png" id="2_d2dbt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fb3fl"]
 size = Vector2(30, 8)

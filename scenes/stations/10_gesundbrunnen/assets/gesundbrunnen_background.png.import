@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwnlwxy1ktqev"
-path="res://.godot/imported/Tower_Gesundbrunnen.png-ef57b9b8d07c1090af748d47694257ed.ctex"
+uid="uid://d2ydwxrvslftd"
+path="res://.godot/imported/gesundbrunnen_background.png-3f1d4d3fa5c04dd21edf6e1b0c65a8d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/stations/09_gesundbrunnen/assets/Tower_Gesundbrunnen.png"
-dest_files=["res://.godot/imported/Tower_Gesundbrunnen.png-ef57b9b8d07c1090af748d47694257ed.ctex"]
+source_file="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen_background.png"
+dest_files=["res://.godot/imported/gesundbrunnen_background.png-3f1d4d3fa5c04dd21edf6e1b0c65a8d0.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
