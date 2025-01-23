@@ -12,170 +12,98 @@
 [sub_resource type="Resource" id="Resource_76f8c"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/01_wittenau/wittenau.tscn"
-name = "Wittenau"
-subtitle = "Wilelmsruher Damm"
-doener = true
 
 [sub_resource type="Resource" id="Resource_qcbof"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/02_rathaus_reinickendorf/rathaus_reinickendorf.tscn"
-name = "Rathaus Reinickendorf"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_ati3o"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/03_karl_bonhoeffer_nervenklinik/karl_bonhoeffer_nervenklinik.tscn"
-name = "Karl-Bonhoeffer-Nervenklinik"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_u5w1i"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/04_lindauer_allee/lindauer_allee.tscn"
-name = "Lindauer Allee"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_xc7g7"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Paracelsus-Bad"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_8dwdu"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/06_residenzstrasse/residenzstrasse.tscn"
-name = "Residenzstrasse"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_jo56u"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/07_franz_neumann_platz/franz_neumann_platz.tscn"
-name = "Franz-Neumann-Platz"
-subtitle = "-Am Schäfersee-"
-doener = false
 
 [sub_resource type="Resource" id="Resource_hx1jk"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/08_osloer_strasse/osloer_strasse.tscn"
-name = "Osloer Straße"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_dm5ny"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/09_parkstrasse/pankstrasse.tscn"
-name = "Pankstrasse"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_8hf2s"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/10_gesundbrunnen/gesundbrunnen.tscn"
-name = "Gesundbrunnen"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_bvoy2"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/11_voltastrasse/voltastrasse.tscn"
-name = "Voltastraße"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_7sk3i"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/12_bernauer_strasse/bernauer_strasse.tscn"
-name = "Bernauer Straße"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_63o7y"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/13_rosenthaler_platz/rosenthaler_platz.tscn"
-name = "Rosenthaler Platz"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_hsclt"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/14_weinmeisterstrasse/weinmeisterstrasse.tscn"
-name = "Weinmeisterstraße"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_qb7e6"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/15_alexanderplatz/alexanderplatz.tscn"
-name = "Alexanderplatz"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_24kxm"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/16_jannowitzbruecke/jannowitzbruecke.tscn"
-name = "Jannowitzbrücke"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_64hvw"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/17_heinrich_heine_strasse/heinrich_heine_strasse.tscn"
-name = "Heinrich-Heine-Straße"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_dwflk"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/18_moritzplatz/moritzplatz.tscn"
-name = "Moritzplatz"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_7qiwr"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/19_kottbusser_tor/kottbusser_tor.tscn"
-name = "Kottbusser Tor"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_u3mes"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/20_schoenleinstrasse/schoenleinstrasse.tscn"
-name = "Schönleinstraße"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_ep1g4"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/21_hermannplatz/hermannplatz.tscn"
-name = "Hermannplatz"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_4vedw"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/22_boddinstrasse/boddinstrasse.tscn"
-name = "Boddinstraße"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_rt8pt"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/23_leinestrasse/leinestrasse.tscn"
-name = "Leinestraße"
-subtitle = ""
-doener = false
 
 [sub_resource type="Resource" id="Resource_8xhxn"]
 script = ExtResource("4_5em8a")
 path = "res://scenes/stations/24_hermannstrasse/hermannstrasse.tscn"
-name = "Hermann-"
-subtitle = "straße"
-doener = false
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
