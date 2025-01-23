@@ -3,9 +3,6 @@ extends BOSS
 # DEBUG
 func enable_outline(color : Color = Color(1, 0, 0, 1)) -> void:
     _sprite.play("battle_intro")
-    var combat_scene = preload("res://scenes/combats/combat.tscn")
-    get_tree().current_scene.add_child(combat_scene.instantiate())
-    SignalDispatcher.reload_ui.emit()
     # Create and assign a ShaderMaterial with the given outline shader
     if outline_shader:
         var mat = ShaderMaterial.new()
@@ -17,6 +14,10 @@ func enable_outline(color : Color = Color(1, 0, 0, 1)) -> void:
     else:
         # No shader assigned
         _sprite.material = null
+
+func _input(event: InputEvent) -> void:
+    if event.is_action_pressed("talk"):
+        SignalDispatcher.combat_enter.emit()
 
 func _on_animated_sprite_2d_animation_finished() -> void:
     if _sprite.animation == "idle2":

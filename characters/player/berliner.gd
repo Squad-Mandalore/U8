@@ -137,7 +137,7 @@ func _unhandled_input(event: InputEvent):
             switch_state(State.IDLE)
         else:
             switch_state(State.DANCE)
-            
+
     if not _scooting_enabled:
         return
 
@@ -247,7 +247,7 @@ func toggle_talking():
     if !_talkable_npc:
         return
 
-    if !_current_state == State.TALK:
+    if _current_state != State.TALK:
         switch_state(State.TALK)
         _talkable_npc.start_talking()
         SignalDispatcher.sound_effect.emit("villager")
