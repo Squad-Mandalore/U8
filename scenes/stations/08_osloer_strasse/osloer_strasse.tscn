@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbog1wkc3h6mo"]
+[gd_scene load_steps=3 format=3 uid="uid://dbog1wkc3h6mo"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_hr81g"]
+[ext_resource type="Script" path="res://scenes/stations/08_osloer_strasse/osloer_strasse.gd" id="2_juwhm"]
 
 [node name="OsloerStrasse" instance=ExtResource("1_hr81g")]
+script = ExtResource("2_juwhm")
 
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Osloer Straße"

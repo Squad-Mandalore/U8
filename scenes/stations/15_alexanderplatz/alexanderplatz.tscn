@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://5qnw3pf4n4fk"]
+[gd_scene load_steps=3 format=3 uid="uid://5qnw3pf4n4fk"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_f1phu"]
+[ext_resource type="Script" path="res://scenes/stations/15_alexanderplatz/alexanderplatz.gd" id="2_2c26j"]
 
 [node name="Alexanderplatz" instance=ExtResource("1_f1phu")]
+script = ExtResource("2_2c26j")
 
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Alexanderplatz"

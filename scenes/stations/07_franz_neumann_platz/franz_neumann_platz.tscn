@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl5fn5xxtqxgn"]
+[gd_scene load_steps=3 format=3 uid="uid://cl5fn5xxtqxgn"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_aop73"]
+[ext_resource type="Script" path="res://scenes/stations/07_franz_neumann_platz/franz_neumann_platz.gd" id="2_akkmj"]
 
 [node name="FranzNeumannPlatz" instance=ExtResource("1_aop73")]
+script = ExtResource("2_akkmj")
 
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Franz-Neumann-Platz
