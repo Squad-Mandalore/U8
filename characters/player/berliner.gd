@@ -7,7 +7,7 @@ extends CharacterBody2D
 # var stats: StatsSpecifier = StatsSpecifier.new()
 # var base_stats: StatsSpecifier
 
-enum State {IDLE, WALK, TALK, SCOOT}
+enum State {IDLE, WALK, TALK, SCOOT, DANCE}
 var _current_state: State = State.IDLE
 var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
 
@@ -35,7 +35,7 @@ func _ready() -> void:
     # print("Camera Position: " + str(%InventoryCamera.global_position))
 
 func _physics_process(delta: float) -> void:
-    if _current_state == State.TALK:
+    if _current_state == State.TALK or _current_state == State.DANCE:
         # If talking, skip movement
         return
 
@@ -128,8 +128,16 @@ func switch_state(new_state: State):
                 _animated_sprite_2d.play("walk")
             State.IDLE:
                 _animated_sprite_2d.play("idle")
+            State.DANCE:
+                _animated_sprite_2d.play("dance")
 
 func _unhandled_input(event: InputEvent):
+    if event.is_action_pressed("dance"):
+        if _current_state == State.DANCE:
+            switch_state(State.IDLE)
+        else:
+            switch_state(State.DANCE)
+            
     if not _scooting_enabled:
         return
 
@@ -139,6 +147,7 @@ func _unhandled_input(event: InputEvent):
         else:
             switch_state(State.SCOOT)
             _animated_sprite_2d.play("scooting_horizontal")
+
 
 func _input(event: InputEvent):
     if event.is_action_pressed("ui_cancel"):
@@ -151,6 +160,7 @@ func _input(event: InputEvent):
     if event.is_action_pressed("inventory"):
         toggle_inventory()
         SignalDispatcher.sound_effect.emit("pop")
+
 
 
 func _on_slowdown_area_body_entered(body: Node2D):
