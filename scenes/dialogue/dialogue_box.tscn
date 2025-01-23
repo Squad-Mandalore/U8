@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://de01h04q55cgs"]
 
 [ext_resource type="Script" path="res://scenes/dialogue/dialogue_box.gd" id="1_cl2i0"]
-[ext_resource type="Texture2D" uid="uid://djr0g000tl7vr" path="res://characters/player/berliner.png" id="1_wed4i"]
+[ext_resource type="Texture2D" uid="uid://djr0g000tl7vr" path="res://characters/player/assets/berliner.png" id="1_wed4i"]
 [ext_resource type="PackedScene" uid="uid://diaisyb0c0sqg" path="res://scenes/dialogue/message_container.tscn" id="2_ug7xi"]
-[ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/berlinv3anim.png" id="4_w1pu5"]
+[ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="4_w1pu5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fa0q1"]
 atlas = ExtResource("4_w1pu5")

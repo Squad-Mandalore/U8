@@ -14,56 +14,58 @@ var _rng = RandomNumberGenerator.new()
 var center: PackedScene  = preload("res://scenes/trains/basic_train/subscenes/center.tscn")
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-    level_won.emit()
+	level_won.emit()
 
 func _right_x(train_length: int) -> float:
-    assert(train_length >= 0)
-    return _CENTER_WIDTH * train_length + _LEFT_WIDTH
+	assert(train_length >= 0)
+	return _CENTER_WIDTH * train_length + _LEFT_WIDTH
 
 func _center_x(train_length: int) -> float:
-    assert(train_length >= 0)
-    return _CENTER_WIDTH * train_length + _LEFT_WIDTH
+	assert(train_length >= 0)
+	return _CENTER_WIDTH * train_length + _LEFT_WIDTH
 
 func _ready() -> void:
-    $DialogueBox.hide()
-    var train_length: int = _rng.randi_range(0, 3)
-    for i in train_length:
-        var center_scene: Node2D = center.instantiate()
-        center_scene.position = Vector2(_center_x(i), Y)
-        self.add_child(center_scene)
+	$DialogueBox.hide()
+	var train_length: int = _rng.randi_range(0, 3)
+	for i in train_length:
+		var center_scene: Node2D = center.instantiate()
+		center_scene.position = Vector2(_center_x(i), Y)
+		self.add_child(center_scene)
 
-    _right.position.x = _right_x(train_length)
+	_right.position.x = _right_x(train_length)
 
 func _on_player_talk_enabled() -> void:
-    _hud.show_interaction_button()
+	_hud.show_interaction_button()
 
 
 func _on_player_talk_disabled() -> void:
-    _hud.hide_interaction_button()
+	_hud.hide_interaction_button()
 
 
 func _on_player_hud_toggled(visible: bool) -> void:
-    _hud.visible = visible
+	_hud.visible = visible
 
 func _on_world_start_conversation(character:NPC):
-    $DialogueBox.show()
-    conversation_started.emit(character)
+	$DialogueBox.show()
+	conversation_started.emit(character)
+	_hud.hide()
 
 func _on_world_end_conversation(character:NPC):
-    $DialogueBox.hide()
+	$DialogueBox.hide()
+	_hud.show()
 
 func _on_dialogue_box_send_message(message):
-    $EidolonHandler.post_message(message)
+	$EidolonHandler.post_message(message)
 
 func _on_eidolon_handler_get_process_id(process_id):
-    var message = "Process ID: %s" % process_id
-    $DialogueBox.add_message("SYSTEM", message)
+	var message = "Process ID: %s" % process_id
+	$DialogueBox.add_message("SYSTEM", message)
 
 func _on_eidolon_handler_new_message():
-    $DialogueBox.add_message("AGENT")
+	$DialogueBox.add_message("AGENT")
 
 func _on_eidolon_handler_get_message(message):
-    $DialogueBox.update_last_message(message)
+	$DialogueBox.update_last_message(message)
 
 func _on_eidolon_handler_finish_message():
-    $DialogueBox.waiting = false
+	$DialogueBox.waiting = false

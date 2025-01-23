@@ -16,7 +16,7 @@ func _update_sprite(character:NPC):
 		if animated_sprite_2d.sprite_frames.get_animation_names().has("idle"):
 			animated_sprite_2d.play("idle")
 		else:
-			printerr("Only idle animation allowed, motherfucker!")
+			printerr("Only idle animation allowed!")
 
 func add_message(sender, text=""):
 	var container = message_container_scene.instantiate()
