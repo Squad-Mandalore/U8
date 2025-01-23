@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://h7oswlqu4ie4"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_dogv2"]
-[ext_resource type="Script" path="res://scenes/stations/10_gesundbrunnen/gesundbrunnen.gd" id="2_547o6"]
-[ext_resource type="Texture2D" uid="uid://d2ydwxrvslftd" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen_background.png" id="3_ek8a5"]
-[ext_resource type="Texture2D" uid="uid://b5laifyplcahj" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen_floor.png" id="4_lnd4a"]
-[ext_resource type="PackedScene" uid="uid://b1yn58qi28tmj" path="res://scenes/stations/10_gesundbrunnen/subscenes/tower.tscn" id="5_61ge1"]
+[ext_resource type="Script" path="res://scenes/stations/09_gesundbrunnen/gesundbrunnen.gd" id="2_547o6"]
+[ext_resource type="Texture2D" uid="uid://d2ydwxrvslftd" path="res://scenes/stations/09_gesundbrunnen/assets/gesundbrunnen_background.png" id="3_ek8a5"]
+[ext_resource type="Texture2D" uid="uid://b5laifyplcahj" path="res://scenes/stations/09_gesundbrunnen/assets/gesundbrunnen_floor.png" id="4_lnd4a"]
+[ext_resource type="PackedScene" uid="uid://b1yn58qi28tmj" path="res://scenes/stations/09_gesundbrunnen/subscenes/tower.tscn" id="5_61ge1"]
 [ext_resource type="LabelSettings" uid="uid://dfcof0bqgjsys" path="res://scenes/stations/assets/station_name_label_settings_white_on_black.tres" id="5_pfb4y"]
 
 [node name="Gesundbrunnen" instance=ExtResource("1_dogv2")]

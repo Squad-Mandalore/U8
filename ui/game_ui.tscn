@@ -74,7 +74,7 @@ doener = false
 
 [sub_resource type="Resource" id="Resource_8hf2s"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
+path = "res://scenes/stations/09_gesundbrunnen/gesundbrunnen.tscn"
 name = "Gesundbrunnen"
 subtitle = ""
 doener = false
