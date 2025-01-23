@@ -1,0 +1,153 @@
+[gd_scene load_steps=7 format=3 uid="uid://bc7wxl4cf36oe"]
+
+[ext_resource type="Script" path="res://ui/combat/subscenes/attack_hover.gd" id="1_7dsqd"]
+[ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="1_25r8k"]
+[ext_resource type="StyleBox" uid="uid://dx03p6kn7rnup" path="res://ui/combat/assets/floating_attack_info.tres" id="1_657hu"]
+[ext_resource type="Texture2D" uid="uid://cv8aem4xmtugh" path="res://ui/combat/assets/info_star.svg" id="2_5it3j"]
+[ext_resource type="FontFile" uid="uid://dxnffxcr65xja" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Light.ttf" id="3_leda1"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_iuk4x"]
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[node name="AttackHover" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7dsqd")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+top_level = true
+position = Vector2(171, 253)
+color = Color(0.129412, 0.129412, 0.129412, 1)
+polygon = PackedVector2Array(0, 0, 20, 20, 40, 0)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(382, 0)
+layout_mode = 0
+offset_right = 382.0
+offset_bottom = 170.0
+theme_override_styles/panel = ExtResource("1_657hu")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="NameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_25r8k")
+theme_override_font_sizes/font_size = 24
+text = "vergiften"
+
+[node name="DamageLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(1, 0.262745, 0.27451, 1)
+theme_override_fonts/font = ExtResource("1_25r8k")
+theme_override_font_sizes/font_size = 20
+text = "10 Schaden"
+
+[node name="Seperator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_iuk4x")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.870588, 0.870588, 0.870588, 1)
+theme_override_fonts/font = ExtResource("1_25r8k")
+theme_override_font_sizes/font_size = 20
+text = "Angriffstyp:"
+
+[node name="TypeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.980392, 0.443137, 1, 1)
+theme_override_fonts/font = ExtResource("1_25r8k")
+theme_override_font_sizes/font_size = 20
+text = "Attraktivität"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.870588, 0.870588, 0.870588, 1)
+theme_override_fonts/font = ExtResource("1_25r8k")
+theme_override_font_sizes/font_size = 20
+text = "Token:"
+
+[node name="TokenLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.47451, 0.721569, 1, 1)
+theme_override_fonts/font = ExtResource("1_25r8k")
+theme_override_font_sizes/font_size = 20
+text = "+1 Intelligenz"
+
+[node name="EffectSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_iuk4x")
+
+[node name="EffectHBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/EffectHBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/EffectHBox/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/EffectHBox/VBoxContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("2_5it3j")
+
+[node name="EffectLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/EffectHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.870588, 0.870588, 0.870588, 1)
+theme_override_fonts/normal_font = ExtResource("3_leda1")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Effekt: nachfolgende Angriffe verursachen mehr Schaden
+"
+scroll_active = false

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://dquxwlu5pu5v"]
 
 [ext_resource type="Script" path="res://globals/attributes.gd" id="1_7tr7a"]
-[ext_resource type="Script" path="res://items/items.gd" id="2_wjiuo"]
+[ext_resource type="Script" path="res://items/item.gd" id="2_wjiuo"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
 script = ExtResource("1_7tr7a")
@@ -29,5 +29,5 @@ drug_level = 0
 script = ExtResource("2_wjiuo")
 name = "Pullover"
 description = "Ein Kleidungsstück, das so gemütlich ist, dass du es nie wieder ausziehen willst – und genau das scheint sein letzter Besitzer auch gedacht zu haben. Ideal für das vollkommene 'Mir doch egal'-Feeling im Waggon."
-properties = SubResource("Resource_hodkb")
+stats = SubResource("Resource_hodkb")
 texture = SubResource("PlaceholderTexture2D_cvpp7")

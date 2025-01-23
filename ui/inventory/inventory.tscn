@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://ui/inventory/inventory.gd" id="1_gj1qs"]
 [ext_resource type="PackedScene" uid="uid://cy1iar1dkomyr" path="res://ui/inventory/subscenes/stat_hud.tscn" id="1_w07gl"]
 [ext_resource type="PackedScene" uid="uid://b6qdv1d0kofyo" path="res://ui/inventory/subscenes/inventory_hud.tscn" id="4_ahg8d"]
-[ext_resource type="PackedScene" uid="uid://b4s3pgrykws8i" path="res://ui/inventory/subscenes/button_hud.tscn" id="4_qjhs6"]
+[ext_resource type="PackedScene" uid="uid://b4s3pgrykws8i" path="res://ui/subscenes/button_hud.tscn" id="4_qjhs6"]
 [ext_resource type="PackedScene" uid="uid://c5u8dk88a3txs" path="res://ui/inventory/subscenes/info_panel.tscn" id="5_l8nab"]
 [ext_resource type="Texture2D" uid="uid://dn0jfcq1ly2go" path="res://ui/hud/assets/coin.svg" id="5_rpfif"]
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="6_whn6t"]

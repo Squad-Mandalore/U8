@@ -1,10 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://vgtvvoeai24u"]
+[gd_scene load_steps=21 format=3 uid="uid://vgtvvoeai24u"]
 
 [ext_resource type="Script" path="res://ui/main_menu/main_menu_with_animations.gd" id="2_rnbo0"]
 [ext_resource type="PackedScene" uid="uid://b0c3m2fxsdveo" path="res://ui/main_menu/options_menu/master_options_menu_with_tabs.tscn" id="3_of1fj"]
 [ext_resource type="PackedScene" uid="uid://b7hs5igqv1qjk" path="res://ui/credits/credits.tscn" id="4_4dvcb"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/ui_sound_controller.gd" id="4_hhp08"]
-[ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/scenes/music_players/background_music_player.tscn" id="5_3dxed"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_version_label.gd" id="6_6j8k6"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_name_label.gd" id="7_jitli"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="8_u65nr"]
@@ -377,9 +376,6 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
-
-[node name="BackgroundMusicPlayer" parent="." instance=ExtResource("5_3dxed")]
-bus = &"Master"
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="."]
 layout_mode = 1

@@ -4,6 +4,7 @@ var animation_state_machine : AnimationNodeStateMachinePlayback
 @onready var sub_title_label: Label = $MenuContainer/SubTitleMargin/SubTitleContainer/SubTitleLabel
 var SUB_TITLE_TEXTS : Array[String] = ["Der realistischste Berliner U-Bahn Simulator", "Die wahre Berlin experience", "Scoot Scoot", "Subtitle"]
 
+
 func load_game_scene():
     GameState.start_game()
     super.load_game_scene()
@@ -43,8 +44,13 @@ func _input(event):
 
 func _ready():
     super._ready()
+    fick_godot()
     sub_title_label.text = SUB_TITLE_TEXTS[randi_range(0, SUB_TITLE_TEXTS.size() - 1)]
     animation_state_machine = $MenuAnimationTree.get("parameters/playback")
+
+func fick_godot() -> void:
+    SignalDispatcher.sound_music.emit("main_menu")
+
 
 func _setup_game_buttons():
     super._setup_game_buttons()

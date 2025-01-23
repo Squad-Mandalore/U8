@@ -7,12 +7,19 @@ extends CharacterBody2D
 # var stats: StatsSpecifier = StatsSpecifier.new()
 # var base_stats: StatsSpecifier
 
-enum State {IDLE, WALK, TALK, SCOOT}
+enum State {IDLE, WALK, TALK, SCOOT, DANCE}
 var _current_state: State = State.IDLE
 var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
 
 const SPEED: float = 102.0
-var _talkable_npc: NPC = null
+var speed_multiplier: float = 1.0
+var _talkable_npc: NPC = null:
+    set(value):
+        if value:
+            speed_multiplier = 0.5
+        else:
+            speed_multiplier = 1.0
+        _talkable_npc = value
 
 signal talk_enabled()
 signal talk_disabled()
@@ -20,11 +27,7 @@ signal hud_toggled(visible: bool)
 
 func _ready() -> void:
     inventory.hide()
-    SignalDispatcher.reload_ui.emit(SourceOfTruth.stats, SourceOfTruth.balance)
-    # var hawaiihemd = load("res://items/armor/hawaiihemd.tres")
-    # var hemd = load("res://items/armor/hemd.tres")
-    # SourceOfTruth.add_item(hawaiihemd)
-    # SourceOfTruth.add_item(hemd)
+    SignalDispatcher.reload_ui.emit()
 
 # func _process(delta):
 #     pass
@@ -32,7 +35,7 @@ func _ready() -> void:
     # print("Camera Position: " + str(%InventoryCamera.global_position))
 
 func _physics_process(delta: float) -> void:
-    if _current_state == State.TALK:
+    if _current_state == State.TALK or _current_state == State.DANCE:
         # If talking, skip movement
         return
 
@@ -41,9 +44,7 @@ func _physics_process(delta: float) -> void:
         return
 
     var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-    var speed = SPEED
-    if _talkable_npc:
-        speed = SPEED / 2
+    var speed = SPEED * speed_multiplier
 
     if direction.x < 0 and not _animated_sprite_2d.flip_h:
         _animated_sprite_2d.flip_h = true
@@ -103,9 +104,9 @@ func _handle_scooting(delta: float) -> void:
         _animated_sprite_2d.play()
 
     # -- Adjust animation speed based on how fast we’re moving --
-    # The maximum length at top scoot speed is SPEED*2.
+    # The maximum length at top scoot speed is speed*2.
     # At top speed, we want 8 FPS; at zero speed, 0 FPS.
-    var max_speed = float(SPEED * 2)
+    var max_speed = float(speed * 2)
     var current_speed = velocity.length()
     # Normalize (0.0 to 1.0)
     var speed_ratio = current_speed / max_speed
@@ -127,8 +128,16 @@ func switch_state(new_state: State):
                 _animated_sprite_2d.play("walk")
             State.IDLE:
                 _animated_sprite_2d.play("idle")
+            State.DANCE:
+                _animated_sprite_2d.play("dance")
 
 func _unhandled_input(event: InputEvent):
+    if event.is_action_pressed("dance"):
+        if _current_state == State.DANCE:
+            switch_state(State.IDLE)
+        else:
+            switch_state(State.DANCE)
+            
     if not _scooting_enabled:
         return
 
@@ -139,15 +148,20 @@ func _unhandled_input(event: InputEvent):
             switch_state(State.SCOOT)
             _animated_sprite_2d.play("scooting_horizontal")
 
+
 func _input(event: InputEvent):
     if event.is_action_pressed("ui_cancel"):
         toggle_inventory(false)
+        SignalDispatcher.sound_effect.emit("exit")
 
     if event is InputEventMouseButton and event.pressed:
         if event.button_index == MOUSE_BUTTON_LEFT:
             SignalDispatcher.toggle_item_hud.emit(null)
     if event.is_action_pressed("inventory"):
         toggle_inventory()
+        SignalDispatcher.sound_effect.emit("pop")
+
+
 
 func _on_slowdown_area_body_entered(body: Node2D):
     var npc: NPC = body
@@ -236,6 +250,7 @@ func toggle_talking():
     if !_current_state == State.TALK:
         switch_state(State.TALK)
         _talkable_npc.start_talking()
+        SignalDispatcher.sound_effect.emit("villager")
         _on_npc_started_talking(_talkable_npc)
     else:
         switch_state(State.IDLE)

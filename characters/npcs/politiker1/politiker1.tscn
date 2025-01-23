@@ -112,6 +112,9 @@ floor_block_on_wall = false
 floor_snap_length = 0.0
 platform_on_leave = 2
 script = ExtResource("1_2022g")
+_name = null
+RANDOM_NAME = null
+_gender = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bg0ao")

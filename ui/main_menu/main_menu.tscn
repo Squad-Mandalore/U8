@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7utj0gr3fvrx"]
+[gd_scene load_steps=8 format=3 uid="uid://b7utj0gr3fvrx"]
 
 [ext_resource type="Script" path="res://ui/main_menu/main_menu.gd" id="2_tqalf"]
 [ext_resource type="PackedScene" uid="uid://b0c3m2fxsdveo" path="res://ui/main_menu/options_menu/master_options_menu_with_tabs.tscn" id="3_uuuu4"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/ui_sound_controller.gd" id="4_kigtq"]
 [ext_resource type="PackedScene" uid="uid://b7hs5igqv1qjk" path="res://ui/credits/credits.tscn" id="4_ujp5j"]
-[ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/scenes/music_players/background_music_player.tscn" id="5_54wd0"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_version_label.gd" id="6_hwiir"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_name_label.gd" id="7_i3lvj"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="8_d2jpe"]
@@ -23,9 +22,6 @@ credits_packed_scene = ExtResource("4_ujp5j")
 
 [node name="UISoundController" type="Node" parent="."]
 script = ExtResource("4_kigtq")
-
-[node name="BackgroundMusicPlayer" parent="." instance=ExtResource("5_54wd0")]
-bus = &"Master"
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="."]
 layout_mode = 1

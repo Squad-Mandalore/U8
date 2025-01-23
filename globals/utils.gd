@@ -1,77 +1,111 @@
 extends Node
 
-const LIGHT_BLUE: Color = Color("79B8FF")
+const BLUE: Color = Color("79B8FF")
 const RED: Color = Color("FF4346")
 const GREEN: Color = Color("71F87A")
 const WHITE: Color = Color("FFFFFF")
+const PINK: Color = Color("FA71FF")
+const MAGENTA: Color = Color("E20074")
+const YELLOW: Color = Color("F1C40F")
+
+enum AttackTypes {
+    Attraktiv,
+    Stark,
+    Cool,
+    Intelligent,
+    Kreativ
+}
+
+const ATTACK_DICT = {
+    "Attraktiv": {
+        "color": PINK,
+        "stance_texture": preload("res://ui/combat/assets/stance_token_pink.svg")
+    },
+    "Stark": {
+        "color": RED,
+        "stance_texture": preload("res://ui/combat/assets/stance_token_red.svg")
+    },
+    "Cool": {
+        "color": YELLOW,
+        "stance_texture": preload("res://ui/combat/assets/stance_token_yellow.svg")
+    },
+    "Intelligent": {
+        "color": BLUE,
+        "stance_texture": preload("res://ui/combat/assets/stance_token_blue.svg")
+    },
+    "Kreativ": {
+        "color": MAGENTA,
+        "stance_texture": preload("res://ui/combat/assets/stance_token_magenta.svg")
+    }
+};
 
 const STATS_DICT = {
     "max_health": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Maximale Gesundheit"
     },
     "health": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Gesundheit"
     },
     "armor": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Rüstung"
     },
     "initiative": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Initiative"
     },
     "dodge_chance": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Ausweichchance"
     },
     "strength": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Stärke"
     },
     "coolness": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Coolness"
     },
     "attractiveness": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Attraktivität"
     },
     "intelligence": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Intelligenz"
     },
     "creativity": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Kreativität"
     },
     "luck": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Glück"
     },
     "poison_resistance": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Giftresistenz"
     },
     "bleed_resistance": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Blutungsresistenz"
     },
     "drug_resistance": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Drogenresistenz"
     },
     "poison_level": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Giftlevel"
     },
     "bleed_level": {
-        "texture": "res://ui/hud/assets/coin.svg",
+        "texture": preload("res://ui/hud/assets/coin.svg"),
         "display_name": "Blutungslevel"
     },
     "drug_level": {
-        "texture": "res://ui/hud/assets/ck_3_bar.svg",
+        "texture": preload("res://ui/hud/assets/ck_3_bar.svg"),
         "display_name": "Drogenlevel"
     }
 }

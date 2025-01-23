@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkj14wl5ofnkb"]
+
+[ext_resource type="Script" path="res://ui/combat/combat_hud.gd" id="1_gfe85"]
+[ext_resource type="PackedScene" uid="uid://c0m65l7xddw64" path="res://ui/combat/subscenes/round_descriptor.tscn" id="1_vipps"]
+[ext_resource type="PackedScene" uid="uid://c2sg1i523d8qr" path="res://ui/combat/subscenes/status_panel.tscn" id="2_h7yt2"]
+[ext_resource type="PackedScene" uid="uid://q4yxjjlox2rt" path="res://ui/combat/subscenes/feedback_box.tscn" id="3_tt32e"]
+[ext_resource type="PackedScene" uid="uid://dmb5wwmu2hgkm" path="res://ui/combat/subscenes/attack_swapper.tscn" id="4_o6eoc"]
+
+[node name="CombatHud" type="CanvasLayer"]
+script = ExtResource("1_gfe85")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="RoundDescriptor" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("1_vipps")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="StatusPanel" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_h7yt2")]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="StatusPanel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_h7yt2")]
+layout_mode = 2
+
+[node name="FeedbackBox" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("3_tt32e")]
+layout_mode = 2
+
+[node name="AttackSwapper" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_o6eoc")]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
