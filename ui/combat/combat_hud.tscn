@@ -29,11 +29,13 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="RoundDescriptor" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("1_vipps")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="StatusPanel" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_h7yt2")]
+[node name="EnemyStatusPanel" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_h7yt2")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 0
@@ -47,13 +49,16 @@ theme_override_constants/separation = 0
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="StatusPanel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_h7yt2")]
+[node name="PlayerStatusPanel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_h7yt2")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="FeedbackBox" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("3_tt32e")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="AttackSwapper" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_o6eoc")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 8

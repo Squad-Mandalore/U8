@@ -7,12 +7,10 @@ var tokens: Array[Utils.AttackTypes]
 var stance: Utils.AttackTypes = Utils.AttackTypes.Null
 
 func _ready() -> void:
-    SignalDispatcher.reload_ui.connect(update_status_panel)
     tokens.resize(3)
     tokens.fill(Utils.AttackTypes.Null)
 
-func update_status_panel():
-    var stats = SourceOfTruth.stats
+func update_status_panel(stats: StatsSpecifier):
     update_health(stats.health, stats.max_health)
     update_bleed(stats.bleed_level)
     update_poison(stats.poison_level)

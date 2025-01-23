@@ -10,8 +10,8 @@ var attack: Attack:
         update_icon(attack.effect)
 
 # DEBUG
-func _ready() -> void:
-    attack = preload("res://characters/attacks/assets/tail_whip.tres")
+# func _ready() -> void:
+#     attack = preload("res://characters/attacks/assets/tail_whip.tres")
 
 func _on_panel_container_mouse_exited() -> void:
     $PanelContainer.add_theme_stylebox_override("panel", preload("res://ui/combat/assets/attack.tres"))
