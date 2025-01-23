@@ -157,6 +157,8 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "StationName"
 label_settings = ExtResource("5_0teva")
+horizontal_alignment = 1
+uppercase = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

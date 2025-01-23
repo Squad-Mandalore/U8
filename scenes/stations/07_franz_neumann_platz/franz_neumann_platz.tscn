@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl5fn5xxtqxgn"]
+
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_aop73"]
+
+[node name="FranzNeumannPlatz" instance=ExtResource("1_aop73")]
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Franz-Neumann-Platz
+-Am Schäfersee-"

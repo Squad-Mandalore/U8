@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dni73m7g8lip1"]
+
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_amjx2"]
+
+[node name="LindauerAllee" instance=ExtResource("1_amjx2")]
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Lindauer Allee"

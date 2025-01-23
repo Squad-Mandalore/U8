@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://t06m0njij5ku"]
+
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_icq6v"]
+
+[node name="KottbusserTor" instance=ExtResource("1_icq6v")]
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Kottbusser Tor"
