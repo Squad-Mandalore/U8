@@ -85,4 +85,3 @@ func _on_resistance_info_v_box_mouse_exited() -> void:
 
 func _on_resistance_info_v_box_mouse_entered() -> void:
     SignalDispatcher.toggle_resistance_hud.emit(stats)
-
