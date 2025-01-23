@@ -4,7 +4,6 @@ var attack: Attack:
     set(value):
         attack = value
         update_name(attack.name)
-        print(attack.type)
         update_type(attack.type)
         update_damage(attack.damage)
         update_token(attack.token, attack.token_number)

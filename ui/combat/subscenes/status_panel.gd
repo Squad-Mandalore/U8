@@ -4,12 +4,12 @@ var bleed_texture = preload("res://ui/hud/assets/white_blood.svg")
 var poison_texture = preload("res://ui/hud/assets/white_flask.svg")
 var drug_texture = preload("res://ui/hud/assets/white_syringe.svg")
 var tokens: Array[Utils.AttackTypes]
-var stance: Utils.AttackTypes
+var stance: Utils.AttackTypes = Utils.AttackTypes.Null
 
 func _ready() -> void:
     SignalDispatcher.reload_ui.connect(update_status_panel)
     tokens.resize(3)
-    tokens.fill(null)
+    tokens.fill(Utils.AttackTypes.Null)
 
 func update_status_panel():
     var stats = SourceOfTruth.stats
@@ -32,16 +32,15 @@ func update_stance():
         stance = tokens[0]
 
     %StanceLabel.text = "Kampfhaltung: "
-    if stance:
+    if stance != Utils.AttackTypes.Null:
         %StanceLabel.text += Utils.AttackTypes.find_key(stance)
 
 func update_tokens():
     for i in range(len(tokens)):
         var cur_token: NinePatchRect = get_node("%Token" + str(i + 1))
-        if tokens[i] == null:
-            cur_token.texture = preload("res://ui/combat/assets/stance_token_white.svg")
-        else:
-            cur_token.texture = Utils.ATTACK_DICT[Utils.AttackTypes.find_key(tokens[i])]["texture"]
+        var cur_token_str = Utils.AttackTypes.find_key(tokens[i])
+        print(cur_token_str)
+        cur_token.texture = Utils.ATTACK_DICT[cur_token_str]["texture"]
 
 func all_items_are_same(array: Array) -> bool:
     var first_item = array[0]
