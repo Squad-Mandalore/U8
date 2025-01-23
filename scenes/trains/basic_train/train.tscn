@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/trains/basic_train/train.gd" id="1_1jt1h"]
 [ext_resource type="Script" path="res://scenes/trains/background.gd" id="2_20w01"]
+[ext_resource type="PackedScene" uid="uid://bcfug5ny0wrib" path="res://addons/EidolonClient/eidolon_handler.tscn" id="2_t506v"]
 [ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://scenes/trains/assets/background.png" id="3_dfgt4"]
 [ext_resource type="PackedScene" uid="uid://c6lryjxjclq03" path="res://scenes/trains/basic_train/subscenes/inside_left.tscn" id="4_q3h5r"]
 [ext_resource type="PackedScene" uid="uid://c2xs2hjyqqtav" path="res://scenes/trains/basic_train/subscenes/right.tscn" id="6_ykx2a"]
@@ -11,10 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politiker1/politiker1.tscn" id="10_rky5v"]
 [ext_resource type="PackedScene" uid="uid://bkquoqbrb6bh2" path="res://ui/hud/train_hud.tscn" id="10_t7xje"]
 [ext_resource type="AudioStream" uid="uid://6ahldo7k8y2m" path="res://scenes/trains/basic_train/assets/sounds/music/gof2.mp3" id="11_yi3rj"]
+[ext_resource type="PackedScene" uid="uid://de01h04q55cgs" path="res://scenes/dialogue/dialogue_box.tscn" id="12_3hv2i"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_1jt1h")
+
+[node name="EidolonHandler" parent="." instance=ExtResource("2_t506v")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -68,8 +72,18 @@ autoplay = true
 bus = &"Music"
 parameters/looping = true
 
+[node name="DialogueBox" parent="." instance=ExtResource("12_3hv2i")]
+
+[connection signal="conversation_started" from="." to="DialogueBox" method="_on_node_2d_conversation_started"]
 [connection signal="ready" from="." to="Player" method="_disable_scooting"]
+[connection signal="finish_message" from="EidolonHandler" to="." method="_on_eidolon_handler_finish_message"]
+[connection signal="get_message" from="EidolonHandler" to="." method="_on_eidolon_handler_get_message"]
+[connection signal="get_process_id" from="EidolonHandler" to="." method="_on_eidolon_handler_get_process_id"]
+[connection signal="new_message" from="EidolonHandler" to="." method="_on_eidolon_handler_new_message"]
 [connection signal="body_entered" from="Right" to="." method="_on_area_2d_body_entered"]
 [connection signal="hud_toggled" from="Player" to="." method="_on_player_hud_toggled"]
+[connection signal="started_talking" from="Player" to="." method="_on_world_start_conversation"]
+[connection signal="stopped_talking" from="Player" to="." method="_on_world_end_conversation"]
 [connection signal="talk_disabled" from="Player" to="." method="_on_player_talk_disabled"]
 [connection signal="talk_enabled" from="Player" to="." method="_on_player_talk_enabled"]
+[connection signal="send_message" from="DialogueBox" to="." method="_on_dialogue_box_send_message"]
