@@ -9,15 +9,15 @@ func _ready() -> void:
     action_key = InputMap.action_get_events("map")[0].as_text()[0]
     (%MapButton/InteractionKeyMarginBox/InteractionKeyLabel as Label).text = action_key
 
-func update_inventory_stats(stats: StatsSpecifier, balance: int):
-    %InventoryHud.update_debuff_stats(stats)
+func update_inventory_stats():
+    %InventoryHud.update_debuff_stats()
     %InventoryHud.load_item_slots()
-    (%InventoryStatHud as Control).update_inventory_stat_hud(stats)
-    update_inventory_balance(balance)
+    (%InventoryStatHud as Control).update_inventory_stat_hud()
+    update_inventory_balance()
 
-func update_inventory_balance(new_balance: int) -> void:
+func update_inventory_balance() -> void:
     var min_balance: int
-    new_balance = max(min_balance, new_balance)
+    var new_balance = max(min_balance, SourceOfTruth.balance)
     (%BalanceLabel as Label).text = "%d Euronen" % [new_balance]
 
 func _on_inventory_button_pressed() -> void:

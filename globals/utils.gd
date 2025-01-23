@@ -1,12 +1,12 @@
 extends Node
 
-const LIGHT_BLUE: Color = Color("79B8FF")
+const BLUE: Color = Color("79B8FF")
 const RED: Color = Color("FF4346")
 const GREEN: Color = Color("71F87A")
 const WHITE: Color = Color("FFFFFF")
-const PINK: Color = Color("fa71ff")
-const MAGENTA: Color = Color("e20074")
-const YELLOW: Color = Color("f1c40f")
+const PINK: Color = Color("FA71FF")
+const MAGENTA: Color = Color("E20074")
+const YELLOW: Color = Color("F1C40F")
 
 enum AttackTypes {
     Attraktiv,
@@ -17,12 +17,27 @@ enum AttackTypes {
 }
 
 const ATTACK_DICT = {
-    "Attraktiv": PINK,
-    "Stark": RED,
-    "Cool": YELLOW,
-    "Intelligent": LIGHT_BLUE,
-    "Kreativ": MAGENTA
-}
+    "Attraktiv": {
+        "color": PINK,
+        "stance_texture": preload("res://ui/combat/assets/stance_token_pink.svg")
+    },
+    "Stark": {
+        "color": RED,
+        "stance_texture": preload("res://ui/combat/assets/stance_token_red.svg")
+    },
+    "Cool": {
+        "color": YELLOW,
+        "stance_texture": preload("res://ui/combat/assets/stance_token_yellow.svg")
+    },
+    "Intelligent": {
+        "color": BLUE,
+        "stance_texture": preload("res://ui/combat/assets/stance_token_blue.svg")
+    },
+    "Kreativ": {
+        "color": MAGENTA,
+        "stance_texture": preload("res://ui/combat/assets/stance_token_magenta.svg")
+    }
+};
 
 const STATS_DICT = {
     "max_health": {

@@ -31,12 +31,12 @@ static func stats_changed(delta_stats: StatsSpecifier):
     # print("Before: " + str(stats))
     stats.add(delta_stats)
     # print("After: " + str(stats))
-    SignalDispatcher.reload_ui.emit(stats, balance)
+    SignalDispatcher.reload_ui.emit()
     # SignalDispatcher.update_status_panel_stat.emit(stats, balance)
 
 static func balance_changed(delta_balance: int):
     balance += delta_balance
-    SignalDispatcher.reload_ui.emit(stats, balance)
+    SignalDispatcher.reload_ui.emit()
 
 # func damage(damage_taken: int):
 #     stats.health -= damage_taken
@@ -62,4 +62,4 @@ static func swap_item(from: int, to: int):
     var tmp = inventory_slots[from]
     inventory_slots[from] = inventory_slots[to]
     inventory_slots[to] = tmp
-    SignalDispatcher.reload_ui.emit(stats, balance)
+    SignalDispatcher.reload_ui.emit()

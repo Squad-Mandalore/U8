@@ -24,12 +24,12 @@ func update_damage(damage: int):
 func update_type(type_index: Utils.AttackTypes):
     var type: String = Utils.AttackTypes.find_key(type_index)
     %TypeLabel.text = type
-    %TypeLabel.add_theme_color_override("font_color", Utils.ATTACK_DICT[type])
+    %TypeLabel.add_theme_color_override("font_color", Utils.ATTACK_DICT[type]["color"])
 
 func update_token(token_index: Utils.AttackTypes, token_number: int):
     var token: String = Utils.AttackTypes.find_key(token_index)
     %TokenLabel.text = "+" + str(token_number) + " " + token
-    %TokenLabel.add_theme_color_override("font_color", Utils.ATTACK_DICT[token])
+    %TokenLabel.add_theme_color_override("font_color", Utils.ATTACK_DICT[token]["color"])
 
 func update_effect(effect: String):
     %EffectLabel.text = "Effekt: " + effect
