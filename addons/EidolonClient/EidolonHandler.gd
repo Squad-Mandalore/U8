@@ -2,7 +2,7 @@ extends Node
 
 var process_id = ""
 
-var agent = "npc_agent"
+var agent = "test_agent"
 var title = "first meeting"
 
 signal get_process_id(process_id: String)
