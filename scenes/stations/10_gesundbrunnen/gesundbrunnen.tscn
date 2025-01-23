@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://h7oswlqu4ie4"]
+
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_dogv2"]
+[ext_resource type="Script" path="res://scenes/stations/10_gesundbrunnen/gesundbrunnen.gd" id="2_547o6"]
+[ext_resource type="Texture2D" uid="uid://d2ydwxrvslftd" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen_background.png" id="3_ek8a5"]
+[ext_resource type="Texture2D" uid="uid://b5laifyplcahj" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen_floor.png" id="4_lnd4a"]
+[ext_resource type="PackedScene" uid="uid://b1yn58qi28tmj" path="res://scenes/stations/10_gesundbrunnen/subscenes/tower.tscn" id="5_61ge1"]
+[ext_resource type="LabelSettings" uid="uid://dfcof0bqgjsys" path="res://scenes/stations/assets/station_name_label_settings_white_on_black.tres" id="5_pfb4y"]
+
+[node name="Gesundbrunnen" instance=ExtResource("1_dogv2")]
+script = ExtResource("2_547o6")
+
+[node name="BackgroundWall" parent="Background" index="0"]
+texture = ExtResource("3_ek8a5")
+
+[node name="Floor" parent="Background" index="2"]
+texture = ExtResource("4_lnd4a")
+
+[node name="CenterContainer" parent="Background" index="7"]
+offset_left = 358.0
+offset_right = 452.0
+grow_horizontal = 1
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "GESUNDBRUNNEN"
+label_settings = ExtResource("5_pfb4y")
+
+[node name="CenterContainer2" type="CenterContainer" parent="Background" index="8"]
+custom_minimum_size = Vector2(94, 31)
+offset_left = 683.0
+offset_top = 58.0
+offset_right = 777.0
+offset_bottom = 89.0
+
+[node name="StationName" type="Label" parent="Background/CenterContainer2" index="0"]
+layout_mode = 2
+text = "GESUNDBRUNNEN"
+label_settings = ExtResource("5_pfb4y")
+
+[node name="Towers" type="CanvasGroup" parent="Node2D" index="2"]
+y_sort_enabled = true
+
+[node name="Tower" parent="Node2D/Towers" index="0" instance=ExtResource("5_61ge1")]
+position = Vector2(148, 253)
+
+[node name="Tower2" parent="Node2D/Towers" index="1" instance=ExtResource("5_61ge1")]
+position = Vector2(316, 253)
+
+[node name="Tower3" parent="Node2D/Towers" index="2" instance=ExtResource("5_61ge1")]
+position = Vector2(484, 253)
+
+[node name="Tower4" parent="Node2D/Towers" index="3" instance=ExtResource("5_61ge1")]
+position = Vector2(652, 253)
+
+[node name="Tower5" parent="Node2D/Towers" index="4" instance=ExtResource("5_61ge1")]
+position = Vector2(820, 253)
+
+[node name="Tower6" parent="Node2D/Towers" index="5" instance=ExtResource("5_61ge1")]
+position = Vector2(988, 253)
+
+[node name="Tower7" parent="Node2D/Towers" index="6" instance=ExtResource("5_61ge1")]
+position = Vector2(148, 421)
+
+[node name="Tower8" parent="Node2D/Towers" index="7" instance=ExtResource("5_61ge1")]
+position = Vector2(316, 421)
+
+[node name="Tower9" parent="Node2D/Towers" index="8" instance=ExtResource("5_61ge1")]
+position = Vector2(484, 421)
+
+[node name="Tower10" parent="Node2D/Towers" index="9" instance=ExtResource("5_61ge1")]
+position = Vector2(652, 421)
+
+[node name="Tower11" parent="Node2D/Towers" index="10" instance=ExtResource("5_61ge1")]
+position = Vector2(820, 421)
+
+[node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("5_61ge1")]
+position = Vector2(988, 421)
