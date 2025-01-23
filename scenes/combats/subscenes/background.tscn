@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://ccxbv5rjap114"]
 
 [ext_resource type="Texture2D" uid="uid://danl1iv176et" path="res://scenes/combats/assets/Paracelsus-bad-fight-floor.png" id="1_jih2w"]
-[ext_resource type="Script" path="res://scenes/combats/assets/background.gd" id="2_307o7"]
+[ext_resource type="Script" path="res://scenes/combats/subscenes/background.gd" id="2_307o7"]
 [ext_resource type="Material" uid="uid://dm78nn0mtul4m" path="res://scenes/combats/assets/paracelsus_bad_background.material" id="2_f4lkq"]
 [ext_resource type="Texture2D" uid="uid://cmmbs7toy6wjo" path="res://scenes/combats/assets/Ubahn-fight-front.png" id="3_20ytk"]
 [ext_resource type="Texture2D" uid="uid://6cc22tmjjjyy" path="res://scenes/combats/assets/Ubahn-dach-fight.png" id="4_0sf8a"]
@@ -19,7 +19,6 @@ albedo_texture = ExtResource("1_jih2w")
 texture_filter = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a24p0"]
-load_path = "res://.godot/imported/paracelsus-bad-background.png-fbe8e83d92166f19cd38b74a007b49fa.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4647"]
 transparency = 1
