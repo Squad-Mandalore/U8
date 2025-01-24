@@ -32,7 +32,7 @@ func update_health(new_health: int, max_health: int) -> void:
 
 func update_dodge_chance(new_dodge_chance: int) -> void:
     %DodgeChanceBar.set_stat_name("Ausweichchance")
-    %DodgeChanceBar.set_stat(new_dodge_chance)
+    %DodgeChanceBar.set_stat(new_dodge_chance, 50)
 
 func update_armor(armor: int):
     (%LabelArmorStat as Label).text = str(armor)
