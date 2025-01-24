@@ -5,7 +5,9 @@ extends Resource
 @export var health: int
 @export var armor: int
 @export var initiative: int
-@export var dodge_chance: int
+@export var dodge_chance: int:
+    set(value):
+        dodge_chance = min(value, 50)
 @export var strength: int
 @export var coolness: int
 @export var attractiveness: int

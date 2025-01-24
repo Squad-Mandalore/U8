@@ -16,15 +16,10 @@ func update_status_panel():
     update_drug(stats.drug_level)
 
 func update_health(new_health: int, max_health: int) -> void:
-    new_health = min(new_health, max_health)
-    %HealthBar.set_max_value(max_health)
     %HealthBar.set_stat_name("Gesundheit")
-    %HealthBar.set_stat_number("%d/%d" % [new_health, max_health])
-    %HealthBar.set_cur_value(new_health)
+    %HealthBar.set_stat(new_health, max_health)
 
 func update_balance(new_balance: int) -> void:
-    var min_balance: int
-    new_balance = max(min_balance, new_balance)
     (%BalanceLabel as Label).text = "%d Euronen" % [new_balance]
 
 func update_bleed(level: int) -> void:
