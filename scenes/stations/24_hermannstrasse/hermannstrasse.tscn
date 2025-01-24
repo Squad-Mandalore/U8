@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmj3348ognt37"]
+
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_kgpoy"]
+[ext_resource type="Script" path="res://scenes/stations/24_hermannstrasse/hermannstrasse.gd" id="2_l272v"]
+
+[node name="Hermannstrasse" instance=ExtResource("1_kgpoy")]
+script = ExtResource("2_l272v")
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Hermann-
+straße"

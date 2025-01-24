@@ -5,3 +5,6 @@
 
 [node name="RathausReinickendorf" instance=ExtResource("1_jboli")]
 script = ExtResource("2_dif4s")
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Rathaus Reinickendorf"
