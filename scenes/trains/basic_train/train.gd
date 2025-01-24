@@ -43,7 +43,6 @@ func _spawn_farhkarten_kontrolleurin():
         get_tree().queue_delete(_fahrkartenkonrtolleurin)
         print("Schackeline will not hunt you today")
 
-    
+
 func _on_player_zero_health() -> void:
     level_lost.emit()
-

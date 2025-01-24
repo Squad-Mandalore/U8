@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=12 format=3 uid="uid://2p6mgnqih68g"]
 
 [ext_resource type="Script" path="res://scenes/trains/basic_train/train.gd" id="1_1jt1h"]
 [ext_resource type="Script" path="res://scenes/trains/background.gd" id="2_20w01"]
