@@ -1,133 +1,137 @@
-[gd_scene load_steps=36 format=3 uid="uid://b4v2kxxwx22uq"]
+[gd_scene load_steps=37 format=3 uid="uid://b4v2kxxwx22uq"]
 
-[ext_resource type="Script" path="res://characters/npcs/bademeister/bademeister.gd" id="1_xhn57"]
-[ext_resource type="Texture2D" uid="uid://bhrsh1sjnml85" path="res://characters/npcs/bademeister/assets/bademeister.png" id="2_6qlkx"]
+[ext_resource type="Script" path="res://characters/npcs/bademeister/bademeister.gd" id="1_px0xk"]
+[ext_resource type="Texture2D" uid="uid://bhrsh1sjnml85" path="res://characters/npcs/bademeister/assets/bademeister.png" id="2_5g3oc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3mpk"]
+atlas = ExtResource("2_5g3oc")
+region = Rect2(0, 0, 36, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bu3e"]
 size = Vector2(20, 4)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8lkl7"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(541, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ktp88"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(577, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oaq4j"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(613, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06u7v"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(649, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4hwr"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(613, 0, 36, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_et62r"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(649, 0, 36, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4sa2"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(685, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iqo2w"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(721, 0, 36, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbbr7"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(1, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbkya"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(397, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yvrvc"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(361, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ouo6"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(433, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1jo0u"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(469, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_23dxh"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(505, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cqnbu"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(541, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqcf8"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(1, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v4p5i"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(37, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gnf2q"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(73, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ifsey"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(109, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cv7kw"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(73, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v71jm"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(37, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kphgl"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(1, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jdim7"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(37, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ncp7"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(145, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7pa5"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(181, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkqmg"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(217, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uedhi"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(253, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_waalr"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(289, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ock7c"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(325, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lcoy5"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(361, 1, 36, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_anud4"]
-atlas = ExtResource("2_6qlkx")
+atlas = ExtResource("2_5g3oc")
 region = Rect2(397, 1, 36, 36)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sba5t"]
@@ -246,10 +250,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Bademeister2d" type="CharacterBody2D"]
+[node name="Bademeister" type="CharacterBody2D"]
 collision_layer = 5
 collision_mask = 5
-script = ExtResource("1_xhn57")
+script = ExtResource("1_px0xk")
+albedo_texture = SubResource("AtlasTexture_m3mpk")
 _name = "Der Bademeister"
 RANDOM_NAME = false
 _gender = "Male"
@@ -259,7 +264,7 @@ shape = SubResource("RectangleShape2D_4bu3e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sba5t")
-animation = &"idle"
+animation = &"battle_idle"
 autoplay = "idle"
 offset = Vector2(0, -16)
 

@@ -1,6 +1,11 @@
 extends NPC
 class_name Enemy
 
+@export var attacks: Array[Attack]
+@export var albedo_texture: AtlasTexture
+@export var combat_animation: String = "battle_idle"
+
+
 func _ready() -> void:
     _current_state = State.IDLE
     if RANDOM_NAME:
