@@ -1,10 +1,13 @@
-[gd_scene load_steps=79 format=3 uid="uid://csgdo87mltoha"]
+[gd_scene load_steps=82 format=3 uid="uid://csgdo87mltoha"]
 
 [ext_resource type="Script" path="res://characters/player/berliner.gd" id="1_pkp7h"]
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="2_ddcmo"]
 [ext_resource type="Texture2D" uid="uid://bw2d1qr1vlyft" path="res://characters/player/assets/BerlinerDance.png" id="2_oah57"]
 [ext_resource type="Texture2D" uid="uid://kytixtu7vost" path="res://characters/player/assets/riding.png" id="3_l50yj"]
 [ext_resource type="PackedScene" uid="uid://dh8a5067wese3" path="res://ui/inventory/inventory.tscn" id="4_s04kq"]
+[ext_resource type="PackedScene" uid="uid://bkquoqbrb6bh2" path="res://ui/hud/train_hud.tscn" id="6_f7a2w"]
+[ext_resource type="PackedScene" uid="uid://de01h04q55cgs" path="res://scenes/dialogue/dialogue_box.tscn" id="7_2lanu"]
+[ext_resource type="PackedScene" uid="uid://bcfug5ny0wrib" path="res://addons/EidolonClient/eidolon_handler.tscn" id="8_c0xdv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpkiy"]
 size = Vector2(20, 4)
@@ -573,5 +576,17 @@ shape = SubResource("CapsuleShape2D_cjqwy")
 [node name="Inventory" parent="." instance=ExtResource("4_s04kq")]
 visible = false
 
+[node name="HUD" parent="." instance=ExtResource("6_f7a2w")]
+unique_name_in_owner = true
+
+[node name="DialogueBox" parent="." instance=ExtResource("7_2lanu")]
+
+[node name="EidolonHandler" parent="." instance=ExtResource("8_c0xdv")]
+
 [connection signal="body_entered" from="SlowdownArea" to="." method="_on_slowdown_area_body_entered"]
 [connection signal="body_exited" from="SlowdownArea" to="." method="_on_slowdown_area_body_exited"]
+[connection signal="send_message" from="DialogueBox" to="." method="_on_dialogue_box_send_message"]
+[connection signal="finish_message" from="EidolonHandler" to="." method="_on_eidolon_handler_finish_message"]
+[connection signal="get_message" from="EidolonHandler" to="." method="_on_eidolon_handler_get_message"]
+[connection signal="get_process_id" from="EidolonHandler" to="." method="_on_eidolon_handler_get_process_id"]
+[connection signal="new_message" from="EidolonHandler" to="." method="_on_eidolon_handler_new_message"]
