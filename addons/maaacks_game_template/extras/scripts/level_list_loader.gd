@@ -24,10 +24,11 @@ func get_level_file(level_id : int):
         push_error("level_id is out of bounds of the levels list")
     return files[level_id]
 
-func _on_combat_enter():
+func _on_combat_enter(enemy: Enemy):
     var combat_scene = preload("res://scenes/combats/combat.tscn")
     level_container.call_deferred("remove_child", current_level)
     var instance = combat_scene.instantiate()
+    instance.enemy = enemy
     level_container.call_deferred("add_child", instance)
 
 func _on_combat_exit(to_free: Node):

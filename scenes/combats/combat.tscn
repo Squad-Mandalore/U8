@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://6gw4vbc22xu8"]
+[gd_scene load_steps=19 format=3 uid="uid://6gw4vbc22xu8"]
 
 [ext_resource type="PackedScene" uid="uid://ccxbv5rjap114" path="res://scenes/combats/subscenes/background.tscn" id="1_qt8oy"]
+[ext_resource type="Script" path="res://scenes/combats/combat.gd" id="1_wlkyy"]
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="2_ys117"]
 [ext_resource type="Texture2D" uid="uid://cjyyhybqiea5t" path="res://characters/npcs/politiker1/assets/politik1anim.png" id="3_ieugk"]
 [ext_resource type="PackedScene" uid="uid://bkj14wl5ofnkb" path="res://ui/combat/combat_hud.tscn" id="4_33ekg"]
@@ -105,6 +106,7 @@ animations = [{
 }]
 
 [node name="Combat" type="Node3D"]
+script = ExtResource("1_wlkyy")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.992086, 0.125558, 0, -0.125558, 0.992086, -0.0760288, 0, 0.494551)
@@ -112,6 +114,7 @@ current = true
 fov = 20.0
 
 [node name="Floor" parent="." instance=ExtResource("1_qt8oy")]
+unique_name_in_owner = true
 
 [node name="Berliner" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.153354, -0.151474, -0.429718)
@@ -120,11 +123,11 @@ sprite_frames = SubResource("SpriteFrames_hc6ld")
 autoplay = "default"
 frame_progress = 0.0866337
 
-[node name="Gegner" type="AnimatedSprite3D" parent="."]
+[node name="Enemy" type="AnimatedSprite3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.162287, -0.123524, -0.864971)
 material_override = SubResource("StandardMaterial3D_5hdg2")
 sprite_frames = SubResource("SpriteFrames_5ssat")
 autoplay = "default"
-frame_progress = 0.506989
 
 [node name="CombatHud" parent="." instance=ExtResource("4_33ekg")]
