@@ -8,6 +8,9 @@
 [node name="ParacelsusBad" instance=ExtResource("1_q4mp0")]
 script = ExtResource("1_086u8")
 
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Praacelsus-Bad"
+
 [node name="Bademeister2d" parent="Node2D" index="0" instance=ExtResource("3_cnday")]
 position = Vector2(600, 231)
 
