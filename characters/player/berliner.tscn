@@ -585,3 +585,8 @@ unique_name_in_owner = true
 
 [connection signal="body_entered" from="SlowdownArea" to="." method="_on_slowdown_area_body_entered"]
 [connection signal="body_exited" from="SlowdownArea" to="." method="_on_slowdown_area_body_exited"]
+[connection signal="send_message" from="DialogueBox" to="." method="_on_dialogue_box_send_message"]
+[connection signal="finish_message" from="EidolonHandler" to="." method="_on_eidolon_handler_finish_message"]
+[connection signal="get_message" from="EidolonHandler" to="." method="_on_eidolon_handler_get_message"]
+[connection signal="get_process_id" from="EidolonHandler" to="." method="_on_eidolon_handler_get_process_id"]
+[connection signal="new_message" from="EidolonHandler" to="." method="_on_eidolon_handler_new_message"]
