@@ -79,9 +79,10 @@ text = "Intelligenz"
 
 [node name="EffectIcon" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(18, 18)
+custom_minimum_size = Vector2(21, 21)
 layout_mode = 2
 size_flags_horizontal = 10
+size_flags_vertical = 8
 texture = ExtResource("2_g8esx")
 
 [connection signal="mouse_entered" from="PanelContainer" to="." method="_on_panel_container_mouse_entered"]
