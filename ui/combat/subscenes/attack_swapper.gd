@@ -25,9 +25,15 @@ func move_last_to_first(arr):
     return arr
 
 func _on_swap_button_left_pressed() -> void:
+    $AnimationPlayer.play("fade_out")
     move_first_to_last(attacks)
-    set_attacks()
 
 func _on_swap_button_right_pressed() -> void:
+    $AnimationPlayer.play("fade_out")
     move_last_to_first(attacks)
-    set_attacks()
+
+
+func _on_animation_player_animation_finished(anim_name:StringName) -> void:
+    if anim_name == "fade_out":
+        set_attacks()
+        $AnimationPlayer.play("fade_in")
