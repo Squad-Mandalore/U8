@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://caiu5xur7uhtq"]
 
-[ext_resource type="Texture2D" uid="uid://xjborux7ri1v" path="res://assets/train/ubahn-v4-rechts.png" id="1_c4eui"]
-[ext_resource type="PackedScene" uid="uid://dcad5rbgw7rsl" path="res://models/train/interior_right.tscn" id="2_dkd3d"]
-[ext_resource type="PackedScene" uid="uid://c7f2jkgnt4v8t" path="res://models/train/interior_right_front.tscn" id="3_f544b"]
+[ext_resource type="Texture2D" uid="uid://xjborux7ri1v" path="res://scenes/trains/basic_train/assets/ubahn-v4-rechts.png" id="1_c4eui"]
+[ext_resource type="PackedScene" uid="uid://dcad5rbgw7rsl" path="res://scenes/trains/basic_train/subscenes/interior_right.tscn" id="2_dkd3d"]
+[ext_resource type="PackedScene" uid="uid://c7f2jkgnt4v8t" path="res://scenes/trains/basic_train/subscenes/interior_right_front.tscn" id="3_f544b"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_agbu6"]
 b = Vector2(290, 0)

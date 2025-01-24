@@ -1,5 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://chtqtvhbm6tpl"]
 
+[ext_resource type="Script" path="res://characters/npcs/berghaingast/berghaingast.gd" id="1_i65c7"]
 [ext_resource type="Texture2D" uid="uid://b13n663o2tu2x" path="res://characters/npcs/berghaingast/assets/BerghainGuest.png" id="1_tkmka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6o7qv"]
@@ -69,10 +70,6 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("1_tkmka")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1g0va"]
-atlas = ExtResource("1_tkmka")
-region = Rect2(192, 0, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_jwvbx"]
 animations = [{
 "frames": [{
@@ -85,7 +82,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_25pib")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_tiwb7")
 }, {
 "duration": 1.0,
@@ -103,7 +100,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_taf7d")
 }, {
-"duration": 1.0,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_fpv5d")
 }],
 "loop": true,
@@ -128,9 +125,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_48841")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1g0va")
 }],
 "loop": true,
 "name": &"walk",
@@ -138,6 +132,11 @@ animations = [{
 }]
 
 [node name="Berghaingast" type="CharacterBody2D"]
+z_index = 50
+collision_layer = 5
+script = ExtResource("1_i65c7")
+_name = "Bergheingast"
+_gender = "Male"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6o7qv")
@@ -145,7 +144,8 @@ shape = SubResource("RectangleShape2D_6o7qv")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4, 0)
 sprite_frames = SubResource("SpriteFrames_jwvbx")
-animation = &"walk"
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.588625
 offset = Vector2(0, -16)

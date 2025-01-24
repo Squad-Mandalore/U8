@@ -137,7 +137,7 @@ func _unhandled_input(event: InputEvent):
             switch_state(State.IDLE)
         else:
             switch_state(State.DANCE)
-            
+
     if not _scooting_enabled:
         return
 

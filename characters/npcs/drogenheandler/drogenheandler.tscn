@@ -1,8 +1,10 @@
 [gd_scene load_steps=22 format=3 uid="uid://bymkmcgp2ky2o"]
 
 [ext_resource type="Texture2D" uid="uid://bg1cxujjsrhvf" path="res://characters/npcs/drogenheandler/assets/Obdachloser.png" id="1_1s75y"]
+[ext_resource type="Script" path="res://characters/npcs/drogenheandler/drogenheandler.gd" id="1_mirje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enw8h"]
+size = Vector2(20, 4)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p3hc1"]
 atlas = ExtResource("1_1s75y")
@@ -72,10 +74,6 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("1_1s75y")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rp7va"]
-atlas = ExtResource("1_1s75y")
-region = Rect2(192, 0, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_kdmse"]
 animations = [{
 "frames": [{
@@ -97,7 +95,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7h4so")
 }, {
-"duration": 1.0,
+"duration": 7.0,
 "texture": SubResource("AtlasTexture_kcvhw")
 }, {
 "duration": 1.0,
@@ -109,7 +107,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5d62w")
 }, {
-"duration": 1.0,
+"duration": 20.0,
 "texture": SubResource("AtlasTexture_32s2d")
 }],
 "loop": true,
@@ -134,9 +132,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_31ptx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rp7va")
 }],
 "loop": true,
 "name": &"walk",
@@ -144,6 +139,10 @@ animations = [{
 }]
 
 [node name="Drogenheandler" type="CharacterBody2D"]
+z_index = 50
+collision_layer = 5
+script = ExtResource("1_mirje")
+_gender = "Diverse"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_enw8h")
@@ -152,4 +151,7 @@ shape = SubResource("RectangleShape2D_enw8h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kdmse")
-animation = &"walk"
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.580099
+offset = Vector2(0, -16)

@@ -1,8 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://bex812hcoh6pq"]
+[gd_scene load_steps=29 format=3 uid="uid://bex812hcoh6pq"]
 
+[ext_resource type="Script" path="res://characters/npcs/fahrkartenkontrolleurin/fahrkartenkonrtolleurin.gd" id="1_m3k4j"]
 [ext_resource type="Texture2D" uid="uid://bg3qe4pyktq28" path="res://characters/npcs/fahrkartenkontrolleurin/assets/Schakeline.png" id="1_rr713"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gc2cm"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7s4cp"]
+radius = 3.0
+height = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7s1hl"]
 atlas = ExtResource("1_rr713")
@@ -96,14 +99,10 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("1_rr713")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t8ai0"]
-atlas = ExtResource("1_rr713")
-region = Rect2(192, 0, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3wfr"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_7s1hl")
 }, {
 "duration": 1.0,
@@ -145,13 +144,19 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ol05s")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_enfmr")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m4hw0")
 }, {
-"duration": 1.0,
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_qwm4s")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_7s1hl")
+}, {
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_qwm4s")
 }],
 "loop": true,
@@ -176,22 +181,44 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nmx7m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t8ai0")
 }],
 "loop": true,
 "name": &"walk",
 "speed": 6.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfm75"]
+radius = 24.0208
+
 [node name="Fahrkartenkonrtolleurin" type="CharacterBody2D"]
+z_index = 50
+position = Vector2(0, -16)
+collision_layer = 5
+script = ExtResource("1_m3k4j")
+_name = "Jaqueline"
+RANDOM_NAME = false
+_gender = "Female"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_gc2cm")
-
-[node name="Timer" type="Timer" parent="."]
+position = Vector2(0, 16)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7s4cp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 16)
 sprite_frames = SubResource("SpriteFrames_s3wfr")
-animation = &"walk"
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.881269
+offset = Vector2(0, -16)
+flip_h = true
+
+[node name="DetectCharacters" type="Area2D" parent="."]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectCharacters"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_lfm75")
+
+[connection signal="body_entered" from="DetectCharacters" to="." method="_on_detect_characters_body_entered"]

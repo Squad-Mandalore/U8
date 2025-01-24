@@ -36,6 +36,8 @@ static func stats_changed(delta_stats: StatsSpecifier):
 
 static func balance_changed(delta_balance: int):
     balance += delta_balance
+    # TODO: Check if not going below 0 should be the case or if run ends?
+    balance = max(0, balance)
     SignalDispatcher.reload_ui.emit(stats, balance)
 
 # func damage(damage_taken: int):

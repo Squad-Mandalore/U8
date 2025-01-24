@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://b2iq74ecijgw2"]
+[gd_scene load_steps=24 format=3 uid="uid://b2iq74ecijgw2"]
 
 [ext_resource type="Texture2D" uid="uid://cxub4rnusgyoo" path="res://characters/npcs/grosseskind/assets/KindOne.png" id="1_doy81"]
+[ext_resource type="Script" path="res://characters/npcs/grosseskind/grosseskind.gd" id="1_yd202"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hpxwl"]
 atlas = ExtResource("1_doy81")
@@ -81,7 +82,7 @@ region = Rect2(192, 0, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_aweh0"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_hpxwl")
 }, {
 "duration": 1.0,
@@ -99,13 +100,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h1gbe")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_oaunt")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_17yap")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_qy4cy")
 }, {
 "duration": 1.0,
@@ -116,6 +117,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x0415")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_hpxwl")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_1e2ev")
 }],
 "loop": true,
 "name": &"idle",
@@ -149,12 +156,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7pol"]
+size = Vector2(16, 6)
 
 [node name="Grosseskind" type="CharacterBody2D"]
+z_index = 50
+collision_layer = 5
+script = ExtResource("1_yd202")
+SPEED = 70.0
+_gender = "Diverse"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aweh0")
-animation = &"walk"
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.762841
+offset = Vector2(1, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_y7pol")
