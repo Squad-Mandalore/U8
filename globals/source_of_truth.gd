@@ -60,3 +60,10 @@ static func swap_item(from: int, to: int):
     inventory_slots[from] = inventory_slots[to]
     inventory_slots[to] = tmp
     SignalDispatcher.reload_ui.emit()
+
+static func get_all_attacks() -> Array[Attack]:
+    var player_attacks = stats.attacks.duplicate()
+    for item in inventory_slots:
+        if item is Weapon:
+            player_attacks.append(item.attack)
+    return player_attacks
