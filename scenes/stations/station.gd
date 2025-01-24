@@ -6,12 +6,18 @@ class_name Station
 @onready var animation_player = $AnimationPlayer
 
 signal train_enter
+signal level_lost
 
 func _ready() -> void:
+    var result = SignalDispatcher.player_zero_health.connect(_on_player_zero_health)
     player.speed_multiplier = 0.0
     player.hide()
     animation_player.play("train_enter")
 
+func _on_player_zero_health() -> void:
+    print("hui")
+    level_lost.emit()
+    
 func _on_animation_player_animation_finished(anim_name:StringName) -> void:
     match anim_name:
         "train_enter":

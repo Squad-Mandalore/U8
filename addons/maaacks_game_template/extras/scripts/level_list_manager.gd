@@ -68,6 +68,7 @@ func _on_level_lost():
         _try_connecting_signal_to_node(instance, &"restart_pressed", _reload_level)
         _try_connecting_signal_to_node(instance, &"main_menu_pressed", _load_main_menu)
     else:
+        current_level_id = 0
         _reload_level()
 
 func _on_train_enter():

@@ -1,6 +1,7 @@
 extends Node2D
 
 signal level_won
+signal level_lost
 signal conversation_started
 
 const _LEFT_WIDTH: int = 329
@@ -26,6 +27,7 @@ func _center_x(train_length: int) -> float:
 
 func _ready() -> void:
     $DialogueBox.hide()
+    SignalDispatcher.player_zero_health.connect(_on_player_zero_health)
     var train_length: int = _rng.randi_range(0, 3)
     for i in train_length:
         var center_scene: Node2D = center.instantiate()
@@ -33,14 +35,15 @@ func _ready() -> void:
         self.add_child(center_scene)
     _right.position.x = _right_x(train_length)
     SignalDispatcher.sound_music.emit("train")
+    
+func _on_player_zero_health() -> void:
+    level_lost.emit()
 
 func _on_player_talk_enabled() -> void:
     _hud.show_interaction_button()
 
-
 func _on_player_talk_disabled() -> void:
     _hud.hide_interaction_button()
-
 
 func _on_player_hud_toggled(visible: bool) -> void:
     _hud.visible = visible
