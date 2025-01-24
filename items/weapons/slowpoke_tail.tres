@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=6 format=3 uid="uid://ckynd8kmolf6x"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=6 format=3 uid="uid://8n1udfw3cm44"]
 
 [ext_resource type="Resource" uid="uid://bte0kpmn4dqic" path="res://characters/attacks/assets/tail_whip.tres" id="1_p0dad"]
 [ext_resource type="Script" path="res://items/weapons/weapon.gd" id="2_lymbw"]

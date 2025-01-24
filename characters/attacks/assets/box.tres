@@ -1,6 +1,30 @@
-[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://d16o80yo04b0b"]
+[gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://d16o80yo04b0b"]
 
+[ext_resource type="Script" path="res://characters/attacks/formula.gd" id="1_51ftd"]
 [ext_resource type="Script" path="res://characters/attacks/attack.gd" id="1_trmon"]
+
+[sub_resource type="Resource" id="Resource_dl5rh"]
+script = ExtResource("1_51ftd")
+base = 0
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 1.3
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
 
 [resource]
 script = ExtResource("1_trmon")
@@ -10,4 +34,4 @@ type = 1
 token = 1
 token_number = 1
 effect = ""
-damage_multiplier = 1.3
+formula = SubResource("Resource_dl5rh")

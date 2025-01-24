@@ -29,6 +29,7 @@ const MAX_INVENTORY_SIZE: int = 16
 
 static func stats_changed(delta_stats: StatsSpecifier):
     stats.add(delta_stats)
+    set_damage_for_all_attacks()
     SignalDispatcher.reload_ui.emit()
 
 static func balance_changed(delta_balance: int):
@@ -67,3 +68,34 @@ static func get_all_attacks() -> Array[Attack]:
         if item is Weapon:
             player_attacks.append(item.attack)
     return player_attacks
+
+static func set_damage_for_all_attacks():
+    for attack in stats.attacks:
+        attack.damage = calculate_damage(attack.formula)
+        print(attack.damage)
+    for item in inventory_slots:
+        if item is Weapon:
+            item.attack.damage = calculate_damage(item.attack.formula)
+            print(item.attack.damage)
+
+static func calculate_damage(formula: Formula):
+    return (
+        stats.max_health * formula.max_health_modifier +
+        stats.health * formula.health_modifier +
+        stats.armor * formula.armor_modifier +
+        stats.initiative * formula.initiative_modifier +
+        stats.dodge_chance * formula.dodge_chance_modifier +
+        stats.strength * formula.strength_modifier +
+        stats.coolness * formula.coolness_modifier +
+        stats.attractiveness * formula.attractiveness_modifier +
+        stats.intelligence * formula.intelligence_modifier +
+        stats.creativity * formula.creativity_modifier +
+        stats.luck * formula.luck_modifier +
+        stats.poison_resistance * formula.poison_resistance_modifier +
+        stats.bleed_resistance * formula.bleed_resistance_modifier +
+        stats.drug_resistance * formula.drug_resistance_modifier +
+        stats.poison_level * formula.poison_level_modifier +
+        stats.bleed_level * formula.bleed_level_modifier +
+        stats.drug_level * formula.drug_level_modifier
+    ) * formula.effect_modifier + formula.effect_flat_modifier + formula.base
+
