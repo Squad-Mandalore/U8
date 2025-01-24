@@ -23,6 +23,12 @@ func _ready():
 func set_stat_name(name: String):
     %StatNameLabel.text = name
 
+func set_stat(cur_value: int, max_value: int) -> void:
+    cur_value = min(cur_value, max_value)
+    set_max_value(max_value)
+    set_stat_number("%d/%d" % [cur_value, max_value])
+    set_cur_value(cur_value)
+
 func set_stat_number(number: String):
     %StatNumberLabel.text = number
 

@@ -12,7 +12,7 @@ func set_ck3_progress_bar_value(value: int):
 func update_inventory_stat_hud():
     self.stats = SourceOfTruth.stats
     update_health(stats.health, stats.max_health)
-    update_dodge_chance(stats.dodge_chance, 50)
+    update_dodge_chance(stats.dodge_chance)
     update_armor(stats.armor)
     update_initiative(stats.initiative)
     update_strength(stats.strength)
@@ -27,18 +27,12 @@ func update_inventory_stat_hud():
 
 
 func update_health(new_health: int, max_health: int) -> void:
-    new_health = min(new_health, max_health)
-    %HealthBar.set_max_value(max_health)
     %HealthBar.set_stat_name("Gesundheit")
-    %HealthBar.set_stat_number("%d/%d" % [new_health, max_health])
-    %HealthBar.set_cur_value(new_health)
+    %HealthBar.set_stat(new_health, max_health)
 
-func update_dodge_chance(new_dodge_chance: int, max_dodge_chance: int) -> void:
-    new_dodge_chance = min(new_dodge_chance, max_dodge_chance)
-    %DodgeChanceBar.set_max_value(max_dodge_chance)
+func update_dodge_chance(new_dodge_chance: int) -> void:
     %DodgeChanceBar.set_stat_name("Ausweichchance")
-    %DodgeChanceBar.set_stat_number("%d/%d" % [new_dodge_chance, max_dodge_chance])
-    %DodgeChanceBar.set_cur_value(new_dodge_chance)
+    %DodgeChanceBar.set_stat(new_dodge_chance, 50)
 
 func update_armor(armor: int):
     (%LabelArmorStat as Label).text = str(armor)

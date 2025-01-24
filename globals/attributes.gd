@@ -2,10 +2,18 @@ class_name StatsSpecifier
 extends Resource
 
 @export var max_health: int
-@export var health: int
+@export var health: int:
+    set(value):
+        health = min(value, max_health)
+        print(health)
+        if health <= 0:
+            SignalDispatcher.player_zero_health.emit()
+            GameState.new_run_state()
 @export var armor: int
 @export var initiative: int
-@export var dodge_chance: int
+@export var dodge_chance: int:
+    set(value):
+        dodge_chance = min(value, 50)
 @export var strength: int
 @export var coolness: int
 @export var attractiveness: int
@@ -86,4 +94,3 @@ func _to_string() -> String:
     Bleed Level: %d
     Drug Level: %d
     """ % [max_health, health, armor, initiative, dodge_chance, strength, coolness, attractiveness, intelligence, creativity, luck, poison_resistance, bleed_resistance, drug_resistance, poison_level, bleed_level, drug_level]
-
