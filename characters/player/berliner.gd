@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var _animated_sprite_2d = $AnimatedSprite2D
 @onready var inventory: CanvasLayer = $Inventory
 @onready var _slowdown_area: Area2D = $SlowdownArea
+@onready var _hud: CanvasLayer = %HUD
 # var stats: StatsSpecifier = StatsSpecifier.new()
 # var base_stats: StatsSpecifier
 
@@ -21,13 +22,8 @@ var _talkable_npc: NPC = null:
             speed_multiplier = 1.0
         _talkable_npc = value
 
-signal talk_enabled()
-signal talk_disabled()
-signal started_talking(npc)
-signal stopped_talking(npc)
-signal hud_toggled(visible: bool)
-
 func _ready() -> void:
+    $DialogueBox.hide()
     inventory.hide()
     SourceOfTruth.set_damage_for_all_attacks()
     SignalDispatcher.reload_ui.emit()
@@ -183,12 +179,15 @@ func _on_slowdown_area_body_exited(body: Node2D):
 func _on_npc_started_talking(npc: NPC):
     switch_state(State.TALK)
     print("You are now talking to %s." % npc._name)
-    started_talking.emit(npc)
+    $DialogueBox.show()
+    $DialogueBox._on_node_2d_conversation_started(npc)
+    _hud.hide_status_panel()
 
 func _on_npc_stopped_talking(npc: NPC):
     switch_state(State.IDLE)
     print("You are no longer talking to %s." % npc._name)
-    stopped_talking.emit(npc)
+    $DialogueBox.hide()
+    _hud.show_status_panel()
 
 func _disable_scooting():
     _scooting_enabled = false
@@ -243,11 +242,11 @@ func _update_talkable_npc(npcs: Array[Node2D]) -> void:
     # Get the NPC we want to talk to
     _talkable_npc = _get_best_npc(npcs)
     if !_talkable_npc:
-        talk_disabled.emit()
+        _hud.hide_interaction_button()
         return
 
     _talkable_npc.enable_outline(Color(0, 1, 0, 1))
-    talk_enabled.emit()
+    _hud.show_interaction_button()
 
 func toggle_talking():
     if !_talkable_npc:
@@ -268,5 +267,21 @@ func toggle_inventory(set = null):
     if set == null:
         toggle = !inventory.visible
 
-    hud_toggled.emit(!toggle)
+    _hud.visible = !toggle
     inventory.visible = toggle
+
+func _on_dialogue_box_send_message(message):
+    $EidolonHandler.post_message(message)
+
+func _on_eidolon_handler_get_process_id(process_id):
+    var message = "Process ID: %s" % process_id
+    $DialogueBox.add_message("SYSTEM", message)
+
+func _on_eidolon_handler_new_message():
+    $DialogueBox.add_message("AGENT")
+
+func _on_eidolon_handler_get_message(message):
+    $DialogueBox.update_last_message(message)
+
+func _on_eidolon_handler_finish_message():
+    $DialogueBox.waiting = false

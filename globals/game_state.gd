@@ -8,7 +8,9 @@ const FILE_PATH = "res://globals/game_state.gd"
 @export var current_station:  int
 @export var times_played: int
 
-@export var balance: int
+@export var balance: int:
+    set(value):
+        balance = max(0, value)
 @export var cur_inventory_size: int = 4
 
 static func get_run_state() -> RunState:

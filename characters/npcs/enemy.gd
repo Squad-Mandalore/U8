@@ -1,5 +1,5 @@
 extends NPC
-class_name BOSS
+class_name Enemy
 
 func _ready() -> void:
     _current_state = State.IDLE

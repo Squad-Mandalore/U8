@@ -3,8 +3,7 @@ extends CanvasLayer
 var talk_action_key: String
 
 func _ready() -> void:
-    talk_action_key = InputMap.action_get_events("talk")[0].as_text()[0]
-    (%ButtonHud/InteractionKeyMarginBox/InteractionKeyLabel as Label).text = talk_action_key
+    %ButtonHud.set_key_icon("talk")
     %ButtonHud.hide()
 
 func show_interaction_button() -> void:
