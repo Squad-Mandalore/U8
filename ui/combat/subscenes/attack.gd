@@ -46,3 +46,5 @@ func update_token(token_index: Utils.AttackTypes, token_number: int):
 func update_icon(effect: String):
     if effect.is_empty():
         %EffectIcon.hide()
+    else:
+        %EffectIcon.show()
