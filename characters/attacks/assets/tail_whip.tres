@@ -1,11 +1,37 @@
-[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://bte0kpmn4dqic"]
+[gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://bte0kpmn4dqic"]
 
+[ext_resource type="Script" path="res://characters/attacks/formula.gd" id="1_8i4o1"]
 [ext_resource type="Script" path="res://characters/attacks/attack.gd" id="1_co1ok"]
+
+[sub_resource type="Resource" id="Resource_jcw01"]
+script = ExtResource("1_8i4o1")
+base = 187
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
 
 [resource]
 script = ExtResource("1_co1ok")
 name = "Tail Whip"
-damage = 187
-type = "Coolness"
-token = "Attraktiviät"
+damage = 0
+type = 2
+token = 0
+token_number = 2
 effect = "Zu Deutsch Cock Schelle"
+formula = SubResource("Resource_jcw01")

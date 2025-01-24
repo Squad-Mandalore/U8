@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1o0wyh7qx3y7"]
+
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_l66h0"]
+[ext_resource type="Script" path="res://scenes/stations/03_karl_bonhoeffer_nervenklinik/karl_bonhoeffer_nervenklinik.gd" id="2_2od5c"]
+
+[node name="KarlBonhoefferNervenklinik" instance=ExtResource("1_l66h0")]
+script = ExtResource("2_2od5c")
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Karl-Bonhoeffer-Nervenklinik"

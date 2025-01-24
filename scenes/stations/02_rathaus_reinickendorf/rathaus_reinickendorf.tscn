@@ -12,6 +12,7 @@
 [node name="RathausReinickendorf" instance=ExtResource("1_jboli")]
 script = ExtResource("2_dif4s")
 
+
 [node name="Grosseskind" parent="." index="4" instance=ExtResource("3_6870u")]
 position = Vector2(383, 305)
 
@@ -29,3 +30,7 @@ position = Vector2(379, 341)
 
 [node name="Politiker" parent="." index="9" instance=ExtResource("8_wlhj5")]
 position = Vector2(412, 305)
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Rathaus Reinickendorf"
+

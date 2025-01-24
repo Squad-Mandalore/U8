@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bad5ie03oi1uu"]
+
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_kvj24"]
+[ext_resource type="Script" path="res://scenes/stations/06_residenzstrasse/residenzstrasse.gd" id="2_hrggm"]
+
+[node name="Residenzstrasse" instance=ExtResource("1_kvj24")]
+script = ExtResource("2_hrggm")
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Residenzstrasse"

@@ -6,6 +6,14 @@ var attack_hover: AttackHover = null
 func _ready() -> void:
     SignalDispatcher.add_attack_hover.connect(add_attack_hover)
     SignalDispatcher.remove_attack_hover.connect(remove_attack_hover)
+    update_combat_hud()
+
+func update_combat_hud():
+    %PlayerStatusPanel.update_status_panel(SourceOfTruth.stats)
+    # TODO: enemy stat logic
+    # %EnemyStatusPanel.update_status_panel(enemy.stats)
+    %AttackSwapper.attacks = SourceOfTruth.get_all_attacks()
+    %FeedbackBox.set_feedback("Pick your poison :)")
 
 func add_attack_hover(position: Vector2, attack: Attack):
     attack_hover = attack_hover_scene.instantiate()
@@ -19,3 +27,4 @@ func remove_attack_hover():
     if attack_hover:
         attack_hover.queue_free()
         attack_hover = null
+        SignalDispatcher.combat_exit.emit(get_parent())

@@ -15,6 +15,11 @@ func enable_outline(color : Color = Color(1, 0, 0, 1)) -> void:
         # No shader assigned
         _sprite.material = null
 
+# DEBUG
+func _input(event: InputEvent) -> void:
+    if event.is_action_pressed("talk"):
+        SignalDispatcher.combat_enter.emit()
+
 func _on_animated_sprite_2d_animation_finished() -> void:
     if _sprite.animation == "idle2":
         _sprite.play("idle")

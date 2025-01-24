@@ -1,44 +1,43 @@
 extends Node
 class_name SourceOfTruth
 
-static var _run_state = GameState.get_run_state()
-static var _game_state = GameState.get_game_state()
-static var stats: StatsSpecifier:
+static var stats: Class:
     set(value):
-        _run_state.stats = value
+        RunState.set_stats(value)
     get():
-        return _run_state.stats
+        return RunState.get_stats()
 
 static var balance: int:
     set(value):
-        _game_state.balance = value
+        GameState.set_balance(value)
     get():
-        return _game_state.balance
+        return GameState.get_balance()
 
 static var inventory_slots: Array[Item]:
     set(value):
-        _run_state.inventory_slots = value
+        RunState.set_inventory_slots(value)
     get():
-        return _run_state.inventory_slots
+        return RunState.get_inventory_slots()
+
 static var cur_inventory_size: int:
     set(value):
-        _game_state.cur_inventory_size = value
+        GameState.set_current_inv_size(value)
     get():
-        return _game_state.cur_inventory_size
+        return GameState.get_current_inv_size()
+
 const MAX_INVENTORY_SIZE: int = 16
 
 static func stats_changed(delta_stats: StatsSpecifier):
-    # print("Before: " + str(stats))
     stats.add(delta_stats)
-    # print("After: " + str(stats))
-    SignalDispatcher.reload_ui.emit(stats, balance)
-    # SignalDispatcher.update_status_panel_stat.emit(stats, balance)
+    set_damage_for_all_attacks()
+    SignalDispatcher.reload_ui.emit()
 
 static func balance_changed(delta_balance: int):
     balance += delta_balance
     # TODO: Check if not going below 0 should be the case or if run ends?
     balance = max(0, balance)
-    SignalDispatcher.reload_ui.emit(stats, balance)
+    SignalDispatcher.reload_ui.emit()
+
 
 # func damage(damage_taken: int):
 #     stats.health -= damage_taken
@@ -49,7 +48,7 @@ static func add_item(item: Item):
     for i in range(cur_inventory_size):
         if inventory_slots[i] == null:
             inventory_slots[i] = item
-            stats_changed(item.properties)
+            stats_changed(item.stats)
             return
 
 static func remove_item(i: int):
@@ -57,11 +56,28 @@ static func remove_item(i: int):
         if inventory_slots[i] != null:
             var ephemeral_item = inventory_slots[i]
             inventory_slots[i] = null
-            stats_changed(ephemeral_item.properties.negate())
+            stats_changed(ephemeral_item.stats.negate())
         return
 
 static func swap_item(from: int, to: int):
     var tmp = inventory_slots[from]
     inventory_slots[from] = inventory_slots[to]
     inventory_slots[to] = tmp
-    SignalDispatcher.reload_ui.emit(stats, balance)
+    SignalDispatcher.reload_ui.emit()
+
+static func get_all_attacks() -> Array[Attack]:
+    var player_attacks = stats.attacks.duplicate()
+    for item in inventory_slots:
+        if item is Weapon:
+            player_attacks.append(item.attack)
+    return player_attacks
+
+static func set_damage_for_all_attacks():
+    for attack in stats.attacks:
+        attack.calculate_damage()
+        print(attack.damage)
+    for item in inventory_slots:
+        if item is Weapon:
+            item.attack.calculate_damage()
+            print(item.attack.damage)
+

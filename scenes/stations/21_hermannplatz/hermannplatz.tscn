@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d04o5s6wxgwy2"]
+
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_ckini"]
+[ext_resource type="Script" path="res://scenes/stations/21_hermannplatz/hermannplatz.gd" id="2_tre2w"]
+
+[node name="Hermannplatz" instance=ExtResource("1_ckini")]
+script = ExtResource("2_tre2w")
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Hermannplatz"

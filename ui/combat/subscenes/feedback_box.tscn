@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://q4yxjjlox2rt"]
+[gd_scene load_steps=4 format=3 uid="uid://q4yxjjlox2rt"]
 
 [ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="1_fxsb6"]
+[ext_resource type="Script" path="res://ui/combat/subscenes/feedback_box.gd" id="1_vue2e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddwov"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
@@ -17,9 +18,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vue2e")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(627, 169)
+layout_mode = 0
 offset_right = 627.0
 offset_bottom = 169.0
 size_flags_horizontal = 4

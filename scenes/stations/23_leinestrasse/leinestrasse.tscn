@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq2502n65sjvs"]
+
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_khgcf"]
+[ext_resource type="Script" path="res://scenes/stations/23_leinestrasse/leinestrasse.gd" id="2_s04fd"]
+
+[node name="Leinestrasse" instance=ExtResource("1_khgcf")]
+script = ExtResource("2_s04fd")
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Leinestraße"

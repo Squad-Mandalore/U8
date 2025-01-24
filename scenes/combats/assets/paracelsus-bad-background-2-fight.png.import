@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://druqr4cv3o1v6"
-path="res://.godot/imported/strength_blue.svg-61bc4bd23612aaf07332ee356315efb0.ctex"
+uid="uid://cjp87k02phlcp"
+path="res://.godot/imported/paracelsus-bad-background-2-fight.png-fdd58088e38576bea9fbf463263315d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/combat/assets/strength_blue.svg"
-dest_files=["res://.godot/imported/strength_blue.svg-61bc4bd23612aaf07332ee356315efb0.ctex"]
+source_file="res://scenes/combats/assets/paracelsus-bad-background-2-fight.png"
+dest_files=["res://.godot/imported/paracelsus-bad-background-2-fight.png-fdd58088e38576bea9fbf463263315d2.ctex"]
 
 [params]
 
@@ -31,7 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
+detect_3d/compress_to=0

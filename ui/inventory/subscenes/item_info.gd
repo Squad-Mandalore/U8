@@ -15,10 +15,10 @@ func set_item_description(item: Item):
     (%ItemDescriptionLabel as RichTextLabel).text = item.description
 
 func set_stats(item: Item):
-    for property in item.properties.get_property_list():
+    for property in item.stats.get_property_list():
         # Check if the property name exists in stats_dict
         if Utils.STATS_DICT.has(property.name):
-            var property_value = item.properties.get(property.name)
+            var property_value = item.stats.get(property.name)
             if property_value != 0:
                 var new_stat_row = new_stat_row_scene.instantiate()
                 %StatVBox.add_child(new_stat_row)

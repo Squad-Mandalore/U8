@@ -1,181 +1,133 @@
-[gd_scene load_steps=33 format=3 uid="uid://cg2mx5g7rsevc"]
+[gd_scene load_steps=57 format=3 uid="uid://cg2mx5g7rsevc"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/pause_menu_controller.gd" id="1_ljn6m"]
 [ext_resource type="PackedScene" uid="uid://c53q3lkal5pmk" path="res://ui/pause_menu/pause_menu.tscn" id="2_t4jtf"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/level_list_loader.gd" id="3_42ucf"]
 [ext_resource type="Script" path="res://globals/station_settings.gd" id="4_5em8a"]
+[ext_resource type="PackedScene" uid="uid://dxtsv1xtfd42n" path="res://scenes/stations/01_wittenau/wittenau.tscn" id="5_cdw3f"]
 [ext_resource type="PackedScene" uid="uid://duxb6t4ycj6x4" path="res://ui/loading_screen/level_loading_screen.tscn" id="5_u4na7"]
+[ext_resource type="PackedScene" uid="uid://vj01awpscehx" path="res://scenes/stations/02_rathaus_reinickendorf/rathaus_reinickendorf.tscn" id="6_81i5x"]
 [ext_resource type="Script" path="res://ui/configurable_sub_viewport.gd" id="6_o8n2l"]
+[ext_resource type="PackedScene" uid="uid://c1o0wyh7qx3y7" path="res://scenes/stations/03_karl_bonhoeffer_nervenklinik/karl_bonhoeffer_nervenklinik.tscn" id="7_wcv8b"]
+[ext_resource type="PackedScene" uid="uid://dni73m7g8lip1" path="res://scenes/stations/04_lindauer_allee/lindauer_allee.tscn" id="8_cq5pg"]
 [ext_resource type="Script" path="res://globals/level_list_state_manager.gd" id="8_lvsfu"]
+[ext_resource type="PackedScene" uid="uid://dnueionl57e3i" path="res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn" id="9_16fs4"]
 [ext_resource type="Script" path="res://ui/sound_effect_player.gd" id="9_uu4yx"]
+[ext_resource type="PackedScene" uid="uid://bad5ie03oi1uu" path="res://scenes/stations/06_residenzstrasse/residenzstrasse.tscn" id="10_fwx5o"]
+[ext_resource type="PackedScene" uid="uid://cl5fn5xxtqxgn" path="res://scenes/stations/07_franz_neumann_platz/franz_neumann_platz.tscn" id="11_2nicx"]
+[ext_resource type="PackedScene" uid="uid://dbog1wkc3h6mo" path="res://scenes/stations/08_osloer_strasse/osloer_strasse.tscn" id="12_bgutl"]
+[ext_resource type="PackedScene" uid="uid://cb2gskxfy55od" path="res://scenes/stations/09_parkstrasse/pankstrasse.tscn" id="13_a74v6"]
+[ext_resource type="PackedScene" uid="uid://h7oswlqu4ie4" path="res://scenes/stations/10_gesundbrunnen/gesundbrunnen.tscn" id="14_2qduo"]
+[ext_resource type="PackedScene" uid="uid://bynwb8gcmybml" path="res://scenes/stations/11_voltastrasse/voltastrasse.tscn" id="15_7dqxe"]
+[ext_resource type="PackedScene" uid="uid://dy2upyyb8cu4q" path="res://scenes/stations/12_bernauer_strasse/bernauer_strasse.tscn" id="16_wkksn"]
+[ext_resource type="PackedScene" uid="uid://bmn4d25wbyee3" path="res://scenes/stations/13_rosenthaler_platz/rosenthaler_platz.tscn" id="17_nyne2"]
+[ext_resource type="PackedScene" uid="uid://cg403mbbhg1io" path="res://scenes/stations/14_weinmeisterstrasse/weinmeisterstrasse.tscn" id="18_u22aj"]
+[ext_resource type="PackedScene" uid="uid://5qnw3pf4n4fk" path="res://scenes/stations/15_alexanderplatz/alexanderplatz.tscn" id="19_yhcpu"]
+[ext_resource type="PackedScene" uid="uid://cydlub847j5gx" path="res://scenes/stations/16_jannowitzbruecke/jannowitzbruecke.tscn" id="20_2yure"]
+[ext_resource type="PackedScene" uid="uid://bd4hiqvpp361s" path="res://scenes/stations/17_heinrich_heine_strasse/heinrich_heine_strasse.tscn" id="21_qjer3"]
+[ext_resource type="PackedScene" uid="uid://dh8p5cvwbvru1" path="res://scenes/stations/18_moritzplatz/moritzplatz.tscn" id="22_jo5h2"]
+[ext_resource type="PackedScene" uid="uid://t06m0njij5ku" path="res://scenes/stations/19_kottbusser_tor/kottbusser_tor.tscn" id="23_ute5o"]
+[ext_resource type="PackedScene" uid="uid://donx1g0qxa2ix" path="res://scenes/stations/20_schoenleinstrasse/schoenleinstrasse.tscn" id="24_gayk2"]
+[ext_resource type="PackedScene" uid="uid://d04o5s6wxgwy2" path="res://scenes/stations/21_hermannplatz/hermannplatz.tscn" id="25_5bbgl"]
+[ext_resource type="PackedScene" uid="uid://dfokvab3nhxg3" path="res://scenes/stations/22_boddinstrasse/boddinstrasse.tscn" id="26_upwdu"]
+[ext_resource type="PackedScene" uid="uid://dq2502n65sjvs" path="res://scenes/stations/23_leinestrasse/leinestrasse.tscn" id="27_rtla3"]
+[ext_resource type="PackedScene" uid="uid://cmj3348ognt37" path="res://scenes/stations/24_hermannstrasse/hermannstrasse.tscn" id="28_5smci"]
 
 [sub_resource type="Resource" id="Resource_76f8c"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/01_wittenau/wittenau.tscn"
-name = "Wittenau"
-subtitle = "Wilelmsruher Damm"
-doener = true
+station = ExtResource("5_cdw3f")
 
 [sub_resource type="Resource" id="Resource_qcbof"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/02_rathaus_reinickendorf/rathaus_reinickendorf.tscn"
-name = "Rathaus Reinickendorf"
-subtitle = ""
-doener = false
+station = ExtResource("6_81i5x")
 
 [sub_resource type="Resource" id="Resource_ati3o"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Karl-Bonhoeffer-Nervenklinik"
-subtitle = ""
-doener = false
+station = ExtResource("7_wcv8b")
 
 [sub_resource type="Resource" id="Resource_u5w1i"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Lindauer Allee"
-subtitle = ""
-doener = false
+station = ExtResource("8_cq5pg")
 
 [sub_resource type="Resource" id="Resource_xc7g7"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Paracelsus-Bad"
-subtitle = ""
-doener = false
+station = ExtResource("9_16fs4")
 
 [sub_resource type="Resource" id="Resource_8dwdu"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Residenzstrasse"
-subtitle = ""
-doener = false
+station = ExtResource("10_fwx5o")
 
 [sub_resource type="Resource" id="Resource_jo56u"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Franz-Neumann-Platz"
-subtitle = "-Am Schäfersee-"
-doener = false
+station = ExtResource("11_2nicx")
 
 [sub_resource type="Resource" id="Resource_hx1jk"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Osloer Straße"
-subtitle = ""
-doener = false
+station = ExtResource("12_bgutl")
 
 [sub_resource type="Resource" id="Resource_dm5ny"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Pankstrasse"
-subtitle = ""
-doener = false
+station = ExtResource("13_a74v6")
 
 [sub_resource type="Resource" id="Resource_8hf2s"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Gesundbrunnen"
-subtitle = ""
-doener = false
+station = ExtResource("14_2qduo")
 
 [sub_resource type="Resource" id="Resource_bvoy2"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Voltastraße"
-subtitle = ""
-doener = false
+station = ExtResource("15_7dqxe")
 
 [sub_resource type="Resource" id="Resource_7sk3i"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Bernauer Straße"
-subtitle = ""
-doener = false
+station = ExtResource("16_wkksn")
 
 [sub_resource type="Resource" id="Resource_63o7y"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Rosenthaler Platz"
-subtitle = ""
-doener = false
+station = ExtResource("17_nyne2")
 
 [sub_resource type="Resource" id="Resource_hsclt"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Weinmeisterstraße"
-subtitle = ""
-doener = false
+station = ExtResource("18_u22aj")
 
 [sub_resource type="Resource" id="Resource_qb7e6"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Alexanderplatz"
-subtitle = ""
-doener = false
+station = ExtResource("19_yhcpu")
 
 [sub_resource type="Resource" id="Resource_24kxm"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Jannowitzbrücke"
-subtitle = ""
-doener = false
+station = ExtResource("20_2yure")
 
 [sub_resource type="Resource" id="Resource_64hvw"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Heinrich-Heine-Straße"
-subtitle = ""
-doener = false
+station = ExtResource("21_qjer3")
 
 [sub_resource type="Resource" id="Resource_dwflk"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Moritzplatz"
-subtitle = ""
-doener = false
+station = ExtResource("22_jo5h2")
 
 [sub_resource type="Resource" id="Resource_7qiwr"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Kottbusser Tor"
-subtitle = ""
-doener = false
+station = ExtResource("23_ute5o")
 
 [sub_resource type="Resource" id="Resource_u3mes"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Schönleinstraße"
-subtitle = ""
-doener = false
+station = ExtResource("24_gayk2")
 
 [sub_resource type="Resource" id="Resource_ep1g4"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Hermannplatz"
-subtitle = ""
-doener = false
+station = ExtResource("25_5bbgl")
 
 [sub_resource type="Resource" id="Resource_4vedw"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Boddinstraße"
-subtitle = ""
-doener = false
+station = ExtResource("26_upwdu")
 
 [sub_resource type="Resource" id="Resource_rt8pt"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Leinestraße"
-subtitle = ""
-doener = false
+station = ExtResource("27_rtla3")
 
 [sub_resource type="Resource" id="Resource_8xhxn"]
 script = ExtResource("4_5em8a")
-path = "res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn"
-name = "Hermann-"
-subtitle = "straße"
-doener = false
+station = ExtResource("28_5smci")
 
 [node name="GameUI" type="Control"]
 layout_mode = 3

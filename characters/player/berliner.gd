@@ -23,11 +23,14 @@ var _talkable_npc: NPC = null:
 
 signal talk_enabled()
 signal talk_disabled()
+signal started_talking(npc)
+signal stopped_talking(npc)
 signal hud_toggled(visible: bool)
 
 func _ready() -> void:
     inventory.hide()
-    SignalDispatcher.reload_ui.emit(SourceOfTruth.stats, SourceOfTruth.balance)
+    SourceOfTruth.set_damage_for_all_attacks()
+    SignalDispatcher.reload_ui.emit()
 
 # func _process(delta):
 #     pass
@@ -64,6 +67,7 @@ func _physics_process(delta: float) -> void:
         switch_state(State.IDLE)
 
     move_and_collide(velocity * delta)
+
 
 func _handle_scooting(delta: float) -> void:
     var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -179,10 +183,12 @@ func _on_slowdown_area_body_exited(body: Node2D):
 func _on_npc_started_talking(npc: NPC):
     switch_state(State.TALK)
     print("You are now talking to %s." % npc._name)
+    started_talking.emit(npc)
 
 func _on_npc_stopped_talking(npc: NPC):
     switch_state(State.IDLE)
     print("You are no longer talking to %s." % npc._name)
+    stopped_talking.emit(npc)
 
 func _disable_scooting():
     _scooting_enabled = false
@@ -247,7 +253,7 @@ func toggle_talking():
     if !_talkable_npc:
         return
 
-    if !_current_state == State.TALK:
+    if _current_state != State.TALK:
         switch_state(State.TALK)
         _talkable_npc.start_talking()
         SignalDispatcher.sound_effect.emit("villager")
