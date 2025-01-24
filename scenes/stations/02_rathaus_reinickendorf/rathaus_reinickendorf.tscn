@@ -1,10 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://vj01awpscehx"]
+[gd_scene load_steps=9 format=3 uid="uid://vj01awpscehx"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_jboli"]
 [ext_resource type="Script" path="res://scenes/stations/02_rathaus_reinickendorf/rathaus_reinickendorf.gd" id="2_dif4s"]
+[ext_resource type="PackedScene" uid="uid://b2iq74ecijgw2" path="res://characters/npcs/grosseskind/grosseskind.tscn" id="3_6870u"]
+[ext_resource type="PackedScene" uid="uid://bymkmcgp2ky2o" path="res://characters/npcs/drogenheandler/drogenheandler.tscn" id="4_2ti0u"]
+[ext_resource type="PackedScene" uid="uid://chtqtvhbm6tpl" path="res://characters/npcs/berghaingast/berghaingast.tscn" id="5_0h5dx"]
+[ext_resource type="PackedScene" uid="uid://bkaths3irgi7c" path="res://characters/npcs/chris/chris.tscn" id="6_5pq4l"]
+[ext_resource type="PackedScene" uid="uid://bex812hcoh6pq" path="res://characters/npcs/fahrkartenkontrolleurin/fahrkartenkonrtolleurin.tscn" id="7_1m0rv"]
+[ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politiker1/politiker1.tscn" id="8_wlhj5"]
 
 [node name="RathausReinickendorf" instance=ExtResource("1_jboli")]
 script = ExtResource("2_dif4s")
 
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Rathaus Reinickendorf"
+
+[node name="Grosseskind" parent="." index="4" instance=ExtResource("3_6870u")]
+position = Vector2(383, 305)
+
+[node name="Drogenheandler" parent="." index="5" instance=ExtResource("4_2ti0u")]
+position = Vector2(522, 317)
+
+[node name="Berghaingast" parent="." index="6" instance=ExtResource("5_0h5dx")]
+position = Vector2(451, 343)
+
+[node name="CharacterBody2D" parent="." index="7" instance=ExtResource("6_5pq4l")]
+position = Vector2(397, 266)
+
+[node name="Fahrkartenkonrtolleurin" parent="." index="8" instance=ExtResource("7_1m0rv")]
+position = Vector2(379, 341)
+
+[node name="Politiker" parent="." index="9" instance=ExtResource("8_wlhj5")]
+position = Vector2(412, 305)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=12 format=3 uid="uid://2p6mgnqih68g"]
 
 [ext_resource type="Script" path="res://scenes/trains/basic_train/train.gd" id="1_1jt1h"]
 [ext_resource type="Script" path="res://scenes/trains/background.gd" id="2_20w01"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cph57sst3icgu" path="res://characters/npcs/bettler1/bettler1.tscn" id="9_xenwl"]
 [ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politiker1/politiker1.tscn" id="10_rky5v"]
 [ext_resource type="AudioStream" uid="uid://6ahldo7k8y2m" path="res://scenes/trains/basic_train/assets/sounds/music/gof2.mp3" id="11_yi3rj"]
+[ext_resource type="PackedScene" uid="uid://bex812hcoh6pq" path="res://characters/npcs/fahrkartenkontrolleurin/fahrkartenkonrtolleurin.tscn" id="12_rqh7o"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -54,9 +55,18 @@ position = Vector2(488, 157)
 _gender = "Male"
 
 [node name="Politiker" parent="." instance=ExtResource("10_rky5v")]
-position = Vector2(264, 163)
+position = Vector2(264, 161)
 _name = "Olof Scholtz"
 RANDOM_NAME = false
+
+[node name="Fahrkartenkonrtolleurin" parent="." groups=["NPC"] instance=ExtResource("12_rqh7o")]
+position = Vector2(604, 153)
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_block_on_wall = false
+platform_on_leave = 2
+_name = "Schackeline"
 
 [node name="BackgroundMusicPlayerTrain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_yi3rj")

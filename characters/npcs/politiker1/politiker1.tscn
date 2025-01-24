@@ -112,9 +112,6 @@ floor_block_on_wall = false
 floor_snap_length = 0.0
 platform_on_leave = 2
 script = ExtResource("1_2022g")
-_name = null
-RANDOM_NAME = null
-_gender = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bg0ao")
@@ -122,11 +119,10 @@ shape = SubResource("RectangleShape2D_bg0ao")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4, 0)
 sprite_frames = SubResource("SpriteFrames_7wqtt")
 animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.759044
+frame_progress = 0.747132
 offset = Vector2(0, -16)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

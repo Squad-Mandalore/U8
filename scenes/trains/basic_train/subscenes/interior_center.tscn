@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c8viibwcd8eui"]
 
-[ext_resource type="Texture2D" uid="uid://cpnqt6gti5es2" path="res://assets/train/ubahn-v4-mitte-innen.png" id="1_g0617"]
+[ext_resource type="Texture2D" uid="uid://cpnqt6gti5es2" path="res://scenes/trains/basic_train/assets/ubahn-v4-mitte-innen.png" id="1_g0617"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1aqu"]
 size = Vector2(32, 10)

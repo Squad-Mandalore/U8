@@ -8,6 +8,8 @@ const _CENTER_WIDTH: int = 329
 const Y: int = 95
 
 @onready var _right: Node2D = $Right
+@onready var _fahrkartenkonrtolleurin = $Fahrkartenkonrtolleurin
+
 
 var _rng = RandomNumberGenerator.new()
 var center: PackedScene  = preload("res://scenes/trains/basic_train/subscenes/center.tscn")
@@ -31,7 +33,16 @@ func _ready() -> void:
         center_scene.position = Vector2(_center_x(i), Y)
         self.add_child(center_scene)
     _right.position.x = _right_x(train_length)
+    _spawn_farhkarten_kontrolleurin()
     SignalDispatcher.sound_music.emit("train")
-    
+
+func _spawn_farhkarten_kontrolleurin():
+    if randi() % 20 == 5:
+        _fahrkartenkonrtolleurin.position.x = _right.position.x + 100
+    else:
+        get_tree().queue_delete(_fahrkartenkonrtolleurin)
+        print("Schackeline will not hunt you today")
+
+
 func _on_player_zero_health() -> void:
     level_lost.emit()
