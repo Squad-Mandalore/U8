@@ -1,6 +1,7 @@
 extends Node2D
 
 signal level_won
+signal level_lost
 
 const _LEFT_WIDTH: int = 329
 const _CENTER_WIDTH: int = 329
@@ -23,6 +24,7 @@ func _center_x(train_length: int) -> float:
     return _CENTER_WIDTH * train_length + _LEFT_WIDTH
 
 func _ready() -> void:
+    SignalDispatcher.player_zero_health.connect(_on_player_zero_health)
     var train_length: int = _rng.randi_range(0, 3)
     for i in train_length:
         var center_scene: Node2D = center.instantiate()
@@ -30,4 +32,6 @@ func _ready() -> void:
         self.add_child(center_scene)
     _right.position.x = _right_x(train_length)
     SignalDispatcher.sound_music.emit("train")
-
+    
+func _on_player_zero_health() -> void:
+    level_lost.emit()
