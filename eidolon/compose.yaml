@@ -3,12 +3,7 @@ services:
         image: godot-agent
         build: .
         environment:
-          OPENAI_API_KEY: /run/secrets/openai_api_key
+          OPENAI_API_KEY: ${OPENAI_API_KEY}
           DISABLE_ANONYMOUS_METRICS: true
         ports:
           - '8080:8080'
-        secrets:
-          - openai_api_key
-secrets:
-  openai_api_key:
-    environment: OPENAI_API_KEY
