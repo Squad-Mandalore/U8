@@ -9,7 +9,7 @@ func set_attack(index: int, attack: Attack):
     get_node("%Attack" + str(index + 1)).attack = attack
 
 func set_attacks():
-    for i in range(len(attacks)):
+    for i in range(3):
         set_attack(i, attacks[i])
 
 func move_first_to_last(arr):

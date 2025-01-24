@@ -25,5 +25,5 @@ func _on_inventory_button_pressed() -> void:
     SourceOfTruth.remove_item(3)
 
 func _on_map_button_pressed() -> void:
-    var regenmantel = preload("res://items/armor/regenmantel.tres")
-    SourceOfTruth.add_item(regenmantel)
+    var slowpoke_tail = preload("res://items/weapons/slowpoke_tail.tres")
+    SourceOfTruth.add_item(slowpoke_tail)

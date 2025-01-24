@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=6 format=3 uid="uid://ckynd8kmolf6x"]
+
+[ext_resource type="Resource" uid="uid://bte0kpmn4dqic" path="res://characters/attacks/assets/tail_whip.tres" id="1_p0dad"]
+[ext_resource type="Script" path="res://items/weapons/weapon.gd" id="2_lymbw"]
+[ext_resource type="Script" path="res://globals/attributes.gd" id="3_mc6jo"]
+[ext_resource type="Texture2D" uid="uid://jlhwn8jhrrab" path="res://ui/hud/assets/ck_3_bar_full.svg" id="4_l6ivm"]
+
+[sub_resource type="Resource" id="Resource_hfqg5"]
+script = ExtResource("3_mc6jo")
+max_health = 1
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("2_lymbw")
+attack = ExtResource("1_p0dad")
+name = "Flegmon-Rute"
+description = "Sehr lecker. Wert hoch. "
+stats = SubResource("Resource_hfqg5")
+texture = ExtResource("4_l6ivm")
