@@ -34,10 +34,7 @@ static func stats_changed(delta_stats: StatsSpecifier):
 
 static func balance_changed(delta_balance: int):
     balance += delta_balance
-    # TODO: Check if not going below 0 should be the case or if run ends?
-    balance = max(0, balance)
     SignalDispatcher.reload_ui.emit()
-
 
 # func damage(damage_taken: int):
 #     stats.health -= damage_taken
@@ -80,4 +77,3 @@ static func set_damage_for_all_attacks():
         if item is Weapon:
             item.attack.calculate_damage()
             print(item.attack.damage)
-

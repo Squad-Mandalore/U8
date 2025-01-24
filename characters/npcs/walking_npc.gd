@@ -1,7 +1,7 @@
 extends NPC
 class_name WALKING_NPC
 
-@export var SPEED: float = 68.0
+@export var movement_speed: float = 68.0
 var _direction: Vector2 = Vector2.ZERO
 @onready var _timer = $Timer
 
@@ -18,9 +18,9 @@ func _physics_process(delta: float) -> void:
         _sprite.play("idle")
         return
 
-    var speed = SPEED
+    var speed = movement_speed
     if _player_nearby:
-        speed = SPEED / 2
+        speed = movement_speed / 2
 
     if _direction.x < 0:
         _sprite.flip_h = true

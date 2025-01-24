@@ -162,7 +162,7 @@ size = Vector2(16, 6)
 z_index = 50
 collision_layer = 5
 script = ExtResource("1_yd202")
-SPEED = 70.0
+movement_speed = 75.0
 _gender = "Diverse"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
