@@ -1,34 +1,35 @@
 extends Node
 class_name SourceOfTruth
 
-static var _run_state = GameState.get_run_state()
-static var _game_state = GameState.get_game_state()
 static var stats: Class:
     set(value):
-        _run_state.stats = value
+        RunState.set_stats(value)
     get():
-        return _run_state.stats
+        return RunState.get_stats()
 
 static var balance: int:
     set(value):
-        _game_state.balance = value
+        GameState.set_balance(value)
     get():
-        return _game_state.balance
+        return GameState.get_balance()
 
 static var inventory_slots: Array[Item]:
     set(value):
-        _run_state.inventory_slots = value
+        RunState.set_inventory_slots(value)
     get():
-        return _run_state.inventory_slots
+        return RunState.get_inventory_slots()
+
 static var cur_inventory_size: int:
     set(value):
-        _game_state.cur_inventory_size = value
+        GameState.set_current_inv_size(value)
     get():
-        return _game_state.cur_inventory_size
+        return GameState.get_current_inv_size()
+
 const MAX_INVENTORY_SIZE: int = 16
 
 static func stats_changed(delta_stats: StatsSpecifier):
     stats.add(delta_stats)
+    set_damage_for_all_attacks()
     SignalDispatcher.reload_ui.emit()
 
 static func balance_changed(delta_balance: int):
@@ -67,3 +68,13 @@ static func get_all_attacks() -> Array[Attack]:
         if item is Weapon:
             player_attacks.append(item.attack)
     return player_attacks
+
+static func set_damage_for_all_attacks():
+    for attack in stats.attacks:
+        attack.calculate_damage()
+        print(attack.damage)
+    for item in inventory_slots:
+        if item is Weapon:
+            item.attack.calculate_damage()
+            print(item.attack.damage)
+

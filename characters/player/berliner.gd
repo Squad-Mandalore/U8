@@ -29,6 +29,7 @@ signal hud_toggled(visible: bool)
 
 func _ready() -> void:
     inventory.hide()
+    SourceOfTruth.set_damage_for_all_attacks()
     SignalDispatcher.reload_ui.emit()
 
 # func _process(delta):
