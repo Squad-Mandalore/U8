@@ -49,22 +49,16 @@ func load_level(level_id : int):
     if level_file == null:
         levels_finished.emit()
         return
-    SceneLoader.load_scene(level_file.path, true)
-    level_load_started.emit()
-    await SceneLoader.scene_loaded
-    current_level = _attach_level(SceneLoader.get_resource())
+    current_level = _attach_level(level_file.station)
     level_loaded.emit()
 
-func load_level_path(scene_path : String):
+func load_scene(scene : Resource):
     if is_instance_valid(current_level):
         current_level.queue_free()
         await current_level.tree_exited
         current_level = null
-    if scene_path == null:
+    if scene == null:
         levels_finished.emit()
         return
-    SceneLoader.load_scene(scene_path, true)
-    level_load_started.emit()
-    await SceneLoader.scene_loaded
-    current_level = _attach_level(SceneLoader.get_resource())
+    current_level = _attach_level(scene)
     level_loaded.emit()
