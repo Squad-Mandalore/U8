@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qkqvul6j2ky5"
-path="res://.godot/imported/background.png-46ef47854896bdd261684d2c4aacf51b.ctex"
+uid="uid://cjp87k02phlcp"
+path="res://.godot/imported/paracelsus-bad-background-2-fight.png-fdd58088e38576bea9fbf463263315d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/trains/assets/background.png"
-dest_files=["res://.godot/imported/background.png-46ef47854896bdd261684d2c4aacf51b.ctex"]
+source_file="res://scenes/combats/assets/paracelsus-bad-background-2-fight.png"
+dest_files=["res://.godot/imported/paracelsus-bad-background-2-fight.png-fdd58088e38576bea9fbf463263315d2.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

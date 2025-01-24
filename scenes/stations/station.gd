@@ -28,7 +28,7 @@ func _on_animation_train_leave():
     train_enter.emit()
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-    animation_train_collision.disabled = true
+    animation_train_collision.call_deferred("set_disabled", true)
     player.hide()
     player.speed_multiplier = 0.0
     animation_player.play("train_leave")
