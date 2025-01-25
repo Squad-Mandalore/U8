@@ -50,5 +50,8 @@ func update_icon(effect: String):
         %EffectIcon.show()
 
 func _on_panel_container_gui_input(event: InputEvent) -> void:
-    if event.button_index == MOUSE_BUTTON_LEFT:
-        pass
+    if event is InputEventMouseButton:
+            if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+                # TODO: play attack animation and hide hud
+                SignalDispatcher.execute_attack.emit(attack, "Player")
+

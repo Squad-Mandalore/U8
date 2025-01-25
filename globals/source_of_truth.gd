@@ -76,3 +76,7 @@ static func set_damage_for_all_attacks():
         if item is Weapon:
             item.attack.calculate_damage(stats)
 
+static func calculate_damage(damage: int, stats: StatsSpecifier) -> int:
+    # crazy damage calculation function here
+    return damage
+
