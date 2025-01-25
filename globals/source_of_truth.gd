@@ -79,4 +79,3 @@ static func set_damage_for_all_attacks():
 static func calculate_damage(damage: int, stats: StatsSpecifier) -> int:
     # crazy damage calculation function here
     return damage
-

@@ -289,7 +289,7 @@ shape = SubResource("RectangleShape2D_4bu3e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sba5t")
-animation = &"battle_idle"
+animation = &"battle_intro"
 autoplay = "idle"
 offset = Vector2(0, -16)
 

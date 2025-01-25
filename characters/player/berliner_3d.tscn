@@ -1,0 +1,120 @@
+[gd_scene load_steps=17 format=3 uid="uid://bcgck0cuev43d"]
+
+[ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="1_nj5ds"]
+[ext_resource type="Script" path="res://characters/player/berliner_3d.gd" id="2_fdrdt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8jik"]
+atlas = ExtResource("1_nj5ds")
+region = Rect2(545, 1, 33, 34)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqqw1"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = SubResource("AtlasTexture_u8jik")
+texture_filter = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ckpl"]
+atlas = ExtResource("1_nj5ds")
+region = Rect2(886, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxi5i"]
+atlas = ExtResource("1_nj5ds")
+region = Rect2(920, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dtue"]
+atlas = ExtResource("1_nj5ds")
+region = Rect2(886, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efddw"]
+atlas = ExtResource("1_nj5ds")
+region = Rect2(954, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btrmd"]
+atlas = ExtResource("1_nj5ds")
+region = Rect2(648, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5jsw"]
+atlas = ExtResource("1_nj5ds")
+region = Rect2(682, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbqam"]
+atlas = ExtResource("1_nj5ds")
+region = Rect2(716, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt1pg"]
+atlas = ExtResource("1_nj5ds")
+region = Rect2(750, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gs7u"]
+atlas = ExtResource("1_nj5ds")
+region = Rect2(784, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvx4m"]
+atlas = ExtResource("1_nj5ds")
+region = Rect2(818, 0, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0fba"]
+atlas = ExtResource("1_nj5ds")
+region = Rect2(852, 0, 34, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hc6ld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ckpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxi5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dtue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efddw")
+}],
+"loop": true,
+"name": &"battle_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btrmd")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_j5jsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbqam")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_yt1pg")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_5gs7u")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_kvx4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0fba")
+}],
+"loop": false,
+"name": &"battle_intro",
+"speed": 7.0
+}]
+
+[node name="Berliner" type="AnimatedSprite3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.153354, -0.151474, -0.429718)
+material_override = SubResource("StandardMaterial3D_oqqw1")
+sprite_frames = SubResource("SpriteFrames_hc6ld")
+animation = &"battle_intro"
+autoplay = "battle_intro"
+frame = 6
+frame_progress = 1.0
+script = ExtResource("2_fdrdt")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
