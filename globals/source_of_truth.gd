@@ -25,6 +25,8 @@ static var cur_inventory_size: int:
     get():
         return GameState.get_current_inv_size()
 
+static var in_shop: bool = false
+
 const MAX_INVENTORY_SIZE: int = 16
 
 static func stats_changed(delta_stats: StatsSpecifier):
@@ -76,3 +78,6 @@ static func set_damage_for_all_attacks():
 static func calculate_damage(damage: int, stats: StatsSpecifier) -> int:
     # crazy damage calculation function here
     return damage
+
+static func calculate_selling_price(price: int) -> int:
+    return price * 0.7

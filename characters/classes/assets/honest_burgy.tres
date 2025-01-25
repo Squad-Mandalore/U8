@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Class" load_steps=6 format=3 uid="uid://fngonw15cf5o"]
 
 [ext_resource type="Script" path="res://characters/attacks/attack.gd" id="1_pp011"]
-[ext_resource type="Resource" uid="uid://d16o80yo04b0b" path="res://characters/attacks/assets/box.tres" id="2_utxx7"]
+[ext_resource type="Resource" uid="uid://d16o80yo04b0b" path="res://characters/attacks/assets/boxing.tres" id="2_utxx7"]
 [ext_resource type="Resource" uid="uid://oui3w7vat6ib" path="res://characters/attacks/assets/show_off.tres" id="3_x0a7h"]
 [ext_resource type="Resource" uid="uid://d4k5i6ua3pp0h" path="res://characters/attacks/assets/flirt.tres" id="4_s13dw"]
 [ext_resource type="Script" path="res://characters/classes/class.gd" id="5_ro1kk"]
