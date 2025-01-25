@@ -63,6 +63,9 @@ func execute_attack(attack: Attack, attacker: String):
     take_damage(attack.damage, enemy_stats)
     attacker_panel.update_status_panel()
     defender_panel.update_status_panel()
+    %FeedbackBox.set_feedback(attacker + " hat " + str(attack.damage) + " Schaden gemacht.")
+    # TODO: needs better logic here
+    await get_tree().create_timer(2).timeout
     if attacker == "Player":
         enemy_execute_attack()
 
