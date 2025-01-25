@@ -1,49 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://6gw4vbc22xu8"]
+[gd_scene load_steps=14 format=3 uid="uid://6gw4vbc22xu8"]
 
 [ext_resource type="PackedScene" uid="uid://ccxbv5rjap114" path="res://scenes/combats/subscenes/background.tscn" id="1_qt8oy"]
 [ext_resource type="Script" path="res://scenes/combats/combat.gd" id="1_wlkyy"]
-[ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="2_ys117"]
 [ext_resource type="Texture2D" uid="uid://cjyyhybqiea5t" path="res://characters/npcs/politiker1/assets/politik1anim.png" id="3_ieugk"]
+[ext_resource type="PackedScene" uid="uid://bcgck0cuev43d" path="res://characters/player/berliner_3d.tscn" id="3_r7kvr"]
 [ext_resource type="PackedScene" uid="uid://bkj14wl5ofnkb" path="res://ui/combat/combat_hud.tscn" id="4_33ekg"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u8jik"]
-atlas = ExtResource("2_ys117")
-region = Rect2(545, 1, 33, 34)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqqw1"]
-transparency = 1
-shading_mode = 0
-diffuse_mode = 3
-specular_mode = 2
-disable_ambient_light = true
-disable_fog = true
-albedo_texture = SubResource("AtlasTexture_u8jik")
-texture_filter = 0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eb3qs"]
-atlas = ExtResource("2_ys117")
-region = Rect2(579, 1, 33, 34)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lbp5w"]
-atlas = ExtResource("2_ys117")
-region = Rect2(613, 1, 33, 34)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_hc6ld"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u8jik")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eb3qs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lbp5w")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4hu2"]
 atlas = ExtResource("3_ieugk")
@@ -116,12 +77,7 @@ fov = 20.0
 [node name="Floor" parent="." instance=ExtResource("1_qt8oy")]
 unique_name_in_owner = true
 
-[node name="Berliner" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.153354, -0.151474, -0.429718)
-material_override = SubResource("StandardMaterial3D_oqqw1")
-sprite_frames = SubResource("SpriteFrames_hc6ld")
-autoplay = "default"
-frame_progress = 0.0866337
+[node name="Berliner" parent="." instance=ExtResource("3_r7kvr")]
 
 [node name="Enemy" type="AnimatedSprite3D" parent="."]
 unique_name_in_owner = true

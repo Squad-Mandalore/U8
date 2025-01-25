@@ -75,4 +75,3 @@ static func set_damage_for_all_attacks():
     for item in inventory_slots:
         if item is Weapon:
             item.attack.calculate_damage()
-
