@@ -11,6 +11,10 @@ func _ready() -> void:
     _current_state = State.IDLE
     if RANDOM_NAME:
         _name = NameGenerator.get_random_name(_gender)
+    # Enemy needs duplicated attacks otherwise it could interfere with the players attacks
+    for i in range(len(attacks)):
+        attacks[i] = attacks[i].duplicate()
+        attacks[i].calculate_damage(stats)
 
 # TODO: Use functions below do start boss fight in the future
 func start_talking() -> void:

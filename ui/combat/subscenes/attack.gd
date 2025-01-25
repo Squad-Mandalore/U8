@@ -48,3 +48,7 @@ func update_icon(effect: String):
         %EffectIcon.hide()
     else:
         %EffectIcon.show()
+
+func _on_panel_container_gui_input(event: InputEvent) -> void:
+    if event.button_index == MOUSE_BUTTON_LEFT:
+        pass

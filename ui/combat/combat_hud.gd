@@ -13,10 +13,11 @@ func set_enemy(enemy: Enemy):
     self.enemy = enemy
 
 func update_combat_hud():
+    if calculate_first_start():
+        %FeedbackBox.set_feedback("Deine Initiative ist höher, als die des Gegners.\nDu darfst starten.")
     %PlayerStatusPanel.update_status_panel(SourceOfTruth.stats)
     %EnemyStatusPanel.update_status_panel(enemy.stats)
     %AttackSwapper.attacks = SourceOfTruth.get_all_attacks()
-    %FeedbackBox.set_feedback("Pick your poison :)")
 
 func add_attack_hover(position: Vector2, attack: Attack):
     attack_hover = attack_hover_scene.instantiate()
@@ -30,3 +31,9 @@ func remove_attack_hover():
     if attack_hover:
         attack_hover.queue_free()
         attack_hover = null
+
+# true is player | false is enemy
+func calculate_first_start() -> bool:
+    var enemy_init = enemy.stats.initiative + (randi() % 3 + 1)
+    var player_init = SourceOfTruth.stats.initiative + (randi() % 3 + 1)
+    return player_init > enemy_init

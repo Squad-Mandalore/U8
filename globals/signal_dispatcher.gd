@@ -19,3 +19,5 @@ signal sound_music(name: String)
 
 signal combat_enter(enemy: Enemy)
 signal combat_exit(to_free: Node)
+
+signal attack_executed(attack: Attack)
