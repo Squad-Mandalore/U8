@@ -4,6 +4,7 @@ class_name Enemy
 @export var attacks: Array[Attack]
 @export var albedo_texture: AtlasTexture
 @export var combat_animation: String = "battle_idle"
+@export var stats: StatsSpecifier
 
 
 func _ready() -> void:
@@ -19,6 +20,9 @@ func start_talking() -> void:
 func stop_talking() -> void:
     _current_state = State.IDLE
     enable_outline(Color(0, 1, 0, 1))
+
+func start_combat():
+    SignalDispatcher.combat_enter.emit(self)
 
 func enable_outline(color : Color = Color(1, 0, 0, 1)) -> void:
     if outline_shader:

@@ -49,26 +49,23 @@ func all_items_are_same(array: Array) -> bool:
 func update_bleed(level: int) -> void:
     if level > 0:
         %BleedTexture.texture = bleed_texture
-        %BleedTexture.show()
-        %BleedLabel.show()
+        %BleedLabel.add_theme_color_override("font_color", Utils.RED)
     else:
         %BleedTexture.texture = null
-        %BleedLabel.hide()
+        %BleedLabel.add_theme_color_override("font_color", Utils.GREY)
 
 func update_poison(level: int) -> void:
     if level > 0:
         %PoisonTexture.texture = poison_texture
-        %PoisonTexture.show()
-        %PoisonLabel.show()
+        %PoisonLabel.add_theme_color_override("font_color", Utils.RED)
     else:
         %PoisonTexture.texture = null
-        %PoisonLabel.hide()
+        %PoisonLabel.add_theme_color_override("font_color", Utils.GREY)
 
 func update_drug(level: int) -> void:
     if level > 0:
         %DrugTexture.texture = drug_texture
-        %DrugTexture.show()
-        %DrugLabel.show()
+        %DrugLabel.add_theme_color_override("font_color", Utils.RED)
     else:
         %DrugTexture.texture = null
-        %DrugLabel.hide()
+        %DrugLabel.add_theme_color_override("font_color", Utils.GREY)

@@ -42,3 +42,5 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_otl22")
 theme_override_font_sizes/font_size = 24
 text = "Runde 1"
+
+[connection signal="mouse_entered" from="PanelContainer" to="." method="_on_panel_container_mouse_entered"]

@@ -15,9 +15,8 @@ func _ready() -> void:
     animation_player.play("train_enter")
 
 func _on_player_zero_health() -> void:
-    print("hui")
     level_lost.emit()
-    
+
 func _on_animation_player_animation_finished(anim_name:StringName) -> void:
     match anim_name:
         "train_enter":

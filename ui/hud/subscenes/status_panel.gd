@@ -3,6 +3,9 @@ extends Control
 var bleed_texture = preload("res://ui/hud/assets/blood.svg")
 var poison_texture = preload("res://ui/hud/assets/flask.svg")
 var drug_texture = preload("res://ui/hud/assets/syringe.svg")
+var white_bleed_texture = preload("res://ui/hud/assets/white_blood.svg")
+var white_poison_texture = preload("res://ui/hud/assets/white_flask.svg")
+var white_drug_texture = preload("res://ui/hud/assets/white_syringe.svg")
 
 func _ready() -> void:
     SignalDispatcher.reload_ui.connect(update_status_panel)
@@ -25,20 +28,17 @@ func update_balance(new_balance: int) -> void:
 func update_bleed(level: int) -> void:
     if level > 0:
         %BleedTexture.texture = bleed_texture
-        %BleedTexture.visible = true
     else:
-        %BleedTexture.texture = null
+        %BleedTexture.texture = white_bleed_texture
 
 func update_poison(level: int) -> void:
     if level > 0:
         %PoisonTexture.texture = poison_texture
-        %PoisonTexture.visible = true
     else:
-        %PoisonTexture.texture = null
+        %PoisonTexture.texture = white_poison_texture
 
 func update_drug(level: int) -> void:
     if level > 0:
         %DrugTexture.texture = drug_texture
-        %DrugTexture.visible = true
     else:
-        %DrugTexture.texture = null
+        %DrugTexture.texture = white_drug_texture
