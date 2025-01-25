@@ -71,7 +71,11 @@ static func get_all_attacks() -> Array[Attack]:
 
 static func set_damage_for_all_attacks():
     for attack in stats.attacks:
-        attack.calculate_damage()
+        attack.calculate_damage(stats)
     for item in inventory_slots:
         if item is Weapon:
-            item.attack.calculate_damage()
+            item.attack.calculate_damage(stats)
+
+static func calculate_damage(damage: int, stats: StatsSpecifier) -> int:
+    # crazy damage calculation function here
+    return damage

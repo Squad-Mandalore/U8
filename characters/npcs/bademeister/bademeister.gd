@@ -18,7 +18,7 @@ func enable_outline(color : Color = Color(1, 0, 0, 1)) -> void:
 func start_talking() -> void:
     _current_state = State.TALK
     enable_outline(Color(0, 0, 1, 1))
-    SignalDispatcher.combat_enter.emit(self)
+    start_combat()
 
 func _on_animated_sprite_2d_animation_finished() -> void:
     if _sprite.animation == "idle2":

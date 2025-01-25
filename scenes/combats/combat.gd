@@ -4,6 +4,7 @@ var enemy: Enemy:
     set(value):
         enemy = value
         update_enemy()
+        %CombatHud.set_enemy(enemy)
 
 # TODO: update floor
 func update_floor(floor: Node3D):

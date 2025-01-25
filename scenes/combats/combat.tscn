@@ -87,3 +87,4 @@ sprite_frames = SubResource("SpriteFrames_5ssat")
 autoplay = "default"
 
 [node name="CombatHud" parent="." instance=ExtResource("4_33ekg")]
+unique_name_in_owner = true

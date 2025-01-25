@@ -21,24 +21,24 @@ func _to_string() -> String:
     Damage Multiplier: %.2f
     """ % [name, damage, str(type), str(token), token_number, effect]
 
-func calculate_damage():
+func calculate_damage(stats: StatsSpecifier):
     damage = (
-        SourceOfTruth.stats.max_health * formula.max_health_modifier +
-        SourceOfTruth.stats.health * formula.health_modifier +
-        SourceOfTruth.stats.armor * formula.armor_modifier +
-        SourceOfTruth.stats.initiative * formula.initiative_modifier +
-        SourceOfTruth.stats.dodge_chance * formula.dodge_chance_modifier +
-        SourceOfTruth.stats.strength * formula.strength_modifier +
-        SourceOfTruth.stats.coolness * formula.coolness_modifier +
-        SourceOfTruth.stats.attractiveness * formula.attractiveness_modifier +
-        SourceOfTruth.stats.intelligence * formula.intelligence_modifier +
-        SourceOfTruth.stats.creativity * formula.creativity_modifier +
-        SourceOfTruth.stats.luck * formula.luck_modifier +
-        SourceOfTruth.stats.poison_resistance * formula.poison_resistance_modifier +
-        SourceOfTruth.stats.bleed_resistance * formula.bleed_resistance_modifier +
-        SourceOfTruth.stats.drug_resistance * formula.drug_resistance_modifier +
-        SourceOfTruth.stats.poison_level * formula.poison_level_modifier +
-        SourceOfTruth.stats.bleed_level * formula.bleed_level_modifier +
-        SourceOfTruth.stats.drug_level * formula.drug_level_modifier
+        stats.max_health * formula.max_health_modifier +
+        stats.health * formula.health_modifier +
+        stats.armor * formula.armor_modifier +
+        stats.initiative * formula.initiative_modifier +
+        stats.dodge_chance * formula.dodge_chance_modifier +
+        stats.strength * formula.strength_modifier +
+        stats.coolness * formula.coolness_modifier +
+        stats.attractiveness * formula.attractiveness_modifier +
+        stats.intelligence * formula.intelligence_modifier +
+        stats.creativity * formula.creativity_modifier +
+        stats.luck * formula.luck_modifier +
+        stats.poison_resistance * formula.poison_resistance_modifier +
+        stats.bleed_resistance * formula.bleed_resistance_modifier +
+        stats.drug_resistance * formula.drug_resistance_modifier +
+        stats.poison_level * formula.poison_level_modifier +
+        stats.bleed_level * formula.bleed_level_modifier +
+        stats.drug_level * formula.drug_level_modifier
     ) * formula.effect_modifier + formula.effect_flat_modifier + formula.base
 

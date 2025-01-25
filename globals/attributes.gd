@@ -5,7 +5,6 @@ extends Resource
 @export var health: int:
     set(value):
         health = min(value, max_health)
-        print(health)
         if health <= 0:
             SignalDispatcher.player_zero_health.emit()
             GameState.new_run_state()

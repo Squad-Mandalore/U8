@@ -85,5 +85,6 @@ size_flags_horizontal = 10
 size_flags_vertical = 8
 texture = ExtResource("2_g8esx")
 
+[connection signal="gui_input" from="PanelContainer" to="." method="_on_panel_container_gui_input"]
 [connection signal="mouse_entered" from="PanelContainer" to="." method="_on_panel_container_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer" to="." method="_on_panel_container_mouse_exited"]

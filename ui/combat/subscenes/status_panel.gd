@@ -5,12 +5,16 @@ var poison_texture = preload("res://ui/hud/assets/white_flask.svg")
 var drug_texture = preload("res://ui/hud/assets/white_syringe.svg")
 var tokens: Array[Utils.AttackTypes]
 var stance: Utils.AttackTypes = Utils.AttackTypes.Null
+var stats: StatsSpecifier:
+    set(value):
+        stats = value
+        update_status_panel()
 
 func _ready() -> void:
     tokens.resize(3)
     tokens.fill(Utils.AttackTypes.Null)
 
-func update_status_panel(stats: StatsSpecifier):
+func update_status_panel():
     update_health(stats.health, stats.max_health)
     update_bleed(stats.bleed_level)
     update_poison(stats.poison_level)
@@ -49,26 +53,43 @@ func all_items_are_same(array: Array) -> bool:
 func update_bleed(level: int) -> void:
     if level > 0:
         %BleedTexture.texture = bleed_texture
-        %BleedTexture.show()
-        %BleedLabel.show()
+        %BleedLabel.add_theme_color_override("font_color", Utils.RED)
     else:
         %BleedTexture.texture = null
-        %BleedLabel.hide()
+        %BleedLabel.add_theme_color_override("font_color", Utils.GREY)
 
 func update_poison(level: int) -> void:
     if level > 0:
         %PoisonTexture.texture = poison_texture
-        %PoisonTexture.show()
-        %PoisonLabel.show()
+        %PoisonLabel.add_theme_color_override("font_color", Utils.RED)
     else:
         %PoisonTexture.texture = null
-        %PoisonLabel.hide()
+        %PoisonLabel.add_theme_color_override("font_color", Utils.GREY)
 
 func update_drug(level: int) -> void:
     if level > 0:
         %DrugTexture.texture = drug_texture
-        %DrugTexture.show()
-        %DrugLabel.show()
+        %DrugLabel.add_theme_color_override("font_color", Utils.RED)
     else:
         %DrugTexture.texture = null
-        %DrugLabel.hide()
+        %DrugLabel.add_theme_color_override("font_color", Utils.GREY)
+
+func add_token(type: Utils.AttackTypes):
+    # first attacks decides initial stance
+    var full = all_items_are_same(tokens)
+    if full && tokens[0] == Utils.AttackTypes.Null:
+        tokens[0] = type
+        stance = type
+        return
+    # fill the tokens if its a different one
+    var filled = false
+    for i in range(len(tokens)):
+        if tokens[i] != type:
+            tokens[i] = type
+            filled = true
+            break
+    # fill the remaining array with Null
+    if filled:
+        for i in range(len(tokens)):
+            if tokens[i] != type:
+                tokens[i] = Utils.AttackTypes.Null
