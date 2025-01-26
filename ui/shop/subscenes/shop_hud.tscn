@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://c74j5v0sdslx2"]
+[gd_scene load_steps=17 format=3 uid="uid://c74j5v0sdslx2"]
 
 [ext_resource type="PackedScene" uid="uid://bjhsg8rtptnpa" path="res://ui/subscenes/inventory_slots.tscn" id="1_begsq"]
+[ext_resource type="Script" path="res://ui/shop/subscenes/shop_hud.gd" id="1_s3a48"]
 [ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="1_sef0k"]
 [ext_resource type="Texture2D" uid="uid://dvk6pvmy6n4xh" path="res://ui/shop/assets/shopping_cart_icon.svg" id="2_owujg"]
 [ext_resource type="Texture2D" uid="uid://bhrsh1sjnml85" path="res://characters/npcs/bademeister/assets/bademeister.png" id="3_6m6hl"]
 [ext_resource type="PackedScene" uid="uid://da2j1exv2p488" path="res://ui/inventory/subscenes/item_slot.tscn" id="3_fh4v0"]
+[ext_resource type="StyleBox" uid="uid://kopdyfe5yfv2" path="res://ui/shop/assets/shop_dialogue_box.tres" id="4_caqme"]
+[ext_resource type="Texture2D" uid="uid://bl3c0je5u73fw" path="res://ui/shop/assets/drink_vending_machine.png" id="5_pagsn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmb0b"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
@@ -70,6 +73,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_s3a48")
+is_human = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(0, 678)
@@ -115,103 +120,140 @@ texture = ExtResource("2_owujg")
 layout_mode = 2
 theme_override_constants/margin_bottom = 40
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HumanVBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer4"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HumanVBox"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer4/HBoxContainer"]
-custom_minimum_size = Vector2(250, 50)
+[node name="HumanLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HumanVBox/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 60)
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/normal_font = ExtResource("1_sef0k")
 theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/normal = ExtResource("4_caqme")
 bbcode_enabled = true
 text = "Dit macht dann nen [color=#FF4346]Zwambo an Euronen[/color]."
 scroll_active = false
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer4/HBoxContainer"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/HumanVBox/HBoxContainer"]
 position = Vector2(418, 33.3333)
 scale = Vector2(5.61111, 5.61111)
 sprite_frames = SubResource("SpriteFrames_s4jol")
 autoplay = "default"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer4/HBoxContainer"]
-custom_minimum_size = Vector2(175, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HumanVBox/HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 
-[node name="Seperator1" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer4"]
+[node name="Seperator1" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HumanVBox"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 10
 theme_override_constants/separation = 0
 theme_override_styles/separator = SubResource("StyleBoxLine_m50q7")
 
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HumanMargin" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 85
+
+[node name="MachineLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/normal_font = ExtResource("1_sef0k")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/normal = ExtResource("4_caqme")
+bbcode_enabled = true
+text = "Dit macht dann nen [color=#FF4346]Zwambo an Euronen[/color]."
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="ItemSlot1" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3/HBoxContainer2" instance=ExtResource("3_fh4v0")]
+[node name="ItemSlot1" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer2" instance=ExtResource("3_fh4v0")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 0
 
-[node name="ItemSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3/HBoxContainer2" instance=ExtResource("3_fh4v0")]
+[node name="ItemSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer2" instance=ExtResource("3_fh4v0")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ItemSlot3" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3/HBoxContainer2" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="ItemSlot4" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3/HBoxContainer2" instance=ExtResource("3_fh4v0")]
+[node name="ItemSlot3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer2" instance=ExtResource("3_fh4v0")]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3"]
+[node name="ItemSlot4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer2" instance=ExtResource("3_fh4v0")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="ItemSlot5" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3/HBoxContainer3" instance=ExtResource("3_fh4v0")]
+[node name="ItemSlot5" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer3" instance=ExtResource("3_fh4v0")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 0
 
-[node name="ItemSlot6" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3/HBoxContainer3" instance=ExtResource("3_fh4v0")]
+[node name="ItemSlot6" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer3" instance=ExtResource("3_fh4v0")]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 
-[node name="ItemSlot7" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3/HBoxContainer3" instance=ExtResource("3_fh4v0")]
+[node name="ItemSlot7" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer3" instance=ExtResource("3_fh4v0")]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 
-[node name="ItemSlot8" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer3/HBoxContainer3" instance=ExtResource("3_fh4v0")]
+[node name="ItemSlot8" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer3" instance=ExtResource("3_fh4v0")]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
+
+[node name="MachineHBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 273)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MachineHBox"]
+custom_minimum_size = Vector2(273, 273)
+layout_mode = 2
+texture = ExtResource("5_pagsn")
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
