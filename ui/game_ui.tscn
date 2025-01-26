@@ -172,7 +172,7 @@ script = ExtResource("6_o8n2l")
 [node name="LevelListManager" type="Node" parent="." node_paths=PackedStringArray("level_list_loader", "level_loading_screen")]
 script = ExtResource("8_lvsfu")
 level_list_loader = NodePath("../LevelLoader")
-main_menu_scene = "res://scenes/menus/main_menu/main_menu_with_animations.tscn"
+main_menu_scene = "res://ui/main_menu/main_menu.tscn"
 ending_scene = "res://scenes/end_credits/end_credits.tscn"
 level_loading_screen = NodePath("../LevelLoadingScreen")
 

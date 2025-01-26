@@ -93,3 +93,6 @@ func _on_credits_end_reached():
 
 func _on_back_button_pressed():
     _close_sub_menu()
+
+func _on_continue_game_button_pressed():
+    load_game_scene()
