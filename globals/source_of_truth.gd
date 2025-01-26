@@ -25,6 +25,8 @@ static var cur_inventory_size: int:
     get():
         return GameState.get_current_inv_size()
 
+static var in_shop: bool = false
+
 const MAX_INVENTORY_SIZE: int = 16
 
 static func stats_changed(delta_stats: StatsSpecifier):
@@ -40,10 +42,6 @@ static func balance_changed(delta_balance: int):
     balance += delta_balance
     SignalDispatcher.reload_ui.emit()
 
-# func damage(damage_taken: int):
-#     stats.health -= damage_taken
-#     SignalDispatcher.stats_changed.emit(stats, balance)
-
 static func add_item(item: Item):
     # TODO: else case
     for i in range(cur_inventory_size):
@@ -57,7 +55,8 @@ static func remove_item(i: int):
         if inventory_slots[i] != null:
             var ephemeral_item = inventory_slots[i]
             inventory_slots[i] = null
-            stats_changed(ephemeral_item.stats.negate())
+            var negated_stats = ephemeral_item.stats.negate()
+            stats_changed(negated_stats)
         return
 
 static func swap_item(from: int, to: int):
@@ -83,3 +82,6 @@ static func set_damage_for_all_attacks():
 static func calculate_damage(damage: int, stats: StatsSpecifier) -> int:
     # crazy damage calculation function here
     return damage
+
+static func calculate_selling_price(price: int) -> int:
+    return price * 0.7

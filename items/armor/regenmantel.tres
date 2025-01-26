@@ -30,3 +30,4 @@ name = "Regenmantel"
 description = "Es gibt kein schlechtes Wetter, nur schlechte Ausweichwerte! Und in Berlin regnet es oft. Auch drinnen. In der Bahn. Von der Decke."
 stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_r0sif")
+price = 120

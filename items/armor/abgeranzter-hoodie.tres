@@ -30,3 +30,4 @@ name = "Abgeranzter Hoodie"
 description = "Für den authentischen Neukölln-Vibe. Niemand weiß, was du darunter trägst – und niemand will es wissen."
 stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_abvr6")
+price = 15

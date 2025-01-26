@@ -26,10 +26,10 @@ func is_enabled() -> bool:
     return false
 
 func disable():
-    add_theme_stylebox_override("panel", preload("res://ui/inventory/assets/item_slot_disabled.tres"))
+    add_theme_stylebox_override("panel", preload("res://ui/assets/item_slot_disabled.tres"))
 
 func enable():
-    add_theme_stylebox_override("panel", preload("res://ui/inventory/assets/item_slot_enabled.tres"))
+    add_theme_stylebox_override("panel", preload("res://ui/assets/item_slot_enabled.tres"))
 
 func toggle_frame():
     if is_enabled():
@@ -39,14 +39,14 @@ func toggle_frame():
 
 func _on_mouse_entered() -> void:
     if is_enabled():
-        add_theme_stylebox_override("panel", preload("res://ui/inventory/assets/item_slot_enabled_hovered.tres"))
+        add_theme_stylebox_override("panel", preload("res://ui/assets/item_slot_enabled_hovered.tres"))
         SignalDispatcher.sound_effect.emit("hover_item")
         if item != null:
             SignalDispatcher.toggle_item_hud.emit(item)
 
 func _on_mouse_exited() -> void:
     if is_enabled():
-        add_theme_stylebox_override("panel", preload("res://ui/inventory/assets/item_slot_enabled.tres"))
+        add_theme_stylebox_override("panel", preload("res://ui/assets/item_slot_enabled.tres"))
         if ck3_progress_bar_value != 60:
             SignalDispatcher.toggle_item_hud.emit(null)
 
