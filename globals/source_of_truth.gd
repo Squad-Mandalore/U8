@@ -30,6 +30,10 @@ const MAX_INVENTORY_SIZE: int = 16
 static func stats_changed(delta_stats: StatsSpecifier):
     stats.add(delta_stats)
     set_damage_for_all_attacks()
+    if stats.health <= 0:
+        SignalDispatcher.player_zero_health.emit()
+        GameState.new_run_state()
+        return
     SignalDispatcher.reload_ui.emit()
 
 static func balance_changed(delta_balance: int):
