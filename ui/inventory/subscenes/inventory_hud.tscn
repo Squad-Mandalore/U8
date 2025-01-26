@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://rwuw0vie61sr" path="res://ui/hud/assets/white_flask.svg" id="6_se0kj"]
 [ext_resource type="StyleBox" uid="uid://cqwignq5q6i1c" path="res://ui/hud/assets/debuff_level_disabled.tres" id="6_yc6lu"]
 [ext_resource type="Texture2D" uid="uid://bwf8rc7n22rne" path="res://ui/hud/assets/white_syringe.svg" id="7_xaubm"]
-[ext_resource type="PackedScene" uid="uid://da2j1exv2p488" path="res://ui/inventory/subscenes/item_slot.tscn" id="8_rpjsw"]
-[ext_resource type="StyleBox" uid="uid://dw47tyut8uwd7" path="res://ui/inventory/assets/item_slot_disabled.tres" id="9_whkaq"]
+[ext_resource type="PackedScene" uid="uid://da2j1exv2p488" path="res://ui/subscenes/item_slot.tscn" id="8_rpjsw"]
+[ext_resource type="StyleBox" uid="uid://dw47tyut8uwd7" path="res://ui/assets/item_slot_disabled.tres" id="9_whkaq"]
 [ext_resource type="PackedScene" uid="uid://bjhsg8rtptnpa" path="res://ui/subscenes/inventory_slots.tscn" id="12_40tb1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5s4o"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_atwgh"]
 [ext_resource type="Script" path="res://ui/subscenes/inventory_slots.gd" id="1_xejif"]
-[ext_resource type="PackedScene" uid="uid://da2j1exv2p488" path="res://ui/inventory/subscenes/item_slot.tscn" id="2_hcft3"]
+[ext_resource type="PackedScene" uid="uid://da2j1exv2p488" path="res://ui/subscenes/item_slot.tscn" id="2_hcft3"]
 
 [node name="InventorySlots" type="VBoxContainer"]
 custom_minimum_size = Vector2(582, 199)

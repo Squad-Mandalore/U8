@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://da2j1exv2p488"]
 
-[ext_resource type="StyleBox" uid="uid://cjhr522il1ma6" path="res://ui/inventory/assets/item_slot_enabled.tres" id="1_0wmqr"]
-[ext_resource type="Script" path="res://ui/inventory/subscenes/item_slot.gd" id="2_muhkd"]
+[ext_resource type="StyleBox" uid="uid://cjhr522il1ma6" path="res://ui/assets/item_slot_enabled.tres" id="1_0wmqr"]
+[ext_resource type="Script" path="res://ui/subscenes/item_slot.gd" id="2_muhkd"]
 
 [node name="ItemSlot" type="PanelContainer"]
 offset_right = 64.0
