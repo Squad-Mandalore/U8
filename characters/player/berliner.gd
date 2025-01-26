@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var inventory: CanvasLayer = $Inventory
 @onready var _slowdown_area: Area2D = $SlowdownArea
 @onready var _hud: CanvasLayer = %HUD
+@onready var _dialogue_box = $DialogueBox
 # var stats: StatsSpecifier = StatsSpecifier.new()
 # var base_stats: StatsSpecifier
 
@@ -14,16 +15,16 @@ var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for
 
 const SPEED: float = 102.0
 var speed_multiplier: float = 1.0
-var _talkable_npc: NPC = null:
+var _interactable_npc: Npc = null:
     set(value):
         if value:
             speed_multiplier = 0.5
         else:
             speed_multiplier = 1.0
-        _talkable_npc = value
+        _interactable_npc = value
 
 func _ready() -> void:
-    $DialogueBox.hide()
+    _dialogue_box.hide()
     inventory.hide()
     SourceOfTruth.set_damage_for_all_attacks()
     SignalDispatcher.reload_ui.emit()
@@ -47,12 +48,11 @@ func _physics_process(delta: float) -> void:
 
     if direction.x < 0 and not _animated_sprite_2d.flip_h:
         _animated_sprite_2d.flip_h = true
-        if _talkable_npc:
-            _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
     elif direction.x > 0 and _animated_sprite_2d.flip_h:
         _animated_sprite_2d.flip_h = false
-        if _talkable_npc:
-            _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
+
+    if _interactable_npc:
+        _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
     if direction != Vector2.ZERO:
         velocity = direction * speed
@@ -118,8 +118,9 @@ func _handle_scooting(delta: float) -> void:
 func switch_state(new_state: State):
     if new_state != _current_state:
         # If we're leaving SCOOT mode, reset animation speeds
-        if _current_state == State.SCOOT and new_state != State.SCOOT:
+        if _current_state == State.SCOOT:
             _animated_sprite_2d.speed_scale = 1.0
+            speed_multiplier = 1.0
         _current_state = new_state
         match _current_state:
             State.TALK:
@@ -130,6 +131,10 @@ func switch_state(new_state: State):
                 _animated_sprite_2d.play("idle")
             State.DANCE:
                 _animated_sprite_2d.play("dance")
+            State.SCOOT:
+                speed_multiplier = 2.0
+                _animated_sprite_2d.play("scooting_horizontal")
+
 
 func _unhandled_input(event: InputEvent):
     if event.is_action_pressed("dance"):
@@ -146,7 +151,6 @@ func _unhandled_input(event: InputEvent):
             switch_state(State.IDLE)
         else:
             switch_state(State.SCOOT)
-            _animated_sprite_2d.play("scooting_horizontal")
 
 
 func _input(event: InputEvent):
@@ -157,37 +161,38 @@ func _input(event: InputEvent):
     if event is InputEventMouseButton and event.pressed:
         if event.button_index == MOUSE_BUTTON_LEFT:
             SignalDispatcher.toggle_item_hud.emit(null)
+
     if event.is_action_pressed("inventory"):
         toggle_inventory()
         SignalDispatcher.sound_effect.emit("pop")
 
 
-
 func _on_slowdown_area_body_entered(body: Node2D):
-    var npc: NPC = body
+    var npc: Npc = body
     npc.set_player_nearby(true)
     if _current_state != State.TALK:
         _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
 func _on_slowdown_area_body_exited(body: Node2D):
-    var npc: NPC = body
+    var npc: Npc = body
     npc.set_player_nearby(false)
     npc.disable_outline()
     if _current_state != State.TALK:
         _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
-func _on_npc_started_talking(npc: NPC):
+func _start_talking(npc: Npc):
     switch_state(State.TALK)
-    print("You are now talking to %s." % npc._name)
-    $DialogueBox.show()
-    $DialogueBox._on_node_2d_conversation_started(npc)
+    SignalDispatcher.sound_effect.emit("villager")
     _hud.hide_status_panel()
+    _dialogue_box.show()
+    _dialogue_box._on_node_2d_conversation_started(npc)
+    print("You are now talking to %s." % npc._name)
 
-func _on_npc_stopped_talking(npc: NPC):
+func _stop_talking(npc: Npc):
     switch_state(State.IDLE)
-    print("You are no longer talking to %s." % npc._name)
-    $DialogueBox.hide()
+    _dialogue_box.hide()
     _hud.show_status_panel()
+    print("You are no longer talking to %s." % npc._name)
 
 func _disable_scooting():
     _scooting_enabled = false
@@ -197,7 +202,7 @@ func _enable_scooting():
     _scooting_enabled = true
     print("Scooting enabled")
 
-func _get_best_npc(npcs: Array[Node2D]) -> NPC:
+func _get_best_npc(npcs: Array[Node2D]) -> Npc:
     if npcs.is_empty():
         return null
 
@@ -206,27 +211,27 @@ func _get_best_npc(npcs: Array[Node2D]) -> NPC:
 
     #  Among all NPCs, pick those "in front" of the player
     #  Then pick the closest among them. If none in front, pick the closest overall.
-    var best_npc: NPC = null
+    var best_npc: Npc = null
     var best_dist = INF
     var my_pos: Vector2 = global_position
 
     # We'll track if we found at least one in front
     var found_in_front = false
 
-    for npc: NPC in npcs:
+    for npc: Npc in npcs:
         var diff: Vector2 = npc.global_position - my_pos
         var dot_val: float = facing_dir.dot(diff)
         var dist: float = diff.length()
 
         if dot_val > 0:
-            # NPC is in front
+            # Npc is in front
             found_in_front = true
             if dist < best_dist:
                 best_dist = dist
                 best_npc = npc
         else:
-            # NPC is behind or to the side
-            # We'll only consider it if we have no in-front NPC at all
+            # Npc is behind or to the side
+            # We'll only consider it if we have no in-front Npc at all
             if not found_in_front and dist < best_dist:
                 best_dist = dist
                 best_npc = npc
@@ -235,32 +240,39 @@ func _get_best_npc(npcs: Array[Node2D]) -> NPC:
 
 func _update_talkable_npc(npcs: Array[Node2D]) -> void:
     # Clear outline on all
-    for ent: NPC in npcs:
+    for ent: Npc in npcs:
         ent.disable_outline()
 
-
-    # Get the NPC we want to talk to
-    _talkable_npc = _get_best_npc(npcs)
-    if !_talkable_npc:
+    # Get the Npc we want to talk to
+    _interactable_npc = _get_best_npc(npcs)
+    if !_interactable_npc:
         _hud.hide_interaction_button()
         return
 
-    _talkable_npc.enable_outline(Color(0, 1, 0, 1))
+    _interactable_npc.enable_outline(Color(0, 1, 0, 1))
     _hud.show_interaction_button()
 
-func toggle_talking():
-    if !_talkable_npc:
+func toggle_interaction():
+    if !_interactable_npc:
         return
 
-    if _current_state != State.TALK:
-        switch_state(State.TALK)
-        _talkable_npc.start_talking()
-        SignalDispatcher.sound_effect.emit("villager")
-        _on_npc_started_talking(_talkable_npc)
+    if _interactable_npc is Enemy:
+        _interactable_npc.start_combat()
+    elif _interactable_npc is ShopNpc:
+        if _current_state != State.TALK:
+            _interactable_npc.open_shop()
+            _start_shoping()
+        else:
+            _interactable_npc.close_shop()
+            _stop_shoping()
     else:
-        switch_state(State.IDLE)
-        _talkable_npc.stop_talking()
-        _on_npc_stopped_talking(_talkable_npc)
+        if _current_state != State.TALK:
+            _interactable_npc.start_talking()
+            _start_talking(_interactable_npc)
+        else:
+            _interactable_npc.stop_talking()
+            _stop_talking(_interactable_npc)
+
 
 func toggle_inventory(set = null):
     var toggle = set
@@ -275,13 +287,21 @@ func _on_dialogue_box_send_message(message):
 
 func _on_eidolon_handler_get_process_id(process_id):
     var message = "Process ID: %s" % process_id
-    $DialogueBox.add_message("SYSTEM", message)
+    _dialogue_box.add_message("SYSTEM", message)
 
 func _on_eidolon_handler_new_message():
-    $DialogueBox.add_message("AGENT")
+    _dialogue_box.add_message("AGENT")
 
 func _on_eidolon_handler_get_message(message):
-    $DialogueBox.update_last_message(message)
+    _dialogue_box.update_last_message(message)
 
 func _on_eidolon_handler_finish_message():
-    $DialogueBox.waiting = false
+    _dialogue_box.waiting = false
+
+func _start_shoping():
+    speed_multiplier = 0.0
+    switch_state(State.TALK)
+
+func _stop_shoping():
+    speed_multiplier = 1.0
+    switch_state(State.IDLE)
