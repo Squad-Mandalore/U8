@@ -1,6 +1,6 @@
 extends MainMenu
 
-@onready var sub_title_label: Label = %SubTitleLabel
+@onready var sub_title_label: Control = %SubTitleLabel
 var SUB_TITLE_TEXTS : Array[String] = ["Der realistischste Berliner U-Bahn Simulator", "Die wahre Berlin experience", "Scoot Scoot"]
 
 func _ready() -> void:
@@ -14,3 +14,8 @@ func load_game_scene():
 func new_game():
     GlobalState.reset()
     load_game_scene()
+
+func _setup_game_buttons():
+    super._setup_game_buttons()
+    if GameState.has_game_state():
+        %ContinueGameButton.disabled = false

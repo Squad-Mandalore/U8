@@ -1,22 +1,48 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7utj0gr3fvrx"]
+[gd_scene load_steps=22 format=3 uid="uid://b7utj0gr3fvrx"]
 
 [ext_resource type="Script" path="res://ui/main_menu/main_menu.gd" id="2_tqalf"]
 [ext_resource type="PackedScene" uid="uid://b0c3m2fxsdveo" path="res://ui/main_menu/options_menu/master_options_menu_with_tabs.tscn" id="3_uuuu4"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/ui_sound_controller.gd" id="4_kigtq"]
 [ext_resource type="PackedScene" uid="uid://b7hs5igqv1qjk" path="res://ui/credits/credits.tscn" id="4_ujp5j"]
+[ext_resource type="Texture2D" uid="uid://b36noacmhtswo" path="res://scenes/stations/01_wittenau/assets/hub.png" id="5_dm436"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_version_label.gd" id="6_hwiir"]
 [ext_resource type="Texture2D" uid="uid://57crc7maanq3" path="res://ui/main_menu/assets/anzeigetafel.png" id="7_hrxfd"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_name_label.gd" id="7_i3lvj"]
-[ext_resource type="Texture2D" uid="uid://dm5rbly3yn7hr" path="res://ui/main_menu/assets/fading.png" id="8_8d80v"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="8_d2jpe"]
+[ext_resource type="Texture2D" uid="uid://cl3p5uw8naa3v" path="res://ui/main_menu/assets/title.png" id="8_lghh0"]
 [ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="8_mcq1t"]
 [ext_resource type="StyleBox" uid="uid://01yk2v131qmi" path="res://ui/assets/color_eraser.tres" id="9_l3bui"]
+[ext_resource type="Script" path="res://ui/main_menu/subscenes/auto_scrolling_label.gd" id="12_4fvel"]
+[ext_resource type="FontFile" uid="uid://u4mx46rxgutt" path="res://assets/fonts/hind/Hind-SemiBold.ttf" id="13_tcn16"]
+
+[sub_resource type="Gradient" id="Gradient_a25qk"]
+offsets = PackedFloat32Array(0, 0.28, 1)
+colors = PackedColorArray(0.0901961, 0.0901961, 0.0901961, 0.901961, 0.0901961, 0.0901961, 0.0901961, 0.901961, 0.0901961, 0.0901961, 0.0901961, 0.196078)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x5d3c"]
+gradient = SubResource("Gradient_a25qk")
+width = 1920
+height = 1080
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ma8d"]
+texture = SubResource("GradientTexture2D_x5d3c")
 
 [sub_resource type="LabelSettings" id="LabelSettings_rdr3a"]
 font = ExtResource("8_mcq1t")
 font_size = 96
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(4, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d71xx"]
+font = ExtResource("8_mcq1t")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nqww0"]
+content_margin_right = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ux5ru"]
+font = ExtResource("13_tcn16")
+font_size = 36
+font_color = Color(0.984314, 0.992157, 0.32549, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -40,8 +66,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-expand_mode = 1
-stretch_mode = 5
+texture = ExtResource("5_dm436")
+expand_mode = 3
 
 [node name="OptionsContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
@@ -100,11 +126,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="MenuContainer"]
-layout_mode = 0
-offset_right = 1915.0
-offset_bottom = 1069.0
-texture = ExtResource("8_8d80v")
+[node name="Panel" type="Panel" parent="MenuContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8ma8d")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer"]
 layout_mode = 1
@@ -119,17 +148,25 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 96
 theme_override_constants/margin_top = 77
+theme_override_constants/margin_bottom = 34
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
 
 [node name="TitleLabel" type="Label" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 2
 text = "U8 Berlin"
 label_settings = SubResource("LabelSettings_rdr3a")
 vertical_alignment = 1
 script = ExtResource("7_i3lvj")
+
+[node name="TextureRect" type="TextureRect" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+texture = ExtResource("8_lghh0")
+stretch_mode = 4
 
 [node name="MenuButtonContainer" type="MarginContainer" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -148,6 +185,9 @@ alignment = 1
 vertical = true
 script = ExtResource("8_d2jpe")
 
+[node name="HSeparator1" type="HSeparator" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer"]
+layout_mode = 2
+
 [node name="NewGameButton" type="Button" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
@@ -158,7 +198,7 @@ theme_override_styles/normal = ExtResource("9_l3bui")
 text = "Neues Spiel"
 alignment = 0
 
-[node name="HSeparator" type="HSeparator" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer"]
 layout_mode = 2
 
 [node name="ContinueGameButton" type="Button" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer"]
@@ -166,11 +206,13 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_mcq1t")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/disabled = ExtResource("9_l3bui")
 theme_override_styles/normal = ExtResource("9_l3bui")
+disabled = true
 text = "Spiel fortsetzen"
 alignment = 0
 
-[node name="HSeparator2" type="HSeparator" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer"]
 layout_mode = 2
 
 [node name="OptionsButton" type="Button" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer"]
@@ -181,19 +223,6 @@ theme_override_fonts/font = ExtResource("8_mcq1t")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = ExtResource("9_l3bui")
 text = "Optionen"
-alignment = 0
-
-[node name="HSeparator3" type="HSeparator" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer"]
-layout_mode = 2
-
-[node name="CreditsButton" type="Button" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(128, 40)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("8_mcq1t")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = ExtResource("9_l3bui")
-text = "Credits"
 alignment = 0
 
 [node name="HSeparator4" type="HSeparator" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer"]
@@ -209,17 +238,29 @@ theme_override_styles/normal = ExtResource("9_l3bui")
 text = "Beenden"
 alignment = 0
 
-[node name="VersionMargin" type="MarginContainer" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator5" type="HSeparator" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
-theme_override_constants/margin_bottom = 34
+theme_override_constants/separation = 100
 
-[node name="VersionLabel" type="Label" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/VersionMargin"]
+[node name="VersionLabel" type="Label" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 text = "Version: 0.2.0"
+label_settings = SubResource("LabelSettings_d71xx")
 script = ExtResource("6_hwiir")
 version_prefix = "Version: "
+
+[node name="CreditsButton" type="Button" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_mcq1t")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nqww0")
+text = "Credits"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MenuContainer/HBoxContainer"]
 layout_mode = 2
@@ -242,16 +283,18 @@ offset_top = 294.0
 offset_right = 1547.0
 offset_bottom = 334.0
 
-[node name="SubTitleLabel" type="Label" parent="MenuContainer/MarginContainer"]
+[node name="SubTitleLabel" type="Control" parent="MenuContainer/MarginContainer"]
 unique_name_in_owner = true
+clip_contents = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+script = ExtResource("12_4fvel")
 text = "Der realistischste Berliner U-Bahn Simulator"
-vertical_alignment = 1
+valign = 1
+label_settings = SubResource("LabelSettings_ux5ru")
 
 [connection signal="pressed" from="FlowControlContainer/FlowControl/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
 [connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
