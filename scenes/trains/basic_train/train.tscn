@@ -70,6 +70,7 @@ _name = "Schackeline"
 
 [node name="BackgroundMusicPlayerTrain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_yi3rj")
+volume_db = -10.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true

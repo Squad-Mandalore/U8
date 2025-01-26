@@ -220,9 +220,17 @@ unique_name_in_owner = true
 auto_translate_mode = 1
 dialog_text = "Quit the game?"
 
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/RestartButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/RestartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/OptionsButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/OptionsButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/MainMenuButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/MainMenuButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/ExitButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/ExitButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="confirmed" from="ConfirmRestart" to="." method="_on_confirm_restart_confirmed"]

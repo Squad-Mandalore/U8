@@ -26,6 +26,7 @@ grow_vertical = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_um06l")
+volume_db = -10.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true

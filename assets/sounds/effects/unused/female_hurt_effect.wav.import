@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b6eyx7j0a25iv"
-path="res://.godot/imported/female_hurt_effect.wav-4e21a88624fc347f090fd65bc937d5a3.sample"
+path="res://.godot/imported/female_hurt_effect.wav-5ace9368eafc4fe5faf9905eaa3bce8f.sample"
 
 [deps]
 
-source_file="res://assets/sounds/effects/female_hurt_effect.wav"
-dest_files=["res://.godot/imported/female_hurt_effect.wav-4e21a88624fc347f090fd65bc937d5a3.sample"]
+source_file="res://assets/sounds/effects/unused/female_hurt_effect.wav"
+dest_files=["res://.godot/imported/female_hurt_effect.wav-5ace9368eafc4fe5faf9905eaa3bce8f.sample"]
 
 [params]
 
