@@ -2,7 +2,7 @@ extends Node
 
 var process_id = ""
 
-var agent = "test_agent"
+var agent = ""
 var title = "first meeting"
 
 signal get_process_id(process_id: String)
@@ -11,17 +11,22 @@ signal new_message
 signal finish_message
 
 func _ready():
-    var post_req = HTTPRequest.new()
-    add_child(post_req)
-    post_req.request_completed.connect(_set_process_id)
-    var url = "http://localhost:8080/processes"
-    var headers = ["Content-Type: application/json"]
-    var method = HTTPClient.METHOD_POST
-    var body = JSON.stringify({
-        "agent": agent,
-        "title": title
-    })
-    post_req.request(url, headers, method, body)
+    print("EidolonHandler _ready called")
+    if agent == "":
+        print("Agent not set. Waiting for agent to be set before making the HTTP request.")
+        return
+    
+    #var post_req = HTTPRequest.new()
+    #add_child(post_req)
+    #post_req.request_completed.connect(_set_process_id)
+    #var url = "http://localhost:8080/processes"
+    #var headers = ["Content-Type: application/json"]
+    #var method = HTTPClient.METHOD_POST
+    #var body = JSON.stringify({
+        #"agent": agent,
+        #"title": title
+    #})
+    #post_req.request(url, headers, method, body)
     
 func on_sse_connected():
     $HTTPSSEClient.new_sse_event.connect(on_new_sse_event)
@@ -58,7 +63,20 @@ func _set_process_id(result, response_code, headers, body):
     else:
         print("No 'process_id' in response or response is invalid. Response:", response)
 
-
+func set_agent(npc_name: String):
+    agent = npc_name
+    print("Agent set to: %s" % agent)
+    var post_req = HTTPRequest.new()
+    add_child(post_req)
+    post_req.request_completed.connect(_set_process_id)
+    var url = "http://localhost:8080/processes"
+    var headers = ["Content-Type: application/json"]
+    var method = HTTPClient.METHOD_POST
+    var body = JSON.stringify({
+        "agent": agent,
+        "title": title
+    })
+    post_req.request(url, headers, method, body)
 
 func _connect_sse():
     var sub_url = "" # Add the "/sub_list_url" stuff here, including query parameters as needed; for demo purposes, I use the list path in my Firebase database, combined with ".json?auth=" and whatever the auth token is.

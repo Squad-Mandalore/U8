@@ -1,11 +1,11 @@
 apiVersion: eidolon/v1
 kind: Agent
 metadata:
-  name: test_agent
+  name: Olof_Scholtz
 spec:
   description: "Agent for driving NPC dialogue."
   system_prompt: "
-  Dieser Agent ist für das Testen der Kommunikation. Er soll antworten, dass der Test funktioniert.
+  Dieser Agent ist für das Testen der Kommunikation. Er soll antworten, dass der Test funktioniert. Sein Name ist Olof Scholtz.
   "
   apu:
     llm_unit:

@@ -177,6 +177,7 @@ func _on_slowdown_area_body_exited(body: Node2D):
         _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
 func _on_npc_started_talking(npc: NPC):
+    $EidolonHandler.set_agent(npc._name)
     switch_state(State.TALK)
     print("You are now talking to %s." % npc._name)
     $DialogueBox.show()

@@ -46,7 +46,7 @@ drag_vertical_enabled = true
 
 [node name="Chris" parent="." instance=ExtResource("8_sempk")]
 position = Vector2(433, 153)
-_name = "Chris Chistead"
+_name = "Chris_Chistead"
 RANDOM_NAME = false
 _gender = "Male"
 
@@ -56,7 +56,7 @@ _gender = "Male"
 
 [node name="Politiker" parent="." instance=ExtResource("10_rky5v")]
 position = Vector2(264, 161)
-_name = "Olof Scholtz"
+_name = "Olof_Scholtz"
 RANDOM_NAME = false
 
 [node name="Fahrkartenkonrtolleurin" parent="." groups=["NPC"] instance=ExtResource("12_rqh7o")]
