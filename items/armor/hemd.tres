@@ -30,3 +30,4 @@ name = "Hemd"
 description = "Das Kleidungsstück, das signalisiert: 'Ich habe mein Leben im Griff' – auch wenn du eigentlich gerade erst aufgewacht bist und deine Schuhe nicht zusammenpassen. Macht dich automatisch seriöser als alle anderen im Waggon, selbst wenn du unter dem Hemd ein Bandshirt von einer Trash-Metal-Band trägst."
 stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_e7r2y")
+price = 20

@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func update_inventory_stats():
     %InventoryHud.update_debuff_stats()
-    %InventoryHud.load_item_slots()
+    SignalDispatcher.update_item_slots.emit()
     (%InventoryStatHud as Control).update_inventory_stat_hud()
     update_inventory_balance(SourceOfTruth.balance)
 

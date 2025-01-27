@@ -31,3 +31,4 @@ name = "T-Shirt"
 description = "StatsSpecifier"
 stats = SubResource("Resource_hodkb")
 texture = SubResource("PlaceholderTexture2D_502b6")
+price = 50

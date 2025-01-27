@@ -1,13 +1,10 @@
 class_name StatsSpecifier
 extends Resource
 
+# TODO: Known Bug:
+# setter interfering with Gamestate even when dealing with unrelated stats
 @export var max_health: int
-@export var health: int:
-    set(value):
-        health = min(value, max_health)
-        if health <= 0:
-            SignalDispatcher.player_zero_health.emit()
-            GameState.new_run_state()
+@export var health: int
 @export var armor: int
 @export var initiative: int
 @export var dodge_chance: int:
