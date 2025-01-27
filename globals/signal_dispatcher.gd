@@ -7,7 +7,6 @@ signal toggle_status_types_hud(stats: StatsSpecifier)
 signal swap_inventory_items(from: int, to: int)
 signal set_ck3_progress_bar_value(value: int)
 
-signal stats_changed(delta_stats: StatsSpecifier, delta_balance: int)
 signal player_zero_health()
 signal reload_ui()
 signal update_item_slots()

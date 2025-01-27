@@ -16,6 +16,7 @@ func _ready() -> void:
     SignalDispatcher.add_attack_hover.connect(add_attack_hover)
     SignalDispatcher.remove_attack_hover.connect(remove_attack_hover)
     SignalDispatcher.execute_attack.connect(execute_attack)
+    SignalDispatcher.player_zero_health.connect(exit_combat)
     half_turn_counter = 0
     first_start = calculate_first_start()
     if first_start:
@@ -54,12 +55,18 @@ func calculate_first_start() -> bool:
     var player_init = SourceOfTruth.stats.initiative + (randi() % 3 + 1)
     return player_init > enemy_init
 
-func take_damage(damage: int, stats: StatsSpecifier):
+func take_damage(damage: int, stats: StatsSpecifier, attacker: String):
     var received_damage = SourceOfTruth.calculate_damage(damage, stats)
-    stats.health -= received_damage
-    if stats.health <= 0:
-        # TODO: winning screen here and on click combat exit
-        SignalDispatcher.combat_exit.emit(get_parent())
+    # TODO: use stats_changed when player stats are used
+    if attacker == "Enemy":
+        var delta_stats = StatsSpecifier.new()
+        delta_stats.health = -received_damage
+        SourceOfTruth.stats_changed(delta_stats)
+    else:
+        stats.health -= received_damage
+        if stats.health <= 0:
+            # TODO: winning screen here and on click combat exit
+            exit_combat()
 
 func execute_attack(attack: Attack, attacker: String):
     loop()
@@ -78,7 +85,7 @@ func execute_attack(attack: Attack, attacker: String):
 
     for token_number in attack.token_number:
         attacker_panel.add_token(attack.token)
-    take_damage(attack.damage, enemy_stats)
+    take_damage(attack.damage, enemy_stats, attacker)
     attacker_panel.update_status_panel()
     defender_panel.update_status_panel()
     _feedback_box.set_feedback(attacker + " hat " + str(attack.damage) + " Schaden gemacht.")
@@ -92,3 +99,6 @@ func enemy_execute_attack():
     var chosen_attack = enemy.attacks[chosen_attack_index]
     # TODO: play attack animation and hide hud
     execute_attack(chosen_attack, "Enemy")
+
+func exit_combat():
+    SignalDispatcher.combat_exit.emit(get_parent())
