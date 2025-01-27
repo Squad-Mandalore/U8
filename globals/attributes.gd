@@ -1,8 +1,6 @@
 class_name StatsSpecifier
 extends Resource
 
-# TODO: Known Bug:
-# setter interfering with Gamestate even when dealing with unrelated stats
 @export var max_health: int
 @export var health: int
 @export var armor: int
