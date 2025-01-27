@@ -48,7 +48,7 @@ func _setup_for_web():
 
 func _setup_game_buttons():
     if game_scene_path.is_empty():
-        %NewGameButton.hide()
+        %NewGameButton.disabled = true
 
 func _setup_options():
     if options_packed_scene == null:
@@ -93,3 +93,6 @@ func _on_credits_end_reached():
 
 func _on_back_button_pressed():
     _close_sub_menu()
+
+func _on_continue_game_button_pressed():
+    load_game_scene()

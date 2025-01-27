@@ -38,4 +38,3 @@ func _on_debuff_info_v_box_mouse_exited() -> void:
 
 func _on_debuff_info_v_box_mouse_entered() -> void:
     SignalDispatcher.toggle_status_types_hud.emit(stats)
-

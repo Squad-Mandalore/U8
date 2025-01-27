@@ -49,7 +49,6 @@ func _on_detect_characters_body_entered(body):
 
         # Optional: If we also want to wait for the player to move:
         while is_obstacle_in_path(body):
-            print("Obstacle!!! " + body.name)
             await get_tree().process_frame
         _continue_walking()
 

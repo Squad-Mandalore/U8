@@ -19,6 +19,10 @@ func update_inventory_balance(new_balance: int) -> void:
 func _on_inventory_button_pressed() -> void:
     # (get_parent() as Player).toggle_inventory()
     SourceOfTruth.remove_item(3)
+    # TODO: remove this once drugs are implemented!!!!!!! DEBUG DEBUG
+    var new_stats = StatsSpecifier.new()
+    new_stats.drug_level = new_stats.drug_level + 1
+    SourceOfTruth.stats_changed(new_stats)
 
 func _on_map_button_pressed() -> void:
     var slowpoke_tail = preload("res://items/weapons/slowpoke_tail.tres")

@@ -16,4 +16,3 @@ func _ready() -> void:
 
 func start_combat():
     SignalDispatcher.combat_enter.emit(self)
-
