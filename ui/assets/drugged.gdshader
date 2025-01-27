@@ -12,8 +12,8 @@ void fragment()
     float wave_time = offset_time;
 
     // Wave calculations
-    float frequency = 8.0 + 4.0 * wave_intensity;
-    float amplitude = 0.01 * wave_intensity;
+    float frequency = 6.0 + 4.0 * wave_intensity;
+    float amplitude = 0.005 * wave_intensity;
 
     // Slight blur
     float blur_radius = 0.0002 * wave_intensity;
