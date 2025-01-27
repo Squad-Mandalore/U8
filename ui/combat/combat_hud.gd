@@ -92,4 +92,3 @@ func enemy_execute_attack():
     var chosen_attack = enemy.attacks[chosen_attack_index]
     # TODO: play attack animation and hide hud
     execute_attack(chosen_attack, "Enemy")
-
