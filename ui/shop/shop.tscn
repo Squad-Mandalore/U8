@@ -1,20 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bls3lu2ys56ty"]
+[gd_scene load_steps=4 format=3 uid="uid://cdtplrex7l3fs"]
 
 [ext_resource type="PackedScene" uid="uid://c5u8dk88a3txs" path="res://ui/inventory/subscenes/info_panel.tscn" id="1_0lxc3"]
+[ext_resource type="PackedScene" uid="uid://c74j5v0sdslx2" path="res://ui/shop/subscenes/shop_hud.tscn" id="1_pg612"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36620"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.74902)
 
-[node name="Shop" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Shop" type="CanvasLayer"]
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,19 +17,24 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_36620")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 372
 theme_override_constants/margin_top = 201
+theme_override_constants/margin_right = 372
 theme_override_constants/margin_bottom = 201
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
+[node name="ShopHud" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_pg612")]
+layout_mode = 2
+size_flags_horizontal = 2
+
 [node name="InventoryInfoPanel" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_0lxc3")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10

@@ -2,6 +2,7 @@ extends Control
 
 @export var is_human: bool
 var _dialogue_box: RichTextLabel
+var shop_inventory: Array[Item]
 
 func _ready() -> void:
     if is_human:

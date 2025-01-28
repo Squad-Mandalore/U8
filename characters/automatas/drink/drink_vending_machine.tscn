@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv2v43jv13rjr"]
+
+[ext_resource type="Script" path="res://characters/automatas/automata.gd" id="1_04lny"]
+[ext_resource type="Script" path="res://items/item.gd" id="2_7bg4v"]
+[ext_resource type="Resource" uid="uid://dxrnq8hjfe8ic" path="res://items/armor/abgeranzter-hoodie.tres" id="3_i5x52"]
+[ext_resource type="Texture2D" uid="uid://bl3c0je5u73fw" path="res://ui/shop/assets/drink_vending_machine.png" id="4_xjtp7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eypk"]
+size = Vector2(20, 7)
+
+[node name="DrinkVendingMachine" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_04lny")
+shop_inventory = Array[ExtResource("2_7bg4v")]([ExtResource("3_i5x52")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_xjtp7")
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_1eypk")

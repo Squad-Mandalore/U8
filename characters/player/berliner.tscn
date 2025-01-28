@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://csgdo87mltoha"]
+[gd_scene load_steps=95 format=3 uid="uid://csgdo87mltoha"]
 
 [ext_resource type="Script" path="res://characters/player/berliner.gd" id="1_pkp7h"]
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="2_ddcmo"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dh8a5067wese3" path="res://ui/inventory/inventory.tscn" id="4_s04kq"]
 [ext_resource type="PackedScene" uid="uid://bkquoqbrb6bh2" path="res://ui/hud/train_hud.tscn" id="6_f7a2w"]
 [ext_resource type="PackedScene" uid="uid://de01h04q55cgs" path="res://scenes/dialogue/dialogue_box.tscn" id="7_2lanu"]
+[ext_resource type="PackedScene" uid="uid://cdtplrex7l3fs" path="res://ui/shop/shop.tscn" id="8_ae2mv"]
 [ext_resource type="PackedScene" uid="uid://bcfug5ny0wrib" path="res://addons/EidolonClient/eidolon_handler.tscn" id="8_c0xdv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpkiy"]
@@ -685,9 +686,13 @@ shape = SubResource("CapsuleShape2D_cjqwy")
 visible = false
 
 [node name="HUD" parent="." instance=ExtResource("6_f7a2w")]
-unique_name_in_owner = true
+visible = false
 
 [node name="DialogueBox" parent="." instance=ExtResource("7_2lanu")]
+visible = false
+
+[node name="Shop" parent="." instance=ExtResource("8_ae2mv")]
+visible = false
 
 [node name="EidolonHandler" parent="." instance=ExtResource("8_c0xdv")]
 

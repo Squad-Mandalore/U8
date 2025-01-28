@@ -2,10 +2,12 @@ class_name Player
 extends CharacterBody2D
 
 @onready var _animated_sprite_2d = $AnimatedSprite2D
-@onready var inventory: CanvasLayer = $Inventory
 @onready var _slowdown_area: Area2D = $SlowdownArea
-@onready var _hud: CanvasLayer = %HUD
-@onready var _dialogue_box = $DialogueBox
+@onready var _inventory: CanvasLayer = $Inventory
+@onready var _hud: CanvasLayer = $HUD
+@onready var _shop_hud: CanvasLayer = $Shop
+@onready var _dialogue_box: CanvasLayer = $DialogueBox
+var huds: Array[CanvasLayer]
 # var stats: StatsSpecifier = StatsSpecifier.new()
 # var base_stats: StatsSpecifier
 
@@ -15,7 +17,7 @@ var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for
 
 const SPEED: float = 102.0
 var speed_multiplier: float = 1.0
-var _interactable_npc: Npc = null:
+var _interactable_npc: PhysicsBody2D = null:
     set(value):
         if value:
             speed_multiplier = 0.5
@@ -24,8 +26,8 @@ var _interactable_npc: Npc = null:
         _interactable_npc = value
 
 func _ready() -> void:
-    _dialogue_box.hide()
-    inventory.hide()
+    huds = [_inventory, _hud, _shop_hud, _dialogue_box]
+    set_active_hud(_hud)
     SourceOfTruth.set_damage_for_all_attacks()
     SignalDispatcher.reload_ui.emit()
 
@@ -155,7 +157,7 @@ func _unhandled_input(event: InputEvent):
 
 func _input(event: InputEvent):
     if event.is_action_pressed("ui_cancel"):
-        toggle_inventory(false)
+        set_active_hud(_hud)
         SignalDispatcher.sound_effect.emit("exit")
 
     if event is InputEventMouseButton and event.pressed:
@@ -163,7 +165,7 @@ func _input(event: InputEvent):
             SignalDispatcher.toggle_item_hud.emit(null)
 
     if event.is_action_pressed("inventory"):
-        toggle_inventory()
+        set_active_hud(_hud if _inventory.visible else _inventory)
         SignalDispatcher.sound_effect.emit("pop")
 
 
@@ -258,7 +260,7 @@ func toggle_interaction():
 
     if _interactable_npc is Enemy:
         _interactable_npc.start_combat()
-    elif _interactable_npc is ShopNpc:
+    elif _interactable_npc is ShopNpc or _interactable_npc is Automata:
         if _current_state != State.TALK:
             _interactable_npc.open_shop()
             _start_shoping()
@@ -273,14 +275,9 @@ func toggle_interaction():
             _interactable_npc.stop_talking()
             _stop_talking(_interactable_npc)
 
-
-func toggle_inventory(set = null):
-    var toggle = set
-    if set == null:
-        toggle = !inventory.visible
-
-    _hud.visible = !toggle
-    inventory.visible = toggle
+func set_active_hud(active_hud: CanvasLayer = null):
+    for hud in huds:
+        hud.visible = (hud == active_hud)
 
 func _on_dialogue_box_send_message(message):
     $EidolonHandler.post_message(message)
