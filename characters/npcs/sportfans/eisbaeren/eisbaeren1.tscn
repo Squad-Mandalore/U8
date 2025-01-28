@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://caniahfcrm3my"]
+
+[ext_resource type="Script" path="res://characters/npcs/sportfans/eisbaeren/eisbaeren.gd" id="1_otbki"]
+[ext_resource type="Texture2D" uid="uid://csl24phfunrvb" path="res://characters/npcs/sportfans/eisbaeren/assets/eisbaeren.png" id="2_fwjub"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooeas"]
+size = Vector2(20, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfgow"]
+atlas = ExtResource("2_fwjub")
+region = Rect2(1, 1, 31, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hiwhl"]
+atlas = ExtResource("2_fwjub")
+region = Rect2(33, 1, 31, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sinoo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfgow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hiwhl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="Eisbaeren" type="CharacterBody2D" groups=["NPC"]]
+z_index = 50
+collision_layer = 5
+script = ExtResource("1_otbki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ooeas")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_sinoo")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.563199
+offset = Vector2(0, -19)
