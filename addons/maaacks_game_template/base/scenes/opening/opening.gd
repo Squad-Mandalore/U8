@@ -98,4 +98,5 @@ func _ready():
     SceneLoader.load_scene(next_scene, true)
     _add_textures_to_container(images)
     _transition_in()
+    SignalDispatcher.sound_music.emit("main_menu")
 
