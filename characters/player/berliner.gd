@@ -143,6 +143,22 @@ func _unhandled_input(event: InputEvent):
         else:
             switch_state(State.DANCE)
 
+    if event.is_action_pressed("ui_cancel"):
+        if inventory.visible:
+            toggle_inventory(false)
+            SignalDispatcher.sound_effect.emit("exit")
+            get_viewport().set_input_as_handled()
+
+    if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and inventory.visible:
+        SignalDispatcher.toggle_item_hud.emit(null)
+
+    if event.is_action_pressed("inventory"):
+        toggle_inventory()
+        if inventory.visible:
+            SignalDispatcher.sound_effect.emit("pop")
+        else:
+            SignalDispatcher.sound_effect.emit("exit")
+
     if not _scooting_enabled:
         return
 
@@ -151,21 +167,6 @@ func _unhandled_input(event: InputEvent):
             switch_state(State.IDLE)
         else:
             switch_state(State.SCOOT)
-
-
-func _input(event: InputEvent):
-    if event.is_action_pressed("ui_cancel"):
-        toggle_inventory(false)
-        SignalDispatcher.sound_effect.emit("exit")
-
-    if event is InputEventMouseButton and event.pressed:
-        if event.button_index == MOUSE_BUTTON_LEFT:
-            SignalDispatcher.toggle_item_hud.emit(null)
-
-    if event.is_action_pressed("inventory"):
-        toggle_inventory()
-        SignalDispatcher.sound_effect.emit("pop")
-
 
 func _on_slowdown_area_body_entered(body: Node2D):
     var npc: Npc = body
