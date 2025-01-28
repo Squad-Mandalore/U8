@@ -29,6 +29,7 @@ func _ready() -> void:
     huds = [_inventory, _hud, _shop_hud, _dialogue_box]
     set_active_hud(_hud)
     SourceOfTruth.set_damage_for_all_attacks()
+    SourceOfTruth.balance_changed(10)
     SignalDispatcher.reload_ui.emit()
 
 # func _process(delta):
@@ -146,13 +147,14 @@ func _unhandled_input(event: InputEvent):
             switch_state(State.DANCE)
 
     if event.is_action_pressed("ui_cancel"):
-        if _inventory.visible:
+        if _inventory.visible or _shop_hud.visible:
             set_active_hud(_hud)
             SignalDispatcher.sound_effect.emit("exit")
             get_viewport().set_input_as_handled()
 
-    if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and _inventory.visible:
+    if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and _inventory.inventory_info_panel.visible:
         SignalDispatcher.toggle_item_hud.emit(null)
+        SignalDispatcher.sound_effect.emit("exit")
 
     if event.is_action_pressed("inventory"):
         set_active_hud(_hud if _inventory.visible else _inventory)
@@ -171,15 +173,17 @@ func _unhandled_input(event: InputEvent):
             switch_state(State.SCOOT)
 
 func _on_slowdown_area_body_entered(body: Node2D):
-    var npc: Npc = body
-    npc.set_player_nearby(true)
+    var npc: PhysicsBody2D = body
+    if npc is Npc:
+        npc.set_player_nearby(true)
     if _current_state != State.TALK:
         _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
 func _on_slowdown_area_body_exited(body: Node2D):
-    var npc: Npc = body
-    npc.set_player_nearby(false)
-    npc.disable_outline()
+    var npc: PhysicsBody2D = body
+    if npc is Npc:
+        npc.set_player_nearby(false)
+        npc.disable_outline()
     if _current_state != State.TALK:
         _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
@@ -205,7 +209,7 @@ func _enable_scooting():
     _scooting_enabled = true
     print("Scooting enabled")
 
-func _get_best_npc(npcs: Array[Node2D]) -> Npc:
+func _get_best_npc(npcs: Array[Node2D]) -> PhysicsBody2D:
     if npcs.is_empty():
         return null
 
@@ -214,14 +218,14 @@ func _get_best_npc(npcs: Array[Node2D]) -> Npc:
 
     #  Among all NPCs, pick those "in front" of the player
     #  Then pick the closest among them. If none in front, pick the closest overall.
-    var best_npc: Npc = null
+    var best_npc: PhysicsBody2D = null
     var best_dist = INF
     var my_pos: Vector2 = global_position
 
     # We'll track if we found at least one in front
     var found_in_front = false
 
-    for npc: Npc in npcs:
+    for npc: PhysicsBody2D in npcs:
         var diff: Vector2 = npc.global_position - my_pos
         var dot_val: float = facing_dir.dot(diff)
         var dist: float = diff.length()
@@ -243,7 +247,7 @@ func _get_best_npc(npcs: Array[Node2D]) -> Npc:
 
 func _update_talkable_npc(npcs: Array[Node2D]) -> void:
     # Clear outline on all
-    for ent: Npc in npcs:
+    for ent: PhysicsBody2D in npcs:
         ent.disable_outline()
 
     # Get the Npc we want to talk to
@@ -263,11 +267,11 @@ func toggle_interaction():
         _interactable_npc.start_combat()
     elif _interactable_npc is ShopNpc or _interactable_npc is Automata:
         if _current_state != State.TALK:
-            _interactable_npc.open_shop()
-            _start_shoping()
+            _interactable_npc.open_shop(_shop_hud)
+            _start_shopping()
         else:
             _interactable_npc.close_shop()
-            _stop_shoping()
+            _stop_shopping()
     else:
         if _current_state != State.TALK:
             _interactable_npc.start_talking()
@@ -296,10 +300,12 @@ func _on_eidolon_handler_get_message(message):
 func _on_eidolon_handler_finish_message():
     _dialogue_box.waiting = false
 
-func _start_shoping():
+func _start_shopping():
     speed_multiplier = 0.0
+    set_active_hud(_shop_hud)
     switch_state(State.TALK)
 
-func _stop_shoping():
+func _stop_shopping():
     speed_multiplier = 1.0
+    set_active_hud(_hud)
     switch_state(State.IDLE)
