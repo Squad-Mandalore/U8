@@ -30,6 +30,7 @@ SignalDispatcher="*res://globals/signal_dispatcher.gd"
 Utils="*res://globals/utils.gd"
 NameGenerator="*res://globals/name_generator.gd"
 AudioManager="*res://globals/audio_manager.gd"
+SoundManager="*res://sound_manager.gd"
 
 [display]
 

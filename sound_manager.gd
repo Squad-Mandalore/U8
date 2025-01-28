@@ -11,12 +11,12 @@ var button_clicked_effect = preload("res://assets/sounds/effects/button_clicked_
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    print("sound effect player ready to use")
     SignalDispatcher.sound_effect.connect(_on_sound_effect)
 
-func play_sound_effect(sound) -> void:
+func play_sound_effect(sound, volume_db: float = 0) -> void:
     if sound:
         self.stream = sound
+        self.volume_db = volume_db
         self.play()
     else:
         print("Error: Could not load sound at path")
@@ -40,5 +40,4 @@ func _on_sound_effect(sound_name: String) -> void:
             play_sound_effect(exit_effect)
         "villager":
             play_sound_effect(villager_effect)
-
 

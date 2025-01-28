@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cg2mx5g7rsevc"]
+[gd_scene load_steps=59 format=3 uid="uid://cg2mx5g7rsevc"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/pause_menu_controller.gd" id="1_ljn6m"]
 [ext_resource type="PackedScene" uid="uid://c53q3lkal5pmk" path="res://ui/pause_menu/pause_menu.tscn" id="2_t4jtf"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dni73m7g8lip1" path="res://scenes/stations/04_lindauer_allee/lindauer_allee.tscn" id="8_cq5pg"]
 [ext_resource type="Script" path="res://globals/level_list_state_manager.gd" id="8_lvsfu"]
 [ext_resource type="PackedScene" uid="uid://dnueionl57e3i" path="res://scenes/stations/05_paracelsus_bad/paracelsus_bad.tscn" id="9_16fs4"]
-[ext_resource type="Script" path="res://ui/sound_effect_player.gd" id="9_uu4yx"]
 [ext_resource type="PackedScene" uid="uid://bad5ie03oi1uu" path="res://scenes/stations/06_residenzstrasse/residenzstrasse.tscn" id="10_fwx5o"]
 [ext_resource type="PackedScene" uid="uid://cl5fn5xxtqxgn" path="res://scenes/stations/07_franz_neumann_platz/franz_neumann_platz.tscn" id="11_2nicx"]
 [ext_resource type="PackedScene" uid="uid://dbog1wkc3h6mo" path="res://scenes/stations/08_osloer_strasse/osloer_strasse.tscn" id="12_bgutl"]
@@ -186,10 +185,6 @@ level_list_loader = NodePath("../LevelLoader")
 main_menu_scene = "res://ui/main_menu/main_menu.tscn"
 ending_scene = "res://scenes/end_credits/end_credits.tscn"
 level_loading_screen = NodePath("../LevelLoadingScreen")
-
-[node name="SoundEffectPlayer" type="AudioStreamPlayer" parent="."]
-bus = &"Soundeffects"
-script = ExtResource("9_uu4yx")
 
 [connection signal="level_load_started" from="LevelLoader" to="." method="_on_level_loader_level_load_started"]
 [connection signal="level_loaded" from="LevelLoader" to="." method="_on_level_loader_level_loaded"]
