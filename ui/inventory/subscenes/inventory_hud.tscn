@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b6qdv1d0kofyo"]
+[gd_scene load_steps=43 format=3 uid="uid://b6qdv1d0kofyo"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_1ep7u"]
 [ext_resource type="Script" path="res://ui/inventory/subscenes/inventory_hud.gd" id="1_frglc"]
@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://rwuw0vie61sr" path="res://ui/hud/assets/white_flask.svg" id="6_se0kj"]
 [ext_resource type="StyleBox" uid="uid://cqwignq5q6i1c" path="res://ui/hud/assets/debuff_level_disabled.tres" id="6_yc6lu"]
 [ext_resource type="Texture2D" uid="uid://bwf8rc7n22rne" path="res://ui/hud/assets/white_syringe.svg" id="7_xaubm"]
-[ext_resource type="PackedScene" uid="uid://da2j1exv2p488" path="res://ui/inventory/subscenes/item_slot.tscn" id="8_rpjsw"]
-[ext_resource type="StyleBox" uid="uid://dw47tyut8uwd7" path="res://ui/inventory/assets/item_slot_disabled.tres" id="9_whkaq"]
+[ext_resource type="PackedScene" uid="uid://da2j1exv2p488" path="res://ui/subscenes/item_slot.tscn" id="8_rpjsw"]
+[ext_resource type="StyleBox" uid="uid://dw47tyut8uwd7" path="res://ui/assets/item_slot_disabled.tres" id="9_whkaq"]
+[ext_resource type="PackedScene" uid="uid://bjhsg8rtptnpa" path="res://ui/subscenes/inventory_slots.tscn" id="12_40tb1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5s4o"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
@@ -247,6 +248,7 @@ grow_vertical = 2
 script = ExtResource("1_frglc")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 678)
 layout_mode = 1
 offset_right = 662.0
 offset_bottom = 678.0
@@ -265,7 +267,6 @@ theme_override_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 0
 theme_override_constants/separation = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -321,11 +322,11 @@ theme_override_constants/margin_bottom = 20
 
 [node name="DebuffInfoVBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 10
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 10
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2"]
 custom_minimum_size = Vector2(24, 24)
@@ -333,10 +334,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_kdlbu")
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
 
 [node name="BleedLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2"]
 unique_name_in_owner = true
@@ -349,7 +346,7 @@ text = "blutend"
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_constants/separation = 0
+theme_override_constants/separation = 10
 
 [node name="BleedLevel1" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
@@ -359,10 +356,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("5_qry0c")
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
 [node name="BleedLevel2" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 25)
@@ -370,10 +363,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("6_yc6lu")
-
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
 
 [node name="BleedLevel3" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
@@ -383,13 +372,9 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("6_yc6lu")
 
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 10
-
 [node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 10
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3"]
 custom_minimum_size = Vector2(24, 24)
@@ -397,10 +382,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("6_se0kj")
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
 
 [node name="PoisonLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3"]
 unique_name_in_owner = true
@@ -412,7 +393,7 @@ text = "vergiftet"
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_constants/separation = 0
+theme_override_constants/separation = 10
 
 [node name="PoisonLevel1" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3/HBoxContainer"]
 unique_name_in_owner = true
@@ -422,10 +403,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("6_yc6lu")
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
 [node name="PoisonLevel2" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 25)
@@ -433,10 +410,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("6_yc6lu")
-
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
 
 [node name="PoisonLevel3" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer3/HBoxContainer"]
 unique_name_in_owner = true
@@ -446,13 +419,9 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("6_yc6lu")
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 10
-
 [node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 10
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4"]
 custom_minimum_size = Vector2(24, 24)
@@ -460,10 +429,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("7_xaubm")
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
 
 [node name="DrugLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4"]
 unique_name_in_owner = true
@@ -475,7 +440,7 @@ text = "unter Drogen"
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_constants/separation = 0
+theme_override_constants/separation = 10
 
 [node name="DrugLevel1" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4/HBoxContainer"]
 unique_name_in_owner = true
@@ -485,10 +450,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("6_yc6lu")
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
 [node name="DrugLevel2" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 25)
@@ -496,10 +457,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("6_yc6lu")
-
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
 
 [node name="DrugLevel3" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox/HBoxContainer4/HBoxContainer"]
 unique_name_in_owner = true
@@ -524,17 +481,17 @@ theme_override_constants/margin_bottom = 29
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5"]
 custom_minimum_size = Vector2(212, 138)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 0
+theme_override_constants/separation = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 10
 
 [node name="BackpackItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
 unique_name_in_owner = true
@@ -543,20 +500,12 @@ mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
 script = null
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
 [node name="MapItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
 script = null
-
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
 
 [node name="DiaryItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
 unique_name_in_owner = true
@@ -565,13 +514,9 @@ mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
 script = null
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 10
-
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 10
 
 [node name="ManualItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
 unique_name_in_owner = true
@@ -580,19 +525,11 @@ mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
 script = null
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
 [node name="ItemSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
 script = null
-
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
 
 [node name="ItemSlot3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
 layout_mode = 2
@@ -600,18 +537,10 @@ mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
 script = null
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5"]
-layout_mode = 2
-theme_override_constants/margin_right = 32
-
 [node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5"]
 layout_mode = 2
 theme_override_constants/separation = 0
 theme_override_styles/separator = SubResource("StyleBoxLine_7k27a")
-
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5"]
-layout_mode = 2
-theme_override_constants/margin_right = 32
 
 [node name="TicketItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5" instance=ExtResource("8_rpjsw")]
 layout_mode = 2
@@ -625,168 +554,8 @@ script = null
 layout_mode = 2
 theme_override_constants/margin_bottom = 40
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="InventorySlots" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("12_40tb1")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_1ep7u")
-theme_override_font_sizes/font_size = 32
-text = "Inventar"
-
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 20
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="ItemSlot1" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MarginContainer4" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot5" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MarginContainer5" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot6" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MarginContainer6" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot7" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MarginContainer7" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot8" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 10
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="ItemSlot9" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot10" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot11" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot12" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MarginContainer4" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot13" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MarginContainer5" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot14" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MarginContainer6" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot15" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MarginContainer7" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme_override_constants/margin_right = 10
-
-[node name="ItemSlot16" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_rpjsw")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
 
 [connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox" to="." method="_on_debuff_info_v_box_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/DebuffInfoVBox" to="." method="_on_debuff_info_v_box_mouse_exited"]

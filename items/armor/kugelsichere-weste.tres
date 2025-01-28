@@ -31,3 +31,4 @@ name = "Kugelsichere Weste"
 description = "Weil man in Berlin nie wissen kann, was hinter der nächsten Haltestelle auf einen wartet. Sicher ist sicher – und in der U8 bist du definitiv nicht sicher."
 stats = SubResource("Resource_hodkb")
 texture = SubResource("PlaceholderTexture2D_nw8fe")
+price = 500

@@ -1,4 +1,4 @@
-extends NPC
+extends Npc
 
 const SPEED: float = 30.0
 @export var LEFT_BOUNDARY: int = 77
@@ -17,16 +17,16 @@ func _physics_process(delta: float) -> void:
     velocity = Vector2(-SPEED, 0)
     move_and_collide(velocity * delta)
 
-    # Check if the NPC has reached the boundary
+    # Check if the Npc has reached the boundary
     if global_position.x <= LEFT_BOUNDARY:
-        queue_free()  # Despawn the NPC
+        queue_free()  # Despawn the Npc
 
 func _on_detect_characters_body_entered(body):
     if _is_interacting or body == self:
         return
 
-    # First, see if this is an NPC or a subclass of NPC (e.g., WALKING_NPC).
-    var npc_body = body as NPC
+    # First, see if this is an Npc or a subclass of Npc (e.g., WalkingNpc).
+    var npc_body = body as Npc
     if npc_body:
         _is_interacting = true
         _sprite.play("idle")
@@ -36,7 +36,7 @@ func _on_detect_characters_body_entered(body):
             print("Obstacle!!! " + npc_body.name)
             await get_tree().create_timer(2.0).timeout
         _continue_walking()
-    # If not NPC, check if it's the player’s layer
+    # If not Npc, check if it's the player’s layer
     elif body.get_collision_layer() == 3 and not _player_checked:
         _is_interacting = true
         _sprite.play("idle")
@@ -49,7 +49,6 @@ func _on_detect_characters_body_entered(body):
 
         # Optional: If we also want to wait for the player to move:
         while is_obstacle_in_path(body):
-            print("Obstacle!!! " + body.name)
             await get_tree().process_frame
         _continue_walking()
 

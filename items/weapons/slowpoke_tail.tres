@@ -32,3 +32,4 @@ name = "Flegmon-Rute"
 description = "Sehr lecker. Wert hoch. "
 stats = SubResource("Resource_hfqg5")
 texture = ExtResource("4_l6ivm")
+price = 1000

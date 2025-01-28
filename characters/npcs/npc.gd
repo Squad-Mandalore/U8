@@ -1,7 +1,7 @@
 extends CharacterBody2D
-class_name NPC
+class_name Npc
 
-enum State {IDLE, WALK, TALK}
+enum State {IDLE, TALK}
 
 var _current_state: State = State.IDLE
 var _player_nearby: bool = false
@@ -47,29 +47,27 @@ func disable_outline() -> void:
 # function for schackeline, perhaps use for player if stuck as well
 func make_space(body : Node2D) -> void:
     # Moves the npc out of the center of the train
-    var move_direction = Vector2.ZERO
-
-    # Check if moving up is possible
-    var up_position = global_position + Vector2(0, -10)
-    if not is_position_obstructed(up_position):
-        move_direction = Vector2(0, -1)
-    else:
-        # Check if moving down is possible
-        var down_position = global_position + Vector2(0, 10)
-        if not is_position_obstructed(down_position):
-            move_direction = Vector2(0, 1)
-        else:
-            # Move back in X direction to create space
-            var back_position = global_position + Vector2(10, 0)
-            if not is_position_obstructed(back_position):
-                move_direction = Vector2(1, 0)
-            else:
-                move_direction = Vector2(-1, 0)
-
-    position += move_direction * 5
+    position += pick_valid_direction() * 5
 
 func is_position_obstructed(target_position: Vector2) -> bool:
     var space_state = get_world_2d().direct_space_state
     var query = PhysicsRayQueryParameters2D.create(global_position, target_position)
     var result = space_state.intersect_ray(query)
     return result.size() > 0
+
+# Helper to find an unobstructed direction
+func pick_valid_direction() -> Vector2:
+    var directions = [
+        Vector2(0, -1),
+        Vector2(0, 1),
+        Vector2(-1, 0),
+        Vector2(1, 0)
+    ]
+    directions.shuffle()
+
+    for dir in directions:
+        var check_pos = global_position + dir * 24
+        if not is_position_obstructed(check_pos):
+            return dir
+
+    return Vector2.ZERO

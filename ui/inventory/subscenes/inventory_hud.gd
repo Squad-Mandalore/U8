@@ -5,23 +5,11 @@ var stats: StatsSpecifier = null
 
 func _ready() -> void:
     SignalDispatcher.set_ck3_progress_bar_value.connect(set_ck3_progress_bar_value)
-    SignalDispatcher.update_item_slots.connect(load_item_slots)
     # load_meta_items()
     # item_slots.append("res://ui/hud/assets/coin.svg")
-    # load_item_slots()
 
 func set_ck3_progress_bar_value(value: int):
     ck3_progress_bar_value = value
-
-func load_item_slots():
-    for i in range(SourceOfTruth.MAX_INVENTORY_SIZE):
-        var item_slot = get_node("%ItemSlot" + str(i + 1))
-        item_slot.index = i
-        if i + 1 > SourceOfTruth.cur_inventory_size:
-            item_slot.disable()
-        else:
-            item_slot.enable()
-            item_slot.set_item(SourceOfTruth.inventory_slots[i])
 
 func load_meta_items():
     SourceOfTruth.cur_inventory_size = %BackpackItemSlot.inventory_size
@@ -50,4 +38,3 @@ func _on_debuff_info_v_box_mouse_exited() -> void:
 
 func _on_debuff_info_v_box_mouse_entered() -> void:
     SignalDispatcher.toggle_status_types_hud.emit(stats)
-
