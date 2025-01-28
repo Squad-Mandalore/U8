@@ -23,7 +23,6 @@ func _on_main_menu_button_pressed():
     $ConfirmMainMenu.popup_centered()
 
 func _on_confirm_main_menu_confirmed():
-    Questomania.save()
     main_menu_pressed.emit()
     close()
 
