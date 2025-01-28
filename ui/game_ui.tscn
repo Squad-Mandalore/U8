@@ -172,7 +172,6 @@ script = ExtResource("31_jqt7e")
 
 [node name="ConfigurableSubViewport" type="SubViewport" parent="ViewportContainer"]
 handle_input_locally = false
-snap_2d_vertices_to_pixel = true
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
