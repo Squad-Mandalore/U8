@@ -13,7 +13,6 @@ var contradiction : Callable = func contradiction() -> bool:
 
 func _ready() -> void:
     if not FileAccess.file_exists(SAVE_PATH):
-        print("ich bin los")
         # Create logic to create all quests
         var dishonest_brothers_quest: QuestEntry = (
             quest_manager
