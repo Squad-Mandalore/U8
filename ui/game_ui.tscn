@@ -188,6 +188,7 @@ ending_scene = "res://scenes/end_credits/end_credits.tscn"
 level_loading_screen = NodePath("../LevelLoadingScreen")
 
 [node name="SoundEffectPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Soundeffects"
 script = ExtResource("9_uu4yx")
 
 [connection signal="level_load_started" from="LevelLoader" to="." method="_on_level_loader_level_load_started"]

@@ -30,10 +30,13 @@ func _on_combat_enter(enemy: Enemy):
     var instance = combat_scene.instantiate()
     instance.enemy = enemy
     level_container.call_deferred("add_child", instance)
+    SignalDispatcher.sound_music.emit("combat")
 
 func _on_combat_exit(to_free: Node):
     to_free.queue_free()
     level_container.call_deferred("add_child", current_level)
+    SignalDispatcher.sound_music.emit("station")
+
 
 func _attach_level(level_resource : Resource):
     assert(level_container != null, "level_container is null")

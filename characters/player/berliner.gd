@@ -305,3 +305,4 @@ func _start_shoping():
 func _stop_shoping():
     speed_multiplier = 1.0
     switch_state(State.IDLE)
+

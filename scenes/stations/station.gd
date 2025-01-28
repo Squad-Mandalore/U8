@@ -13,6 +13,7 @@ func _ready() -> void:
     player.speed_multiplier = 0.0
     player.hide()
     animation_player.play("train_enter")
+    SignalDispatcher.sound_music.emit("station")
 
 func _on_player_zero_health() -> void:
     level_lost.emit()

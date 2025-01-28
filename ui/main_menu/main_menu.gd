@@ -26,3 +26,9 @@ func _setup_game_buttons():
     super._setup_game_buttons()
     if GameState.has_game_state():
         %ContinueGameButton.disabled = false
+
+func _on_button_pressed():
+    SignalDispatcher.sound_effect.emit("button_clicked")
+
+func _on_mouse_entered():
+    SignalDispatcher.sound_effect.emit("hover_effect")
