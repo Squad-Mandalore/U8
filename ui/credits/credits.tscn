@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7hs5igqv1qjk"]
+[gd_scene load_steps=3 format=3 uid="uid://b7hs5igqv1qjk"]
 
 [ext_resource type="Script" path="res://ui/credits/credits.gd" id="2_70x5l"]
+[ext_resource type="StyleBox" uid="uid://cls7aar7l8wes" path="res://ui/assets/little_transparent_panel.tres" id="2_ujrto"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -14,6 +15,19 @@ h1_font_size = 64
 h2_font_size = 48
 h3_font_size = 32
 h4_font_size = 24
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_ujrto")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
