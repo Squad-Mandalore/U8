@@ -55,16 +55,22 @@ func calculate_first_start() -> bool:
     var player_init = SourceOfTruth.stats.initiative + (randi() % 3 + 1)
     return player_init > enemy_init
 
-func take_damage(damage: int, stats: StatsSpecifier, attacker: String):
-    var received_damage = SourceOfTruth.calculate_damage(damage, stats)
+func take_damage(damage: int, defender_stats: StatsSpecifier, attacker_stats: StatsSpecifier, attacker: String, attacker_token: Utils.AttackTypes, defender_token: Utils.AttackTypes):
+    # to calculate netto dmg (actuall recevied dmg)
+    # damage is brutto dmg (so unreduced dmg the attacker would deal to defender)
+    var received_damage = SourceOfTruth.calculate_damage(damage, defender_stats, attacker_stats, attacker_token, defender_token)
+
+    # update info box in UI dependant on damage done
+    _feedback_box.set_feedback(attacker + " hat " + str(received_damage) + " Schaden gemacht.")
+
     # TODO: use stats_changed when player stats are used
     if attacker == "Enemy":
         var delta_stats = StatsSpecifier.new()
         delta_stats.health = -received_damage
         SourceOfTruth.stats_changed(delta_stats)
     else:
-        stats.health -= received_damage
-        if stats.health <= 0:
+        defender_stats.health -= received_damage
+        if defender_stats.health <= 0:
             # TODO: winning screen here and on click combat exit
             exit_combat()
 
@@ -73,22 +79,25 @@ func execute_attack(attack: Attack, attacker: String):
 
     var attacker_panel
     var defender_panel
-    var enemy_stats
+    var defender_stats
+    var attacker_stats
     if attacker == "Player":
         attacker_panel = _player_status_panel
         defender_panel = _enemy_status_panel
-        enemy_stats = enemy.stats
+        defender_stats = enemy.stats
+        attacker_stats = SourceOfTruth.stats
     else:
         attacker_panel = _enemy_status_panel
         defender_panel = _player_status_panel
-        enemy_stats = SourceOfTruth.stats
+        defender_stats = SourceOfTruth.stats
+        attacker_stats = enemy.stats
 
     for token_number in attack.token_number:
         attacker_panel.add_token(attack.token)
-    take_damage(attack.damage, enemy_stats, attacker)
+    take_damage(attack.damage, defender_stats, attacker_stats, attacker, attack.token, defender_panel.stance)
     attacker_panel.update_status_panel()
     defender_panel.update_status_panel()
-    _feedback_box.set_feedback(attacker + " hat " + str(attack.damage) + " Schaden gemacht.")
+    
     # TODO: needs better logic here
     await get_tree().create_timer(2).timeout
     if attacker == "Player":
