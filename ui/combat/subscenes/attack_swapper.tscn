@@ -138,20 +138,17 @@ _data = {
 }
 
 [node name="AttackSwapper" type="Control"]
-custom_minimum_size = Vector2(627, 169)
+custom_minimum_size = Vector2(596, 149)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_bottom = 169.0
 script = ExtResource("1_md5jf")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(627, 169)
-layout_mode = 0
-offset_right = 627.0
-offset_bottom = 169.0
+custom_minimum_size = Vector2(0, 149)
+layout_mode = 1
+offset_right = 218.0
+offset_bottom = 149.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_3p0db")
@@ -165,7 +162,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 15
 
 [node name="Attack1" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_miyym")]
 unique_name_in_owner = true
@@ -173,15 +170,17 @@ layout_mode = 2
 
 [node name="Attack2" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_miyym")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="Attack3" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_miyym")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 theme_override_constants/separation = 5
 
 [node name="SwapButtonRight" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_tcsvr")]
