@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://characters/npcs/drogenheandler/drogenheandler.gd" id="1_mirje"]
 [ext_resource type="Script" path="res://items/item.gd" id="2_xvmp4"]
 [ext_resource type="Resource" uid="uid://bw88rw1iou2ej" path="res://items/armor/hemd.tres" id="3_ckh4r"]
+[ext_resource type="Resource" uid="uid://ckynd8kmolf6x" path="res://items/weapons/slowpoke_tail.tres" id="4_p3a3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enw8h"]
 size = Vector2(20, 4)
@@ -51,10 +52,6 @@ region = Rect2(512, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_32s2d"]
 atlas = ExtResource("1_1s75y")
 region = Rect2(544, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ex622"]
-atlas = ExtResource("1_1s75y")
-region = Rect2(192, 3, 32, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0k6lv"]
 atlas = ExtResource("1_1s75y")
@@ -166,9 +163,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ex622")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_0k6lv")
 }, {
 "duration": 1.0,
@@ -180,7 +174,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ws2vt")
 }, {
-"duration": 20.0,
+"duration": 15.0,
 "texture": SubResource("AtlasTexture_roexw")
 }, {
 "duration": 1.0,
@@ -198,7 +192,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p4qqd")
 }, {
-"duration": 1.0,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_5ec5t")
 }],
 "loop": true,
@@ -233,7 +227,9 @@ animations = [{
 z_index = 50
 collision_layer = 5
 script = ExtResource("1_mirje")
-shop_inventory = Array[ExtResource("2_xvmp4")]([ExtResource("3_ckh4r"), null, null, null, null, null, null, null])
+shop_inventory = Array[ExtResource("2_xvmp4")]([ExtResource("3_ckh4r"), ExtResource("4_p3a3l"), null, null, null, null, null, null])
+_name = "Badmann"
+RANDOM_NAME = false
 _gender = "Diverse"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -245,5 +241,5 @@ shape = SubResource("RectangleShape2D_enw8h")
 sprite_frames = SubResource("SpriteFrames_kdmse")
 animation = &"shop"
 autoplay = "idle"
-frame_progress = 0.670413
+frame_progress = 0.630161
 offset = Vector2(0, -16)
