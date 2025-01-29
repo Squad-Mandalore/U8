@@ -198,7 +198,7 @@ size_flags_vertical = 3
 libraries = {
 "": SubResource("AnimationLibrary_pnpex")
 }
-speed_scale = 2.0
+speed_scale = 4.0
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/SwapButtonRight" to="." method="_on_swap_button_right_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/SwapButtonLeft" to="." method="_on_swap_button_left_pressed"]
