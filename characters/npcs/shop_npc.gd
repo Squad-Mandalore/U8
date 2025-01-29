@@ -3,6 +3,7 @@ class_name ShopNpc
 
 enum SubState { NONE, SHOP }
 var _sub_state = SubState.NONE
+@export var shop_inventory: Array[Item]
 
 func open_shop():
     _sub_state = SubState.SHOP

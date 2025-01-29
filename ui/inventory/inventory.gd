@@ -2,6 +2,8 @@ extends CanvasLayer
 
 var action_key: String
 
+@onready var inventory_info_panel: Control = %InventoryInfoPanel
+
 func _ready() -> void:
     SignalDispatcher.reload_ui.connect(update_inventory_stats)
     %InventoryButton.set_key_icon("inventory")

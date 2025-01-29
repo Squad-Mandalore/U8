@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dxtsv1xtfd42n"]
+[gd_scene load_steps=20 format=3 uid="uid://dxtsv1xtfd42n"]
 
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
 [ext_resource type="Script" path="res://scenes/stations/01_wittenau/wittenau.gd" id="1_vdt2h"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://caniahfcrm3my" path="res://characters/npcs/sportfans/eisbaeren/eisbaeren1.tscn" id="10_krbe2"]
 [ext_resource type="PackedScene" uid="uid://cu2j876adtdfh" path="res://characters/npcs/sportfans/eisbaeren/eisbaeren2.tscn" id="11_1m7y8"]
 [ext_resource type="PackedScene" uid="uid://4ylmn4pu3xfm" path="res://characters/npcs/sportfans/eisbaeren/eisbaeren3.tscn" id="12_485u2"]
+[ext_resource type="PackedScene" uid="uid://dv2v43jv13rjr" path="res://characters/automatas/drink/drink_vending_machine.tscn" id="13_i82bx"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
 b = Vector2(822, 0)
@@ -222,6 +223,9 @@ shape = SubResource("RectangleShape2D_t0h8n")
 stream = ExtResource("8_4q2iq")
 autoplay = true
 bus = &"Music"
+
+[node name="DrinkVendingMachine" parent="." instance=ExtResource("13_i82bx")]
+position = Vector2(837, 283)
 
 [connection signal="ready" from="." to="Node2D/CharacterBody2D" method="_enable_scooting"]
 [connection signal="body_entered" from="TrainDoor" to="." method="_on_area_2d_body_entered"]

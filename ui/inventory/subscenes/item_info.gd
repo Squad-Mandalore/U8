@@ -2,19 +2,19 @@ extends VBoxContainer
 
 var new_stat_row_scene = preload("res://ui/inventory/subscenes/item_info_stat_row.tscn")
 
-func update_item_info(item: Item):
+func update_item_info(item: Item, is_shop_slot: bool):
     set_item_name(item)
     set_item_description(item)
-    set_item_price(item)
+    set_item_price(item, is_shop_slot)
     Utils.remove_all_children(%StatVBox)
     set_stats(item)
 
 func set_item_name(item: Item):
     (%ItemNameLabel as Label).text = item.name
 
-func set_item_price(item: Item):
+func set_item_price(item: Item, is_shop_slot: bool):
     var price = item.price
-    if !SourceOfTruth.in_shop:
+    if !is_shop_slot:
         price = SourceOfTruth.calculate_selling_price(item.price)
 
     %CostsLabel.text = str(price) + " Euronen"
