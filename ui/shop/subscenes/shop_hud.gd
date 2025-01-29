@@ -4,7 +4,6 @@ var is_human: bool
 var _dialogue_box: RichTextLabel
 var shop_inventory: Array[Item]
 var shop_inventory_size: int = 8
-var slot_specifier
 var human_dialogues = [
     "Nur {price} Euronen, wat willste mehr?",
     "Ey, {price} Euronen? Is geschenkt!",
@@ -35,12 +34,7 @@ func _ready() -> void:
     SignalDispatcher.update_shop_item_slots.connect(update_item_slots)
     SignalDispatcher.update_shop_dialogue_box.connect(update_dialogue_box)
     for i in range(shop_inventory_size):
-        var node = "%MachineShopSlot" + str(i + 1)
-        var shop_inventory_slot = get_node(node)
-        shop_inventory_slot.is_shop_slot = true
-        shop_inventory_slot.index = i + 1
-    for i in range(shop_inventory_size):
-        var node = "%HumanShopSlot" + str(i + 1)
+        var node = "%ShopSlot" + str(i + 1)
         var shop_inventory_slot = get_node(node)
         shop_inventory_slot.is_shop_slot = true
         shop_inventory_slot.index = i + 1
@@ -48,7 +42,6 @@ func _ready() -> void:
 func reload(new_is_human: bool, new_shop_inventory: Array[Item]) -> void:
     is_human = new_is_human
     shop_inventory = new_shop_inventory
-    slot_specifier = "Human" if is_human else "Machine"
     if is_human:
         _dialogue_box = %HumanLabel
         %HumanShopUpper.show()
@@ -66,7 +59,7 @@ func reload(new_is_human: bool, new_shop_inventory: Array[Item]) -> void:
 
 func update_item_slots(to_free: int = -1):
     for i in range(shop_inventory_size):
-        var node = "%" + slot_specifier + "ShopSlot" + str(i + 1)
+        var node = "%ShopSlot" + str(i + 1)
         var shop_inventory_slot = get_node(node)
         if i + 1 == to_free:
             shop_inventory[i] = null
