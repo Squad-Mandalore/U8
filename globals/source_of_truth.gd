@@ -69,7 +69,7 @@ static func get_all_attacks() -> Array[Attack]:
     var player_attacks = stats.attacks.duplicate()
     for item in inventory_slots:
         if item is Weapon:
-            player_attacks.append(item.attack)
+            player_attacks.append_array(item.attacks)
     return player_attacks
 
 static func set_damage_for_all_attacks():
@@ -77,7 +77,8 @@ static func set_damage_for_all_attacks():
         attack.calculate_damage(stats)
     for item in inventory_slots:
         if item is Weapon:
-            item.attack.calculate_damage(stats)
+            for attack in item.attacks:
+                attack.calculate_damage(stats)
 
 # Funciton gets a percentage and returns TRUE or FALSE dependant on the outcome
 static func chance(percent: float) -> bool:
