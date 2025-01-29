@@ -33,8 +33,8 @@ func loop():
     if half_turn_counter % 2 == 0:
         _round_descriptor.increment()
 
-func set_enemy(enemy: Enemy):
-    self.enemy = enemy
+func set_enemy(new_enemy: Enemy):
+    self.enemy = new_enemy
 
 func add_attack_hover(position: Vector2, attack: Attack):
     attack_hover = attack_hover_scene.instantiate()
@@ -55,40 +55,76 @@ func calculate_first_start() -> bool:
     var player_init = SourceOfTruth.stats.initiative + (randi() % 3 + 1)
     return player_init > enemy_init
 
-func take_damage(damage: int, stats: StatsSpecifier, attacker: String):
-    var received_damage = SourceOfTruth.calculate_damage(damage, stats)
+func take_damage(damage: int, defender_stats: StatsSpecifier, attacker: String, attacker_token: Utils.AttackTypes, defender_token: Utils.AttackTypes):
+    # to calculate netto dmg (actuall recevied dmg)
+    # damage is brutto dmg (so unreduced dmg the attacker would deal to defender)
+    var received_damage = SourceOfTruth.calculate_damage(damage, defender_stats, attacker_token, defender_token)
+    _feedback_box.set_feedback(attacker + " hat " + str(received_damage) + " Schaden gemacht.")
+
+    var status_type_damage = calc_status_type_dmg(defender_stats)
+    _feedback_box.set_feedback(str(status_type_damage) + " Schaden durch Status Level bekommen")
+
+    received_damage += status_type_damage
+
     # TODO: use stats_changed when player stats are used
     if attacker == "Enemy":
         var delta_stats = StatsSpecifier.new()
         delta_stats.health = -received_damage
         SourceOfTruth.stats_changed(delta_stats)
     else:
-        stats.health -= received_damage
-        if stats.health <= 0:
+        defender_stats.health -= received_damage
+        if defender_stats.health <= 0:
             # TODO: winning screen here and on click combat exit
             exit_combat()
+
+func calc_status_type_dmg(defender_stats: StatsSpecifier) -> int:
+    # apply dmg from status_types
+    # bleed
+    match defender_stats.bleed_level:
+        0: pass
+        1: return int(5 * ((100 - defender_stats.bleed_resistance)/100.0))
+        2: return int(10 * ((100 - defender_stats.bleed_resistance)/100.0))
+        3: return int(20 * ((100 - defender_stats.bleed_resistance)/100.0))
+        _: pass
+
+    # poison
+    match defender_stats.poison_level:
+        0: pass
+        1: return int(5 * ((100 - defender_stats.poison_resistance)/100.0))
+        2: return int(10 * ((100 - defender_stats.poison_resistance)/100.0))
+        3: return int(20 * ((100 - defender_stats.poison_resistance)/100.0))
+        _: pass
+    
+    # drug
+    match defender_stats.drug_level:
+        0: pass
+        1: return int(5 * ((100 - defender_stats.drug_resistance)/100.0))
+        2: return int(10 * ((100 - defender_stats.drug_resistance)/100.0))
+        3: return int(20 * ((100 - defender_stats.drug_resistance)/100.0))
+        _: pass
+    return 0
 
 func execute_attack(attack: Attack, attacker: String):
     loop()
 
     var attacker_panel
     var defender_panel
-    var enemy_stats
+    var defender_stats
     if attacker == "Player":
         attacker_panel = _player_status_panel
         defender_panel = _enemy_status_panel
-        enemy_stats = enemy.stats
+        defender_stats = enemy.stats
     else:
         attacker_panel = _enemy_status_panel
         defender_panel = _player_status_panel
-        enemy_stats = SourceOfTruth.stats
+        defender_stats = SourceOfTruth.stats
 
     for token_number in attack.token_number:
         attacker_panel.add_token(attack.token)
-    take_damage(attack.damage, enemy_stats, attacker)
+    take_damage(attack.damage, defender_stats, attacker, attack.token, defender_panel.stance)
     attacker_panel.update_status_panel()
     defender_panel.update_status_panel()
-    _feedback_box.set_feedback(attacker + " hat " + str(attack.damage) + " Schaden gemacht.")
+    
     # TODO: needs better logic here
     await get_tree().create_timer(2).timeout
     if attacker == "Player":
