@@ -4,6 +4,7 @@ var is_human: bool
 var _dialogue_box: RichTextLabel
 var shop_inventory: Array[Item]
 var shop_inventory_size: int = 8
+@onready var shop_name_label = %ShopNameLabel
 var human_dialogues = [
     "Nur {price} Euronen, wat willste mehr?",
     "Ey, {price} Euronen? Is geschenkt!",
@@ -39,9 +40,10 @@ func _ready() -> void:
         shop_inventory_slot.is_shop_slot = true
         shop_inventory_slot.index = i + 1
 
-func reload(new_is_human: bool, new_shop_inventory: Array[Item]) -> void:
+func reload(new_is_human: bool, new_shop_inventory: Array[Item], shop_name: String) -> void:
     is_human = new_is_human
     shop_inventory = new_shop_inventory
+    shop_name_label.text = shop_name
     if is_human:
         _dialogue_box = %HumanLabel
         %HumanShopUpper.show()

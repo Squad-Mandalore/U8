@@ -193,7 +193,7 @@ unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(0, 273)
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 50
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MachineContainer"]
 layout_mode = 2
