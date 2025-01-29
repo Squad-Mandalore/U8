@@ -35,6 +35,7 @@ static func stats_changed(delta_stats: StatsSpecifier):
     if stats.health <= 0:
         SignalDispatcher.player_zero_health.emit()
         GameState.new_run_state()
+        SignalDispatcher.reload_ui.emit()
         return
     SignalDispatcher.reload_ui.emit()
 

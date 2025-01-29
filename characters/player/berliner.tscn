@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dh8a5067wese3" path="res://ui/inventory/inventory.tscn" id="4_s04kq"]
 [ext_resource type="PackedScene" uid="uid://bkquoqbrb6bh2" path="res://ui/hud/train_hud.tscn" id="6_f7a2w"]
 [ext_resource type="PackedScene" uid="uid://de01h04q55cgs" path="res://scenes/dialogue/dialogue_box.tscn" id="7_2lanu"]
-[ext_resource type="PackedScene" uid="uid://cdtplrex7l3fs" path="res://ui/shop/shop.tscn" id="8_ae2mv"]
+[ext_resource type="PackedScene" path="res://ui/shop/shop.tscn" id="8_ae2mv"]
 [ext_resource type="PackedScene" uid="uid://bcfug5ny0wrib" path="res://addons/EidolonClient/eidolon_handler.tscn" id="8_c0xdv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpkiy"]
