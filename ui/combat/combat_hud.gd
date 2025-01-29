@@ -55,10 +55,10 @@ func calculate_first_start() -> bool:
     var player_init = SourceOfTruth.stats.initiative + (randi() % 3 + 1)
     return player_init > enemy_init
 
-func take_damage(damage: int, defender_stats: StatsSpecifier, attacker_stats: StatsSpecifier, attacker: String, attacker_token: Utils.AttackTypes, defender_token: Utils.AttackTypes):
+func take_damage(damage: int, defender_stats: StatsSpecifier, attacker: String, attacker_token: Utils.AttackTypes, defender_token: Utils.AttackTypes):
     # to calculate netto dmg (actuall recevied dmg)
     # damage is brutto dmg (so unreduced dmg the attacker would deal to defender)
-    var received_damage = SourceOfTruth.calculate_damage(damage, defender_stats, attacker_stats, attacker_token, defender_token)
+    var received_damage = SourceOfTruth.calculate_damage(damage, defender_stats, attacker_token, defender_token)
     _feedback_box.set_feedback(attacker + " hat " + str(received_damage) + " Schaden gemacht.")
 
     var status_type_damage = calc_status_type_dmg(defender_stats)
@@ -81,43 +81,27 @@ func calc_status_type_dmg(defender_stats: StatsSpecifier) -> int:
     # apply dmg from status_types
     # bleed
     match defender_stats.bleed_level:
-        0:
-            pass
-        1:
-            return int(5 * ((100 - defender_stats.bleed_resistance)/100.0))
-        2:
-            return int(10 * ((100 - defender_stats.bleed_resistance)/100.0))
-        3:
-            return int(20 * ((100 - defender_stats.bleed_resistance)/100.0))
-        _:
-            pass
+        0: pass
+        1: return int(5 * ((100 - defender_stats.bleed_resistance)/100.0))
+        2: return int(10 * ((100 - defender_stats.bleed_resistance)/100.0))
+        3: return int(20 * ((100 - defender_stats.bleed_resistance)/100.0))
+        _: pass
 
     # poison
     match defender_stats.poison_level:
-        0:
-            pass
-        1:
-            return int(5 * ((100 - defender_stats.poison_resistance)/100.0))
-        2:
-            return int(10 * ((100 - defender_stats.poison_resistance)/100.0))
-        3:
-            return int(20 * ((100 - defender_stats.poison_resistance)/100.0))
-        _:
-            pass
+        0: pass
+        1: return int(5 * ((100 - defender_stats.poison_resistance)/100.0))
+        2: return int(10 * ((100 - defender_stats.poison_resistance)/100.0))
+        3: return int(20 * ((100 - defender_stats.poison_resistance)/100.0))
+        _: pass
     
     # drug
     match defender_stats.drug_level:
-        0:
-            pass
-        1:
-            return int(5 * ((100 - defender_stats.drug_resistance)/100.0))
-        2:
-            return int(10 * ((100 - defender_stats.drug_resistance)/100.0))
-        3:
-            return int(20 * ((100 - defender_stats.drug_resistance)/100.0))
-        _:
-            pass
-
+        0: pass
+        1: return int(5 * ((100 - defender_stats.drug_resistance)/100.0))
+        2: return int(10 * ((100 - defender_stats.drug_resistance)/100.0))
+        3: return int(20 * ((100 - defender_stats.drug_resistance)/100.0))
+        _: pass
     return 0
 
 func execute_attack(attack: Attack, attacker: String):
@@ -126,21 +110,18 @@ func execute_attack(attack: Attack, attacker: String):
     var attacker_panel
     var defender_panel
     var defender_stats
-    var attacker_stats
     if attacker == "Player":
         attacker_panel = _player_status_panel
         defender_panel = _enemy_status_panel
         defender_stats = enemy.stats
-        attacker_stats = SourceOfTruth.stats
     else:
         attacker_panel = _enemy_status_panel
         defender_panel = _player_status_panel
         defender_stats = SourceOfTruth.stats
-        attacker_stats = enemy.stats
 
     for token_number in attack.token_number:
         attacker_panel.add_token(attack.token)
-    take_damage(attack.damage, defender_stats, attacker_stats, attacker, attack.token, defender_panel.stance)
+    take_damage(attack.damage, defender_stats, attacker, attack.token, defender_panel.stance)
     attacker_panel.update_status_panel()
     defender_panel.update_status_panel()
     

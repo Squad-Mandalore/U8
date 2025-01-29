@@ -93,7 +93,7 @@ static var effectiveness = {
 }
 
 # Function to determine attack effectiveness
-static func get_effectiveness(attacker_type:  Utils.AttackTypes, defender_type:  Utils.AttackTypes) -> float:
+static func get_effectiveness_value(attacker_type:  Utils.AttackTypes, defender_type:  Utils.AttackTypes) -> float:
     if attacker_type in effectiveness and defender_type in effectiveness[attacker_type]:
         return effectiveness[attacker_type][defender_type]
     return 1.0 # Neutral if no special effectiveness
@@ -101,19 +101,14 @@ static func get_effectiveness(attacker_type:  Utils.AttackTypes, defender_type: 
 static func calculate_dmg_with_armor(armor: int, damage: int) -> int:
     if armor == 0:
         return damage
-    const a = 5
-    const b = 5
-    const c = 23.4
-    return max(0, damage - (1 + 1 / c) * armor - a * log(exp(armor / a) + exp(b)) + a * b)
+    return max(0, damage - 1.04274 * armor + 5 * log(exp(armor / 5) + 148.413) - 25)
 
-static func calculate_damage(damage: int, defender_stats: StatsSpecifier, attacker_stats: StatsSpecifier, attacker_token: Utils.AttackTypes, defender_token: Utils.AttackTypes) -> int:
-
+static func calculate_damage(damage: int, defender_stats: StatsSpecifier, attacker_token: Utils.AttackTypes, defender_token: Utils.AttackTypes) -> int:
     if chance(defender_stats.dodge_chance):
         return 0
 
     # check for effective attack
-    var effectiveness: float = get_effectiveness(attacker_token, defender_token)
-    damage *= effectiveness
+    damage *= get_effectiveness_value(attacker_token, defender_token)
 
     # apply armor to dmg
     damage = calculate_dmg_with_armor(defender_stats.armor, damage)
