@@ -33,7 +33,6 @@ func _on_detect_characters_body_entered(body):
         if is_obstacle_in_path(npc_body):
             npc_body.make_space(self as Node2D)
         while is_obstacle_in_path(npc_body):
-            print("Obstacle!!! " + npc_body.name)
             await get_tree().create_timer(2.0).timeout
         _continue_walking()
     # If not Npc, check if it's the player’s layer

@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="8_d2jpe"]
 [ext_resource type="Texture2D" uid="uid://cl3p5uw8naa3v" path="res://ui/main_menu/assets/title.png" id="8_lghh0"]
 [ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="8_mcq1t"]
-[ext_resource type="StyleBox" path="res://ui/assets/color_eraser.tres" id="9_l3bui"]
+[ext_resource type="StyleBox" uid="uid://01yk2v131qmi" path="res://ui/assets/color_eraser.tres" id="9_l3bui"]
 [ext_resource type="Script" path="res://ui/main_menu/subscenes/auto_scrolling_label.gd" id="12_4fvel"]
 [ext_resource type="FontFile" uid="uid://u4mx46rxgutt" path="res://assets/fonts/hind/Hind-SemiBold.ttf" id="13_tcn16"]
 
