@@ -9,7 +9,7 @@
 size = Vector2(20, 7)
 
 [node name="DrinkVendingMachine" type="StaticBody2D"]
-collision_layer = 4
+collision_layer = 5
 collision_mask = 0
 script = ExtResource("1_04lny")
 shop_inventory = Array[ExtResource("2_7bg4v")]([ExtResource("3_i5x52"), null, null, null, null, null, null, null])
