@@ -33,8 +33,8 @@ func loop():
     if half_turn_counter % 2 == 0:
         _round_descriptor.increment()
 
-func set_enemy(enemy: Enemy):
-    self.enemy = enemy
+func set_enemy(new_enemy: Enemy):
+    self.enemy = new_enemy
 
 func add_attack_hover(position: Vector2, attack: Attack):
     attack_hover = attack_hover_scene.instantiate()
@@ -59,9 +59,12 @@ func take_damage(damage: int, defender_stats: StatsSpecifier, attacker_stats: St
     # to calculate netto dmg (actuall recevied dmg)
     # damage is brutto dmg (so unreduced dmg the attacker would deal to defender)
     var received_damage = SourceOfTruth.calculate_damage(damage, defender_stats, attacker_stats, attacker_token, defender_token)
-
-    # update info box in UI dependant on damage done
     _feedback_box.set_feedback(attacker + " hat " + str(received_damage) + " Schaden gemacht.")
+
+    var status_type_damage = calc_status_type_dmg(defender_stats)
+    _feedback_box.set_feedback(str(status_type_damage) + " Schaden durch Status Level bekommen")
+
+    received_damage += status_type_damage
 
     # TODO: use stats_changed when player stats are used
     if attacker == "Enemy":
@@ -73,6 +76,49 @@ func take_damage(damage: int, defender_stats: StatsSpecifier, attacker_stats: St
         if defender_stats.health <= 0:
             # TODO: winning screen here and on click combat exit
             exit_combat()
+
+func calc_status_type_dmg(defender_stats: StatsSpecifier) -> int:
+    # apply dmg from status_types
+    # bleed
+    match defender_stats.bleed_level:
+        0:
+            pass
+        1:
+            return int(5 * ((100 - defender_stats.bleed_resistance)/100.0))
+        2:
+            return int(10 * ((100 - defender_stats.bleed_resistance)/100.0))
+        3:
+            return int(20 * ((100 - defender_stats.bleed_resistance)/100.0))
+        _:
+            pass
+
+    # poison
+    match defender_stats.poison_level:
+        0:
+            pass
+        1:
+            return int(5 * ((100 - defender_stats.poison_resistance)/100.0))
+        2:
+            return int(10 * ((100 - defender_stats.poison_resistance)/100.0))
+        3:
+            return int(20 * ((100 - defender_stats.poison_resistance)/100.0))
+        _:
+            pass
+    
+    # drug
+    match defender_stats.drug_level:
+        0:
+            pass
+        1:
+            return int(5 * ((100 - defender_stats.drug_resistance)/100.0))
+        2:
+            return int(10 * ((100 - defender_stats.drug_resistance)/100.0))
+        3:
+            return int(20 * ((100 - defender_stats.drug_resistance)/100.0))
+        _:
+            pass
+
+    return 0
 
 func execute_attack(attack: Attack, attacker: String):
     loop()
