@@ -40,7 +40,7 @@ func _ready() -> void:
         shop_inventory_slot.is_shop_slot = true
         shop_inventory_slot.index = i + 1
 
-func reload(new_is_human: bool, new_shop_inventory: Array[Item], shop_name: String) -> void:
+func reload(new_is_human: bool, new_shop_inventory: Array[Item], shop_name: String, sprite_frames: SpriteFrames = null) -> void:
     is_human = new_is_human
     shop_inventory = new_shop_inventory
     shop_name_label.text = shop_name
@@ -49,6 +49,9 @@ func reload(new_is_human: bool, new_shop_inventory: Array[Item], shop_name: Stri
         %HumanShopUpper.show()
         %HumanShopLower.show()
         %MachineContainer.hide()
+        %AnimatedSprite2D.sprite_frames = sprite_frames
+        %AnimatedSprite2D.animation = "shop"
+        %AnimatedSprite2D.play()
     else:
         _dialogue_box = %MachineLabel
         %MachineContainer.show()

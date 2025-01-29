@@ -78,7 +78,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
     var ext_is_shop_slot: bool = data["is_shop_slot"]
     var ext_item: Item = data["item"]
     if ext_is_shop_slot:
-        print("attempt to buy")
+        print("attempt to buy", SourceOfTruth.balance, ext_item.price)
         if  SourceOfTruth.balance >= ext_item.price:
             SourceOfTruth.add_item(ext_item)
             SourceOfTruth.balance_changed(-ext_item.price)
