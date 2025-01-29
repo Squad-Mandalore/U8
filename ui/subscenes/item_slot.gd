@@ -40,7 +40,7 @@ func toggle_frame():
 func _on_mouse_entered() -> void:
     if is_enabled():
         add_theme_stylebox_override("panel", preload("res://ui/assets/item_slot_enabled_hovered.tres"))
-        SignalDispatcher.sound_effect.emit("hover_item")
+        SignalDispatcher.sound_effect.emit("hover_effect")
         if item != null:
             SignalDispatcher.toggle_item_hud.emit(item)
 

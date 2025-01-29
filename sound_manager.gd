@@ -1,6 +1,5 @@
 extends AudioStreamPlayer
 
-var hover_item_effect = preload("res://ui/inventory/assets/sounds/effects/hover-item.wav")
 var open_inventory_effect = preload("res://ui/inventory/assets/sounds/effects/open-inventory.wav")
 var exit_inventory = preload("res://ui/inventory/assets/sounds/effects/exit-inventory-menu.wav")
 var pop_effect = preload("res://assets/sounds/effects/pop_effect.wav")
@@ -28,12 +27,6 @@ func _on_sound_effect(sound_name: String) -> void:
             play_sound_effect(button_clicked_effect)
         "hover_effect":
             play_sound_effect(hover_effect)
-        "hover_item":
-            play_sound_effect(hover_effect)
-        "open_inventory":
-            play_sound_effect(pop_effect)
-        "exit_inventory":
-            play_sound_effect(pop_effect)
         "pop":
             play_sound_effect(pop_effect)
         "exit":
