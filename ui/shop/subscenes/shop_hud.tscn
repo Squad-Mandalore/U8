@@ -188,65 +188,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_nk5fd")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HumanShopLower/PanelContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-theme_override_constants/separation = 10
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HumanShopLower/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 10
-
-[node name="HumanShopSlot1" parent="PanelContainer/MarginContainer/VBoxContainer/HumanShopLower/PanelContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 0
-
-[node name="HumanShopSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/HumanShopLower/PanelContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="HumanShopSlot3" parent="PanelContainer/MarginContainer/VBoxContainer/HumanShopLower/PanelContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="HumanShopSlot4" parent="PanelContainer/MarginContainer/VBoxContainer/HumanShopLower/PanelContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HumanShopLower/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="HumanShopSlot5" parent="PanelContainer/MarginContainer/VBoxContainer/HumanShopLower/PanelContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 0
-
-[node name="HumanShopSlot6" parent="PanelContainer/MarginContainer/VBoxContainer/HumanShopLower/PanelContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="HumanShopSlot7" parent="PanelContainer/MarginContainer/VBoxContainer/HumanShopLower/PanelContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="HumanShopSlot8" parent="PanelContainer/MarginContainer/VBoxContainer/HumanShopLower/PanelContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
 [node name="MachineContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 visible = false
@@ -270,69 +211,80 @@ bbcode_enabled = true
 text = "Dit macht dann nen [color=#FF4346]Zwambo an Euronen[/color]."
 scroll_active = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MachineContainer/VBoxContainer3"]
-layout_mode = 2
-size_flags_vertical = 6
-theme_override_constants/separation = 10
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MachineContainer/VBoxContainer3/VBoxContainer"]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 10
-
-[node name="MachineShopSlot1" parent="PanelContainer/MarginContainer/VBoxContainer/MachineContainer/VBoxContainer3/VBoxContainer/HBoxContainer2" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 0
-
-[node name="MachineShopSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/MachineContainer/VBoxContainer3/VBoxContainer/HBoxContainer2" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="MachineShopSlot3" parent="PanelContainer/MarginContainer/VBoxContainer/MachineContainer/VBoxContainer3/VBoxContainer/HBoxContainer2" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MachineShopSlot4" parent="PanelContainer/MarginContainer/VBoxContainer/MachineContainer/VBoxContainer3/VBoxContainer/HBoxContainer2" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MachineContainer/VBoxContainer3/VBoxContainer"]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="MachineShopSlot5" parent="PanelContainer/MarginContainer/VBoxContainer/MachineContainer/VBoxContainer3/VBoxContainer/HBoxContainer3" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 0
-
-[node name="MachineShopSlot6" parent="PanelContainer/MarginContainer/VBoxContainer/MachineContainer/VBoxContainer3/VBoxContainer/HBoxContainer3" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MachineShopSlot7" parent="PanelContainer/MarginContainer/VBoxContainer/MachineContainer/VBoxContainer3/VBoxContainer/HBoxContainer3" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
-[node name="MachineShopSlot8" parent="PanelContainer/MarginContainer/VBoxContainer/MachineContainer/VBoxContainer3/VBoxContainer/HBoxContainer3" instance=ExtResource("3_fh4v0")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-
 [node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/MachineContainer"]
 custom_minimum_size = Vector2(273, 273)
 layout_mode = 2
 texture = ExtResource("5_pagsn")
+
+[node name="ItemSlotsContainer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemSlotsContainer"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -151.0
+offset_right = 286.0
+offset_bottom = -13.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemSlotsContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="ShopSlot1" parent="PanelContainer/MarginContainer/VBoxContainer/ItemSlotsContainer/VBoxContainer3/HBoxContainer2" instance=ExtResource("3_fh4v0")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+
+[node name="ShopSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/ItemSlotsContainer/VBoxContainer3/HBoxContainer2" instance=ExtResource("3_fh4v0")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ShopSlot3" parent="PanelContainer/MarginContainer/VBoxContainer/ItemSlotsContainer/VBoxContainer3/HBoxContainer2" instance=ExtResource("3_fh4v0")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+
+[node name="ShopSlot4" parent="PanelContainer/MarginContainer/VBoxContainer/ItemSlotsContainer/VBoxContainer3/HBoxContainer2" instance=ExtResource("3_fh4v0")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemSlotsContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ShopSlot5" parent="PanelContainer/MarginContainer/VBoxContainer/ItemSlotsContainer/VBoxContainer3/HBoxContainer3" instance=ExtResource("3_fh4v0")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+
+[node name="ShopSlot6" parent="PanelContainer/MarginContainer/VBoxContainer/ItemSlotsContainer/VBoxContainer3/HBoxContainer3" instance=ExtResource("3_fh4v0")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+
+[node name="ShopSlot7" parent="PanelContainer/MarginContainer/VBoxContainer/ItemSlotsContainer/VBoxContainer3/HBoxContainer3" instance=ExtResource("3_fh4v0")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+
+[node name="ShopSlot8" parent="PanelContainer/MarginContainer/VBoxContainer/ItemSlotsContainer/VBoxContainer3/HBoxContainer3" instance=ExtResource("3_fh4v0")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

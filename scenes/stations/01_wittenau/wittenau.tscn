@@ -210,6 +210,9 @@ position = Vector2(1186, 324)
 z_index = 0
 position = Vector2(1150, 329)
 
+[node name="DrinkVendingMachine" parent="Node2D" instance=ExtResource("13_i82bx")]
+position = Vector2(837, 283)
+
 [node name="TrainDoor" type="Area2D" parent="."]
 position = Vector2(962, 186)
 collision_layer = 0
@@ -223,9 +226,6 @@ shape = SubResource("RectangleShape2D_t0h8n")
 stream = ExtResource("8_4q2iq")
 autoplay = true
 bus = &"Music"
-
-[node name="DrinkVendingMachine" parent="." instance=ExtResource("13_i82bx")]
-position = Vector2(837, 283)
 
 [connection signal="ready" from="." to="Node2D/CharacterBody2D" method="_enable_scooting"]
 [connection signal="body_entered" from="TrainDoor" to="." method="_on_area_2d_body_entered"]
