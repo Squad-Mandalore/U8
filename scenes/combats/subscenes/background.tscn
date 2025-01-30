@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ccxbv5rjap114"]
+[gd_scene load_steps=14 format=3 uid="uid://ccxbv5rjap114"]
 
 [ext_resource type="Texture2D" uid="uid://danl1iv176et" path="res://scenes/combats/assets/Paracelsus-bad-fight-floor.png" id="1_jih2w"]
 [ext_resource type="Script" path="res://scenes/combats/subscenes/background.gd" id="2_307o7"]
@@ -17,8 +17,6 @@ disable_ambient_light = true
 disable_fog = true
 albedo_texture = ExtResource("1_jih2w")
 texture_filter = 0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a24p0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4647"]
 transparency = 1
@@ -67,7 +65,7 @@ script = ExtResource("2_307o7")
 [node name="WallLeft" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, -4.47035e-08, 4.47035e-08, -3.35276e-08, -1, -8.9407e-08, 1, -5.30854e-08, -4.05969, 1.49271, -2.05727)
 material_override = ExtResource("2_f4lkq")
-texture = SubResource("CompressedTexture2D_a24p0")
+texture = ExtResource("7_w4iku")
 
 [node name="TrainSide" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, -4.47035e-08, 5.96046e-08, -2.98023e-08, -1, -1.49012e-07, 1, -6.0536e-08, -0.671095, 0.773113, 0.200835)
