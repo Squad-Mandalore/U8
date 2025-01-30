@@ -5,6 +5,8 @@ var attack_hover: AttackHover = null
 var enemy: Enemy
 var half_turn_counter: int
 var first_start: bool
+var can_attack: bool = true
+var pause_duration: float = 1
 @onready var _feedback_box = %FeedbackBox
 @onready var _player_status_panel = %PlayerStatusPanel
 @onready var _enemy_status_panel = %EnemyStatusPanel
@@ -55,27 +57,40 @@ func calculate_first_start() -> bool:
     var player_init = SourceOfTruth.stats.initiative + (randi() % 3 + 1)
     return player_init > enemy_init
 
-func take_damage(damage: int, defender_stats: StatsSpecifier, attacker: String, attacker_token: Utils.AttackTypes, defender_token: Utils.AttackTypes):
+func attack_damage(damage: int, defender_stats: StatsSpecifier, damage_receiver: String, damage_donor: String, attacker_token: Utils.AttackTypes, defender_token: Utils.AttackTypes):
     # to calculate netto dmg (actuall recevied dmg)
     # damage is brutto dmg (so unreduced dmg the attacker would deal to defender)
     var received_damage = SourceOfTruth.calculate_damage(damage, defender_stats, attacker_token, defender_token)
-    _feedback_box.set_feedback(attacker + " hat " + str(received_damage) + " Schaden gemacht.")
+    _feedback_box.set_feedback(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch " + str(damage_donor) + " bekommen!")
 
-    var status_type_damage = calc_status_type_dmg(defender_stats)
-    _feedback_box.set_feedback(str(status_type_damage) + " Schaden durch Status Level bekommen")
+    apply_damage(damage_receiver, received_damage, defender_stats)    
 
-    received_damage += status_type_damage
+func effect_damage():
+    # additional things for possible future
+    # eg arena effects that deal x dmg each turn
+    return
 
+func status_type_damage(damage_receiver: String, damage_receiver_stats: StatsSpecifier):
+    var received_damage = calc_status_type_dmg(damage_receiver_stats)
+    _feedback_box.set_feedback(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch Status Effekte bekommen!")
+    
+    apply_damage(damage_receiver, received_damage, damage_receiver_stats)
+
+    if damage_receiver == enemy._name:
+        await pause_action()
+        await pause_action()
+        _feedback_box.set_feedback(" Bitte wähle deinen nächsten Angriff!")
+
+func apply_damage(damage_receiver: String, received_damage: int, damage_receiver_stats: StatsSpecifier):
     # TODO: use stats_changed when player stats are used
-    if attacker == "Enemy":
+    if damage_receiver == "Spieler":
         var delta_stats = StatsSpecifier.new()
         delta_stats.health = -received_damage
         SourceOfTruth.stats_changed(delta_stats)
     else:
-        defender_stats.health -= received_damage
-        if defender_stats.health <= 0:
-            # TODO: winning screen here and on click combat exit
-            exit_combat()
+        damage_receiver_stats.health -= received_damage
+        if damage_receiver_stats.health <= 0:
+            combat_end()
 
 func calc_status_type_dmg(defender_stats: StatsSpecifier) -> int:
     # apply dmg from status_types
@@ -104,37 +119,68 @@ func calc_status_type_dmg(defender_stats: StatsSpecifier) -> int:
         _: pass
     return 0
 
-func execute_attack(attack: Attack, attacker: String):
+func execute_attack(attack: Attack, active_combatant: String, passive_combatant: String):
+    if passive_combatant == "Enemy":
+        passive_combatant = enemy._name
+
+    if not can_attack && active_combatant == "Spieler":
+        return
     loop()
 
-    var attacker_panel
-    var defender_panel
-    var defender_stats
-    if attacker == "Player":
-        attacker_panel = _player_status_panel
-        defender_panel = _enemy_status_panel
-        defender_stats = enemy.stats
+    var damage_donor_panel
+    var damage_receiver_panel
+    var damage_receiver_stats
+    var damage_donnor_stats
+    if active_combatant == "Spieler":
+        damage_donor_panel = _player_status_panel
+        damage_receiver_panel = _enemy_status_panel
+        damage_receiver_stats = enemy.stats
+        damage_donnor_stats = SourceOfTruth.stats
     else:
-        attacker_panel = _enemy_status_panel
-        defender_panel = _player_status_panel
-        defender_stats = SourceOfTruth.stats
+        damage_donor_panel = _enemy_status_panel
+        damage_receiver_panel = _player_status_panel
+        damage_receiver_stats = SourceOfTruth.stats
+        damage_donnor_stats = enemy.stats
 
     for token_number in attack.token_number:
-        attacker_panel.add_token(attack.token)
-    take_damage(attack.damage, defender_stats, attacker, attack.token, defender_panel.stance)
-    attacker_panel.update_status_panel()
-    defender_panel.update_status_panel()
-    
-    # TODO: needs better logic here
-    await get_tree().create_timer(2).timeout
-    if attacker == "Player":
+        damage_donor_panel.add_token(attack.token)
+
+    var damage_donor = active_combatant
+    var damage_receiver = passive_combatant
+    attack_damage(attack.damage, damage_receiver_stats, damage_receiver, damage_donor, attack.token, damage_receiver_panel.stance)
+    damage_donor_panel.update_status_panel()
+    damage_receiver_panel.update_status_panel()
+    await pause_action()
+
+    effect_damage()
+    damage_donor_panel.update_status_panel()
+    damage_receiver_panel.update_status_panel()
+    await pause_action()
+
+    status_type_damage(damage_donor, damage_donnor_stats)
+    damage_donor_panel.update_status_panel()
+    damage_receiver_panel.update_status_panel()
+    await pause_action()
+
+    if damage_donor == "Spieler":
+        await pause_action()
         enemy_execute_attack()
+
+func pause_action():
+    can_attack = false
+    await get_tree().create_timer(pause_duration).timeout
+    can_attack = true
 
 func enemy_execute_attack():
     var chosen_attack_index: int = randi() % len(enemy.attacks)
     var chosen_attack = enemy.attacks[chosen_attack_index]
     # TODO: play attack animation and hide hud
-    execute_attack(chosen_attack, "Enemy")
+    execute_attack(chosen_attack, enemy._name, "Spieler")
 
 func exit_combat():
     SignalDispatcher.combat_exit.emit(get_parent())
+
+func combat_end():
+    # TODO: winning screen here and on click combat exit
+    exit_combat()
+    

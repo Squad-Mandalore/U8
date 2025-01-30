@@ -21,5 +21,5 @@ signal sound_music(name: String)
 signal combat_enter(enemy: Enemy)
 signal combat_exit(to_free: Node)
 
-signal execute_attack(attack: Attack, attacker: String)
+signal execute_attack(attack: Attack, active_combatant: String, passive_combatant: String)
 
