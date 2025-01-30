@@ -63,7 +63,7 @@ func attack_damage(damage: int, defender_stats: StatsSpecifier, damage_receiver:
     var received_damage = SourceOfTruth.calculate_damage(damage, defender_stats, attacker_token, defender_token)
     _feedback_box.set_feedback(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch " + str(damage_donor) + " bekommen!")
 
-    apply_damage(damage_receiver, received_damage, defender_stats)    
+    apply_damage(damage_receiver, received_damage, defender_stats)
 
 func effect_damage():
     # additional things for possible future
@@ -73,7 +73,7 @@ func effect_damage():
 func status_type_damage(damage_receiver: String, damage_receiver_stats: StatsSpecifier):
     var received_damage = calc_status_type_dmg(damage_receiver_stats)
     _feedback_box.set_feedback(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch Status Effekte bekommen!")
-    
+
     apply_damage(damage_receiver, received_damage, damage_receiver_stats)
 
     if damage_receiver == enemy._name:
@@ -90,7 +90,7 @@ func apply_damage(damage_receiver: String, received_damage: int, damage_receiver
     else:
         damage_receiver_stats.health -= received_damage
         if damage_receiver_stats.health <= 0:
-            combat_end()
+            exit_combat()
 
 func calc_status_type_dmg(defender_stats: StatsSpecifier) -> int:
     # apply dmg from status_types
@@ -109,7 +109,7 @@ func calc_status_type_dmg(defender_stats: StatsSpecifier) -> int:
         2: return int(10 * ((100 - defender_stats.poison_resistance)/100.0))
         3: return int(20 * ((100 - defender_stats.poison_resistance)/100.0))
         _: pass
-    
+
     # drug
     match defender_stats.drug_level:
         0: pass
@@ -178,9 +178,5 @@ func enemy_execute_attack():
     execute_attack(chosen_attack, enemy._name, "Spieler")
 
 func exit_combat():
-    SignalDispatcher.combat_exit.emit(get_parent())
-
-func combat_end():
     # TODO: winning screen here and on click combat exit
-    exit_combat()
-    
+    SignalDispatcher.combat_exit.emit(get_parent())
