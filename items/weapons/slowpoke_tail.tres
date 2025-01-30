@@ -1,5 +1,5 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://ckynd8kmolf6x"]
-
+[gd_resource type="Resource" script_class="Weapon" load_steps=7 format=3 uid="uid://ckynd8kmolf6x"]
+[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="1_pw243"]
 [ext_resource type="Script" path="res://items/weapons/weapon.gd" id="2_lymbw"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="3_mc6jo"]
 [ext_resource type="Texture2D" uid="uid://jlhwn8jhrrab" path="res://ui/hud/assets/ck_3_bar_full.svg" id="4_l6ivm"]
@@ -26,6 +26,7 @@ drug_level = 0
 
 [resource]
 script = ExtResource("2_lymbw")
+attacks = Array[ExtResource("1_pw243")]([])
 name = "Flegmon-Rute"
 description = "Sehr lecker. Wert hoch. "
 stats = SubResource("Resource_hfqg5")
