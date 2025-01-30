@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://clxc8342n0p2r"]
+
+[ext_resource type="Texture2D" uid="uid://cmmbs7toy6wjo" path="res://scenes/combats/assets/Ubahn-fight-front.png" id="1_xklyb"]
+[ext_resource type="Texture2D" uid="uid://6cc22tmjjjyy" path="res://scenes/combats/assets/Ubahn-dach-fight.png" id="2_opc0k"]
+
+[node name="Train" type="Node3D"]
+
+[node name="Front" type="Sprite3D" parent="."]
+axis = 0
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("1_xklyb")
+
+[node name="TrainTop" type="Sprite3D" parent="."]
+transform = Transform3D(-4.36459e-08, 0.054741, 0.998501, 2.39281e-09, 0.998501, -0.054741, -1, 2.64914e-17, -4.37114e-08, -0.269, 0.3, 0)
+axis = 1
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_opc0k")

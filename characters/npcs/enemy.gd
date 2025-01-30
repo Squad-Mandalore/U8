@@ -2,7 +2,6 @@ extends Npc
 class_name Enemy
 
 @export var attacks: Array[Attack]
-@export var albedo_texture: AtlasTexture
 @export var combat_animation: String = "battle_idle"
 @export var stats: StatsSpecifier
 
