@@ -53,5 +53,4 @@ func _on_panel_container_gui_input(event: InputEvent) -> void:
     if event is InputEventMouseButton:
             if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
                 # TODO: play attack animation and hide hud
-                SignalDispatcher.execute_attack.emit(attack, "Player")
-
+                SignalDispatcher.execute_attack.emit(attack, "Spieler", "Enemy")
