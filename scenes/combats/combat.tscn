@@ -149,6 +149,7 @@ animations = [{
 
 [node name="Combat" type="Node3D"]
 script = ExtResource("1_wlkyy")
+player_texture = ExtResource("4_tavxe")
 
 [node name="Background" parent="." instance=ExtResource("2_reu6p")]
 
@@ -158,14 +159,15 @@ current = true
 fov = 20.0
 
 [node name="Berliner" parent="." instance=ExtResource("3_r7kvr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.459, 0, 0.864)
+unique_name_in_owner = true
+transform = Transform3D(0.987688, -0.0298491, 0.15356, 0, 0.981627, 0.190809, -0.156434, -0.18846, 0.969542, -0.459, 0, 0.864)
 sprite_frames = SubResource("SpriteFrames_ba31x")
+frame_progress = 0.0
 
 [node name="Enemy" type="AnimatedSprite3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0388219, 0, -0.0986969)
+transform = Transform3D(0.987688, -0.0298491, 0.15356, 0, 0.981627, 0.190809, -0.156434, -0.18846, 0.969542, -0.0388219, 0, -0.0986969)
 offset = Vector2(0, 18)
-billboard = 1
 alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_fo80w")

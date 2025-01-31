@@ -1,21 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bcgck0cuev43d"]
+[gd_scene load_steps=15 format=3 uid="uid://bcgck0cuev43d"]
 
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="1_nj5ds"]
 [ext_resource type="Script" path="res://characters/player/berliner_3d.gd" id="2_fdrdt"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u8jik"]
-atlas = ExtResource("1_nj5ds")
-region = Rect2(545, 1, 33, 34)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqqw1"]
-transparency = 1
-shading_mode = 0
-diffuse_mode = 3
-specular_mode = 2
-disable_ambient_light = true
-disable_fog = true
-albedo_texture = SubResource("AtlasTexture_u8jik")
-texture_filter = 0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ckpl"]
 atlas = ExtResource("1_nj5ds")

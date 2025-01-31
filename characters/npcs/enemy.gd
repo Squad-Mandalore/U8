@@ -4,6 +4,7 @@ class_name Enemy
 @export var attacks: Array[Attack]
 @export var combat_animation: String = "battle_idle"
 @export var stats: StatsSpecifier
+@export var texture: Texture2D
 
 
 func _ready() -> void:
@@ -15,3 +16,4 @@ func _ready() -> void:
 
 func start_combat():
     SignalDispatcher.combat_enter.emit(self)
+
