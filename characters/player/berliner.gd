@@ -8,8 +8,6 @@ extends CharacterBody2D
 @onready var _shop_hud: CanvasLayer = $Shop
 @onready var _dialogue_box: CanvasLayer = $DialogueBox
 var huds: Array[CanvasLayer]
-# var stats: StatsSpecifier = StatsSpecifier.new()
-# var base_stats: StatsSpecifier
 
 enum State {IDLE, WALK, TALK, SCOOT, DANCE}
 var _current_state: State = State.IDLE

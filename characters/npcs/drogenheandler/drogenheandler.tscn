@@ -1,10 +1,11 @@
-[gd_scene load_steps=36 format=3 uid="uid://bymkmcgp2ky2o"]
+[gd_scene load_steps=37 format=3 uid="uid://bymkmcgp2ky2o"]
 
 [ext_resource type="Texture2D" uid="uid://bg1cxujjsrhvf" path="res://characters/npcs/drogenheandler/assets/Obdachloser.png" id="1_1s75y"]
 [ext_resource type="Script" path="res://characters/npcs/drogenheandler/drogenheandler.gd" id="1_mirje"]
 [ext_resource type="Script" path="res://items/item.gd" id="2_xvmp4"]
 [ext_resource type="Resource" uid="uid://bw88rw1iou2ej" path="res://items/armor/hemd.tres" id="3_ckh4r"]
 [ext_resource type="Resource" uid="uid://ckynd8kmolf6x" path="res://items/weapons/slowpoke_tail.tres" id="4_p3a3l"]
+[ext_resource type="Resource" uid="uid://w36ev7xurex" path="res://items/weapons/president_bell.tres" id="5_pgd1t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enw8h"]
 size = Vector2(20, 4)
@@ -227,7 +228,7 @@ animations = [{
 z_index = 50
 collision_layer = 5
 script = ExtResource("1_mirje")
-shop_inventory = Array[ExtResource("2_xvmp4")]([ExtResource("3_ckh4r"), ExtResource("4_p3a3l"), null, null, null, null, null, null])
+shop_inventory = Array[ExtResource("2_xvmp4")]([ExtResource("3_ckh4r"), ExtResource("4_p3a3l"), ExtResource("5_pgd1t"), null, null, null, null, null])
 _name = "Badmann"
 RANDOM_NAME = false
 _gender = "Diverse"
