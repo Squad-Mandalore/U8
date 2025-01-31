@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://ui/shop/subscenes/shop_hud.gd" id="1_s3a48"]
 [ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="1_sef0k"]
 [ext_resource type="Texture2D" uid="uid://dvk6pvmy6n4xh" path="res://ui/shop/assets/shopping_cart_icon.svg" id="2_owujg"]
-[ext_resource type="Texture2D" uid="uid://bhrsh1sjnml85" path="res://characters/npcs/bademeister/assets/bademeister.png" id="3_6m6hl"]
+[ext_resource type="Texture2D" uid="uid://bhrsh1sjnml85" path="res://characters/npcs/lifeguard/assets/lifeguard.png" id="3_6m6hl"]
 [ext_resource type="PackedScene" uid="uid://da2j1exv2p488" path="res://ui/subscenes/item_slot.tscn" id="3_fh4v0"]
 [ext_resource type="StyleBox" uid="uid://kopdyfe5yfv2" path="res://ui/shop/assets/shop_dialogue_box.tres" id="4_caqme"]
 [ext_resource type="Texture2D" uid="uid://bl3c0je5u73fw" path="res://ui/shop/assets/drink_vending_machine.png" id="5_pagsn"]
