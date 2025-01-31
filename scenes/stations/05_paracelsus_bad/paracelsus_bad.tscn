@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/stations/05_paracelsus_bad/paracelsus_bad.gd" id="1_086u8"]
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_q4mp0"]
-[ext_resource type="PackedScene" uid="uid://b4v2kxxwx22uq" path="res://characters/npcs/bademeister/bademeister.tscn" id="3_cnday"]
+[ext_resource type="PackedScene" uid="uid://b4v2kxxwx22uq" path="res://characters/npcs/lifeguard/lifeguard.tscn" id="3_cnday"]
 [ext_resource type="PackedScene" uid="uid://d3ntibgwuo4dv" path="res://scenes/stations/05_paracelsus_bad/subscenes/tower.tscn" id="5_rp8qx"]
 
 [node name="ParacelsusBad" instance=ExtResource("1_q4mp0")]

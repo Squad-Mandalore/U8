@@ -35,8 +35,8 @@ name = "Ordnungsruf"
 damage = 0
 type = 3
 token = 2
-token_number = 0
-effect = ""
+token_number = 1
+effect = "Silenced den Gegner"
 formula = SubResource("Resource_ayac1")
 
 [sub_resource type="Resource" id="Resource_qs242"]
