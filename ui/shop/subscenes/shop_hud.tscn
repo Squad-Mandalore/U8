@@ -159,6 +159,7 @@ text = "Dit macht dann nen [color=#FF4346]Zwambo an Euronen[/color]."
 scroll_active = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PanelContainer/MarginContainer/VBoxContainer/HumanShopUpper/HBoxContainer"]
+unique_name_in_owner = true
 position = Vector2(418, 33.3333)
 scale = Vector2(5.61111, 5.61111)
 sprite_frames = SubResource("SpriteFrames_s4jol")

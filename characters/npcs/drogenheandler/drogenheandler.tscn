@@ -1,7 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://bymkmcgp2ky2o"]
+[gd_scene load_steps=36 format=3 uid="uid://bymkmcgp2ky2o"]
 
 [ext_resource type="Texture2D" uid="uid://bg1cxujjsrhvf" path="res://characters/npcs/drogenheandler/assets/Obdachloser.png" id="1_1s75y"]
 [ext_resource type="Script" path="res://characters/npcs/drogenheandler/drogenheandler.gd" id="1_mirje"]
+[ext_resource type="Script" path="res://items/item.gd" id="2_xvmp4"]
+[ext_resource type="Resource" uid="uid://bw88rw1iou2ej" path="res://items/armor/hemd.tres" id="3_ckh4r"]
+[ext_resource type="Resource" uid="uid://ckynd8kmolf6x" path="res://items/weapons/slowpoke_tail.tres" id="4_p3a3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enw8h"]
 size = Vector2(20, 4)
@@ -49,6 +52,50 @@ region = Rect2(512, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_32s2d"]
 atlas = ExtResource("1_1s75y")
 region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k6lv"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(224, 3, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_450fm"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(256, 3, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqobx"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(288, 3, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws2vt"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(320, 3, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roexw"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(352, 3, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrdto"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(384, 3, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gttfm"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(416, 3, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv62r"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(448, 3, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftk5s"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(480, 3, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4qqd"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(512, 3, 32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ec5t"]
+atlas = ExtResource("1_1s75y")
+region = Rect2(544, 3, 32, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rr6aw"]
 atlas = ExtResource("1_1s75y")
@@ -116,6 +163,44 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_0k6lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_450fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqobx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws2vt")
+}, {
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_roexw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrdto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gttfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kv62r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftk5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4qqd")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_5ec5t")
+}],
+"loop": true,
+"name": &"shop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_rr6aw")
 }, {
 "duration": 1.0,
@@ -142,6 +227,9 @@ animations = [{
 z_index = 50
 collision_layer = 5
 script = ExtResource("1_mirje")
+shop_inventory = Array[ExtResource("2_xvmp4")]([ExtResource("3_ckh4r"), ExtResource("4_p3a3l"), null, null, null, null, null, null])
+_name = "Badmann"
+RANDOM_NAME = false
 _gender = "Diverse"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -151,7 +239,7 @@ shape = SubResource("RectangleShape2D_enw8h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kdmse")
-animation = &"idle"
+animation = &"shop"
 autoplay = "idle"
-frame_progress = 0.580099
+frame_progress = 0.630161
 offset = Vector2(0, -16)
