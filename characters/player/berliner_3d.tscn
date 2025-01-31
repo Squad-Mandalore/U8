@@ -94,8 +94,9 @@ animations = [{
 }]
 
 [node name="Berliner" type="AnimatedSprite3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.153354, -0.151474, -0.429718)
-material_override = SubResource("StandardMaterial3D_oqqw1")
+offset = Vector2(0, 18)
+alpha_cut = 1
+texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_hc6ld")
 animation = &"battle_intro"
 autoplay = "battle_intro"
