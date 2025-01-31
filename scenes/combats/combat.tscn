@@ -57,7 +57,6 @@ animations = [{
 }]
 
 [node name="Combat" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0504389)
 script = ExtResource("1_wlkyy")
 
 [node name="Background" parent="." instance=ExtResource("2_reu6p")]
@@ -68,15 +67,12 @@ current = true
 fov = 20.0
 
 [node name="Berliner" parent="." instance=ExtResource("3_r7kvr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.449835, 0.212685, 0.927575)
-material_override = null
-billboard = 2
-alpha_cut = 1
-texture_filter = 0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.459, 0, 0.864)
 
 [node name="Enemy" type="AnimatedSprite3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04711, 0.164932, -0.166248)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0388219, 0, -0.0986969)
+offset = Vector2(0, 18)
 billboard = 1
 alpha_cut = 1
 texture_filter = 0

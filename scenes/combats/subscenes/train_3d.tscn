@@ -12,7 +12,7 @@ texture_filter = 0
 texture = ExtResource("1_xklyb")
 
 [node name="TrainTop" type="Sprite3D" parent="."]
-transform = Transform3D(-4.36459e-08, 0.054741, 0.998501, 2.39281e-09, 0.998501, -0.054741, -1, 2.64914e-17, -4.37114e-08, -0.269, 0.3, 0)
+transform = Transform3D(-4.37114e-08, 0.0174524, 0.999848, 0, 0.999848, -0.0174524, -1, -7.62869e-10, -4.37047e-08, -0.27, 0.289, 0)
 axis = 1
 alpha_cut = 1
 texture_filter = 0

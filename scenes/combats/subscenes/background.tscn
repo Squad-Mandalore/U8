@@ -18,13 +18,13 @@ texture_filter = 0
 texture = ExtResource("1_rkdbx")
 
 [node name="BackWall" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79055, 0.546196, -1.204)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78, 0.546, -1.195)
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("4_pwwf7")
 
 [node name="LeftWall" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, -2.044, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, -2.046, 0)
 axis = 0
 alpha_cut = 1
 texture_filter = 0
@@ -34,7 +34,7 @@ texture = ExtResource("5_wd8md")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772512, 0.2, 0.680485)
 
 [node name="TunnelWall" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, -0.097, -7.45913)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, -0.106, -7.459)
 axis = 0
 alpha_cut = 1
 texture_filter = 0
