@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c1tn5h53r7nay"]
+[gd_scene load_steps=29 format=3 uid="uid://c1tn5h53r7nay"]
 
 [ext_resource type="Script" path="res://scenes/combats/combat.gd" id="1_wlkyy"]
 [ext_resource type="PackedScene" uid="uid://dnkkxl2r2w0co" path="res://scenes/combats/subscenes/background.tscn" id="2_reu6p"]
@@ -6,6 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://bcgck0cuev43d" path="res://characters/player/berliner_3d.tscn" id="3_r7kvr"]
 [ext_resource type="PackedScene" uid="uid://bkj14wl5ofnkb" path="res://ui/combat/combat_hud.tscn" id="4_33ekg"]
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="4_tavxe"]
+[ext_resource type="Shader" path="res://characters/assets/aura.gdshader" id="5_npte6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r3vcs"]
+render_priority = 0
+shader = ExtResource("5_npte6")
+shader_parameter/aura_color = Color(1, 0.8, 0, 0)
+shader_parameter/aura_thickness = 2.0
+shader_parameter/aura_steps = 2
+shader_parameter/aura_flicker_speed = 7.0
+shader_parameter/aura_flicker_strength = 0.5
+shader_parameter/sprite_texture = ExtResource("4_tavxe")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ckpl"]
 atlas = ExtResource("4_tavxe")
@@ -97,6 +108,16 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wg4n7"]
+render_priority = 0
+shader = ExtResource("5_npte6")
+shader_parameter/aura_color = Color(1, 0.8, 0, 0)
+shader_parameter/aura_thickness = 2.0
+shader_parameter/aura_steps = 2
+shader_parameter/aura_flicker_speed = 7.0
+shader_parameter/aura_flicker_strength = 0.5
+shader_parameter/sprite_texture = ExtResource("3_ieugk")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4hu2"]
 atlas = ExtResource("3_ieugk")
 region = Rect2(205, 1, 34, 34)
@@ -161,6 +182,7 @@ fov = 20.0
 [node name="Berliner" parent="." instance=ExtResource("3_r7kvr")]
 unique_name_in_owner = true
 transform = Transform3D(0.987688, -0.0298491, 0.15356, 0, 0.981627, 0.190809, -0.156434, -0.18846, 0.969542, -0.459, 0, 0.864)
+material_overlay = SubResource("ShaderMaterial_r3vcs")
 sprite_frames = SubResource("SpriteFrames_ba31x")
 frame = 0
 frame_progress = 0.0
@@ -168,6 +190,7 @@ frame_progress = 0.0
 [node name="Enemy" type="AnimatedSprite3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(0.987688, -0.0298491, 0.15356, 0, 0.981627, 0.190809, -0.156434, -0.18846, 0.969542, -0.0388219, 0, -0.0986969)
+material_overlay = SubResource("ShaderMaterial_wg4n7")
 offset = Vector2(0, 18)
 alpha_cut = 1
 texture_filter = 0
