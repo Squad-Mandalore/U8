@@ -1,18 +1,14 @@
-extends Sprite3D
-class_name FightBackground
+extends Node3D
 
-@onready var wall_left: Sprite3D = $WallLeft
-@onready var wall_behind: Sprite3D = $WallBehind
+@onready var _back_wall: Sprite3D = $BackWall
+@onready var _left_wall: Sprite3D = $LeftWall
+@onready var _floor: Sprite3D = $Floor
 
-# Müsste Funktionieren, nicht getestet da keine anderen bahnhöfe
-func set_textures(new_wall_left: Texture2D, new_wall_behind: Texture2D, new_floor: Texture2D) -> void:
-    update_sprite_texture(self, new_floor)
-    update_sprite_texture(wall_left, new_wall_left)
-    update_sprite_texture(wall_behind, new_wall_behind)
+func set_back_wall_texture(texture: Texture2D):
+    _back_wall.texture = texture
 
-func update_sprite_texture(sprite: Sprite3D, texture: Texture2D) -> void:
-    if sprite.material_override == null:
-        sprite.material_override = StandardMaterial3D.new()
-    var material = sprite.material_override as StandardMaterial3D
-    material.albedo_texture = texture
-    sprite.texture = texture
+func set_left_wall_texture(texture: Texture2D):
+    _left_wall.texture = texture
+
+func set_floor_texture(texture: Texture2D):
+    _floor.texture = texture

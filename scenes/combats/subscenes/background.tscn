@@ -1,93 +1,48 @@
-[gd_scene load_steps=14 format=3 uid="uid://ccxbv5rjap114"]
+[gd_scene load_steps=7 format=3 uid="uid://dnkkxl2r2w0co"]
 
-[ext_resource type="Texture2D" uid="uid://danl1iv176et" path="res://scenes/combats/assets/Paracelsus-bad-fight-floor.png" id="1_jih2w"]
-[ext_resource type="Script" path="res://scenes/combats/subscenes/background.gd" id="2_307o7"]
-[ext_resource type="Material" uid="uid://dm78nn0mtul4m" path="res://scenes/combats/assets/paracelsus_bad_background.material" id="2_f4lkq"]
-[ext_resource type="Texture2D" uid="uid://cmmbs7toy6wjo" path="res://scenes/combats/assets/Ubahn-fight-front.png" id="3_20ytk"]
-[ext_resource type="Texture2D" uid="uid://6cc22tmjjjyy" path="res://scenes/combats/assets/Ubahn-dach-fight.png" id="4_0sf8a"]
-[ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://scenes/trains/assets/background.png" id="5_x3s5q"]
-[ext_resource type="Texture2D" uid="uid://cjp87k02phlcp" path="res://scenes/combats/assets/paracelsus-bad-background-2-fight.png" id="6_n1neo"]
-[ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="7_w4iku"]
+[ext_resource type="Script" path="res://scenes/combats/subscenes/background.gd" id="1_8aqbt"]
+[ext_resource type="Texture2D" uid="uid://danl1iv176et" path="res://scenes/combats/assets/Paracelsus-bad-fight-floor.png" id="1_rkdbx"]
+[ext_resource type="PackedScene" uid="uid://clxc8342n0p2r" path="res://scenes/combats/subscenes/train_3d.tscn" id="2_rt5d8"]
+[ext_resource type="Texture2D" uid="uid://cjp87k02phlcp" path="res://scenes/combats/assets/paracelsus-bad-background-2-fight.png" id="4_pwwf7"]
+[ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://scenes/trains/assets/background.png" id="5_njy81"]
+[ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="5_wd8md"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ey25j"]
-shading_mode = 0
-diffuse_mode = 3
-specular_mode = 2
-disable_ambient_light = true
-disable_fog = true
-albedo_texture = ExtResource("1_jih2w")
+[node name="CombatPlace" type="Node3D"]
+script = ExtResource("1_8aqbt")
+
+[node name="Floor" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+axis = 1
+alpha_cut = 1
 texture_filter = 0
+texture = ExtResource("1_rkdbx")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4647"]
-transparency = 1
-shading_mode = 0
-diffuse_mode = 3
-specular_mode = 2
-disable_ambient_light = true
-disable_fog = true
-albedo_texture = ExtResource("3_20ytk")
+[node name="BackWall" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78, 0.546, -1.195)
+alpha_cut = 1
 texture_filter = 0
+texture = ExtResource("4_pwwf7")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22rix"]
-transparency = 1
-shading_mode = 0
-diffuse_mode = 3
-specular_mode = 2
-disable_ambient_light = true
-disable_fog = true
-albedo_texture = ExtResource("4_0sf8a")
+[node name="LeftWall" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.601, -2.046, 0)
+axis = 0
+alpha_cut = 1
 texture_filter = 0
+texture = ExtResource("5_wd8md")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q38sc"]
-shading_mode = 0
-diffuse_mode = 3
-specular_mode = 2
-disable_ambient_light = true
-disable_fog = true
-albedo_texture = ExtResource("5_x3s5q")
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17jl3"]
-shading_mode = 0
-diffuse_mode = 3
-specular_mode = 2
-disable_ambient_light = true
-disable_fog = true
-albedo_texture = ExtResource("6_n1neo")
-texture_filter = 0
-
-[node name="Floor" type="Sprite3D"]
-transform = Transform3D(0.0868241, -0.492404, -2.15237e-08, 0.032522, 0.00573449, 0.498908, -0.491329, -0.0866345, 0.0330238, 0.168635, -0.212199, -0.806114)
-material_override = SubResource("StandardMaterial3D_ey25j")
-texture = ExtResource("1_jih2w")
-script = ExtResource("2_307o7")
-
-[node name="WallLeft" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, -4.47035e-08, 4.47035e-08, -3.35276e-08, -1, -8.9407e-08, 1, -5.30854e-08, -4.05969, 1.49271, -2.05727)
-material_override = ExtResource("2_f4lkq")
-texture = ExtResource("7_w4iku")
-
-[node name="TrainSide" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, -4.47035e-08, 5.96046e-08, -2.98023e-08, -1, -1.49012e-07, 1, -6.0536e-08, -0.671095, 0.773113, 0.200835)
-material_override = SubResource("StandardMaterial3D_o4647")
-texture = ExtResource("3_20ytk")
-
-[node name="TrainTop" type="Sprite3D" parent="."]
-transform = Transform3D(1, 4.47035e-08, 0, 5.96046e-08, 1, 3.1665e-08, -1.49012e-07, 2.6077e-08, 1, -0.704367, 1.0401, 0.484295)
-material_override = SubResource("StandardMaterial3D_22rix")
-texture = ExtResource("4_0sf8a")
+[node name="Train" parent="." instance=ExtResource("2_rt5d8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772512, 0.2, 0.680485)
 
 [node name="TunnelWall" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, -4.47035e-08, 5.96046e-08, -2.98023e-08, -1, -1.49012e-07, 1, -6.42613e-08, 7.455, 1.491, -0.127)
-material_override = SubResource("StandardMaterial3D_q38sc")
-texture = ExtResource("5_x3s5q")
-
-[node name="WallBehind" type="Sprite3D" parent="."]
-transform = Transform3D(1.49012e-08, -7.45058e-09, -1, -1, -3.81842e-08, -5.96046e-08, -4.93601e-08, 1, 7.45058e-09, 1.18806, -1.7849, 0.548366)
-material_override = SubResource("StandardMaterial3D_17jl3")
-texture = ExtResource("6_n1neo")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, -0.106, -7.459)
+axis = 0
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_njy81")
 
 [node name="Tracks" type="Sprite3D" parent="."]
-transform = Transform3D(1, 4.47035e-08, 0, -1.49012e-08, 1, 2.79397e-09, -1.49012e-08, 1.86265e-09, 1, 0.261506, -0.427612, -0.117707)
-material_override = ExtResource("2_f4lkq")
-texture = ExtResource("7_w4iku")
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.349612, -0.115407, 0)
+axis = 1
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_wd8md")
