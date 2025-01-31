@@ -24,7 +24,7 @@ texture_filter = 0
 texture = ExtResource("4_pwwf7")
 
 [node name="LeftWall" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, -2.046, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.601, -2.046, 0)
 axis = 0
 alpha_cut = 1
 texture_filter = 0
