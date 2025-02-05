@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://taiib681wkvl" path="res://ui/subscenes/progress_bar.tscn" id="3_x4y3t"]
 [ext_resource type="Texture2D" uid="uid://cxmd500i2iyjs" path="res://ui/hud/assets/dodge_chance_progressbar.svg" id="4_n3hml"]
 [ext_resource type="Texture2D" uid="uid://cqbuach1xakxp" path="res://ui/hud/assets/blood_resistance.svg" id="5_31p3o"]
-[ext_resource type="Texture2D" uid="uid://d3gmnm8ak662y" path="res://ui/hud/assets/big_health_progressbar.svg" id="5_vuegj"]
+[ext_resource type="Texture2D" uid="uid://d3gmnm8ak662y" path="res://ui/hud/assets/health_progressbar.svg" id="5_vuegj"]
 [ext_resource type="Texture2D" uid="uid://dxuvcb4qof7fk" path="res://ui/hud/assets/flask_resistance.svg" id="6_avhbx"]
 [ext_resource type="Texture2D" uid="uid://ce68w0bjcy2ci" path="res://ui/hud/assets/drug_resistance.svg" id="7_e8f2f"]
 
