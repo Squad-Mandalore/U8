@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dnkkxl2r2w0co"]
 
 [ext_resource type="Script" path="res://scenes/combats/subscenes/background.gd" id="1_8aqbt"]
-[ext_resource type="Texture2D" uid="uid://danl1iv176et" path="res://scenes/combats/assets/Paracelsus-bad-fight-floor.png" id="1_rkdbx"]
+[ext_resource type="Texture2D" uid="uid://danl1iv176et" path="res://scenes/stations/05_paracelsus_bad/assets/Paracelsus-bad-fight-floor.png" id="1_rkdbx"]
 [ext_resource type="PackedScene" uid="uid://clxc8342n0p2r" path="res://scenes/combats/subscenes/train_3d.tscn" id="2_rt5d8"]
-[ext_resource type="Texture2D" uid="uid://cjp87k02phlcp" path="res://scenes/combats/assets/paracelsus-bad-background-2-fight.png" id="4_pwwf7"]
+[ext_resource type="Texture2D" uid="uid://cjp87k02phlcp" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background-2-fight.png" id="4_pwwf7"]
 [ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://scenes/trains/assets/background.png" id="5_njy81"]
 [ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="5_wd8md"]
 

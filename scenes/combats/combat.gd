@@ -4,6 +4,10 @@ extends Node3D
 @export var player_texture: Texture2D
 const aura_shader = preload("res://characters/assets/aura.gdshader")
 
+var combat_background: Texture2D
+var combat_background_left: Texture2D
+var combat_floor: Texture2D
+
 var enemy: Enemy:
     set(value):
         enemy = value
@@ -15,6 +19,12 @@ func update_enemy():
     %Enemy.sprite_frames = enemy._sprite.sprite_frames
     %Enemy.animation = enemy.combat_animation
     %Enemy.play()
+
+func _ready() -> void:
+    # Texture updates must be in ready, because the background is set on ready and not before.
+    set_back_wall_texture(combat_background)
+    set_left_wall_texture(combat_background_left)
+    set_floor_texture(combat_floor)
 
 # TODO: use these function to ulpdate the textures for the station
 func set_back_wall_texture(texture: Texture2D):

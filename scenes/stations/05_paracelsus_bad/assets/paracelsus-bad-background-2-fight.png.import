@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djqtt3ylmvjco"
-path="res://.godot/imported/gesundbrunnen-background-2-fight.png-a52072e930b5eacad199834d44687df6.ctex"
+uid="uid://cjp87k02phlcp"
+path="res://.godot/imported/paracelsus-bad-background-2-fight.png-e0136e1cd0d8ece64b38e33afd72371d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/combats/assets/gesundbrunnen-background-2-fight.png"
-dest_files=["res://.godot/imported/gesundbrunnen-background-2-fight.png-a52072e930b5eacad199834d44687df6.ctex"]
+source_file="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background-2-fight.png"
+dest_files=["res://.godot/imported/paracelsus-bad-background-2-fight.png-e0136e1cd0d8ece64b38e33afd72371d.ctex"]
 
 [params]
 
