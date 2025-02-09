@@ -14,16 +14,12 @@ var contradiction : Callable = func contradiction() -> bool:
 func _ready() -> void:
     if not FileAccess.file_exists(SAVE_PATH):
         # Create logic to create all quests
-        var dishonest_brothers_quest: QuestEntry = (
-            quest_manager
-            .add_quest(DishonestBrothersQuest.NAME, DishonestBrothersQuest.DESCRIPTION)
-        )
-        quest_dict[DishonestBrothersQuest.NAME] = dishonest_brothers_quest
-        DishonestBrothersQuest.nnew(dishonest_brothers_quest)
+        _add_quest_line(DishonestBrothersQuest)
     else:
         var _load_success : Error = config_file.load(SAVE_PATH)
         var data : Array[Dictionary] = config_file.get_value("quest_manager", "data")
         quest_manager.set_data(data)
+
         var quest_id : int = config_file.get_value("quest_manager", DishonestBrothersQuest.NAME)
         quest_dict[DishonestBrothersQuest.NAME] = quest_manager.get_quest(quest_id)
 
@@ -47,4 +43,12 @@ func get_subquests(quest_entr: QuestEntry):
         arrr.push_back(quest_entr.get_subquest(id))
 
     return arrr
+
+func _add_quest_line(type): # dribbling the typesystem
+    var quest: QuestEntry = (
+        quest_manager
+        .add_quest(type.NAME, type.DESCRIPTION)
+    )
+    quest_dict[type.NAME] = quest
+    type.nnew(quest)
 

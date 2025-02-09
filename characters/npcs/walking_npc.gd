@@ -64,7 +64,7 @@ func _new_state() -> void:
         _direction = Vector2.ZERO
         _timer.start(5.0)
 
-func set_player_nearby(is_player_nearby : bool):
+func set_player_nearby(is_player_nearby : Player):
     _player_nearby = is_player_nearby
 
 func _on_timer_timeout() -> void:

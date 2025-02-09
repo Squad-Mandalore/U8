@@ -174,14 +174,14 @@ func _unhandled_input(event: InputEvent):
 func _on_slowdown_area_body_entered(body: Node2D):
     var npc: PhysicsBody2D = body
     if npc is Npc:
-        npc.set_player_nearby(true)
+        npc.set_player_nearby(self)
     if _current_state != State.TALK:
         _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
 func _on_slowdown_area_body_exited(body: Node2D):
     var npc: PhysicsBody2D = body
     if npc is Npc:
-        npc.set_player_nearby(false)
+        npc.set_player_nearby(null)
         npc.disable_outline()
     if _current_state != State.TALK:
         _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
@@ -192,6 +192,13 @@ func _start_talking(npc: Npc):
     _hud.hide_status_panel()
     _dialogue_box.show()
     _dialogue_box._on_node_2d_conversation_started(npc)
+    print("You are now talking to %s." % npc._name)
+
+func _start_scripted_talking(npc: Npc):
+    _interactable_npc = npc
+    switch_state(State.TALK)
+    SignalDispatcher.sound_effect.emit("villager")
+    _hud.hide()
     print("You are now talking to %s." % npc._name)
 
 func _stop_talking(npc: Npc):

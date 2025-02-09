@@ -4,7 +4,7 @@ class_name Npc
 enum State {IDLE, TALK}
 
 var _current_state: State = State.IDLE
-var _player_nearby: bool = false
+var _player_nearby: Player = null
 
 @onready var _sprite : AnimatedSprite2D = $AnimatedSprite2D
 @export var _name : String = "Random Dude"
@@ -44,7 +44,7 @@ func enable_outline(color : Color = Color(0, 1, 0, 1)) -> void:
         # No shader assigned
         _sprite.material = null
 
-func set_player_nearby(is_player_nearby : bool):
+func set_player_nearby(is_player_nearby : Player):
     _player_nearby = is_player_nearby
 
 func disable_outline() -> void:
