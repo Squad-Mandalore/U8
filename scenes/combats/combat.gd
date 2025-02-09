@@ -25,6 +25,7 @@ func _ready() -> void:
     set_back_wall_texture(combat_background)
     set_left_wall_texture(combat_background_left)
     set_floor_texture(combat_floor)
+    %Berliner.material_overlay.set_shader_parameter("sprite_texture", player_texture)
 
 # TODO: use these function to ulpdate the textures for the station
 func set_back_wall_texture(texture: Texture2D):
@@ -38,16 +39,9 @@ func set_floor_texture(texture: Texture2D):
 
 func enable_aura(color: Color, damage_donor: String):
     if damage_donor == "Spieler":
-        var mat = %Berliner.material_overlay
-        mat.set_shader_parameter("aura_color", color)
-        mat.set_shader_parameter("sprite_texture", player_texture)
+        %Berliner.material_overlay.set_shader_parameter("aura_color", color)
     else:
-        var mat = %Enemy.material_overlay
-        mat.set_shader_parameter("aura_color", color)
-        mat.set_shader_parameter("sprite_texture", enemy.texture)
+        %Enemy.material_overlay.set_shader_parameter("aura_color", color)
 
 func disable_aura(damage_donor: String) -> void:
-    if damage_donor == "Spieler":
-        %Enemy.material_overlay = null
-    else:
-        %Enemy.material_overlay = null
+    enable_aura(Color(0), damage_donor)
