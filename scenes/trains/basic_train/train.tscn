@@ -1,8 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=16 format=3 uid="uid://2p6mgnqih68g"]
 
 [ext_resource type="Script" path="res://scenes/trains/basic_train/train.gd" id="1_1jt1h"]
 [ext_resource type="Script" path="res://scenes/trains/background.gd" id="2_20w01"]
+[ext_resource type="Texture2D" uid="uid://cjp87k02phlcp" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background-2-fight.png" id="2_h4wmi"]
 [ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://scenes/trains/assets/background.png" id="3_dfgt4"]
+[ext_resource type="Texture2D" uid="uid://cu657kuv6vc5n" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-floor.png" id="3_w6ait"]
+[ext_resource type="Texture2D" uid="uid://danl1iv176et" path="res://scenes/stations/05_paracelsus_bad/assets/Paracelsus-bad-fight-floor.png" id="4_5flic"]
 [ext_resource type="PackedScene" uid="uid://c6lryjxjclq03" path="res://scenes/trains/basic_train/subscenes/inside_left.tscn" id="4_q3h5r"]
 [ext_resource type="PackedScene" uid="uid://c2xs2hjyqqtav" path="res://scenes/trains/basic_train/subscenes/right.tscn" id="6_ykx2a"]
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="7_c73gc"]
@@ -12,11 +15,13 @@
 [ext_resource type="AudioStream" uid="uid://6ahldo7k8y2m" path="res://scenes/trains/basic_train/assets/sounds/music/gof2.mp3" id="11_yi3rj"]
 [ext_resource type="PackedScene" uid="uid://4yblwinc1olu" path="res://scenes/trains/basic_train/subscenes/announcement_player.tscn" id="12_b844p"]
 [ext_resource type="PackedScene" uid="uid://bex812hcoh6pq" path="res://characters/npcs/ticket_inspector/ticket_inspector.tscn" id="12_rqh7o"]
-[ext_resource type="PackedScene" uid="uid://b4v2kxxwx22uq" path="res://characters/npcs/lifeguard/lifeguard.tscn" id="13_apbk7"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_1jt1h")
+combat_background = ExtResource("2_h4wmi")
+combat_background_left = ExtResource("3_w6ait")
+combat_floor = ExtResource("4_5flic")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -77,9 +82,6 @@ bus = &"Music"
 parameters/looping = true
 
 [node name="AnnouncementPlayer" parent="." instance=ExtResource("12_b844p")]
-
-[node name="Lifeguard" parent="." instance=ExtResource("13_apbk7")]
-position = Vector2(163, 167)
 
 [connection signal="ready" from="." to="Player" method="_disable_scooting"]
 [connection signal="body_entered" from="Right" to="." method="_on_area_2d_body_entered"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://ui/combat/subscenes/status_panel.gd" id="1_j1sxw"]
 [ext_resource type="PackedScene" uid="uid://taiib681wkvl" path="res://ui/subscenes/progress_bar.tscn" id="1_xjmis"]
-[ext_resource type="Texture2D" uid="uid://cok6af1uuonbi" path="res://ui/hud/assets/under_progressbar.svg" id="2_8xvg5"]
-[ext_resource type="Texture2D" uid="uid://c5wvjsj1orm8c" path="res://ui/hud/assets/health_progressbar.svg" id="3_e2ruq"]
+[ext_resource type="Texture2D" uid="uid://cnkgu51qcpve1" path="res://ui/hud/assets/big_under_progressbar.svg" id="3_6v5bh"]
+[ext_resource type="Texture2D" uid="uid://c5wvjsj1orm8c" path="res://ui/hud/assets/big_health_progressbar.svg" id="3_e2ruq"]
 [ext_resource type="Texture2D" uid="uid://bmoaj2p4qjjmv" path="res://ui/combat/assets/stance_token_white.svg" id="5_jtm7m"]
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="5_yc3nm"]
 [ext_resource type="Texture2D" uid="uid://druqr4cv3o1v6" path="res://ui/combat/assets/stance_token_blue.svg" id="6_xt8jj"]
@@ -53,7 +53,7 @@ theme_override_constants/separation = 15
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 2
-texture_under = ExtResource("2_8xvg5")
+texture_under = ExtResource("3_6v5bh")
 texture_progress = ExtResource("3_e2ruq")
 nine_patch_margins = Vector4(0, 0, 425, 7)
 margin_bottom = 0
