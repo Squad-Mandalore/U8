@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://scdcnw8cg81y"]
+
+[ext_resource type="Script" path="res://characters/npcs/seated/seated_npc.gd" id="1_kth4h"]
+[ext_resource type="Texture2D" uid="uid://dmhiiso71q33t" path="res://characters/npcs/seated/pointed_away/assets/el_hombre_dos.png" id="2_1ii5e"]
+
+[node name="PointedAway" type="Sprite2D"]
+position = Vector2(0, -14)
+texture = ExtResource("2_1ii5e")
+script = ExtResource("1_kth4h")
