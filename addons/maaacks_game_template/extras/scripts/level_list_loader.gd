@@ -25,7 +25,6 @@ func get_level_file(level_id : int):
     return files[level_id]
 
 func _on_combat_enter(enemy: Enemy):
-    print(enemy.stats)
     var combat_scene = preload("res://scenes/combats/combat.tscn")
     # Assumes no fight takes place in Wittenau since it does not inherit station
     # load textures of current level

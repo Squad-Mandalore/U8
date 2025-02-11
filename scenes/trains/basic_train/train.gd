@@ -9,6 +9,9 @@ const Y: int = 95
 
 @onready var _right: Node2D = $Right
 @onready var _fahrkartenkonrtolleurin = $Fahrkartenkonrtolleurin
+@export var combat_background: Texture2D
+@export var combat_background_left: Texture2D
+@export var combat_floor: Texture2D
 
 
 var _rng = RandomNumberGenerator.new()
