@@ -27,10 +27,23 @@ func get_level_file(level_id : int):
 func _on_combat_enter(enemy: Enemy):
     print(enemy.stats)
     var combat_scene = preload("res://scenes/combats/combat.tscn")
+    # Assumes no fight takes place in Wittenau since it does not inherit station
+    # load textures of current level
+    var combat_background: Texture2D = current_level.combat_background
+    var combat_background_left: Texture2D = current_level.combat_background_left
+    var combat_floor: Texture2D = current_level.combat_floor
+    # pause the current_level
     level_container.call_deferred("remove_child", current_level)
+    # setup combat scene
     var instance = combat_scene.instantiate()
     instance.enemy = enemy
+    instance.combat_background = combat_background
+    instance.combat_background_left = combat_background_left
+    instance.combat_floor = combat_floor
+    # instantiate combat scene
     level_container.call_deferred("add_child", instance)
+    instance.disable_aura("Spieler")
+    instance.disable_aura("Other")
 
 func _on_combat_exit(to_free: Node):
     to_free.queue_free()
