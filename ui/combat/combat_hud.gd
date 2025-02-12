@@ -150,6 +150,7 @@ func execute_attack(attack: Attack, active_combatant: String, passive_combatant:
     attack_damage(attack.damage, damage_receiver_stats, damage_receiver, damage_donor, attack.token, damage_receiver_panel.stance)
     damage_donor_panel.update_status_panel()
     damage_receiver_panel.update_status_panel()
+    get_parent().enable_aura(Utils.ATTACK_DICT[Utils.AttackTypes.find_key(damage_donor_panel.stance)].color, damage_donor)
     await pause_action()
 
     effect_damage()

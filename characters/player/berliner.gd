@@ -8,8 +8,6 @@ extends CharacterBody2D
 @onready var _shop_hud: CanvasLayer = $Shop
 @onready var _dialogue_box: CanvasLayer = $DialogueBox
 var huds: Array[CanvasLayer]
-# var stats: StatsSpecifier = StatsSpecifier.new()
-# var base_stats: StatsSpecifier
 
 enum State {IDLE, WALK, TALK, SCOOT, DANCE}
 var _current_state: State = State.IDLE
@@ -157,7 +155,7 @@ func _unhandled_input(event: InputEvent):
         SignalDispatcher.toggle_item_hud.emit(null)
         SignalDispatcher.sound_effect.emit("exit")
 
-    if event.is_action_pressed("inventory"):
+    if event.is_action_pressed("inventory") and not _shop_hud.visible:
         set_active_hud(_hud if _inventory.visible else _inventory)
         if _inventory.visible:
             SignalDispatcher.sound_effect.emit("pop")

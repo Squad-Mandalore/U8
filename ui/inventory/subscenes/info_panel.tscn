@@ -26,10 +26,6 @@ offset_right = 473.0
 offset_bottom = 678.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0yqla")
 
-[node name="InfoFrame" type="MarginContainer" parent="PanelContainer"]
+[node name="InfoFrame" type="CenterContainer" parent="PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40

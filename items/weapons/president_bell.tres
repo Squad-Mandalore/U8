@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=9 format=3 uid="uid://w36ev7xurex"]
+
+[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="1_qcv0i"]
+[ext_resource type="Script" path="res://characters/attacks/formula.gd" id="2_6evhg"]
+[ext_resource type="Script" path="res://items/weapons/weapon.gd" id="2_yuk1k"]
+[ext_resource type="Script" path="res://globals/attributes.gd" id="3_kd7lk"]
+[ext_resource type="Texture2D" uid="uid://dvk6pvmy6n4xh" path="res://ui/shop/assets/shopping_cart_icon.svg" id="4_3py10"]
+
+[sub_resource type="Resource" id="Resource_ayac1"]
+script = ExtResource("2_6evhg")
+base = 10
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.5
+creativity_modifier = 0.3
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+
+[sub_resource type="Resource" id="Resource_di1hx"]
+script = ExtResource("1_qcv0i")
+name = "Ordnungsruf"
+damage = 0
+type = 3
+token = 2
+token_number = 1
+effect = "Silenced den Gegner"
+formula = SubResource("Resource_ayac1")
+
+[sub_resource type="Resource" id="Resource_qs242"]
+script = ExtResource("3_kd7lk")
+max_health = 10
+health = 0
+armor = 20
+initiative = 10
+dodge_chance = 0
+strength = 0
+coolness = 40
+attractiveness = 15
+intelligence = 10
+creativity = 0
+luck = 20
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("2_yuk1k")
+attacks = Array[ExtResource("1_qcv0i")]([SubResource("Resource_di1hx")])
+name = "Präsidentenglocke"
+description = "Wenige Objekte haben so viel Autorität, ohne ein einziges Wort zu sprechen."
+stats = SubResource("Resource_qs242")
+texture = ExtResource("4_3py10")
+price = 0

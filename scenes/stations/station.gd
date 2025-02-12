@@ -4,12 +4,15 @@ class_name Station
 @onready var animation_train_collision = $Background/AnimationTrain/CollisionShape2D
 @onready var player = $Node2D/Berliner
 @onready var animation_player = $AnimationPlayer
+@export var combat_background: Texture2D
+@onready var combat_background_left: Texture2D = $Background/BackgroundWall.texture
+@export var combat_floor: Texture2D
 
 signal train_enter
 signal level_lost
 
 func _ready() -> void:
-    var result = SignalDispatcher.player_zero_health.connect(_on_player_zero_health)
+    SignalDispatcher.player_zero_health.connect(_on_player_zero_health)
     player.speed_multiplier = 0.0
     player.hide()
     animation_player.play("train_enter")
