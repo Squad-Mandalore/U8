@@ -9,7 +9,7 @@ func _ready() -> void:
     SignalDispatcher.reload_ui.connect(update_shop_ui)
     SignalDispatcher.add_attack_hover.connect(add_attack_hover)
     SignalDispatcher.remove_attack_hover.connect(remove_attack_hover)
-    %ShopButton.set_key_icon("ui_cancel")
+    %ShopButton.set_key_icon("talk")
 
 func update_shop_ui():
     update_shop_balance(SourceOfTruth.balance)
@@ -33,8 +33,5 @@ func remove_attack_hover():
         attack_hover = null
 
 func _on_shop_button_pressed() -> void:
-    var ev = InputEventAction.new()
-    ev.action = "ui_cancel"
-    ev.pressed = true
-    Input.parse_input_event(ev)
+    (get_parent() as Player).toggle_interaction()
 

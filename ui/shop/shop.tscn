@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdtplrex7l3fs"]
+[gd_scene load_steps=10 format=3 uid="uid://cdtplrex7l3fs"]
 
 [ext_resource type="PackedScene" uid="uid://c5u8dk88a3txs" path="res://ui/inventory/subscenes/info_panel.tscn" id="1_0lxc3"]
 [ext_resource type="Script" path="res://ui/shop/shop.gd" id="1_kpqwa"]
@@ -9,6 +9,12 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36620"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.74902)
+
+[sub_resource type="InputEventAction" id="InputEventAction_pnlg5"]
+action = &"talk"
+
+[sub_resource type="Shortcut" id="Shortcut_1w2ol"]
+events = [SubResource("InputEventAction_pnlg5")]
 
 [node name="Shop" type="CanvasLayer"]
 script = ExtResource("1_kpqwa")
@@ -84,26 +90,18 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -550.0
+offset_left = -231.0
 offset_top = -94.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/margin_right = 116
 theme_override_constants/margin_bottom = 50
 
-[node name="ButtonHBox" type="HBoxContainer" parent="ButtonHudMargin"]
-layout_mode = 2
-size_flags_horizontal = 8
-theme_override_constants/separation = 0
-
-[node name="MapInventoryMargin" type="MarginContainer" parent="ButtonHudMargin/ButtonHBox"]
-layout_mode = 2
-theme_override_constants/margin_right = 50
-
-[node name="ShopButton" parent="ButtonHudMargin/ButtonHBox" instance=ExtResource("6_qcng0")]
+[node name="ShopButton" parent="ButtonHudMargin" instance=ExtResource("6_qcng0")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(220, 0)
+custom_minimum_size = Vector2(166, 44)
 layout_mode = 2
-text = "Zurück zum Spiel   "
+shortcut = SubResource("Shortcut_1w2ol")
+text = "Intergieren   "
 
-[connection signal="pressed" from="ButtonHudMargin/ButtonHBox/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="ButtonHudMargin/ShopButton" to="." method="_on_shop_button_pressed"]
