@@ -69,28 +69,37 @@ position = Vector2(213, 42)
 position = Vector2(230, 42)
 
 [node name="PointedAway10" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
 position = Vector2(89, 58)
 
 [node name="PointedAway11" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
 position = Vector2(102, 58)
 
 [node name="PointedAway12" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
 position = Vector2(119, 58)
 
 [node name="PointedAway13" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
 position = Vector2(133, 58)
 
 [node name="PointedAway14" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
 position = Vector2(196, 58)
 
 [node name="PointedAway15" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
 position = Vector2(211, 58)
 
 [node name="PointedAway16" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
 position = Vector2(227, 58)
 
 [node name="PointedAway17" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
 position = Vector2(243, 58)
 
 [node name="PointedAway18" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
 position = Vector2(26, 58)
