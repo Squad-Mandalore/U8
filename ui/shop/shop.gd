@@ -33,11 +33,8 @@ func remove_attack_hover():
         attack_hover = null
 
 func _on_shop_button_pressed() -> void:
-    print("Hellow")
     var ev = InputEventAction.new()
-    # Set as ui_left, pressed.
     ev.action = "ui_cancel"
     ev.pressed = true
-    # Feedback.
     Input.parse_input_event(ev)
 
