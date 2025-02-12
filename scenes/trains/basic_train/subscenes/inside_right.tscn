@@ -42,39 +42,30 @@ polygon = PackedVector2Array(0, 50, 2, 50, 5, 49, 8, 48, 8, 47)
 z_index = 75
 
 [node name="PointedTowards" parent="." instance=ExtResource("4_3l3aa")]
-z_index = 75
 position = Vector2(82, 42)
 
 [node name="PointedTowards2" parent="." instance=ExtResource("4_3l3aa")]
-z_index = 75
 position = Vector2(98, 42)
 
 [node name="PointedTowards3" parent="." instance=ExtResource("4_3l3aa")]
-z_index = 75
 position = Vector2(114, 42)
 
 [node name="PointedTowards4" parent="." instance=ExtResource("4_3l3aa")]
-z_index = 75
 position = Vector2(131, 42)
 
 [node name="PointedTowards5" parent="." instance=ExtResource("4_3l3aa")]
-z_index = 75
 position = Vector2(181, 42)
 
 [node name="PointedTowards6" parent="." instance=ExtResource("4_3l3aa")]
-z_index = 75
 position = Vector2(197, 42)
 
 [node name="PointedTowards7" parent="." instance=ExtResource("4_3l3aa")]
-z_index = 75
 position = Vector2(27, 42)
 
 [node name="PointedTowards8" parent="." instance=ExtResource("4_3l3aa")]
-z_index = 75
 position = Vector2(213, 42)
 
 [node name="PointedTowards9" parent="." instance=ExtResource("4_3l3aa")]
-z_index = 75
 position = Vector2(230, 42)
 
 [node name="PointedAway10" parent="." instance=ExtResource("5_k1alj")]
