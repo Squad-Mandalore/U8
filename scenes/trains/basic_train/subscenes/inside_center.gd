@@ -27,7 +27,6 @@ func get_random_spawn_position():
         accumulated_area += rect["area"]
         if random_area_pick <= accumulated_area:
             selected_rect = rect
-            print(rect)
             break
 
     # Get a random position inside the chosen rectangle
