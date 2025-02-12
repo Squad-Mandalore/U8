@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6lryjxjclq03"]
+[gd_scene load_steps=9 format=3 uid="uid://c6lryjxjclq03"]
 
 [ext_resource type="Texture2D" uid="uid://bdmamn8owc1yn" path="res://scenes/trains/basic_train/assets/ubahn-v4-links.png" id="1_xls3d"]
 [ext_resource type="PackedScene" uid="uid://hkaxsjnqyfba" path="res://scenes/trains/basic_train/subscenes/interior_left.tscn" id="2_6746k"]
 [ext_resource type="PackedScene" uid="uid://bw6fq4ff3l51v" path="res://scenes/trains/basic_train/subscenes/interior_left_front.tscn" id="3_14l7k"]
-[ext_resource type="PackedScene" uid="uid://scdcnw8cg81y" path="res://characters/npcs/seated/pointed_away/pointed_away.tscn" id="4_xr5mi"]
+[ext_resource type="PackedScene" uid="uid://scdcnw8cg81y" path="res://characters/npcs/seated/pointed_towards/pointed_towards.tscn" id="4_xr5mi"]
+[ext_resource type="PackedScene" uid="uid://cpexaj7c7wxu2" path="res://characters/npcs/seated/pointed_away/pointed_away.tscn" id="5_4kxwr"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_puun8"]
 b = Vector2(-21, 46)
@@ -40,29 +41,65 @@ polygon = PackedVector2Array(322, 48, 324, 49, 328, 50, 329, 50, 322, 47)
 [node name="InteriorLeftFront" parent="." instance=ExtResource("3_14l7k")]
 z_index = 75
 
-[node name="PointedAway" parent="." instance=ExtResource("4_xr5mi")]
+[node name="PointedTowards" parent="." instance=ExtResource("4_xr5mi")]
 position = Vector2(101, 42)
 
-[node name="PointedAway2" parent="." instance=ExtResource("4_xr5mi")]
+[node name="PointedTowards2" parent="." instance=ExtResource("4_xr5mi")]
 position = Vector2(117, 42)
 
-[node name="PointedAway3" parent="." instance=ExtResource("4_xr5mi")]
+[node name="PointedTowards3" parent="." instance=ExtResource("4_xr5mi")]
 position = Vector2(133, 42)
 
-[node name="PointedAway4" parent="." instance=ExtResource("4_xr5mi")]
+[node name="PointedTowards4" parent="." instance=ExtResource("4_xr5mi")]
 position = Vector2(150, 42)
 
-[node name="PointedAway5" parent="." instance=ExtResource("4_xr5mi")]
+[node name="PointedTowards5" parent="." instance=ExtResource("4_xr5mi")]
 position = Vector2(200, 42)
 
-[node name="PointedAway6" parent="." instance=ExtResource("4_xr5mi")]
+[node name="PointedTowards6" parent="." instance=ExtResource("4_xr5mi")]
 position = Vector2(216, 42)
 
-[node name="PointedAway9" parent="." instance=ExtResource("4_xr5mi")]
+[node name="PointedTowards7" parent="." instance=ExtResource("4_xr5mi")]
 position = Vector2(304, 42)
 
-[node name="PointedAway7" parent="." instance=ExtResource("4_xr5mi")]
+[node name="PointedTowards8" parent="." instance=ExtResource("4_xr5mi")]
 position = Vector2(232, 42)
 
-[node name="PointedAway8" parent="." instance=ExtResource("4_xr5mi")]
+[node name="PointedTowards9" parent="." instance=ExtResource("4_xr5mi")]
 position = Vector2(249, 42)
+
+[node name="PointedAway10" parent="." instance=ExtResource("5_4kxwr")]
+z_index = 75
+position = Vector2(87, 58)
+
+[node name="PointedAway11" parent="." instance=ExtResource("5_4kxwr")]
+z_index = 75
+position = Vector2(100, 58)
+
+[node name="PointedAway12" parent="." instance=ExtResource("5_4kxwr")]
+z_index = 75
+position = Vector2(117, 58)
+
+[node name="PointedAway13" parent="." instance=ExtResource("5_4kxwr")]
+z_index = 75
+position = Vector2(131, 58)
+
+[node name="PointedAway14" parent="." instance=ExtResource("5_4kxwr")]
+z_index = 75
+position = Vector2(194, 58)
+
+[node name="PointedAway15" parent="." instance=ExtResource("5_4kxwr")]
+z_index = 75
+position = Vector2(209, 58)
+
+[node name="PointedAway16" parent="." instance=ExtResource("5_4kxwr")]
+z_index = 75
+position = Vector2(225, 58)
+
+[node name="PointedAway17" parent="." instance=ExtResource("5_4kxwr")]
+z_index = 75
+position = Vector2(241, 58)
+
+[node name="PointedAway18" parent="." instance=ExtResource("5_4kxwr")]
+z_index = 75
+position = Vector2(301, 58)

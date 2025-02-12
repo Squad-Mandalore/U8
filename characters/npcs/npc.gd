@@ -13,9 +13,15 @@ var _player_nearby: bool = false
 const outline_shader = preload("res://characters/npcs/assets/npc.gdshader")
 
 func _ready() -> void:
+    if subclass_ready():
+        return
     _current_state = State.IDLE
     if RANDOM_NAME:
         _name = NameGenerator.get_random_name(_gender)
+        
+func subclass_ready() -> bool:
+    # Implement in subclasses
+    return false
 
 func start_talking() -> void:
     _current_state = State.TALK

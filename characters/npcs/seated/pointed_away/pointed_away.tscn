@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://scdcnw8cg81y"]
+[gd_scene load_steps=4 format=3 uid="uid://cpexaj7c7wxu2"]
 
-[ext_resource type="Script" path="res://characters/npcs/seated/seated_npc.gd" id="1_kth4h"]
-[ext_resource type="Texture2D" uid="uid://dmhiiso71q33t" path="res://characters/npcs/seated/pointed_away/assets/el_hombre_dos.png" id="2_1ii5e"]
+[ext_resource type="Script" path="res://characters/npcs/seated/seated_npc.gd" id="1_83b4y"]
+[ext_resource type="Texture2D" uid="uid://b1ykp8o8dmtlt" path="res://characters/npcs/seated/pointed_away/assets/za_behind_dos.png" id="2_s2wa3"]
 
-[node name="PointedAway" type="Sprite2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mo3t6"]
+size = Vector2(14, 3.5)
+
+[node name="PointedAway" type="CharacterBody2D"]
 position = Vector2(0, -14)
-texture = ExtResource("2_1ii5e")
-script = ExtResource("1_kth4h")
+collision_layer = 5
+script = ExtResource("1_83b4y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_mo3t6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 10)
+texture = ExtResource("2_s2wa3")
