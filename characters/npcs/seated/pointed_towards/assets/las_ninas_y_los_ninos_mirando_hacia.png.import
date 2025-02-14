@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmhiiso71q33t"
-path="res://.godot/imported/el_hombre_dos.png-c36efcbccaf2530ef2699ae69aac7ae6.ctex"
+uid="uid://dfekrrgsejkga"
+path="res://.godot/imported/las_ninas_y_los_ninos_mirando_hacia.png-dc5743b249de9c180b0807dafddc3d69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/npcs/seated/pointed_towards/assets/el_hombre_dos.png"
-dest_files=["res://.godot/imported/el_hombre_dos.png-c36efcbccaf2530ef2699ae69aac7ae6.ctex"]
+source_file="res://characters/npcs/seated/pointed_towards/assets/las_ninas_y_los_ninos_mirando_hacia.png"
+dest_files=["res://.godot/imported/las_ninas_y_los_ninos_mirando_hacia.png-dc5743b249de9c180b0807dafddc3d69.ctex"]
 
 [params]
 
