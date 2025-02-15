@@ -173,8 +173,8 @@ attacks = Array[ExtResource("2_twkw8")]([ExtResource("3_7g82s")])
 combat_animation = "idle"
 stats = ExtResource("4_thv40")
 texture = ExtResource("2_nqlp7")
-_name = null
-RANDOM_NAME = null
+_name = "Chris"
+_random_name = false
 _gender = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

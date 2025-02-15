@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3giwpc7ldtff"
-path="res://.godot/imported/las_chicas_y_los_chicos_mirando_hacia_otro_lado..png-ff334edf0d4ce3d16c660e7f52ac607b.ctex"
+path="res://.godot/imported/las_chicas_y_los_chicos_mirando_hacia_otro_lado.png-f2a4802be5d0d0314df8e0516da496e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/npcs/seated/pointed_away/assets/las_chicas_y_los_chicos_mirando_hacia_otro_lado..png"
-dest_files=["res://.godot/imported/las_chicas_y_los_chicos_mirando_hacia_otro_lado..png-ff334edf0d4ce3d16c660e7f52ac607b.ctex"]
+source_file="res://characters/npcs/seated/pointed_away/assets/las_chicas_y_los_chicos_mirando_hacia_otro_lado.png"
+dest_files=["res://.godot/imported/las_chicas_y_los_chicos_mirando_hacia_otro_lado.png-f2a4802be5d0d0314df8e0516da496e2.ctex"]
 
 [params]
 

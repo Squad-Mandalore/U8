@@ -11,6 +11,4 @@ func _ready():
     DialogueManager.get_current_scene = _get_current_scene
 
 func _get_current_scene() -> Node:
-    var tmp = get_child(0)
-    print(tmp)
-    return tmp
+    return get_child(0)
