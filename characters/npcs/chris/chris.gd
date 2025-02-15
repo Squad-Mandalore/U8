@@ -1,6 +1,13 @@
-extends Npc
+extends Enemy
 
 @onready var dishonest_brothers_quest: QuestEntry = Questomania.quest_dict[DishonestBrothersQuest.NAME]
+
+const CHRIS_ROBBERY_ID = 1
+const ANDREAS_REMEMBERS_ID = 2
+const ANDREAS_ROBBERY_ID = 3
+
+var dialogue = preload("res://characters/npcs/chris/assets/chris_robbery.dialogue")
+var _picked_a_fight: bool = false
 
 func set_player_nearby(is_player_nearby : Player):
     _player_nearby = is_player_nearby
@@ -10,13 +17,29 @@ func set_player_nearby(is_player_nearby : Player):
 
 func start_robbing():
     dishonest_brothers_quest.set_active(true)
-    var robbery = dishonest_brothers_quest.get_subquest(1)
+    dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID)
     if SourceOfTruth.stats.intelligence < 6:
-        var money = floor(SourceOfTruth.balance * 0.1)
-        print("Chris stole %d Euronen" % money)
-        SourceOfTruth.balance_changed(-money)
-        robbery.set_completed(true)
-        dishonest_brothers_quest.get_subquest(3).set_accepted(true)
+        _robbing()
     else:
-        super.start_talking()
+        start_talking()
         _player_nearby._start_scripted_talking(self)
+        DialogueManager.show_dialogue_balloon(dialogue, "start", [self])
+        DialogueManager.dialogue_ended.connect(_dialogue_ended)
+
+func _dialogue_ended(_resource):
+    DialogueManager.dialogue_ended.disconnect(_dialogue_ended)
+    dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID).set_completed(true)
+    stop_talking()
+    _player_nearby._stop_talking(self)
+    if _picked_a_fight:
+        start_combat()
+
+func _robbing():
+    var money = floor(SourceOfTruth.balance * 0.1)
+    print("Chris stole %d Euronen" % money)
+    SourceOfTruth.balance_changed(-money)
+    dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID).set_accepted(true)
+
+func _impressing():
+    dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID).set_accepted(true)
+

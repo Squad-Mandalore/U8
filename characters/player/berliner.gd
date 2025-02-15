@@ -198,12 +198,12 @@ func _start_scripted_talking(npc: Npc):
     _interactable_npc = npc
     switch_state(State.TALK)
     SignalDispatcher.sound_effect.emit("villager")
-    _hud.hide()
+    set_active_hud()
     print("You are now talking to %s." % npc._name)
 
 func _stop_talking(npc: Npc):
     switch_state(State.IDLE)
-    _dialogue_box.hide()
+    set_active_hud(_hud)
     _hud.show_status_panel()
     print("You are no longer talking to %s." % npc._name)
 

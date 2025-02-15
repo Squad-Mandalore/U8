@@ -1,7 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://bkaths3irgi7c"]
+[gd_scene load_steps=27 format=3 uid="uid://bkaths3irgi7c"]
 
 [ext_resource type="Script" path="res://characters/npcs/chris/chris.gd" id="1_muxck"]
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="2_nqlp7"]
+[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="2_twkw8"]
+[ext_resource type="Resource" uid="uid://cq1wjf5oviin5" path="res://characters/attacks/assets/boxing.tres" id="3_7g82s"]
+[ext_resource type="Resource" uid="uid://fngonw15cf5o" path="res://characters/classes/assets/honest_burgy.tres" id="4_thv40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
 size = Vector2(20, 4)
@@ -166,6 +169,13 @@ floor_block_on_wall = false
 floor_snap_length = 0.0
 platform_on_leave = 2
 script = ExtResource("1_muxck")
+attacks = Array[ExtResource("2_twkw8")]([ExtResource("3_7g82s")])
+combat_animation = "idle"
+stats = ExtResource("4_thv40")
+texture = ExtResource("2_nqlp7")
+_name = null
+RANDOM_NAME = null
+_gender = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bg0ao")
