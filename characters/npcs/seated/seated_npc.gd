@@ -6,6 +6,8 @@ class_name SeatedNpc
 
 func subclass_ready():
     if randi_range(0,5) == 1:
+        self.collision_layer = 0
+        self.collision_mask = 0
         queue_free()
     if randi_range(0,1) == 1:
         _sprite_2d.flip_h = true

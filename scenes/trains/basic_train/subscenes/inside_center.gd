@@ -42,4 +42,3 @@ func spawn_npc():
     var npc = npc_scene.instantiate()
     npc.position = spawn_position
     return npc
-
