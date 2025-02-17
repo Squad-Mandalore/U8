@@ -6,7 +6,7 @@ enum State {IDLE, TALK}
 var _current_state: State = State.IDLE
 var _player_nearby: bool = false
 
-@onready var _sprite = $AnimatedSprite2D
+@onready var _sprite : AnimatedSprite2D = $AnimatedSprite2D
 @export var _name : String = "Random Dude"
 @export var RANDOM_NAME : bool = true
 @export_enum("Male", "Female", "Diverse") var _gender : String
