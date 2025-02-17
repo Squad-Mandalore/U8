@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://h7oswlqu4ie4"]
+[gd_scene load_steps=9 format=3 uid="uid://h7oswlqu4ie4"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_dogv2"]
 [ext_resource type="Script" path="res://scenes/stations/10_gesundbrunnen/gesundbrunnen.gd" id="2_547o6"]
 [ext_resource type="Texture2D" uid="uid://djqtt3ylmvjco" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen-background-2-fight.png" id="3_an3mj"]
 [ext_resource type="Texture2D" uid="uid://d2ydwxrvslftd" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen_background.png" id="3_ek8a5"]
 [ext_resource type="Texture2D" uid="uid://dgftgtve5d87c" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen-fight-floor.png" id="4_2iy2d"]
-[ext_resource type="Texture2D" uid="uid://b5laifyplcahj" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen_floor.png" id="4_lnd4a"]
 [ext_resource type="PackedScene" uid="uid://b1yn58qi28tmj" path="res://scenes/stations/10_gesundbrunnen/subscenes/tower.tscn" id="5_61ge1"]
 [ext_resource type="LabelSettings" uid="uid://dfcof0bqgjsys" path="res://scenes/stations/assets/station_name_label_settings_white_on_black.tres" id="5_pfb4y"]
 [ext_resource type="PackedScene" uid="uid://b4v2kxxwx22uq" path="res://characters/npcs/lifeguard/lifeguard.tscn" id="7_lnb3s"]
@@ -18,10 +17,7 @@ combat_floor = ExtResource("4_2iy2d")
 [node name="BackgroundWall" parent="Background" index="0"]
 texture = ExtResource("3_ek8a5")
 
-[node name="Floor" parent="Background" index="2"]
-texture = ExtResource("4_lnd4a")
-
-[node name="CenterContainer" parent="Background" index="7"]
+[node name="CenterContainer" parent="Background" index="5"]
 offset_left = 358.0
 offset_right = 452.0
 grow_horizontal = 1
@@ -30,7 +26,7 @@ grow_horizontal = 1
 text = "GESUNDBRUNNEN"
 label_settings = ExtResource("5_pfb4y")
 
-[node name="CenterContainer2" type="CenterContainer" parent="Background" index="8"]
+[node name="CenterContainer2" type="CenterContainer" parent="Background" index="6"]
 custom_minimum_size = Vector2(94, 31)
 offset_left = 683.0
 offset_top = 58.0
