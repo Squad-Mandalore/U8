@@ -6,7 +6,9 @@ var _base_animation: String = ""
 var _animation_variants: Array = []  # Stores all available variants
 
 func subclass_ready():
-    if randi_range(0, 5) == 1:
+    if randi_range(0,5) == 1:
+        self.collision_layer = 0
+        self.collision_mask = 0
         queue_free()
         return 
 
