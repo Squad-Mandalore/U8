@@ -1,0 +1,39 @@
+[gd_scene load_steps=27 format=3 uid="uid://4yblwinc1olu"]
+
+[ext_resource type="AudioStream" uid="uid://clgk4m4jrunvf" path="res://assets/sounds/announcers/Ansage_U8_nach_Herrmannstrasse.wav" id="1_qbosp"]
+[ext_resource type="Script" path="res://scenes/trains/basic_train/subscenes/announcement_player.gd" id="2_hvuk5"]
+[ext_resource type="AudioStream" uid="uid://qo858b7niho" path="res://assets/sounds/announcers/Ansage_naechster_Halt.wav" id="3_g276s"]
+[ext_resource type="AudioStream" uid="uid://c6sei6pjqoax3" path="res://assets/sounds/announcers/Ansage_Rathaus.wav" id="4_jt34q"]
+[ext_resource type="AudioStream" uid="uid://bnv4yqijg24eb" path="res://assets/sounds/announcers/Ansage_karl_bonnhoeffer.wav" id="5_vi03b"]
+[ext_resource type="AudioStream" uid="uid://4m5ftnrvmt0r" path="res://assets/sounds/announcers/Ansage_Lindauer_Allee.wav" id="6_5iqwo"]
+[ext_resource type="AudioStream" uid="uid://d2ahdeo0qjf7c" path="res://assets/sounds/announcers/Ansage_Paracelsus_Bad.wav" id="7_evq4g"]
+[ext_resource type="AudioStream" uid="uid://da1ywqudlukgw" path="res://assets/sounds/announcers/Ansage_Residenzstraße.wav" id="8_jttsd"]
+[ext_resource type="AudioStream" uid="uid://c677cetuc1t57" path="res://assets/sounds/announcers/Ansage_Franz_Neumann.wav" id="9_44r7j"]
+[ext_resource type="AudioStream" uid="uid://g1wtebs32e53" path="res://assets/sounds/announcers/Ansage_Osloer.wav" id="10_pmivn"]
+[ext_resource type="AudioStream" uid="uid://brbyypppu4voa" path="res://scenes/trains/basic_train/subscenes/Ansage_Parkstrasse.wav" id="11_6rlhs"]
+[ext_resource type="AudioStream" uid="uid://lhria81rq56y" path="res://assets/sounds/announcers/Ansage_Gesundbrunnen.wav" id="12_o371n"]
+[ext_resource type="AudioStream" uid="uid://cn7s25jsf055s" path="res://assets/sounds/announcers/Ansage_Voltastrasse.wav" id="13_75tvt"]
+[ext_resource type="AudioStream" uid="uid://cofsreij4lapx" path="res://assets/sounds/announcers/Ansage_Bernauerstrasse.wav" id="14_dhjok"]
+[ext_resource type="AudioStream" uid="uid://b56crodhnun4e" path="res://assets/sounds/announcers/Ansage_Rosenthaler_Platz.wav" id="15_eaxbe"]
+[ext_resource type="AudioStream" uid="uid://d3okgbku8od0r" path="res://assets/sounds/announcers/Ansage_Weinmeisterstrasse.wav" id="16_5nbrs"]
+[ext_resource type="AudioStream" uid="uid://dmqaglodhl2sc" path="res://assets/sounds/announcers/Ansage_Alexanderplatz.wav" id="17_8g72q"]
+[ext_resource type="AudioStream" uid="uid://dxjdw4l4apnse" path="res://assets/sounds/announcers/Ansage_Jannowitz.wav" id="18_lip2m"]
+[ext_resource type="AudioStream" uid="uid://dvjt65fxlb3vb" path="res://assets/sounds/announcers/Ansage_Heinrich_Heine.wav" id="19_f5pmc"]
+[ext_resource type="AudioStream" uid="uid://ce1otqmmchceo" path="res://assets/sounds/announcers/Ansage_Moritzplatz.wav" id="20_4t3j6"]
+[ext_resource type="AudioStream" uid="uid://b7ptc2wvm4rvu" path="res://assets/sounds/announcers/Ansage_Kottbusser.wav" id="21_qyx0u"]
+[ext_resource type="AudioStream" uid="uid://dgaw42brteqyj" path="res://assets/sounds/announcers/Ansage_Schoenleinstrasse.wav" id="22_qh2oy"]
+[ext_resource type="AudioStream" uid="uid://0nv78yu1m1x3" path="res://assets/sounds/announcers/Ansage_Herrmannplatz.wav" id="23_lb34c"]
+[ext_resource type="AudioStream" uid="uid://gjda43hnftoa" path="res://assets/sounds/announcers/Ansage_Boddinstrasse.wav" id="24_cr70n"]
+[ext_resource type="AudioStream" uid="uid://bdtua5nrimpit" path="res://assets/sounds/announcers/Ansage_Leinestrasse.wav" id="25_3uieg"]
+[ext_resource type="AudioStream" uid="uid://b5pm2l0ngttex" path="res://assets/sounds/announcers/Ansage_Herrmannstrasse.wav" id="26_74rvl"]
+
+[node name="AnnouncementPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_qbosp")
+pitch_scale = 0.98
+bus = &"Soundeffects"
+script = ExtResource("2_hvuk5")
+_basic_announcement = ExtResource("1_qbosp")
+_announcment_announcer = ExtResource("3_g276s")
+_announcement = Array[AudioStreamWAV]([ExtResource("4_jt34q"), ExtResource("5_vi03b"), ExtResource("6_5iqwo"), ExtResource("7_evq4g"), ExtResource("8_jttsd"), ExtResource("9_44r7j"), ExtResource("10_pmivn"), ExtResource("11_6rlhs"), ExtResource("12_o371n"), ExtResource("13_75tvt"), ExtResource("14_dhjok"), ExtResource("15_eaxbe"), ExtResource("16_5nbrs"), ExtResource("17_8g72q"), ExtResource("18_lip2m"), ExtResource("19_f5pmc"), ExtResource("20_4t3j6"), ExtResource("21_qyx0u"), ExtResource("22_qh2oy"), ExtResource("23_lb34c"), ExtResource("24_cr70n"), ExtResource("25_3uieg"), ExtResource("26_74rvl")])
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -48,7 +48,7 @@ func toggle_status_types_hud(stats: StatsSpecifier):
     start_timer()
     show()
 
-func toggle_item_hud(item: Item):
+func toggle_item_hud(item: Item, is_shop_item: bool = false):
     Utils.remove_all_children(%InfoFrame)
     if item == null:
         stop_timer()
@@ -59,7 +59,7 @@ func toggle_item_hud(item: Item):
     %InfoFrame.add_child(item_hud)
     progress_bar = item_hud.get_ck3_progress_bar()
     SignalDispatcher.set_ck3_progress_bar_value.emit(progress_bar.value)
-    item_hud.update_item_info(item)
+    item_hud.update_item_info(item, is_shop_item)
     start_timer()
     show()
 
@@ -73,7 +73,7 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
     if progress_bar.value == progress_bar.max_value:
-        progress_bar.texture_progress = preload("res://ui/hud/assets/ck_3_bar_close.svg")
+        progress_bar.texture_progress = null
         SignalDispatcher.set_ck3_progress_bar_value.emit(progress_bar.value)
         stop_timer()
         return

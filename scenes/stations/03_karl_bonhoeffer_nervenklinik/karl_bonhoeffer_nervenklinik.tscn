@@ -6,5 +6,8 @@
 [node name="KarlBonhoefferNervenklinik" instance=ExtResource("1_l66h0")]
 script = ExtResource("2_2od5c")
 
+[node name="CollisionShape2D" parent="Background" index="1"]
+disabled = true
+
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Karl-Bonhoeffer-Nervenklinik"

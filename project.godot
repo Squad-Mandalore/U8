@@ -31,6 +31,7 @@ Utils="*res://globals/utils.gd"
 NameGenerator="*res://globals/name_generator.gd"
 AudioManager="*res://globals/audio_manager.gd"
 SoundManager="*res://sound_manager.gd"
+Questomania="*res://globals/questomania.gd"
 
 [display]
 
@@ -38,12 +39,11 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=4
 window/stretch/mode="viewport"
-window/stretch/aspect="keep_height"
 window/vsync/vsync_mode=2
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")
+enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg", "res://addons/rubonnek.quest_manager/plugin.cfg")
 
 [global_group]
 

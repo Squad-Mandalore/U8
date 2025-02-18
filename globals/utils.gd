@@ -8,6 +8,7 @@ const PINK: Color = Color("FA71FF")
 const MAGENTA: Color = Color("E20074")
 const YELLOW: Color = Color("F1C40F")
 const GREY: Color = Color("DEDEDE")
+const DARK_GREY: Color = Color("414141")
 
 enum AttackTypes {
     Attraktiv,

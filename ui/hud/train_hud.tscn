@@ -23,11 +23,12 @@ offset_left = -226.0
 offset_top = -94.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_constants/margin_right = 60
+theme_override_constants/margin_right = 116
 theme_override_constants/margin_bottom = 50
 
 [node name="ButtonHud" parent="ButtonHudMargin" instance=ExtResource("2_7ixmm")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(166, 44)
 layout_mode = 2
 shortcut = SubResource("Shortcut_8icef")
 text = "Intergieren   "

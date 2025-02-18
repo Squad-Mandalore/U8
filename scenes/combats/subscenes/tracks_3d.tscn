@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ni5f5gssedw7"]
+
+[ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="1_kg4pp"]
+
+[node name="Tracks" type="Node3D"]
+
+[node name="Tracks" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+axis = 1
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("1_kg4pp")
+
+[node name="Wall" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93876, -1.92867, 0)
+axis = 0
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("1_kg4pp")

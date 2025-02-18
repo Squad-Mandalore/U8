@@ -1,20 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://bls3lu2ys56ty"]
+[gd_scene load_steps=10 format=3 uid="uid://cdtplrex7l3fs"]
 
 [ext_resource type="PackedScene" uid="uid://c5u8dk88a3txs" path="res://ui/inventory/subscenes/info_panel.tscn" id="1_0lxc3"]
+[ext_resource type="Script" path="res://ui/shop/shop.gd" id="1_kpqwa"]
+[ext_resource type="PackedScene" uid="uid://c74j5v0sdslx2" path="res://ui/shop/subscenes/shop_hud.tscn" id="1_pg612"]
+[ext_resource type="Texture2D" uid="uid://dn0jfcq1ly2go" path="res://ui/hud/assets/coin.svg" id="4_mkmvm"]
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="5_p0dhj"]
+[ext_resource type="PackedScene" uid="uid://b4s3pgrykws8i" path="res://ui/subscenes/button_hud.tscn" id="6_qcng0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36620"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.74902)
 
-[node name="Shop" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="InputEventAction" id="InputEventAction_pnlg5"]
+action = &"talk"
+
+[sub_resource type="Shortcut" id="Shortcut_1w2ol"]
+events = [SubResource("InputEventAction_pnlg5")]
+
+[node name="Shop" type="CanvasLayer"]
+script = ExtResource("1_kpqwa")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,19 +28,80 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_36620")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 372
 theme_override_constants/margin_top = 201
+theme_override_constants/margin_right = 372
 theme_override_constants/margin_bottom = 201
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
+[node name="ShopHud" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_pg612")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+
 [node name="InventoryInfoPanel" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_0lxc3")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
+
+[node name="BalanceMargin" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -91.0
+offset_right = 316.0
+grow_vertical = 0
+theme_override_constants/margin_left = 116
+theme_override_constants/margin_bottom = 50
+
+[node name="BalanceHBox" type="HBoxContainer" parent="BalanceMargin"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CoinIcon" type="NinePatchRect" parent="BalanceMargin/BalanceHBox"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_mkmvm")
+
+[node name="CoinBalanceMargin" type="MarginContainer" parent="BalanceMargin/BalanceHBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+
+[node name="BalanceLabel" type="Label" parent="BalanceMargin/BalanceHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_p0dhj")
+theme_override_font_sizes/font_size = 24
+text = "100 Euronen"
+
+[node name="ButtonHudMargin" type="MarginContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -231.0
+offset_top = -94.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 116
+theme_override_constants/margin_bottom = 50
+
+[node name="ShopButton" parent="ButtonHudMargin" instance=ExtResource("6_qcng0")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(166, 44)
+layout_mode = 2
+shortcut = SubResource("Shortcut_1w2ol")
+text = "Intergieren   "
+
+[connection signal="pressed" from="ButtonHudMargin/ShopButton" to="." method="_on_shop_button_pressed"]

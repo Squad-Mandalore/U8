@@ -1,0 +1,170 @@
+[gd_scene load_steps=22 format=3 uid="uid://dq2ug6umgkqai"]
+
+[ext_resource type="Texture2D" uid="uid://bdmamn8owc1yn" path="res://scenes/trains/basic_train/assets/ubahn-v4-links.png" id="1_7bjif"]
+[ext_resource type="Script" path="res://scenes/stations/door_logic.gd" id="1_x7jvs"]
+[ext_resource type="PackedScene" uid="uid://bw6fq4ff3l51v" path="res://scenes/trains/basic_train/subscenes/interior_left_front.tscn" id="3_obi4i"]
+[ext_resource type="Texture2D" uid="uid://xujcdxctbung" path="res://scenes/trains/basic_train/assets/ubahn-v4-links-innen.png" id="3_rth5c"]
+[ext_resource type="Texture2D" uid="uid://c4fxqw6qsfqq0" path="res://scenes/stations/assets/ubahn-v4-links-anim.png" id="4_ad400"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_puun8"]
+b = Vector2(-21, 46)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q68c1"]
+b = Vector2(260, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b3h4x"]
+b = Vector2(3, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jhr3o"]
+b = Vector2(72, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_nwy1d"]
+b = Vector2(43, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j3ha"]
+size = Vector2(69, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sjbm"]
+size = Vector2(65, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oewsm"]
+size = Vector2(29, 10)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5wdbe"]
+b = Vector2(33, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr1f0"]
+atlas = ExtResource("4_ad400")
+region = Rect2(0, 0, 329, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hewwv"]
+atlas = ExtResource("4_ad400")
+region = Rect2(1, 0, 328, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8ulq"]
+atlas = ExtResource("4_ad400")
+region = Rect2(330, 0, 328, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvmys"]
+atlas = ExtResource("4_ad400")
+region = Rect2(659, 0, 328, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw0v1"]
+atlas = ExtResource("4_ad400")
+region = Rect2(988, 0, 328, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1bes"]
+atlas = ExtResource("4_ad400")
+region = Rect2(1317, 0, 328, 104)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1h4k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr1f0")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hewwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8ulq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvmys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw0v1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1bes")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="Left" type="StaticBody2D"]
+script = ExtResource("1_x7jvs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7bjif")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(62, 46)
+shape = SubResource("SegmentShape2D_puun8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(62, 46)
+shape = SubResource("SegmentShape2D_q68c1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(40, 92)
+shape = SubResource("SegmentShape2D_b3h4x")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(76, 92)
+shape = SubResource("SegmentShape2D_jhr3o")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(181, 92)
+shape = SubResource("SegmentShape2D_jhr3o")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(286, 92)
+shape = SubResource("SegmentShape2D_nwy1d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(322, 48, 324, 49, 328, 50, 329, 50, 322, 47)
+
+[node name="InteriorLeft" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="InteriorLeft"]
+texture = ExtResource("3_rth5c")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteriorLeft"]
+position = Vector2(124.5, 49)
+shape = SubResource("RectangleShape2D_7j3ha")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteriorLeft"]
+position = Vector2(223.5, 49)
+shape = SubResource("RectangleShape2D_1sjbm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="InteriorLeft"]
+position = Vector2(303.5, 49)
+shape = SubResource("RectangleShape2D_oewsm")
+
+[node name="InteriorLeftFront" parent="." instance=ExtResource("3_obi4i")]
+y_sort_enabled = true
+
+[node name="DoorColisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="DoorColisions"]
+position = Vector2(43, 92)
+shape = SubResource("SegmentShape2D_5wdbe")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="DoorColisions"]
+position = Vector2(148, 92)
+shape = SubResource("SegmentShape2D_5wdbe")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="DoorColisions"]
+position = Vector2(253, 92)
+shape = SubResource("SegmentShape2D_5wdbe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(57, 92)
+sprite_frames = SubResource("SpriteFrames_p1h4k")
+animation = &"open"
+autoplay = "idle"
+frame = 4
+frame_progress = 1.0
+centered = false
+offset = Vector2(-56, -92)

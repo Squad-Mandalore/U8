@@ -6,16 +6,22 @@ enum State {IDLE, TALK}
 var _current_state: State = State.IDLE
 var _player_nearby: bool = false
 
-@onready var _sprite = $AnimatedSprite2D
+@onready var _sprite : AnimatedSprite2D = $AnimatedSprite2D
 @export var _name : String = "Random Dude"
 @export var RANDOM_NAME : bool = true
 @export_enum("Male", "Female", "Diverse") var _gender : String
 const outline_shader = preload("res://characters/npcs/assets/npc.gdshader")
 
 func _ready() -> void:
+    if subclass_ready():
+        return
     _current_state = State.IDLE
     if RANDOM_NAME:
         _name = NameGenerator.get_random_name(_gender)
+        
+func subclass_ready() -> bool:
+    # Implement in subclasses
+    return false
 
 func start_talking() -> void:
     _current_state = State.TALK
