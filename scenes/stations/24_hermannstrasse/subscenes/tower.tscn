@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://5krccpj44n6l"]
+
+[ext_resource type="Script" path="res://scenes/stations/24_hermannstrasse/subscenes/tower_herrmannstrasse.gd" id="1_18g1g"]
+[ext_resource type="Texture2D" uid="uid://ccrtn2hjvm2os" path="res://scenes/stations/24_hermannstrasse/assets/tower_herrmannstr_1.png" id="2_a31wq"]
+[ext_resource type="Texture2D" uid="uid://dcu0qtjs1egch" path="res://scenes/stations/24_hermannstrasse/assets/tower_herrmannstr_2.png" id="3_1bqu3"]
+[ext_resource type="Texture2D" uid="uid://djue00peasknb" path="res://scenes/stations/24_hermannstrasse/assets/tower_herrmannstr_3.png" id="4_jpnyr"]
+[ext_resource type="Texture2D" uid="uid://b47ylcjfm6pmq" path="res://scenes/stations/24_hermannstrasse/assets/tower_herrmannstr_4.png" id="5_7eeyx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fb3fl"]
+size = Vector2(23, 16.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp1t3"]
+size = Vector2(19.75, 93)
+
+[node name="Tower" type="StaticBody2D"]
+script = ExtResource("1_18g1g")
+tower_textures = Array[Texture2D]([ExtResource("2_a31wq"), ExtResource("3_1bqu3"), ExtResource("4_jpnyr"), ExtResource("5_7eeyx")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_a31wq")
+offset = Vector2(0, -55.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -7.125)
+shape = SubResource("RectangleShape2D_fb3fl")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.125, -62)
+shape = SubResource("RectangleShape2D_gp1t3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
