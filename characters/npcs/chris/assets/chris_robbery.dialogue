@@ -1,10 +1,9 @@
 ~ start
 Chris versucht dich zu beklauen
-- Chris machen lassen 
-	do _robbing()
+- Chris machen lassen
+	do _let_robbing_happen()
 	=> END
 - Chris veprügeln [if SourceOfTruth.stats.strength > 4]
-	Chris: fighting
 	set _picked_a_fight = true
 	=> END
 - Chris beeindrucken [if SourceOfTruth.stats.coolness > 4]

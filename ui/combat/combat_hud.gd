@@ -18,7 +18,7 @@ func _ready() -> void:
     SignalDispatcher.add_attack_hover.connect(add_attack_hover)
     SignalDispatcher.remove_attack_hover.connect(remove_attack_hover)
     SignalDispatcher.execute_attack.connect(execute_attack)
-    SignalDispatcher.player_zero_health.connect(exit_combat)
+    SignalDispatcher.player_zero_health.connect(_player_lost)
     half_turn_counter = 0
     first_start = calculate_first_start()
     if first_start:
@@ -90,7 +90,8 @@ func apply_damage(damage_receiver: String, received_damage: int, damage_receiver
     else:
         damage_receiver_stats.health -= received_damage
         if damage_receiver_stats.health <= 0:
-            exit_combat()
+            enemy.fight_lost()
+            _player_won()
 
 func calc_status_type_dmg(defender_stats: StatsSpecifier) -> int:
     # apply dmg from status_types
@@ -178,6 +179,10 @@ func enemy_execute_attack():
     # TODO: play attack animation and hide hud
     execute_attack(chosen_attack, enemy._name, "Spieler")
 
-func exit_combat():
-    # TODO: winning screen here and on click combat exit
+func _player_lost():
+    # TODO: loose screen here and on click combat exit
+    SignalDispatcher.combat_exit.emit(get_parent())
+
+func _player_won():
+    # TODO: win screen here and on click combat exit
     SignalDispatcher.combat_exit.emit(get_parent())

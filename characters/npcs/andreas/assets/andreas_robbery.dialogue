@@ -1,0 +1,15 @@
+~ start
+Andreas versucht dich zu beklauen
+- Andreas machen lassen
+	do _let_robbing_happen()
+	=> END
+- Andreas veprügeln [if SourceOfTruth.stats.strength > 9]
+	set _picked_a_fight = true
+	=> END
+- Andreas beeindrucken [if SourceOfTruth.stats.coolness > 4]
+	Andreas: ich bin beeindruckt
+	do _impressing()
+	=> END
+- Andreas fragen TODO zu klauen [if false]
+	=> END
+=> END

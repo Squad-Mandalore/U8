@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=17 format=3 uid="uid://2p6mgnqih68g"]
 
 [ext_resource type="Script" path="res://scenes/trains/basic_train/train.gd" id="1_1jt1h"]
 [ext_resource type="Script" path="res://scenes/trains/background.gd" id="2_20w01"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://6ahldo7k8y2m" path="res://scenes/trains/basic_train/assets/sounds/music/gof2.mp3" id="11_yi3rj"]
 [ext_resource type="PackedScene" uid="uid://4yblwinc1olu" path="res://scenes/trains/basic_train/subscenes/announcement_player.tscn" id="12_b844p"]
 [ext_resource type="PackedScene" uid="uid://bex812hcoh6pq" path="res://characters/npcs/ticket_inspector/ticket_inspector.tscn" id="12_rqh7o"]
+[ext_resource type="PackedScene" uid="uid://bkj4b56eeb03x" path="res://characters/npcs/andreas/andreas.tscn" id="16_qju6k"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -79,6 +80,9 @@ bus = &"Music"
 parameters/looping = true
 
 [node name="AnnouncementPlayer" parent="." instance=ExtResource("12_b844p")]
+
+[node name="Andreas" parent="." instance=ExtResource("16_qju6k")]
+position = Vector2(176, 178)
 
 [connection signal="ready" from="." to="Player" method="_disable_scooting"]
 [connection signal="body_entered" from="Right" to="." method="_on_area_2d_body_entered"]

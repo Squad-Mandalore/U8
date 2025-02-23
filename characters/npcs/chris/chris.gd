@@ -1,6 +1,6 @@
 extends Enemy
 
-@onready var dishonest_brothers_quest: QuestEntry = Questomania.quest_dict[DishonestBrothersQuest.NAME]
+var dishonest_brothers_quest: QuestEntry = Questomania.quest_dict[DishonestBrothersQuest.NAME]
 
 const CHRIS_ROBBERY_ID = 1
 const ANDREAS_REMEMBERS_ID = 2
@@ -9,12 +9,9 @@ const ANDREAS_ROBBERY_ID = 3
 var dialogue = preload("res://characters/npcs/chris/assets/chris_robbery.dialogue")
 var _picked_a_fight: bool = false
 
-func _ready() -> void:
-    if SourceOfTruth.chance(100):
+func _enter_tree() -> void:
+    if dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID).is_completed() or SourceOfTruth.chance(40):
         queue_free()
-        return
-
-    super._ready()
 
 func set_player_nearby(is_player_nearby : Player):
     _player_nearby = is_player_nearby
@@ -24,7 +21,6 @@ func set_player_nearby(is_player_nearby : Player):
 
 func start_robbing():
     dishonest_brothers_quest.set_active(true)
-    dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID)
     if SourceOfTruth.stats.intelligence < 6:
         _robbing()
     else:
@@ -44,13 +40,29 @@ func _robbing():
     var money = floor(SourceOfTruth.balance * 0.1)
     print("Chris stole %d Euronen" % money)
     SourceOfTruth.balance_changed(-money)
-    dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID).set_accepted(true)
+    dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID).set_active(true)
+    dishonest_brothers_quest.get_subquest(ANDREAS_REMEMBERS_ID).set_rejected(true)
 
 func _impressing():
-    dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID).set_accepted(true)
+    dishonest_brothers_quest.set_metadata("green", true)
+    dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID).set_active(true)
+    dishonest_brothers_quest.get_subquest(ANDREAS_REMEMBERS_ID).set_rejected(true)
 
 func start_combat():
     if !_picked_a_fight:
         return
 
     super.start_combat()
+
+func _let_robbing_happen():
+    dishonest_brothers_quest.set_metadata("magenta", true)
+    _robbing()
+
+func fight_lost():
+    super.fight_lost()
+    const WINNING_MONEY = 10
+    print("Player won %d Euronen" % WINNING_MONEY)
+    SourceOfTruth.balance_changed(WINNING_MONEY)
+    dishonest_brothers_quest.get_subquest(ANDREAS_REMEMBERS_ID).set_active(true)
+    dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID).set_rejected(true)
+
