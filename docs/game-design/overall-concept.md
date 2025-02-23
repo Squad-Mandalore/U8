@@ -134,6 +134,7 @@ Auf den restlichen Bahnsteigen ist sonst erstmal einfach nichts i would say
     - Wagen
 21. Hermannplatz
     - Wagen
+    - Miniboss: Andreas
 22. Boddinstr.
     - Wagen
 23. Leinestr.

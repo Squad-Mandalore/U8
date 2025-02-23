@@ -21,7 +21,7 @@ Drogenresistenz: Nein
 Der erste Boss, welcher uns während unserer Fahrt in der U8 begegnet ist der Bademeister. Nach seiner Schicht im Paracelsus-Bad kippt er sich einen Wodka rein, um zu vergessen, dass während seiner Schicht wieder einmal drei Kinder ertrunken sind. Auf seinem Heimweg steht er betrunken und nur in Badehose auf dem Bahnsteig Paracelsus-Bad. Aus Langeweile fängt er einen Kampf an.
 
 ### Ideen
-- nicht so starker Boss
+
 - sollte man beim ersten Mal verkacken
 - aber ab 2. oder 3. Run machbar
 - ist Vergiftet
@@ -214,3 +214,21 @@ Intelligenz: 40
 Vergiftungsresistenz: Nein
 Blutungsresistenz: Ja
 Drogenresistenz: Nein
+
+## Stage 21 Hermannplatz - Andreas
+
+### Lore
+Mit billigen Zaubertricks, einer Leidenschaft für Drogen und flinken Händen fühlt sich Andreas sehr wohl in Berlin. Er vertreibt sich seine Zeit damit sich in der U8 etwas Taschengeld zusammen zu klauen. Dabei lenkt er mit billigen Zaubertricks ab und nimmt dir nebenbei dein Bargeld ab. Je nach dem wie viel er an diesem Tag schon an Drogen konsumiert hat, merkst du es oder nicht. Doch sei gewarnt, nicht immer ist eine direkte Konfrontation der beste Weg. Vor seiner Zeit in Berlin absolvierte Andreas Sport und Mathematik auf Lehramt. Heißt er ist nicht nur fit, sondern auch intelligent. Ein Kampf sollte wohl überlegt sein.
+
+## Base Boss stats
+Gesundheit: 100
+Rüstung: 10
+Initiative: 20
+Ausweichchance: 5
+Stärke: 70
+Coolnes: 30
+Attraktivität: 10
+Intelligenz: 30
+Vergiftungsresistenz: Nein
+Blutungsresistenz: Nein
+Drogenresistenz: Ja
