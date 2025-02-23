@@ -1,12 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnueionl57e3i"]
+[gd_scene load_steps=7 format=3 uid="uid://dnueionl57e3i"]
 
 [ext_resource type="Script" path="res://scenes/stations/05_paracelsus_bad/paracelsus_bad.gd" id="1_086u8"]
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_q4mp0"]
-[ext_resource type="PackedScene" uid="uid://b4v2kxxwx22uq" path="res://characters/npcs/bademeister/bademeister_2d.tscn" id="3_cnday"]
+[ext_resource type="Texture2D" uid="uid://cjp87k02phlcp" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background-2-fight.png" id="3_4avx1"]
+[ext_resource type="PackedScene" uid="uid://b4v2kxxwx22uq" path="res://characters/npcs/lifeguard/lifeguard.tscn" id="3_cnday"]
+[ext_resource type="Texture2D" uid="uid://danl1iv176et" path="res://scenes/stations/05_paracelsus_bad/assets/Paracelsus-bad-fight-floor.png" id="4_mo6ep"]
 [ext_resource type="PackedScene" uid="uid://d3ntibgwuo4dv" path="res://scenes/stations/05_paracelsus_bad/subscenes/tower.tscn" id="5_rp8qx"]
 
 [node name="ParacelsusBad" instance=ExtResource("1_q4mp0")]
 script = ExtResource("1_086u8")
+combat_background = ExtResource("3_4avx1")
+combat_floor = ExtResource("4_mo6ep")
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Paracelsus-Bad"
 
 [node name="Bademeister2d" parent="Node2D" index="0" instance=ExtResource("3_cnday")]
 position = Vector2(600, 231)

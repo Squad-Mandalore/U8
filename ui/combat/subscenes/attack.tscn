@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cv8aem4xmtugh" path="res://ui/combat/assets/info_star.svg" id="2_g8esx"]
 
 [node name="Attack" type="Control"]
-custom_minimum_size = Vector2(156, 144)
+custom_minimum_size = Vector2(156, 149)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,10 +79,12 @@ text = "Intelligenz"
 
 [node name="EffectIcon" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(18, 18)
+custom_minimum_size = Vector2(21, 21)
 layout_mode = 2
 size_flags_horizontal = 10
+size_flags_vertical = 8
 texture = ExtResource("2_g8esx")
 
+[connection signal="gui_input" from="PanelContainer" to="." method="_on_panel_container_gui_input"]
 [connection signal="mouse_entered" from="PanelContainer" to="." method="_on_panel_container_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer" to="." method="_on_panel_container_mouse_exited"]

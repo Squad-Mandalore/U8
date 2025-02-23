@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://caiu5xur7uhtq"]
+[gd_scene load_steps=9 format=3 uid="uid://caiu5xur7uhtq"]
 
-[ext_resource type="Texture2D" uid="uid://xjborux7ri1v" path="res://assets/train/ubahn-v4-rechts.png" id="1_c4eui"]
-[ext_resource type="PackedScene" uid="uid://dcad5rbgw7rsl" path="res://models/train/interior_right.tscn" id="2_dkd3d"]
-[ext_resource type="PackedScene" uid="uid://c7f2jkgnt4v8t" path="res://models/train/interior_right_front.tscn" id="3_f544b"]
+[ext_resource type="Texture2D" uid="uid://xjborux7ri1v" path="res://scenes/trains/basic_train/assets/ubahn-v4-rechts.png" id="1_c4eui"]
+[ext_resource type="PackedScene" uid="uid://dcad5rbgw7rsl" path="res://scenes/trains/basic_train/subscenes/interior_right.tscn" id="2_dkd3d"]
+[ext_resource type="PackedScene" uid="uid://c7f2jkgnt4v8t" path="res://scenes/trains/basic_train/subscenes/interior_right_front.tscn" id="3_f544b"]
+[ext_resource type="PackedScene" uid="uid://scdcnw8cg81y" path="res://characters/npcs/seated/pointed_towards/pointed_towards.tscn" id="4_3l3aa"]
+[ext_resource type="PackedScene" uid="uid://cpexaj7c7wxu2" path="res://characters/npcs/seated/pointed_away/pointed_away.tscn" id="5_k1alj"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_agbu6"]
 b = Vector2(290, 0)
@@ -38,3 +40,66 @@ polygon = PackedVector2Array(0, 50, 2, 50, 5, 49, 8, 48, 8, 47)
 
 [node name="InteriorRightFront" parent="." instance=ExtResource("3_f544b")]
 z_index = 75
+
+[node name="PointedTowards" parent="." instance=ExtResource("4_3l3aa")]
+position = Vector2(82, 42)
+
+[node name="PointedTowards2" parent="." instance=ExtResource("4_3l3aa")]
+position = Vector2(98, 42)
+
+[node name="PointedTowards3" parent="." instance=ExtResource("4_3l3aa")]
+position = Vector2(114, 42)
+
+[node name="PointedTowards4" parent="." instance=ExtResource("4_3l3aa")]
+position = Vector2(131, 42)
+
+[node name="PointedTowards5" parent="." instance=ExtResource("4_3l3aa")]
+position = Vector2(181, 42)
+
+[node name="PointedTowards6" parent="." instance=ExtResource("4_3l3aa")]
+position = Vector2(197, 42)
+
+[node name="PointedTowards7" parent="." instance=ExtResource("4_3l3aa")]
+position = Vector2(27, 42)
+
+[node name="PointedTowards8" parent="." instance=ExtResource("4_3l3aa")]
+position = Vector2(213, 42)
+
+[node name="PointedTowards9" parent="." instance=ExtResource("4_3l3aa")]
+position = Vector2(230, 42)
+
+[node name="PointedAway10" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
+position = Vector2(89, 58)
+
+[node name="PointedAway11" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
+position = Vector2(102, 58)
+
+[node name="PointedAway12" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
+position = Vector2(119, 58)
+
+[node name="PointedAway13" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
+position = Vector2(133, 58)
+
+[node name="PointedAway14" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
+position = Vector2(196, 58)
+
+[node name="PointedAway15" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
+position = Vector2(211, 58)
+
+[node name="PointedAway16" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
+position = Vector2(227, 58)
+
+[node name="PointedAway17" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
+position = Vector2(243, 58)
+
+[node name="PointedAway18" parent="." instance=ExtResource("5_k1alj")]
+z_index = 75
+position = Vector2(26, 58)

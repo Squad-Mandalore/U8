@@ -68,6 +68,7 @@ func _on_level_lost():
         _try_connecting_signal_to_node(instance, &"restart_pressed", _reload_level)
         _try_connecting_signal_to_node(instance, &"main_menu_pressed", _load_main_menu)
     else:
+        current_level_id = 0
         _reload_level()
 
 func _on_train_enter():
@@ -81,7 +82,7 @@ func _on_train_enter():
         _load_selected_train()
 
 func _load_selected_train():
-    level_list_loader.load_level_path("res://scenes/trains/basic_train/train.tscn")
+    level_list_loader.load_scene(preload("res://scenes/trains/basic_train/train.tscn"))
 
 func get_current_level_id() -> int:
     return current_level_id if force_level == -1 else force_level

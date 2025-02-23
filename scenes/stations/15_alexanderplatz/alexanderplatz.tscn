@@ -1,0 +1,127 @@
+[gd_scene load_steps=9 format=3 uid="uid://5qnw3pf4n4fk"]
+
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_f1phu"]
+[ext_resource type="Script" path="res://scenes/stations/15_alexanderplatz/alexanderplatz.gd" id="2_2c26j"]
+[ext_resource type="Texture2D" uid="uid://b3d0nx2h4ff0d" path="res://scenes/stations/15_alexanderplatz/assets/alexanderplatz-wall.png" id="3_7ny50"]
+[ext_resource type="Texture2D" uid="uid://c1s1ei0pcuncp" path="res://scenes/stations/15_alexanderplatz/assets/Alexanderplatz-background-2-fight.png" id="3_f812e"]
+[ext_resource type="Texture2D" uid="uid://do7tqmi063nir" path="res://scenes/stations/15_alexanderplatz/assets/alexanderplatz-floor.png" id="4_4jwyb"]
+[ext_resource type="Texture2D" uid="uid://xas4y2o2llsr" path="res://scenes/stations/15_alexanderplatz/assets/Alexanderplatz-fight-floor.png" id="4_g4xob"]
+[ext_resource type="LabelSettings" uid="uid://c0xesi3rt8odi" path="res://scenes/stations/assets/station_name_label_settings_white.tres" id="5_33jly"]
+[ext_resource type="PackedScene" uid="uid://ck8ydr2u0x1tl" path="res://scenes/stations/15_alexanderplatz/subscenes/tower.tscn" id="6_gwvq1"]
+
+[node name="Alexanderplatz" instance=ExtResource("1_f1phu")]
+script = ExtResource("2_2c26j")
+combat_background = ExtResource("3_f812e")
+combat_floor = ExtResource("4_g4xob")
+
+[node name="BackgroundWall" parent="Background" index="0"]
+texture = ExtResource("3_7ny50")
+
+[node name="CenterContainer" parent="Background" index="5"]
+offset_left = 546.0
+offset_top = 54.0
+offset_right = 640.0
+offset_bottom = 85.0
+grow_horizontal = 1
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Alexanderplatz"
+label_settings = ExtResource("5_33jly")
+
+[node name="CenterContainer2" type="CenterContainer" parent="Background" index="6"]
+custom_minimum_size = Vector2(94, 31)
+offset_left = 546.0
+offset_top = 54.0
+offset_right = 640.0
+offset_bottom = 85.0
+
+[node name="StationName" type="Label" parent="Background/CenterContainer2" index="0"]
+layout_mode = 2
+text = "Alexanderplatz"
+label_settings = ExtResource("5_33jly")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Floor" parent="Node2D" index="0"]
+texture = ExtResource("4_4jwyb")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="2"]
+y_sort_enabled = true
+
+[node name="Tower" parent="Node2D/CanvasGroup" index="0" instance=ExtResource("6_gwvq1")]
+position = Vector2(93, 265)
+
+[node name="Tower2" parent="Node2D/CanvasGroup" index="1" instance=ExtResource("6_gwvq1")]
+position = Vector2(182, 265)
+
+[node name="Tower3" parent="Node2D/CanvasGroup" index="2" instance=ExtResource("6_gwvq1")]
+position = Vector2(271, 265)
+
+[node name="Tower4" parent="Node2D/CanvasGroup" index="3" instance=ExtResource("6_gwvq1")]
+position = Vector2(360, 265)
+
+[node name="Tower5" parent="Node2D/CanvasGroup" index="4" instance=ExtResource("6_gwvq1")]
+position = Vector2(449, 265)
+
+[node name="Tower6" parent="Node2D/CanvasGroup" index="5" instance=ExtResource("6_gwvq1")]
+position = Vector2(538, 265)
+
+[node name="Tower7" parent="Node2D/CanvasGroup" index="6" instance=ExtResource("6_gwvq1")]
+position = Vector2(627, 265)
+
+[node name="Tower8" parent="Node2D/CanvasGroup" index="7" instance=ExtResource("6_gwvq1")]
+position = Vector2(716, 265)
+
+[node name="Tower9" parent="Node2D/CanvasGroup" index="8" instance=ExtResource("6_gwvq1")]
+position = Vector2(805, 265)
+
+[node name="Tower10" parent="Node2D/CanvasGroup" index="9" instance=ExtResource("6_gwvq1")]
+position = Vector2(894, 265)
+
+[node name="Tower11" parent="Node2D/CanvasGroup" index="10" instance=ExtResource("6_gwvq1")]
+position = Vector2(983, 265)
+
+[node name="Tower12" parent="Node2D/CanvasGroup" index="11" instance=ExtResource("6_gwvq1")]
+position = Vector2(1072, 265)
+
+[node name="Tower13" parent="Node2D/CanvasGroup" index="12" instance=ExtResource("6_gwvq1")]
+position = Vector2(1161, 265)
+
+[node name="Tower14" parent="Node2D/CanvasGroup" index="13" instance=ExtResource("6_gwvq1")]
+position = Vector2(93, 419)
+
+[node name="Tower15" parent="Node2D/CanvasGroup" index="14" instance=ExtResource("6_gwvq1")]
+position = Vector2(182, 419)
+
+[node name="Tower16" parent="Node2D/CanvasGroup" index="15" instance=ExtResource("6_gwvq1")]
+position = Vector2(271, 419)
+
+[node name="Tower17" parent="Node2D/CanvasGroup" index="16" instance=ExtResource("6_gwvq1")]
+position = Vector2(360, 419)
+
+[node name="Tower18" parent="Node2D/CanvasGroup" index="17" instance=ExtResource("6_gwvq1")]
+position = Vector2(449, 419)
+
+[node name="Tower19" parent="Node2D/CanvasGroup" index="18" instance=ExtResource("6_gwvq1")]
+position = Vector2(538, 419)
+
+[node name="Tower20" parent="Node2D/CanvasGroup" index="19" instance=ExtResource("6_gwvq1")]
+position = Vector2(627, 419)
+
+[node name="Tower21" parent="Node2D/CanvasGroup" index="20" instance=ExtResource("6_gwvq1")]
+position = Vector2(716, 419)
+
+[node name="Tower22" parent="Node2D/CanvasGroup" index="21" instance=ExtResource("6_gwvq1")]
+position = Vector2(805, 419)
+
+[node name="Tower23" parent="Node2D/CanvasGroup" index="22" instance=ExtResource("6_gwvq1")]
+position = Vector2(894, 419)
+
+[node name="Tower24" parent="Node2D/CanvasGroup" index="23" instance=ExtResource("6_gwvq1")]
+position = Vector2(983, 419)
+
+[node name="Tower25" parent="Node2D/CanvasGroup" index="24" instance=ExtResource("6_gwvq1")]
+position = Vector2(1072, 419)
+
+[node name="Tower26" parent="Node2D/CanvasGroup" index="25" instance=ExtResource("6_gwvq1")]
+position = Vector2(1161, 419)

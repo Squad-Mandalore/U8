@@ -1,0 +1,15 @@
+apiVersion: eidolon/v1
+kind: Agent
+metadata:
+  name: test_agent
+spec:
+  description: "Agent for driving NPC dialogue."
+  system_prompt: "
+  Dieser Agent ist für das Testen der Kommunikation. Er soll antworten, dass der Test funktioniert.
+  "
+  apu:
+    llm_unit:
+      implementation: OpenAIGPT
+      model:
+        name: "gpt-4o-mini"
+        human_name: "GPT-4o-mini"

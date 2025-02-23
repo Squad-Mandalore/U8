@@ -9,10 +9,10 @@ func _ready() -> void:
 func set_ck3_progress_bar_value(value: int):
     ck3_progress_bar_value = value
 
-func update_inventory_stat_hud(stats: StatsSpecifier):
-    self.stats = stats
+func update_inventory_stat_hud():
+    self.stats = SourceOfTruth.stats
     update_health(stats.health, stats.max_health)
-    update_dodge_chance(stats.dodge_chance, 50)
+    update_dodge_chance(stats.dodge_chance)
     update_armor(stats.armor)
     update_initiative(stats.initiative)
     update_strength(stats.strength)
@@ -27,18 +27,12 @@ func update_inventory_stat_hud(stats: StatsSpecifier):
 
 
 func update_health(new_health: int, max_health: int) -> void:
-    new_health = min(new_health, max_health)
-    %HealthBar.set_max_value(max_health)
     %HealthBar.set_stat_name("Gesundheit")
-    %HealthBar.set_stat_number("%d/%d" % [new_health, max_health])
-    %HealthBar.set_cur_value(new_health)
+    %HealthBar.set_stat(new_health, max_health)
 
-func update_dodge_chance(new_dodge_chance: int, max_dodge_chance: int) -> void:
-    new_dodge_chance = min(new_dodge_chance, max_dodge_chance)
-    %DodgeChanceBar.set_max_value(max_dodge_chance)
+func update_dodge_chance(new_dodge_chance: int) -> void:
     %DodgeChanceBar.set_stat_name("Ausweichchance")
-    %DodgeChanceBar.set_stat_number("%d/%d" % [new_dodge_chance, max_dodge_chance])
-    %DodgeChanceBar.set_cur_value(new_dodge_chance)
+    %DodgeChanceBar.set_stat(new_dodge_chance, 50)
 
 func update_armor(armor: int):
     (%LabelArmorStat as Label).text = str(armor)
@@ -67,17 +61,17 @@ func update_luck(luck: int):
 func update_bleed_resistance(bleedResistance: int):
     (%LabelBleedResistanceStat as Label).text = str(bleedResistance) + "%"
     if bleedResistance == 100:
-        (%LabelBleedResistanceStat as Label).add_theme_color_override("font_color", Utils.LIGHT_BLUE)
+        (%LabelBleedResistanceStat as Label).add_theme_color_override("font_color", Utils.BLUE)
 
 func update_poison_resistance(poisonResistance: int):
     (%LabelPoisonResistanceStat as Label).text = str(poisonResistance) + "%"
     if poisonResistance == 100:
-        (%LabelPoisonResistanceStat as Label).add_theme_color_override("font_color", Utils.LIGHT_BLUE)
+        (%LabelPoisonResistanceStat as Label).add_theme_color_override("font_color", Utils.BLUE)
 
 func update_drug_resistance(drugResistance: int):
     (%LabelDrugResistanceStat as Label).text = str(drugResistance) + "%"
     if drugResistance == 100:
-        (%LabelDrugResistanceStat as Label).add_theme_color_override("font_color", Utils.LIGHT_BLUE)
+        (%LabelDrugResistanceStat as Label).add_theme_color_override("font_color", Utils.BLUE)
 
 func _on_resistance_info_v_box_mouse_exited() -> void:
     if ck3_progress_bar_value != 60:
@@ -85,4 +79,3 @@ func _on_resistance_info_v_box_mouse_exited() -> void:
 
 func _on_resistance_info_v_box_mouse_entered() -> void:
     SignalDispatcher.toggle_resistance_hud.emit(stats)
-

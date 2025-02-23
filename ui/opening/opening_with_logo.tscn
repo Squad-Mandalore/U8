@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_pkldd")
-next_scene = "res://ui/main_menu/main_menu_with_animations.tscn"
+next_scene = "res://ui/main_menu/main_menu.tscn"
 images = Array[Texture2D]([ExtResource("3_hg2y6")])
 
 [node name="ImagesContainer" type="MarginContainer" parent="."]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb2gskxfy55od"]
+
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_d2ay8"]
+[ext_resource type="Script" path="res://scenes/stations/09_parkstrasse/pankstrasse.gd" id="2_e4fhd"]
+
+[node name="Pankstrasse" instance=ExtResource("1_d2ay8")]
+script = ExtResource("2_e4fhd")
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Pankstrasse"

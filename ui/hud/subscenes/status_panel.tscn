@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cok6af1uuonbi" path="res://ui/hud/assets/under_progressbar.svg" id="3_g1bt0"]
 [ext_resource type="Texture2D" uid="uid://dn0jfcq1ly2go" path="res://ui/hud/assets/coin.svg" id="3_pneu6"]
 [ext_resource type="Texture2D" uid="uid://co1tygwevb7v" path="res://ui/hud/assets/blood.svg" id="4_cowbk"]
-[ext_resource type="Texture2D" uid="uid://c5wvjsj1orm8c" path="res://ui/hud/assets/health_progressbar.svg" id="4_kocoe"]
+[ext_resource type="Texture2D" uid="uid://c5wvjsj1orm8c" path="res://ui/hud/assets/big_health_progressbar.svg" id="4_kocoe"]
 [ext_resource type="Texture2D" uid="uid://bojvc66432jr2" path="res://ui/hud/assets/flask.svg" id="5_lp0dp"]
 [ext_resource type="Texture2D" uid="uid://bq6j3q2bphy6y" path="res://ui/hud/assets/syringe.svg" id="6_lp7yt"]
 
@@ -60,18 +60,18 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="CoinTexture" type="NinePatchRect" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="CoinTexture" type="NinePatchRect" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/HBoxContainer"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_pneu6")
 
-[node name="BalanceMarginBox" type="MarginContainer" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-
-[node name="BalanceLabel" type="Label" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox"]
+[node name="BalanceLabel" type="Label" parent="PanelContainer/MarginContainer/RowsVBox/ThirdRowMarginBox/ThirdRowHBox/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_22btv")
