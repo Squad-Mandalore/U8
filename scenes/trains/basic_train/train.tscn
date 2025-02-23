@@ -52,10 +52,7 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Chris" parent="." instance=ExtResource("8_sempk")]
-position = Vector2(433, 153)
-_name = "Chris Chistead"
-RANDOM_NAME = false
-_gender = "Male"
+position = Vector2(374, 151)
 
 [node name="Bettler1" parent="." instance=ExtResource("9_xenwl")]
 position = Vector2(488, 157)
@@ -64,7 +61,6 @@ _gender = "Male"
 [node name="Politiker" parent="." instance=ExtResource("10_rky5v")]
 position = Vector2(264, 161)
 _name = "Olof Scholtz"
-RANDOM_NAME = false
 
 [node name="TicketInspector" parent="." groups=["NPC"] instance=ExtResource("12_rqh7o")]
 y_sort_enabled = true

@@ -9,6 +9,13 @@ const ANDREAS_ROBBERY_ID = 3
 var dialogue = preload("res://characters/npcs/chris/assets/chris_robbery.dialogue")
 var _picked_a_fight: bool = false
 
+func _ready() -> void:
+    if SourceOfTruth.chance(100):
+        queue_free()
+        return
+
+    super._ready()
+
 func set_player_nearby(is_player_nearby : Player):
     _player_nearby = is_player_nearby
     if _player_nearby and not dishonest_brothers_quest.is_active():
@@ -31,8 +38,7 @@ func _dialogue_ended(_resource):
     dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID).set_completed(true)
     stop_talking()
     _player_nearby._stop_talking(self)
-    if _picked_a_fight:
-        start_combat()
+    start_combat()
 
 func _robbing():
     var money = floor(SourceOfTruth.balance * 0.1)
@@ -43,3 +49,8 @@ func _robbing():
 func _impressing():
     dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID).set_accepted(true)
 
+func start_combat():
+    if !_picked_a_fight:
+        return
+
+    super.start_combat()
