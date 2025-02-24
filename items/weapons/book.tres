@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=9 format=3 uid="uid://1myx8ia44eap"]
+
+[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="1_pbv1k"]
+[ext_resource type="Script" path="res://characters/attacks/formula.gd" id="2_jphyt"]
+[ext_resource type="Script" path="res://items/weapons/weapon.gd" id="3_mpft8"]
+[ext_resource type="Script" path="res://globals/attributes.gd" id="4_vm84d"]
+[ext_resource type="Texture2D" uid="uid://da0ufdilu21i6" path="res://items/weapons/assets/baseball_bat.png" id="5_cpslh"]
+
+[sub_resource type="Resource" id="Resource_ayac1"]
+script = ExtResource("2_jphyt")
+base = 10
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.5
+creativity_modifier = 0.3
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+
+[sub_resource type="Resource" id="Resource_di1hx"]
+script = ExtResource("1_pbv1k")
+name = "Ordnungsruf"
+damage = 0
+type = 3
+token = 2
+token_number = 1
+effect = "Silenced den Gegner"
+formula = SubResource("Resource_ayac1")
+
+[sub_resource type="Resource" id="Resource_qs242"]
+script = ExtResource("4_vm84d")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("3_mpft8")
+attacks = Array[ExtResource("1_pbv1k")]([SubResource("Resource_di1hx")])
+name = "Baseball Schläger"
+description = "Der gute alte Baseball Schläger. Ab und zu kann man ja mal ein Baseball mit einem Kopf verwechseln."
+stats = SubResource("Resource_qs242")
+texture = ExtResource("5_cpslh")
+price = 0

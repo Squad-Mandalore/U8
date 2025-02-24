@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dje1mlr1aqg0i"
-path="res://.godot/imported/item_rainmantle.png-05c69e6e29650b23c156d7a91f3052b2.ctex"
+uid="uid://wxmp5hic5ecu"
+path="res://.godot/imported/knife.png-3b42dfc8a30268878fc2fec98926ac8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/armor/assets/item_rainmantle.png"
-dest_files=["res://.godot/imported/item_rainmantle.png-05c69e6e29650b23c156d7a91f3052b2.ctex"]
+source_file="res://items/weapons/assets/knife.png"
+dest_files=["res://.godot/imported/knife.png-3b42dfc8a30268878fc2fec98926ac8d.ctex"]
 
 [params]
 

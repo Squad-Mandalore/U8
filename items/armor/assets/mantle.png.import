@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c02khiqi4yvrd"
-path="res://.godot/imported/note_book.png-f3f1bcdd914cf0faa0d90a0f99d8c60c.ctex"
+uid="uid://dkjhqopcoic0v"
+path="res://.godot/imported/mantle.png-942e178202da840b9e8d9e287ca31067.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/weapons/assets/note_book.png"
-dest_files=["res://.godot/imported/note_book.png-f3f1bcdd914cf0faa0d90a0f99d8c60c.ctex"]
+source_file="res://items/armor/assets/mantle.png"
+dest_files=["res://.godot/imported/mantle.png-942e178202da840b9e8d9e287ca31067.ctex"]
 
 [params]
 
