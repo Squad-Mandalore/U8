@@ -1,15 +1,17 @@
 ~ start
-Andreas versucht dich zu beklauen
-- Andreas machen lassen
+{{_name}} versucht dich zu beklauen
+- {{_name}} machen lassen
 	do _let_robbing_happen()
 	=> END
-- Andreas veprügeln [if SourceOfTruth.stats.strength > 9]
-	set _picked_a_fight = true
+- {{_name}} veprügeln [if SourceOfTruth.stats.strength > 9]
+	do start_combat()
+	{{_name}}: Jetzt weiß ich warum Chris verloren hat ...
+	Du sammelst {{WINNING_MONEY}} Euronen vom bewusstlosen {{_name}} und steckst sie in deine Taschen. Ein Lächeln breitet sich auf deinen Lippen aus
 	=> END
-- Andreas beeindrucken [if SourceOfTruth.stats.coolness > 4]
-	Andreas: ich bin beeindruckt
+- {{_name}} beeindrucken [if SourceOfTruth.stats.coolness > 4]
+	{{_name}}: ich bin beeindruckt
 	do _impressing()
 	=> END
-- Andreas fragen TODO zu klauen [if false]
+- {{_name}} fragen TODO zu klauen [if false]
 	=> END
 => END

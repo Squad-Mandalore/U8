@@ -30,4 +30,5 @@ func update_attack_damage():
         attack.calculate_damage(stats)
 
 func fight_lost():
-    queue_free()
+    pass
+    # queue_free()

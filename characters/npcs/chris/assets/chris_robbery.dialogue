@@ -1,13 +1,15 @@
 ~ start
-Chris versucht dich zu beklauen
-- Chris machen lassen
+Du bemerkst wie eine Hand in deiner Tasche nach etwas sucht. Es fühlt sich etwas komisch an, allerdings fühlst du dich auch zärtlich berührt ...
+- {{_name}} machen lassen
+	Du schließt die Augen und genießt die vorsichtigen Berührungen. Die paar Euronen sind die Extase auf jeden Fall Wert
 	do _let_robbing_happen()
 	=> END
-- Chris veprügeln [if SourceOfTruth.stats.strength > 4]
-	set _picked_a_fight = true
+- {{_name}} veprügeln [if SourceOfTruth.stats.strength > 4]
+	do start_combat()
+	Sehr gut. Du hast {{_name}} eine auf's Maul gegeben. Das wird ihm eine Lehre sein!
 	=> END
-- Chris beeindrucken [if SourceOfTruth.stats.coolness > 4]
-	Chris: ich bin beeindruckt
+- {{_name}} beeindrucken [if SourceOfTruth.stats.coolness > 4]
+	Du schaust {{_name}} tief in die Augen während er dir noch immer in der Tausche rumfummelt. Seine Augen werden groß und er zieht seine Hand schnell zurück. Deine Aura ist beeindruckend.
 	do _impressing()
 	=> END
 => END
