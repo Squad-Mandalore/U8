@@ -18,7 +18,7 @@ func _ready() -> void:
     _current_state = State.IDLE
     if RANDOM_NAME:
         _name = NameGenerator.get_random_name(_gender)
-        
+
 func subclass_ready() -> bool:
     # Implement in subclasses
     return false

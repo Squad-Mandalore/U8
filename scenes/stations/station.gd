@@ -14,7 +14,6 @@ signal train_enter
 signal level_lost
 
 func _ready() -> void:
-    animation_train.change_collisions.connect(_on_collisions_changed)
     SignalDispatcher.player_zero_health.connect(_on_player_zero_health)
     player.speed_multiplier = 0.0
     player.hide()
@@ -38,16 +37,7 @@ func _on_animation_train_enter():
 
 func _on_animation_train_leave():
     train_enter.emit()
-    
-func _on_collisions_changed(deactivate: bool) -> void:
-    if upper_collision.disabled != deactivate:
-        call_deferred("_disable_collisions", deactivate)
 
-func _disable_collisions(deactivate: bool) -> void:
-    if not is_inside_tree():
-        await ready
-    upper_collision.set_deferred("disabled", deactivate)
-    
 func _on_area_2d_body_entered(_body: Node2D) -> void:
     animation_train.deactivate_doors()
     animation_train_collision.call_deferred("set_disabled", true)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://0pt3nvilx4ga"]
+[gd_scene load_steps=22 format=3 uid="uid://0pt3nvilx4ga"]
 
 [ext_resource type="Script" path="res://scenes/stations/door_logic.gd" id="1_gryhj"]
 [ext_resource type="Texture2D" uid="uid://xjborux7ri1v" path="res://scenes/trains/basic_train/assets/ubahn-v4-rechts.png" id="1_mfpua"]
@@ -9,14 +9,17 @@
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_agbu6"]
 b = Vector2(45, 0)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_j4vcw"]
-b = Vector2(72, 0)
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5fddw"]
 b = Vector2(-21, -46)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_t6ifu"]
 b = Vector2(-261, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_j4vcw"]
+b = Vector2(72, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cmbb8"]
+b = Vector2(37, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oawvb"]
 size = Vector2(29, 10)
@@ -97,6 +100,14 @@ centered = false
 position = Vector2(0, 92)
 shape = SubResource("SegmentShape2D_agbu6")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(290, 92)
+shape = SubResource("SegmentShape2D_5fddw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(269, 46)
+shape = SubResource("SegmentShape2D_t6ifu")
+
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
 position = Vector2(78, 92)
 shape = SubResource("SegmentShape2D_j4vcw")
@@ -105,13 +116,9 @@ shape = SubResource("SegmentShape2D_j4vcw")
 position = Vector2(183, 92)
 shape = SubResource("SegmentShape2D_j4vcw")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(290, 92)
-shape = SubResource("SegmentShape2D_5fddw")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(269, 46)
-shape = SubResource("SegmentShape2D_t6ifu")
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(288, 92)
+shape = SubResource("SegmentShape2D_cmbb8")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, 50, 2, 50, 5, 49, 8, 48, 8, 47)

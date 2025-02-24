@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cr0oss7rkk1ta"]
+[gd_scene load_steps=19 format=3 uid="uid://cr0oss7rkk1ta"]
 
 [ext_resource type="Script" path="res://scenes/stations/station.gd" id="1_ppg4l"]
 [ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="1_q1w2b"]
@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://brdipk6bapgml" path="res://assets/sounds/music/slappbass_backgroundmusic.wav" id="9_6r4ry"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kke8e"]
-b = Vector2(1163, 0)
+b = Vector2(98, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_63p1v"]
 b = Vector2(0, 314)
@@ -21,6 +21,9 @@ b = Vector2(1163, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_gdhde"]
 b = Vector2(0, 314)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_55gil"]
+b = Vector2(-98, 0)
 
 [sub_resource type="Animation" id="Animation_g22sf"]
 length = 0.001
@@ -122,7 +125,7 @@ texture = ExtResource("1_q1w2b")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
-position = Vector2(32, 188)
+position = Vector2(32, 187)
 shape = SubResource("SegmentShape2D_kke8e")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Background"]
@@ -136,6 +139,10 @@ shape = SubResource("SegmentShape2D_3grgy")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Background"]
 position = Vector2(1195, 188)
 shape = SubResource("SegmentShape2D_gdhde")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Background"]
+position = Vector2(1195, 187)
+shape = SubResource("SegmentShape2D_55gil")
 
 [node name="CenterContainer" type="CenterContainer" parent="Background"]
 custom_minimum_size = Vector2(94, 31)
