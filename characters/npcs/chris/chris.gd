@@ -10,15 +10,16 @@ const WINNING_MONEY = 10
 
 var dialogue = preload("res://characters/npcs/chris/assets/chris_robbery.dialogue")
 
-func _enter_tree() -> void:
+func _ready() -> void:
     if dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID).is_completed() or SourceOfTruth.chance(40):
         queue_free()
+
+    super._ready()
 
 func set_player_nearby(is_player_nearby : Player):
     _player_nearby = is_player_nearby
     if _player_nearby and not dishonest_brothers_quest.is_active():
         start_robbing()
-
 
 func start_robbing():
     dishonest_brothers_quest.set_active(true)

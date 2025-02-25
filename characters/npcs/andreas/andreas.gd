@@ -14,10 +14,12 @@ const WINNING_MONEY = 10
 # TODO: In the dialogue file replace [if false] with something like [if Questomania.quest_dict[StreikQuest.NAME].is_active()] if StreikQuest gets implemented
 var dialogue = preload("res://characters/npcs/andreas/assets/andreas_robbery.dialogue")
 
-func _enter_tree() -> void:
+func _ready() -> void:
     if not _chris_robbery_quest.is_completed() or SourceOfTruth.chance(40):
         queue_free()
         return
+
+    super._ready()
 
 func set_player_nearby(is_player_nearby : Player):
     _player_nearby = is_player_nearby
