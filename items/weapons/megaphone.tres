@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://characters/attacks/formula.gd" id="2_ehlj2"]
 [ext_resource type="Script" path="res://items/weapons/weapon.gd" id="3_dl4uy"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="4_4035q"]
-[ext_resource type="Texture2D" uid="uid://c8jwd6kpib7p1" path="res://items/weapons/assets/item_rope.png" id="5_16j3k"]
+[ext_resource type="Texture2D" uid="uid://4p7u3uq1ow8m" path="res://items/weapons/assets/megaphone.png" id="5_y6lyy"]
 
 [sub_resource type="Resource" id="Resource_ayac1"]
 script = ExtResource("2_ehlj2")
@@ -49,7 +49,7 @@ dodge_chance = 0
 strength = 0
 coolness = 0
 attractiveness = 0
-intelligence = 0
+intelligence = 40
 creativity = 0
 luck = 0
 poison_resistance = 0
@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_dl4uy")
 attacks = Array[ExtResource("1_1svhp")]([SubResource("Resource_di1hx")])
-name = "Seil"
-description = "Ein schwarzes Seil in komischer Form geknotet. Wofür das wohl sein mag?"
+name = "Megafon"
+description = "Die einzige Möglichkeit die Lautstärke der U-Bahn und des Bahnhofes zu übertönen. Beim präziesen einsetzten kann sogar das Trommelfell platzen."
 stats = SubResource("Resource_qs242")
-texture = ExtResource("5_16j3k")
+texture = ExtResource("5_y6lyy")
 price = 40

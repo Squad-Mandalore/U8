@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://items/item.gd" id="1_nxr2d"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_pebbc"]
-[ext_resource type="Texture2D" uid="uid://ugift53k6dsw" path="res://items/consumables/assets/cigarette.png" id="3_0hoev"]
+[ext_resource type="Texture2D" uid="uid://1avrd7j1gfgv" path="res://items/consumables/assets/schnitzel.png" id="3_r8r7p"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
 script = ExtResource("2_pebbc")
 max_health = 0
-health = 10
+health = 20
 armor = 0
-initiative = 1
+initiative = 0
 dodge_chance = 0
 strength = 0
 coolness = 0
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_nxr2d")
-name = "Energy Drink"
-description = "Der Energy Drink wird dir die Energie geben die du brauchst um den stressigen Alltag zu überleben. (Der 2. beste Kaffe Ersatz)"
+name = "Schnitzel mit Pommes Rot-Weiß"
+description = "Ein vollständiger Schnitzelteller wie man sich ihn nur vorstellen kann. "
 stats = SubResource("Resource_hodkb")
-texture = ExtResource("3_0hoev")
+texture = ExtResource("3_r8r7p")
 price = 20

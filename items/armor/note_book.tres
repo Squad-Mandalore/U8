@@ -2,19 +2,19 @@
 
 [ext_resource type="Script" path="res://items/item.gd" id="1_kdolv"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_5t753"]
-[ext_resource type="Texture2D" uid="uid://cgrrlow7r1dno" path="res://items/armor/assets/bulletproof_vest.png" id="3_j84k6"]
+[ext_resource type="Texture2D" uid="uid://c02khiqi4yvrd" path="res://items/armor/assets/note_book.png" id="3_jxua5"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
 script = ExtResource("2_5t753")
 max_health = 0
 health = 0
-armor = 5
+armor = 0
 initiative = 0
 dodge_chance = 0
 strength = 0
 coolness = 0
 attractiveness = 0
-intelligence = 0
+intelligence = 1
 creativity = 0
 luck = 0
 poison_resistance = 0
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_kdolv")
-name = "Kugelsichere Weste"
-description = "Weil man in Berlin nie wissen kann, was hinter der nächsten Haltestelle auf einen wartet. Sicher ist sicher – und in der U8 bist du definitiv nicht sicher."
+name = "Notizbuch"
+description = "Das Buch für die Dementen und Workaholics, wenn mal wieder das Gehirn nicht richtig arbeitet."
 stats = SubResource("Resource_hodkb")
-texture = ExtResource("3_j84k6")
-price = 500
+texture = ExtResource("3_jxua5")
+price = 70

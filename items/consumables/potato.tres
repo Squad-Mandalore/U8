@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_hodkb"]
 script = ExtResource("2_ki2lp")
 max_health = 0
-health = 0
+health = 5
 armor = 0
 initiative = 0
 dodge_chance = 0
@@ -22,7 +22,7 @@ bleed_resistance = 0
 drug_resistance = 0
 poison_level = 0
 bleed_level = 0
-drug_level = 1
+drug_level = 0
 
 [resource]
 script = ExtResource("1_lu02y")
@@ -30,4 +30,4 @@ name = "Kartoffel"
 description = "Eine normale rohe Kartoffel, für die nicht normalen Kartoffeln in der U-Bahn. "
 stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_j3t3a")
-price = 50
+price = 5

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://characters/attacks/formula.gd" id="2_4ywm8"]
 [ext_resource type="Script" path="res://items/weapons/weapon.gd" id="3_a8uu1"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="4_d2mh8"]
-[ext_resource type="Texture2D" uid="uid://dblkoo8rpxguy" path="res://items/weapons/assets/book.png" id="5_ph7r3"]
+[ext_resource type="Texture2D" uid="uid://ckynv1p04uyjg" path="res://items/weapons/assets/brush.png" id="5_41mm7"]
 
 [sub_resource type="Resource" id="Resource_ayac1"]
 script = ExtResource("2_4ywm8")
@@ -50,7 +50,7 @@ strength = 0
 coolness = 0
 attractiveness = 0
 intelligence = 0
-creativity = 0
+creativity = 30
 luck = 0
 poison_resistance = 0
 bleed_resistance = 0
@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_a8uu1")
 attacks = Array[ExtResource("1_qdqsd")]([SubResource("Resource_di1hx")])
-name = "Buch"
-description = "Ein Buch aus der alten Zeit mit genügend Wissen um andere Menschen zu überfordern."
+name = "Pinsel"
+description = "Ein Pinsel, womöglich geklaut aus dem Kunstmuseum. Mit genügend Kreativität kannst du andere möglicherweise damit verstören."
 stats = SubResource("Resource_qs242")
-texture = ExtResource("5_ph7r3")
+texture = ExtResource("5_41mm7")
 price = 40

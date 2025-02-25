@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://characters/attacks/formula.gd" id="2_fp1qs"]
 [ext_resource type="Script" path="res://items/weapons/weapon.gd" id="3_8i5u4"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="4_cp1x4"]
-[ext_resource type="Texture2D" uid="uid://da0ufdilu21i6" path="res://items/weapons/assets/baseball_bat.png" id="5_xys2h"]
+[ext_resource type="Texture2D" uid="uid://wxmp5hic5ecu" path="res://items/weapons/assets/knife.png" id="5_qimmm"]
 
 [sub_resource type="Resource" id="Resource_ayac1"]
 script = ExtResource("2_fp1qs")
@@ -46,7 +46,7 @@ health = 0
 armor = 0
 initiative = 0
 dodge_chance = 0
-strength = 40
+strength = 50
 coolness = 0
 attractiveness = 0
 intelligence = 0
@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_8i5u4")
 attacks = Array[ExtResource("1_d6p2g")]([SubResource("Resource_di1hx")])
-name = "Baseball Schläger"
-description = "Der gute alte Baseball Schläger. Ab und zu kann man ja mal ein Kopf mit einem Baseball verwechseln."
+name = "Messer"
+description = "Das klassisch Küchenmesser, welches das tägliche Werkzeug ist von Familie bis Obdachloser."
 stats = SubResource("Resource_qs242")
-texture = ExtResource("5_xys2h")
+texture = ExtResource("5_qimmm")
 price = 40

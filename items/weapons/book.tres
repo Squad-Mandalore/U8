@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://characters/attacks/formula.gd" id="2_jphyt"]
 [ext_resource type="Script" path="res://items/weapons/weapon.gd" id="3_mpft8"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="4_vm84d"]
-[ext_resource type="Texture2D" uid="uid://da0ufdilu21i6" path="res://items/weapons/assets/baseball_bat.png" id="5_cpslh"]
+[ext_resource type="Texture2D" uid="uid://dblkoo8rpxguy" path="res://items/weapons/assets/book.png" id="5_gmtc1"]
 
 [sub_resource type="Resource" id="Resource_ayac1"]
 script = ExtResource("2_jphyt")
@@ -49,7 +49,7 @@ dodge_chance = 0
 strength = 0
 coolness = 0
 attractiveness = 0
-intelligence = 0
+intelligence = 30
 creativity = 0
 luck = 0
 poison_resistance = 0
@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_mpft8")
 attacks = Array[ExtResource("1_pbv1k")]([SubResource("Resource_di1hx")])
-name = "Baseball Schläger"
-description = "Der gute alte Baseball Schläger. Ab und zu kann man ja mal ein Baseball mit einem Kopf verwechseln."
+name = "Buch"
+description = "Ein Buch aus der alten Zeit mit genügend Wissen um andere Menschen zu überfordern."
 stats = SubResource("Resource_qs242")
-texture = ExtResource("5_cpslh")
-price = 0
+texture = ExtResource("5_gmtc1")
+price = 40

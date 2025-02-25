@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_8udso"]
 [ext_resource type="Script" path="res://characters/attacks/formula.gd" id="2_g8hye"]
 [ext_resource type="Script" path="res://items/weapons/weapon.gd" id="3_wmok5"]
-[ext_resource type="Texture2D" uid="uid://dvk6pvmy6n4xh" path="res://ui/shop/assets/shopping_cart_icon.svg" id="5_bgylk"]
+[ext_resource type="Texture2D" uid="uid://da0ufdilu21i6" path="res://items/weapons/assets/baseball_bat.png" id="5_mi013"]
 
 [sub_resource type="Resource" id="Resource_ayac1"]
 script = ExtResource("2_g8hye")
@@ -41,17 +41,17 @@ formula = SubResource("Resource_ayac1")
 
 [sub_resource type="Resource" id="Resource_qs242"]
 script = ExtResource("2_8udso")
-max_health = 10
+max_health = 0
 health = 0
-armor = 20
-initiative = 10
+armor = 0
+initiative = 0
 dodge_chance = 0
-strength = 0
-coolness = 40
-attractiveness = 15
-intelligence = 10
+strength = 40
+coolness = 0
+attractiveness = 0
+intelligence = 0
 creativity = 0
-luck = 20
+luck = 0
 poison_resistance = 0
 bleed_resistance = 0
 drug_resistance = 0
@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_wmok5")
 attacks = Array[ExtResource("1_xssw7")]([SubResource("Resource_di1hx")])
-name = "Präsidentenglocke"
-description = "Wenige Objekte haben so viel Autorität, ohne ein einziges Wort zu sprechen."
+name = "Baseball Schläger"
+description = "Der gute alte Baseball Schläger. Ab und zu kann man ja mal ein Kopf mit einem Baseball verwechseln."
 stats = SubResource("Resource_qs242")
-texture = ExtResource("5_bgylk")
-price = 0
+texture = ExtResource("5_mi013")
+price = 40

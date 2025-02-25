@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://characters/attacks/formula.gd" id="2_1y21v"]
 [ext_resource type="Script" path="res://items/weapons/weapon.gd" id="3_lgi13"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="4_lkf6w"]
-[ext_resource type="Texture2D" uid="uid://ckynv1p04uyjg" path="res://items/weapons/assets/brush.png" id="5_lfb4a"]
+[ext_resource type="Texture2D" uid="uid://caliv71t2nuet" path="res://items/weapons/assets/guitar_string.png" id="5_jn8xx"]
 
 [sub_resource type="Resource" id="Resource_ayac1"]
 script = ExtResource("2_1y21v")
@@ -46,7 +46,7 @@ health = 0
 armor = 0
 initiative = 0
 dodge_chance = 0
-strength = 0
+strength = 30
 coolness = 0
 attractiveness = 0
 intelligence = 0
@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_lgi13")
 attacks = Array[ExtResource("1_gilae")]([SubResource("Resource_di1hx")])
-name = "Pinsel"
-description = "Ein Pinsel, womöglich geklaut aus dem Kunstmuseum. Mit genügend Kreativität kannst du andere möglicherweise damit verstören."
+name = "Guitarrensaite"
+description = "Von einer Gittare abgeschnitten, so hart wie ein (offensichtlich) Metalldraht."
 stats = SubResource("Resource_qs242")
-texture = ExtResource("5_lfb4a")
+texture = ExtResource("5_jn8xx")
 price = 40
