@@ -1,11 +1,88 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmj3348ognt37"]
+[gd_scene load_steps=8 format=3 uid="uid://cmj3348ognt37"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_kgpoy"]
 [ext_resource type="Script" path="res://scenes/stations/24_hermannstrasse/hermannstrasse.gd" id="2_l272v"]
+[ext_resource type="Texture2D" uid="uid://d3xawbt2blj64" path="res://scenes/stations/24_hermannstrasse/assets/hermannstrasse_background_fight.png" id="3_hljma"]
+[ext_resource type="Texture2D" uid="uid://cpbvfcrt0enk1" path="res://scenes/stations/24_hermannstrasse/assets/herrmannstrasse_fight_floor.png" id="4_hl8ag"]
+[ext_resource type="Texture2D" uid="uid://c8jx8pkbeui0n" path="res://scenes/stations/24_hermannstrasse/assets/hermannstrasse_background.png" id="5_56dfc"]
+[ext_resource type="Texture2D" uid="uid://drdkrndw6l5sj" path="res://scenes/stations/24_hermannstrasse/assets/hermannstrasse_floor.png" id="6_elllx"]
+[ext_resource type="PackedScene" uid="uid://5krccpj44n6l" path="res://scenes/stations/24_hermannstrasse/subscenes/tower.tscn" id="7_owj6y"]
 
 [node name="Hermannstrasse" instance=ExtResource("1_kgpoy")]
 script = ExtResource("2_l272v")
+combat_background = ExtResource("3_hljma")
+combat_floor = ExtResource("4_hl8ag")
+
+[node name="BackgroundWall" parent="Background" index="0"]
+texture = ExtResource("5_56dfc")
+
+[node name="CenterContainer" parent="Background" index="5"]
+offset_left = 539.0
+offset_top = 52.0
+offset_right = 633.0
+offset_bottom = 83.0
+grow_horizontal = 1
 
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Hermann-
 straße"
+
+[node name="Floor" parent="Node2D" index="0"]
+texture = ExtResource("6_elllx")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="4"]
+y_sort_enabled = true
+
+[node name="Tower" parent="Node2D/CanvasGroup" index="0" instance=ExtResource("7_owj6y")]
+position = Vector2(166, 262)
+
+[node name="Tower2" parent="Node2D/CanvasGroup" index="1" instance=ExtResource("7_owj6y")]
+position = Vector2(278, 262)
+
+[node name="Tower3" parent="Node2D/CanvasGroup" index="2" instance=ExtResource("7_owj6y")]
+position = Vector2(390, 262)
+
+[node name="Tower4" parent="Node2D/CanvasGroup" index="3" instance=ExtResource("7_owj6y")]
+position = Vector2(502, 262)
+
+[node name="Tower5" parent="Node2D/CanvasGroup" index="4" instance=ExtResource("7_owj6y")]
+position = Vector2(614, 262)
+
+[node name="Tower6" parent="Node2D/CanvasGroup" index="5" instance=ExtResource("7_owj6y")]
+position = Vector2(726, 262)
+
+[node name="Tower7" parent="Node2D/CanvasGroup" index="6" instance=ExtResource("7_owj6y")]
+position = Vector2(838, 262)
+
+[node name="Tower8" parent="Node2D/CanvasGroup" index="7" instance=ExtResource("7_owj6y")]
+position = Vector2(950, 262)
+
+[node name="Tower9" parent="Node2D/CanvasGroup" index="8" instance=ExtResource("7_owj6y")]
+position = Vector2(1062, 262)
+
+[node name="Tower10" parent="Node2D/CanvasGroup" index="9" instance=ExtResource("7_owj6y")]
+position = Vector2(166, 417)
+
+[node name="Tower11" parent="Node2D/CanvasGroup" index="10" instance=ExtResource("7_owj6y")]
+position = Vector2(278, 417)
+
+[node name="Tower12" parent="Node2D/CanvasGroup" index="11" instance=ExtResource("7_owj6y")]
+position = Vector2(390, 417)
+
+[node name="Tower13" parent="Node2D/CanvasGroup" index="12" instance=ExtResource("7_owj6y")]
+position = Vector2(502, 417)
+
+[node name="Tower14" parent="Node2D/CanvasGroup" index="13" instance=ExtResource("7_owj6y")]
+position = Vector2(614, 417)
+
+[node name="Tower15" parent="Node2D/CanvasGroup" index="14" instance=ExtResource("7_owj6y")]
+position = Vector2(726, 417)
+
+[node name="Tower16" parent="Node2D/CanvasGroup" index="15" instance=ExtResource("7_owj6y")]
+position = Vector2(838, 417)
+
+[node name="Tower17" parent="Node2D/CanvasGroup" index="16" instance=ExtResource("7_owj6y")]
+position = Vector2(950, 417)
+
+[node name="Tower18" parent="Node2D/CanvasGroup" index="17" instance=ExtResource("7_owj6y")]
+position = Vector2(1062, 417)
