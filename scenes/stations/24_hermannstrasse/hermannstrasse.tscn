@@ -16,7 +16,7 @@ combat_floor = ExtResource("4_hl8ag")
 [node name="BackgroundWall" parent="Background" index="0"]
 texture = ExtResource("5_56dfc")
 
-[node name="CenterContainer" parent="Background" index="5"]
+[node name="CenterContainer" parent="Background" index="6"]
 offset_left = 539.0
 offset_top = 52.0
 offset_right = 633.0

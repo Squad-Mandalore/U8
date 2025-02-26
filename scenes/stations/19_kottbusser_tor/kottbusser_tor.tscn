@@ -17,17 +17,6 @@ combat_floor = ExtResource("4_vjsi7")
 [node name="BackgroundWall" parent="Background" index="0"]
 texture = ExtResource("3_ea010")
 
-[node name="CenterContainer" parent="Background" index="5"]
-offset_left = 310.0
-offset_top = 69.0
-offset_right = 404.0
-offset_bottom = 100.0
-grow_horizontal = 1
-
-[node name="StationName" parent="Background/CenterContainer" index="0"]
-text = "Kottbusser Tor"
-label_settings = ExtResource("5_gnmpr")
-
 [node name="CenterContainer2" type="CenterContainer" parent="Background" index="6"]
 custom_minimum_size = Vector2(94, 31)
 offset_left = 752.0
@@ -41,6 +30,17 @@ text = "Kottbusser Tor"
 label_settings = ExtResource("5_gnmpr")
 horizontal_alignment = 1
 uppercase = true
+
+[node name="CenterContainer" parent="Background" index="7"]
+offset_left = 310.0
+offset_top = 69.0
+offset_right = 404.0
+offset_bottom = 100.0
+grow_horizontal = 1
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Kottbusser Tor"
+label_settings = ExtResource("5_gnmpr")
 
 [node name="Floor" parent="Node2D" index="0"]
 texture = ExtResource("4_rjf1a")
