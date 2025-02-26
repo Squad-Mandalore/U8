@@ -2,12 +2,7 @@ class_name StatsSpecifier
 extends Resource
 
 @export var max_health: int
-@export var health: int:
-    set(value):
-        health = min(value, max_health)
-        if health <= 0:
-            SignalDispatcher.player_zero_health.emit()
-            GameState.new_run_state()
+@export var health: int
 @export var armor: int
 @export var initiative: int
 @export var dodge_chance: int:

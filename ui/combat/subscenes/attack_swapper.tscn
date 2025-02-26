@@ -53,7 +53,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_1anor"]
 resource_name = "fade_in"
-length = 0.7
+step = 0.0333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -61,7 +61,7 @@ tracks/0/path = NodePath("PanelContainer/MarginContainer/HBoxContainer/Attack1:m
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.2, 0.7),
+"times": PackedFloat32Array(0.3, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -73,7 +73,7 @@ tracks/1/path = NodePath("PanelContainer/MarginContainer/HBoxContainer/Attack2:m
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.6),
+"times": PackedFloat32Array(0.15, 0.85),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -85,7 +85,7 @@ tracks/2/path = NodePath("PanelContainer/MarginContainer/HBoxContainer/Attack3:m
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -93,7 +93,6 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_42b60"]
 resource_name = "fade_out"
-length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -101,7 +100,7 @@ tracks/0/path = NodePath("PanelContainer/MarginContainer/HBoxContainer/Attack1:m
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -113,7 +112,7 @@ tracks/1/path = NodePath("PanelContainer/MarginContainer/HBoxContainer/Attack2:m
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.6),
+"times": PackedFloat32Array(0.15, 0.85),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -125,7 +124,7 @@ tracks/2/path = NodePath("PanelContainer/MarginContainer/HBoxContainer/Attack3:m
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 0.7),
+"times": PackedFloat32Array(0.3, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -139,20 +138,17 @@ _data = {
 }
 
 [node name="AttackSwapper" type="Control"]
-custom_minimum_size = Vector2(627, 169)
+custom_minimum_size = Vector2(580, 169)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_bottom = 169.0
 script = ExtResource("1_md5jf")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(627, 169)
+custom_minimum_size = Vector2(389, 149)
 layout_mode = 0
-offset_right = 627.0
-offset_bottom = 169.0
+offset_right = 389.0
+offset_bottom = 149.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_3p0db")
@@ -166,7 +162,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 15
 
 [node name="Attack1" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_miyym")]
 unique_name_in_owner = true
@@ -174,19 +170,17 @@ layout_mode = 2
 
 [node name="Attack2" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_miyym")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="Attack3" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_miyym")]
 unique_name_in_owner = true
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 10
 theme_override_constants/separation = 5
 
 [node name="SwapButtonRight" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_tcsvr")]
@@ -204,6 +198,7 @@ size_flags_vertical = 3
 libraries = {
 "": SubResource("AnimationLibrary_pnpex")
 }
+speed_scale = 4.0
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/SwapButtonRight" to="." method="_on_swap_button_right_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/SwapButtonLeft" to="." method="_on_swap_button_left_pressed"]

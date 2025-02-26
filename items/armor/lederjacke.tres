@@ -31,3 +31,4 @@ name = "Lederjacke"
 description = "Die einzig wahre Uniform für jemanden, der in der U8 nicht einfach nur mitfährt, sondern das Abenteuer sucht. Eine Lederjacke macht dich automatisch 20% mysteriöser und 80% unangreifbarer – auch wenn du eigentlich nur zum nächsten Späti willst."
 stats = SubResource("Resource_hodkb")
 texture = SubResource("PlaceholderTexture2D_pr430")
+price = 300

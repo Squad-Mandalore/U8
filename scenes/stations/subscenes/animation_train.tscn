@@ -1,32 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbbc33em4xtbm"]
+[gd_scene load_steps=7 format=3 uid="uid://dbbc33em4xtbm"]
 
-[ext_resource type="Texture2D" uid="uid://ckj0legbu2g3" path="res://scenes/trains/basic_train/assets/ubahn-v4-mitte-außen.png" id="1_tsj04"]
-[ext_resource type="Texture2D" uid="uid://c3s8is70qebur" path="res://scenes/trains/basic_train/assets/ubahn-v4-links-außen.png" id="2_w0ltp"]
-[ext_resource type="Texture2D" uid="uid://egisj4el18ne" path="res://scenes/trains/basic_train/assets/ubahn-v4-rechts-außen.png" id="3_drkum"]
+[ext_resource type="Script" path="res://scenes/stations/animation_train.gd" id="1_v8o5s"]
+[ext_resource type="PackedScene" uid="uid://1pg3o54ddnb3" path="res://scenes/stations/subscenes/inside_center_animation_train.tscn" id="4_6q7qr"]
+[ext_resource type="PackedScene" uid="uid://dq2ug6umgkqai" path="res://scenes/stations/subscenes/inside_left_animation_train.tscn" id="5_ds5bv"]
+[ext_resource type="PackedScene" uid="uid://0pt3nvilx4ga" path="res://scenes/stations/subscenes/inside_right_animation_train.tscn" id="6_fndob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fctmn"]
-size = Vector2(33, 37)
+size = Vector2(912, 25.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71kwf"]
+size = Vector2(922.5, 40.5)
 
 [node name="AnimationTrain" type="Area2D"]
+y_sort_enabled = true
 collision_layer = 0
 collision_mask = 2
-
-[node name="Center" type="Sprite2D" parent="."]
-position = Vector2(329, 0)
-texture = ExtResource("1_tsj04")
-centered = false
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_w0ltp")
-centered = false
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(658, 0)
-texture = ExtResource("3_drkum")
-centered = false
+script = ExtResource("1_v8o5s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(59.5, 89)
+position = Vector2(495, 66.125)
 shape = SubResource("RectangleShape2D_fctmn")
 disabled = true
 debug_color = Color(0.520177, 0.418196, 1, 0.42)
+
+[node name="Center" parent="." instance=ExtResource("4_6q7qr")]
+y_sort_enabled = true
+position = Vector2(329, 0)
+
+[node name="Left" parent="." instance=ExtResource("5_ds5bv")]
+y_sort_enabled = true
+
+[node name="Right" parent="." instance=ExtResource("6_fndob")]
+y_sort_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(494.25, 100.25)
+shape = SubResource("RectangleShape2D_71kwf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

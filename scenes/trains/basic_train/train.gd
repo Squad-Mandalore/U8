@@ -8,7 +8,10 @@ const _CENTER_WIDTH: int = 329
 const Y: int = 95
 
 @onready var _right: Node2D = $Right
-@onready var _fahrkartenkonrtolleurin = $Fahrkartenkonrtolleurin
+@onready var _ticket_inspector = $TicketInspector
+@export var combat_background: Texture2D
+@export var combat_background_left: Texture2D
+@export var combat_floor: Texture2D
 
 
 var _rng = RandomNumberGenerator.new()
@@ -32,17 +35,17 @@ func _ready() -> void:
         var center_scene: Node2D = center.instantiate()
         center_scene.position = Vector2(_center_x(i), Y)
         self.add_child(center_scene)
+        self.add_child(center_scene.get_node("InsideCenter").spawn_npc())
     _right.position.x = _right_x(train_length)
-    _spawn_farhkarten_kontrolleurin()
+    _spawn_ticket_inspector()
     SignalDispatcher.sound_music.emit("train")
 
-func _spawn_farhkarten_kontrolleurin():
+func _spawn_ticket_inspector():
     if randi() % 20 == 5:
-        _fahrkartenkonrtolleurin.position.x = _right.position.x + 100
+        _ticket_inspector.position.x = _right.position.x + 100
     else:
-        get_tree().queue_delete(_fahrkartenkonrtolleurin)
+        get_tree().queue_delete(_ticket_inspector)
         print("Schackeline will not hunt you today")
-
 
 func _on_player_zero_health() -> void:
     level_lost.emit()

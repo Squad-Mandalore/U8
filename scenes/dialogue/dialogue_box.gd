@@ -9,7 +9,7 @@ var last_message = null
 
 signal send_message(message)
 
-func _update_sprite(character:NPC):
+func _update_sprite(character:Npc):
     if character._sprite:
         animated_sprite_2d.sprite_frames = character._sprite.sprite_frames
         animated_sprite_2d.animation = character._sprite.animation
@@ -64,5 +64,5 @@ func _on_button_pressed():
             send_message.emit(message)
 
 
-func _on_node_2d_conversation_started(character: NPC) -> void:
+func _on_node_2d_conversation_started(character: Npc) -> void:
     _update_sprite(character)

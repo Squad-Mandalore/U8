@@ -1,8 +1,11 @@
 extends Control
 
-var bleed_texture = preload("res://ui/hud/assets/white_blood.svg")
-var poison_texture = preload("res://ui/hud/assets/white_flask.svg")
-var drug_texture = preload("res://ui/hud/assets/white_syringe.svg")
+var white_bleed_texture = preload("res://ui/hud/assets/white_blood.svg")
+var white_poison_texture = preload("res://ui/hud/assets/white_flask.svg")
+var white_drug_texture = preload("res://ui/hud/assets/white_syringe.svg")
+var grey_bleed_texture = preload("res://ui/hud/assets/grey_blood.svg")
+var grey_poison_texture = preload("res://ui/hud/assets/grey_flask.svg")
+var grey_drug_texture = preload("res://ui/hud/assets/grey_syringe.svg")
 var tokens: Array[Utils.AttackTypes]
 var stance: Utils.AttackTypes = Utils.AttackTypes.Null
 var stats: StatsSpecifier:
@@ -52,27 +55,27 @@ func all_items_are_same(array: Array) -> bool:
 
 func update_bleed(level: int) -> void:
     if level > 0:
-        %BleedTexture.texture = bleed_texture
+        %BleedTexture.texture = white_bleed_texture
         %BleedLabel.add_theme_color_override("font_color", Utils.RED)
     else:
-        %BleedTexture.texture = null
-        %BleedLabel.add_theme_color_override("font_color", Utils.GREY)
+        %BleedTexture.texture = grey_bleed_texture
+        %BleedLabel.add_theme_color_override("font_color", Utils.DARK_GREY)
 
 func update_poison(level: int) -> void:
     if level > 0:
-        %PoisonTexture.texture = poison_texture
+        %PoisonTexture.texture = white_poison_texture
         %PoisonLabel.add_theme_color_override("font_color", Utils.RED)
     else:
-        %PoisonTexture.texture = null
-        %PoisonLabel.add_theme_color_override("font_color", Utils.GREY)
+        %PoisonTexture.texture = grey_poison_texture
+        %PoisonLabel.add_theme_color_override("font_color", Utils.DARK_GREY)
 
 func update_drug(level: int) -> void:
     if level > 0:
-        %DrugTexture.texture = drug_texture
+        %DrugTexture.texture = white_drug_texture
         %DrugLabel.add_theme_color_override("font_color", Utils.RED)
     else:
-        %DrugTexture.texture = null
-        %DrugLabel.add_theme_color_override("font_color", Utils.GREY)
+        %DrugTexture.texture = grey_drug_texture
+        %DrugLabel.add_theme_color_override("font_color", Utils.DARK_GREY)
 
 func add_token(type: Utils.AttackTypes):
     # first attacks decides initial stance

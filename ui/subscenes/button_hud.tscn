@@ -15,6 +15,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="ButtonHud" type="Button"]
+custom_minimum_size = Vector2(0, 44)
 offset_right = 166.0
 offset_bottom = 44.0
 focus_mode = 0

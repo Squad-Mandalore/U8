@@ -5,3 +5,4 @@ extends Resource
 @export var description: String
 @export var stats: StatsSpecifier
 @export var texture: Texture2D
+@export var price: int
