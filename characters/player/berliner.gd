@@ -288,8 +288,8 @@ func _on_dialogue_box_send_message(message):
     $EidolonHandler.post_message(message)
 
 func _on_eidolon_handler_get_process_id(process_id):
-    var message = "Process ID: %s" % process_id
-    _dialogue_box.add_message("SYSTEM", message)
+    #var message = "Process ID: %s" % process_id
+    _dialogue_box.add_message("SYSTEM", "Conversation started.")
 
 func _on_eidolon_handler_new_message():
     _dialogue_box.add_message("AGENT")
