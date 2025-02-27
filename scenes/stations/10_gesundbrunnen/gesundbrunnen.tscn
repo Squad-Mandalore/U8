@@ -17,15 +17,6 @@ combat_floor = ExtResource("4_2iy2d")
 [node name="BackgroundWall" parent="Background" index="0"]
 texture = ExtResource("3_ek8a5")
 
-[node name="CenterContainer" parent="Background" index="5"]
-offset_left = 358.0
-offset_right = 452.0
-grow_horizontal = 1
-
-[node name="StationName" parent="Background/CenterContainer" index="0"]
-text = "GESUNDBRUNNEN"
-label_settings = ExtResource("5_pfb4y")
-
 [node name="CenterContainer2" type="CenterContainer" parent="Background" index="6"]
 custom_minimum_size = Vector2(94, 31)
 offset_left = 683.0
@@ -35,6 +26,15 @@ offset_bottom = 89.0
 
 [node name="StationName" type="Label" parent="Background/CenterContainer2" index="0"]
 layout_mode = 2
+text = "GESUNDBRUNNEN"
+label_settings = ExtResource("5_pfb4y")
+
+[node name="CenterContainer" parent="Background" index="7"]
+offset_left = 358.0
+offset_right = 452.0
+grow_horizontal = 1
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "GESUNDBRUNNEN"
 label_settings = ExtResource("5_pfb4y")
 
