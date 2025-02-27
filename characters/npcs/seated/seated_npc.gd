@@ -4,9 +4,11 @@ class_name SeatedNpc
 var _animation_name: String = ""
 var _base_animation: String = ""
 var _animation_variants: Array = []  # Stores all available variants
+@export var random_range: int = 5
 
 func _ready() -> void:
-    if randi_range(0,5) == 1:
+    var _random_number = randi_range(0,random_range)
+    if _random_number == 1:
         self.collision_layer = 0
         self.collision_mask = 0
         queue_free()

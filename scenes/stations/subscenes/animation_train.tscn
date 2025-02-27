@@ -41,7 +41,5 @@ collision_mask = 2
 position = Vector2(494.25, 100.25)
 shape = SubResource("RectangleShape2D_71kwf")
 
-[connection signal="doors_fully_opened" from="Left" to="." method="_on_wagon_doors_fully_opened"]
-[connection signal="doors_start_closing" from="Left" to="." method="_on_wagon_doors_start_closing"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
