@@ -15,7 +15,7 @@ func _ready() -> void:
     super._ready()
 
 func set_player_nearby(is_player_nearby : Player):
-    _player_nearby = is_player_nearby
+    super.set_player_nearby(is_player_nearby)
     if _player_nearby and not dishonest_brothers_quest.is_active():
         start_robbing()
 
