@@ -48,7 +48,7 @@ func _on_combat_enter(enemy: Enemy):
 func _on_combat_exit(to_free: Node):
     to_free.queue_free()
     level_container.call_deferred("add_child", current_level)
-    SignalDispatcher.sound_music.emit("station")
+    SignalDispatcher.sound_music.emit("combat_exit")
 
 
 func _attach_level(level_resource : Resource):

@@ -35,6 +35,10 @@ func _on_music_finished():
         current_music.play()
 
 func _on_music_effect(sound_name: String) -> void:
+    var last_emitted: String = sound_name
+    var combat_cache = ""
+    if (sound_name == "combat_exit"):
+        sound_name = combat_cache
     match sound_name:
         "station":
             play_music(statio_music)
@@ -42,5 +46,6 @@ func _on_music_effect(sound_name: String) -> void:
             play_music(train_music, -10)
         "combat":
             play_music(combat_music, -5)
+            combat_cache = last_emitted
         "main_menu":
             play_music(main_menu_music, -5)
