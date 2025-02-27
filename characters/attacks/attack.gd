@@ -41,4 +41,3 @@ func calculate_damage(stats: StatsSpecifier):
         stats.bleed_level * formula.bleed_level_modifier +
         stats.drug_level * formula.drug_level_modifier
     ) * formula.effect_modifier + formula.effect_flat_modifier + formula.base
-
