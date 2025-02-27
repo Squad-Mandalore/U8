@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://dxrnq8hjfe8ic"]
 
-[ext_resource type="Script" path="res://globals/attributes.gd" id="1_hlgds"]
-[ext_resource type="Script" path="res://items/item.gd" id="2_jnwwi"]
-[ext_resource type="Texture2D" uid="uid://dn0jfcq1ly2go" path="res://ui/hud/assets/coin.svg" id="3_abvr6"]
+[ext_resource type="Script" path="res://items/item.gd" id="1_vmm7y"]
+[ext_resource type="Script" path="res://globals/attributes.gd" id="2_y20nv"]
+[ext_resource type="Texture2D" uid="uid://cpve32a2wvf7g" path="res://items/armor/assets/hobo_hoodie.png" id="3_b8u8a"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
-script = ExtResource("1_hlgds")
+script = ExtResource("2_y20nv")
 max_health = 0
 health = 0
 armor = 2
@@ -25,9 +25,9 @@ bleed_level = 0
 drug_level = 0
 
 [resource]
-script = ExtResource("2_jnwwi")
+script = ExtResource("1_vmm7y")
 name = "Abgeranzter Hoodie"
 description = "Für den authentischen Neukölln-Vibe. Niemand weiß, was du darunter trägst – und niemand will es wissen."
 stats = SubResource("Resource_hodkb")
-texture = ExtResource("3_abvr6")
+texture = ExtResource("3_b8u8a")
 price = 15
