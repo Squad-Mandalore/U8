@@ -1,9 +1,10 @@
 extends Node
 
-var statio_music = preload("res://assets/sounds/music/station_music.wav")
+var station_music = preload("res://assets/sounds/music/station_music.wav")
 var combat_music = preload("res://assets/sounds/music/boss_music_1.wav")
 var main_menu_music = preload("res://assets/sounds/music/main_menu_music.mp3")
 var train_music = preload("res://scenes/trains/basic_train/assets/sounds/music/gof2.wav")
+var last_emitted = ""
 
 
 # Called when the node enters the scene tree for the first time.
@@ -35,17 +36,16 @@ func _on_music_finished():
         current_music.play()
 
 func _on_music_effect(sound_name: String) -> void:
-    var last_emitted: String = sound_name
-    var combat_cache = ""
-    if (sound_name == "combat_exit"):
-        sound_name = combat_cache
+    if sound_name == "combat_exit":
+        sound_name = last_emitted
+    if sound_name != "combat":
+        last_emitted = sound_name
     match sound_name:
         "station":
-            play_music(statio_music)
+            play_music(station_music)
         "train":
             play_music(train_music, -10)
         "combat":
             play_music(combat_music, -5)
-            combat_cache = last_emitted
         "main_menu":
             play_music(main_menu_music, -5)
