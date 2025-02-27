@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://re2jvvwjp4og"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_qn4tl"]
+[ext_resource type="Script" path="res://globals/attributes.gd" id="2_c2mnx"]
+[ext_resource type="Texture2D" uid="uid://cbm785evi2osf" path="res://items/meta/assets/backpack.png" id="3_5ly2w"]
+
+[sub_resource type="Resource" id="Resource_hodkb"]
+script = ExtResource("2_c2mnx")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("1_qn4tl")
+name = "Pullover"
+description = "Ein Kleidungsstück, das so gemütlich ist, dass du es nie wieder ausziehen willst – und genau das scheint sein letzter Besitzer auch gedacht zu haben. Ideal für das vollkommene 'Mir doch egal'-Feeling im Waggon."
+stats = SubResource("Resource_hodkb")
+texture = ExtResource("3_5ly2w")
+price = 70
