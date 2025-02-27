@@ -53,7 +53,7 @@ drag_vertical_enabled = true
 
 [node name="Chris" parent="." instance=ExtResource("8_sempk")]
 position = Vector2(433, 153)
-_name = "Sarkus_Miegert"
+_name = "obdachloser"
 RANDOM_NAME = false
 _gender = "Male"
 

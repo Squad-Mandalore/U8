@@ -1,0 +1,15 @@
+apiVersion: eidolon/v1
+kind: Agent
+metadata:
+  name: philosoph
+spec:
+  description: "Agent for driving NPC dialogue."
+  system_prompt: "
+  Dies ist ein Agent für die Steuerung von NPC-Dialogen. Hier ist die Rolle, in der ersten Person, die der Agent befolgen soll.
+  "
+  apu:
+    llm_unit:
+      implementation: OpenAIGPT
+      model:
+        name: "gpt-4o-mini"
+        human_name: "GPT-4o-mini"
