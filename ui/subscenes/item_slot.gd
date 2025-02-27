@@ -93,6 +93,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
         SignalDispatcher.update_item_slots.emit()
 
 func _notification(what: int) -> void:
+    # WARNING this is send to all item slots even those who are not affected VERY PERFORMANCE HEAVY
     if what == NOTIFICATION_DRAG_END and not is_drag_successful():
         if is_shop_slot:
             SignalDispatcher.update_shop_item_slots.emit()
