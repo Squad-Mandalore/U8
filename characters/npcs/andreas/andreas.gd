@@ -9,8 +9,6 @@ var _chris_robbery_quest: QuestEntry = dishonest_brothers_quest.get_subquest(CHR
 var _andreas_remembers_quest: QuestEntry = dishonest_brothers_quest.get_subquest(ANDREAS_REMEMBERS_ID)
 var _andreas_robbery_quest: QuestEntry = dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID)
 
-const WINNING_MONEY = 10
-
 # TODO: In the dialogue file replace [if false] with something like [if Questomania.quest_dict[StreikQuest.NAME].is_active()] if StreikQuest gets implemented
 var dialogue = preload("res://characters/npcs/andreas/assets/andreas_robbery.dialogue")
 
@@ -67,9 +65,8 @@ func _let_robbing_happen():
     dishonest_brothers_quest.set_meta("red", true)
     _robbing(0.3)
 
-func fight_lost():
-    print("Player won %d Euronen" % WINNING_MONEY)
-    SourceOfTruth.balance_changed(WINNING_MONEY)
+func fight_lost(calculate_money: Callable = _calculate_win):
+    super.fight_lost(calculate_money)
     if _andreas_remembers_quest.is_active():
         _quest_remembers_complete()
     else:
