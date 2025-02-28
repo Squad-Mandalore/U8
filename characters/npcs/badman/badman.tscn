@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://characters/npcs/badman/badman.gd" id="1_jdg22"]
 [ext_resource type="Script" path="res://items/item.gd" id="2_g7ryh"]
-[ext_resource type="Resource" uid="uid://bw88rw1iou2ej" path="res://items/armor/hemd.tres" id="3_tcmoj"]
+[ext_resource type="Resource" uid="uid://bw88rw1iou2ej" path="res://items/armor/formal_shirt.tres" id="3_tcmoj"]
 [ext_resource type="Resource" uid="uid://ckynd8kmolf6x" path="res://items/weapons/slowpoke_tail.tres" id="4_778fx"]
 [ext_resource type="Resource" uid="uid://w36ev7xurex" path="res://items/weapons/president_bell.tres" id="5_60rj3"]
 [ext_resource type="Texture2D" uid="uid://bg1cxujjsrhvf" path="res://characters/npcs/badman/assets/badman.png" id="6_yg10t"]
@@ -230,7 +230,7 @@ collision_layer = 5
 script = ExtResource("1_jdg22")
 shop_inventory = Array[ExtResource("2_g7ryh")]([ExtResource("3_tcmoj"), ExtResource("4_778fx"), ExtResource("5_60rj3"), null, null, null, null, null])
 _name = "Badmann"
-RANDOM_NAME = false
+_random_name = false
 _gender = "Diverse"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

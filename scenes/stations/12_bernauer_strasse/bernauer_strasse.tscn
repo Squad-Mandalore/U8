@@ -1,10 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy2upyyb8cu4q"]
+[gd_scene load_steps=6 format=3 uid="uid://dy2upyyb8cu4q"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_3yle4"]
 [ext_resource type="Script" path="res://scenes/stations/12_bernauer_strasse/bernauer_strasse.gd" id="2_dw2ls"]
+[ext_resource type="Texture2D" uid="uid://b22urkg3gk3rx" path="res://scenes/stations/12_bernauer_strasse/assets/bernauer-strasse-wall.png" id="3_nwsxu"]
+[ext_resource type="Texture2D" uid="uid://wqhxp7whmt44" path="res://scenes/stations/12_bernauer_strasse/assets/bernauer-strasse-floor.png" id="4_bdenw"]
+[ext_resource type="PackedScene" uid="uid://dxbuituc3h167" path="res://scenes/stations/12_bernauer_strasse/subscenes/tower.tscn" id="5_a3mhv"]
 
 [node name="BernauerStrasse" instance=ExtResource("1_3yle4")]
 script = ExtResource("2_dw2ls")
 
+[node name="BackgroundWall" parent="Background" index="0"]
+texture = ExtResource("3_nwsxu")
+
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Bernauer Straße"
+
+[node name="Floor" parent="Node2D" index="0"]
+texture = ExtResource("4_bdenw")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="4"]
+y_sort_enabled = true
+
+[node name="Tower" parent="Node2D/CanvasGroup" index="0" instance=ExtResource("5_a3mhv")]
+position = Vector2(191, 331)
+
+[node name="Tower2" parent="Node2D/CanvasGroup" index="1" instance=ExtResource("5_a3mhv")]
+position = Vector2(279, 331)
+
+[node name="Tower3" parent="Node2D/CanvasGroup" index="2" instance=ExtResource("5_a3mhv")]
+position = Vector2(367, 331)
+
+[node name="Tower4" parent="Node2D/CanvasGroup" index="3" instance=ExtResource("5_a3mhv")]
+position = Vector2(455, 331)
+
+[node name="Tower5" parent="Node2D/CanvasGroup" index="4" instance=ExtResource("5_a3mhv")]
+position = Vector2(543, 331)
+
+[node name="Tower6" parent="Node2D/CanvasGroup" index="5" instance=ExtResource("5_a3mhv")]
+position = Vector2(631, 331)
+
+[node name="Tower7" parent="Node2D/CanvasGroup" index="6" instance=ExtResource("5_a3mhv")]
+position = Vector2(719, 331)
+
+[node name="Tower8" parent="Node2D/CanvasGroup" index="7" instance=ExtResource("5_a3mhv")]
+position = Vector2(807, 331)
+
+[node name="Tower9" parent="Node2D/CanvasGroup" index="8" instance=ExtResource("5_a3mhv")]
+position = Vector2(895, 331)
+
+[node name="Tower10" parent="Node2D/CanvasGroup" index="9" instance=ExtResource("5_a3mhv")]
+position = Vector2(983, 331)
+
+[node name="Tower11" parent="Node2D/CanvasGroup" index="10" instance=ExtResource("5_a3mhv")]
+position = Vector2(1071, 331)

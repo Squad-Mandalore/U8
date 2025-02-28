@@ -6,21 +6,29 @@ const DESCRIPTION: String = "Offen Unehrlich"
 
 # this function adds subquests
 static func nnew(dishonest_brothers_quest: QuestEntry):
-    dishonest_brothers_quest.add_subquest("notice_robbery_chris")
+    dishonest_brothers_quest.add_subquest("chris_robbery")
+    dishonest_brothers_quest.add_subquest("andreas_remembers")
+    dishonest_brothers_quest.add_subquest("andreas_robbery")
 
 static func connect_conditions():
+    var dishonest_brothers_quest = Questomania.quest_dict[NAME]
+    for subquest: QuestEntry in Questomania.get_subquests(dishonest_brothers_quest):
+        match subquest.get_title():
+            "chris_robbery":
+                _chris_robbery(subquest)
+            "andreas_remembers":
+                _andreas_remembers(subquest)
+            "andreas_robbery":
+                _andreas_robbery(subquest)
+            _:
+                printerr("No quest with Title: ", subquest.get_title())
+
+
+static func _chris_robbery(quest: QuestEntry):
     pass
-    # var dishonest_brothers_quest = Questomania.quest_dict[NAME]
-    # for subquest in Questomania.get_subquests(dishonest_brothers_quest):
-    #     print(subquest.get_title())
-    # var quest: QuestEntry = SourceOfTruth.quest_manager.add_quest("Dishonest Brothers")
-    # var notice_robbery_chris: QuestEntry = quest.add_subquest("notice_robbery_chris")
 
-    # quest.set_metadata("finished_once": false)
+static func _andreas_remembers(quest: QuestEntry):
+    pass
 
-    # notice_robbery_chris.add_acceptance_condition(Utils.tautology)
-	# notice_robbery_chris.add_completion_condition(contradiction)
-	# notice_robbery_chris.add_rejection_condition(contradiction)
-	# notice_robbery_chris.add_failure_condition(contradiction)
-	# notice_robbery_chris.add_cancelation_condition(contradiction)
-
+static func _andreas_robbery(quest: QuestEntry):
+    pass

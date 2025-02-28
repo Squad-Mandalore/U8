@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://b0cccg4qchvd7"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_o2np4"]
+[ext_resource type="Script" path="res://globals/attributes.gd" id="2_e05rc"]
+[ext_resource type="Texture2D" uid="uid://bp0v0wnfeandm" path="res://items/consumables/assets/beer.png" id="3_dkb3p"]
+
+[sub_resource type="Resource" id="Resource_hodkb"]
+script = ExtResource("2_e05rc")
+max_health = 0
+health = 0
+armor = 0
+initiative = 2
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 1
+
+[resource]
+script = ExtResource("1_o2np4")
+name = "Bier"
+description = "Ein stinknormales Bier, unwissend welche Art von Bier. Hauptsache ein Genuss um sich irgendwie zu betäuben."
+stats = SubResource("Resource_hodkb")
+texture = ExtResource("3_dkb3p")
+price = 5
