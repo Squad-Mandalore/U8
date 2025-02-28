@@ -58,4 +58,3 @@ func fight_lost():
     SourceOfTruth.balance_changed(WINNING_MONEY)
     dishonest_brothers_quest.get_subquest(ANDREAS_REMEMBERS_ID).set_active(true)
     dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID).set_rejected(true)
-

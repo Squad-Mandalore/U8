@@ -71,3 +71,10 @@ func pick_valid_direction() -> Vector2:
             return dir
 
     return Vector2.ZERO
+
+func start_animation(animation: String):
+    _sprite.animation = animation
+    _sprite.play()
+
+func stop_animation():
+    _sprite.stop()
