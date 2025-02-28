@@ -33,6 +33,7 @@ position = Vector2(451, 343)
 position = Vector2(397, 266)
 
 [node name="Fahrkartenkonrtolleurin" parent="." index="8" instance=ExtResource("7_1m0rv")]
+z_index = 0
 position = Vector2(374, 199)
 
 [node name="Politiker" parent="." index="9" instance=ExtResource("8_wlhj5")]
