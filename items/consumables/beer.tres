@@ -27,7 +27,7 @@ drug_level = 0
 [resource]
 script = ExtResource("1_xv1nv")
 name = "Bier"
-description = "Der flüssiger Begleiter für alle die, die mehr vom Lifestyle versteht alste selber, wa."
+description = "Ein stinknormales Bier, unwissend welche Art von Bier. Hauptsache ein Genuss um sich irgendwie zu betäuben. Ein wahres Lifestyle getränk!"
 stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_dsudb")
 price = 3

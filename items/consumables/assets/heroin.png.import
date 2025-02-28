@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsjb5ohivc0o0"
-path="res://.godot/imported/item_heroin.png-f08307237a9c3502d34316ae48ecf015.ctex"
+path="res://.godot/imported/heroin.png-7dc59b4b22ca311f5cdfc03b541a3dd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/consumables/assets/item_heroin.png"
-dest_files=["res://.godot/imported/item_heroin.png-f08307237a9c3502d34316ae48ecf015.ctex"]
+source_file="res://items/consumables/assets/heroin.png"
+dest_files=["res://.godot/imported/heroin.png-7dc59b4b22ca311f5cdfc03b541a3dd4.ctex"]
 
 [params]
 
