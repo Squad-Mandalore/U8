@@ -64,6 +64,8 @@ func reload(new_is_human: bool, new_shop_inventory: Array[Item], shop_name: Stri
 
 
 func update_item_slots(to_free: int = -1):
+    if !shop_inventory:
+        return
     for i in range(shop_inventory_size):
         var node = "%ShopSlot" + str(i + 1)
         var shop_inventory_slot = get_node(node)
