@@ -30,4 +30,4 @@ name = "Energy Drink"
 description = "Der Energy Drink wird dir die Energie geben die du brauchst um den stressigen Alltag zu überleben. (Der 2. beste Kaffe Ersatz)"
 stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_nync8")
-price = 20
+price = 5

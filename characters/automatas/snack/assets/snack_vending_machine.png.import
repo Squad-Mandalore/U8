@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi74myx5a2min"
-path="res://.godot/imported/Snackautomat.png-fb9eda07b2c2c88d05e9af195b4ed497.ctex"
+uid="uid://bk62howen4nad"
+path="res://.godot/imported/snack_vending_machine.png-3a0003aa16afdf44ffbac8cdbe2d14dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shops/Snackautomat.png"
-dest_files=["res://.godot/imported/Snackautomat.png-fb9eda07b2c2c88d05e9af195b4ed497.ctex"]
+source_file="res://characters/automatas/snack/assets/snack_vending_machine.png"
+dest_files=["res://.godot/imported/snack_vending_machine.png-3a0003aa16afdf44ffbac8cdbe2d14dd.ctex"]
 
 [params]
 

@@ -24,7 +24,7 @@ text = "Rathaus Reinickendorf"
 position = Vector2(383, 305)
 
 [node name="Drogenheandler" parent="." index="5" instance=ExtResource("4_2ti0u")]
-position = Vector2(522, 317)
+position = Vector2(483, 313)
 
 [node name="Berghaingast" parent="." index="6" instance=ExtResource("5_0h5dx")]
 position = Vector2(451, 343)
