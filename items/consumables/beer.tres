@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://items/item.gd" id="1_xv1nv"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_8j2um"]
-[ext_resource type="Texture2D" uid="uid://pvv8e0ojesvr" path="res://items/armor/assets/t_shirt.png" id="3_lc0et"]
+[ext_resource type="Texture2D" uid="uid://bp0v0wnfeandm" path="res://items/consumables/assets/beer.png" id="3_dsudb"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
 script = ExtResource("2_8j2um")
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_xv1nv")
-name = "T-Shirt"
-description = "Ein normales T-shirt, irgendwas muss man ja tragen, wenn man in der U-Bahn unterwegs ist."
+name = "Bier"
+description = "Der flüssiger Begleiter für alle die, die mehr vom Lifestyle versteht alste selber, wa."
 stats = SubResource("Resource_hodkb")
-texture = ExtResource("3_lc0et")
-price = 50
+texture = ExtResource("3_dsudb")
+price = 3

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://items/item.gd" id="1_8h6jy"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_dl6or"]
-[ext_resource type="Texture2D" uid="uid://dwd6pnxtj12l7" path="res://items/consumables/assets/doener.png" id="3_ei7os"]
+[ext_resource type="Texture2D" uid="uid://pixa8ml4dujx" path="res://items/consumables/assets/water.png" id="3_wu8ce"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
 script = ExtResource("2_dl6or")
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_8h6jy")
-name = "Döner"
-description = "Berlins ganzer stolz, nirgendswo wirst du öfter an einen dieser schmackhaften Döner kommen als in Berlin."
+name = "Wasser"
+description = "Der klare Beweis, dass auch im reinsten Fluss der Dinge tiefe Gedanken schlummern."
 stats = SubResource("Resource_hodkb")
-texture = ExtResource("3_ei7os")
-price = 20
+texture = ExtResource("3_wu8ce")
+price = 2

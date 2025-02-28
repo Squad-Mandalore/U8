@@ -27,6 +27,8 @@ func is_enabled() -> bool:
     return false
 
 func disable():
+    item = null
+    (%ItemFrame as TextureRect).texture = null
     add_theme_stylebox_override("panel", preload("res://ui/assets/item_slot_disabled.tres"))
 
 func enable():
@@ -54,6 +56,8 @@ func _on_mouse_exited() -> void:
             SignalDispatcher.toggle_item_hud.emit(null)
 
 func _get_drag_data(at_position: Vector2) -> Variant:
+    if !is_enabled():
+        return
     var data = {}
 
     data["index"] = index

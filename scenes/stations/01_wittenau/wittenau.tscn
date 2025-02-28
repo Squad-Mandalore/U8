@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dxtsv1xtfd42n"]
+[gd_scene load_steps=22 format=3 uid="uid://dxtsv1xtfd42n"]
 
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
 [ext_resource type="Script" path="res://scenes/stations/01_wittenau/wittenau.gd" id="1_vdt2h"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://4ylmn4pu3xfm" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren_3.tscn" id="12_485u2"]
 [ext_resource type="PackedScene" uid="uid://n1etnk880vy" path="res://scenes/stations/subscenes/seating_areas.tscn" id="12_go6jj"]
 [ext_resource type="PackedScene" uid="uid://dv2v43jv13rjr" path="res://characters/automatas/drink/drink_vending_machine.tscn" id="13_i82bx"]
+[ext_resource type="PackedScene" uid="uid://bap2i51ju2efp" path="res://characters/automatas/ticket/ticket_vending_machine.tscn" id="14_nf21t"]
+[ext_resource type="PackedScene" uid="uid://40q6al2c4n4n" path="res://characters/automatas/snack/snack_vending_machine.tscn" id="15_htilo"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
 b = Vector2(822, 0)
@@ -209,6 +211,12 @@ position = Vector2(1150, 329)
 
 [node name="DrinkVendingMachine" parent="Node2D" instance=ExtResource("13_i82bx")]
 position = Vector2(837, 283)
+
+[node name="SnackVendingMachine2" parent="Node2D" instance=ExtResource("15_htilo")]
+position = Vector2(808, 282)
+
+[node name="TicketVendingMachine" parent="Node2D" instance=ExtResource("14_nf21t")]
+position = Vector2(780, 282)
 
 [node name="SeatingAreas" type="CanvasGroup" parent="Node2D"]
 y_sort_enabled = true
