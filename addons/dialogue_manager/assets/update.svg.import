@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3giwpc7ldtff"
-path="res://.godot/imported/las_chicas_y_los_chicos_mirando_hacia_otro_lado..png-ff334edf0d4ce3d16c660e7f52ac607b.ctex"
+uid="uid://d3baj6rygkb3f"
+path="res://.godot/imported/update.svg-f1628866ed4eb2e13e3b81f75443687e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/npcs/seated/pointed_away/assets/las_chicas_y_los_chicos_mirando_hacia_otro_lado..png"
-dest_files=["res://.godot/imported/las_chicas_y_los_chicos_mirando_hacia_otro_lado..png-ff334edf0d4ce3d16c660e7f52ac607b.ctex"]
+source_file="res://addons/dialogue_manager/assets/update.svg"
+dest_files=["res://.godot/imported/update.svg-f1628866ed4eb2e13e3b81f75443687e.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

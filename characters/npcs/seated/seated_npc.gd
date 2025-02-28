@@ -1,18 +1,18 @@
 extends Npc
 class_name SeatedNpc
 
-var _animation_name: String = ""  
-var _base_animation: String = ""  
+var _animation_name: String = ""
+var _base_animation: String = ""
 var _animation_variants: Array = []  # Stores all available variants
 @export var random_range: int = 5
 
-func subclass_ready():
+func _ready() -> void:
     var _random_number = randi_range(0,random_range)
     if _random_number == 1:
         self.collision_layer = 0
         self.collision_mask = 0
         queue_free()
-        return 
+        return
 
     if randi_range(0, 1) == 1:
         _sprite.flip_h = true
@@ -39,11 +39,10 @@ func subclass_ready():
 
     _sprite.play(_animation_name)
 
+    super._ready()
+
 func make_space(body : Node2D) -> void:
     return
-
-func set_player_nearby(is_player_nearby : bool):
-    _player_nearby = is_player_nearby
 
 func _on_animated_sprite_2d_animation_looped() -> void:
     if _animation_variants.size() == 1:
@@ -69,5 +68,5 @@ func _pick_random_variant() -> String:
 
     if possible_variations.size() > 0:
         return possible_variations[randi_range(0, possible_variations.size() - 1)]
-    
+
     return _animation_name

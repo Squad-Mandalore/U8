@@ -230,7 +230,7 @@ collision_layer = 5
 script = ExtResource("1_jdg22")
 shop_inventory = Array[ExtResource("2_g7ryh")]([ExtResource("3_tcmoj"), ExtResource("4_778fx"), ExtResource("5_60rj3"), null, null, null, null, null])
 _name = "Badmann"
-RANDOM_NAME = false
+_random_name = false
 _gender = "Diverse"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
