@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by6otkdmum8u8"
-path="res://.godot/imported/Getreankeautomat.png-64ee8f869f68b735fcf1acfcf8675002.ctex"
+uid="uid://dyqe16uee6oon"
+path="res://.godot/imported/osloerstrasse_fight_floor.png-5cfed107eca4517731295a102c8a7ebe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shops/Getreankeautomat.png"
-dest_files=["res://.godot/imported/Getreankeautomat.png-64ee8f869f68b735fcf1acfcf8675002.ctex"]
+source_file="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_fight_floor.png"
+dest_files=["res://.godot/imported/osloerstrasse_fight_floor.png-5cfed107eca4517731295a102c8a7ebe.ctex"]
 
 [params]
 

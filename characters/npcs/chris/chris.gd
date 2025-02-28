@@ -55,4 +55,3 @@ func fight_lost(calculate_money: Callable = _calculate_win):
     super.fight_lost(calculate_money)
     dishonest_brothers_quest.get_subquest(ANDREAS_REMEMBERS_ID).set_active(true)
     dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID).set_rejected(true)
-

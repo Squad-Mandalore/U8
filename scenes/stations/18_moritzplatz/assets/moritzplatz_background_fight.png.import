@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi74myx5a2min"
-path="res://.godot/imported/Snackautomat.png-fb9eda07b2c2c88d05e9af195b4ed497.ctex"
+uid="uid://dr2gias5akcue"
+path="res://.godot/imported/moritzplatz_background_fight.png-3dddaaf49b6ccdbc0579ad9199dda96a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shops/Snackautomat.png"
-dest_files=["res://.godot/imported/Snackautomat.png-fb9eda07b2c2c88d05e9af195b4ed497.ctex"]
+source_file="res://scenes/stations/18_moritzplatz/assets/moritzplatz_background_fight.png"
+dest_files=["res://.godot/imported/moritzplatz_background_fight.png-3dddaaf49b6ccdbc0579ad9199dda96a.ctex"]
 
 [params]
 

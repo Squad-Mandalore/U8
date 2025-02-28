@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsjb5ohivc0o0"
-path="res://.godot/imported/item_heroin.png-f08307237a9c3502d34316ae48ecf015.ctex"
+uid="uid://d1q0g62vdlmjr"
+path="res://.godot/imported/ticket_vending_machine.png-d8ffb26075e19493eaa5fd8f1ffdd8d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/consumables/assets/item_heroin.png"
-dest_files=["res://.godot/imported/item_heroin.png-f08307237a9c3502d34316ae48ecf015.ctex"]
+source_file="res://characters/automatas/ticket/assets/ticket_vending_machine.png"
+dest_files=["res://.godot/imported/ticket_vending_machine.png-d8ffb26075e19493eaa5fd8f1ffdd8d2.ctex"]
 
 [params]
 

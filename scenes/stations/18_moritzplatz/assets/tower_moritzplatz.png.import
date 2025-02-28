@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl3c0je5u73fw"
-path="res://.godot/imported/drink_vending_machine.png-717e9a15850fc2ac856c6546c596056b.ctex"
+uid="uid://dsuwvapj8vbnn"
+path="res://.godot/imported/tower_moritzplatz.png-31c96829cb149cb0c553fd21a0ae217d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/shop/assets/drink_vending_machine.png"
-dest_files=["res://.godot/imported/drink_vending_machine.png-717e9a15850fc2ac856c6546c596056b.ctex"]
+source_file="res://scenes/stations/18_moritzplatz/assets/tower_moritzplatz.png"
+dest_files=["res://.godot/imported/tower_moritzplatz.png-31c96829cb149cb0c553fd21a0ae217d.ctex"]
 
 [params]
 

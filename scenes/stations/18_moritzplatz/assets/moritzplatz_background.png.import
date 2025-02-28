@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk62howen4nad"
-path="res://.godot/imported/snack_vending_machine.png-3b5038199032c22d1c35d6271553a272.ctex"
+uid="uid://banru5a6yw6w4"
+path="res://.godot/imported/moritzplatz_background.png-81639125752784b2fdf093e754137ced.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/shop/assets/snack_vending_machine.png"
-dest_files=["res://.godot/imported/snack_vending_machine.png-3b5038199032c22d1c35d6271553a272.ctex"]
+source_file="res://scenes/stations/18_moritzplatz/assets/moritzplatz_background.png"
+dest_files=["res://.godot/imported/moritzplatz_background.png-81639125752784b2fdf093e754137ced.ctex"]
 
 [params]
 

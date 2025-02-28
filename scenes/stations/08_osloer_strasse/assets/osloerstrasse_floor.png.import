@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1q0g62vdlmjr"
-path="res://.godot/imported/Fahrkartenautomat.png-613cf65b7746bb0e2075ed934c60240e.ctex"
+uid="uid://b68npajaxghvw"
+path="res://.godot/imported/osloerstrasse_floor.png-6978ff48f725ec1c8945c345d5926e00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shops/Fahrkartenautomat.png"
-dest_files=["res://.godot/imported/Fahrkartenautomat.png-613cf65b7746bb0e2075ed934c60240e.ctex"]
+source_file="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_floor.png"
+dest_files=["res://.godot/imported/osloerstrasse_floor.png-6978ff48f725ec1c8945c345d5926e00.ctex"]
 
 [params]
 
