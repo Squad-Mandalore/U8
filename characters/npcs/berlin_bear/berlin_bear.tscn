@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd6v6onr1rbe5"]
+
+[ext_resource type="Script" path="res://characters/npcs/big_child/big_child.gd" id="1_w7vrt"]
+[ext_resource type="Texture2D" uid="uid://wt6y4vgqb4ev" path="res://characters/npcs/berlin_bear/assets/bear_boss.png" id="2_8thj0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aweh0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8thj0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7pol"]
+size = Vector2(16, 6)
+
+[node name="BigChild" type="CharacterBody2D"]
+z_index = 50
+collision_layer = 5
+script = ExtResource("1_w7vrt")
+movement_speed = 75.0
+_gender = "Diverse"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aweh0")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(1, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y7pol")
+
+[node name="Timer" type="Timer" parent="."]
