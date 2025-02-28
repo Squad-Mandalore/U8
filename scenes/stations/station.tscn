@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="6_h3ce4"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="7_m0iis"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="8_xs470"]
-[ext_resource type="PackedScene" uid="uid://n1etnk880vy" path="res://scenes/stations/subscenes/seating_areas.tscn" id="9_1wjs1"]
+[ext_resource type="PackedScene" uid="uid://ltew4h5q07ud" path="res://scenes/stations/subscenes/seating_areas.tscn" id="9_1wjs1"]
 [ext_resource type="AudioStream" uid="uid://brdipk6bapgml" path="res://assets/sounds/music/slappbass_backgroundmusic.wav" id="9_6r4ry"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kke8e"]
