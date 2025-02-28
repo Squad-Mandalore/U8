@@ -1,6 +1,7 @@
 extends Enemy
 
 var dishonest_brothers_quest: QuestEntry = Questomania.quest_dict[DishonestBrothersQuest.NAME]
+var sun_glassses: Item = preload("res://items/armor/sun_glasses.tres")
 
 const CHRIS_ROBBERY_ID = 1
 const ANDREAS_REMEMBERS_ID = 2
@@ -57,12 +58,12 @@ func _robbing(percent: float):
     _quest_robbery_complete()
 
 func _impressing():
-    # TODO: sonnenbrille geben
+    SourceOfTruth.add_item(sun_glassses)
     _quest_robbery_complete()
 
 
 func _let_robbing_happen():
-    dishonest_brothers_quest.set_meta("red", true)
+    dishonest_brothers_quest.set_metadata("red", true)
     _robbing(0.3)
 
 func fight_lost(calculate_money: Callable = _calculate_win):
