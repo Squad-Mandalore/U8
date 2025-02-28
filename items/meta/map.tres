@@ -27,7 +27,7 @@ drug_level = -1
 [resource]
 script = ExtResource("1_8skel")
 name = "BVG Flyer"
-description = "Irgendwie muss man sich ja in dem U-Bahn Netz zurecht finden."
+description = "Irgendwie muss man sich ja in dem U-Bahn Netz zurechtfinden."
 stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_woqfh")
 price = 20
