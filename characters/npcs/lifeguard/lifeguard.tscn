@@ -277,7 +277,7 @@ attacks = Array[ExtResource("2_mngaj")]([ExtResource("3_jhxo3")])
 stats = SubResource("Resource_54qjx")
 texture = ExtResource("5_8noa3")
 _name = "Der Bademeister"
-RANDOM_NAME = false
+_random_name = false
 _gender = "Male"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

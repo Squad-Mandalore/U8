@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://crdg4nofkrp51"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_6um4g"]
+[ext_resource type="Script" path="res://globals/attributes.gd" id="2_11u51"]
+[ext_resource type="Texture2D" uid="uid://cbmqm4n05g7qc" path="res://items/armor/assets/gloves.png" id="3_e4jnv"]
+
+[sub_resource type="Resource" id="Resource_hodkb"]
+script = ExtResource("2_11u51")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 1
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("1_6um4g")
+name = "Handschuhe"
+description = "Ein paar gute alte Handschuhe, praktisch für alles und um sich zu schützen vor Wind, Kälte und Handverletzungen wenn du etwas oder jemanden verprügelst!"
+stats = SubResource("Resource_hodkb")
+texture = ExtResource("3_e4jnv")
+price = 100

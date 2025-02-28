@@ -1,0 +1,34 @@
+~ start
+Oh? Jemand versucht dich zu beklauen. Was möchtest du tun?
+- {{_name}} machen lassen
+	Du atmest tief ein und entspannst dich. Das Bewegungen in deiner Hosentasche beruhigen dich, dein Kopf wird frei und du schaltest mal so richtig ab. Innerlich hoffst du, dass er es in der anderen Hosentasche auch versucht ...
+	do _let_robbing_happen()
+	=> END
+- {{_name}} veprügeln [if SourceOfTruth.stats.strength > 9]
+	{{_name}}: Du willst also Stress? Den kannst du haben!
+	do start_combat()
+	Du sammelst {{WINNING_MONEY}} Euronen vom bewusstlosen {{_name}} und steckst sie in deine Taschen. Ein Lächeln breitet sich auf deinen Lippen aus
+	=> END
+- {{_name}} beeindrucken [if SourceOfTruth.stats.coolness > 4]
+	Während er dir in der Tasche rumfummelt zuckt er plötzlich zusammen. Er schaut auf und du ihm direkt in die Augen ...
+	do _impressing()
+	{{_name}}: Entschuldige bitte. So war das nicht gemeint. Nimm das hier als Entschuldigung:
+	Sonnenbrille erhalten
+	=> END
+- {{_name}} fragen TODO zu klauen [if false]
+	Du sprichst Andreas an und lobst seine flinken Hände. Er schaut dich verdutzt an. Du sprichst weiter und stellst ihm ein Ultimatum. Entweder hilft er dir ein paar Sachen zu klauen oder du verpfeifst ihn bei der Polizei.
+	{{_name}}: ...
+	{{_name}}: Ich habe wohl kein Wahl oder?
+	Du sagst Andreas, dass er keine Wahl hat.
+	{{_name}}: Na gut du kleiner Bastard, ich helfe dir. Und danach lässt du mich in Ruhe!
+	=> END
+=> END
+
+~ remembers
+{{_name}}: Hey du!
+{{_name}}: Mein Bruder wurde vor kurzem verprügelt und komischer Weise passt seine Beschreibung genau auf dich ...
+{{_name}}: Egal ob du es warst oder nicht, ich habe Bock dir in die Fresse zu schlagen!
+do start_combat()
+{{_name}}: Jetzt weiß ich warum Chris verloren hat ...
+Du sammelst {{WINNING_MONEY}} Euronen vom bewusstlosen {{_name}} und steckst sie in deine Taschen. Ein Lächeln breitet sich auf deinen Lippen aus
+=> END

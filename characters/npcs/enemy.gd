@@ -28,3 +28,7 @@ func reset_stats():
 func update_attack_damage():
     for attack in attacks:
         attack.calculate_damage(stats)
+
+func fight_lost():
+    pass
+    # queue_free()

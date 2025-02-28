@@ -196,7 +196,7 @@ position = Vector2(0, -16)
 collision_layer = 5
 script = ExtResource("1_m3k4j")
 _name = "Jaqueline"
-RANDOM_NAME = false
+_random_name = false
 _gender = "Female"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
