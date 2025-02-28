@@ -27,6 +27,8 @@ func is_enabled() -> bool:
     return false
 
 func disable():
+    item = null
+    (%ItemFrame as TextureRect).texture = null
     add_theme_stylebox_override("panel", preload("res://ui/assets/item_slot_disabled.tres"))
 
 func enable():
@@ -54,6 +56,8 @@ func _on_mouse_exited() -> void:
             SignalDispatcher.toggle_item_hud.emit(null)
 
 func _get_drag_data(at_position: Vector2) -> Variant:
+    if !is_enabled():
+        return
     var data = {}
 
     data["index"] = index
@@ -93,6 +97,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
         SignalDispatcher.update_item_slots.emit()
 
 func _notification(what: int) -> void:
+    # WARNING this is send to all item slots even those who are not affected VERY PERFORMANCE HEAVY
     if what == NOTIFICATION_DRAG_END and not is_drag_successful():
         if is_shop_slot:
             SignalDispatcher.update_shop_item_slots.emit()
