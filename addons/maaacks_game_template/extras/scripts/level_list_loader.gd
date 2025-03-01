@@ -16,8 +16,8 @@ var enemy_cache: Enemy
 
 func _ready() -> void:
     SignalDispatcher.combat_enter.connect(_on_combat_enter)
-    SignalDispatcher.player_lost_combat.connect(_on_player_combat_loss)
-    SignalDispatcher.player_won_combat.connect(_on_player_combat_won)
+    SignalDispatcher.player_lost_combat.connect(_combat_lost)
+    SignalDispatcher.player_won_combat.connect(_combat_won)
     
 func get_level_file(level_id : int):
     if files.is_empty():
@@ -60,24 +60,26 @@ func _combat_exit(to_free: Node):
     to_free.queue_free()
     level_container.call_deferred("add_child", current_level)
     
-func _on_player_combat_won(to_free: Node):
+func _combat_won(to_free: Node):
     var combat_exit_won_scene = preload("res://scenes/combats/subscenes/combat_exit_won.tscn")
     
     _combat_exit(to_free)
+    
     var combat_exit_won_instance = combat_exit_won_scene.instantiate()
-    level_container.get_parent().call_deferred("add_child", combat_exit_won_instance)
+    get_tree().current_scene.call_deferred("add_child", combat_exit_won_instance)
     await get_tree().create_timer(5).timeout
-    level_container.get_parent().call_deferred("remove_child", combat_exit_won_instance)
+    get_tree().current_scene.call_deferred("remove_child", combat_exit_won_instance)
 
-func _on_player_combat_loss(to_free: Node):
+func _combat_lost(to_free: Node):
     var combat_exit_lost_scene = preload("res://scenes/combats/subscenes/combat_exit_lost.tscn")
     
     _combat_exit(to_free)
+    
     var combat_exit_lost_instance = combat_exit_lost_scene.instantiate()
-    level_container.get_parent().call_deferred("add_child", combat_exit_lost_instance)
+    get_tree().current_scene.call_deferred("add_child", combat_exit_lost_instance)
     combat_exit_lost_instance.enemy = enemy_cache
     await get_tree().create_timer(5).timeout
-    level_container.get_parent().call_deferred("remove_child", combat_exit_lost_instance)
+    get_tree().current_scene.call_deferred("remove_child", combat_exit_lost_instance)
 
 func _attach_level(level_resource : Resource):
     assert(level_container != null, "level_container is null")

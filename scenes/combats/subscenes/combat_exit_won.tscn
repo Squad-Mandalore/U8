@@ -1,6 +1,5 @@
-[gd_scene load_steps=90 format=3 uid="uid://omid6fvq6gb4"]
+[gd_scene load_steps=89 format=3 uid="uid://omid6fvq6gb4"]
 
-[ext_resource type="Script" path="res://scenes/combats/subscenes/combat_exit_won.gd" id="1_p3ph8"]
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="2_7ha4d"]
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="4_70rrf"]
 [ext_resource type="Texture2D" uid="uid://b7450lvv1rt30" path="res://scenes/combats/assets/won.png" id="4_wbpda"]
@@ -644,7 +643,6 @@ animations = [{
 }]
 
 [node name="Combat-enter" type="CanvasLayer"]
-script = ExtResource("1_p3ph8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
