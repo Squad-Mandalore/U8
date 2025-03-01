@@ -63,3 +63,12 @@ position = Vector2(851, 420)
 
 [node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("8_fedqd")]
 position = Vector2(1014, 420)
+
+[node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
+position = Vector2(283, 323)
+
+[node name="SeatingArea2" parent="Node2D/SeatingAreas" index="1"]
+position = Vector2(607, 323)
+
+[node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
+position = Vector2(931, 323)

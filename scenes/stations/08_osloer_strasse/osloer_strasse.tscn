@@ -60,3 +60,12 @@ position = Vector2(832, 426)
 
 [node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("7_stosq")]
 position = Vector2(988, 426)
+
+[node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
+position = Vector2(282, 323)
+
+[node name="SeatingArea2" parent="Node2D/SeatingAreas" index="1"]
+position = Vector2(598, 323)
+
+[node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
+position = Vector2(908, 323)
