@@ -10,12 +10,16 @@ signal set_ck3_progress_bar_value(value: int)
 signal player_zero_health()
 signal player_lost_combat(to_free: Node)
 signal player_won_combat(to_free: Node)
+
 signal reload_ui()
 signal update_item_slots()
 signal update_shop_item_slots(to_free: int)
 signal add_attack_hover(position: Vector2, attack: Attack)
 signal remove_attack_hover()
 signal update_shop_dialogue_box(item: Item)
+
+signal allow_player_movement()
+signal disallow_player_movement()
 
 signal sound_effect(name: String)
 signal sound_music(name: String)

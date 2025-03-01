@@ -13,6 +13,7 @@ signal player_died
 
 var current_level : Node
 var enemy_cache: Enemy
+var is_input_disabled: bool = false
 
 func _ready() -> void:
     SignalDispatcher.combat_enter.connect(_on_combat_enter)
@@ -26,6 +27,16 @@ func get_level_file(level_id : int):
     if level_id >= files.size():
         push_error("level_id is out of bounds of the levels list")
     return files[level_id]
+    
+func _unhandled_input(event):
+    if is_input_disabled:
+        if event is InputEventKey and event.pressed:
+            match event.keycode:
+                KEY_W, KEY_A, KEY_S, KEY_D, KEY_E, KEY_I, KEY_ESCAPE, KEY_J:
+                    return
+                    
+func disable_input(state: bool):
+    is_input_disabled = state
 
 func _on_combat_enter(enemy: Enemy):
     var combat_scene = preload("res://scenes/combats/combat.tscn")
@@ -41,7 +52,9 @@ func _on_combat_enter(enemy: Enemy):
     var combat_enter_instance = combat_enter_scene.instantiate()
     level_container.get_parent().call_deferred("add_child", combat_enter_instance)
     combat_enter_instance.enemy = enemy
-    await get_tree().create_timer(1).timeout
+    SignalDispatcher.disallow_player_movement.emit()
+    await get_tree().create_timer(3).timeout
+    SignalDispatcher.allow_player_movement.emit()
     level_container.get_parent().call_deferred("remove_child", combat_enter_instance)
     # pause the current_level
     level_container.call_deferred("remove_child", current_level)
@@ -67,7 +80,9 @@ func _combat_won(to_free: Node):
     
     var combat_exit_won_instance = combat_exit_won_scene.instantiate()
     get_tree().current_scene.call_deferred("add_child", combat_exit_won_instance)
-    await get_tree().create_timer(5).timeout
+    SignalDispatcher.disallow_player_movement.emit()
+    await get_tree().create_timer(3).timeout
+    SignalDispatcher.allow_player_movement.emit()
     get_tree().current_scene.call_deferred("remove_child", combat_exit_won_instance)
 
 func _combat_lost(to_free: Node):
@@ -78,7 +93,9 @@ func _combat_lost(to_free: Node):
     var combat_exit_lost_instance = combat_exit_lost_scene.instantiate()
     get_tree().current_scene.call_deferred("add_child", combat_exit_lost_instance)
     combat_exit_lost_instance.enemy = enemy_cache
-    await get_tree().create_timer(5).timeout
+    SignalDispatcher.disallow_player_movement.emit()
+    await get_tree().create_timer(3).timeout
+    SignalDispatcher.allow_player_movement.emit()
     get_tree().current_scene.call_deferred("remove_child", combat_exit_lost_instance)
 
 func _attach_level(level_resource : Resource):
