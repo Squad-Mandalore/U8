@@ -381,7 +381,7 @@ z_index = 0
 position = Vector2(962, 168)
 
 [node name="DrinkVendingMachine" parent="Node2D" instance=ExtResource("13_i82bx")]
-position = Vector2(837, 283)
+position = Vector2(837, 282)
 
 [node name="SnackVendingMachine2" parent="Node2D" instance=ExtResource("15_htilo")]
 position = Vector2(808, 282)
