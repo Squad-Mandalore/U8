@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=20 format=3 uid="uid://2p6mgnqih68g"]
 
 [ext_resource type="Script" path="res://scenes/trains/basic_train/train.gd" id="1_1jt1h"]
 [ext_resource type="Script" path="res://scenes/trains/background.gd" id="2_20w01"]
@@ -16,6 +16,63 @@
 [ext_resource type="PackedScene" uid="uid://4yblwinc1olu" path="res://scenes/trains/basic_train/subscenes/announcement_player.tscn" id="12_b844p"]
 [ext_resource type="PackedScene" uid="uid://bex812hcoh6pq" path="res://characters/npcs/ticket_inspector/ticket_inspector.tscn" id="12_rqh7o"]
 [ext_resource type="PackedScene" uid="uid://bkj4b56eeb03x" path="res://characters/npcs/andreas/andreas.tscn" id="16_qju6k"]
+
+[sub_resource type="Animation" id="Animation_x7huq"]
+resource_name = "olaf_entrance"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Politiker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(374, 160), Vector2(274, 160)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Politiker")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": ["walk"],
+"method": &"start_animation"
+}, {
+"args": ["idle"],
+"method": &"start_animation"
+}, {
+"args": [],
+"method": &"start_combat"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ao4qn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Politiker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(374, 160)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aaf1y"]
+_data = {
+"RESET": SubResource("Animation_ao4qn"),
+"olaf_entrance": SubResource("Animation_x7huq")
+}
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -42,7 +99,7 @@ position = Vector2(0, 95)
 position = Vector2(329, 95)
 
 [node name="Player" parent="." instance=ExtResource("7_c73gc")]
-position = Vector2(76, 159)
+position = Vector2(76, 161)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(6.5, 6.5)
@@ -60,7 +117,8 @@ position = Vector2(488, 157)
 _gender = "Male"
 
 [node name="Politiker" parent="." instance=ExtResource("10_rky5v")]
-position = Vector2(264, 161)
+position = Vector2(374, 160)
+scale = Vector2(-1, 1)
 _name = "Olof Scholtz"
 
 [node name="TicketInspector" parent="." groups=["NPC"] instance=ExtResource("12_rqh7o")]
@@ -82,7 +140,12 @@ parameters/looping = true
 [node name="AnnouncementPlayer" parent="." instance=ExtResource("12_b844p")]
 
 [node name="Andreas" parent="." instance=ExtResource("16_qju6k")]
-position = Vector2(176, 178)
+position = Vector2(172, 178)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_aaf1y")
+}
 
 [connection signal="ready" from="." to="Player" method="_disable_scooting"]
 [connection signal="body_entered" from="Right" to="." method="_on_area_2d_body_entered"]

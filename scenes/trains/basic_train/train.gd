@@ -12,6 +12,7 @@ const Y: int = 95
 @export var combat_background: Texture2D
 @export var combat_background_left: Texture2D
 @export var combat_floor: Texture2D
+@onready var animation_player = $AnimationPlayer
 
 
 var _rng = RandomNumberGenerator.new()
@@ -39,6 +40,8 @@ func _ready() -> void:
     _right.position.x = _right_x(train_length)
     _spawn_ticket_inspector()
     SignalDispatcher.sound_music.emit("train")
+    animation_player.play("olaf_entrance")
+
 
 func _spawn_ticket_inspector():
     if randi() % 20 == 5:
