@@ -10,5 +10,5 @@ func _ready() -> void:
 func update_enemy(enemy: Enemy) -> void:
     enemy_label.text = enemy._name
     enemy_animations.sprite_frames = enemy._sprite.sprite_frames
-    enemy_animations.animation = "battle_intro"
+    enemy_animations.animation = "idle"
     enemy_animations.play()

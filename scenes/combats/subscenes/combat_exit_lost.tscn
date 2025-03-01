@@ -652,7 +652,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.345098, 0.345098, 0.345098, 0.333333)
+color = Color(0.254902, 0.254902, 0.254902, 0.870588)
 
 [node name="Panel" type="Panel" parent="ColorRect"]
 layout_mode = 1
@@ -674,20 +674,33 @@ stretch_mode = 2
 [node name="Lost_Label" type="Label" parent="ColorRect/Panel"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 460.0
-offset_top = 106.0
-offset_right = 801.0
-offset_bottom = 137.0
+offset_left = 444.0
+offset_top = 142.0
+offset_right = 785.0
+offset_bottom = 173.0
 scale = Vector2(3, 3)
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("5_i05n8")
 theme_override_font_sizes/font_size = 24
-text = "GEGNER hat dich plattgemacht!"
+text = "hat dich plattgemacht!"
+horizontal_alignment = 1
 
-[node name="Player" type="AnimatedSprite2D" parent="."]
-position = Vector2(930, 735)
+[node name="Enemy_Label" type="Label" parent="ColorRect/Panel"]
+unique_name_in_owner = true
+offset_left = 440.0
+offset_top = 55.0
+offset_right = 781.0
+offset_bottom = 86.0
+scale = Vector2(3, 3)
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_i05n8")
+theme_override_font_sizes/font_size = 24
+text = "GEGNER"
+horizontal_alignment = 1
+
+[node name="Enemy" type="AnimatedSprite2D" parent="ColorRect/Panel"]
+position = Vector2(950, 735)
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_fgw8p")
-animation = &"dance"
-autoplay = "dance"
+animation = &"idle"
 offset = Vector2(0, -16)

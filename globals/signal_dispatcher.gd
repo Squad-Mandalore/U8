@@ -8,6 +8,8 @@ signal swap_inventory_items(from: int, to: int)
 signal set_ck3_progress_bar_value(value: int)
 
 signal player_zero_health()
+signal player_lost_combat(to_free: Node)
+signal player_won_combat(to_free: Node)
 signal reload_ui()
 signal update_item_slots()
 signal update_shop_item_slots(to_free: int)

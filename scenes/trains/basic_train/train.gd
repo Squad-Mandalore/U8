@@ -48,4 +48,5 @@ func _spawn_ticket_inspector():
         print("Schackeline will not hunt you today")
 
 func _on_player_zero_health() -> void:
+    print("tests")
     level_lost.emit()
