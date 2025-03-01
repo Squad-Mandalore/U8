@@ -1,17 +1,22 @@
-[gd_scene load_steps=19 format=3 uid="uid://dxtsv1xtfd42n"]
+[gd_scene load_steps=28 format=3 uid="uid://dxtsv1xtfd42n"]
 
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
 [ext_resource type="Script" path="res://scenes/stations/01_wittenau/wittenau.gd" id="1_vdt2h"]
 [ext_resource type="Texture2D" uid="uid://b36noacmhtswo" path="res://scenes/stations/01_wittenau/assets/hub.png" id="2_c8rit"]
 [ext_resource type="LabelSettings" uid="uid://c0xesi3rt8odi" path="res://scenes/stations/assets/station_name_label_settings_white.tres" id="3_job2n"]
+[ext_resource type="Texture2D" uid="uid://dyqe16uee6oon" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_fight_floor.png" id="3_rimlc"]
 [ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://scenes/stations/01_wittenau/subscenes/tower.tscn" id="4_wvqyq"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="6_fup5h"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="7_5owx3"]
 [ext_resource type="AudioStream" uid="uid://brdipk6bapgml" path="res://assets/sounds/music/slappbass_backgroundmusic.wav" id="8_4q2iq"]
 [ext_resource type="PackedScene" uid="uid://caniahfcrm3my" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren_1.tscn" id="10_krbe2"]
 [ext_resource type="PackedScene" uid="uid://cu2j876adtdfh" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren_2.tscn" id="11_1m7y8"]
+[ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politician/politician_1.tscn" id="11_qvo2e"]
 [ext_resource type="PackedScene" uid="uid://4ylmn4pu3xfm" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren_3.tscn" id="12_485u2"]
+[ext_resource type="PackedScene" uid="uid://n1etnk880vy" path="res://scenes/stations/subscenes/seating_areas.tscn" id="12_go6jj"]
 [ext_resource type="PackedScene" uid="uid://dv2v43jv13rjr" path="res://characters/automatas/drink/drink_vending_machine.tscn" id="13_i82bx"]
+[ext_resource type="PackedScene" uid="uid://bap2i51ju2efp" path="res://characters/automatas/ticket/ticket_vending_machine.tscn" id="14_nf21t"]
+[ext_resource type="PackedScene" uid="uid://40q6al2c4n4n" path="res://characters/automatas/snack/snack_vending_machine.tscn" id="15_htilo"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
 b = Vector2(822, 0)
@@ -31,8 +36,172 @@ b = Vector2(-1, 312)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0h8n"]
 size = Vector2(33, 20)
 
+[sub_resource type="Animation" id="Animation_lqfb8"]
+resource_name = "olaf_initial_battle"
+length = 2.0
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/OlafScholz:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(962, 168), Vector2(962, 190)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/OlafScholz")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["walk"],
+"method": &"start_animation"
+}, {
+"args": ["idle"],
+"method": &"start_animation"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Berliner")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [false],
+"method": &"set_physics_process"
+}, {
+"args": [true],
+"method": &"set_physics_process"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/Berliner")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop_animation"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node2D/Berliner")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["walk"],
+"method": &"start_animation"
+}, {
+"args": ["idle"],
+"method": &"start_animation"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node2D/Berliner:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 2,
+"values": [Vector2(961, 190), Vector2(1000, 250)]
+}
+
+[sub_resource type="Animation" id="Animation_dfl7g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Berliner:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(961, 210)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/OlafScholz:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(962, 168)]
+}
+
+[sub_resource type="Animation" id="Animation_lsgha"]
+resource_name = "olaf_step_aside"
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/OlafScholz:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Vector2(980, 190)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/OlafScholz")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["walk"],
+"method": &"start_animation"
+}, {
+"args": ["idle"],
+"method": &"start_animation"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ltkc7"]
+_data = {
+"RESET": SubResource("Animation_dfl7g"),
+"olaf_initial_battle": SubResource("Animation_lqfb8"),
+"olaf_step_aside": SubResource("Animation_lsgha")
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vdt2h")
+combat_background = ExtResource("2_c8rit")
+combat_background_left = ExtResource("2_c8rit")
+combat_floor = ExtResource("3_rimlc")
 
 [node name="Background" type="StaticBody2D" parent="."]
 position = Vector2(1000, 330)
@@ -79,12 +248,12 @@ uppercase = true
 [node name="Node2D" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="CharacterBody2D" parent="Node2D" instance=ExtResource("1_gtc8i")]
+[node name="Berliner" parent="Node2D" instance=ExtResource("1_gtc8i")]
 z_index = 0
 y_sort_enabled = true
 position = Vector2(961, 210)
 
-[node name="Camera2D" type="Camera2D" parent="Node2D/CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Node2D/Berliner"]
 zoom = Vector2(3.5, 3.5)
 limit_left = 32
 limit_top = 0
@@ -206,8 +375,37 @@ position = Vector2(1186, 324)
 z_index = 0
 position = Vector2(1150, 329)
 
+[node name="OlafScholz" parent="Node2D" instance=ExtResource("11_qvo2e")]
+unique_name_in_owner = true
+z_index = 0
+position = Vector2(962, 168)
+
 [node name="DrinkVendingMachine" parent="Node2D" instance=ExtResource("13_i82bx")]
 position = Vector2(837, 283)
+
+[node name="SnackVendingMachine2" parent="Node2D" instance=ExtResource("15_htilo")]
+position = Vector2(808, 282)
+
+[node name="TicketVendingMachine" parent="Node2D" instance=ExtResource("14_nf21t")]
+position = Vector2(780, 282)
+
+[node name="SeatingAreas" type="CanvasGroup" parent="Node2D"]
+y_sort_enabled = true
+
+[node name="SeatingArea" parent="Node2D/SeatingAreas" instance=ExtResource("12_go6jj")]
+position = Vector2(323, 323)
+
+[node name="SeatingArea2" parent="Node2D/SeatingAreas" instance=ExtResource("12_go6jj")]
+position = Vector2(664, 323)
+
+[node name="SeatingArea3" parent="Node2D/SeatingAreas" instance=ExtResource("12_go6jj")]
+position = Vector2(1014, 323)
+
+[node name="SeatingArea4" parent="Node2D/SeatingAreas" instance=ExtResource("12_go6jj")]
+position = Vector2(1350, 323)
+
+[node name="SeatingArea5" parent="Node2D/SeatingAreas" instance=ExtResource("12_go6jj")]
+position = Vector2(1684, 323)
 
 [node name="TrainDoor" type="Area2D" parent="."]
 position = Vector2(962, 186)
@@ -223,5 +421,11 @@ stream = ExtResource("8_4q2iq")
 autoplay = true
 bus = &"Music"
 
-[connection signal="ready" from="." to="Node2D/CharacterBody2D" method="_enable_scooting"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ltkc7")
+}
+
+[connection signal="ready" from="." to="Node2D/Berliner" method="_enable_scooting"]
 [connection signal="body_entered" from="TrainDoor" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

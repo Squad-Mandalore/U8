@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dwpc1ehym1gi1"
+path="res://.godot/imported/chris_robbery.dialogue-aa97816a7f163d5ab4d1049b8a9e6fbd.tres"
+
+[deps]
+
+source_file="res://characters/npcs/chris/assets/chris_robbery.dialogue"
+dest_files=["res://.godot/imported/chris_robbery.dialogue-aa97816a7f163d5ab4d1049b8a9e6fbd.tres"]
+
+[params]
+
+defaults=true

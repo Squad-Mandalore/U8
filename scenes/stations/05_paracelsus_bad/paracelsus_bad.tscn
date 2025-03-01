@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnueionl57e3i"]
+[gd_scene load_steps=8 format=3 uid="uid://dnueionl57e3i"]
 
 [ext_resource type="Script" path="res://scenes/stations/05_paracelsus_bad/paracelsus_bad.gd" id="1_086u8"]
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_q4mp0"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://b4v2kxxwx22uq" path="res://characters/npcs/lifeguard/lifeguard.tscn" id="3_cnday"]
 [ext_resource type="Texture2D" uid="uid://danl1iv176et" path="res://scenes/stations/05_paracelsus_bad/assets/Paracelsus-bad-fight-floor.png" id="4_mo6ep"]
 [ext_resource type="PackedScene" uid="uid://d3ntibgwuo4dv" path="res://scenes/stations/05_paracelsus_bad/subscenes/tower.tscn" id="5_rp8qx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atwmn"]
+size = Vector2(40, 19)
 
 [node name="ParacelsusBad" instance=ExtResource("1_q4mp0")]
 script = ExtResource("1_086u8")
@@ -16,6 +19,7 @@ combat_floor = ExtResource("4_mo6ep")
 text = "Paracelsus-Bad"
 
 [node name="Bademeister2d" parent="Node2D" index="0" instance=ExtResource("3_cnday")]
+unique_name_in_owner = true
 position = Vector2(600, 231)
 
 [node name="Towers" type="CanvasGroup" parent="Node2D" index="3"]
@@ -56,3 +60,13 @@ position = Vector2(820, 420)
 
 [node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("5_rp8qx")]
 position = Vector2(988, 420)
+
+[node name="BossArea" type="Area2D" parent="." index="4"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossArea" index="0"]
+position = Vector2(181, 202.5)
+shape = SubResource("RectangleShape2D_atwmn")
+
+[connection signal="body_exited" from="BossArea" to="." method="_on_boss_area_body_exited"]

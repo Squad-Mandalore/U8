@@ -40,39 +40,43 @@ func _ready() -> void:
 		shop_inventory_slot.is_shop_slot = true
 		shop_inventory_slot.index = i + 1
 
-func reload(new_is_human: bool, new_shop_inventory: Array[Item], shop_name: String, sprite_frames: SpriteFrames = null) -> void:
-	is_human = new_is_human
-	shop_inventory = new_shop_inventory
-	shop_name_label.text = shop_name
-	if is_human:
-		_dialogue_box = %HumanLabel
-		%HumanShopUpper.show()
-		%HumanShopLower.show()
-		%MachineContainer.hide()
-		%AnimatedSprite2D.sprite_frames = sprite_frames
-		%AnimatedSprite2D.animation = "shop"
-		%AnimatedSprite2D.play()
-	else:
-		_dialogue_box = %MachineLabel
-		%MachineContainer.show()
-		%HumanShopUpper.hide()
-		%HumanShopLower.hide()
-	_dialogue_box.text = "..."
+func reload(new_is_human: bool, new_shop_inventory: Array[Item], shop_name: String, shop_texture = null) -> void:
+    is_human = new_is_human
+    shop_inventory = new_shop_inventory
+    shop_name_label.text = shop_name
+    if is_human:
+        _dialogue_box = %HumanLabel
+        %HumanShopUpper.show()
+        %HumanShopLower.show()
+        %MachineContainer.hide()
+        %AnimatedSprite2D.sprite_frames = shop_texture
+        %AnimatedSprite2D.animation = "shop"
+        %AnimatedSprite2D.play()
+    else:
+        _dialogue_box = %MachineLabel
+        %MachineContainer.show()
+        %HumanShopUpper.hide()
+        %HumanShopLower.hide()
+        %MachineTexture.texture = shop_texture
+    _dialogue_box.text = "..."
 
 	update_item_slots()
 	update_damage()
 
 
 func update_item_slots(to_free: int = -1):
-	for i in range(shop_inventory_size):
-		var node = "%ShopSlot" + str(i + 1)
-		var shop_inventory_slot = get_node(node)
-		if i + 1 == to_free:
-			shop_inventory[i] = null
-		if shop_inventory[i]:
-			shop_inventory_slot.set_item(shop_inventory[i])
-		else:
-			shop_inventory_slot.disable()
+    if !shop_inventory:
+        return
+    for i in range(shop_inventory_size):
+        var node = "%ShopSlot" + str(i + 1)
+        var shop_inventory_slot = get_node(node)
+        if i + 1 == to_free:
+            shop_inventory[i] = null
+        if shop_inventory[i]:
+            shop_inventory_slot.enable()
+            shop_inventory_slot.set_item(shop_inventory[i])
+        else:
+            shop_inventory_slot.disable()
 
 func update_dialogue_box(item: Item):
 	var formatted_price: String

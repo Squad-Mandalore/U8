@@ -71,7 +71,7 @@ func effect_damage():
 
 func status_type_damage(damage_receiver: String, damage_receiver_stats: StatsSpecifier):
     var received_damage = calc_status_type_dmg(damage_receiver_stats)
-    
+
     if received_damage != 0: 
        _feedback_box.set_feedback(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch Status Effekte bekommen!")
 
@@ -91,7 +91,8 @@ func apply_damage(damage_receiver: String, received_damage: int, damage_receiver
     else:
         damage_receiver_stats.health -= received_damage
         if damage_receiver_stats.health <= 0:
-            player_won()         
+            enemy.fight_lost()
+            _player_won()
 
 func calc_status_type_dmg(defender_stats: StatsSpecifier) -> int:
     # apply dmg from status_types
@@ -179,5 +180,6 @@ func enemy_execute_attack():
     # TODO: play attack animation and hide hud
     execute_attack(chosen_attack, enemy._name, "Spieler")
 
-func player_won():
-    SignalDispatcher.player_won_combat.emit(get_parent())
+func _player_won():
+    # TODO: win screen here and on click combat exit
+    SignalDispatcher.combat_exit.emit(get_parent())

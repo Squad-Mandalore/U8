@@ -1,10 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://bymkmcgp2ky2o"]
+[gd_scene load_steps=38 format=3 uid="uid://bymkmcgp2ky2o"]
 
 [ext_resource type="Script" path="res://characters/npcs/badman/badman.gd" id="1_jdg22"]
 [ext_resource type="Script" path="res://items/item.gd" id="2_g7ryh"]
-[ext_resource type="Resource" uid="uid://bw88rw1iou2ej" path="res://items/armor/hemd.tres" id="3_tcmoj"]
-[ext_resource type="Resource" uid="uid://ckynd8kmolf6x" path="res://items/weapons/slowpoke_tail.tres" id="4_778fx"]
-[ext_resource type="Resource" uid="uid://w36ev7xurex" path="res://items/weapons/president_bell.tres" id="5_60rj3"]
+[ext_resource type="Resource" uid="uid://b0cccg4qchvd7" path="res://items/consumables/cigarette.tres" id="3_kwi1t"]
+[ext_resource type="Resource" uid="uid://cyltwctk6tq4w" path="res://items/consumables/heroin.tres" id="4_s5bb5"]
+[ext_resource type="Resource" uid="uid://cteycwk403x83" path="res://items/meta/gun_licence.tres" id="5_rgekh"]
+[ext_resource type="Resource" uid="uid://d348vx6lpp2gq" path="res://items/consumables/hash_brownies.tres" id="6_5ag44"]
 [ext_resource type="Texture2D" uid="uid://bg1cxujjsrhvf" path="res://characters/npcs/badman/assets/badman.png" id="6_yg10t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enw8h"]
@@ -228,9 +229,9 @@ animations = [{
 z_index = 50
 collision_layer = 5
 script = ExtResource("1_jdg22")
-shop_inventory = Array[ExtResource("2_g7ryh")]([ExtResource("3_tcmoj"), ExtResource("4_778fx"), ExtResource("5_60rj3"), null, null, null, null, null])
+shop_inventory = Array[ExtResource("2_g7ryh")]([ExtResource("3_kwi1t"), ExtResource("4_s5bb5"), ExtResource("5_rgekh"), ExtResource("6_5ag44"), null, null, null, null])
 _name = "Badmann"
-RANDOM_NAME = false
+_random_name = false
 _gender = "Diverse"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
