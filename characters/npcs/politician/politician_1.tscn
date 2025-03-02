@@ -139,6 +139,7 @@ attacks = Array[ExtResource("2_tau0d")]([ExtResource("3_u5euq")])
 combat_animation = "idle"
 stats = SubResource("Resource_u8nwv")
 texture = ExtResource("2_xo3q8")
+_random_name = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bg0ao")
