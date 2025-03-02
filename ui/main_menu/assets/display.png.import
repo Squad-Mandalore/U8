@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://57crc7maanq3"
-path="res://.godot/imported/anzeigetafel.png-08ff185e2beaf3135d45ce79ea06fa5a.ctex"
+uid="uid://kb5f3l35yoru"
+path="res://.godot/imported/display.png-f2e5eec0be663ca3290bf9f5054d5b57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/main_menu/assets/anzeigetafel.png"
-dest_files=["res://.godot/imported/anzeigetafel.png-08ff185e2beaf3135d45ce79ea06fa5a.ctex"]
+source_file="res://ui/main_menu/assets/display.png"
+dest_files=["res://.godot/imported/display.png-f2e5eec0be663ca3290bf9f5054d5b57.ctex"]
 
 [params]
 
