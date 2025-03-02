@@ -28,6 +28,7 @@ func _ready() -> void:
     set_active_hud(_hud)
     SourceOfTruth.set_damage_for_all_attacks()
     SourceOfTruth.balance_changed(300)
+    SignalDispatcher.load_meta_items.emit()
     SignalDispatcher.reload_ui.emit()
 
 # func _process(delta):
