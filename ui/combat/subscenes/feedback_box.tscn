@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://q4yxjjlox2rt"]
+[gd_scene load_steps=7 format=3 uid="uid://q4yxjjlox2rt"]
 
 [ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="1_fxsb6"]
 [ext_resource type="Script" path="res://ui/combat/subscenes/feedback_box.gd" id="1_vue2e"]
-[ext_resource type="Script" path="res://ui/combat/subscenes/typewriter.gd" id="3_o84w1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddwov"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
@@ -90,4 +89,3 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_05jba")
 }
-script = ExtResource("3_o84w1")
