@@ -679,7 +679,7 @@ animation = &"battle_idle"
 autoplay = "idle"
 offset = Vector2(0, -16)
 
-[node name="vs-underscore" type="TextureRect" parent="ColorRect/Panel"]
+[node name="vsUnderscore" type="TextureRect" parent="ColorRect/Panel"]
 layout_mode = 0
 offset_left = 867.0
 offset_top = 721.0
@@ -695,7 +695,7 @@ animation = &"battle_idle"
 autoplay = "idle"
 offset = Vector2(0, -16)
 
-[node name="Enemy_Label" type="Label" parent="ColorRect/Panel"]
+[node name="EnemyLabel" type="Label" parent="ColorRect/Panel"]
 layout_mode = 0
 offset_left = 1184.0
 offset_top = 850.0
@@ -705,7 +705,7 @@ scale = Vector2(3, 3)
 text = "DEBUG"
 horizontal_alignment = 1
 
-[node name="Player_Label" type="Label" parent="ColorRect/Panel"]
+[node name="PlayerLabel" type="Label" parent="ColorRect/Panel"]
 layout_mode = 0
 offset_left = 325.0
 offset_top = 850.0

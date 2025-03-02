@@ -27,16 +27,6 @@ func get_level_file(level_id : int):
     if level_id >= files.size():
         push_error("level_id is out of bounds of the levels list")
     return files[level_id]
-    
-func _unhandled_input(event):
-    if is_input_disabled:
-        if event is InputEventKey and event.pressed:
-            match event.keycode:
-                KEY_W, KEY_A, KEY_S, KEY_D, KEY_E, KEY_I, KEY_ESCAPE, KEY_J:
-                    return
-                    
-func disable_input(state: bool):
-    is_input_disabled = state
 
 func _on_combat_enter(enemy: Enemy):
     var combat_scene = preload("res://scenes/combats/combat.tscn")

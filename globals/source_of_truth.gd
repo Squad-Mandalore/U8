@@ -33,7 +33,6 @@ static func stats_changed(delta_stats: StatsSpecifier):
     stats.add(delta_stats)
     set_damage_for_all_attacks()
     if stats.health <= 0:
-        print("bin tot")
         SignalDispatcher.player_zero_health.emit()
         GameState.new_run_state()
     SignalDispatcher.reload_ui.emit()

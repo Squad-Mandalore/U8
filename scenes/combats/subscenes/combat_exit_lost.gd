@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var enemy_animations = $ColorRect/Panel/Enemy
-@onready var enemy_label = $ColorRect/Panel/Enemy_Label
+@onready var enemy_label = $ColorRect/Panel/EnemyLabel
 var enemy: Enemy
 
 func _ready() -> void:

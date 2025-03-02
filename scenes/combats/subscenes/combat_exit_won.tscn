@@ -676,7 +676,7 @@ offset_bottom = 415.0
 texture = ExtResource("4_wbpda")
 stretch_mode = 2
 
-[node name="Won-Label" type="Label" parent="ColorRect/Panel"]
+[node name="WonLabel" type="Label" parent="ColorRect/Panel"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 651.0
