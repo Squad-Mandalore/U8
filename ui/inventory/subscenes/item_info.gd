@@ -17,7 +17,7 @@ func set_item_name(item: Item):
     (%ItemNameLabel as Label).text = item.name
 
 func set_item_price(item: Item, is_shop_slot: bool):
-    if item.has_meta("price"):
+    if "price" in item:
         var price = item.price
         if !is_shop_slot:
             price = SourceOfTruth.calculate_selling_price(item.price)

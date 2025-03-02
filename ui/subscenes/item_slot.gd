@@ -86,22 +86,25 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
     var ext_is_shop_slot: bool = data["is_shop_slot"]
     var ext_item: Item = data["item"]
     if ext_is_shop_slot:
-        print("attempt to buy")
+        # attempt to buy
         if  SourceOfTruth.balance >= ext_item.price:
-            SourceOfTruth.add_item(ext_item)
+            if ext_item is MetaItem:
+                SourceOfTruth.add_meta_item(ext_item)
+            else:
+                SourceOfTruth.add_item(ext_item)
             SourceOfTruth.balance_changed(-ext_item.price)
             SignalDispatcher.update_item_slots.emit()
             SignalDispatcher.update_shop_item_slots.emit(from)
-            print("enough money")
+            # enough money
         else:
-            print("not enough money")
+            # not enough money
             SignalDispatcher.update_shop_item_slots.emit()
     else:
         SourceOfTruth.swap_item(from, index)
         SignalDispatcher.update_item_slots.emit()
 
 func _notification(what: int) -> void:
-    # WARNING this is send to all item slots even those who are not affected VERY PERFORMANCE HEAVY
+    # WARNING this will send to all item slots even those who are not affected VERY PERFORMANCE HEAVY
     if what == NOTIFICATION_DRAG_END and not is_drag_successful():
         if is_shop_slot:
             SignalDispatcher.update_shop_item_slots.emit()

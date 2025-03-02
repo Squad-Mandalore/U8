@@ -15,14 +15,12 @@ static var balance: int:
 
 static var inventory_slots: Array[Item]:
     set(value):
-        print("inventory setter is called")
         RunState.set_inventory_slots(value)
     get():
         return RunState.get_inventory_slots()
 
 static var meta_inventory_slots: Array[MetaItem]:
     set(value):
-        print("meta inventory setter is called")
         GameState.set_meta_inventory_slots(value)
     get():
         return GameState.get_meta_inventory_slots()
@@ -50,7 +48,6 @@ static func balance_changed(delta_balance: int):
     SignalDispatcher.reload_ui.emit()
 
 static func add_meta_item(item: MetaItem):
-    print(meta_inventory_slots)
     # backpack has the index 0
     if item is Backpack:
         # check if backpack to add is bigger than current if it exists
@@ -58,7 +55,6 @@ static func add_meta_item(item: MetaItem):
             if item.inventory_size < meta_inventory_slots[0].inventory_size:
                 return
         meta_inventory_slots[0] = item
-        print(meta_inventory_slots)
         cur_inventory_size = item.inventory_size
     # map has the index 1
     if item is Map:
@@ -100,7 +96,6 @@ static func add_item(item: Item):
     for i in range(cur_inventory_size):
         if inventory_slots[i] == null:
             inventory_slots[i] = item
-            print(inventory_slots)
             stats_changed(item.stats)
             return
 

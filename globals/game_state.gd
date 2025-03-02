@@ -14,6 +14,10 @@ const FILE_PATH = "res://globals/game_state.gd"
 @export var cur_inventory_size: int = 4
 @export var meta_inventory_slots: Array[MetaItem]
 
+func _init() -> void:
+    meta_inventory_slots.resize(7)
+    meta_inventory_slots.fill(null)
+
 static func get_run_state() -> RunState:
     var game_state = get_game_state()
     if not game_state.run_state:
@@ -78,15 +82,8 @@ static func get_current_inv_size() -> int:
     return game_state.cur_inventory_size
 
 static func get_meta_inventory_slots() -> Array[MetaItem]:
-    print("get meta inventory")
     var game_state = get_game_state()
-    print(game_state)
-    if not game_state:
-        var inv: Array[MetaItem] = []
-        inv.resize(7)
-        inv.fill(null)
-        return inv
-    if len(game_state.meta_inventory_slots) == 0:
+    if not game_state.meta_inventory_slots:
         var inv: Array[MetaItem] = []
         inv.resize(7)
         inv.fill(null)
@@ -94,10 +91,8 @@ static func get_meta_inventory_slots() -> Array[MetaItem]:
     return game_state.meta_inventory_slots
 
 static func set_meta_inventory_slots(inv: Array[MetaItem]):
-    print("set meta inventory")
     var game_state = get_game_state()
     if not game_state:
-        print("default set meta inv")
         return
     game_state.meta_inventory_slots = inv
     GlobalState.save()

@@ -25,6 +25,7 @@ func load_meta_items():
     _diary_item_slot.set_item(SourceOfTruth.meta_inventory_slots[4])
     _gun_licence_item_slot.set_item(SourceOfTruth.meta_inventory_slots[5])
     _ticket_item_slot.set_item(SourceOfTruth.meta_inventory_slots[6])
+    SignalDispatcher.reload_ui.emit()
 
 func update_debuff_stats():
     self.stats = SourceOfTruth.stats

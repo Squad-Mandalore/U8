@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_xo3t3")
 ticket_class = 1
+price = 10
 name = "Fahrkarte"
 description = "Ein Ticket für die U8 Berlin, aufpassen, dass man dieses Ticket nicht verliert, sonst kann es sehr teuer werden."
 texture = ExtResource("2_l5bea")
