@@ -1,33 +1,12 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://cnslsn7bam3l6"]
+[gd_resource type="Resource" script_class="Ticket" load_steps=3 format=3 uid="uid://pd7g52g5l7le"]
 
-[ext_resource type="Script" path="res://items/item.gd" id="1_ly2x2"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="2_ptlbs"]
-[ext_resource type="Texture2D" uid="uid://uiallwo821so" path="res://items/meta/assets/ticket.png" id="3_qhjar"]
-
-[sub_resource type="Resource" id="Resource_hodkb"]
-script = ExtResource("2_ptlbs")
-max_health = 0
-health = 0
-armor = 0
-initiative = 0
-dodge_chance = 0
-strength = 0
-coolness = 0
-attractiveness = 0
-intelligence = 0
-creativity = 0
-luck = 0
-poison_resistance = 0
-bleed_resistance = 0
-drug_resistance = 0
-poison_level = 0
-bleed_level = 0
-drug_level = 0
+[ext_resource type="Script" path="res://items/meta/ticket.gd" id="1_xo3t3"]
+[ext_resource type="Texture2D" uid="uid://uiallwo821so" path="res://items/meta/assets/ticket.png" id="2_l5bea"]
 
 [resource]
-script = ExtResource("1_ly2x2")
+script = ExtResource("1_xo3t3")
+ticket_class = 1
+price = 10
 name = "Fahrkarte"
 description = "Ein Ticket für die U8 Berlin, aufpassen, dass man dieses Ticket nicht verliert, sonst kann es sehr teuer werden."
-stats = SubResource("Resource_hodkb")
-texture = ExtResource("3_qhjar")
-price = 5
+texture = ExtResource("2_l5bea")

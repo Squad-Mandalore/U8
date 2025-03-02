@@ -1,4 +1,4 @@
 class_name Weapon
-extends Item
+extends InventoryItem
 
 @export var attacks: Array[Attack]

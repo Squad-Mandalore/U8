@@ -498,21 +498,18 @@ unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
 [node name="MapItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
-[node name="DiaryItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
+[node name="UndefinedItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer"]
 layout_mode = 2
@@ -523,19 +520,18 @@ unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
-[node name="ItemSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+[node name="DiaryItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
-[node name="ItemSlot3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+[node name="GunLicenceItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
 [node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5"]
 layout_mode = 2
@@ -543,12 +539,12 @@ theme_override_constants/separation = 0
 theme_override_styles/separator = SubResource("StyleBoxLine_7k27a")
 
 [node name="TicketItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

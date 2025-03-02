@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://40q6al2c4n4n"]
 
 [ext_resource type="Script" path="res://characters/automatas/automata.gd" id="1_0t7m3"]
-[ext_resource type="Script" path="res://items/item.gd" id="2_hdlbx"]
+[ext_resource type="Script" path="res://items/inventory_item.gd" id="2_hdlbx"]
 [ext_resource type="Resource" uid="uid://d348vx6lpp2gq" path="res://items/consumables/hash_brownies.tres" id="3_15wnu"]
 [ext_resource type="Resource" uid="uid://cyphc77n8k731" path="res://items/consumables/potato.tres" id="4_lsxso"]
 [ext_resource type="Texture2D" uid="uid://bk62howen4nad" path="res://characters/automatas/snack/assets/snack_vending_machine.png" id="4_qdfgr"]

@@ -29,8 +29,8 @@ drug_level = 0
 [resource]
 script = ExtResource("2_lymbw")
 attacks = Array[ExtResource("1_g8ctu")]([ExtResource("1_p0dad")])
+stats = SubResource("Resource_hfqg5")
+price = 1000
 name = "Flegmon-Rute"
 description = "Sehr lecker. Wert hoch. "
-stats = SubResource("Resource_hfqg5")
 texture = ExtResource("4_l6ivm")
-price = 1000
