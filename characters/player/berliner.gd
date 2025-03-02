@@ -14,6 +14,7 @@ var _current_state: State = State.IDLE
 var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
 
 const SPEED: float = 102.0
+
 @export var speed_multiplier: float = 1.0
 var _interactable_npc: PhysicsBody2D = null#:
     # set(value):
@@ -362,9 +363,11 @@ func _stop_shopping():
     set_active_hud(_hud)
     switch_state(State.IDLE)
 
+
 func start_animation(animation: String):
     _sprite.animation = animation
     _sprite.play()
 
 func stop_animation():
     _sprite.stop()
+

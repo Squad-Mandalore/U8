@@ -57,7 +57,7 @@ func _unhandled_input(event: InputEvent):
 func _on_mouse_entered() -> void:
     if is_enabled():
         add_theme_stylebox_override("panel", preload("res://ui/assets/item_slot_enabled_hovered.tres"))
-        SignalDispatcher.sound_effect.emit("hover_item")
+        SignalDispatcher.sound_effect.emit("hover_effect")
         if item != null:
             SignalDispatcher.toggle_item_hud.emit(item, is_shop_slot)
             if is_shop_slot:

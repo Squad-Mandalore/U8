@@ -63,12 +63,15 @@ func _on_combat_enter(enemy: Enemy):
     instance.combat_floor = combat_floor
     # instantiate combat scene
     level_container.call_deferred("add_child", instance)
+    SignalDispatcher.sound_music.emit("combat")
     instance.disable_aura("Spieler")
     instance.disable_aura("Other")
 
 func _combat_exit(to_free: Node):
     to_free.queue_free()
     level_container.call_deferred("add_child", current_level)
+    SignalDispatcher.sound_music.emit("combat_exit")
+
 
 func _combat_won(to_free: Node):
     var combat_exit_won_scene = preload("res://scenes/combats/subscenes/combat_exit_won.tscn")

@@ -10,7 +10,7 @@ signal train_enter
 var train_accessable = false
 
 func _ready() -> void:
-    SignalDispatcher.sound_music.emit("background")
+    SignalDispatcher.sound_music.emit("station")
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
     if train_accessable:

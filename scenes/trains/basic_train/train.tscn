@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://bkaths3irgi7c" path="res://characters/npcs/chris/chris.tscn" id="8_sempk"]
 [ext_resource type="PackedScene" uid="uid://cph57sst3icgu" path="res://characters/npcs/beggar/beggar_1.tscn" id="9_xenwl"]
 [ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politician/politician_1.tscn" id="10_rky5v"]
-[ext_resource type="AudioStream" uid="uid://6ahldo7k8y2m" path="res://scenes/trains/basic_train/assets/sounds/music/gof2.mp3" id="11_yi3rj"]
 [ext_resource type="PackedScene" uid="uid://4yblwinc1olu" path="res://scenes/trains/basic_train/subscenes/announcement_player.tscn" id="12_b844p"]
 [ext_resource type="PackedScene" uid="uid://bex812hcoh6pq" path="res://characters/npcs/ticket_inspector/ticket_inspector.tscn" id="12_rqh7o"]
 [ext_resource type="PackedScene" uid="uid://bkj4b56eeb03x" path="res://characters/npcs/andreas/andreas.tscn" id="16_qju6k"]
@@ -130,12 +129,6 @@ floor_constant_speed = true
 floor_block_on_wall = false
 platform_on_leave = 2
 _name = "Schackeline"
-
-[node name="BackgroundMusicPlayerTrain" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_yi3rj")
-autoplay = true
-bus = &"Music"
-parameters/looping = true
 
 [node name="AnnouncementPlayer" parent="." instance=ExtResource("12_b844p")]
 
