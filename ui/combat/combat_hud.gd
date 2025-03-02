@@ -15,20 +15,20 @@ var pause_duration: float = 1
 
 
 func _ready() -> void:
-	SignalDispatcher.add_attack_hover.connect(add_attack_hover)
-	SignalDispatcher.remove_attack_hover.connect(remove_attack_hover)
-	SignalDispatcher.execute_attack.connect(execute_attack)
-	SignalDispatcher.player_zero_health.connect(exit_combat)
-	half_turn_counter = 0
-	first_start = calculate_first_start()
-	if first_start:
-		_feedback_box.set_feedback("Deine Initiative ist höher, als die des Gegners.\nDu darfst starten.")
-	else:
-		_feedback_box.set_feedback("Der Gegner hat eine höhere Initiative als du.\nEr darf starten.")
-	_player_status_panel.stats = SourceOfTruth.stats
-	_enemy_status_panel.stats = enemy.stats
-	_attack_swapper.attacks = SourceOfTruth.get_all_attacks()
-	_round_descriptor.counter = 1
+    SignalDispatcher.add_attack_hover.connect(add_attack_hover)
+    SignalDispatcher.remove_attack_hover.connect(remove_attack_hover)
+    SignalDispatcher.execute_attack.connect(execute_attack)
+    SignalDispatcher.player_zero_health.connect(_player_lost)
+    half_turn_counter = 0
+    first_start = calculate_first_start()
+    if first_start:
+        _feedback_box.set_feedback("Deine Initiative ist höher, als die des Gegners.\nDu darfst starten.")
+    else:
+        _feedback_box.set_feedback("Der Gegner hat eine höhere Initiative als du.\nEr darf starten.")
+    _player_status_panel.stats = SourceOfTruth.stats
+    _enemy_status_panel.stats = enemy.stats
+    _attack_swapper.attacks = SourceOfTruth.get_all_attacks()
+    _round_descriptor.counter = 1
 
 func loop():
 	half_turn_counter += 1
@@ -71,8 +71,10 @@ func effect_damage():
 	return
 
 func status_type_damage(damage_receiver: String, damage_receiver_stats: StatsSpecifier):
-	var received_damage = calc_status_type_dmg(damage_receiver_stats)
-	_feedback_box.set_feedback(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch Status Effekte bekommen!")
+    var received_damage = calc_status_type_dmg(damage_receiver_stats)
+
+    if received_damage != 0: 
+       _feedback_box.set_feedback(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch Status Effekte bekommen!")
 
 	apply_damage(damage_receiver, received_damage, damage_receiver_stats)
 
@@ -82,15 +84,16 @@ func status_type_damage(damage_receiver: String, damage_receiver_stats: StatsSpe
 		_feedback_box.set_feedback(" Bitte wähle deinen nächsten Angriff!")
 
 func apply_damage(damage_receiver: String, received_damage: int, damage_receiver_stats: StatsSpecifier):
-	# TODO: use stats_changed when player stats are used
-	if damage_receiver == "Spieler":
-		var delta_stats = StatsSpecifier.new()
-		delta_stats.health = -received_damage
-		SourceOfTruth.stats_changed(delta_stats)
-	else:
-		damage_receiver_stats.health -= received_damage
-		if damage_receiver_stats.health <= 0:
-			exit_combat()
+    # TODO: use stats_changed when player stats are used
+    if damage_receiver == "Spieler":
+        var delta_stats = StatsSpecifier.new()
+        delta_stats.health = -received_damage
+        SourceOfTruth.stats_changed(delta_stats)
+    else:
+        damage_receiver_stats.health -= received_damage
+        if damage_receiver_stats.health <= 0:
+            enemy.fight_lost()
+            _player_won()
 
 func calc_status_type_dmg(defender_stats: StatsSpecifier) -> int:
 	# apply dmg from status_types
@@ -178,6 +181,8 @@ func enemy_execute_attack():
 	# TODO: play attack animation and hide hud
 	execute_attack(chosen_attack, enemy._name, "Spieler")
 
-func exit_combat():
-	# TODO: winning screen here and on click combat exit
-	SignalDispatcher.combat_exit.emit(get_parent())
+func _player_lost():
+    SignalDispatcher.player_lost_combat.emit(get_parent())
+    
+func _player_won():   
+    SignalDispatcher.player_won_combat.emit(get_parent())

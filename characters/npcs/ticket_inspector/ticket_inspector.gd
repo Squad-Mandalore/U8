@@ -39,7 +39,7 @@ func _on_detect_characters_body_entered(body):
     elif body.get_collision_layer() == 3 and not _player_checked:
         _is_interacting = true
         _sprite.play("idle")
-        if not player_has_ticket(body):
+        if not player_has_ticket():
             SourceOfTruth.balance_changed(-60)
             print("Player didn't have a ticket")
         else:
@@ -57,9 +57,8 @@ func _continue_walking():
     _is_interacting = false
     _sprite.play("walk")
 
-func player_has_ticket(player) -> bool:
-    # TODO: correctly implement source of truth
-    return randi() % 3 == 1  # Placeholder
+func player_has_ticket() -> bool:
+    return SourceOfTruth.meta_inventory_slots[6] != null
 
 func is_obstacle_in_path(body) -> bool:
     var collision_shape = body.find_child("CollisionShape2D", true, false)

@@ -17,7 +17,7 @@ combat_floor = ExtResource("4_g4xob")
 [node name="BackgroundWall" parent="Background" index="0"]
 texture = ExtResource("3_7ny50")
 
-[node name="CenterContainer" parent="Background" index="5"]
+[node name="CenterContainer" parent="Background" index="6"]
 offset_left = 546.0
 offset_top = 54.0
 offset_right = 640.0
@@ -28,19 +28,8 @@ grow_horizontal = 1
 text = "Alexanderplatz"
 label_settings = ExtResource("5_33jly")
 
-[node name="CenterContainer2" type="CenterContainer" parent="Background" index="6"]
-custom_minimum_size = Vector2(94, 31)
-offset_left = 546.0
-offset_top = 54.0
-offset_right = 640.0
-offset_bottom = 85.0
-
-[node name="StationName" type="Label" parent="Background/CenterContainer2" index="0"]
-layout_mode = 2
-text = "Alexanderplatz"
-label_settings = ExtResource("5_33jly")
-horizontal_alignment = 1
-uppercase = true
+[node name="Floor" parent="Node2D" index="0"]
+texture = ExtResource("4_4jwyb")
 
 [node name="Floor" parent="Node2D" index="0"]
 texture = ExtResource("4_4jwyb")

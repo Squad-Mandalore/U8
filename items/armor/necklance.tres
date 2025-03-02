@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://c107cydy6l8l4"]
+
+[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_6q3oq"]
+[ext_resource type="Script" path="res://globals/attributes.gd" id="2_c7jib"]
+[ext_resource type="Texture2D" uid="uid://caoqwrjyx44n" path="res://items/armor/assets/necklace.png" id="3_csgsk"]
+
+[sub_resource type="Resource" id="Resource_hodkb"]
+script = ExtResource("2_c7jib")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 2
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("1_6q3oq")
+name = "Halskette"
+description = "Mit ihrem strahlenden Glanz verleiht sie dir den urbanen Glamour, der selbst die düstersten Tunnel Berlins in ein glitzerndes Abenteuer verwandelt. Ein Accessoire, das beweist: Wahre Eleganz findet man nicht nur an oberirdischen Catwalks, sondern auch in den Tiefen der Berliner U-Bahn – und das mit einem Augenzwinkern!"
+stats = SubResource("Resource_hodkb")
+texture = ExtResource("3_csgsk")
+price = 100

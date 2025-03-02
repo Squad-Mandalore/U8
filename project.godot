@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="U8"
-config/version="0.2.0"
+config/version="0.3.0"
 run/main_scene="res://ui/opening/opening_with_logo.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 run/max_fps=60
@@ -32,6 +32,11 @@ NameGenerator="*res://globals/name_generator.gd"
 AudioManager="*res://globals/audio_manager.gd"
 SoundManager="*res://sound_manager.gd"
 Questomania="*res://globals/questomania.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://ui/dialogue/balloon.tscn"
 
 [display]
 
@@ -43,7 +48,7 @@ window/vsync/vsync_mode=2
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg", "res://addons/rubonnek.quest_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/rubonnek.quest_manager/plugin.cfg")
 
 [global_group]
 
@@ -133,6 +138,7 @@ dance={
 [internationalization]
 
 locale/translations=PackedStringArray("res://addons/maaacks_game_template/base/translations/menus_translations.en.translation", "res://addons/maaacks_game_template/base/translations/menus_translations.fr.translation")
+locale/translations_pot_files=PackedStringArray("res://characters/npcs/chris/assets/chris_robbery.dialogue", "res://characters/npcs/andreas/assets/andreas_robbery.dialogue")
 
 [layer_names]
 

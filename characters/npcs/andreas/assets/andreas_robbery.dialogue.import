@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bp4oa3h6045nj"
+path="res://.godot/imported/andreas_robbery.dialogue-8d6f652169cbd443304b9c9925c7e7e7.tres"
+
+[deps]
+
+source_file="res://characters/npcs/andreas/assets/andreas_robbery.dialogue"
+dest_files=["res://.godot/imported/andreas_robbery.dialogue-8d6f652169cbd443304b9c9925c7e7e7.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=9 format=3 uid="uid://b5frfwxa5x3k8"]
+
+[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="1_d6p2g"]
+[ext_resource type="Script" path="res://characters/attacks/formula.gd" id="2_fp1qs"]
+[ext_resource type="Script" path="res://items/weapons/weapon.gd" id="3_8i5u4"]
+[ext_resource type="Script" path="res://globals/attributes.gd" id="4_cp1x4"]
+[ext_resource type="Texture2D" uid="uid://wxmp5hic5ecu" path="res://items/weapons/assets/knife.png" id="5_qimmm"]
+
+[sub_resource type="Resource" id="Resource_ayac1"]
+script = ExtResource("2_fp1qs")
+base = 10
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.5
+creativity_modifier = 0.3
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+
+[sub_resource type="Resource" id="Resource_di1hx"]
+script = ExtResource("1_d6p2g")
+name = "Ordnungsruf"
+damage = 0
+type = 3
+token = 2
+token_number = 1
+effect = "Silenced den Gegner"
+formula = SubResource("Resource_ayac1")
+
+[sub_resource type="Resource" id="Resource_qs242"]
+script = ExtResource("4_cp1x4")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 50
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("3_8i5u4")
+attacks = Array[ExtResource("1_d6p2g")]([SubResource("Resource_di1hx")])
+name = "Messer"
+description = "Das klassisch Küchenmesser, welches das tägliche Werkzeug ist von Familie bis Obdachloser."
+stats = SubResource("Resource_qs242")
+texture = ExtResource("5_qimmm")
+price = 40
