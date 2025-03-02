@@ -44,10 +44,6 @@ window/size/mode=4
 window/stretch/mode="viewport"
 window/vsync/vsync_mode=2
 
-[editor]
-
-movie_writer/fps=144
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/rubonnek.quest_manager/plugin.cfg")
