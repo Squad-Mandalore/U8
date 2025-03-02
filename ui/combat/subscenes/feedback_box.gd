@@ -4,6 +4,6 @@ extends Control
 @onready var animation_player = $PanelContainer/MarginContainer/AnimationPlayer
 
 func set_feedback(feedback: String):
-	animation_player.stop()
-	rich_text_label.text = feedback
-	animation_player.play("typewriter")
+    animation_player.stop()
+    rich_text_label.text = feedback
+    animation_player.play("typewriter")
