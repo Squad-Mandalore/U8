@@ -30,11 +30,52 @@ func _ready() -> void:
     SourceOfTruth.balance_changed(300)
     SignalDispatcher.load_meta_items.emit()
     SignalDispatcher.reload_ui.emit()
+    
+    SignalDispatcher.allow_player_movement.connect(_allow_player_movement)
+    SignalDispatcher.disallow_player_movement.connect(_disallow_player_movement)
 
 # func _process(delta):
 #     pass
     # print("Player Position: " + str(self.global_position))
     # print("Camera Position: " + str(%InventoryCamera.global_position))
+
+func _allow_player_movement():
+    set_physics_process(true)
+    
+    InputMap.add_action("inventory")
+    InputMap.add_action("talk")
+    InputMap.add_action("scoot")
+    InputMap.add_action("map")
+    InputMap.add_action("dance")
+    
+    var keyI = InputEventKey.new()
+    keyI.keycode = KEY_I
+    InputMap.action_add_event("inventory", keyI)
+
+    var keyE = InputEventKey.new()
+    keyE.keycode = KEY_E
+    InputMap.action_add_event("talk", keyE)
+    
+    var keyShift = InputEventKey.new()
+    keyShift.keycode = KEY_SHIFT
+    InputMap.action_add_event("scoot", keyShift)
+    
+    var keyK = InputEventKey.new()
+    keyK.keycode = KEY_K
+    InputMap.action_add_event("map", keyK)
+    
+    var keyJ = InputEventKey.new()
+    keyJ.keycode = KEY_J
+    InputMap.action_add_event("dance", keyJ)
+    
+func _disallow_player_movement():
+    set_physics_process(false)
+    
+    InputMap.erase_action("inventory")
+    InputMap.erase_action("talk")
+    InputMap.erase_action("scoot")
+    InputMap.erase_action("map")
+    InputMap.erase_action("dance")
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK or _current_state == State.DANCE:
