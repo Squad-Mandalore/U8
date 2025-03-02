@@ -13,7 +13,7 @@
 
 [sub_resource type="Resource" id="Resource_by8rt"]
 script = ExtResource("8_ceye6")
-max_health = 0
+max_health = 50
 health = 0
 armor = 0
 initiative = 0
@@ -54,6 +54,7 @@ straße"
 texture = ExtResource("6_elllx")
 
 [node name="BerlinBear" parent="Node2D" index="1" instance=ExtResource("7_ug4pm")]
+z_index = 0
 position = Vector2(781, 304)
 stats = SubResource("Resource_by8rt")
 texture = ExtResource("9_mk55i")
