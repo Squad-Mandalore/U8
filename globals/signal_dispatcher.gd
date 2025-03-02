@@ -28,3 +28,6 @@ signal sound_music(name: String)
 signal combat_enter(enemy: Enemy)
 
 signal execute_attack(attack: Attack, active_combatant: String, passive_combatant: String)
+
+signal map_opened()
+signal map_exited()

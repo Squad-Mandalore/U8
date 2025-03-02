@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cu2j876adtdfh" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren_2.tscn" id="11_1m7y8"]
 [ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politician/politician_1.tscn" id="11_qvo2e"]
 [ext_resource type="PackedScene" uid="uid://4ylmn4pu3xfm" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren_3.tscn" id="12_485u2"]
-[ext_resource type="PackedScene" uid="uid://n1etnk880vy" path="res://scenes/stations/subscenes/seating_areas.tscn" id="12_go6jj"]
+[ext_resource type="PackedScene" uid="uid://ltew4h5q07ud" path="res://scenes/stations/subscenes/seating_areas.tscn" id="12_go6jj"]
 [ext_resource type="PackedScene" uid="uid://dv2v43jv13rjr" path="res://characters/automatas/drink/drink_vending_machine.tscn" id="13_i82bx"]
 [ext_resource type="PackedScene" uid="uid://bap2i51ju2efp" path="res://characters/automatas/ticket/ticket_vending_machine.tscn" id="14_nf21t"]
 [ext_resource type="PackedScene" uid="uid://40q6al2c4n4n" path="res://characters/automatas/snack/snack_vending_machine.tscn" id="15_htilo"]

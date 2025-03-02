@@ -187,6 +187,11 @@ func _unhandled_input(event: InputEvent):
 
     if event.is_action_pressed("ui_cancel"):
         if _inventory.visible or _shop_hud.visible:
+            if LevelListLoader.is_map_open:
+                SignalDispatcher.map_exited.emit()
+                LevelListLoader.is_map_open = false
+                get_viewport().set_input_as_handled()
+                return
             _stop_shopping()
             set_active_hud(_hud)
             SignalDispatcher.sound_effect.emit("exit")
