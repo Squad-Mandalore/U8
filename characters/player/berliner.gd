@@ -30,7 +30,7 @@ func _ready() -> void:
     SourceOfTruth.balance_changed(300)
     SignalDispatcher.load_meta_items.emit()
     SignalDispatcher.reload_ui.emit()
-    
+
     SignalDispatcher.allow_player_movement.connect(_allow_player_movement)
     SignalDispatcher.disallow_player_movement.connect(_disallow_player_movement)
 
@@ -41,13 +41,13 @@ func _ready() -> void:
 
 func _allow_player_movement():
     set_physics_process(true)
-    
+
     InputMap.add_action("inventory")
     InputMap.add_action("talk")
     InputMap.add_action("scoot")
     InputMap.add_action("map")
     InputMap.add_action("dance")
-    
+
     var keyI = InputEventKey.new()
     keyI.keycode = KEY_I
     InputMap.action_add_event("inventory", keyI)
@@ -55,22 +55,22 @@ func _allow_player_movement():
     var keyE = InputEventKey.new()
     keyE.keycode = KEY_E
     InputMap.action_add_event("talk", keyE)
-    
+
     var keyShift = InputEventKey.new()
     keyShift.keycode = KEY_SHIFT
     InputMap.action_add_event("scoot", keyShift)
-    
+
     var keyK = InputEventKey.new()
     keyK.keycode = KEY_K
     InputMap.action_add_event("map", keyK)
-    
+
     var keyJ = InputEventKey.new()
     keyJ.keycode = KEY_J
     InputMap.action_add_event("dance", keyJ)
-    
+
 func _disallow_player_movement():
     set_physics_process(false)
-    
+
     InputMap.erase_action("inventory")
     InputMap.erase_action("talk")
     InputMap.erase_action("scoot")
@@ -178,7 +178,6 @@ func switch_state(new_state: State):
                 speed_multiplier = 2.0
                 _sprite.play("scooting_horizontal")
 
-
 func _unhandled_input(event: InputEvent):
     if event.is_action_pressed("dance"):
         if _current_state == State.DANCE:
@@ -188,6 +187,11 @@ func _unhandled_input(event: InputEvent):
 
     if event.is_action_pressed("ui_cancel"):
         if _inventory.visible or _shop_hud.visible:
+            if LevelListLoader.is_map_open:
+                SignalDispatcher.map_exited.emit()
+                LevelListLoader.is_map_open = false
+                get_viewport().set_input_as_handled()
+                return
             _stop_shopping()
             set_active_hud(_hud)
             SignalDispatcher.sound_effect.emit("exit")

@@ -96,7 +96,10 @@ static func add_item(item: Item):
     for i in range(cur_inventory_size):
         if inventory_slots[i] == null:
             inventory_slots[i] = item
-            stats_changed(item.stats)
+            if !inventory_slots[i] is Consumable:
+                stats_changed(item.stats)
+            else:
+                SignalDispatcher.reload_ui.emit()
             return
 
 static func remove_item(i: int):
@@ -105,7 +108,14 @@ static func remove_item(i: int):
             var ephemeral_item = inventory_slots[i]
             inventory_slots[i] = null
             var negated_stats = ephemeral_item.stats.negate()
-            stats_changed(negated_stats)
+            if !ephemeral_item is Consumable:
+                stats_changed(negated_stats)
+            else:
+                SignalDispatcher.reload_ui.emit()
+                if ephemeral_item.effect_duration > 0:
+                    negated_stats.health = 0
+                    await Utils.create_timer(ephemeral_item.effect_duration)
+                    stats_changed(negated_stats)
         return
 
 static func swap_item(from: int, to: int):

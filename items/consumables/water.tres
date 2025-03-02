@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://sw3ats4atj50"]
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://bqvkq1v21w4r1"]
 
-[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_8h6jy"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="2_dl6or"]
-[ext_resource type="Texture2D" uid="uid://pixa8ml4dujx" path="res://items/consumables/assets/water.png" id="3_wu8ce"]
+[ext_resource type="Script" path="res://items/consumables/consumable.gd" id="1_8pyee"]
+[ext_resource type="Script" path="res://globals/attributes.gd" id="2_7a7fn"]
+[ext_resource type="Texture2D" uid="uid://pixa8ml4dujx" path="res://items/consumables/assets/water.png" id="3_r2afi"]
 
-[sub_resource type="Resource" id="Resource_hodkb"]
-script = ExtResource("2_dl6or")
+[sub_resource type="Resource" id="Resource_f76sd"]
+script = ExtResource("2_7a7fn")
 max_health = 0
 health = 25
 armor = 0
@@ -25,9 +25,10 @@ bleed_level = 0
 drug_level = 0
 
 [resource]
-script = ExtResource("1_8h6jy")
-stats = SubResource("Resource_hodkb")
+script = ExtResource("1_8pyee")
+effect_duration = 0
+stats = SubResource("Resource_f76sd")
 price = 2
 name = "Wasser"
 description = "Der klare Beweis, dass auch im reinsten Fluss der Dinge tiefe Gedanken schlummern."
-texture = ExtResource("3_wu8ce")
+texture = ExtResource("3_r2afi")

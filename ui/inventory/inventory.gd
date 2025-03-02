@@ -33,7 +33,7 @@ func _on_inventory_button_pressed() -> void:
 func _on_map_button_pressed() -> void:
     var slowpoke_tail = preload("res://items/weapons/slowpoke_tail.tres")
     SourceOfTruth.add_item(slowpoke_tail)
-    SourceOfTruth.add_meta_item(preload("res://items/meta/backpack.tres"))
+    SourceOfTruth.add_meta_item(preload("res://items/meta/map.tres"))
 
 func add_attack_hover(position: Vector2, attack: Attack):
     attack_hover = attack_hover_scene.instantiate()

@@ -44,6 +44,16 @@ func toggle_frame():
     else:
         enable()
 
+func is_hovered():
+    var item_slot: StyleBoxFlat = get_theme_stylebox("panel")
+    if "hovered" in item_slot.resource_path:
+        return true
+    return false
+
+func _unhandled_input(event: InputEvent):
+    if event.is_action_pressed("talk") && is_hovered() && item && item.has_method("interact"):
+        item.interact(index)
+
 func _on_mouse_entered() -> void:
     if is_enabled():
         add_theme_stylebox_override("panel", preload("res://ui/assets/item_slot_enabled_hovered.tres"))
