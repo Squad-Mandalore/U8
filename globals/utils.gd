@@ -124,3 +124,6 @@ const STATS_DICT = {
 func remove_all_children(parent: Node):
     for child in parent.get_children():
         child.queue_free()
+
+func create_timer(seconds: float):
+    return get_tree().create_timer(seconds, true, false, true).timeout

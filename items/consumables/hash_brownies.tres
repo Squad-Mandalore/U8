@@ -26,6 +26,7 @@ drug_level = 1
 
 [resource]
 script = ExtResource("1_b6var")
+effect_duration = 10
 stats = SubResource("Resource_gr5my")
 price = 50
 name = "Hash Brownies"

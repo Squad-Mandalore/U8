@@ -26,6 +26,7 @@ drug_level = 1
 
 [resource]
 script = ExtResource("1_mxbwg")
+effect_duration = 5
 stats = SubResource("Resource_p53ou")
 price = 5
 name = "Zigarette"

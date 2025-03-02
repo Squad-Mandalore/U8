@@ -26,6 +26,7 @@ drug_level = 2
 
 [resource]
 script = ExtResource("1_poohf")
+effect_duration = 50
 stats = SubResource("Resource_8t62b")
 price = 50
 name = "Heroin"
