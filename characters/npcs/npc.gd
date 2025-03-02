@@ -17,6 +17,7 @@ func _ready() -> void:
     if _random_name:
         _name = NameGenerator.get_random_name(_gender)
 
+
 func start_talking() -> void:
     _current_state = State.TALK
     enable_outline(Color(0, 0, 1, 1))
@@ -71,3 +72,10 @@ func pick_valid_direction() -> Vector2:
             return dir
 
     return Vector2.ZERO
+
+func start_animation(animation: String):
+    _sprite.animation = animation
+    _sprite.play()
+
+func stop_animation():
+    _sprite.stop()

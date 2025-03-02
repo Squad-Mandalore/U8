@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="U8"
-config/version="0.2.0"
+config/version="0.3.0"
 run/main_scene="res://ui/opening/opening_with_logo.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 run/max_fps=60
@@ -29,6 +29,8 @@ ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/autolo
 SignalDispatcher="*res://globals/signal_dispatcher.gd"
 Utils="*res://globals/utils.gd"
 NameGenerator="*res://globals/name_generator.gd"
+AudioManager="*res://globals/audio_manager.gd"
+SoundManager="*res://sound_manager.gd"
 Questomania="*res://globals/questomania.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 

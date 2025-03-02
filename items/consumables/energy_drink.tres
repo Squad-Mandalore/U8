@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://d0yqhmda2ifc8"]
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://cfy570t8dpp7q"]
 
-[ext_resource type="Script" path="res://items/item.gd" id="1_disc0"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="2_q7x7p"]
-[ext_resource type="Texture2D" uid="uid://nqcxuj51ggek" path="res://items/consumables/assets/energy_drink.png" id="3_nync8"]
+[ext_resource type="Script" path="res://items/consumables/consumable.gd" id="1_uq3uc"]
+[ext_resource type="Script" path="res://globals/attributes.gd" id="2_iabad"]
+[ext_resource type="Texture2D" uid="uid://nqcxuj51ggek" path="res://items/consumables/assets/energy_drink.png" id="3_hbhi6"]
 
-[sub_resource type="Resource" id="Resource_hodkb"]
-script = ExtResource("2_q7x7p")
+[sub_resource type="Resource" id="Resource_ycs4a"]
+script = ExtResource("2_iabad")
 max_health = 0
 health = 10
 armor = 0
@@ -25,9 +25,10 @@ bleed_level = 0
 drug_level = 0
 
 [resource]
-script = ExtResource("1_disc0")
+script = ExtResource("1_uq3uc")
+effect_duration = 30
+stats = SubResource("Resource_ycs4a")
+price = 5
 name = "Energy Drink"
 description = "Der Energy Drink wird dir die Energie geben die du brauchst um den stressigen Alltag zu überleben. (Der 2. beste Kaffe Ersatz)"
-stats = SubResource("Resource_hodkb")
-texture = ExtResource("3_nync8")
-price = 5
+texture = ExtResource("3_hbhi6")

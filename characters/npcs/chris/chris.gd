@@ -6,8 +6,6 @@ const CHRIS_ROBBERY_ID = 1
 const ANDREAS_REMEMBERS_ID = 2
 const ANDREAS_ROBBERY_ID = 3
 
-const WINNING_MONEY = 10
-
 var dialogue = preload("res://characters/npcs/chris/assets/chris_robbery.dialogue")
 
 func _ready() -> void:
@@ -17,7 +15,7 @@ func _ready() -> void:
     super._ready()
 
 func set_player_nearby(is_player_nearby : Player):
-    _player_nearby = is_player_nearby
+    super.set_player_nearby(is_player_nearby)
     if _player_nearby and not dishonest_brothers_quest.is_active():
         start_robbing()
 
@@ -53,9 +51,7 @@ func _let_robbing_happen():
     dishonest_brothers_quest.set_metadata("magenta", true)
     _robbing()
 
-func fight_lost():
-    print("Player won %d Euronen" % WINNING_MONEY)
-    SourceOfTruth.balance_changed(WINNING_MONEY)
+func fight_lost(calculate_money: Callable = _calculate_win):
+    super.fight_lost(calculate_money)
     dishonest_brothers_quest.get_subquest(ANDREAS_REMEMBERS_ID).set_active(true)
     dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID).set_rejected(true)
-

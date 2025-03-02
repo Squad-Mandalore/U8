@@ -1,6 +1,7 @@
 extends Enemy
 
 var dishonest_brothers_quest: QuestEntry = Questomania.quest_dict[DishonestBrothersQuest.NAME]
+var sun_glassses: Item = preload("res://items/armor/sun_glasses.tres")
 
 const CHRIS_ROBBERY_ID = 1
 const ANDREAS_REMEMBERS_ID = 2
@@ -8,8 +9,6 @@ const ANDREAS_ROBBERY_ID = 3
 var _chris_robbery_quest: QuestEntry = dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID)
 var _andreas_remembers_quest: QuestEntry = dishonest_brothers_quest.get_subquest(ANDREAS_REMEMBERS_ID)
 var _andreas_robbery_quest: QuestEntry = dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID)
-
-const WINNING_MONEY = 10
 
 # TODO: In the dialogue file replace [if false] with something like [if Questomania.quest_dict[StreikQuest.NAME].is_active()] if StreikQuest gets implemented
 var dialogue = preload("res://characters/npcs/andreas/assets/andreas_robbery.dialogue")
@@ -22,7 +21,7 @@ func _ready() -> void:
     super._ready()
 
 func set_player_nearby(is_player_nearby : Player):
-    _player_nearby = is_player_nearby
+    super.set_player_nearby(is_player_nearby)
     if not _player_nearby or not dishonest_brothers_quest.is_active():
         return
 
@@ -59,17 +58,16 @@ func _robbing(percent: float):
     _quest_robbery_complete()
 
 func _impressing():
-    # TODO: sonnenbrille geben
+    SourceOfTruth.add_item(sun_glassses)
     _quest_robbery_complete()
 
 
 func _let_robbing_happen():
-    dishonest_brothers_quest.set_meta("red", true)
+    dishonest_brothers_quest.set_metadata("red", true)
     _robbing(0.3)
 
-func fight_lost():
-    print("Player won %d Euronen" % WINNING_MONEY)
-    SourceOfTruth.balance_changed(WINNING_MONEY)
+func fight_lost(calculate_money: Callable = _calculate_win):
+    super.fight_lost(calculate_money)
     if _andreas_remembers_quest.is_active():
         _quest_remembers_complete()
     else:

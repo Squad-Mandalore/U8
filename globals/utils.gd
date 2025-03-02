@@ -114,9 +114,16 @@ const STATS_DICT = {
     "drug_level": {
         "texture": preload("res://ui/hud/assets/ck_3_bar.svg"),
         "display_name": "Drogenlevel"
+    },
+    "inventory_size": {
+        "texture": preload("res://items/meta/assets/backpack.png"),
+        "display_name": "Inventar Größe"
     }
 }
 
 func remove_all_children(parent: Node):
     for child in parent.get_children():
         child.queue_free()
+
+func create_timer(seconds: float):
+    return get_tree().create_timer(seconds, true, false, true).timeout

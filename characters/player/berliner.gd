@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-@onready var _animated_sprite_2d = $AnimatedSprite2D
+@onready var _sprite = $AnimatedSprite2D
 @onready var _slowdown_area: Area2D = $SlowdownArea
 @onready var _inventory: CanvasLayer = $Inventory
 @onready var _hud: CanvasLayer = $HUD
@@ -14,7 +14,8 @@ var _current_state: State = State.IDLE
 var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for scoot mode
 
 const SPEED: float = 102.0
-var speed_multiplier: float = 1.0
+
+@export var speed_multiplier: float = 1.0
 var _interactable_npc: PhysicsBody2D = null#:
     # set(value):
     #     if value.slowable:
@@ -27,13 +28,55 @@ func _ready() -> void:
     huds = [_inventory, _hud, _shop_hud, _dialogue_box]
     set_active_hud(_hud)
     SourceOfTruth.set_damage_for_all_attacks()
-    SourceOfTruth.balance_changed(10)
+    SourceOfTruth.balance_changed(300)
+    SignalDispatcher.load_meta_items.emit()
     SignalDispatcher.reload_ui.emit()
+
+    SignalDispatcher.allow_player_movement.connect(_allow_player_movement)
+    SignalDispatcher.disallow_player_movement.connect(_disallow_player_movement)
 
 # func _process(delta):
 #     pass
     # print("Player Position: " + str(self.global_position))
     # print("Camera Position: " + str(%InventoryCamera.global_position))
+
+func _allow_player_movement():
+    set_physics_process(true)
+
+    InputMap.add_action("inventory")
+    InputMap.add_action("talk")
+    InputMap.add_action("scoot")
+    InputMap.add_action("map")
+    InputMap.add_action("dance")
+
+    var keyI = InputEventKey.new()
+    keyI.keycode = KEY_I
+    InputMap.action_add_event("inventory", keyI)
+
+    var keyE = InputEventKey.new()
+    keyE.keycode = KEY_E
+    InputMap.action_add_event("talk", keyE)
+
+    var keyShift = InputEventKey.new()
+    keyShift.keycode = KEY_SHIFT
+    InputMap.action_add_event("scoot", keyShift)
+
+    var keyK = InputEventKey.new()
+    keyK.keycode = KEY_K
+    InputMap.action_add_event("map", keyK)
+
+    var keyJ = InputEventKey.new()
+    keyJ.keycode = KEY_J
+    InputMap.action_add_event("dance", keyJ)
+
+func _disallow_player_movement():
+    set_physics_process(false)
+
+    InputMap.erase_action("inventory")
+    InputMap.erase_action("talk")
+    InputMap.erase_action("scoot")
+    InputMap.erase_action("map")
+    InputMap.erase_action("dance")
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK or _current_state == State.DANCE:
@@ -47,10 +90,10 @@ func _physics_process(delta: float) -> void:
     var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
     var speed = SPEED * speed_multiplier
 
-    if direction.x < 0 and not _animated_sprite_2d.flip_h:
-        _animated_sprite_2d.flip_h = true
-    elif direction.x > 0 and _animated_sprite_2d.flip_h:
-        _animated_sprite_2d.flip_h = false
+    if direction.x < 0 and not _sprite.flip_h:
+        _sprite.flip_h = true
+    elif direction.x > 0 and _sprite.flip_h:
+        _sprite.flip_h = false
 
     if _interactable_npc:
         _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
@@ -70,9 +113,9 @@ func _handle_scooting(delta: float) -> void:
     var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
     if direction.x < 0:
-        _animated_sprite_2d.flip_h = true
+        _sprite.flip_h = true
     elif direction.x > 0:
-        _animated_sprite_2d.flip_h = false
+        _sprite.flip_h = false
 
     var speed = SPEED * 2
 
@@ -90,19 +133,19 @@ func _handle_scooting(delta: float) -> void:
 
     if vx == 0 and vy == 0:
         # Not moving: stop playing to keep the last frame
-        _animated_sprite_2d.pause()
+        _sprite.pause()
     else:
         # If moving predominantly up or down, pick the vertical animation, otherwise horizontal.
         if abs(vy) > abs(vx):
             if vy < 0:
-                _animated_sprite_2d.play("scooting_upwards")
+                _sprite.play("scooting_upwards")
             else:
-                _animated_sprite_2d.play("scooting_downwards")
+                _sprite.play("scooting_downwards")
         else:
-            _animated_sprite_2d.play("scooting_horizontal")
+            _sprite.play("scooting_horizontal")
 
         # Make sure the sprite is actively animating if it was previously stopped
-        _animated_sprite_2d.play()
+        _sprite.play()
 
     # -- Adjust animation speed based on how fast we’re moving --
     # The maximum length at top scoot speed is speed*2.
@@ -113,29 +156,28 @@ func _handle_scooting(delta: float) -> void:
     var speed_ratio = current_speed / max_speed
     # Scale up to 8 fps
     var desired_fps = speed_ratio * 8.0
-    _animated_sprite_2d.speed_scale = desired_fps
+    _sprite.speed_scale = desired_fps
 
 
 func switch_state(new_state: State):
     if new_state != _current_state:
         # If we're leaving SCOOT mode, reset animation speeds
         if _current_state == State.SCOOT:
-            _animated_sprite_2d.speed_scale = 1.0
+            _sprite.speed_scale = 1.0
             speed_multiplier = 1.0
         _current_state = new_state
         match _current_state:
             State.TALK:
-                _animated_sprite_2d.play("talk")
+                _sprite.play("talk")
             State.WALK:
-                _animated_sprite_2d.play("walk")
+                _sprite.play("walk")
             State.IDLE:
-                _animated_sprite_2d.play("idle")
+                _sprite.play("idle")
             State.DANCE:
-                _animated_sprite_2d.play("dance")
+                _sprite.play("dance")
             State.SCOOT:
                 speed_multiplier = 2.0
-                _animated_sprite_2d.play("scooting_horizontal")
-
+                _sprite.play("scooting_horizontal")
 
 func _unhandled_input(event: InputEvent):
     if event.is_action_pressed("dance"):
@@ -146,6 +188,11 @@ func _unhandled_input(event: InputEvent):
 
     if event.is_action_pressed("ui_cancel"):
         if _inventory.visible or _shop_hud.visible:
+            if LevelListLoader.is_map_open:
+                SignalDispatcher.map_exited.emit()
+                LevelListLoader.is_map_open = false
+                get_viewport().set_input_as_handled()
+                return
             _stop_shopping()
             set_active_hud(_hud)
             SignalDispatcher.sound_effect.emit("exit")
@@ -219,7 +266,7 @@ func _get_best_npc(npcs: Array[Node2D]) -> PhysicsBody2D:
     if npcs.is_empty():
         return null
 
-    var x_dir = -1.0 if _animated_sprite_2d.flip_h else 1.0
+    var x_dir = -1.0 if _sprite.flip_h else 1.0
     var facing_dir = Vector2(x_dir, 0.0)
 
     #  Among all NPCs, pick those "in front" of the player
@@ -315,3 +362,12 @@ func _stop_shopping():
     speed_multiplier = 1.0
     set_active_hud(_hud)
     switch_state(State.IDLE)
+
+
+func start_animation(animation: String):
+    _sprite.animation = animation
+    _sprite.play()
+
+func stop_animation():
+    _sprite.stop()
+

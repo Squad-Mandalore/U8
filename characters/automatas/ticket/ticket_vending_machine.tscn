@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bap2i51ju2efp"]
 
 [ext_resource type="Script" path="res://characters/automatas/automata.gd" id="1_ttc5p"]
-[ext_resource type="Script" path="res://items/item.gd" id="2_y817p"]
-[ext_resource type="Resource" uid="uid://dxrnq8hjfe8ic" path="res://items/armor/hobo_hoodie.tres" id="3_itlr5"]
+[ext_resource type="Script" path="res://items/item.gd" id="2_c86f6"]
+[ext_resource type="Resource" uid="uid://pd7g52g5l7le" path="res://items/meta/ticket.tres" id="3_hemij"]
 [ext_resource type="Texture2D" uid="uid://d1q0g62vdlmjr" path="res://characters/automatas/ticket/assets/ticket_vending_machine.png" id="4_nqfj3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1eypk"]
@@ -12,7 +12,7 @@ size = Vector2(20, 7)
 collision_layer = 5
 collision_mask = 0
 script = ExtResource("1_ttc5p")
-shop_inventory = Array[ExtResource("2_y817p")]([ExtResource("3_itlr5"), null, null, null, null, null, null, null])
+shop_inventory = Array[ExtResource("2_c86f6")]([ExtResource("3_hemij"), null, null, null, null, null, null, null])
 shop_name = "Ticketautomat"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

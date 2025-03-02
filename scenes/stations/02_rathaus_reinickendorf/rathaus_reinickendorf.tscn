@@ -32,8 +32,9 @@ position = Vector2(451, 343)
 [node name="CharacterBody2D" parent="." index="7" instance=ExtResource("6_5pq4l")]
 position = Vector2(397, 266)
 
-[node name="Fahrkartenkonrtolleurin" parent="." index="8" instance=ExtResource("7_1m0rv")]
-position = Vector2(379, 341)
+[node name="TicketInspector" parent="." index="8" instance=ExtResource("7_1m0rv")]
+z_index = 0
+position = Vector2(374, 199)
 
 [node name="Politiker" parent="." index="9" instance=ExtResource("8_wlhj5")]
 position = Vector2(412, 305)

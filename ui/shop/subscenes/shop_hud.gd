@@ -94,4 +94,3 @@ func update_damage():
         if item is Weapon:
             for attack in item.attacks:
                 attack.calculate_damage(SourceOfTruth.stats)
-

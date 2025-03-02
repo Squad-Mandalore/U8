@@ -1,1 +1,1 @@
-extends WalkingNpc
+extends Enemy
