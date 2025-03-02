@@ -116,7 +116,7 @@ const STATS_DICT = {
         "display_name": "Drogenlevel"
     },
     "inventory_size": {
-        "texture": preload("res://ui/hud/assets/coin.svg"),
+        "texture": preload("res://items/meta/assets/backpack.png"),
         "display_name": "Inventar Größe"
     }
 }
