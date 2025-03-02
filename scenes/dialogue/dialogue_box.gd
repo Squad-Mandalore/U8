@@ -52,11 +52,11 @@ func ensure_message_contents(message):
             and message[i] != '\t'
         ):
             return true
-        return false
+    return false
 
 func _on_button_pressed():
     if not waiting:
-    	var message = $MessageInput.text
+        var message = $MessageInput.text
         if validate_message(message):
             $MessageInput.clear()
             add_message("USER", message)
