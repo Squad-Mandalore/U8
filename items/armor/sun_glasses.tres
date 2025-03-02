@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://bo8geotvj2v4w"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://bo8geotvj2v4w"]
 
-[ext_resource type="Script" path="res://items/item.gd" id="1_1kf5v"]
+[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_1kf5v"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_oyo5x"]
 [ext_resource type="Texture2D" uid="uid://dd87y8yjtq82r" path="res://items/armor/assets/sun_glasses.png" id="3_7ft3w"]
 
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_1kf5v")
+stats = SubResource("Resource_hodkb")
+price = 60
 name = "Sonnenbrille"
 description = "Auch wenn in der U-Bahn nie die Sonne scheint, kannst du stets von uncoolen Leuten und ihrer unsagbaren Hässlichkeit geblendet werden."
-stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_7ft3w")
-price = 60

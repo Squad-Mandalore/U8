@@ -27,7 +27,8 @@ func _ready() -> void:
     huds = [_inventory, _hud, _shop_hud, _dialogue_box]
     set_active_hud(_hud)
     SourceOfTruth.set_damage_for_all_attacks()
-    SourceOfTruth.balance_changed(10)
+    SourceOfTruth.balance_changed(300)
+    SignalDispatcher.load_meta_items.emit()
     SignalDispatcher.reload_ui.emit()
 
 # func _process(delta):

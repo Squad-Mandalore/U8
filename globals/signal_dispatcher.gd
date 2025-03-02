@@ -14,6 +14,7 @@ signal update_shop_item_slots(to_free: int)
 signal add_attack_hover(position: Vector2, attack: Attack)
 signal remove_attack_hover()
 signal update_shop_dialogue_box(item: Item)
+signal load_meta_items()
 
 signal sound_effect(name: String)
 signal sound_music(name: String)

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://b3mrs5o5p116r"]
 
-[ext_resource type="Script" path="res://items/item.gd" id="1_tygtv"]
+[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_tygtv"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_22s7v"]
 [ext_resource type="Texture2D" uid="uid://4tdc6slc18u6" path="res://items/armor/assets/pink_sunglasses.png" id="3_cfwbi"]
 

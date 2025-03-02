@@ -15,9 +15,17 @@ static var balance: int:
 
 static var inventory_slots: Array[Item]:
     set(value):
+        print("inventory setter is called")
         RunState.set_inventory_slots(value)
     get():
         return RunState.get_inventory_slots()
+
+static var meta_inventory_slots: Array[MetaItem]:
+    set(value):
+        print("meta inventory setter is called")
+        GameState.set_meta_inventory_slots(value)
+    get():
+        return GameState.get_meta_inventory_slots()
 
 static var cur_inventory_size: int:
     set(value):
@@ -41,11 +49,58 @@ static func balance_changed(delta_balance: int):
     balance += delta_balance
     SignalDispatcher.reload_ui.emit()
 
+static func add_meta_item(item: MetaItem):
+    print(meta_inventory_slots)
+    # backpack has the index 0
+    if item is Backpack:
+        # check if backpack to add is bigger than current if it exists
+        if meta_inventory_slots[0]:
+            if item.inventory_size < meta_inventory_slots[0].inventory_size:
+                return
+        meta_inventory_slots[0] = item
+        print(meta_inventory_slots)
+        cur_inventory_size = item.inventory_size
+    # map has the index 1
+    if item is Map:
+        meta_inventory_slots[1] = item
+    # undefined has the index 2
+    # if item is TBD:
+    #     meta_inventory_slots[2] = item
+    # Manual has the index 3
+    # if item is Manual:
+    #     meta_inventory_slots[3] = item
+    # Diary has the index 4
+    # if item is Diary:
+    #     meta_inventory_slots[4] = item
+    # gun licence has the index 5
+    if item is GunLicence:
+        # check if gun licence to add is bigger than current if it exists
+        if meta_inventory_slots[5]:
+            if item.ticket_class < meta_inventory_slots[5].ticket_class:
+                return
+        meta_inventory_slots[5] = item
+    # ticket has the index 6
+    if item is Ticket:
+        # check if ticket to add is bigger than current if it exists
+        if meta_inventory_slots[6]:
+            if item.ticket_class < meta_inventory_slots[6].ticket_class:
+                return
+        meta_inventory_slots[6] = item
+    SignalDispatcher.load_meta_items.emit()
+
+static func remove_meta_item(i: int):
+    # if backpack is removed reset cur_inventory_size to default size
+    if i == 0:
+        cur_inventory_size = 4
+    meta_inventory_slots[i] = null
+    SignalDispatcher.load_meta_items.emit()
+
 static func add_item(item: Item):
-    # TODO: else case
+    # TODO: else case (inventory is full)
     for i in range(cur_inventory_size):
         if inventory_slots[i] == null:
             inventory_slots[i] = item
+            print(inventory_slots)
             stats_changed(item.stats)
             return
 

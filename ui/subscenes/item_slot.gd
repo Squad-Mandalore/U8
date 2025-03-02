@@ -1,7 +1,11 @@
 extends PanelContainer
 
 var index: int
-var item: Item
+var item: Item:
+    set(value):
+        item = value
+        if value is MetaItem:
+            enable()
 var ck3_progress_bar_value: int
 var is_shop_slot: bool = false
 
@@ -56,7 +60,7 @@ func _on_mouse_exited() -> void:
             SignalDispatcher.toggle_item_hud.emit(null)
 
 func _get_drag_data(at_position: Vector2) -> Variant:
-    if !is_enabled():
+    if !is_enabled() || (item is MetaItem && !is_shop_slot):
         return
     var data = {}
 
@@ -75,7 +79,7 @@ func _get_drag_data(at_position: Vector2) -> Variant:
     return data
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-    return is_enabled() and !is_shop_slot
+    return is_enabled() and !is_shop_slot and !item is MetaItem
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
     var from: int = data["index"]

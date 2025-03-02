@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://cyltwctk6tq4w"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://cyltwctk6tq4w"]
 
-[ext_resource type="Script" path="res://items/item.gd" id="1_o8rwb"]
+[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_o8rwb"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_g42sc"]
 [ext_resource type="Texture2D" uid="uid://bsjb5ohivc0o0" path="res://items/consumables/assets/heroin.png" id="3_yy63l"]
 
@@ -26,8 +26,8 @@ drug_level = 2
 
 [resource]
 script = ExtResource("1_o8rwb")
+stats = SubResource("Resource_hodkb")
+price = 50
 name = "Heroin"
 description = "So verführerisch der Kick auch scheint – der Preis ist hoch. Denk drüber nach."
-stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_yy63l")
-price = 50

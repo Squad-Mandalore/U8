@@ -17,16 +17,30 @@ func set_item_name(item: Item):
     (%ItemNameLabel as Label).text = item.name
 
 func set_item_price(item: Item, is_shop_slot: bool):
-    var price = item.price
-    if !is_shop_slot:
-        price = SourceOfTruth.calculate_selling_price(item.price)
-
-    %CostsLabel.text = str(price) + " Euronen"
+    if item.has_meta("price"):
+        var price = item.price
+        if !is_shop_slot:
+            price = SourceOfTruth.calculate_selling_price(item.price)
+        %CostsLabel.text = str(price) + " Euronen"
+        return
+    if item is MetaItem:
+        %CostsLabel.text = "Not for sale"
+        return
 
 func set_item_description(item: Item):
     (%ItemDescriptionLabel as RichTextLabel).text = item.description
 
 func set_stats(item: Item):
+    if item is Backpack:
+        var new_stat_row = new_stat_row_scene.instantiate()
+        var property_name = "inventory_size"
+        %StatVBox.add_child(new_stat_row)
+        # 4 is the default inventory size
+        new_stat_row.set_stat_label(item.inventory_size - 4, Utils.STATS_DICT[property_name]["display_name"])
+        new_stat_row.set_stat_icon(Utils.STATS_DICT[property_name]["texture"])
+        return
+    if item is MetaItem:
+        return
     for property in item.stats.get_property_list():
         # Check if the property name exists in stats_dict
         if Utils.STATS_DICT.has(property.name):
@@ -47,4 +61,3 @@ func _handle_weapon(item: Weapon):
     %AttackSwapper.max_attacks = 2 # this line MUST be executed before the attacks are set
     %AttackSwapper.attacks = item.attacks
     %AttackSwapper.change_margin(Vector4(0,0,0,0))
-

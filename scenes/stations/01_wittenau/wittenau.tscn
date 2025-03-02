@@ -36,6 +36,33 @@ b = Vector2(-1, 312)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0h8n"]
 size = Vector2(33, 20)
 
+[sub_resource type="Animation" id="Animation_dfl7g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Berliner:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(961, 210)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/OlafScholz:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(962, 168)]
+}
+
 [sub_resource type="Animation" id="Animation_lqfb8"]
 resource_name = "olaf_initial_battle"
 length = 2.0
@@ -128,33 +155,6 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(0.25, 1),
 "update": 2,
 "values": [Vector2(961, 190), Vector2(1000, 250)]
-}
-
-[sub_resource type="Animation" id="Animation_dfl7g"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Berliner:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(961, 210)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/OlafScholz:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(962, 168)]
 }
 
 [sub_resource type="Animation" id="Animation_lsgha"]
@@ -381,7 +381,7 @@ z_index = 0
 position = Vector2(962, 168)
 
 [node name="DrinkVendingMachine" parent="Node2D" instance=ExtResource("13_i82bx")]
-position = Vector2(837, 283)
+position = Vector2(837, 282)
 
 [node name="SnackVendingMachine2" parent="Node2D" instance=ExtResource("15_htilo")]
 position = Vector2(808, 282)
