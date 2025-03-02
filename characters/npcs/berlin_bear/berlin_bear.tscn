@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7pol"]
-size = Vector2(16, 6)
+size = Vector2(32, 8)
 
 [node name="BerlinBear" type="CharacterBody2D"]
 z_index = 50
@@ -31,6 +31,7 @@ autoplay = "idle"
 offset = Vector2(1, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -4)
 shape = SubResource("RectangleShape2D_y7pol")
 
 [node name="Timer" type="Timer" parent="."]

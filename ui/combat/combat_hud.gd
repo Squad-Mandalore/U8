@@ -18,11 +18,7 @@ func _ready() -> void:
     SignalDispatcher.add_attack_hover.connect(add_attack_hover)
     SignalDispatcher.remove_attack_hover.connect(remove_attack_hover)
     SignalDispatcher.execute_attack.connect(execute_attack)
-<<<<<<< HEAD
-    SignalDispatcher.player_zero_health.connect(exit_combat)
-=======
     SignalDispatcher.player_zero_health.connect(_player_lost)
->>>>>>> dev
     half_turn_counter = 0
     first_start = calculate_first_start()
     if first_start:
@@ -192,7 +188,3 @@ func _player_lost():
 func _player_won():
     # TODO: win screen here and on click combat exit
     SignalDispatcher.combat_exit.emit(get_parent())
-
-    
-func _player_won():   
-    SignalDispatcher.player_won_combat.emit(get_parent())
