@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dv2v43jv13rjr"]
 
 [ext_resource type="Script" path="res://characters/automatas/automata.gd" id="1_04lny"]
-[ext_resource type="Script" path="res://items/inventory_item.gd" id="2_7bg4v"]
-[ext_resource type="Resource" uid="uid://dtce7gvhrbf0s" path="res://items/consumables/beer.tres" id="3_p3o0g"]
-[ext_resource type="Resource" uid="uid://d0yqhmda2ifc8" path="res://items/consumables/energy_drink.tres" id="4_mw7g5"]
+[ext_resource type="Script" path="res://items/item.gd" id="2_4k457"]
+[ext_resource type="Resource" uid="uid://clt1nbxyo18mk" path="res://items/consumables/beer.tres" id="3_p3o0g"]
+[ext_resource type="Resource" uid="uid://k8qm43eayyrc" path="res://items/consumables/energy_drink.tres" id="4_mw7g5"]
 [ext_resource type="Texture2D" uid="uid://bl3c0je5u73fw" path="res://characters/automatas/drink/assets/drink_vending_machine.png" id="4_xjtp7"]
-[ext_resource type="Resource" uid="uid://sw3ats4atj50" path="res://items/consumables/water.tres" id="5_vnklm"]
+[ext_resource type="Resource" uid="uid://mjyrfogy4e27" path="res://items/consumables/water.tres" id="5_vnklm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1eypk"]
 size = Vector2(20, 7)
@@ -14,7 +14,7 @@ size = Vector2(20, 7)
 collision_layer = 5
 collision_mask = 0
 script = ExtResource("1_04lny")
-shop_inventory = Array[ExtResource("2_7bg4v")]([ExtResource("3_p3o0g"), ExtResource("4_mw7g5"), ExtResource("5_vnklm"), null, null, null, null, null])
+shop_inventory = Array[ExtResource("2_4k457")]([ExtResource("3_p3o0g"), ExtResource("4_mw7g5"), ExtResource("5_vnklm"), null, null, null, null, null])
 shop_name = "Getränkeautomat"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

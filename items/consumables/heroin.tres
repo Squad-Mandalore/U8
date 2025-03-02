@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://cyltwctk6tq4w"]
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://5xm857oohqkc"]
 
-[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_o8rwb"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="2_g42sc"]
-[ext_resource type="Texture2D" uid="uid://bsjb5ohivc0o0" path="res://items/consumables/assets/heroin.png" id="3_yy63l"]
+[ext_resource type="Script" path="res://items/consumables/consumable.gd" id="1_poohf"]
+[ext_resource type="Script" path="res://globals/attributes.gd" id="2_03ifs"]
+[ext_resource type="Texture2D" uid="uid://bsjb5ohivc0o0" path="res://items/consumables/assets/heroin.png" id="3_f8165"]
 
-[sub_resource type="Resource" id="Resource_hodkb"]
-script = ExtResource("2_g42sc")
+[sub_resource type="Resource" id="Resource_8t62b"]
+script = ExtResource("2_03ifs")
 max_health = 0
 health = 0
 armor = 0
@@ -25,9 +25,9 @@ bleed_level = 0
 drug_level = 2
 
 [resource]
-script = ExtResource("1_o8rwb")
-stats = SubResource("Resource_hodkb")
+script = ExtResource("1_poohf")
+stats = SubResource("Resource_8t62b")
 price = 50
 name = "Heroin"
 description = "So verführerisch der Kick auch scheint – der Preis ist hoch. Denk drüber nach."
-texture = ExtResource("3_yy63l")
+texture = ExtResource("3_f8165")

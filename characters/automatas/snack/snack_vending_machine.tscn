@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://40q6al2c4n4n"]
 
 [ext_resource type="Script" path="res://characters/automatas/automata.gd" id="1_0t7m3"]
-[ext_resource type="Script" path="res://items/inventory_item.gd" id="2_hdlbx"]
-[ext_resource type="Resource" uid="uid://d348vx6lpp2gq" path="res://items/consumables/hash_brownies.tres" id="3_15wnu"]
-[ext_resource type="Resource" uid="uid://cyphc77n8k731" path="res://items/consumables/potato.tres" id="4_lsxso"]
+[ext_resource type="Script" path="res://items/item.gd" id="2_vdv0g"]
+[ext_resource type="Resource" uid="uid://d1wjxc7kupden" path="res://items/consumables/hash_brownies.tres" id="3_15wnu"]
+[ext_resource type="Resource" uid="uid://brecpjrathqvd" path="res://items/consumables/potato.tres" id="4_lsxso"]
 [ext_resource type="Texture2D" uid="uid://bk62howen4nad" path="res://characters/automatas/snack/assets/snack_vending_machine.png" id="4_qdfgr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1eypk"]
@@ -13,7 +13,7 @@ size = Vector2(20, 7)
 collision_layer = 5
 collision_mask = 0
 script = ExtResource("1_0t7m3")
-shop_inventory = Array[ExtResource("2_hdlbx")]([ExtResource("3_15wnu"), ExtResource("4_lsxso"), null, null, null, null, null, null])
+shop_inventory = Array[ExtResource("2_vdv0g")]([ExtResource("3_15wnu"), ExtResource("4_lsxso"), null, null, null, null, null, null])
 shop_name = "Snackautomat"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
