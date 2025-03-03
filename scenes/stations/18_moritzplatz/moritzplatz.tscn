@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dh8p5cvwbvru1"]
+[gd_scene load_steps=10 format=3 uid="uid://dh8p5cvwbvru1"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_a4e58"]
 [ext_resource type="Script" path="res://scenes/stations/18_moritzplatz/moritzplatz.gd" id="2_f2bji"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://chcddawhixf27" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_fight_floor.png" id="4_l4s7x"]
 [ext_resource type="Texture2D" uid="uid://banru5a6yw6w4" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_background.png" id="5_rlb3x"]
 [ext_resource type="LabelSettings" uid="uid://dfcof0bqgjsys" path="res://scenes/stations/assets/station_name_label_settings_white_on_black.tres" id="6_aqh51"]
+[ext_resource type="PackedScene" uid="uid://b4otvyfs5p5ek" path="res://characters/npcs/moritz/moritz.tscn" id="7_cc0o7"]
 [ext_resource type="Texture2D" uid="uid://c3kg4jodjsiyd" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_floor.png" id="7_du223"]
 [ext_resource type="PackedScene" uid="uid://vj27q0c8e2sh" path="res://scenes/stations/18_moritzplatz/subscenes/tower.tscn" id="8_fedqd"]
 
@@ -22,10 +23,13 @@ text = "Moritzplatz
 "
 label_settings = ExtResource("6_aqh51")
 
-[node name="Floor" parent="Node2D" index="0"]
+[node name="Moritz" parent="Node2D" index="0" instance=ExtResource("7_cc0o7")]
+position = Vector2(451, 301)
+
+[node name="Floor" parent="Node2D" index="1"]
 texture = ExtResource("7_du223")
 
-[node name="Towers" type="CanvasGroup" parent="Node2D" index="4"]
+[node name="Towers" type="CanvasGroup" parent="Node2D" index="5"]
 y_sort_enabled = true
 
 [node name="Tower" parent="Node2D/Towers" index="0" instance=ExtResource("8_fedqd")]
