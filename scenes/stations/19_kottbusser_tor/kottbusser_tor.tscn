@@ -95,3 +95,12 @@ position = Vector2(907, 418)
 
 [node name="Tower16" parent="Node2D/CanvasGroup" index="15" instance=ExtResource("5_pkq03")]
 position = Vector2(1033, 418)
+
+[node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
+position = Vector2(343, 323)
+
+[node name="SeatingArea2" parent="Node2D/SeatingAreas" index="1"]
+position = Vector2(592, 323)
+
+[node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
+position = Vector2(845, 323)

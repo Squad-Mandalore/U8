@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dxtsv1xtfd42n"]
+[gd_scene load_steps=31 format=3 uid="uid://dxtsv1xtfd42n"]
 
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
 [ext_resource type="Script" path="res://scenes/stations/01_wittenau/wittenau.gd" id="1_vdt2h"]
@@ -6,6 +6,7 @@
 [ext_resource type="LabelSettings" uid="uid://c0xesi3rt8odi" path="res://scenes/stations/assets/station_name_label_settings_white.tres" id="3_job2n"]
 [ext_resource type="Texture2D" uid="uid://dyqe16uee6oon" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_fight_floor.png" id="3_rimlc"]
 [ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://scenes/stations/01_wittenau/subscenes/tower.tscn" id="4_wvqyq"]
+[ext_resource type="Script" path="res://scenes/stations/navregion.gd" id="5_0xogt"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="6_fup5h"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="7_5owx3"]
 [ext_resource type="AudioStream" uid="uid://77spiseg4rer" path="res://assets/sounds/music/station_music.wav" id="8_4q2iq"]
@@ -17,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dv2v43jv13rjr" path="res://characters/automatas/drink/drink_vending_machine.tscn" id="13_i82bx"]
 [ext_resource type="PackedScene" uid="uid://bap2i51ju2efp" path="res://characters/automatas/ticket/ticket_vending_machine.tscn" id="14_nf21t"]
 [ext_resource type="PackedScene" uid="uid://40q6al2c4n4n" path="res://characters/automatas/snack/snack_vending_machine.tscn" id="15_htilo"]
+[ext_resource type="PackedScene" uid="uid://dkxkayaw41poa" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/trashcan_extinguisher.tscn" id="18_1s6m8"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
 b = Vector2(822, 0)
@@ -32,6 +34,11 @@ b = Vector2(-1945, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_a187x"]
 b = Vector2(-1, 312)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_6fvqj"]
+vertices = PackedVector2Array(857, 265, 760, 265, 264, 262, 382, 262, 905, 262, 955, 262, 1744.5, 312, 1623.5, 312, 857, 292, 1964.06, 489, 41.0938, 489.992, 264, 431.5, 382, 431.5, 1794, 398.5, 1744, 398.5, 383.5, 345, 603.5, 345, 1744.5, 345, 1794, 262, 1965.93, 201.977, 214, 431.5, 1744, 262, 1794, 229, 43.8984, 199.008, 1744, 229, 214, 398.5, 1627, 262, 1627, 229, 1577, 229, 1623.5, 345, 1410.5, 345, 1410.5, 312, 1289.5, 312, 1744, 431.5, 1627, 431.5, 1627, 398.5, 1577, 398.5, 760, 292, 724.5, 312, 603.5, 312, 768, 262, 768, 229, 905, 229, 1459, 262, 1459, 229, 1577, 262, 1794, 431.5, 262.5, 345, 264, 398.5, 214, 262, 1408, 229, 1408, 262, 1291, 262, 1291, 229, 1241, 229, 1577, 431.5, 1459, 431.5, 1459, 398.5, 1408, 398.5, 1289.5, 345, 1074.5, 345, 1074.5, 312, 953.5, 312, 953.5, 345, 724.5, 345, 1408, 431.5, 1291, 431.5, 1291, 398.5, 1241, 398.5, 1241, 262, 1122, 262, 1122, 229, 1072, 229, 1241, 431.5, 1122, 431.5, 1122, 398.5, 1072, 398.5, 1072, 262, 955, 229, 718, 229, 383.5, 312, 1072, 431.5, 955, 431.5, 955, 398.5, 905, 398.5, 905, 431.5, 768, 431.5, 768, 398.5, 718, 398.5, 262.5, 312, 718, 431.5, 601, 431.5, 601, 398.5, 551, 398.5, 551, 431.5, 432, 398.5, 432, 431.5, 382, 398.5, 214, 229, 264, 229, 718, 262, 601, 262, 601, 229, 551, 229, 551, 262, 432, 262, 432, 229, 382, 229)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8, 0), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 6, 18, 19, 9, 13), PackedInt32Array(20, 11, 10), PackedInt32Array(21, 18, 6), PackedInt32Array(19, 18, 22), PackedInt32Array(23, 19, 22, 24), PackedInt32Array(20, 10, 23, 25), PackedInt32Array(24, 21, 26, 27), PackedInt32Array(23, 24, 27), PackedInt32Array(23, 27, 28), PackedInt32Array(7, 29, 30, 31), PackedInt32Array(8, 7, 31), PackedInt32Array(8, 31, 32), PackedInt32Array(14, 33, 34, 35), PackedInt32Array(15, 14, 35), PackedInt32Array(15, 35, 36), PackedInt32Array(2, 1, 37, 38, 39), PackedInt32Array(26, 21, 6), PackedInt32Array(0, 40, 41, 42, 4), PackedInt32Array(6, 43, 44, 45), PackedInt32Array(9, 46, 13), PackedInt32Array(47, 48, 25, 23, 49), PackedInt32Array(29, 17, 13), PackedInt32Array(45, 26, 6), PackedInt32Array(28, 45, 44), PackedInt32Array(23, 28, 44), PackedInt32Array(23, 44, 50), PackedInt32Array(33, 46, 9), PackedInt32Array(30, 29, 13), PackedInt32Array(34, 33, 9), PackedInt32Array(51, 43, 6), PackedInt32Array(51, 6, 52), PackedInt32Array(50, 51, 52, 53), PackedInt32Array(23, 50, 53), PackedInt32Array(23, 53, 54), PackedInt32Array(55, 34, 9), PackedInt32Array(55, 9, 56), PackedInt32Array(36, 55, 56, 57), PackedInt32Array(15, 36, 57), PackedInt32Array(15, 57, 58), PackedInt32Array(59, 30, 13), PackedInt32Array(59, 13, 60), PackedInt32Array(32, 59, 60, 61), PackedInt32Array(8, 32, 61), PackedInt32Array(8, 61, 62), PackedInt32Array(37, 8, 62, 63, 64, 38), PackedInt32Array(65, 56, 9), PackedInt32Array(65, 9, 66), PackedInt32Array(58, 65, 66, 67), PackedInt32Array(15, 58, 67), PackedInt32Array(15, 67, 68), PackedInt32Array(69, 52, 6), PackedInt32Array(69, 6, 70), PackedInt32Array(54, 69, 70, 71), PackedInt32Array(23, 54, 71), PackedInt32Array(23, 71, 72), PackedInt32Array(73, 66, 9), PackedInt32Array(73, 9, 74), PackedInt32Array(68, 73, 74, 75), PackedInt32Array(15, 68, 75), PackedInt32Array(15, 75, 76, 47), PackedInt32Array(77, 70, 6), PackedInt32Array(77, 6, 5), PackedInt32Array(72, 77, 5, 78), PackedInt32Array(23, 72, 78), PackedInt32Array(23, 78, 42), PackedInt32Array(23, 42, 41), PackedInt32Array(23, 41, 79), PackedInt32Array(63, 60, 13), PackedInt32Array(63, 13, 64), PackedInt32Array(49, 2, 39, 16, 80), PackedInt32Array(81, 74, 9), PackedInt32Array(81, 9, 82), PackedInt32Array(76, 81, 82, 83), PackedInt32Array(47, 76, 83), PackedInt32Array(47, 83, 84), PackedInt32Array(85, 82, 9), PackedInt32Array(85, 9, 86), PackedInt32Array(84, 85, 86, 87), PackedInt32Array(47, 84, 87), PackedInt32Array(47, 87, 88), PackedInt32Array(16, 64, 13), PackedInt32Array(16, 15, 80), PackedInt32Array(49, 80, 89), PackedInt32Array(49, 89, 47), PackedInt32Array(90, 86, 9), PackedInt32Array(90, 9, 91), PackedInt32Array(88, 90, 91, 92), PackedInt32Array(47, 88, 92), PackedInt32Array(47, 92, 93), PackedInt32Array(47, 93, 94, 95), PackedInt32Array(94, 91, 9), PackedInt32Array(94, 9, 96), PackedInt32Array(94, 96, 95), PackedInt32Array(47, 95, 97), PackedInt32Array(47, 97, 12, 48), PackedInt32Array(12, 96, 9), PackedInt32Array(12, 11, 48), PackedInt32Array(98, 49, 23), PackedInt32Array(99, 98, 23), PackedInt32Array(100, 40, 0), PackedInt32Array(100, 0, 101), PackedInt32Array(79, 100, 101, 102), PackedInt32Array(23, 79, 102), PackedInt32Array(23, 102, 103), PackedInt32Array(104, 101, 0), PackedInt32Array(104, 0, 105), PackedInt32Array(103, 104, 105, 106), PackedInt32Array(23, 103, 106), PackedInt32Array(23, 106, 107), PackedInt32Array(99, 23, 107), PackedInt32Array(99, 107, 3, 2), PackedInt32Array(0, 3, 105)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(34, 189, 1976, 192, 1974, 499, 31, 500)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0h8n"]
 size = Vector2(33, 20)
@@ -245,8 +252,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="NavigationRegion2D" parent="."]
 y_sort_enabled = true
+navigation_polygon = SubResource("NavigationPolygon_6fvqj")
+script = ExtResource("5_0xogt")
 
 [node name="Berliner" parent="Node2D" instance=ExtResource("1_gtc8i")]
 z_index = 0
@@ -406,6 +415,9 @@ position = Vector2(1350, 323)
 
 [node name="SeatingArea5" parent="Node2D/SeatingAreas" instance=ExtResource("12_go6jj")]
 position = Vector2(1684, 323)
+
+[node name="TrashcanExtinguisher" parent="Node2D" instance=ExtResource("18_1s6m8")]
+position = Vector2(484, 333)
 
 [node name="TrainDoor" type="Area2D" parent="."]
 position = Vector2(962, 186)

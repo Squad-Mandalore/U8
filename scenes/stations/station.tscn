@@ -1,14 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://cr0oss7rkk1ta"]
+[gd_scene load_steps=22 format=3 uid="uid://cr0oss7rkk1ta"]
 
 [ext_resource type="Script" path="res://scenes/stations/station.gd" id="1_ppg4l"]
 [ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="1_q1w2b"]
 [ext_resource type="PackedScene" uid="uid://dbbc33em4xtbm" path="res://scenes/stations/subscenes/animation_train.tscn" id="2_xadlq"]
 [ext_resource type="Texture2D" uid="uid://cu657kuv6vc5n" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-floor.png" id="3_l3pjy"]
+[ext_resource type="Script" path="res://scenes/stations/navregion.gd" id="4_jb3ik"]
 [ext_resource type="LabelSettings" uid="uid://baukomuw01ajv" path="res://scenes/stations/assets/station_name_label_settings_black.tres" id="5_0teva"]
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="6_h3ce4"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="7_m0iis"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="8_xs470"]
 [ext_resource type="PackedScene" uid="uid://ltew4h5q07ud" path="res://scenes/stations/subscenes/seating_areas.tscn" id="9_1wjs1"]
+[ext_resource type="PackedScene" uid="uid://dkxkayaw41poa" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/trashcan_extinguisher.tscn" id="10_o38ik"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kke8e"]
 b = Vector2(98, 0)
@@ -149,6 +151,11 @@ _data = {
 "train_leave": SubResource("Animation_ygpp7")
 }
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ufycs"]
+vertices = PackedVector2Array(963.5, 345, 1181.82, 482.078, 68.4375, 491.898, 842.5, 345, 629.5, 345, 842.5, 312, 508.5, 345, 1176.17, 165.008, 963.5, 312, 82.5703, 166.977, 287.5, 345, 287.5, 312, 508.5, 312, 166.5, 345, 166.5, 312, 629.5, 312)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 4, 2), PackedInt32Array(7, 1, 0, 8), PackedInt32Array(9, 7, 8, 5), PackedInt32Array(10, 11, 12, 6), PackedInt32Array(10, 6, 2), PackedInt32Array(13, 10, 2), PackedInt32Array(13, 2, 9, 14), PackedInt32Array(5, 4, 15), PackedInt32Array(9, 5, 15), PackedInt32Array(9, 15, 12), PackedInt32Array(9, 12, 11), PackedInt32Array(9, 11, 14)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(73, 157, 1186, 155, 1192, 492, 58, 502)])
+
 [node name="Station" type="Node2D"]
 script = ExtResource("1_ppg4l")
 
@@ -198,8 +205,10 @@ libraries = {
 "": SubResource("AnimationLibrary_6ecwe")
 }
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="NavigationRegion2D" parent="."]
 y_sort_enabled = true
+navigation_polygon = SubResource("NavigationPolygon_ufycs")
+script = ExtResource("4_jb3ik")
 
 [node name="Floor" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
@@ -263,6 +272,9 @@ position = Vector2(569, 323)
 
 [node name="SeatingArea3" parent="Node2D/SeatingAreas" instance=ExtResource("9_1wjs1")]
 position = Vector2(903, 323)
+
+[node name="TrashcanExtinguisher" parent="Node2D" instance=ExtResource("10_o38ik")]
+position = Vector2(811, 379)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Node2D/AnimationTrain" to="." method="_on_area_2d_body_entered"]

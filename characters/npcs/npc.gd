@@ -16,6 +16,10 @@ func _ready() -> void:
     _current_state = State.IDLE
     if _random_name:
         _name = NameGenerator.get_random_name(_gender)
+    _child_ready()
+        
+func _child_ready() -> void:
+    pass
 
 
 func start_talking() -> void:

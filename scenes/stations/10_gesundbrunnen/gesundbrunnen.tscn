@@ -77,5 +77,5 @@ position = Vector2(820, 421)
 [node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("5_61ge1")]
 position = Vector2(988, 421)
 
-[node name="Lifeguard" parent="." index="4" instance=ExtResource("7_lnb3s")]
+[node name="Lifeguard" parent="." index="3" instance=ExtResource("7_lnb3s")]
 position = Vector2(403, 242)

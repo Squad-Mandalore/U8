@@ -1,4 +1,5 @@
 extends StaticBody2D
+class_name SeatingArea
 
 @onready var timer: Timer = $Timer
 @onready var _fire_left: Node2D = $Fire
@@ -10,7 +11,7 @@ func _ready() -> void:
     set_random_timer()
 
 func set_random_timer() -> void:
-    var wait_time = randf_range(30.0, 180.0)
+    var wait_time = randf_range(20.0, 40.0)
     timer.wait_time = wait_time
     timer.start()    
 

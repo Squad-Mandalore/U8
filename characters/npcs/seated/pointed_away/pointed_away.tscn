@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://cpexaj7c7wxu2"]
 
 [ext_resource type="Script" path="res://characters/npcs/seated/seated_npc.gd" id="1_83b4y"]
-[ext_resource type="Texture2D" uid="uid://3giwpc7ldtff" path="res://characters/npcs/seated/pointed_away/assets/las_chicas_y_los_chicos_mirando_hacia_otro_lado..png" id="2_4kdrd"]
+[ext_resource type="Texture2D" uid="uid://3giwpc7ldtff" path="res://characters/npcs/seated/pointed_away/assets/las_chicas_y_los_chicos_mirando_hacia_otro_lado.png" id="2_4kdrd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo3t6"]
 size = Vector2(14, 3.5)
