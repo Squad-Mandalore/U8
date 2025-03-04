@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://h7oswlqu4ie4"]
+[gd_scene load_steps=10 format=3 uid="uid://h7oswlqu4ie4"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_dogv2"]
 [ext_resource type="Script" path="res://scenes/stations/10_gesundbrunnen/gesundbrunnen.gd" id="2_547o6"]
@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dgftgtve5d87c" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen-fight-floor.png" id="4_2iy2d"]
 [ext_resource type="PackedScene" uid="uid://b1yn58qi28tmj" path="res://scenes/stations/10_gesundbrunnen/subscenes/tower.tscn" id="5_61ge1"]
 [ext_resource type="LabelSettings" uid="uid://dfcof0bqgjsys" path="res://scenes/stations/assets/station_name_label_settings_white_on_black.tres" id="5_pfb4y"]
-[ext_resource type="PackedScene" uid="uid://b4v2kxxwx22uq" path="res://characters/npcs/lifeguard/lifeguard.tscn" id="7_lnb3s"]
+[ext_resource type="Texture2D" uid="uid://b5laifyplcahj" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen_floor.png" id="7_65kk3"]
+[ext_resource type="PackedScene" uid="uid://cmo1bqievd0uc" path="res://characters/npcs/bodybuilder/bodybuilder.tscn" id="8_s5o5c"]
 
 [node name="Gesundbrunnen" instance=ExtResource("1_dogv2")]
 script = ExtResource("2_547o6")
@@ -37,6 +38,9 @@ grow_horizontal = 1
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "GESUNDBRUNNEN"
 label_settings = ExtResource("5_pfb4y")
+
+[node name="Floor" parent="Node2D" index="0"]
+texture = ExtResource("7_65kk3")
 
 [node name="Towers" type="CanvasGroup" parent="Node2D" index="2"]
 y_sort_enabled = true
@@ -77,5 +81,5 @@ position = Vector2(820, 421)
 [node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("5_61ge1")]
 position = Vector2(988, 421)
 
-[node name="Lifeguard" parent="." index="4" instance=ExtResource("7_lnb3s")]
-position = Vector2(403, 242)
+[node name="Bodybuilder" parent="." index="3" instance=ExtResource("8_s5o5c")]
+position = Vector2(407, 259)
