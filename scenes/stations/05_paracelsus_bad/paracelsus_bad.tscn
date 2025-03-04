@@ -61,7 +61,7 @@ position = Vector2(820, 420)
 [node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("5_rp8qx")]
 position = Vector2(988, 420)
 
-[node name="BossArea" type="Area2D" parent="." index="4"]
+[node name="BossArea" type="Area2D" parent="." index="3"]
 collision_layer = 0
 collision_mask = 2
 
