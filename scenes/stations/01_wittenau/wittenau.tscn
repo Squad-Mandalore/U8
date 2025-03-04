@@ -366,9 +366,6 @@ y_sort_enabled = true
 [node name="Tower" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(239, 251)
 
-[node name="Tower6" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1097, 251)
-
 [node name="Tower2" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(407, 251)
 
@@ -381,6 +378,9 @@ position = Vector2(743, 251)
 [node name="Tower5" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(930, 251)
 
+[node name="Tower6" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1097, 251)
+
 [node name="Tower7" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(1266, 251)
 
@@ -388,46 +388,40 @@ position = Vector2(1266, 251)
 position = Vector2(1433, 251)
 
 [node name="Tower9" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1434, 251)
-
-[node name="Tower10" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(1602, 251)
 
-[node name="Tower11" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+[node name="Tower10" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(1769, 251)
 
+[node name="Tower11" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(239, 421)
+
 [node name="Tower12" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(239, 420.5)
+position = Vector2(407, 421)
 
-[node name="Tower13" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(407, 420.5)
+[node name="Towe13" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(576, 421)
 
-[node name="Towe14" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(576, 420.5)
+[node name="Tower14" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(743, 421)
 
 [node name="Tower15" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(743, 420.5)
+position = Vector2(930, 421)
 
 [node name="Tower16" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(930, 420.5)
+position = Vector2(1097, 421)
 
 [node name="Tower17" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1097, 420.5)
+position = Vector2(1266, 421)
 
 [node name="Tower18" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1266, 420.5)
+position = Vector2(1433, 421)
 
 [node name="Tower19" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1433, 420.5)
+position = Vector2(1602, 421)
 
 [node name="Tower20" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1434, 420.5)
-
-[node name="Tower21" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1602, 420.5)
-
-[node name="Tower22" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1769, 420.5)
+position = Vector2(1769, 421)
 
 [node name="Escalators" type="CanvasGroup" parent="Node2D"]
 y_sort_enabled = true
