@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://c283ma0wpwiqu"]
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://c283ma0wpwiqu"]
 
-[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_romtq"]
+[ext_resource type="Script" path="res://items/consumables/consumable.gd" id="1_bafpn"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_8ng56"]
 [ext_resource type="Texture2D" uid="uid://cru7tg0naf23m" path="res://items/consumables/assets/anti-poison.png" id="3_gaxtt"]
 
-[sub_resource type="Resource" id="Resource_hodkb"]
+[sub_resource type="Resource" id="Resource_0d0ih"]
 script = ExtResource("2_8ng56")
 max_health = 0
-health = 25
+health = 0
 armor = 0
 initiative = 0
 dodge_chance = 0
@@ -20,14 +20,15 @@ luck = 0
 poison_resistance = 0
 bleed_resistance = 0
 drug_resistance = 0
-poison_level = 0
+poison_level = -1
 bleed_level = 0
 drug_level = 0
 
 [resource]
-script = ExtResource("1_romtq")
-stats = SubResource("Resource_hodkb")
+script = ExtResource("1_bafpn")
+effect_duration = 0
+stats = SubResource("Resource_0d0ih")
 price = 20
 name = "Gegengift"
-description = "Ein Schluck davon, und dein Magen vergisst, dass er gerade versucht hat, sich selbst zu kündigen."
+description = "Ein Spritzer davon, und dein Magen vergisst, dass er gerade versucht hat, sich selbst zu kündigen."
 texture = ExtResource("3_gaxtt")

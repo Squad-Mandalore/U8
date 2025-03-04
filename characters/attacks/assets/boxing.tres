@@ -29,7 +29,7 @@ effect_flat_modifier = 0
 [resource]
 script = ExtResource("1_trmon")
 name = "Boxen"
-damage = 0
+damage = 10
 type = 1
 token = 1
 token_number = 1

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://bttfrcbi5waxe"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://bttfrcbi5waxe"]
 
 [ext_resource type="Script" path="res://items/inventory_item.gd" id="1_ir0k6"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_xq2c6"]
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_ir0k6")
+stats = SubResource("Resource_hodkb")
+price = 20
 name = "Pizza"
 description = "Eine gute klassische Pizza, nicht vom 5. Sterne Italiener, jedoch aber mit der größten Käsesschicht die man sich vorstellen kann."
-stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_dvfn8")
-price = 20
