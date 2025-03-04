@@ -1,10 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://dxtsv1xtfd42n"]
+[gd_scene load_steps=32 format=3 uid="uid://dxtsv1xtfd42n"]
 
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
 [ext_resource type="Script" path="res://scenes/stations/01_wittenau/wittenau.gd" id="1_vdt2h"]
 [ext_resource type="Texture2D" uid="uid://b36noacmhtswo" path="res://scenes/stations/01_wittenau/assets/hub.png" id="2_c8rit"]
 [ext_resource type="LabelSettings" uid="uid://c0xesi3rt8odi" path="res://scenes/stations/assets/station_name_label_settings_white.tres" id="3_job2n"]
 [ext_resource type="Texture2D" uid="uid://dyqe16uee6oon" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_fight_floor.png" id="3_rimlc"]
+[ext_resource type="Texture2D" uid="uid://b2oxlg4ka5fyl" path="res://scenes/stations/01_wittenau/assets/wittenau.png" id="4_23pnf"]
 [ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://scenes/stations/01_wittenau/subscenes/tower.tscn" id="4_wvqyq"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="6_fup5h"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="7_5owx3"]
@@ -17,12 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://dv2v43jv13rjr" path="res://characters/automatas/drink/drink_vending_machine.tscn" id="13_i82bx"]
 [ext_resource type="PackedScene" uid="uid://bap2i51ju2efp" path="res://characters/automatas/ticket/ticket_vending_machine.tscn" id="14_nf21t"]
 [ext_resource type="PackedScene" uid="uid://40q6al2c4n4n" path="res://characters/automatas/snack/snack_vending_machine.tscn" id="15_htilo"]
+[ext_resource type="PackedScene" uid="uid://dbbc33em4xtbm" path="res://scenes/stations/subscenes/animation_train.tscn" id="17_a0cku"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
 b = Vector2(822, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fyc4f"]
-b = Vector2(1125, 0)
+b = Vector2(94, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_w2mii"]
 b = Vector2(0, 310)
@@ -32,6 +34,9 @@ b = Vector2(-1945, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_a187x"]
 b = Vector2(-1, 312)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dx64d"]
+b = Vector2(-121, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0h8n"]
 size = Vector2(33, 20)
@@ -61,6 +66,44 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(962, 168)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/AnimationTrain:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(904, 95)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/Berliner/Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node2D/Berliner")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"set_physics_process"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_lqfb8"]
@@ -190,11 +233,57 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_87d8y"]
+resource_name = "train_leave"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/AnimationTrain:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector2(904, 95), Vector2(2054, 95)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Berliner/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1200, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Berliner")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [false],
+"method": &"set_physics_process"
+}, {
+"args": [true],
+"method": &"set_physics_process"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ltkc7"]
 _data = {
 "RESET": SubResource("Animation_dfl7g"),
 "olaf_initial_battle": SubResource("Animation_lqfb8"),
-"olaf_step_aside": SubResource("Animation_lsgha")
+"olaf_step_aside": SubResource("Animation_lsgha"),
+"train_leave": SubResource("Animation_87d8y")
 }
 
 [node name="Node2D" type="Node2D"]
@@ -207,7 +296,7 @@ combat_floor = ExtResource("3_rimlc")
 position = Vector2(1000, 330)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
-texture = ExtResource("2_c8rit")
+texture = ExtResource("4_23pnf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
 position = Vector2(-969, -143)
@@ -228,6 +317,10 @@ shape = SubResource("SegmentShape2D_luigf")
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Background"]
 position = Vector2(-969, -142)
 shape = SubResource("SegmentShape2D_a187x")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Background"]
+position = Vector2(977, -140)
+shape = SubResource("SegmentShape2D_dx64d")
 
 [node name="CenterContainer" type="CenterContainer" parent="Background"]
 offset_left = 311.0
@@ -407,6 +500,9 @@ position = Vector2(1350, 323)
 [node name="SeatingArea5" parent="Node2D/SeatingAreas" instance=ExtResource("12_go6jj")]
 position = Vector2(1684, 323)
 
+[node name="AnimationTrain" parent="Node2D" instance=ExtResource("17_a0cku")]
+position = Vector2(904, 95)
+
 [node name="TrainDoor" type="Area2D" parent="."]
 position = Vector2(962, 186)
 collision_layer = 0
@@ -427,5 +523,6 @@ libraries = {
 }
 
 [connection signal="ready" from="." to="Node2D/Berliner" method="_enable_scooting"]
+[connection signal="body_entered" from="Node2D/AnimationTrain" to="." method="_on_animation_train_body_entered"]
 [connection signal="body_entered" from="TrainDoor" to="." method="_on_area_2d_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
