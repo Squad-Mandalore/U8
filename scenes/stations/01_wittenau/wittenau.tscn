@@ -379,6 +379,7 @@ position = Vector2(1150, 329)
 unique_name_in_owner = true
 z_index = 0
 position = Vector2(962, 168)
+_name = "Olof Scholtz"
 
 [node name="DrinkVendingMachine" parent="Node2D" instance=ExtResource("13_i82bx")]
 position = Vector2(837, 282)

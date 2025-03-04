@@ -46,7 +46,7 @@ func _ready() -> void:
 
 
 func _spawn_ticket_inspector():
-    if Utils.chance(100.0):
+    if Utils.chance(5.0):
         _ticket_inspector.position.x = _right.position.x + 100
     else:
         get_tree().queue_delete(_ticket_inspector)

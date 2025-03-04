@@ -41,7 +41,7 @@ func _ready() -> void:
 
     super._ready()
 
-func make_space() -> void:
+func make_space(_prescribed_direction: Vector2 = Vector2.ZERO) -> void:
     return
 
 func _on_animated_sprite_2d_animation_looped() -> void:
