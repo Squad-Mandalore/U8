@@ -32,8 +32,7 @@ func _on_detect_characters_body_entered(body):
         _sprite.play("idle")
         if is_obstacle_in_path(npc_body):
             npc_body.make_space(self as Node2D)
-        while is_obstacle_in_path(npc_body):
-            await get_tree().create_timer(2.0).timeout
+            await Utils.create_timer(2.0)
         _continue_walking()
     # If not Npc, check if it's the player’s layer
     elif body.get_collision_layer() == 3 and not _player_checked:
@@ -51,9 +50,8 @@ func _on_detect_characters_body_entered(body):
             await get_tree().process_frame
         _continue_walking()
 
-
 func _continue_walking():
-    await get_tree().create_timer(2.0).timeout
+    await Utils.create_timer(2.0)
     _is_interacting = false
     _sprite.play("walk")
 
