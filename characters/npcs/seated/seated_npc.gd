@@ -41,7 +41,7 @@ func _ready() -> void:
 
     super._ready()
 
-func make_space(body : Node2D) -> void:
+func make_space() -> void:
     return
 
 func _on_animated_sprite_2d_animation_looped() -> void:

@@ -76,7 +76,7 @@ func _on_timer_timeout() -> void:
         _new_state()
 
 # Changed make_space to pick a direction and walk for a bit
-func make_space(_body: Node2D) -> void:
+func make_space() -> void:
     if _current_state == State.TALK:
         return
 

@@ -31,7 +31,7 @@ func _on_detect_characters_body_entered(body):
         _is_interacting = true
         _sprite.play("idle")
         if is_obstacle_in_path(npc_body):
-            npc_body.make_space(self as Node2D)
+            npc_body.make_space()
             await Utils.create_timer(2.0)
         _continue_walking()
     # If not Npc, check if it's the player’s layer
@@ -59,6 +59,8 @@ func player_has_ticket() -> bool:
     return SourceOfTruth.meta_inventory_slots[6] != null
 
 func is_obstacle_in_path(body) -> bool:
+    if body is SeatedNpc:
+        return false
     var collision_shape = body.find_child("CollisionShape2D", true, false)
     if collision_shape:
         var body_rect = collision_shape.global_transform.origin

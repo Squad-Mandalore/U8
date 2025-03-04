@@ -122,7 +122,7 @@ _name = "Olof Scholtz"
 
 [node name="TicketInspector" parent="." groups=["NPC"] instance=ExtResource("12_rqh7o")]
 y_sort_enabled = true
-position = Vector2(604, 153)
+position = Vector2(572, 144)
 slide_on_ceiling = false
 floor_stop_on_slope = false
 floor_constant_speed = true

@@ -46,7 +46,7 @@ func disable_outline() -> void:
     _sprite.material = null
 
 # function for schackeline, perhaps use for player if stuck as well
-func make_space(body : Node2D) -> void:
+func make_space() -> void:
     # Moves the npc out of the center of the train
     position += pick_valid_direction() * 5
 
