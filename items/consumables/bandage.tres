@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://dlx4q37hrf73h"]
+
+[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_goyuo"]
+[ext_resource type="Script" path="res://globals/attributes.gd" id="2_hbt61"]
+[ext_resource type="Texture2D" uid="uid://ij8mgjr7mcng" path="res://items/consumables/assets/bandage.png" id="3_jhvrh"]
+
+[sub_resource type="Resource" id="Resource_hodkb"]
+script = ExtResource("2_hbt61")
+max_health = 0
+health = 25
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("1_goyuo")
+stats = SubResource("Resource_hodkb")
+price = 5
+name = "Bandage"
+description = "Wickel sie drum, und dein Körper vergisst schneller zu bluten als ein Bossgegner seine Angriffsmuster!"
+texture = ExtResource("3_jhvrh")

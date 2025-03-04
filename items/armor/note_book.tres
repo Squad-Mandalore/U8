@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://1hbnvtrq7ucw"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://1hbnvtrq7ucw"]
 
 [ext_resource type="Script" path="res://items/inventory_item.gd" id="1_kdolv"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_5t753"]
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_kdolv")
+stats = SubResource("Resource_hodkb")
+price = 70
 name = "Notizbuch"
 description = "Das Buch für die Dementen und Workaholics, wenn mal wieder das Gehirn nicht richtig arbeitet."
-stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_jxua5")
-price = 70

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://chevkbqrl42xk"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://chevkbqrl42xk"]
 
 [ext_resource type="Script" path="res://globals/attributes.gd" id="1_7ftyy"]
 [ext_resource type="Script" path="res://items/inventory_item.gd" id="2_qfq6o"]
+[ext_resource type="Texture2D" uid="uid://cgrrlow7r1dno" path="res://items/armor/assets/bulletproof_vest.png" id="3_tfa8c"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
 script = ExtResource("1_7ftyy")
@@ -23,12 +24,10 @@ poison_level = 0
 bleed_level = 0
 drug_level = 0
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nw8fe"]
-
 [resource]
 script = ExtResource("2_qfq6o")
+stats = SubResource("Resource_hodkb")
+price = 500
 name = "Kugelsichere Weste"
 description = "Weil man in Berlin nie wissen kann, was hinter der nächsten Haltestelle auf einen wartet. Sicher ist sicher – und in der U8 bist du definitiv nicht sicher."
-stats = SubResource("Resource_hodkb")
-texture = SubResource("PlaceholderTexture2D_nw8fe")
-price = 500
+texture = ExtResource("3_tfa8c")
