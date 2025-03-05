@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://yneftrcr8syg"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://yneftrcr8syg"]
 
 [ext_resource type="Script" path="res://items/inventory_item.gd" id="1_ri2p7"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_0ijmm"]
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_ri2p7")
+stats = SubResource("Resource_hodkb")
+price = 230
 name = "Brille"
 description = "Eine gute alte Brille für die Leute mit einer Seheinschränkung. Wirkt aber demnach schlauer."
-stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_ik3bh")
-price = 230

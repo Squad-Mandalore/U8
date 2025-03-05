@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://de3gcbxhylfi"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://de3gcbxhylfi"]
 
 [ext_resource type="Script" path="res://items/inventory_item.gd" id="1_nxr2d"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_pebbc"]
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_nxr2d")
+stats = SubResource("Resource_hodkb")
+price = 20
 name = "Schnitzel mit Pommes Rot-Weiß"
 description = "Ein vollständiger Schnitzelteller wie man sich ihn nur vorstellen kann. "
-stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_r8r7p")
-price = 20

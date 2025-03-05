@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://bhqane6oc0sdd"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://bhqane6oc0sdd"]
 
 [ext_resource type="Script" path="res://items/inventory_item.gd" id="1_3iagc"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_cm4xv"]
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_3iagc")
+stats = SubResource("Resource_hodkb")
+price = 20
 name = "Döner"
 description = "Berlins ganzer stolz, nirgendswo wirst du öfter an einen dieser schmackhaften Döner kommen als in Berlin."
-stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_js411")
-price = 20

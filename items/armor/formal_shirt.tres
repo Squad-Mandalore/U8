@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://bw88rw1iou2ej"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://bw88rw1iou2ej"]
 
 [ext_resource type="Script" path="res://globals/attributes.gd" id="1_oam7n"]
 [ext_resource type="Script" path="res://items/inventory_item.gd" id="2_tmpph"]
-[ext_resource type="Texture2D" uid="uid://s0a53et15ukx" path="res://ui/hud/assets/white_blood.svg" id="3_e7r2y"]
+[ext_resource type="Texture2D" uid="uid://t3p6m2nq32im" path="res://items/armor/assets/formal_shirt.png" id="3_ann0u"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
 script = ExtResource("1_oam7n")
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("2_tmpph")
+stats = SubResource("Resource_hodkb")
+price = 20
 name = "Hemd"
 description = "Das Kleidungsstück, das signalisiert: 'Ich habe mein Leben im Griff' – auch wenn du eigentlich gerade erst aufgewacht bist und deine Schuhe nicht zusammenpassen. Macht dich automatisch seriöser als alle anderen im Waggon, selbst wenn du unter dem Hemd ein Bandshirt von einer Trash-Metal-Band trägst."
-stats = SubResource("Resource_hodkb")
-texture = ExtResource("3_e7r2y")
-price = 20
+texture = ExtResource("3_ann0u")

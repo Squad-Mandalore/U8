@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://bgr3g32dgkjnh"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://bgr3g32dgkjnh"]
 
 [ext_resource type="Script" path="res://items/inventory_item.gd" id="1_gl0pf"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_4p5wh"]
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_gl0pf")
+stats = SubResource("Resource_hodkb")
+price = 200
 name = "Hawaiihemd"
 description = "Das Kleidungsstück, das sowohl 'Ich bin im Urlaub' als auch 'Ich habe die Kontrolle über mein Leben verloren' schreit – perfekt für einen Ausflug in die Tiefen der U8."
-stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_sro2r")
-price = 200
