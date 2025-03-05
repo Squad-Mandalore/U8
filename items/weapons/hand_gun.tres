@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_6slpj")
 attacks = Array[ExtResource("1_l1k8t")]([SubResource("Resource_di1hx")])
+stats = SubResource("Resource_qs242")
+price = 40
 name = "P98 Pistole"
 description = "Die gute klassische Pistole, diese zu benutzen kann tödlich enden. Hoffentlich hast du dafür einen Waffenschein!"
-stats = SubResource("Resource_qs242")
 texture = ExtResource("5_lrx6p")
-price = 40

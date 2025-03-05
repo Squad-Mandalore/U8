@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_lgi13")
 attacks = Array[ExtResource("1_gilae")]([SubResource("Resource_di1hx")])
+stats = SubResource("Resource_qs242")
+price = 40
 name = "Guitarrensaite"
 description = "Von einer Gittare abgeschnitten, so hart wie ein (offensichtlich) Metalldraht."
-stats = SubResource("Resource_qs242")
 texture = ExtResource("5_jn8xx")
-price = 40

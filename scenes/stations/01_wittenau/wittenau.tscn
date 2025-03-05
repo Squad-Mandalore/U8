@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dxtsv1xtfd42n"]
+[gd_scene load_steps=33 format=3 uid="uid://dxtsv1xtfd42n"]
 
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
 [ext_resource type="Script" path="res://scenes/stations/01_wittenau/wittenau.gd" id="1_vdt2h"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://bap2i51ju2efp" path="res://characters/automatas/ticket/ticket_vending_machine.tscn" id="14_nf21t"]
 [ext_resource type="PackedScene" uid="uid://40q6al2c4n4n" path="res://characters/automatas/snack/snack_vending_machine.tscn" id="15_htilo"]
 [ext_resource type="PackedScene" uid="uid://dkxkayaw41poa" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/trashcan_extinguisher.tscn" id="18_1s6m8"]
+[ext_resource type="PackedScene" uid="uid://d3fhr38ytpe22" path="res://characters/automatas/clothes/clothing_container.tscn" id="19_ylri4"]
+[ext_resource type="PackedScene" uid="uid://diy1ckcdcgjg0" path="res://characters/automatas/doener-house/doener_house.tscn" id="20_mc4in"]
+[ext_resource type="PackedScene" uid="uid://jf1dhu624rgd" path="res://characters/automatas/speati/spaeti.tscn" id="21_5qhnv"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
 b = Vector2(822, 0)
@@ -397,6 +400,15 @@ position = Vector2(808, 282)
 
 [node name="TicketVendingMachine" parent="Node2D" instance=ExtResource("14_nf21t")]
 position = Vector2(780, 282)
+
+[node name="ClothingContainer" parent="Node2D" instance=ExtResource("19_ylri4")]
+position = Vector2(863, 283)
+
+[node name="DoenerHouse" parent="Node2D" instance=ExtResource("20_mc4in")]
+position = Vector2(916, 256)
+
+[node name="Spaeti" parent="Node2D" instance=ExtResource("21_5qhnv")]
+position = Vector2(734, 284)
 
 [node name="SeatingAreas" type="CanvasGroup" parent="Node2D"]
 y_sort_enabled = true

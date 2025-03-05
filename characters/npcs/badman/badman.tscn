@@ -1,7 +1,7 @@
 [gd_scene load_steps=42 format=3 uid="uid://bymkmcgp2ky2o"]
 
-[ext_resource type="Script" uid="uid://bketxcp6bftvx" path="res://characters/npcs/badman/badman.gd" id="1_jdg22"]
-[ext_resource type="Script" uid="uid://gweevjfhuvfe" path="res://items/item.gd" id="2_epxn2"]
+[ext_resource type="Script" path="res://characters/npcs/badman/badman.gd" id="1_jdg22"]
+[ext_resource type="Script" path="res://items/item.gd" id="2_epxn2"]
 [ext_resource type="Resource" uid="uid://dyefx1h80soau" path="res://items/consumables/cigarette.tres" id="3_us7hy"]
 [ext_resource type="Resource" uid="uid://5xm857oohqkc" path="res://items/consumables/heroin.tres" id="4_6gllc"]
 [ext_resource type="Resource" uid="uid://clkj7o5ak0bdk" path="res://items/meta/gun_licence.tres" id="5_rgekh"]

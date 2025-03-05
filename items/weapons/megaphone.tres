@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_dl4uy")
 attacks = Array[ExtResource("1_1svhp")]([SubResource("Resource_di1hx")])
+stats = SubResource("Resource_qs242")
+price = 40
 name = "Megafon"
 description = "Die einzige Möglichkeit die Lautstärke der U-Bahn und des Bahnhofes zu übertönen. Beim präziesen einsetzten kann sogar das Trommelfell platzen."
-stats = SubResource("Resource_qs242")
 texture = ExtResource("5_y6lyy")
-price = 40

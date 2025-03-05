@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_apliw")
+price = 3
 name = "BVG Flyer"
 description = "Irgendwie muss man sich ja in dem U-Bahn Netz zurechtfinden."
 texture = ExtResource("3_2fpe1")

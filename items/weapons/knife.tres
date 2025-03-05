@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_8i5u4")
 attacks = Array[ExtResource("1_d6p2g")]([SubResource("Resource_di1hx")])
+stats = SubResource("Resource_qs242")
+price = 40
 name = "Messer"
 description = "Das klassisch Küchenmesser, welches das tägliche Werkzeug ist von Familie bis Obdachloser."
-stats = SubResource("Resource_qs242")
 texture = ExtResource("5_qimmm")
-price = 40

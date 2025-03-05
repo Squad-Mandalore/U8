@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_a8uu1")
 attacks = Array[ExtResource("1_qdqsd")]([SubResource("Resource_di1hx")])
+stats = SubResource("Resource_qs242")
+price = 40
 name = "Pinsel"
 description = "Ein Pinsel, womöglich geklaut aus dem Kunstmuseum. Mit genügend Kreativität kannst du andere möglicherweise damit verstören."
-stats = SubResource("Resource_qs242")
 texture = ExtResource("5_41mm7")
-price = 40
