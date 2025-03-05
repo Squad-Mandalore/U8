@@ -42,10 +42,12 @@ func _ready() -> void:
 
 func _allow_player_movement():
     set_physics_process(true)
+    set_process_unhandled_input(true)
 
 func _disallow_player_movement():
     _sprite.play("idle")
     set_physics_process(false)
+    set_process_unhandled_input(false)
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK or _current_state == State.DANCE:
