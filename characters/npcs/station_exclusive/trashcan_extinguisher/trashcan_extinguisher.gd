@@ -14,7 +14,8 @@ var _idling: bool = false
 @onready var _timer: Timer = $Timer
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
-func _child_ready() -> void:
+func _ready() -> void:
+    super._ready()
     _timer.start(randf_range(10.0, 25.0))
     call_deferred("_initialize_navigation")
 
