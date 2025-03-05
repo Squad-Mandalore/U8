@@ -10,7 +10,7 @@ func _ready():
     call_deferred("_start_announcement")
 
 func _start_announcement():
-    await get_tree().create_timer(2.0).timeout
+    await Utils.create_timer(2.0)
     self.play()
 
 

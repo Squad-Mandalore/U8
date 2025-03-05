@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://scenes/stations/navregion.gd" id="5_0xogt"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="6_fup5h"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="7_5owx3"]
-[ext_resource type="AudioStream" uid="uid://77spiseg4rer" path="res://assets/sounds/music/station_music.wav" id="8_4q2iq"]
 [ext_resource type="PackedScene" uid="uid://caniahfcrm3my" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren_1.tscn" id="10_krbe2"]
 [ext_resource type="PackedScene" uid="uid://cu2j876adtdfh" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren_2.tscn" id="11_1m7y8"]
 [ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politician/politician_1.tscn" id="11_qvo2e"]
@@ -388,6 +387,7 @@ position = Vector2(1150, 329)
 unique_name_in_owner = true
 z_index = 0
 position = Vector2(962, 168)
+_name = "Olof Scholtz"
 
 [node name="DrinkVendingMachine" parent="Node2D" instance=ExtResource("13_i82bx")]
 position = Vector2(837, 282)
@@ -427,11 +427,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrainDoor"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_t0h8n")
-
-[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_4q2iq")
-autoplay = true
-bus = &"Music"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

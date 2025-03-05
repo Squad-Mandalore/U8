@@ -1,0 +1,29 @@
+[gd_scene load_steps=13 format=3 uid="uid://d3fhr38ytpe22"]
+
+[ext_resource type="Script" uid="uid://cj576f8ek2nmd" path="res://characters/automatas/clothes/clothing_container.gd" id="1_obygr"]
+[ext_resource type="Texture2D" uid="uid://616ii2iegex1" path="res://characters/automatas/clothes/assets/clothing_container.png" id="2_7p7bj"]
+[ext_resource type="Script" uid="uid://gweevjfhuvfe" path="res://items/item.gd" id="2_k65ky"]
+[ext_resource type="Resource" uid="uid://crdg4nofkrp51" path="res://items/armor/gloves.tres" id="3_3x4fk"]
+[ext_resource type="Resource" uid="uid://ckfmo2nnwutvi" path="res://items/armor/mantle.tres" id="4_lwmpo"]
+[ext_resource type="Resource" uid="uid://clqcpxppquqw4" path="res://items/armor/t_shirt.tres" id="5_th6t0"]
+[ext_resource type="Resource" uid="uid://dquxwlu5pu5v" path="res://items/armor/pullover.tres" id="6_vodir"]
+[ext_resource type="Resource" uid="uid://bw88rw1iou2ej" path="res://items/armor/formal_shirt.tres" id="7_p8phg"]
+[ext_resource type="Resource" uid="uid://fm4vx7x48e2c" path="res://items/armor/rain_mantle.tres" id="8_6fjmv"]
+[ext_resource type="Resource" uid="uid://bgr3g32dgkjnh" path="res://items/armor/hawaii_shirt.tres" id="9_db08u"]
+[ext_resource type="Resource" uid="uid://bkjg0tfdse47l" path="res://items/armor/leather_jacket.tres" id="10_jqd2k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2ek2"]
+size = Vector2(20, 7)
+
+[node name="ClothingContainer" type="StaticBody2D"]
+script = ExtResource("1_obygr")
+shop_inventory = Array[ExtResource("2_k65ky")]([ExtResource("3_3x4fk"), ExtResource("4_lwmpo"), ExtResource("5_th6t0"), ExtResource("6_vodir"), ExtResource("7_p8phg"), ExtResource("8_6fjmv"), ExtResource("9_db08u"), ExtResource("10_jqd2k")])
+shop_name = "Altkleidercontainer"
+
+[node name="ClothingContainer" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("2_7p7bj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_i2ek2")

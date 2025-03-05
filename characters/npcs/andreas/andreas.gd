@@ -14,7 +14,7 @@ var _andreas_robbery_quest: QuestEntry = dishonest_brothers_quest.get_subquest(A
 var dialogue = preload("res://characters/npcs/andreas/assets/andreas_robbery.dialogue")
 
 func _ready() -> void:
-    if not _chris_robbery_quest.is_completed() or SourceOfTruth.chance(40):
+    if not _chris_robbery_quest.is_completed() or Utils.chance(40):
         queue_free()
         return
 

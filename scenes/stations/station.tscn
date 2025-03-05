@@ -1,5 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://cr0oss7rkk1ta"]
 
+
 [ext_resource type="Script" path="res://scenes/stations/station.gd" id="1_ppg4l"]
 [ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="1_q1w2b"]
 [ext_resource type="PackedScene" uid="uid://dbbc33em4xtbm" path="res://scenes/stations/subscenes/animation_train.tscn" id="2_xadlq"]
