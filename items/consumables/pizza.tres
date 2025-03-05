@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://bttfrcbi5waxe"]
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://beksdl6t3f8nt"]
 
-[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_ir0k6"]
+[ext_resource type="Script" path="res://items/consumables/consumable.gd" id="1_g10ho"]
 [ext_resource type="Script" path="res://globals/attributes.gd" id="2_xq2c6"]
 [ext_resource type="Texture2D" uid="uid://bvvdoid053so4" path="res://items/consumables/assets/pizza.png" id="3_dvfn8"]
 
@@ -25,7 +25,8 @@ bleed_level = 0
 drug_level = 0
 
 [resource]
-script = ExtResource("1_ir0k6")
+script = ExtResource("1_g10ho")
+effect_duration = 0
 stats = SubResource("Resource_hodkb")
 price = 20
 name = "Pizza"

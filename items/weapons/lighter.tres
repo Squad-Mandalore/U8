@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_ocg0j")
 attacks = Array[ExtResource("1_xuecc")]([SubResource("Resource_di1hx")])
+stats = SubResource("Resource_qs242")
+price = 40
 name = "Feuerzeug"
 description = "Das Feuerzeug, abhängig von der Nutzung ist es immer und überall hilfreich, selbst beim Brandstiften."
-stats = SubResource("Resource_qs242")
 texture = ExtResource("5_1kkw8")
-price = 40

@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_wmok5")
 attacks = Array[ExtResource("1_xssw7")]([SubResource("Resource_di1hx")])
+stats = SubResource("Resource_qs242")
+price = 40
 name = "Baseball Schläger"
 description = "Der gute alte Baseball Schläger. Ab und zu kann man ja mal ein Kopf mit einem Baseball verwechseln."
-stats = SubResource("Resource_qs242")
 texture = ExtResource("5_mi013")
-price = 40
