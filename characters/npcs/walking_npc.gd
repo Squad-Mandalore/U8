@@ -76,13 +76,13 @@ func _on_timer_timeout() -> void:
         _new_state()
 
 # Changed make_space to pick a direction and walk for a bit
-func make_space(_body: Node2D) -> void:
+func make_space(_prescribed_direction: Vector2 = Vector2.ZERO) -> void:
     if _current_state == State.TALK:
         return
 
-    var valid_dir = pick_valid_direction()
-    if valid_dir != Vector2.ZERO:
-        _direction = valid_dir
+    var valid_dirs = get_valid_directions()
+    if len(valid_dirs) > 0:
+        _direction = valid_dirs[0]
         _sub_state = SubState.WALK
         _sub_state = SubState.MAKE_SPACE
         # Move for half a second

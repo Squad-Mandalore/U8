@@ -1,14 +1,16 @@
-[gd_scene load_steps=40 format=3 uid="uid://bymkmcgp2ky2o"]
+[gd_scene load_steps=42 format=3 uid="uid://bymkmcgp2ky2o"]
 
-[ext_resource type="Script" path="res://characters/npcs/badman/badman.gd" id="1_jdg22"]
-[ext_resource type="Script" path="res://items/item.gd" id="2_epxn2"]
+[ext_resource type="Script" uid="uid://bketxcp6bftvx" path="res://characters/npcs/badman/badman.gd" id="1_jdg22"]
+[ext_resource type="Script" uid="uid://gweevjfhuvfe" path="res://items/item.gd" id="2_epxn2"]
 [ext_resource type="Resource" uid="uid://dyefx1h80soau" path="res://items/consumables/cigarette.tres" id="3_us7hy"]
 [ext_resource type="Resource" uid="uid://5xm857oohqkc" path="res://items/consumables/heroin.tres" id="4_6gllc"]
 [ext_resource type="Resource" uid="uid://clkj7o5ak0bdk" path="res://items/meta/gun_licence.tres" id="5_rgekh"]
-[ext_resource type="Resource" uid="uid://c283ma0wpwiqu" path="res://items/consumables/anti_poison.tres" id="6_ies0d"]
+[ext_resource type="Resource" uid="uid://bdyet3nbsrd3y" path="res://items/weapons/hand_gun.tres" id="6_1in3u"]
 [ext_resource type="Texture2D" uid="uid://bg1cxujjsrhvf" path="res://characters/npcs/badman/assets/badman.png" id="6_yg10t"]
-[ext_resource type="Resource" uid="uid://dfbr82y6yqjyg" path="res://items/consumables/wonder_pill.tres" id="7_jbi7q"]
-[ext_resource type="Resource" uid="uid://dlx4q37hrf73h" path="res://items/consumables/bandage.tres" id="8_t5rv2"]
+[ext_resource type="Resource" uid="uid://bjign78pbwiqg" path="res://items/weapons/megaphone.tres" id="7_tv7jj"]
+[ext_resource type="Resource" uid="uid://c6sxkoby2otiv" path="res://items/weapons/guitar_string.tres" id="8_13x6b"]
+[ext_resource type="Resource" uid="uid://1mbap4gldwd3" path="res://items/weapons/brush.tres" id="9_bgxa5"]
+[ext_resource type="Resource" uid="uid://cuk5q62elytpm" path="res://items/weapons/lighter.tres" id="10_1in3u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enw8h"]
 size = Vector2(20, 4)
@@ -231,7 +233,7 @@ animations = [{
 z_index = 50
 collision_layer = 5
 script = ExtResource("1_jdg22")
-shop_inventory = Array[ExtResource("2_epxn2")]([ExtResource("3_us7hy"), ExtResource("4_6gllc"), ExtResource("5_rgekh"), ExtResource("6_ies0d"), ExtResource("7_jbi7q"), ExtResource("8_t5rv2"), null, null])
+shop_inventory = Array[ExtResource("2_epxn2")]([ExtResource("3_us7hy"), ExtResource("4_6gllc"), ExtResource("5_rgekh"), ExtResource("6_1in3u"), ExtResource("7_tv7jj"), ExtResource("8_13x6b"), ExtResource("9_bgxa5"), ExtResource("10_1in3u")])
 _name = "Badmann"
 _random_name = false
 _gender = "Diverse"

@@ -1,0 +1,28 @@
+[gd_scene load_steps=13 format=3 uid="uid://jf1dhu624rgd"]
+
+[ext_resource type="Script" uid="uid://cv5y81q5sn6ki" path="res://characters/automatas/speati/spaeti.gd" id="1_3jwjv"]
+[ext_resource type="Texture2D" uid="uid://kbs4pl8l7hp1" path="res://characters/automatas/speati/assets/spaeti.png" id="2_2u5f6"]
+[ext_resource type="Script" uid="uid://gweevjfhuvfe" path="res://items/item.gd" id="2_tfw7p"]
+[ext_resource type="Resource" uid="uid://chevkbqrl42xk" path="res://items/armor/bulletproof_vest.tres" id="3_moplb"]
+[ext_resource type="Resource" uid="uid://yneftrcr8syg" path="res://items/armor/glasses.tres" id="4_tbvnd"]
+[ext_resource type="Resource" uid="uid://b3mrs5o5p116r" path="res://items/armor/pink_sunglasses.tres" id="5_cjtei"]
+[ext_resource type="Resource" uid="uid://1hbnvtrq7ucw" path="res://items/armor/note_book.tres" id="6_rdac6"]
+[ext_resource type="Resource" uid="uid://c107cydy6l8l4" path="res://items/armor/necklance.tres" id="7_sph6t"]
+[ext_resource type="Resource" uid="uid://b5frfwxa5x3k8" path="res://items/weapons/knife.tres" id="8_bi8ti"]
+[ext_resource type="Resource" uid="uid://dnuhhdg6ry7ua" path="res://items/weapons/baseball_bat.tres" id="9_kw10v"]
+[ext_resource type="Resource" uid="uid://cuk5q62elytpm" path="res://items/weapons/lighter.tres" id="10_msek7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utxr4"]
+size = Vector2(55, 7)
+
+[node name="Spaeti" type="StaticBody2D"]
+script = ExtResource("1_3jwjv")
+shop_inventory = Array[ExtResource("2_tfw7p")]([ExtResource("3_moplb"), ExtResource("4_tbvnd"), ExtResource("5_cjtei"), ExtResource("6_rdac6"), ExtResource("7_sph6t"), ExtResource("8_bi8ti"), ExtResource("9_kw10v"), ExtResource("10_msek7")])
+
+[node name="Spaeti" type="Sprite2D" parent="."]
+position = Vector2(0, -48)
+texture = ExtResource("2_2u5f6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -4)
+shape = SubResource("RectangleShape2D_utxr4")
