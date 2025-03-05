@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://characters/automatas/automata.gd" id="1_6anj8"]
 [ext_resource type="Script" path="res://items/item.gd" id="2_jwfhu"]
-[ext_resource type="Texture2D" uid="uid://c622vs2a5o4uu" path="res://characters/automatas/doener-bude/assets/doenerhaus_with_person.png" id="3_ah8hc"]
+[ext_resource type="Texture2D" uid="uid://c622vs2a5o4uu" path="res://characters/automatas/doener-house/assets/doenerhouse_with_person.png" id="3_ah8hc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1eypk"]
 size = Vector2(55, 47)
 
-[node name="DoenerBude" type="StaticBody2D"]
+[node name="DoenerHouse" type="StaticBody2D"]
 collision_layer = 5
 collision_mask = 0
 script = ExtResource("1_6anj8")

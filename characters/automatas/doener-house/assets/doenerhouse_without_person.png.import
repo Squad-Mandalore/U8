@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7ya7u455vnyv"
-path="res://.godot/imported/doenerhaus_without_person.png-aa8d2c4e50fb21383369964479b45276.ctex"
+path="res://.godot/imported/doenerhouse_without_person.png-b3b5d02e9ac27b899a7fb84b80ed99cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/automatas/doener-bude/assets/doenerhaus_without_person.png"
-dest_files=["res://.godot/imported/doenerhaus_without_person.png-aa8d2c4e50fb21383369964479b45276.ctex"]
+source_file="res://characters/automatas/doener-house/assets/doenerhouse_without_person.png"
+dest_files=["res://.godot/imported/doenerhouse_without_person.png-b3b5d02e9ac27b899a7fb84b80ed99cb.ctex"]
 
 [params]
 
