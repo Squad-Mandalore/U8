@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ltew4h5q07ud"]
 
 [ext_resource type="Texture2D" uid="uid://bb5apci0o23ap" path="res://scenes/stations/assets/seating_area.png" id="1_lyag5"]
-[ext_resource type="Script" path="res://scenes/stations/subscenes/seating_areas.gd" id="1_yfg4b"]
+[ext_resource type="Script" uid="uid://daxa1pja6054k" path="res://scenes/stations/subscenes/seating_areas.gd" id="1_yfg4b"]
 [ext_resource type="PackedScene" uid="uid://scdcnw8cg81y" path="res://characters/npcs/seated/pointed_towards/pointed_towards.tscn" id="2_5o8vs"]
 [ext_resource type="PackedScene" uid="uid://cpexaj7c7wxu2" path="res://characters/npcs/seated/pointed_away/pointed_away.tscn" id="2_vpofo"]
 [ext_resource type="PackedScene" uid="uid://cry0m1usu3kd6" path="res://scenes/stations/subscenes/fire.tscn" id="4_cd4lh"]
@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2p35v"]
 size = Vector2(101, 13)
 
-[node name="SeatingAreas" type="StaticBody2D"]
+[node name="SeatingAreas" type="StaticBody2D" groups=["SeatingArea"]]
 script = ExtResource("1_yfg4b")
 
 [node name="BasicSeats" type="Sprite2D" parent="."]

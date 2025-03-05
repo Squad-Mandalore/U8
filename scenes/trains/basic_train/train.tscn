@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=19 format=3 uid="uid://2p6mgnqih68g"]
 
-[ext_resource type="Script" path="res://scenes/trains/basic_train/train.gd" id="1_1jt1h"]
-[ext_resource type="Script" path="res://scenes/trains/background.gd" id="2_20w01"]
+[ext_resource type="Script" uid="uid://b8uscfurk4y01" path="res://scenes/trains/basic_train/train.gd" id="1_1jt1h"]
+[ext_resource type="Script" uid="uid://dsdlr61txfl8d" path="res://scenes/trains/background.gd" id="2_20w01"]
 [ext_resource type="Texture2D" uid="uid://cjp87k02phlcp" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background-2-fight.png" id="2_h4wmi"]
 [ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://scenes/trains/assets/background.png" id="3_dfgt4"]
 [ext_resource type="Texture2D" uid="uid://cu657kuv6vc5n" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-floor.png" id="3_w6ait"]
@@ -69,8 +69,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aaf1y"]
 _data = {
-"RESET": SubResource("Animation_ao4qn"),
-"olaf_entrance": SubResource("Animation_x7huq")
+&"RESET": SubResource("Animation_ao4qn"),
+&"olaf_entrance": SubResource("Animation_x7huq")
 }
 
 [node name="Node2D" type="Node2D"]
@@ -122,7 +122,7 @@ _name = "Olof Scholtz"
 
 [node name="TicketInspector" parent="." groups=["NPC"] instance=ExtResource("12_rqh7o")]
 y_sort_enabled = true
-position = Vector2(604, 153)
+position = Vector2(572, 146)
 slide_on_ceiling = false
 floor_stop_on_slope = false
 floor_constant_speed = true

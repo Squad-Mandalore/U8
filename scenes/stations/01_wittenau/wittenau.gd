@@ -25,4 +25,3 @@ func _on_animation_player_animation_finished(anim_name:StringName) -> void:
             train_accessable = true
         "olaf_step_aside":
             train_enter.emit()
-

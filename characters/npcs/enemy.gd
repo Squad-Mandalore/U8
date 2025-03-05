@@ -6,6 +6,7 @@ class_name Enemy
 @export var stats: StatsSpecifier
 @export var texture: Texture2D
 @export var winning_money: int = 10
+@export var battle_intro: String = "battle_intro"
 var initial_stats: StatsSpecifier
 
 
@@ -18,6 +19,7 @@ func _ready() -> void:
     update_attack_damage()
 
 func start_combat():
+    print("hey")
     if stats.health > 0:
         reset_stats()
         SignalDispatcher.combat_enter.emit(self)

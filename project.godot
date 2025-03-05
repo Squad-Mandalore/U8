@@ -13,11 +13,11 @@ config_version=5
 config/name="U8"
 config/version="0.3.0"
 run/main_scene="res://ui/opening/opening_with_logo.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0.984314, 0.94902, 0.211765, 1)
-boot_splash/image="res://characters/player/assets/berliner.png"
 boot_splash/use_filter=false
+boot_splash/image="res://characters/player/assets/berliner.png"
 config/icon="res://icon.svg"
 
 [autoload]

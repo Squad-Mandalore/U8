@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dnueionl57e3i"]
 
-[ext_resource type="Script" path="res://scenes/stations/05_paracelsus_bad/paracelsus_bad.gd" id="1_086u8"]
+[ext_resource type="Script" uid="uid://baxwugb8i0u14" path="res://scenes/stations/05_paracelsus_bad/paracelsus_bad.gd" id="1_086u8"]
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_q4mp0"]
 [ext_resource type="Texture2D" uid="uid://cjp87k02phlcp" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background-2-fight.png" id="3_4avx1"]
 [ext_resource type="PackedScene" uid="uid://b4v2kxxwx22uq" path="res://characters/npcs/lifeguard/lifeguard.tscn" id="3_cnday"]
@@ -18,7 +18,7 @@ combat_floor = ExtResource("4_mo6ep")
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Paracelsus-Bad"
 
-[node name="Bademeister2d" parent="Node2D" index="0" instance=ExtResource("3_cnday")]
+[node name="Lifeguard" parent="Node2D" index="0" instance=ExtResource("3_cnday")]
 unique_name_in_owner = true
 position = Vector2(600, 231)
 
@@ -61,7 +61,7 @@ position = Vector2(820, 420)
 [node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("5_rp8qx")]
 position = Vector2(988, 420)
 
-[node name="BossArea" type="Area2D" parent="." index="4"]
+[node name="BossArea" type="Area2D" parent="." index="3"]
 collision_layer = 0
 collision_mask = 2
 

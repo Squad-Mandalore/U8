@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://brcs238yacepq"]
 
-[ext_resource type="Script" path="res://ui/opening/opening.gd" id="2_pkldd"]
+[ext_resource type="Script" uid="uid://dfipr687uxc2v" path="res://ui/opening/opening.gd" id="2_pkldd"]
 [ext_resource type="Texture2D" uid="uid://c1wqcjatrwf5g" path="res://ui/opening/assets/logo_vertical_color_dark.png" id="3_hg2y6"]
 
 [node name="Opening" type="Control"]

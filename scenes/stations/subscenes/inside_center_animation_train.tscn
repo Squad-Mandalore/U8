@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://1pg3o54ddnb3"]
 
-[ext_resource type="Script" path="res://scenes/stations/door_logic.gd" id="1_ta63d"]
+[ext_resource type="Script" uid="uid://d0egu6vn3y8o6" path="res://scenes/stations/door_logic.gd" id="1_ta63d"]
 [ext_resource type="Texture2D" uid="uid://dtmgac6m0mgik" path="res://scenes/trains/basic_train/assets/ubahn-v4-mitte.png" id="2_x3ayl"]
 [ext_resource type="Texture2D" uid="uid://cpnqt6gti5es2" path="res://scenes/trains/basic_train/assets/ubahn-v4-mitte-innen.png" id="3_0s1rn"]
 [ext_resource type="Texture2D" uid="uid://c01a1c5t52h78" path="res://scenes/stations/assets/ubahn-v4-mitte-anim.png" id="4_8xexq"]

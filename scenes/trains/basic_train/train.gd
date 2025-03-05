@@ -46,11 +46,10 @@ func _ready() -> void:
 
 
 func _spawn_ticket_inspector():
-    if randi() % 20 == 5:
+    if Utils.chance(5.0):
         _ticket_inspector.position.x = _right.position.x + 100
     else:
         get_tree().queue_delete(_ticket_inspector)
-        print("Schackeline will not hunt you today")
 
 func _on_player_zero_health() -> void:
     level_lost.emit()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d3ntibgwuo4dv"]
 
-[ext_resource type="Script" path="res://scenes/stations/01_wittenau/subscenes/tower.gd" id="1_04paf"]
+[ext_resource type="Script" uid="uid://d3ox22enoelsy" path="res://scenes/stations/01_wittenau/subscenes/tower.gd" id="1_04paf"]
 [ext_resource type="Texture2D" uid="uid://fwlne5yajsji" path="res://scenes/stations/05_paracelsus_bad/assets/tower.png" id="2_5nlji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fb3fl"]

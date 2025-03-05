@@ -1,9 +1,9 @@
 [gd_scene load_steps=31 format=3 uid="uid://cmo1bqievd0uc"]
 
-[ext_resource type="Script" path="res://characters/npcs/politician/politician.gd" id="1_6eimy"]
-[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="2_wnj3v"]
+[ext_resource type="Script" uid="uid://d2he2c3ljrjyx" path="res://characters/npcs/politician/politician.gd" id="1_6eimy"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_wnj3v"]
 [ext_resource type="Resource" uid="uid://oui3w7vat6ib" path="res://characters/attacks/assets/show_off.tres" id="3_ph7vf"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="4_ppfdp"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_ppfdp"]
 [ext_resource type="Texture2D" uid="uid://cjyyhybqiea5t" path="res://characters/npcs/politician/assets/politician_1.png" id="5_lv7x6"]
 [ext_resource type="Texture2D" uid="uid://dfe5ditvg6awy" path="res://characters/npcs/bodybuilder/assets/bodybuilder.png" id="6_6m50o"]
 
