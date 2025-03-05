@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Weapon" load_steps=9 format=3 uid="uid://1myx8ia44eap"]
 
-[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="1_pbv1k"]
-[ext_resource type="Script" path="res://characters/attacks/formula.gd" id="2_jphyt"]
-[ext_resource type="Script" path="res://items/weapons/weapon.gd" id="3_mpft8"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="4_vm84d"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="1_pbv1k"]
+[ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="2_jphyt"]
+[ext_resource type="Script" uid="uid://c0drmr3olu1ci" path="res://items/weapons/weapon.gd" id="3_mpft8"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_vm84d"]
 [ext_resource type="Texture2D" uid="uid://dblkoo8rpxguy" path="res://items/weapons/assets/book.png" id="5_gmtc1"]
 
 [sub_resource type="Resource" id="Resource_ayac1"]
@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("3_mpft8")
 attacks = Array[ExtResource("1_pbv1k")]([SubResource("Resource_di1hx")])
+stats = SubResource("Resource_qs242")
+price = 40
 name = "Buch"
 description = "Ein Buch aus der alten Zeit mit genügend Wissen um andere Menschen zu überfordern."
-stats = SubResource("Resource_qs242")
 texture = ExtResource("5_gmtc1")
-price = 40

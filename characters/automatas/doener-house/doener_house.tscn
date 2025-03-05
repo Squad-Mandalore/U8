@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://diy1ckcdcgjg0"]
 
-[ext_resource type="Script" path="res://characters/npcs/shop_npc.gd" id="1_yv5io"]
-[ext_resource type="Script" path="res://items/item.gd" id="2_jwfhu"]
+[ext_resource type="Script" uid="uid://cx5c0o5w1wuyg" path="res://characters/npcs/shop_npc.gd" id="1_yv5io"]
+[ext_resource type="Script" uid="uid://gscj3hnm5oor" path="res://items/item.gd" id="2_jwfhu"]
 [ext_resource type="Texture2D" uid="uid://c622vs2a5o4uu" path="res://characters/automatas/doener-house/assets/doenerhouse_with_person.png" id="3_ah8hc"]
 [ext_resource type="Texture2D" uid="uid://dchf4axio55km" path="res://characters/automatas/doener-house/assets/dennis.png" id="3_bnwqg"]
 [ext_resource type="Resource" uid="uid://b6coqm2cvlo40" path="res://items/consumables/schnitzel.tres" id="3_ly4av"]

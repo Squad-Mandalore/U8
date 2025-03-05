@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cu2j876adtdfh"]
 
-[ext_resource type="Script" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren.gd" id="1_2kbk1"]
+[ext_resource type="Script" uid="uid://drsvvcjiad6f2" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren.gd" id="1_2kbk1"]
 [ext_resource type="Texture2D" uid="uid://csl24phfunrvb" path="res://characters/npcs/sports_fans/eisbaeren/assets/eisbaeren.png" id="2_8817p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ooeas"]

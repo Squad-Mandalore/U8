@@ -1,11 +1,10 @@
 [gd_scene load_steps=22 format=3 uid="uid://cr0oss7rkk1ta"]
 
-
-[ext_resource type="Script" path="res://scenes/stations/station.gd" id="1_ppg4l"]
+[ext_resource type="Script" uid="uid://bc0bdgv8glxy7" path="res://scenes/stations/station.gd" id="1_ppg4l"]
 [ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="1_q1w2b"]
 [ext_resource type="PackedScene" uid="uid://dbbc33em4xtbm" path="res://scenes/stations/subscenes/animation_train.tscn" id="2_xadlq"]
 [ext_resource type="Texture2D" uid="uid://cu657kuv6vc5n" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-floor.png" id="3_l3pjy"]
-[ext_resource type="Script" path="res://scenes/stations/navregion.gd" id="4_jb3ik"]
+[ext_resource type="Script" uid="uid://br2eo0ik4vr0a" path="res://scenes/stations/navregion.gd" id="4_jb3ik"]
 [ext_resource type="LabelSettings" uid="uid://baukomuw01ajv" path="res://scenes/stations/assets/station_name_label_settings_black.tres" id="5_0teva"]
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="6_h3ce4"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="7_m0iis"]
@@ -147,9 +146,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6ecwe"]
 _data = {
-"RESET": SubResource("Animation_g22sf"),
-"train_enter": SubResource("Animation_sdd82"),
-"train_leave": SubResource("Animation_ygpp7")
+&"RESET": SubResource("Animation_g22sf"),
+&"train_enter": SubResource("Animation_sdd82"),
+&"train_leave": SubResource("Animation_ygpp7")
 }
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ufycs"]

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://1hbnvtrq7ucw"]
 
-[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_kdolv"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="2_5t753"]
+[ext_resource type="Script" uid="uid://ssjpmawp0tgi" path="res://items/inventory_item.gd" id="1_kdolv"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_5t753"]
 [ext_resource type="Texture2D" uid="uid://c02khiqi4yvrd" path="res://items/armor/assets/note_book.png" id="3_jxua5"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]

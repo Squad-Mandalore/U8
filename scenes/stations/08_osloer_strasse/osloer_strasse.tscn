@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dbog1wkc3h6mo"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_hr81g"]
-[ext_resource type="Script" path="res://scenes/stations/08_osloer_strasse/osloer_strasse.gd" id="2_juwhm"]
+[ext_resource type="Script" uid="uid://embf36dmfn1l" path="res://scenes/stations/08_osloer_strasse/osloer_strasse.gd" id="2_juwhm"]
 [ext_resource type="Texture2D" uid="uid://ct167mf8c43wx" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_background_fight.png" id="3_e1cy4"]
 [ext_resource type="Texture2D" uid="uid://dyqe16uee6oon" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_fight_floor.png" id="4_e16up"]
 [ext_resource type="Texture2D" uid="uid://brwwyeencs5tq" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_wall.png" id="5_1s2x4"]

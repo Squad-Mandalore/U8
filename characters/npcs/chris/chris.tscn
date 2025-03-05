@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bkaths3irgi7c"]
 
-[ext_resource type="Script" path="res://characters/npcs/chris/chris.gd" id="1_muxck"]
-[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="2_twkw8"]
+[ext_resource type="Script" uid="uid://b3rhg6v5iv4dc" path="res://characters/npcs/chris/chris.gd" id="1_muxck"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_twkw8"]
 [ext_resource type="Resource" uid="uid://cq1wjf5oviin5" path="res://characters/attacks/assets/boxing.tres" id="3_7g82s"]
 [ext_resource type="Resource" uid="uid://fngonw15cf5o" path="res://characters/classes/assets/honest_burgy.tres" id="4_thv40"]
 [ext_resource type="Texture2D" uid="uid://c7bmp1m2bwr3l" path="res://characters/npcs/chris/assets/ChrisEhrlich.png" id="6_8mk7p"]

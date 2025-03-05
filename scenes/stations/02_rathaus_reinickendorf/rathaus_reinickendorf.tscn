@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://vj01awpscehx"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_jboli"]
-[ext_resource type="Script" path="res://scenes/stations/02_rathaus_reinickendorf/rathaus_reinickendorf.gd" id="2_dif4s"]
+[ext_resource type="Script" uid="uid://ch4sp8lx5ciyi" path="res://scenes/stations/02_rathaus_reinickendorf/rathaus_reinickendorf.gd" id="2_dif4s"]
 [ext_resource type="PackedScene" uid="uid://b2iq74ecijgw2" path="res://characters/npcs/big_child/big_child.tscn" id="3_6870u"]
 [ext_resource type="Texture2D" uid="uid://cjp87k02phlcp" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background-2-fight.png" id="3_h33oi"]
 [ext_resource type="PackedScene" uid="uid://bymkmcgp2ky2o" path="res://characters/npcs/badman/badman.tscn" id="4_2ti0u"]

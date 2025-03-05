@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://t06m0njij5ku"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_icq6v"]
-[ext_resource type="Script" path="res://scenes/stations/19_kottbusser_tor/kottbusser_tor.gd" id="2_083p3"]
+[ext_resource type="Script" uid="uid://bf4qmhrgylk1o" path="res://scenes/stations/19_kottbusser_tor/kottbusser_tor.gd" id="2_083p3"]
 [ext_resource type="Texture2D" uid="uid://dvgwwhy1xchkd" path="res://scenes/stations/19_kottbusser_tor/assets/kottbusser_tor_background.png" id="3_ea010"]
 [ext_resource type="Texture2D" uid="uid://bswn1kitxuwd1" path="res://scenes/stations/19_kottbusser_tor/assets/kottbusser_tor_background_2_fight.png" id="3_nvfmb"]
 [ext_resource type="Texture2D" uid="uid://djuulqc1m8yab" path="res://scenes/stations/19_kottbusser_tor/assets/kottbusser_tor_floor.png" id="4_rjf1a"]

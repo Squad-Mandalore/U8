@@ -31,3 +31,4 @@ signal execute_attack(attack: Attack, active_combatant: String, passive_combatan
 
 signal map_opened()
 signal map_exited()
+signal interact_button_toggle(flag)

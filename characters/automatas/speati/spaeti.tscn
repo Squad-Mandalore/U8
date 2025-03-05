@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://jf1dhu624rgd"]
 
-[ext_resource type="Script" path="res://characters/npcs/shop_npc.gd" id="1_8nd4e"]
+[ext_resource type="Script" uid="uid://cx5c0o5w1wuyg" path="res://characters/npcs/shop_npc.gd" id="1_8nd4e"]
 [ext_resource type="Texture2D" uid="uid://kbs4pl8l7hp1" path="res://characters/automatas/speati/assets/spaeti.png" id="2_2u5f6"]
-[ext_resource type="Script" path="res://items/item.gd" id="2_t21io"]
+[ext_resource type="Script" uid="uid://gscj3hnm5oor" path="res://items/item.gd" id="2_t21io"]
 [ext_resource type="Resource" uid="uid://b3mrs5o5p116r" path="res://items/armor/pink_sunglasses.tres" id="3_30kon"]
 [ext_resource type="Resource" uid="uid://bo8geotvj2v4w" path="res://items/armor/sun_glasses.tres" id="4_c1dev"]
 [ext_resource type="Resource" uid="uid://chevkbqrl42xk" path="res://items/armor/bulletproof_vest.tres" id="5_o3mhg"]

@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Weapon" load_steps=9 format=3 uid="uid://bdyet3nbsrd3y"]
 
-[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="1_l1k8t"]
-[ext_resource type="Script" path="res://characters/attacks/formula.gd" id="2_0g7o6"]
-[ext_resource type="Script" path="res://items/weapons/weapon.gd" id="3_6slpj"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="4_53fe4"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="1_l1k8t"]
+[ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="2_0g7o6"]
+[ext_resource type="Script" uid="uid://c0drmr3olu1ci" path="res://items/weapons/weapon.gd" id="3_6slpj"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_53fe4"]
 [ext_resource type="Texture2D" uid="uid://blf51raabm2wy" path="res://items/weapons/assets/item_handgun.png" id="5_lrx6p"]
 
 [sub_resource type="Resource" id="Resource_ayac1"]

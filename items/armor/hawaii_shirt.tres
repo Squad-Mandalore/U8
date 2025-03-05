@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://bgr3g32dgkjnh"]
 
-[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_gl0pf"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="2_4p5wh"]
+[ext_resource type="Script" uid="uid://ssjpmawp0tgi" path="res://items/inventory_item.gd" id="1_gl0pf"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_4p5wh"]
 [ext_resource type="Texture2D" uid="uid://ds7w0323gbf1x" path="res://items/armor/assets/hawaii_shirt.png" id="3_sro2r"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]

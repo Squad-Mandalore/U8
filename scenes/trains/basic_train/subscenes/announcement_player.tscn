@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://4yblwinc1olu"]
 
 [ext_resource type="AudioStream" uid="uid://clgk4m4jrunvf" path="res://assets/sounds/announcers/Ansage_U8_nach_Herrmannstrasse.wav" id="1_qbosp"]
-[ext_resource type="Script" path="res://scenes/trains/basic_train/subscenes/announcement_player.gd" id="2_hvuk5"]
+[ext_resource type="Script" uid="uid://boqtghy1ynuyb" path="res://scenes/trains/basic_train/subscenes/announcement_player.gd" id="2_hvuk5"]
 [ext_resource type="AudioStream" uid="uid://qo858b7niho" path="res://assets/sounds/announcers/Ansage_naechster_Halt.wav" id="3_g276s"]
 [ext_resource type="AudioStream" uid="uid://c6sei6pjqoax3" path="res://assets/sounds/announcers/Ansage_Rathaus.wav" id="4_jt34q"]
 [ext_resource type="AudioStream" uid="uid://bnv4yqijg24eb" path="res://assets/sounds/announcers/Ansage_karl_bonnhoeffer.wav" id="5_vi03b"]

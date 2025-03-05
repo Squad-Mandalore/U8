@@ -1,7 +1,7 @@
 extends Npc
 class_name TrashCanExtinguisher
 
-@export var movement_speed: float = 60.0 
+@export var movement_speed: float = 60.0
 @export var max_roam_distance: float = 200.0
 @export var navigation_layers: int = 1
 
@@ -31,7 +31,6 @@ func _ready() -> void:
 
 func _initialize_navigation() -> void:
     var nav_map: RID = nav_agent.get_navigation_map()
-    
     while NavigationServer2D.map_get_iteration_id(nav_map) == 0:
         await NavigationServer2D.map_changed
 
@@ -48,7 +47,6 @@ func _physics_process(delta: float) -> void:
         velocity = Vector2.ZERO
         nav_agent.velocity = Vector2.ZERO
         return
-
     var fire = get_closest_fire()
     if fire and not _action_in_progress:
         _current_fire = fire
@@ -166,10 +164,10 @@ func get_closest_fire() -> Node2D:
             fires.append(seating.get_node("Fire2"))
     if fires.is_empty():
         return null
-    
+
     var closest = fires[0]
     var min_dist = global_position.distance_to(closest.global_position)
-    
+
     for fire in fires:
         var d = global_position.distance_to(fire.global_position)
         if d < min_dist:
@@ -177,6 +175,12 @@ func get_closest_fire() -> Node2D:
             closest = fire
     return closest
 
+var updating = false
+
 func _on_path_changed() -> void:
+    if updating:
+        return
+    updating = true
     var next_point = nav_agent.get_next_path_position()
     _direction = (next_point - global_position).normalized()
+    updating = false

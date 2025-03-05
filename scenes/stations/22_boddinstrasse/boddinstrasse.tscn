@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfokvab3nhxg3"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_r6fvn"]
-[ext_resource type="Script" path="res://scenes/stations/22_boddinstrasse/boddinstrasse.gd" id="2_xsoqg"]
+[ext_resource type="Script" uid="uid://c5v8e72usm1ss" path="res://scenes/stations/22_boddinstrasse/boddinstrasse.gd" id="2_xsoqg"]
 
 [node name="Boddinstrasse" instance=ExtResource("1_r6fvn")]
 script = ExtResource("2_xsoqg")
