@@ -18,7 +18,7 @@ combat_floor = ExtResource("4_mo6ep")
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Paracelsus-Bad"
 
-[node name="Bademeister2d" parent="Node2D" index="0" instance=ExtResource("3_cnday")]
+[node name="Lifeguard" parent="Node2D" index="0" instance=ExtResource("3_cnday")]
 unique_name_in_owner = true
 position = Vector2(600, 231)
 
@@ -61,7 +61,7 @@ position = Vector2(820, 420)
 [node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("5_rp8qx")]
 position = Vector2(988, 420)
 
-[node name="BossArea" type="Area2D" parent="." index="4"]
+[node name="BossArea" type="Area2D" parent="." index="3"]
 collision_layer = 0
 collision_mask = 2
 
