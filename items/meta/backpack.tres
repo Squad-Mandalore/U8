@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Backpack" load_steps=3 format=3 uid="uid://brg8swyv42l1o"]
 
-[ext_resource type="Script" path="res://items/meta/backpack.gd" id="1_18c0j"]
+[ext_resource type="Script" uid="uid://tgxr1o363360" path="res://items/meta/backpack.gd" id="1_18c0j"]
 [ext_resource type="Texture2D" uid="uid://cbm785evi2osf" path="res://items/meta/assets/backpack.png" id="2_a1c1h"]
 
 [resource]

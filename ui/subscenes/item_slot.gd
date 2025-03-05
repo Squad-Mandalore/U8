@@ -9,7 +9,6 @@ var item: Item:
 var ck3_progress_bar_value: int
 var is_shop_slot: bool = false
 
-
 func _ready() -> void:
     SignalDispatcher.set_ck3_progress_bar_value.connect(set_ck3_progress_bar_value)
 
@@ -58,12 +57,15 @@ func _on_mouse_entered() -> void:
     if is_enabled():
         add_theme_stylebox_override("panel", preload("res://ui/assets/item_slot_enabled_hovered.tres"))
         SignalDispatcher.sound_effect.emit("hover_effect")
-        if item != null:
+        if item:
+            if item.has_method("interact"):
+                SignalDispatcher.interact_button_toggle.emit(true)
             SignalDispatcher.toggle_item_hud.emit(item, is_shop_slot)
             if is_shop_slot:
                 SignalDispatcher.update_shop_dialogue_box.emit(item)
 
 func _on_mouse_exited() -> void:
+    SignalDispatcher.interact_button_toggle.emit(false)
     if is_enabled():
         add_theme_stylebox_override("panel", preload("res://ui/assets/item_slot_enabled.tres"))
         if ck3_progress_bar_value != 60:

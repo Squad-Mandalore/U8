@@ -342,4 +342,3 @@ func start_animation(animation: String):
 
 func stop_animation():
     _sprite.stop()
-

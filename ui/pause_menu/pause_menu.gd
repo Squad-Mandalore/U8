@@ -8,7 +8,8 @@ func _on_confirm_exit_confirmed():
 func _on_button_mouse_entered() -> void:
     SignalDispatcher.sound_effect.emit("hover_effect")
 
-
+func _on_back_to_main_menu_pressed() -> void:
+    SignalDispatcher.sound_music.emit("main_menu")
 
 func _on_button_pressed() -> void:
     SignalDispatcher.sound_effect.emit("button_clicked")

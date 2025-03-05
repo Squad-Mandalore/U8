@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://dq2ug6umgkqai"]
 
 [ext_resource type="Texture2D" uid="uid://bdmamn8owc1yn" path="res://scenes/trains/basic_train/assets/ubahn-v4-links.png" id="1_7bjif"]
-[ext_resource type="Script" path="res://scenes/stations/door_logic.gd" id="1_x7jvs"]
+[ext_resource type="Script" uid="uid://d0egu6vn3y8o6" path="res://scenes/stations/door_logic.gd" id="1_x7jvs"]
 [ext_resource type="PackedScene" uid="uid://bw6fq4ff3l51v" path="res://scenes/trains/basic_train/subscenes/interior_left_front.tscn" id="3_obi4i"]
 [ext_resource type="Texture2D" uid="uid://xujcdxctbung" path="res://scenes/trains/basic_train/assets/ubahn-v4-links-innen.png" id="3_rth5c"]
 [ext_resource type="Texture2D" uid="uid://c4fxqw6qsfqq0" path="res://scenes/stations/assets/ubahn-v4-links-anim.png" id="4_ad400"]

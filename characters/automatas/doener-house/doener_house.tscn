@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://diy1ckcdcgjg0"]
+
+[ext_resource type="Script" uid="uid://cx5c0o5w1wuyg" path="res://characters/npcs/shop_npc.gd" id="1_yv5io"]
+[ext_resource type="Script" uid="uid://gscj3hnm5oor" path="res://items/item.gd" id="2_jwfhu"]
+[ext_resource type="Texture2D" uid="uid://c622vs2a5o4uu" path="res://characters/automatas/doener-house/assets/doenerhouse_with_person.png" id="3_ah8hc"]
+[ext_resource type="Texture2D" uid="uid://dchf4axio55km" path="res://characters/automatas/doener-house/assets/dennis.png" id="3_bnwqg"]
+[ext_resource type="Resource" uid="uid://b6coqm2cvlo40" path="res://items/consumables/schnitzel.tres" id="3_ly4av"]
+[ext_resource type="Resource" uid="uid://beksdl6t3f8nt" path="res://items/consumables/pizza.tres" id="4_4ejdo"]
+[ext_resource type="Resource" uid="uid://c0k8eix7pojxm" path="res://items/consumables/doener.tres" id="5_h5ykq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sr6sf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ah8hc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bnwqg")
+}],
+"loop": true,
+"name": &"shop",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eypk"]
+size = Vector2(55, 47)
+
+[node name="DoenerHouse" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("1_yv5io")
+shop_inventory = Array[ExtResource("2_jwfhu")]([ExtResource("3_ly4av"), ExtResource("4_4ejdo"), ExtResource("5_h5ykq"), null, null, null, null, null])
+_name = "Kebabhaus"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_sr6sf")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -23.5)
+shape = SubResource("RectangleShape2D_1eypk")

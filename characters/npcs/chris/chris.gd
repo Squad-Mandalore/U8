@@ -9,7 +9,7 @@ const ANDREAS_ROBBERY_ID = 3
 var dialogue = preload("res://characters/npcs/chris/assets/chris_robbery.dialogue")
 
 func _ready() -> void:
-    if dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID).is_completed() or SourceOfTruth.chance(40):
+    if dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID).is_completed() or Utils.chance(40):
         queue_free()
 
     super._ready()

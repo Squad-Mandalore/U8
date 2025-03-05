@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlxj6av5cnpkx"]
 
-[ext_resource type="Script" path="res://ui/dialogue/balloon.gd" id="1_36de5"]
+[ext_resource type="Script" uid="uid://bgucoqfscdfum" path="res://ui/dialogue/balloon.gd" id="1_36de5"]
 [ext_resource type="Theme" uid="uid://cgpgyuwqlsfo" path="res://ui/dialogue/balloon_theme.tres" id="2_a2qlk"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100

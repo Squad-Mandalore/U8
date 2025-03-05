@@ -27,13 +27,12 @@ func _on_detect_characters_body_entered(body):
 
     # First, see if this is an Npc or a subclass of Npc (e.g., WalkingNpc).
     var npc_body = body as Npc
-    if npc_body:
+    if npc_body and npc_body is not SeatedNpc:
         _is_interacting = true
         _sprite.play("idle")
-        if is_obstacle_in_path(npc_body):
-            npc_body.make_space(self as Node2D)
         while is_obstacle_in_path(npc_body):
-            await get_tree().create_timer(2.0).timeout
+            npc_body.make_space(Vector2.UP)
+            await Utils.create_timer(2.0)
         _continue_walking()
     # If not Npc, check if it's the player’s layer
     elif body.get_collision_layer() == 3 and not _player_checked:
@@ -51,9 +50,8 @@ func _on_detect_characters_body_entered(body):
             await get_tree().process_frame
         _continue_walking()
 
-
 func _continue_walking():
-    await get_tree().create_timer(2.0).timeout
+    await Utils.create_timer(2.0)
     _is_interacting = false
     _sprite.play("walk")
 
@@ -61,10 +59,12 @@ func player_has_ticket() -> bool:
     return SourceOfTruth.meta_inventory_slots[6] != null
 
 func is_obstacle_in_path(body) -> bool:
+    if body is SeatedNpc:
+        return false
     var collision_shape = body.find_child("CollisionShape2D", true, false)
     if collision_shape:
         var body_rect = collision_shape.global_transform.origin
-        if abs(body_rect.y - global_position.y) < 20:
+        if abs(body_rect.y - global_position.y) < 25:
             if body_rect.x < global_position.x:
                 return (global_position.x - body_rect.x) < 70
     return false

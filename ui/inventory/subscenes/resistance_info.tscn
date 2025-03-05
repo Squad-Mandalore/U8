@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cmptivo27x86p"]
 
-[ext_resource type="Script" path="res://ui/inventory/subscenes/resistance_info.gd" id="1_6hyc8"]
+[ext_resource type="Script" uid="uid://68gn8wo5fgx7" path="res://ui/inventory/subscenes/resistance_info.gd" id="1_6hyc8"]
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="2_qhoxw"]
 [ext_resource type="Texture2D" uid="uid://u68l1bngaa7u" path="res://ui/hud/assets/ck_3_bar.svg" id="3_jw7oo"]
 [ext_resource type="FontFile" uid="uid://pxyfff4ijb64" path="res://assets/fonts/nippo/OTF/Nippo-Medium.otf" id="5_hq22r"]

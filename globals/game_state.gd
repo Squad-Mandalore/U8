@@ -96,4 +96,3 @@ static func set_meta_inventory_slots(inv: Array[MetaItem]):
         return
     game_state.meta_inventory_slots = inv
     GlobalState.save()
-

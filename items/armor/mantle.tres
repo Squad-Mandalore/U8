@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://ckfmo2nnwutvi"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://ckfmo2nnwutvi"]
 
-[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_m8vww"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="2_rgaw7"]
+[ext_resource type="Script" uid="uid://ssjpmawp0tgi" path="res://items/inventory_item.gd" id="1_m8vww"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_rgaw7"]
 [ext_resource type="Texture2D" uid="uid://dkjhqopcoic0v" path="res://items/armor/assets/mantle.png" id="3_dljg8"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_m8vww")
+stats = SubResource("Resource_hodkb")
+price = 200
 name = "Grüner Mantel"
 description = "Ein Grüner Mantel für einfache Tage, dieser bewahrt dir wenigstens etwas Stil in der U-Bahn"
-stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_dljg8")
-price = 200

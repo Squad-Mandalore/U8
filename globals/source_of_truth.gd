@@ -139,10 +139,6 @@ static func set_damage_for_all_attacks():
             for attack in item.attacks:
                 attack.calculate_damage(stats)
 
-# Funciton gets a percentage and returns TRUE or FALSE dependant on the outcome
-static func chance(percent: float) -> bool:
-    return randf() * 100 < percent
-
 # AttackTypes and their effectiveness against each other
 static var effectiveness = {
     Utils.AttackTypes.Stark: {Utils.AttackTypes.Attraktiv: 2.0, Utils.AttackTypes.Cool: 0.5},
@@ -164,7 +160,7 @@ static func calculate_dmg_with_armor(armor: int, damage: int) -> int:
     return max(0, damage - 1.04274 * armor + 5 * log(exp(armor / 5) + 148.413) - 25)
 
 static func calculate_damage(damage: int, defender_stats: StatsSpecifier, attacker_token: Utils.AttackTypes, defender_token: Utils.AttackTypes) -> int:
-    if chance(defender_stats.dodge_chance):
+    if Utils.chance(defender_stats.dodge_chance):
         return 0
 
     # check for effective attack

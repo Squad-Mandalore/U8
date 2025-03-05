@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgyaiggj66j2e"]
 
 [ext_resource type="Texture2D" uid="uid://egisj4el18ne" path="res://scenes/trains/basic_train/assets/ubahn-v4-rechts-außen.png" id="2_hlot5"]
-[ext_resource type="Script" path="res://scenes/trains/basic_train/subscenes/foreground.gd" id="2_nd3qw"]
+[ext_resource type="Script" uid="uid://copxnimillt3a" path="res://scenes/trains/basic_train/subscenes/foreground.gd" id="2_nd3qw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeqew"]
 size = Vector2(34, 49)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dh8p5cvwbvru1"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_a4e58"]
-[ext_resource type="Script" path="res://scenes/stations/18_moritzplatz/moritzplatz.gd" id="2_f2bji"]
+[ext_resource type="Script" uid="uid://cxlsh8e7evomn" path="res://scenes/stations/18_moritzplatz/moritzplatz.gd" id="2_f2bji"]
 [ext_resource type="Texture2D" uid="uid://dr2gias5akcue" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_background_fight.png" id="3_ivk1n"]
 [ext_resource type="Texture2D" uid="uid://chcddawhixf27" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_fight_floor.png" id="4_l4s7x"]
 [ext_resource type="Texture2D" uid="uid://banru5a6yw6w4" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_background.png" id="5_rlb3x"]

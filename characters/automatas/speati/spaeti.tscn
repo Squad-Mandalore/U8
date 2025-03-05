@@ -1,0 +1,53 @@
+[gd_scene load_steps=15 format=3 uid="uid://jf1dhu624rgd"]
+
+[ext_resource type="Script" uid="uid://cx5c0o5w1wuyg" path="res://characters/npcs/shop_npc.gd" id="1_8nd4e"]
+[ext_resource type="Texture2D" uid="uid://kbs4pl8l7hp1" path="res://characters/automatas/speati/assets/spaeti.png" id="2_2u5f6"]
+[ext_resource type="Script" uid="uid://gscj3hnm5oor" path="res://items/item.gd" id="2_t21io"]
+[ext_resource type="Resource" uid="uid://b3mrs5o5p116r" path="res://items/armor/pink_sunglasses.tres" id="3_30kon"]
+[ext_resource type="Resource" uid="uid://bo8geotvj2v4w" path="res://items/armor/sun_glasses.tres" id="4_c1dev"]
+[ext_resource type="Resource" uid="uid://chevkbqrl42xk" path="res://items/armor/bulletproof_vest.tres" id="5_o3mhg"]
+[ext_resource type="Resource" uid="uid://clqcpxppquqw4" path="res://items/armor/t_shirt.tres" id="6_fbgdh"]
+[ext_resource type="Resource" uid="uid://b5frfwxa5x3k8" path="res://items/weapons/knife.tres" id="7_55oxt"]
+[ext_resource type="Resource" uid="uid://cuk5q62elytpm" path="res://items/weapons/lighter.tres" id="8_c8bje"]
+[ext_resource type="Resource" uid="uid://pafh8jr2vh22" path="res://items/consumables/beer.tres" id="9_670d7"]
+[ext_resource type="Resource" uid="uid://bdyet3nbsrd3y" path="res://items/weapons/hand_gun.tres" id="10_sn3sx"]
+[ext_resource type="Texture2D" uid="uid://dchf4axio55km" path="res://characters/automatas/doener-house/assets/dennis.png" id="12_0gpwc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uha68"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2u5f6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_0gpwc")
+}],
+"loop": true,
+"name": &"shop",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utxr4"]
+size = Vector2(55, 47.5)
+
+[node name="Spaeti" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("1_8nd4e")
+shop_inventory = Array[ExtResource("2_t21io")]([ExtResource("3_30kon"), ExtResource("4_c1dev"), ExtResource("5_o3mhg"), ExtResource("6_fbgdh"), ExtResource("7_55oxt"), ExtResource("8_c8bje"), ExtResource("9_670d7"), ExtResource("10_sn3sx")])
+_name = "Dennis"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -48)
+sprite_frames = SubResource("SpriteFrames_uha68")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -24.25)
+shape = SubResource("RectangleShape2D_utxr4")

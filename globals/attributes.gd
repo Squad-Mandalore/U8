@@ -25,7 +25,7 @@ extends Resource
 
 func add(stats: StatsSpecifier):
     max_health += stats.max_health
-    health += stats.health
+    health = min(health + stats.health, max_health)
     armor += stats.armor
     initiative += stats.initiative
     dodge_chance += stats.dodge_chance
