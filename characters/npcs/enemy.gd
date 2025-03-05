@@ -19,7 +19,6 @@ func _ready() -> void:
     update_attack_damage()
 
 func start_combat():
-    print("hey")
     if stats.health > 0:
         reset_stats()
         SignalDispatcher.combat_enter.emit(self)
