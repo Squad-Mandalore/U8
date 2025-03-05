@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2p35v"]
 size = Vector2(101, 13)
 
-[node name="SeatingAreas" type="StaticBody2D"]
+[node name="SeatingAreas" type="StaticBody2D" groups=["SeatingArea"]]
 script = ExtResource("1_yfg4b")
 
 [node name="BasicSeats" type="Sprite2D" parent="."]

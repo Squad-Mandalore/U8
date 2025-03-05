@@ -86,4 +86,3 @@ func _quest_remembers_complete():
 func _quest_dishones_brothers_complete():
     dishonest_brothers_quest.set_active(false)
     dishonest_brothers_quest.set_completed(true)
-

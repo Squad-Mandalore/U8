@@ -31,9 +31,6 @@ label_settings = ExtResource("5_33jly")
 [node name="Floor" parent="Node2D" index="0"]
 texture = ExtResource("4_4jwyb")
 
-[node name="Floor" parent="Node2D" index="0"]
-texture = ExtResource("4_4jwyb")
-
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="2"]
 y_sort_enabled = true
 
