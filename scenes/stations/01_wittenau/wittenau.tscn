@@ -1,12 +1,12 @@
 [gd_scene load_steps=33 format=3 uid="uid://dxtsv1xtfd42n"]
 
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
-[ext_resource type="Script" path="res://scenes/stations/01_wittenau/wittenau.gd" id="1_vdt2h"]
+[ext_resource type="Script" uid="uid://dl0kwt8x355cv" path="res://scenes/stations/01_wittenau/wittenau.gd" id="1_vdt2h"]
 [ext_resource type="Texture2D" uid="uid://b36noacmhtswo" path="res://scenes/stations/01_wittenau/assets/hub.png" id="2_c8rit"]
 [ext_resource type="LabelSettings" uid="uid://c0xesi3rt8odi" path="res://scenes/stations/assets/station_name_label_settings_white.tres" id="3_job2n"]
 [ext_resource type="Texture2D" uid="uid://dyqe16uee6oon" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_fight_floor.png" id="3_rimlc"]
 [ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://scenes/stations/01_wittenau/subscenes/tower.tscn" id="4_wvqyq"]
-[ext_resource type="Script" path="res://scenes/stations/navregion.gd" id="5_0xogt"]
+[ext_resource type="Script" uid="uid://br2eo0ik4vr0a" path="res://scenes/stations/navregion.gd" id="5_0xogt"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="6_fup5h"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="7_5owx3"]
 [ext_resource type="PackedScene" uid="uid://caniahfcrm3my" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren_1.tscn" id="10_krbe2"]
@@ -201,9 +201,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ltkc7"]
 _data = {
-"RESET": SubResource("Animation_dfl7g"),
-"olaf_initial_battle": SubResource("Animation_lqfb8"),
-"olaf_step_aside": SubResource("Animation_lsgha")
+&"RESET": SubResource("Animation_dfl7g"),
+&"olaf_initial_battle": SubResource("Animation_lqfb8"),
+&"olaf_step_aside": SubResource("Animation_lsgha")
 }
 
 [node name="Node2D" type="Node2D"]

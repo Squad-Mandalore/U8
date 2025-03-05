@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://d3fhr38ytpe22"]
 
-[ext_resource type="Script" path="res://characters/automatas/automata.gd" id="1_7oddq"]
+[ext_resource type="Script" uid="uid://b1efgwx06mllx" path="res://characters/automatas/automata.gd" id="1_7oddq"]
 [ext_resource type="Texture2D" uid="uid://616ii2iegex1" path="res://characters/automatas/clothes/assets/clothing_container.png" id="2_7p7bj"]
-[ext_resource type="Script" path="res://items/item.gd" id="2_abkrj"]
+[ext_resource type="Script" uid="uid://gscj3hnm5oor" path="res://items/item.gd" id="2_abkrj"]
 [ext_resource type="Resource" uid="uid://ckfmo2nnwutvi" path="res://items/armor/mantle.tres" id="3_8hp6l"]
 [ext_resource type="Resource" uid="uid://bkjg0tfdse47l" path="res://items/armor/leather_jacket.tres" id="4_tvvoa"]
 [ext_resource type="Resource" uid="uid://dxrnq8hjfe8ic" path="res://items/armor/hobo_hoodie.tres" id="5_b027p"]

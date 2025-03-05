@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bc7wxl4cf36oe"]
 
-[ext_resource type="Script" path="res://ui/combat/subscenes/attack_hover.gd" id="1_7dsqd"]
+[ext_resource type="Script" uid="uid://bb6f8bwa2iwx2" path="res://ui/combat/subscenes/attack_hover.gd" id="1_7dsqd"]
 [ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="1_25r8k"]
 [ext_resource type="StyleBox" uid="uid://dx03p6kn7rnup" path="res://ui/combat/assets/floating_attack_info.tres" id="1_657hu"]
 [ext_resource type="Texture2D" uid="uid://cv8aem4xmtugh" path="res://ui/combat/assets/info_star.svg" id="2_5it3j"]

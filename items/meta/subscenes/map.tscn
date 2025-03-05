@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bavia6bdks5lf"]
 
-[ext_resource type="Script" path="res://items/meta/subscenes/map.gd" id="1_glrpd"]
+[ext_resource type="Script" uid="uid://coy2yhuqwmlub" path="res://items/meta/subscenes/map.gd" id="1_glrpd"]
 [ext_resource type="Texture2D" uid="uid://bqxvk7i2yi7ql" path="res://items/meta/assets/real_map.png" id="1_i4ji2"]
 
 [node name="Map" type="CanvasLayer"]

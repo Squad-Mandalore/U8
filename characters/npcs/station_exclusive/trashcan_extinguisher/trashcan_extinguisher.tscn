@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://dkxkayaw41poa"]
 
-[ext_resource type="Script" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/trashcan_extinguisher.gd" id="1_78yyv"]
+[ext_resource type="Script" uid="uid://dewdogfu0p8mf" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/trashcan_extinguisher.gd" id="1_78yyv"]
 [ext_resource type="Texture2D" uid="uid://d3vagbxpoqih7" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/assets/bahnhof_interactive.png" id="2_a5x7s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]

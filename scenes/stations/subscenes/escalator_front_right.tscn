@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmd87ow3onp7x"]
 
-[ext_resource type="Texture2D" uid="uid://dgtiqbt4vrq0i" path="res://assets/hub/escalator-front.png" id="1_4dgmr"]
+[ext_resource type="Texture2D" uid="uid://dgtiqbt4vrq0i" path="res://scenes/stations/01_wittenau/assets/escalator-front.png" id="1_4dgmr"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8ag35"]
 b = Vector2(43, 0)

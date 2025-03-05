@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c3puqvt0uujfs"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_mfw57"]
-[ext_resource type="Script" path="res://ui/inventory/subscenes/item_info_stat_row.gd" id="1_rfv8t"]
+[ext_resource type="Script" uid="uid://d06qpthr865m4" path="res://ui/inventory/subscenes/item_info_stat_row.gd" id="1_rfv8t"]
 [ext_resource type="Texture2D" uid="uid://bqofv3cuwda0p" path="res://ui/hud/assets/up.svg" id="2_qfn5w"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_abded"]

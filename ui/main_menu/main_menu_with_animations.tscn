@@ -1,12 +1,12 @@
 [gd_scene load_steps=21 format=3 uid="uid://vgtvvoeai24u"]
 
-[ext_resource type="Script" path="res://ui/main_menu/main_menu_with_animations.gd" id="2_rnbo0"]
+[ext_resource type="Script" uid="uid://bm0bh5s84mv31" path="res://ui/main_menu/main_menu_with_animations.gd" id="2_rnbo0"]
 [ext_resource type="PackedScene" uid="uid://b0c3m2fxsdveo" path="res://ui/main_menu/options_menu/master_options_menu_with_tabs.tscn" id="3_of1fj"]
 [ext_resource type="PackedScene" uid="uid://b7hs5igqv1qjk" path="res://ui/credits/credits.tscn" id="4_4dvcb"]
-[ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/ui_sound_controller.gd" id="4_hhp08"]
-[ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_version_label.gd" id="6_6j8k6"]
-[ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_name_label.gd" id="7_jitli"]
-[ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="8_u65nr"]
+[ext_resource type="Script" uid="uid://cfbiw53hshqs" path="res://addons/maaacks_game_template/base/scripts/ui_sound_controller.gd" id="4_hhp08"]
+[ext_resource type="Script" uid="uid://m4ognikukub6" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_version_label.gd" id="6_6j8k6"]
+[ext_resource type="Script" uid="uid://bk3s62niptypk" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_name_label.gd" id="7_jitli"]
+[ext_resource type="Script" uid="uid://c07my54fcopf3" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="8_u65nr"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -315,10 +315,10 @@ tracks/7/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2kqig"]
 _data = {
-"Intro": SubResource("1"),
-"OpenMainMenu": SubResource("6"),
-"OpenSubMenu": SubResource("4"),
-"RESET": SubResource("2")
+&"Intro": SubResource("1"),
+&"OpenMainMenu": SubResource("6"),
+&"OpenSubMenu": SubResource("4"),
+&"RESET": SubResource("2")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="7"]

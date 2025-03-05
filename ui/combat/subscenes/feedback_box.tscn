@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://q4yxjjlox2rt"]
 
 [ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="1_fxsb6"]
-[ext_resource type="Script" path="res://ui/combat/subscenes/feedback_box.gd" id="1_vue2e"]
+[ext_resource type="Script" uid="uid://b1ipmc5isdd8e" path="res://ui/combat/subscenes/feedback_box.gd" id="1_vue2e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddwov"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
@@ -43,8 +43,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_05jba"]
 _data = {
-"RESET": SubResource("Animation_k83q4"),
-"typewriter": SubResource("Animation_jsk3u")
+&"RESET": SubResource("Animation_k83q4"),
+&"typewriter": SubResource("Animation_jsk3u")
 }
 
 [node name="FeedbackBox" type="Control"]

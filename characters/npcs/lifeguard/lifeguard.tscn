@@ -1,10 +1,10 @@
 [gd_scene load_steps=51 format=3 uid="uid://b4v2kxxwx22uq"]
 
-[ext_resource type="Script" path="res://characters/npcs/lifeguard/lifeguard.gd" id="1_wtvpj"]
-[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="2_mngaj"]
+[ext_resource type="Script" uid="uid://cpxyxc3p64hqb" path="res://characters/npcs/lifeguard/lifeguard.gd" id="1_wtvpj"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_mngaj"]
 [ext_resource type="Resource" uid="uid://oui3w7vat6ib" path="res://characters/attacks/assets/show_off.tres" id="3_jhxo3"]
-[ext_resource type="Script" path="res://characters/attacks/formula.gd" id="4_cnqhi"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="4_moqmy"]
+[ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="4_cnqhi"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_moqmy"]
 [ext_resource type="Texture2D" uid="uid://bhrsh1sjnml85" path="res://characters/npcs/lifeguard/assets/lifeguard.png" id="5_8noa3"]
 
 [sub_resource type="Resource" id="Resource_4rcr0"]

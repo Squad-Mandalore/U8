@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://bw88rw1iou2ej"]
 
-[ext_resource type="Script" path="res://globals/attributes.gd" id="1_oam7n"]
-[ext_resource type="Script" path="res://items/inventory_item.gd" id="2_tmpph"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="1_oam7n"]
+[ext_resource type="Script" uid="uid://ssjpmawp0tgi" path="res://items/inventory_item.gd" id="2_tmpph"]
 [ext_resource type="Texture2D" uid="uid://t3p6m2nq32im" path="res://items/armor/assets/formal_shirt.png" id="3_ann0u"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]

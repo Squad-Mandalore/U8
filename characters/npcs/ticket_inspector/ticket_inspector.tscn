@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://bex812hcoh6pq"]
 
-[ext_resource type="Script" path="res://characters/npcs/ticket_inspector/ticket_inspector.gd" id="1_m3k4j"]
+[ext_resource type="Script" uid="uid://dkx864wjpf41d" path="res://characters/npcs/ticket_inspector/ticket_inspector.gd" id="1_m3k4j"]
 [ext_resource type="Texture2D" uid="uid://bg3qe4pyktq28" path="res://characters/npcs/ticket_inspector/assets/ticket_inspector.png" id="1_rr713"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7s4cp"]
