@@ -121,6 +121,10 @@ const STATS_DICT = {
     }
 }
 
+# Funciton gets a percentage and returns TRUE or FALSE dependant on the outcome
+func chance(percent: float) -> bool:
+    return randf() * 100 < percent
+
 func remove_all_children(parent: Node):
     for child in parent.get_children():
         child.queue_free()

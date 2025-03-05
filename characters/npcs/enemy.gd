@@ -6,6 +6,7 @@ class_name Enemy
 @export var stats: StatsSpecifier
 @export var texture: Texture2D
 @export var winning_money: int = 10
+@export var battle_intro: String = "battle_intro"
 var initial_stats: StatsSpecifier
 
 
