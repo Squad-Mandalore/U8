@@ -1,7 +1,7 @@
 extends Npc
 class_name TrainStationNpc
 
-@export var movement_speed: float = 50.0 
+@export var movement_speed: float = 50.0
 @export var max_roam_distance: float = 100.0
 @export var navigation_layers: int = 1
 
@@ -19,10 +19,10 @@ func _ready() -> void:
     _timer.start(randf_range(10.0, 25.0))
     call_deferred("_initialize_navigation")
 
-    NavigationServer2D.connect("map_changed", Callable(self, "_on_map_ready"))
-    nav_agent.connect("target_reached", Callable(self, "_on_target_reached"))
-    nav_agent.connect("path_changed", Callable(self, "_on_path_changed"))
-    nav_agent.connect("velocity_computed", Callable(self, "_on_velocity_computed"))
+    NavigationServer2D.map_changed.connect(_on_map_ready)
+    nav_agent.target_reached.connect(_on_target_reached)
+    nav_agent.path_changed.connect(_on_path_changed)
+    nav_agent.velocity_computed.connect(_on_velocity_computed)
     nav_agent.max_speed = movement_speed
 
 func _initialize_navigation() -> void:
@@ -107,6 +107,11 @@ func set_new_random_target() -> void:
 
     nav_agent.target_position = new_target
 
+var updating = false
 func _on_path_changed() -> void:
+    if updating:
+        return
+    updating = true
     var next_point = nav_agent.get_next_path_position()
     _direction = (next_point - global_position).normalized()
+    updating = false
