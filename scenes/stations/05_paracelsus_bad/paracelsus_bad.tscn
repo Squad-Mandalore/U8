@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dnueionl57e3i"]
 
-[ext_resource type="Script" uid="uid://baxwugb8i0u14" path="res://scenes/stations/05_paracelsus_bad/paracelsus_bad.gd" id="1_086u8"]
+[ext_resource type="Script" uid="uid://dy63qqr1mduty" path="res://scenes/stations/05_paracelsus_bad/paracelsus_bad.gd" id="1_086u8"]
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_q4mp0"]
 [ext_resource type="Texture2D" uid="uid://cjp87k02phlcp" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background-2-fight.png" id="3_4avx1"]
 [ext_resource type="PackedScene" uid="uid://b4v2kxxwx22uq" path="res://characters/npcs/lifeguard/lifeguard.tscn" id="3_cnday"]

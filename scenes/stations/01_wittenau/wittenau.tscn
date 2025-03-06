@@ -357,10 +357,10 @@ script = ExtResource("5_0xogt")
 position = Vector2(904, 95)
 
 [node name="Floor" type="Sprite2D" parent="Node2D"]
-position = Vector2(0, 200)
+position = Vector2(0, 188)
 texture = ExtResource("23_ige60")
 centered = false
-offset = Vector2(0, -200)
+offset = Vector2(0, -188)
 
 [node name="Berliner" parent="Node2D" instance=ExtResource("1_gtc8i")]
 z_index = 0
