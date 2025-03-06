@@ -1,10 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://1pg3o54ddnb3"]
+[gd_scene load_steps=17 format=3 uid="uid://1pg3o54ddnb3"]
 
 [ext_resource type="Script" uid="uid://d0egu6vn3y8o6" path="res://scenes/stations/door_logic.gd" id="1_ta63d"]
 [ext_resource type="Texture2D" uid="uid://dtmgac6m0mgik" path="res://scenes/trains/basic_train/assets/ubahn-v4-mitte.png" id="2_x3ayl"]
-[ext_resource type="Texture2D" uid="uid://cpnqt6gti5es2" path="res://scenes/trains/basic_train/assets/ubahn-v4-mitte-innen.png" id="3_0s1rn"]
 [ext_resource type="Texture2D" uid="uid://c01a1c5t52h78" path="res://scenes/stations/assets/ubahn-v4-mitte-anim.png" id="4_8xexq"]
-[ext_resource type="PackedScene" uid="uid://c2bx878j5u7b7" path="res://scenes/trains/basic_train/subscenes/interior_center_front.tscn" id="4_rykmy"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3wvq4"]
 b = Vector2(44, 0)
@@ -20,18 +18,6 @@ b = Vector2(72, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_lmyyd"]
 b = Vector2(314, 0)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1aqu"]
-size = Vector2(32, 10)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpgfg"]
-size = Vector2(69, 10)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnbvo"]
-size = Vector2(70, 10)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8th66"]
-size = Vector2(31, 10)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xovel"]
 b = Vector2(33, 0)
@@ -92,7 +78,6 @@ animations = [{
 }]
 
 [node name="Center" type="StaticBody2D"]
-position = Vector2(330, 0)
 script = ExtResource("1_ta63d")
 
 [node name="Train" type="Sprite2D" parent="."]
@@ -124,31 +109,6 @@ polygon = PackedVector2Array(329, 50, 327, 50, 323, 49, 321, 48, 321, 47)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, 50, 1, 50, 4, 49, 7, 48, 7, 47)
-
-[node name="InteriorCenter" type="StaticBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="InteriorCenter"]
-texture = ExtResource("3_0s1rn")
-centered = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteriorCenter"]
-position = Vector2(27, 49)
-shape = SubResource("RectangleShape2D_l1aqu")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteriorCenter"]
-position = Vector2(112.5, 49)
-shape = SubResource("RectangleShape2D_vpgfg")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="InteriorCenter"]
-position = Vector2(217, 49)
-shape = SubResource("RectangleShape2D_hnbvo")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="InteriorCenter"]
-position = Vector2(301.5, 49)
-shape = SubResource("RectangleShape2D_8th66")
-
-[node name="InteriorCenterFront" parent="." instance=ExtResource("4_rykmy")]
-y_sort_enabled = true
 
 [node name="DoorColisions" type="StaticBody2D" parent="."]
 z_index = 50

@@ -5,7 +5,6 @@ signal train_enter
 @onready var animation_player = $AnimationPlayer
 @onready var olaf = %OlafScholz
 @onready var animation_train = $Node2D/AnimationTrain
-@onready var animation_train_collision = $Node2D/AnimationTrain/CollisionShape2D
 @onready var player = $Node2D/Berliner
 @export var combat_background: Texture2D
 @export var combat_background_left: Texture2D
@@ -14,8 +13,7 @@ var train_accessable = false
 
 func _ready() -> void:
     SignalDispatcher.sound_music.emit("station")
-    animation_train.activate_doors()
-    animation_train_collision.disabled = false
+    animation_train.activated = true
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
     if train_accessable:
@@ -33,8 +31,6 @@ func _on_animation_player_animation_finished(anim_name:StringName) -> void:
 
 func _on_animation_train_body_entered(_body: Node2D) -> void:
     animation_train.deactivate_doors()
-    animation_train_collision.call_deferred("set_disabled", true)
     player.hide()
     player.speed_multiplier = 0.0
     animation_player.play("train_leave")
-

@@ -151,6 +151,6 @@ shape = SubResource("RectangleShape2D_bg0ao")
 sprite_frames = SubResource("SpriteFrames_7wqtt")
 animation = &"idle"
 autoplay = "idle"
-offset = Vector2(0, -16)
+offset = Vector2(-3, -16)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

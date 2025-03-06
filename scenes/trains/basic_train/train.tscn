@@ -137,7 +137,7 @@ position = Vector2(172, 178)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_aaf1y")
+&"": SubResource("AnimationLibrary_aaf1y")
 }
 
 [connection signal="ready" from="." to="Player" method="_disable_scooting"]
