@@ -28,6 +28,11 @@ b = Vector2(0, 314)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_55gil"]
 b = Vector2(-98, 0)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ufycs"]
+vertices = PackedVector2Array(963.5, 345, 1121.73, 484.039, 105.258, 488.953, 842.5, 345, 629.5, 345, 842.5, 312, 508.5, 345, 1114.25, 198.977, 963.5, 312, 112.742, 197.008, 287.5, 345, 287.5, 312, 508.5, 312, 166.5, 345, 166.5, 312, 629.5, 312)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 4, 2), PackedInt32Array(7, 1, 0, 8), PackedInt32Array(9, 7, 8, 5), PackedInt32Array(10, 11, 12, 6), PackedInt32Array(10, 6, 2), PackedInt32Array(13, 10, 2), PackedInt32Array(13, 2, 9, 14), PackedInt32Array(5, 4, 15), PackedInt32Array(9, 5, 15), PackedInt32Array(9, 15, 12), PackedInt32Array(9, 12, 11), PackedInt32Array(9, 11, 14)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(103, 187, 1124, 189, 1132, 494, 95, 499)])
+
 [sub_resource type="Animation" id="Animation_g22sf"]
 length = 0.001
 tracks/0/type = "value"
@@ -152,11 +157,6 @@ _data = {
 &"train_leave": SubResource("Animation_ygpp7")
 }
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_ufycs"]
-vertices = PackedVector2Array(963.5, 345, 1121.73, 484.039, 105.258, 488.953, 842.5, 345, 629.5, 345, 842.5, 312, 508.5, 345, 1114.25, 198.977, 963.5, 312, 112.742, 197.008, 287.5, 345, 287.5, 312, 508.5, 312, 166.5, 345, 166.5, 312, 629.5, 312)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 4, 2), PackedInt32Array(7, 1, 0, 8), PackedInt32Array(9, 7, 8, 5), PackedInt32Array(10, 11, 12, 6), PackedInt32Array(10, 6, 2), PackedInt32Array(13, 10, 2), PackedInt32Array(13, 2, 9, 14), PackedInt32Array(5, 4, 15), PackedInt32Array(9, 5, 15), PackedInt32Array(9, 15, 12), PackedInt32Array(9, 12, 11), PackedInt32Array(9, 11, 14)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(103, 187, 1124, 189, 1132, 494, 95, 499)])
-
 [node name="Station" type="Node2D"]
 script = ExtResource("1_ppg4l")
 
@@ -201,26 +201,22 @@ label_settings = ExtResource("5_0teva")
 horizontal_alignment = 1
 uppercase = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_6ecwe")
-}
-
 [node name="Node2D" type="NavigationRegion2D" parent="."]
 y_sort_enabled = true
 navigation_polygon = SubResource("NavigationPolygon_ufycs")
 script = ExtResource("4_jb3ik")
 
+[node name="AnimationTrain" parent="Node2D" instance=ExtResource("2_xadlq")]
+position = Vector2(-1121, 104)
+
 [node name="Floor" type="Sprite2D" parent="Node2D"]
-y_sort_enabled = true
-position = Vector2(65, 188)
+position = Vector2(0, 186)
 texture = ExtResource("3_l3pjy")
 centered = false
-offset = Vector2(-65, -188)
+offset = Vector2(0, -186)
 
 [node name="Berliner" parent="Node2D" instance=ExtResource("6_h3ce4")]
 z_index = 0
-y_sort_enabled = true
 position = Vector2(180, 198)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/Berliner"]
@@ -236,8 +232,11 @@ drag_vertical_enabled = true
 radius = 5.0
 avoidance_layers = 7
 
-[node name="AnimationTrain" parent="Node2D" instance=ExtResource("2_xadlq")]
-position = Vector2(-1121, 104)
+[node name="SmokingDude" parent="Node2D" instance=ExtResource("11_h1wtr")]
+position = Vector2(391, 346)
+
+[node name="TrashcanExtinguisher" parent="Node2D" instance=ExtResource("10_o38ik")]
+position = Vector2(811, 379)
 
 [node name="Escalator" type="CanvasGroup" parent="Node2D"]
 y_sort_enabled = true
@@ -278,11 +277,10 @@ position = Vector2(569, 323)
 [node name="SeatingArea3" parent="Node2D/SeatingAreas" instance=ExtResource("9_1wjs1")]
 position = Vector2(903, 323)
 
-[node name="SmokingDude" parent="Node2D" instance=ExtResource("11_h1wtr")]
-position = Vector2(391, 346)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6ecwe")
+}
 
-[node name="TrashcanExtinguisher" parent="Node2D" instance=ExtResource("10_o38ik")]
-position = Vector2(811, 379)
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Node2D/AnimationTrain" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

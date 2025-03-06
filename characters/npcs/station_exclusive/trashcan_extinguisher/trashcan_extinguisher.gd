@@ -54,6 +54,9 @@ func get_valid_extinguishing_position(fire: Node2D) -> Vector2:
     return target_point
 
 func get_closest_fire() -> Node2D:
+    if not get_tree():
+        return
+
     var fires = []
     for seating in get_tree().get_nodes_in_group("SeatingArea"):
         if seating._fire_left.visible:

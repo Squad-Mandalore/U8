@@ -154,7 +154,6 @@ animations = [{
 }]
 
 [node name="TrashcanExtinguisher" type="CharacterBody2D" groups=["NPC"]]
-y_sort_enabled = true
 collision_layer = 5
 motion_mode = 1
 slide_on_ceiling = false

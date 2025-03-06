@@ -7,7 +7,7 @@ Oh? Jemand versucht dich zu beklauen. Was möchtest du tun?
 - {{_name}} veprügeln [if SourceOfTruth.stats.strength > 9]
 	{{_name}}: Du willst also Stress? Den kannst du haben!
 	do start_combat()
-	Du sammelst {{WINNING_MONEY}} Euronen vom bewusstlosen {{_name}} und steckst sie in deine Taschen. Ein Lächeln breitet sich auf deinen Lippen aus
+	Du sammelst {{winning_money}} Euronen vom bewusstlosen {{_name}} und steckst sie in deine Taschen. Ein Lächeln breitet sich auf deinen Lippen aus
 	=> END
 - {{_name}} beeindrucken [if SourceOfTruth.stats.coolness > 4]
 	Während er dir in der Tasche rumfummelt zuckt er plötzlich zusammen. Er schaut auf und du ihm direkt in die Augen ...
@@ -30,5 +30,5 @@ Oh? Jemand versucht dich zu beklauen. Was möchtest du tun?
 {{_name}}: Egal ob du es warst oder nicht, ich habe Bock dir in die Fresse zu schlagen!
 do start_combat()
 {{_name}}: Jetzt weiß ich warum Chris verloren hat ...
-Du sammelst {{WINNING_MONEY}} Euronen vom bewusstlosen {{_name}} und steckst sie in deine Taschen. Ein Lächeln breitet sich auf deinen Lippen aus
+Du sammelst {{winning_money}} Euronen vom bewusstlosen {{_name}} und steckst sie in deine Taschen. Ein Lächeln breitet sich auf deinen Lippen aus
 => END

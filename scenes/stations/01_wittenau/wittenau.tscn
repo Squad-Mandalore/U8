@@ -1,10 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://dxtsv1xtfd42n"]
+[gd_scene load_steps=39 format=3 uid="uid://dxtsv1xtfd42n"]
 
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
 [ext_resource type="Script" uid="uid://dl0kwt8x355cv" path="res://scenes/stations/01_wittenau/wittenau.gd" id="1_vdt2h"]
 [ext_resource type="Texture2D" uid="uid://b36noacmhtswo" path="res://scenes/stations/01_wittenau/assets/hub.png" id="2_c8rit"]
 [ext_resource type="LabelSettings" uid="uid://c0xesi3rt8odi" path="res://scenes/stations/assets/station_name_label_settings_white.tres" id="3_job2n"]
 [ext_resource type="Texture2D" uid="uid://dyqe16uee6oon" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_fight_floor.png" id="3_rimlc"]
+[ext_resource type="Texture2D" uid="uid://b2oxlg4ka5fyl" path="res://scenes/stations/01_wittenau/assets/wittenau.png" id="4_23pnf"]
 [ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://scenes/stations/01_wittenau/subscenes/tower.tscn" id="4_wvqyq"]
 [ext_resource type="Script" uid="uid://br2eo0ik4vr0a" path="res://scenes/stations/navregion.gd" id="5_0xogt"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="6_fup5h"]
@@ -17,17 +18,19 @@
 [ext_resource type="PackedScene" uid="uid://dv2v43jv13rjr" path="res://characters/automatas/drink/drink_vending_machine.tscn" id="13_i82bx"]
 [ext_resource type="PackedScene" uid="uid://bap2i51ju2efp" path="res://characters/automatas/ticket/ticket_vending_machine.tscn" id="14_nf21t"]
 [ext_resource type="PackedScene" uid="uid://40q6al2c4n4n" path="res://characters/automatas/snack/snack_vending_machine.tscn" id="15_htilo"]
+[ext_resource type="PackedScene" uid="uid://dbbc33em4xtbm" path="res://scenes/stations/subscenes/animation_train.tscn" id="17_a0cku"]
 [ext_resource type="PackedScene" uid="uid://dkxkayaw41poa" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/trashcan_extinguisher.tscn" id="18_1s6m8"]
 [ext_resource type="PackedScene" uid="uid://d3fhr38ytpe22" path="res://characters/automatas/clothes/clothing_container.tscn" id="19_ylri4"]
 [ext_resource type="PackedScene" uid="uid://diy1ckcdcgjg0" path="res://characters/automatas/doener-house/doener_house.tscn" id="20_mc4in"]
 [ext_resource type="PackedScene" uid="uid://jf1dhu624rgd" path="res://characters/automatas/speati/spaeti.tscn" id="21_5qhnv"]
 [ext_resource type="PackedScene" uid="uid://b2jd8d6sfebyi" path="res://characters/npcs/station_exclusive/smoking_dude/smoking_dude.tscn" id="22_5sgx3"]
+[ext_resource type="Texture2D" uid="uid://cb4flw484wjsc" path="res://scenes/stations/01_wittenau/assets/wittenau_floor.png" id="23_ige60"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
 b = Vector2(822, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fyc4f"]
-b = Vector2(1125, 0)
+b = Vector2(94, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_w2mii"]
 b = Vector2(0, 310)
@@ -37,6 +40,9 @@ b = Vector2(-1945, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_a187x"]
 b = Vector2(-1, 312)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dx64d"]
+b = Vector2(-121, 0)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6fvqj"]
 vertices = PackedVector2Array(857, 265, 760, 265, 264, 262, 382, 262, 905, 262, 955, 262, 1744.5, 312, 1623.5, 312, 883, 293, 883, 266, 1964.06, 489, 41.0938, 489.992, 264, 431.5, 382, 431.5, 1794, 398.5, 1744, 398.5, 383.5, 345, 603.5, 345, 1744.5, 345, 1794, 262, 1965.93, 201.977, 214, 431.5, 1179.24, 335.703, 1186, 337.508, 1074.5, 345, 1744, 262, 1174.3, 330.758, 1794, 229, 43.8984, 199.008, 1744, 229, 214, 398.5, 1289.5, 312, 1289.5, 345, 1199.51, 324, 1197.7, 317.242, 1173.88, 329.234, 1138, 331, 1074.5, 312, 1136, 326, 1627, 262, 1627, 229, 1577, 229, 857, 266, 905, 229, 760, 292, 843, 292, 843, 293, 1623.5, 345, 1410.5, 345, 1410.5, 312, 1168, 308, 1744, 431.5, 1627, 431.5, 1627, 398.5, 1577, 398.5, 724.5, 312, 603.5, 312, 768, 262, 768, 229, 1198.79, 326.664, 1199, 328, 1459, 262, 1459, 229, 1577, 262, 1197.7, 330.758, 1198.43, 328.023, 1794, 431.5, 1155, 308, 1192.76, 335.703, 262.5, 345, 264, 398.5, 214, 262, 1197.27, 316.812, 1197, 315, 1194.97, 314.508, 1192.76, 312.297, 1186, 310.492, 1182.35, 311.461, 1408, 229, 1408, 262, 1291, 262, 1291, 229, 1241, 229, 1577, 431.5, 1459, 431.5, 1459, 398.5, 1408, 398.5, 953.5, 312, 953.5, 345, 724.5, 345, 1408, 431.5, 1291, 431.5, 1291, 398.5, 1241, 398.5, 1241, 262, 1122, 262, 1122, 229, 1072, 229, 1241, 431.5, 1122, 431.5, 1122, 398.5, 1072, 398.5, 1072, 262, 955, 229, 718, 229, 383.5, 312, 1072, 431.5, 955, 431.5, 955, 398.5, 905, 398.5, 905, 431.5, 768, 431.5, 768, 398.5, 718, 398.5, 262.5, 312, 718, 431.5, 601, 431.5, 601, 398.5, 551, 398.5, 551, 431.5, 432, 398.5, 432, 431.5, 382, 398.5, 214, 229, 264, 229, 718, 262, 601, 262, 601, 229, 551, 229, 551, 262, 432, 262, 432, 229, 382, 229)
@@ -51,26 +57,52 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Berliner:position")
+tracks/0/path = NodePath("Node2D/OlafScholz:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(961, 210)]
+"values": [Vector2(962, 168)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/OlafScholz:position")
+tracks/1/path = NodePath("Node2D/AnimationTrain:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(962, 168)]
+"values": [Vector2(904, 95)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Berliner/Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/Berliner")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"set_physics_process"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_lqfb8"]
@@ -200,11 +232,57 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_87d8y"]
+resource_name = "train_leave"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/AnimationTrain:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector2(904, 95), Vector2(2054, 95)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Berliner/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1200, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Berliner")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [false],
+"method": &"set_physics_process"
+}, {
+"args": [true],
+"method": &"set_physics_process"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ltkc7"]
 _data = {
 &"RESET": SubResource("Animation_dfl7g"),
 &"olaf_initial_battle": SubResource("Animation_lqfb8"),
-&"olaf_step_aside": SubResource("Animation_lsgha")
+&"olaf_step_aside": SubResource("Animation_lsgha"),
+&"train_leave": SubResource("Animation_87d8y")
 }
 
 [node name="Node2D" type="Node2D"]
@@ -217,7 +295,7 @@ combat_floor = ExtResource("3_rimlc")
 position = Vector2(1000, 330)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
-texture = ExtResource("2_c8rit")
+texture = ExtResource("4_23pnf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
 position = Vector2(-969, -143)
@@ -238,6 +316,10 @@ shape = SubResource("SegmentShape2D_luigf")
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Background"]
 position = Vector2(-969, -142)
 shape = SubResource("SegmentShape2D_a187x")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Background"]
+position = Vector2(977, -140)
+shape = SubResource("SegmentShape2D_dx64d")
 
 [node name="CenterContainer" type="CenterContainer" parent="Background"]
 offset_left = 311.0
@@ -260,16 +342,19 @@ y_sort_enabled = true
 navigation_polygon = SubResource("NavigationPolygon_6fvqj")
 script = ExtResource("5_0xogt")
 
-[node name="TrashcanExtinguisher" parent="Node2D" instance=ExtResource("18_1s6m8")]
-position = Vector2(484, 333)
+[node name="AnimationTrain" parent="Node2D" instance=ExtResource("17_a0cku")]
+position = Vector2(904, 95)
 
-[node name="SmokingDude" parent="Node2D" instance=ExtResource("22_5sgx3")]
-position = Vector2(471, 364)
+[node name="Floor" type="Sprite2D" parent="Node2D"]
+position = Vector2(0, 188)
+texture = ExtResource("23_ige60")
+centered = false
+offset = Vector2(0, -188)
 
 [node name="Berliner" parent="Node2D" instance=ExtResource("1_gtc8i")]
 z_index = 0
 y_sort_enabled = true
-position = Vector2(961, 210)
+position = Vector2(1042, 286)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/Berliner"]
 zoom = Vector2(3.5, 3.5)
@@ -288,14 +373,59 @@ drag_bottom_margin = 0.1
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Node2D/Berliner"]
 radius = 5.0
 
+[node name="Eisbaeren" parent="Node2D" instance=ExtResource("10_krbe2")]
+z_index = 0
+position = Vector2(1164, 313)
+
+[node name="Eisbaeren2" parent="Node2D" instance=ExtResource("11_1m7y8")]
+z_index = 0
+position = Vector2(1186, 324)
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Node2D/Eisbaeren2"]
+radius = 13.51
+vertices = PackedVector2Array(14, -19, -18, -16, -31, -16, -50, 2, -48, 7, 14, 11)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Eisbaeren3" parent="Node2D" instance=ExtResource("12_485u2")]
+z_index = 0
+position = Vector2(1150, 329)
+
+[node name="OlafScholz" parent="Node2D" instance=ExtResource("11_qvo2e")]
+unique_name_in_owner = true
+z_index = 0
+position = Vector2(962, 168)
+_name = "Olof Scholtz"
+
+[node name="DoenerHouse" parent="Node2D" instance=ExtResource("20_mc4in")]
+position = Vector2(805, 189)
+
+[node name="Spaeti" parent="Node2D" instance=ExtResource("21_5qhnv")]
+position = Vector2(660, 189)
+
+[node name="TrashcanExtinguisher" parent="Node2D" instance=ExtResource("18_1s6m8")]
+position = Vector2(484, 333)
+
+[node name="SmokingDude" parent="Node2D" instance=ExtResource("22_5sgx3")]
+position = Vector2(471, 364)
+
+[node name="DrinkVendingMachine" parent="Node2D" instance=ExtResource("13_i82bx")]
+position = Vector2(837, 282)
+
+[node name="SnackVendingMachine2" parent="Node2D" instance=ExtResource("15_htilo")]
+position = Vector2(808, 282)
+
+[node name="TicketVendingMachine" parent="Node2D" instance=ExtResource("14_nf21t")]
+position = Vector2(780, 282)
+
+[node name="ClothingContainer" parent="Node2D" instance=ExtResource("19_ylri4")]
+position = Vector2(863, 283)
+
 [node name="Towers" type="CanvasGroup" parent="Node2D"]
 y_sort_enabled = true
 
 [node name="Tower" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(239, 251)
-
-[node name="Tower6" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1097, 251)
 
 [node name="Tower2" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(407, 251)
@@ -309,6 +439,9 @@ position = Vector2(743, 251)
 [node name="Tower5" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(930, 251)
 
+[node name="Tower6" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1097, 251)
+
 [node name="Tower7" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(1266, 251)
 
@@ -316,46 +449,40 @@ position = Vector2(1266, 251)
 position = Vector2(1433, 251)
 
 [node name="Tower9" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1434, 251)
-
-[node name="Tower10" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(1602, 251)
 
-[node name="Tower11" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+[node name="Tower10" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(1769, 251)
 
+[node name="Tower11" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(239, 421)
+
 [node name="Tower12" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(239, 420.5)
+position = Vector2(407, 421)
 
-[node name="Tower13" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(407, 420.5)
+[node name="Towe13" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(576, 421)
 
-[node name="Towe14" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(576, 420.5)
+[node name="Tower14" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(743, 421)
 
 [node name="Tower15" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(743, 420.5)
+position = Vector2(930, 421)
 
 [node name="Tower16" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(930, 420.5)
+position = Vector2(1097, 421)
 
 [node name="Tower17" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1097, 420.5)
+position = Vector2(1266, 421)
 
 [node name="Tower18" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1266, 420.5)
+position = Vector2(1433, 421)
 
 [node name="Tower19" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1433, 420.5)
+position = Vector2(1602, 421)
 
 [node name="Tower20" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1434, 420.5)
-
-[node name="Tower21" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1602, 420.5)
-
-[node name="Tower22" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1769, 420.5)
+position = Vector2(1769, 421)
 
 [node name="Escalators" type="CanvasGroup" parent="Node2D"]
 y_sort_enabled = true
@@ -383,48 +510,6 @@ position = Vector2(64, 311)
 
 [node name="EscalatorFront8" parent="Node2D/Escalators" instance=ExtResource("6_fup5h")]
 position = Vector2(64, 373)
-
-[node name="Eisbaeren" parent="Node2D" instance=ExtResource("10_krbe2")]
-z_index = 0
-position = Vector2(1164, 312)
-
-[node name="Eisbaeren2" parent="Node2D" instance=ExtResource("11_1m7y8")]
-z_index = 0
-position = Vector2(1186, 324)
-
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Node2D/Eisbaeren2"]
-radius = 13.51
-vertices = PackedVector2Array(14, -19, -18, -16, -31, -16, -50, 2, -48, 7, 14, 11)
-affect_navigation_mesh = true
-carve_navigation_mesh = true
-
-[node name="Eisbaeren3" parent="Node2D" instance=ExtResource("12_485u2")]
-z_index = 0
-position = Vector2(1150, 329)
-
-[node name="OlafScholz" parent="Node2D" instance=ExtResource("11_qvo2e")]
-unique_name_in_owner = true
-z_index = 0
-position = Vector2(962, 168)
-_name = "Olof Scholtz"
-
-[node name="DrinkVendingMachine" parent="Node2D" instance=ExtResource("13_i82bx")]
-position = Vector2(837, 282)
-
-[node name="SnackVendingMachine2" parent="Node2D" instance=ExtResource("15_htilo")]
-position = Vector2(808, 282)
-
-[node name="TicketVendingMachine" parent="Node2D" instance=ExtResource("14_nf21t")]
-position = Vector2(780, 282)
-
-[node name="ClothingContainer" parent="Node2D" instance=ExtResource("19_ylri4")]
-position = Vector2(863, 283)
-
-[node name="DoenerHouse" parent="Node2D" instance=ExtResource("20_mc4in")]
-position = Vector2(805, 189)
-
-[node name="Spaeti" parent="Node2D" instance=ExtResource("21_5qhnv")]
-position = Vector2(660, 189)
 
 [node name="SeatingAreas" type="CanvasGroup" parent="Node2D"]
 y_sort_enabled = true
@@ -459,5 +544,6 @@ libraries = {
 }
 
 [connection signal="ready" from="." to="Node2D/Berliner" method="_enable_scooting"]
+[connection signal="body_entered" from="Node2D/AnimationTrain" to="." method="_on_animation_train_body_entered"]
 [connection signal="body_entered" from="TrainDoor" to="." method="_on_area_2d_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
