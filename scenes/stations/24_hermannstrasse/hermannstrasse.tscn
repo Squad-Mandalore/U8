@@ -27,7 +27,7 @@ grow_horizontal = 1
 text = "Hermann-
 straße"
 
-[node name="Floor" parent="Node2D" index="0"]
+[node name="Floor" parent="Node2D" index="1"]
 texture = ExtResource("6_elllx")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="4"]

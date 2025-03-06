@@ -42,7 +42,7 @@ grow_horizontal = 1
 text = "Kottbusser Tor"
 label_settings = ExtResource("5_gnmpr")
 
-[node name="Floor" parent="Node2D" index="0"]
+[node name="Floor" parent="Node2D" index="1"]
 texture = ExtResource("4_rjf1a")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="2"]
