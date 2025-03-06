@@ -9,6 +9,7 @@ class_name Station
 @export var combat_floor: Texture2D
 @onready var animation_train: AnimatedTrain = $Node2D/AnimationTrain
 @onready var upper_collision: CollisionShape2D = $Background/CollisionShape2D
+@export var automat_spawns: Array[Vector2] = []
 
 signal train_enter
 signal level_lost
@@ -19,6 +20,12 @@ func _ready() -> void:
     player.hide()
     animation_player.play("train_enter")
     SignalDispatcher.sound_music.emit("station")
+    spawn_automatas()
+
+func spawn_automatas():
+    for spawn_point in automat_spawns:
+        var automata = Utils.AUTOMATAS[randi() % 3].instantiate()
+        automata.position = spawn_point
 
 func _on_player_zero_health() -> void:
     level_lost.emit()

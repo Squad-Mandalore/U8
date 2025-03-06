@@ -6,8 +6,8 @@ extends Resource
 @export var inventory_slots: Array[Item]
 
 func _init():
-    stats = preload("res://characters/classes/assets/honest_burgy.tres").duplicate()
-
+    stats = preload("res://characters/classes/assets/honest_burgy.tres").duplicate(true)
+    print(stats)
     inventory_slots.resize(16)
     inventory_slots.fill(null)
 
@@ -26,7 +26,7 @@ static func get_inventory_slots() -> Array[Item]:
 static func get_stats() -> Class:
     var run_state = get_run_state()
     if not run_state.stats:
-        return preload("res://characters/classes/assets/honest_burgy.tres").duplicate()
+        return preload("res://characters/classes/assets/honest_burgy.tres").duplicate(true)
     return run_state.stats
 
 static func set_inventory_slots(inv: Array[Item]):

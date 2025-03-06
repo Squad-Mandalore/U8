@@ -44,6 +44,7 @@ label_settings = ExtResource("5_pfb4y")
 
 [node name="Bodybuilder" parent="Node2D" index="0" instance=ExtResource("8_s5o5c")]
 unique_name_in_owner = true
+z_index = 0
 position = Vector2(407, 259)
 _name = "Bodybuilder"
 

@@ -16,6 +16,7 @@ var _scooting_enabled: bool = true  # Set to false to disable SHIFT toggling for
 const SPEED: float = 102.0
 
 @export var speed_multiplier: float = 1.0
+# @export var classas: Class
 var _interactable_npc: PhysicsBody2D = null#:
     # set(value):
     #     if value.slowable:

@@ -121,6 +121,12 @@ const STATS_DICT = {
     }
 }
 
+const AUTOMATAS: Array[PackedScene] = [
+    preload("res://characters/automatas/drink/drink_vending_machine.tscn"),
+    preload("res://characters/automatas/snack/snack_vending_machine.tscn"),
+    preload("res://characters/automatas/clothes/clothing_container.tscn")
+]
+
 # Funciton gets a percentage and returns TRUE or FALSE dependant on the outcome
 func chance(percent: float) -> bool:
     return randf() * 100 < percent

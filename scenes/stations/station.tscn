@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cr0oss7rkk1ta"]
+[gd_scene load_steps=23 format=3 uid="uid://cr0oss7rkk1ta"]
 
 [ext_resource type="Script" uid="uid://bc0bdgv8glxy7" path="res://scenes/stations/station.gd" id="1_ppg4l"]
 [ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="1_q1w2b"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="8_xs470"]
 [ext_resource type="PackedScene" uid="uid://ltew4h5q07ud" path="res://scenes/stations/subscenes/seating_areas.tscn" id="9_1wjs1"]
 [ext_resource type="PackedScene" uid="uid://dkxkayaw41poa" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/trashcan_extinguisher.tscn" id="10_o38ik"]
+[ext_resource type="PackedScene" uid="uid://bap2i51ju2efp" path="res://characters/automatas/ticket/ticket_vending_machine.tscn" id="12_h1wtr"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kke8e"]
 b = Vector2(98, 0)
@@ -158,6 +159,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(73, 157, 1186, 155, 119
 
 [node name="Station" type="Node2D"]
 script = ExtResource("1_ppg4l")
+automat_spawns = Array[Vector2]([Vector2(330, 332), Vector2(470, 332), Vector2(666, 332), Vector2(806, 332)])
 
 [node name="Background" type="StaticBody2D" parent="."]
 
@@ -202,7 +204,7 @@ uppercase = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_6ecwe")
+&"": SubResource("AnimationLibrary_6ecwe")
 }
 
 [node name="Node2D" type="NavigationRegion2D" parent="."]
@@ -216,6 +218,18 @@ position = Vector2(65, 188)
 texture = ExtResource("3_l3pjy")
 centered = false
 offset = Vector2(-65, -188)
+
+[node name="TicketVendingMachine2" parent="Node2D" instance=ExtResource("12_h1wtr")]
+position = Vector2(85, 422)
+
+[node name="TicketVendingMachine" parent="Node2D" instance=ExtResource("12_h1wtr")]
+position = Vector2(85, 252)
+
+[node name="TicketVendingMachine3" parent="Node2D" instance=ExtResource("12_h1wtr")]
+position = Vector2(1142, 422)
+
+[node name="TicketVendingMachine4" parent="Node2D" instance=ExtResource("12_h1wtr")]
+position = Vector2(1142, 252)
 
 [node name="Berliner" parent="Node2D" instance=ExtResource("6_h3ce4")]
 z_index = 0
