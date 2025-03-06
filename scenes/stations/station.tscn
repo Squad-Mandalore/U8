@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cr0oss7rkk1ta"]
+[gd_scene load_steps=23 format=3 uid="uid://cr0oss7rkk1ta"]
 
 [ext_resource type="Script" uid="uid://bc0bdgv8glxy7" path="res://scenes/stations/station.gd" id="1_ppg4l"]
 [ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="1_q1w2b"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="8_xs470"]
 [ext_resource type="PackedScene" uid="uid://ltew4h5q07ud" path="res://scenes/stations/subscenes/seating_areas.tscn" id="9_1wjs1"]
 [ext_resource type="PackedScene" uid="uid://dkxkayaw41poa" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/trashcan_extinguisher.tscn" id="10_o38ik"]
+[ext_resource type="PackedScene" uid="uid://b2jd8d6sfebyi" path="res://characters/npcs/station_exclusive/smoking_dude/smoking_dude.tscn" id="11_h1wtr"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kke8e"]
 b = Vector2(98, 0)
@@ -152,9 +153,9 @@ _data = {
 }
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ufycs"]
-vertices = PackedVector2Array(963.5, 345, 1181.82, 482.078, 68.4375, 491.898, 842.5, 345, 629.5, 345, 842.5, 312, 508.5, 345, 1176.17, 165.008, 963.5, 312, 82.5703, 166.977, 287.5, 345, 287.5, 312, 508.5, 312, 166.5, 345, 166.5, 312, 629.5, 312)
+vertices = PackedVector2Array(963.5, 345, 1121.73, 484.039, 105.258, 488.953, 842.5, 345, 629.5, 345, 842.5, 312, 508.5, 345, 1114.25, 198.977, 963.5, 312, 112.742, 197.008, 287.5, 345, 287.5, 312, 508.5, 312, 166.5, 345, 166.5, 312, 629.5, 312)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 4, 2), PackedInt32Array(7, 1, 0, 8), PackedInt32Array(9, 7, 8, 5), PackedInt32Array(10, 11, 12, 6), PackedInt32Array(10, 6, 2), PackedInt32Array(13, 10, 2), PackedInt32Array(13, 2, 9, 14), PackedInt32Array(5, 4, 15), PackedInt32Array(9, 5, 15), PackedInt32Array(9, 15, 12), PackedInt32Array(9, 12, 11), PackedInt32Array(9, 11, 14)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(73, 157, 1186, 155, 1192, 492, 58, 502)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(103, 187, 1124, 189, 1132, 494, 95, 499)])
 
 [node name="Station" type="Node2D"]
 script = ExtResource("1_ppg4l")
@@ -202,7 +203,7 @@ uppercase = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_6ecwe")
+&"": SubResource("AnimationLibrary_6ecwe")
 }
 
 [node name="Node2D" type="NavigationRegion2D" parent="."]
@@ -230,6 +231,10 @@ limit_right = 1195
 limit_bottom = 658
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Node2D/Berliner"]
+radius = 5.0
+avoidance_layers = 7
 
 [node name="AnimationTrain" parent="Node2D" instance=ExtResource("2_xadlq")]
 position = Vector2(-1121, 104)
@@ -272,6 +277,9 @@ position = Vector2(569, 323)
 
 [node name="SeatingArea3" parent="Node2D/SeatingAreas" instance=ExtResource("9_1wjs1")]
 position = Vector2(903, 323)
+
+[node name="SmokingDude" parent="Node2D" instance=ExtResource("11_h1wtr")]
+position = Vector2(391, 346)
 
 [node name="TrashcanExtinguisher" parent="Node2D" instance=ExtResource("10_o38ik")]
 position = Vector2(811, 379)
