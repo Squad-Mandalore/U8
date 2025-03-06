@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://omid6fvq6gb4"]
+[gd_scene load_steps=90 format=3 uid="uid://duwrcpnt7uybb"]
 
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="1_5boa0"]
 [ext_resource type="Script" uid="uid://dtcaxogkhsvl1" path="res://scenes/combats/subscenes/combat_exit_lost.gd" id="1_wtoe4"]

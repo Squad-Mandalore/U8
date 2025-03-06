@@ -18,7 +18,7 @@ combat_floor = ExtResource("4_mo6ep")
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Paracelsus-Bad"
 
-[node name="Bademeister2d" parent="Node2D" index="0" instance=ExtResource("3_cnday")]
+[node name="Lifeguard" parent="Node2D" index="0" instance=ExtResource("3_cnday")]
 unique_name_in_owner = true
 position = Vector2(600, 231)
 
