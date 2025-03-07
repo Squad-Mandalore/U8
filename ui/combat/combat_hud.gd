@@ -22,9 +22,9 @@ func _ready() -> void:
     half_turn_counter = 0
     first_start = calculate_first_start()
     if first_start:
-        _feedback_box.set_feedback("Deine Initiative ist höher, als die des Gegners.\nDu darfst starten.")
+        _feedback_box.add_message("Deine Initiative ist höher, als die des Gegners.\nDu darfst starten.")
     else:
-        _feedback_box.set_feedback("Der Gegner hat eine höhere Initiative als du.\nEr darf starten.")
+        _feedback_box.add_message("Der Gegner hat eine höhere Initiative als du.\nEr darf starten.")
     _player_status_panel.stats = SourceOfTruth.stats
     _enemy_status_panel.stats = enemy.stats
     _attack_swapper.attacks = SourceOfTruth.get_all_attacks()
@@ -118,17 +118,15 @@ func attack_damage(attack: Attack, defender_stats: StatsSpecifier, damage_receiv
     var attacker_token = attack.token
     var result = SourceOfTruth.calculate_damage(attack.damage, defender_stats, attacker_token, defender_token)
     var received_damage = result["damage"]
-    var messages: Array[String]
-    messages.append(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch " + str(damage_donor) + " bekommen!")
+    _feedback_box.add_message(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch " + str(damage_donor) + " bekommen!")
     match result["reason"]:
         "dodged":
-            messages.append(str(damage_receiver) + "ist dem Angriff " + attack.name + " ausgewichen!")
+            _feedback_box.add_message(str(damage_receiver) + "ist dem Angriff " + attack.name + " ausgewichen!")
         "effective":
-            messages.append(attack.name + " war durch Kampfhaltung " + Utils.AttackTypes.keys()[defender_token] + " sehr effektiv!")
+            _feedback_box.add_message(attack.name + " war durch Kampfhaltung " + Utils.AttackTypes.keys()[defender_token] + " sehr effektiv!")
         "weak":
-            messages.append(attack.name + " war durch Kampfhaltung " + Utils.AttackTypes.keys()[defender_token] + " nicht effektiv!")
+            _feedback_box.add_message(attack.name + " war durch Kampfhaltung " + Utils.AttackTypes.keys()[defender_token] + " nicht effektiv!")
 
-    _feedback_box.set_feedbacks(messages)
     apply_damage(damage_receiver, received_damage, defender_stats)
 
 func effect_damage():
@@ -140,14 +138,14 @@ func status_type_damage(damage_receiver: String, damage_receiver_stats: StatsSpe
     var received_damage = calc_status_type_dmg(damage_receiver_stats)
 
     if received_damage != 0:
-       _feedback_box.set_feedback(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch Status Effekte bekommen!")
+       _feedback_box.add_message(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch Status Effekte bekommen!")
 
     apply_damage(damage_receiver, received_damage, damage_receiver_stats)
 
     if damage_receiver == enemy._name:
         await pause_action()
         await pause_action()
-        _feedback_box.set_feedback(" Bitte wähle deinen nächsten Angriff!")
+        _feedback_box.add_message("Bitte wähle deinen nächsten Angriff!")
 
 func apply_damage(damage_receiver: String, received_damage: int, damage_receiver_stats: StatsSpecifier):
     # TODO: use stats_changed when player stats are used
