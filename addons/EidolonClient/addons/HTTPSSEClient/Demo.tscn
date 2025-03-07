@@ -1,10 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm2qayhr1543e"]
 
-[ext_resource type="Script" path="res://addons/HTTPSSEClient/Demo.gd" id="1"]
-[ext_resource type="Script" path="res://addons/HTTPSSEClient/HTTPSSEClient.gd" id="2"]
+[sub_resource type="Resource" id="Resource_sodf7"]
+metadata/__load_path__ = "res://addons/HTTPSSEClient/Demo.gd"
+
+[sub_resource type="Resource" id="Resource_y3e2r"]
+metadata/__load_path__ = "res://addons/HTTPSSEClient/HTTPSSEClient.gd"
 
 [node name="Demo" type="Node2D"]
-script = ExtResource("1")
+script = SubResource("Resource_sodf7")
 
 [node name="HTTPSSEClient" type="Node" parent="."]
-script = ExtResource("2")
+script = SubResource("Resource_y3e2r")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="GunLicence" load_steps=3 format=3 uid="uid://clkj7o5ak0bdk"]
 
-[ext_resource type="Script" path="res://items/meta/gun_licence.gd" id="1_22o55"]
+[ext_resource type="Script" uid="uid://cxww4o1c7j7kv" path="res://items/meta/gun_licence.gd" id="1_22o55"]
 [ext_resource type="Texture2D" uid="uid://21sogoj4ivvq" path="res://items/meta/assets/gun_license.png" id="2_v1qwf"]
 
 [resource]

@@ -9,7 +9,7 @@ const ANDREAS_ROBBERY_ID = 3
 var dialogue = preload("res://characters/npcs/chris/assets/chris_robbery.dialogue")
 
 func _ready() -> void:
-    if dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID).is_completed() or SourceOfTruth.chance(40):
+    if dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID).is_completed() or Utils.chance(40):
         queue_free()
 
     super._ready()
@@ -23,6 +23,7 @@ func start_robbing():
     dishonest_brothers_quest.set_active(true)
     if SourceOfTruth.stats.intelligence < 6:
         _robbing()
+        dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID).set_completed(true)
     else:
         start_talking()
         _player_nearby._start_scripted_talking(self)

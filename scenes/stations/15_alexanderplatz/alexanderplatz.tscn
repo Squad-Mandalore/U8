@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://5qnw3pf4n4fk"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_f1phu"]
-[ext_resource type="Script" path="res://scenes/stations/15_alexanderplatz/alexanderplatz.gd" id="2_2c26j"]
+[ext_resource type="Script" uid="uid://gn4dqwvdr5ty" path="res://scenes/stations/15_alexanderplatz/alexanderplatz.gd" id="2_2c26j"]
 [ext_resource type="Texture2D" uid="uid://b3d0nx2h4ff0d" path="res://scenes/stations/15_alexanderplatz/assets/alexanderplatz-wall.png" id="3_7ny50"]
 [ext_resource type="Texture2D" uid="uid://c1s1ei0pcuncp" path="res://scenes/stations/15_alexanderplatz/assets/Alexanderplatz-background-2-fight.png" id="3_f812e"]
 [ext_resource type="Texture2D" uid="uid://do7tqmi063nir" path="res://scenes/stations/15_alexanderplatz/assets/alexanderplatz-floor.png" id="4_4jwyb"]
@@ -28,10 +28,7 @@ grow_horizontal = 1
 text = "Alexanderplatz"
 label_settings = ExtResource("5_33jly")
 
-[node name="Floor" parent="Node2D" index="0"]
-texture = ExtResource("4_4jwyb")
-
-[node name="Floor" parent="Node2D" index="0"]
+[node name="Floor" parent="Node2D" index="1"]
 texture = ExtResource("4_4jwyb")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="2"]

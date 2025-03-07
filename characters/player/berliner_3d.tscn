@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bcgck0cuev43d"]
 
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="1_nj5ds"]
-[ext_resource type="Script" path="res://characters/player/berliner_3d.gd" id="2_fdrdt"]
+[ext_resource type="Script" uid="uid://rwxta6r8qek2" path="res://characters/player/berliner_3d.gd" id="2_fdrdt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ckpl"]
 atlas = ExtResource("1_nj5ds")

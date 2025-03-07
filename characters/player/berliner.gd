@@ -42,41 +42,12 @@ func _ready() -> void:
 
 func _allow_player_movement():
     set_physics_process(true)
-
-    InputMap.add_action("inventory")
-    InputMap.add_action("talk")
-    InputMap.add_action("scoot")
-    InputMap.add_action("map")
-    InputMap.add_action("dance")
-
-    var keyI = InputEventKey.new()
-    keyI.keycode = KEY_I
-    InputMap.action_add_event("inventory", keyI)
-
-    var keyE = InputEventKey.new()
-    keyE.keycode = KEY_E
-    InputMap.action_add_event("talk", keyE)
-
-    var keyShift = InputEventKey.new()
-    keyShift.keycode = KEY_SHIFT
-    InputMap.action_add_event("scoot", keyShift)
-
-    var keyK = InputEventKey.new()
-    keyK.keycode = KEY_K
-    InputMap.action_add_event("map", keyK)
-
-    var keyJ = InputEventKey.new()
-    keyJ.keycode = KEY_J
-    InputMap.action_add_event("dance", keyJ)
+    set_process_unhandled_input(true)
 
 func _disallow_player_movement():
+    _sprite.play("idle")
     set_physics_process(false)
-
-    InputMap.erase_action("inventory")
-    InputMap.erase_action("talk")
-    InputMap.erase_action("scoot")
-    InputMap.erase_action("map")
-    InputMap.erase_action("dance")
+    set_process_unhandled_input(false)
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK or _current_state == State.DANCE:
@@ -187,12 +158,9 @@ func _unhandled_input(event: InputEvent):
             switch_state(State.DANCE)
 
     if event.is_action_pressed("ui_cancel"):
+        if close_map():
+            return
         if _inventory.visible or _shop_hud.visible:
-            if LevelListLoader.is_map_open:
-                SignalDispatcher.map_exited.emit()
-                LevelListLoader.is_map_open = false
-                get_viewport().set_input_as_handled()
-                return
             _stop_shopping()
             set_active_hud(_hud)
             SignalDispatcher.sound_effect.emit("exit")
@@ -203,6 +171,7 @@ func _unhandled_input(event: InputEvent):
         SignalDispatcher.sound_effect.emit("exit")
 
     if event.is_action_pressed("inventory") and not _shop_hud.visible:
+        close_map()
         set_active_hud(_hud if _inventory.visible else _inventory)
         if _inventory.visible:
             SignalDispatcher.sound_effect.emit("pop")
@@ -217,6 +186,14 @@ func _unhandled_input(event: InputEvent):
             switch_state(State.IDLE)
         else:
             switch_state(State.SCOOT)
+
+func close_map() -> bool:
+    if LevelListLoader.is_map_open:
+        SignalDispatcher.map_exited.emit()
+        LevelListLoader.is_map_open = false
+        get_viewport().set_input_as_handled()
+        return true
+    return false
 
 func _on_slowdown_area_body_entered(body: Node2D):
     var npc: PhysicsBody2D = body
@@ -317,6 +294,7 @@ func toggle_interaction():
         return
 
     if _interactable_npc is Enemy:
+        _hud.hide_interaction_button()
         _interactable_npc.start_combat()
     elif _interactable_npc is ShopNpc or _interactable_npc is Automata:
         if _current_state != State.TALK:
@@ -370,4 +348,3 @@ func start_animation(animation: String):
 
 func stop_animation():
     _sprite.stop()
-
