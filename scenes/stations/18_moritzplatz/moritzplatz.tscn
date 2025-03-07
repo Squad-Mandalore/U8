@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dh8p5cvwbvru1"]
+[gd_scene load_steps=11 format=3 uid="uid://dh8p5cvwbvru1"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_a4e58"]
 [ext_resource type="Script" uid="uid://cxlsh8e7evomn" path="res://scenes/stations/18_moritzplatz/moritzplatz.gd" id="2_f2bji"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://c3kg4jodjsiyd" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_floor.png" id="7_du223"]
 [ext_resource type="PackedScene" uid="uid://vj27q0c8e2sh" path="res://scenes/stations/18_moritzplatz/subscenes/tower.tscn" id="8_fedqd"]
 [ext_resource type="PackedScene" uid="uid://b4otvyfs5p5ek" path="res://characters/npcs/moritz/moritz.tscn" id="9_o2tus"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2tus"]
+size = Vector2(40, 19)
 
 [node name="Moritzplatz" instance=ExtResource("1_a4e58")]
 script = ExtResource("2_f2bji")
@@ -76,3 +79,11 @@ position = Vector2(607, 323)
 
 [node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
 position = Vector2(931, 323)
+
+[node name="BossArea" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossArea" index="0"]
+position = Vector2(181, 202.5)
+shape = SubResource("RectangleShape2D_o2tus")
