@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_18c0j")
+price = 150
 inventory_size = 8
 name = "Rucksack"
 description = "Ein alltäglicher Rucksack um Sachen und weitere Dinge (halbwegs) sicher zu transportieren."

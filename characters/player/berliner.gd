@@ -158,12 +158,9 @@ func _unhandled_input(event: InputEvent):
             switch_state(State.DANCE)
 
     if event.is_action_pressed("ui_cancel"):
+        if close_map():
+            return
         if _inventory.visible or _shop_hud.visible:
-            if LevelListLoader.is_map_open:
-                SignalDispatcher.map_exited.emit()
-                LevelListLoader.is_map_open = false
-                get_viewport().set_input_as_handled()
-                return
             _stop_shopping()
             set_active_hud(_hud)
             SignalDispatcher.sound_effect.emit("exit")
@@ -174,6 +171,7 @@ func _unhandled_input(event: InputEvent):
         SignalDispatcher.sound_effect.emit("exit")
 
     if event.is_action_pressed("inventory") and not _shop_hud.visible:
+        close_map()
         set_active_hud(_hud if _inventory.visible else _inventory)
         if _inventory.visible:
             SignalDispatcher.sound_effect.emit("pop")
@@ -188,6 +186,14 @@ func _unhandled_input(event: InputEvent):
             switch_state(State.IDLE)
         else:
             switch_state(State.SCOOT)
+
+func close_map() -> bool:
+    if LevelListLoader.is_map_open:
+        SignalDispatcher.map_exited.emit()
+        LevelListLoader.is_map_open = false
+        get_viewport().set_input_as_handled()
+        return true
+    return false
 
 func _on_slowdown_area_body_entered(body: Node2D):
     var npc: PhysicsBody2D = body

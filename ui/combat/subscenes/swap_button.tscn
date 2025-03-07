@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://lxoq5niymfyo"]
 
-[ext_resource type="StyleBox" uid="uid://bec3wf8h7nf1c" path="res://ui/combat/subscenes/swap_button.tres" id="2_3fopy"]
+[ext_resource type="StyleBox" uid="uid://bec3wf8h7nf1c" path="res://ui/combat/assets/swap_button.tres" id="2_3fopy"]
 [ext_resource type="Texture2D" uid="uid://dsjubb4ylndq4" path="res://ui/combat/assets/swap_left.svg" id="2_em76q"]
 
 [node name="SwapButton" type="Button"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b1ipmc5isdd8e" path="res://ui/combat/subscenes/feedback_box.gd" id="1_vue2e"]
 [ext_resource type="FontFile" uid="uid://ch4ri5loj8on8" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.woff2" id="3_41bb2"]
 [ext_resource type="Texture2D" uid="uid://dsjubb4ylndq4" path="res://ui/combat/assets/swap_left.svg" id="3_pami8"]
-[ext_resource type="StyleBox" uid="uid://bec3wf8h7nf1c" path="res://ui/combat/subscenes/swap_button.tres" id="4_5yn36"]
+[ext_resource type="StyleBox" uid="uid://bec3wf8h7nf1c" path="res://ui/combat/assets/swap_button.tres" id="4_5yn36"]
 [ext_resource type="Texture2D" uid="uid://duhkkvw53qryt" path="res://ui/combat/assets/swap_right.svg" id="4_41bb2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddwov"]
