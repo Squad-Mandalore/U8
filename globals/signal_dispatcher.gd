@@ -10,6 +10,7 @@ signal set_ck3_progress_bar_value(value: int)
 signal player_zero_health()
 signal player_lost_combat(to_free: Node)
 signal player_won_combat(to_free: Node)
+signal combat_enter(enemy: Enemy)
 
 signal reload_ui()
 signal update_item_slots()
@@ -27,9 +28,8 @@ signal disallow_player_movement()
 signal sound_effect(name: String)
 signal sound_music(name: String)
 
-signal combat_enter(enemy: Enemy)
-
 signal execute_attack(attack: Attack, active_combatant: String, passive_combatant: String)
+signal attack_swapper_toggle(flag)
 
 signal map_opened()
 signal map_exited()

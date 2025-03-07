@@ -23,6 +23,7 @@ func _ready() -> void:
     SignalDispatcher.remove_info_hover.connect(remove_info_hover)
     SignalDispatcher.execute_attack.connect(execute_attack)
     SignalDispatcher.player_zero_health.connect(_player_lost)
+    SignalDispatcher.attack_swapper_toggle.connect(attack_swapper_toggled)
     half_turn_counter = 0
     first_start = calculate_first_start()
     if first_start:
@@ -205,3 +206,6 @@ func _player_lost():
 
 func _player_won():
     SignalDispatcher.player_won_combat.emit(get_parent())
+
+func attack_swapper_toggled(flag = null):
+    _attack_swapper.visible = flag if flag != null else !_attack_swapper.visible

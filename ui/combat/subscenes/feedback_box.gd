@@ -26,6 +26,8 @@ func process_queue() -> void:
         animation_player.play("typewriter")
         await animation_player.animation_finished
         current_index += 1
+        if current_index == messages.size() - 1:
+            SignalDispatcher.attack_swapper_toggle.emit(true)
     busy = false
 
 func update_message_array_label():
