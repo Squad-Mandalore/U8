@@ -196,7 +196,7 @@ size_flags_vertical = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_pnpex")
+&"": SubResource("AnimationLibrary_pnpex")
 }
 speed_scale = 4.0
 
