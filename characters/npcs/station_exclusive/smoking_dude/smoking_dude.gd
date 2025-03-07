@@ -25,12 +25,12 @@ func _start_smoking() -> void:
         _smoke.position = Vector2(6.0, -24)
 
     _sprite.play("idle2")
-    await get_tree().create_timer(3.0).timeout
+    await Utils.create_timer(3.0)
 
     _sprite.play("idle3")
     _smoke.show()
 
-    await get_tree().create_timer(randf_range(10.0, 20.0)).timeout
+    await Utils.create_timer(randf_range(10.0, 20.0))
     _smoke.hide()
 
     _sprite.play("action")
@@ -44,22 +44,22 @@ func _on_animated_sprite_2d_animation_finished() -> void:
                 _current_trashcan.activate_fire2()
 
         _current_trashcan = null
-    
+
         _action_in_progress = false
-        _idling = true  
+        _idling = true
 
         _sprite.stop()
         _sprite.play("idle")
 
-        await get_tree().create_timer(randf_range(2.0, 5.0)).timeout
-        
+        await Utils.create_timer(randf_range(2.0, 5.0))
+
         _idling = false
         set_new_random_target()
 
 func set_new_random_target() -> void:
     if not _map_ready or _action_in_progress or _idling:
         return
-        
+
     if randi_range(0,2) == 1:
         var trashcan = get_closest_empty_trashcan()
         if trashcan:
@@ -68,7 +68,7 @@ func set_new_random_target() -> void:
 
             nav_agent.target_position = _target_position
             return
-    
+
     super.set_new_random_target()
 
 func get_valid_smoking_position(trashcan: SeatingArea) -> Vector2:
@@ -82,11 +82,14 @@ func get_valid_smoking_position(trashcan: SeatingArea) -> Vector2:
         _smoking_side = "right"
         var maps = NavigationServer2D.get_maps()
         var target_point = NavigationServer2D.map_get_closest_point(maps[0], trashcan._fire_left.global_position - nearby_offset)
-        return target_point    
+        return target_point
     return trashcan.global_position
 
 func get_closest_empty_trashcan() -> SeatingArea:
+    if not get_tree():
+        return
     var trashcans = []
+
     for seating in get_tree().get_nodes_in_group("SeatingArea"):
         if not seating._fire_left.visible and not seating._fire_right.visible:
             trashcans.append(seating)
