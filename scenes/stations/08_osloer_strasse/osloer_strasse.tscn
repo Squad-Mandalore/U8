@@ -19,7 +19,7 @@ texture = ExtResource("5_m0lwi")
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Osloer Straße"
 
-[node name="Floor" parent="Node2D" index="1"]
+[node name="Floor" parent="Node2D" index="5"]
 texture = ExtResource("6_70l0b")
 
 [node name="Node2D#Towers" type="CanvasGroup" parent="Node2D" index="6"]
@@ -61,7 +61,7 @@ position = Vector2(832, 426)
 [node name="Tower12" parent="Node2D/Node2D#Towers" index="11" instance=ExtResource("7_23uk0")]
 position = Vector2(988, 426)
 
-[node name="SeatingAreas" parent="Node2D" index="7"]
+[node name="SeatingAreas" parent="Node2D" index="11"]
 position = Vector2(29, 0)
 
 [node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]

@@ -1,5 +1,8 @@
 extends PauseMenu
 
+func _on_ready():
+    SignalDispatcher.sound_effect.emit("pop")
+
 func _on_confirm_exit_confirmed():
     Questomania.save()
     GlobalState.save()
@@ -18,3 +21,9 @@ func _on_confirm_main_menu_confirmed():
     Questomania.save()
     GlobalState.save()
     _load_scene(main_menu_scene)
+
+func _on_menu_entered():
+    SignalDispatcher.sound_effect.emit("pop")
+
+func _on_menu_exited():
+    SignalDispatcher.sound_effect.emit("exit")
