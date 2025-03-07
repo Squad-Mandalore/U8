@@ -87,5 +87,7 @@ visible_ratio = 0.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_05jba")
+&"": SubResource("AnimationLibrary_05jba")
 }
+
+[connection signal="animation_finished" from="PanelContainer/MarginContainer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
