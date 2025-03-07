@@ -59,24 +59,21 @@ func execute_attack(attack: Attack, active_combatant: String, passive_combatant:
 
     var damage_donor = active_combatant
     var damage_receiver = passive_combatant
+    _feedback_box.add_message(str(damage_donor) + " setzt " + attack.name + " ein!")
     attack_damage(attack, damage_receiver_stats, damage_receiver, damage_donor, damage_receiver_panel.stance)
     damage_donor_panel.update_status_panel()
     damage_receiver_panel.update_status_panel()
     get_parent().enable_aura(Utils.ATTACK_DICT[Utils.AttackTypes.find_key(damage_donor_panel.stance)].color, damage_donor)
-    await pause_action()
 
     effect_damage()
     damage_donor_panel.update_status_panel()
     damage_receiver_panel.update_status_panel()
-    await pause_action()
 
     status_type_damage(damage_donor, damage_donor_stats)
     damage_donor_panel.update_status_panel()
     damage_receiver_panel.update_status_panel()
-    await pause_action()
 
     if damage_donor == "Spieler":
-        await pause_action()
         enemy_execute_attack()
 
 func enemy_execute_attack():
@@ -143,8 +140,6 @@ func status_type_damage(damage_receiver: String, damage_receiver_stats: StatsSpe
     apply_damage(damage_receiver, received_damage, damage_receiver_stats)
 
     if damage_receiver == enemy._name:
-        await pause_action()
-        await pause_action()
         _feedback_box.add_message("Bitte wähle deinen nächsten Angriff!")
 
 func apply_damage(damage_receiver: String, received_damage: int, damage_receiver_stats: StatsSpecifier):
