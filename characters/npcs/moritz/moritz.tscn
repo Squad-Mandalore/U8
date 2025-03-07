@@ -1,24 +1,24 @@
 [gd_scene load_steps=9 format=3 uid="uid://b4otvyfs5p5ek"]
 
-[ext_resource type="Script" path="res://characters/npcs/moritz/moritz.gd" id="1_wp3ic"]
-[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="2_e34y4"]
+[ext_resource type="Script" uid="uid://ugbc4t3rh41q" path="res://characters/npcs/moritz/moritz.gd" id="1_wp3ic"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_e34y4"]
 [ext_resource type="Resource" uid="uid://oui3w7vat6ib" path="res://characters/attacks/assets/show_off.tres" id="3_10xgp"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="4_c250q"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_c250q"]
 [ext_resource type="Texture2D" uid="uid://bvk5g7xl2n6jd" path="res://characters/npcs/moritz/assets/moritz.png" id="6_chcch"]
 
 [sub_resource type="Resource" id="Resource_66nhw"]
 script = ExtResource("4_c250q")
-max_health = 500
-health = 50
-armor = 2
-initiative = 3
-dodge_chance = 50
-strength = 5
-coolness = 2
+max_health = 150
+health = 2
+armor = 0
+initiative = 1
+dodge_chance = 0
+strength = 0
+coolness = 1
 attractiveness = 0
-intelligence = 2
-creativity = 6
-luck = 2
+intelligence = 1
+creativity = 3
+luck = 0
 poison_resistance = 0
 bleed_resistance = 0
 drug_resistance = 0
