@@ -1,7 +1,9 @@
 extends CanvasLayer
 
-var attack_hover_scene = preload("res://ui/combat/subscenes/attack_hover.tscn")
+const ATTACK_HOVER_SCENE = preload("res://ui/combat/subscenes/attack_hover.tscn")
+const INFO_HOVER_SCENE = preload("res://ui/combat/subscenes/info_hover.tscn")
 var attack_hover: AttackHover = null
+var info_hover: Control = null
 var enemy: Enemy
 var half_turn_counter: int
 var first_start: bool
@@ -16,7 +18,9 @@ var pause_duration: float = 1
 # initializes the combat loop
 func _ready() -> void:
     SignalDispatcher.add_attack_hover.connect(add_attack_hover)
+    SignalDispatcher.add_info_hover.connect(add_info_hover)
     SignalDispatcher.remove_attack_hover.connect(remove_attack_hover)
+    SignalDispatcher.remove_info_hover.connect(remove_info_hover)
     SignalDispatcher.execute_attack.connect(execute_attack)
     SignalDispatcher.player_zero_health.connect(_player_lost)
     half_turn_counter = 0
@@ -93,17 +97,25 @@ func set_enemy(new_enemy: Enemy):
     self.enemy = new_enemy
 
 func add_attack_hover(position: Vector2, attack: Attack):
-    attack_hover = attack_hover_scene.instantiate()
-    # attack_hover.z_index = 100
-    # attack_hover.size = Vector2(382, 255)
+    attack_hover = ATTACK_HOVER_SCENE.instantiate()
     attack_hover.global_position = position
     attack_hover.update_attack_hover(attack)
     add_child(attack_hover)
+
+func add_info_hover(position: Vector2):
+    info_hover = INFO_HOVER_SCENE.instantiate()
+    info_hover.global_position = position
+    add_child(info_hover)
 
 func remove_attack_hover():
     if attack_hover:
         attack_hover.queue_free()
         attack_hover = null
+
+func remove_info_hover():
+    if info_hover:
+        info_hover.queue_free()
+        info_hover = null
 
 # true is player | false is enemy
 func calculate_first_start() -> bool:
