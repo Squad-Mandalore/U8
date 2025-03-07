@@ -140,7 +140,7 @@ platform_on_leave = 2
 _name = "Schackeline"
 
 [node name="AnnouncementPlayer" parent="." instance=ExtResource("12_b844p")]
-_announcement = Array[AudioStreamWAV]([ExtResource("15_mpapf"), ExtResource("16_rblve"), ExtResource("17_jgmye"), ExtResource("19_o335b"), ExtResource("21_n53mw"), ExtResource("24_usa3t"), ExtResource("27_ygadh"), ExtResource("28_es3ee"), ExtResource("33_fk6il")])
+_announcement = Array[AudioStreamWAV]([ExtResource("15_mpapf"), ExtResource("16_rblve"), ExtResource("17_jgmye"), ExtResource("19_o335b"), ExtResource("21_n53mw"), ExtResource("24_usa3t"), ExtResource("27_ygadh"), ExtResource("28_es3ee"), ExtResource("33_fk6il"), null])
 
 [node name="Andreas" parent="." instance=ExtResource("16_qju6k")]
 position = Vector2(172, 178)
