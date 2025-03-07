@@ -26,6 +26,9 @@ const NPCS: Array[PackedScene] = [
     preload("res://characters/npcs/beggar/beggar_1.tscn"),
     preload("res://characters/npcs/berghain_guest/berghain_guest.tscn"),
     preload("res://characters/npcs/big_child/big_child.tscn"),
+    preload("res://characters/npcs/sports_fans/eisbaeren/eisbaeren_1.tscn"),
+    preload("res://characters/npcs/sports_fans/eisbaeren/eisbaeren_2.tscn"),
+    preload("res://characters/npcs/sports_fans/eisbaeren/eisbaeren_3.tscn"),
 ]
 
 const NUMBER_NPCS: int = 20

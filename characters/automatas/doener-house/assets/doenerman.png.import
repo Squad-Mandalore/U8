@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvr8cuvu3870b"
-path="res://.godot/imported/donerman.png-f452dfd8b66327c57dfb75556986b8c9.ctex"
+path="res://.godot/imported/doenerman.png-6d78504522cf19fecdb5f91b9d97d386.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/npcs/doner_man/donerman.png"
-dest_files=["res://.godot/imported/donerman.png-f452dfd8b66327c57dfb75556986b8c9.ctex"]
+source_file="res://characters/automatas/doener-house/assets/doenerman.png"
+dest_files=["res://.godot/imported/doenerman.png-6d78504522cf19fecdb5f91b9d97d386.ctex"]
 
 [params]
 
