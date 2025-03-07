@@ -37,6 +37,7 @@ attacks = Array[ExtResource("2_twkw8")]([ExtResource("3_7g82s")])
 combat_animation = "idle"
 stats = ExtResource("4_thv40")
 texture = ExtResource("6_8mk7p")
+battle_intro = "idle"
 _name = "Chris Chistead"
 _random_name = false
 _gender = "Male"

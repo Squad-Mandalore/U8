@@ -419,7 +419,7 @@ position = Vector2(808, 282)
 position = Vector2(780, 282)
 
 [node name="ClothingContainer" parent="Node2D" instance=ExtResource("19_ylri4")]
-position = Vector2(863, 283)
+position = Vector2(863, 282)
 
 [node name="Towers" type="CanvasGroup" parent="Node2D"]
 y_sort_enabled = true
