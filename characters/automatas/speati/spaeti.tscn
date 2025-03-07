@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://b5frfwxa5x3k8" path="res://items/weapons/knife.tres" id="7_55oxt"]
 [ext_resource type="Resource" uid="uid://cuk5q62elytpm" path="res://items/weapons/lighter.tres" id="8_c8bje"]
 [ext_resource type="Resource" uid="uid://pafh8jr2vh22" path="res://items/consumables/beer.tres" id="9_670d7"]
-[ext_resource type="Resource" uid="uid://bdyet3nbsrd3y" path="res://items/weapons/hand_gun.tres" id="10_sn3sx"]
+[ext_resource type="Resource" uid="uid://brg8swyv42l1o" path="res://items/meta/backpack.tres" id="10_moplb"]
 [ext_resource type="Texture2D" uid="uid://dchf4axio55km" path="res://characters/automatas/doener-house/assets/dennis.png" id="12_0gpwc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uha68"]
@@ -39,7 +39,7 @@ size = Vector2(55, 47.5)
 collision_layer = 5
 collision_mask = 0
 script = ExtResource("1_8nd4e")
-shop_inventory = Array[ExtResource("2_t21io")]([ExtResource("3_30kon"), ExtResource("4_c1dev"), ExtResource("5_o3mhg"), ExtResource("6_fbgdh"), ExtResource("7_55oxt"), ExtResource("8_c8bje"), ExtResource("9_670d7"), ExtResource("10_sn3sx")])
+shop_inventory = Array[ExtResource("2_t21io")]([ExtResource("3_30kon"), ExtResource("4_c1dev"), ExtResource("5_o3mhg"), ExtResource("6_fbgdh"), ExtResource("7_55oxt"), ExtResource("8_c8bje"), ExtResource("9_670d7"), ExtResource("10_moplb")])
 _name = "Dennis"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
