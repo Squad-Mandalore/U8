@@ -19,17 +19,8 @@ texture = ExtResource("5_1s2x4")
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Osloer Straße"
 
-[node name="Floor" parent="Node2D" index="0"]
+[node name="Floor" parent="Node2D" index="1"]
 texture = ExtResource("6_yamfh")
-
-[node name="SeatingAreas" parent="Node2D" index="4"]
-position = Vector2(29, 0)
-
-[node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
-position = Vector2(255, 323)
-
-[node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
-position = Vector2(884, 323)
 
 [node name="Node2D#Towers" type="CanvasGroup" parent="Node2D" index="6"]
 y_sort_enabled = true
@@ -69,3 +60,12 @@ position = Vector2(832, 426)
 
 [node name="Tower12" parent="Node2D/Node2D#Towers" index="11" instance=ExtResource("7_stosq")]
 position = Vector2(988, 426)
+
+[node name="SeatingAreas" parent="Node2D" index="7"]
+position = Vector2(29, 0)
+
+[node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
+position = Vector2(255, 323)
+
+[node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
+position = Vector2(884, 323)

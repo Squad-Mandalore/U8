@@ -28,7 +28,7 @@ grow_horizontal = 1
 text = "Alexanderplatz"
 label_settings = ExtResource("5_33jly")
 
-[node name="Floor" parent="Node2D" index="0"]
+[node name="Floor" parent="Node2D" index="1"]
 texture = ExtResource("4_4jwyb")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="2"]
