@@ -22,7 +22,6 @@ const HUMAN_SHOPS: Array[PackedScene] = [
     preload("res://characters/automatas/clothes/clothing_container.tscn"),
 ]
 const NPCS: Array[PackedScene] = [
-    preload("res://characters/npcs/badman/badman.tscn"),
     preload("res://characters/npcs/beggar/beggar_1.tscn"),
     preload("res://characters/npcs/berghain_guest/berghain_guest.tscn"),
     preload("res://characters/npcs/big_child/big_child.tscn"),
@@ -31,7 +30,12 @@ const NPCS: Array[PackedScene] = [
     preload("res://characters/npcs/sports_fans/eisbaeren/eisbaeren_3.tscn"),
 ]
 
+const SPECIAL_NPCS: Array[PackedScene] = [
+    preload("res://characters/npcs/badman/badman.tscn"),
+]
+
 const NUMBER_NPCS: int = 20
+const NUMBER_SPECIAL_NPCS: int = 1
 
 signal train_enter
 signal level_lost
@@ -52,6 +56,10 @@ func spawn_npcs() -> void:
     for i in range(NUMBER_NPCS):
         npc_spawn_points.append(navigation_node.random_point_in_polygon())
     spawn_objects(NPCS, npc_spawn_points, navigation_node)
+    npc_spawn_points.clear()
+    for i in range(NUMBER_SPECIAL_NPCS):
+        npc_spawn_points.append(navigation_node.random_point_in_polygon())
+    spawn_objects(SPECIAL_NPCS, npc_spawn_points, navigation_node)
 
 func spawn_automatas() -> void:
     spawn_objects(AUTOMATAS, automata_spawns, navigation_node)
