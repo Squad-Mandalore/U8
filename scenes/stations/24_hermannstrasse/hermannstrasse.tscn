@@ -27,9 +27,6 @@ grow_horizontal = 1
 text = "Hermann-
 straße"
 
-[node name="Floor" parent="Node2D" index="1"]
-texture = ExtResource("6_elllx")
-
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="4"]
 y_sort_enabled = true
 
@@ -86,3 +83,6 @@ position = Vector2(950, 417)
 
 [node name="Tower18" parent="Node2D/CanvasGroup" index="17" instance=ExtResource("7_owj6y")]
 position = Vector2(1062, 417)
+
+[node name="Floor" parent="Node2D" index="6"]
+texture = ExtResource("6_elllx")
