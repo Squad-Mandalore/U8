@@ -47,7 +47,7 @@ unique_name_in_owner = true
 position = Vector2(407, 259)
 _name = "Bodybuilder"
 
-[node name="Floor" parent="Node2D" index="1"]
+[node name="Floor" parent="Node2D" index="2"]
 texture = ExtResource("7_65kk3")
 
 [node name="Towers" type="CanvasGroup" parent="Node2D" index="3"]

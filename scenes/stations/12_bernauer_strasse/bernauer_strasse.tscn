@@ -15,7 +15,7 @@ texture = ExtResource("3_nwsxu")
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Bernauer Straße"
 
-[node name="Floor" parent="Node2D" index="0"]
+[node name="Floor" parent="Node2D" index="1"]
 texture = ExtResource("4_bdenw")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="4"]
