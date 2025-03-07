@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dh8a5067wese3"]
 
-[ext_resource type="Script" path="res://ui/inventory/inventory.gd" id="1_gj1qs"]
+[ext_resource type="Script" uid="uid://cerdix5v67p4u" path="res://ui/inventory/inventory.gd" id="1_gj1qs"]
 [ext_resource type="PackedScene" uid="uid://cy1iar1dkomyr" path="res://ui/inventory/subscenes/stat_hud.tscn" id="1_w07gl"]
 [ext_resource type="PackedScene" uid="uid://b6qdv1d0kofyo" path="res://ui/inventory/subscenes/inventory_hud.tscn" id="4_ahg8d"]
 [ext_resource type="PackedScene" uid="uid://b4s3pgrykws8i" path="res://ui/subscenes/button_hud.tscn" id="4_qjhs6"]
@@ -81,23 +81,19 @@ theme_override_constants/margin_bottom = 50
 [node name="ButtonHBox" type="HBoxContainer" parent="ButtonHudMargin"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_constants/separation = 0
+theme_override_constants/separation = 50
+
+[node name="InteractButton" parent="ButtonHudMargin/ButtonHBox" instance=ExtResource("4_qjhs6")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 44)
+layout_mode = 2
+text = "Interagieren   "
 
 [node name="MapButton" parent="ButtonHudMargin/ButtonHBox" instance=ExtResource("4_qjhs6")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 44)
 layout_mode = 2
 text = "Karte   "
-
-[node name="MapInventoryMargin" type="MarginContainer" parent="ButtonHudMargin/ButtonHBox"]
-layout_mode = 2
-theme_override_constants/margin_right = 50
-
-[node name="InventoryButton" parent="ButtonHudMargin/ButtonHBox" instance=ExtResource("4_qjhs6")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(220, 0)
-layout_mode = 2
-text = "Zurück zum Spiel   "
 
 [node name="BalanceMargin" type="MarginContainer" parent="."]
 anchors_preset = 2
@@ -133,4 +129,3 @@ theme_override_font_sizes/font_size = 24
 text = "100 Euronen"
 
 [connection signal="pressed" from="ButtonHudMargin/ButtonHBox/MapButton" to="." method="_on_map_button_pressed"]
-[connection signal="pressed" from="ButtonHudMargin/ButtonHBox/InventoryButton" to="." method="_on_inventory_button_pressed"]

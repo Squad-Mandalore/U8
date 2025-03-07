@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://bap2i51ju2efp"]
+
+[ext_resource type="Script" uid="uid://b1efgwx06mllx" path="res://characters/automatas/automata.gd" id="1_ttc5p"]
+[ext_resource type="Script" uid="uid://gscj3hnm5oor" path="res://items/item.gd" id="2_c86f6"]
+[ext_resource type="Resource" uid="uid://pd7g52g5l7le" path="res://items/meta/ticket.tres" id="3_hemij"]
+[ext_resource type="Texture2D" uid="uid://d1q0g62vdlmjr" path="res://characters/automatas/ticket/assets/ticket_vending_machine.png" id="4_nqfj3"]
+[ext_resource type="Resource" uid="uid://c42pfeuqo23vs" path="res://items/meta/map.tres" id="4_wou1d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eypk"]
+size = Vector2(20, 7)
+
+[node name="TicketVendingMachine" type="StaticBody2D"]
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("1_ttc5p")
+shop_inventory = Array[ExtResource("2_c86f6")]([ExtResource("3_hemij"), ExtResource("4_wou1d"), null, null, null, null, null, null])
+shop_name = "Ticketautomat"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_nqfj3")
+offset = Vector2(1, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_1eypk")

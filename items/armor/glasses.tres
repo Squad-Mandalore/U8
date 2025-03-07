@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://yneftrcr8syg"]
+
+[ext_resource type="Script" uid="uid://ssjpmawp0tgi" path="res://items/inventory_item.gd" id="1_ri2p7"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_0ijmm"]
+[ext_resource type="Texture2D" uid="uid://ki1g8fup5ta0" path="res://items/armor/assets/glasses.png" id="3_ik3bh"]
+
+[sub_resource type="Resource" id="Resource_hodkb"]
+script = ExtResource("2_0ijmm")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 1
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("1_ri2p7")
+stats = SubResource("Resource_hodkb")
+price = 230
+name = "Brille"
+description = "Eine gute alte Brille für die Leute mit einer Seheinschränkung. Wirkt aber demnach schlauer."
+texture = ExtResource("3_ik3bh")

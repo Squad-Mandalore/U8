@@ -9,10 +9,6 @@ var attack: Attack:
         update_token(attack.token, attack.token_number)
         update_icon(attack.effect)
 
-# DEBUG
-# func _ready() -> void:
-#     attack = preload("res://characters/attacks/assets/tail_whip.tres")
-
 func _on_panel_container_mouse_exited() -> void:
     $PanelContainer.add_theme_stylebox_override("panel", preload("res://ui/combat/assets/attack.tres"))
     SignalDispatcher.remove_attack_hover.emit()
@@ -53,4 +49,5 @@ func _on_panel_container_gui_input(event: InputEvent) -> void:
     if event is InputEventMouseButton:
             if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
                 # TODO: play attack animation and hide hud
+                SignalDispatcher.attack_swapper_toggle.emit(false)
                 SignalDispatcher.execute_attack.emit(attack, "Spieler", "Enemy")

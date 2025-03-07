@@ -1,14 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://cr0oss7rkk1ta"]
+[gd_scene load_steps=24 format=3 uid="uid://cr0oss7rkk1ta"]
 
-[ext_resource type="Script" path="res://scenes/stations/station.gd" id="1_ppg4l"]
+[ext_resource type="Script" uid="uid://bc0bdgv8glxy7" path="res://scenes/stations/station.gd" id="1_ppg4l"]
 [ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="1_q1w2b"]
 [ext_resource type="PackedScene" uid="uid://dbbc33em4xtbm" path="res://scenes/stations/subscenes/animation_train.tscn" id="2_xadlq"]
 [ext_resource type="Texture2D" uid="uid://cu657kuv6vc5n" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-floor.png" id="3_l3pjy"]
+[ext_resource type="Script" uid="uid://br2eo0ik4vr0a" path="res://scenes/stations/navregion.gd" id="4_jb3ik"]
 [ext_resource type="LabelSettings" uid="uid://baukomuw01ajv" path="res://scenes/stations/assets/station_name_label_settings_black.tres" id="5_0teva"]
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="6_h3ce4"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="7_m0iis"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="8_xs470"]
-[ext_resource type="AudioStream" uid="uid://brdipk6bapgml" path="res://assets/sounds/music/slappbass_backgroundmusic.wav" id="9_6r4ry"]
+[ext_resource type="PackedScene" uid="uid://ltew4h5q07ud" path="res://scenes/stations/subscenes/seating_areas.tscn" id="9_1wjs1"]
+[ext_resource type="PackedScene" uid="uid://dkxkayaw41poa" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/trashcan_extinguisher.tscn" id="10_o38ik"]
+[ext_resource type="PackedScene" uid="uid://b2jd8d6sfebyi" path="res://characters/npcs/station_exclusive/smoking_dude/smoking_dude.tscn" id="11_h1wtr"]
+[ext_resource type="PackedScene" uid="uid://bap2i51ju2efp" path="res://characters/automatas/ticket/ticket_vending_machine.tscn" id="13_ao5iv"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kke8e"]
 b = Vector2(98, 0)
@@ -24,6 +28,11 @@ b = Vector2(0, 314)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_55gil"]
 b = Vector2(-98, 0)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ufycs"]
+vertices = PackedVector2Array(963.5, 312, 842.5, 312, 187, 273, 256, 273, 1083, 391.75, 1040, 391.75, 287.5, 345, 508.5, 345, 1121.73, 484.039, 105.258, 488.953, 187, 428, 256, 428, 1083, 273, 1083, 236.75, 1114.25, 198.977, 144, 428, 112.742, 197.008, 144, 391.75, 1040, 236.75, 971, 273, 1040, 273, 971, 236.75, 928, 236.75, 842.5, 345, 629.5, 345, 629.5, 312, 508.5, 312, 1040, 428, 971, 428, 971, 391.75, 928, 391.75, 144, 273, 287.5, 312, 859, 273, 859, 236.75, 928, 273, 963.5, 345, 1083, 428, 816, 236.75, 816, 273, 747, 273, 747, 236.75, 704, 236.75, 928, 428, 859, 428, 859, 391.75, 816, 391.75, 816, 428, 747, 428, 747, 391.75, 704, 391.75, 704, 273, 635, 273, 635, 236.75, 592, 236.75, 704, 428, 635, 428, 635, 391.75, 592, 391.75, 166.5, 345, 592, 273, 523, 273, 523, 236.75, 480, 236.75, 592, 428, 523, 428, 523, 391.75, 480, 391.75, 166.5, 312, 480, 428, 411, 428, 411, 391.75, 368, 391.75, 480, 273, 411, 273, 411, 236.75, 368, 236.75, 368, 428, 299, 428, 299, 391.75, 256, 391.75, 187, 391.75, 368, 273, 299, 273, 299, 236.75, 256, 236.75, 187, 236.75, 144, 236.75)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 8), PackedInt32Array(15, 10, 9), PackedInt32Array(15, 9, 16, 17), PackedInt32Array(16, 14, 13, 18), PackedInt32Array(19, 18, 20, 0), PackedInt32Array(18, 19, 21), PackedInt32Array(16, 18, 21), PackedInt32Array(16, 21, 22), PackedInt32Array(1, 23, 24, 25), PackedInt32Array(2, 1, 25), PackedInt32Array(2, 25, 26), PackedInt32Array(5, 27, 28, 29), PackedInt32Array(6, 5, 29), PackedInt32Array(6, 29, 30), PackedInt32Array(31, 2, 26, 7, 32), PackedInt32Array(20, 12, 8, 4), PackedInt32Array(0, 33, 34, 35), PackedInt32Array(4, 36, 0, 20), PackedInt32Array(27, 37, 8), PackedInt32Array(8, 37, 4), PackedInt32Array(35, 19, 0), PackedInt32Array(22, 35, 34), PackedInt32Array(16, 22, 34), PackedInt32Array(16, 34, 38), PackedInt32Array(28, 27, 8), PackedInt32Array(23, 36, 4), PackedInt32Array(39, 33, 0), PackedInt32Array(39, 0, 40), PackedInt32Array(38, 39, 40, 41), PackedInt32Array(16, 38, 41), PackedInt32Array(16, 41, 42), PackedInt32Array(43, 28, 8), PackedInt32Array(43, 8, 44), PackedInt32Array(30, 43, 44, 45), PackedInt32Array(6, 30, 45), PackedInt32Array(6, 45, 46), PackedInt32Array(47, 44, 8), PackedInt32Array(47, 8, 48), PackedInt32Array(46, 47, 48, 49), PackedInt32Array(6, 46, 49), PackedInt32Array(6, 49, 50), PackedInt32Array(24, 23, 4), PackedInt32Array(51, 40, 0), PackedInt32Array(51, 0, 52), PackedInt32Array(42, 51, 52, 53), PackedInt32Array(16, 42, 53), PackedInt32Array(16, 53, 54), PackedInt32Array(55, 48, 8), PackedInt32Array(55, 8, 56), PackedInt32Array(50, 55, 56, 57), PackedInt32Array(6, 50, 57), PackedInt32Array(6, 57, 58, 59), PackedInt32Array(60, 52, 0), PackedInt32Array(60, 0, 61), PackedInt32Array(54, 60, 61, 62), PackedInt32Array(16, 54, 62), PackedInt32Array(16, 62, 63), PackedInt32Array(64, 56, 8), PackedInt32Array(64, 8, 65), PackedInt32Array(58, 64, 65, 66), PackedInt32Array(59, 58, 66), PackedInt32Array(59, 66, 67), PackedInt32Array(7, 24, 4), PackedInt32Array(7, 6, 32), PackedInt32Array(31, 32, 68), PackedInt32Array(31, 68, 59), PackedInt32Array(69, 65, 8), PackedInt32Array(69, 8, 70), PackedInt32Array(67, 69, 70, 71), PackedInt32Array(59, 67, 71), PackedInt32Array(59, 71, 72), PackedInt32Array(73, 61, 0), PackedInt32Array(73, 0, 74), PackedInt32Array(63, 73, 74, 75), PackedInt32Array(16, 63, 75), PackedInt32Array(16, 75, 76), PackedInt32Array(77, 70, 8), PackedInt32Array(77, 8, 78), PackedInt32Array(72, 77, 78, 79), PackedInt32Array(59, 72, 79), PackedInt32Array(59, 79, 80), PackedInt32Array(59, 80, 11, 81), PackedInt32Array(82, 74, 0), PackedInt32Array(82, 0, 83), PackedInt32Array(76, 82, 83, 84), PackedInt32Array(16, 76, 84), PackedInt32Array(16, 84, 85), PackedInt32Array(16, 85, 3, 86), PackedInt32Array(11, 78, 8), PackedInt32Array(11, 10, 81), PackedInt32Array(59, 81, 17), PackedInt32Array(59, 17, 16, 31), PackedInt32Array(87, 31, 16), PackedInt32Array(86, 87, 16), PackedInt32Array(2, 86, 3), PackedInt32Array(0, 3, 83)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(103, 187, 1124, 189, 1132, 494, 95, 499)])
 
 [sub_resource type="Animation" id="Animation_g22sf"]
 length = 0.001
@@ -79,6 +88,23 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(-1200, 0), Vector2(0, 0)]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Berliner")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [false],
+"method": &"set_physics_process"
+}, {
+"args": [true],
+"method": &"set_physics_process"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ygpp7"]
 resource_name = "train_leave"
@@ -107,16 +133,35 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(1200, 0)]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Berliner")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [false],
+"method": &"set_physics_process"
+}, {
+"args": [true],
+"method": &"set_physics_process"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6ecwe"]
 _data = {
-"RESET": SubResource("Animation_g22sf"),
-"train_enter": SubResource("Animation_sdd82"),
-"train_leave": SubResource("Animation_ygpp7")
+&"RESET": SubResource("Animation_g22sf"),
+&"train_enter": SubResource("Animation_sdd82"),
+&"train_leave": SubResource("Animation_ygpp7")
 }
 
 [node name="Station" type="Node2D"]
 script = ExtResource("1_ppg4l")
+automata_spawns = Array[Vector2]([Vector2(400, 372), Vector2(736, 372)])
+human_shop_spawns = Array[Vector2]([Vector2(568, 423)])
 
 [node name="Background" type="StaticBody2D" parent="."]
 
@@ -159,24 +204,34 @@ label_settings = ExtResource("5_0teva")
 horizontal_alignment = 1
 uppercase = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_6ecwe")
-}
-
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="NavigationRegion2D" parent="."]
 y_sort_enabled = true
+navigation_polygon = SubResource("NavigationPolygon_ufycs")
+script = ExtResource("4_jb3ik")
+
+[node name="TicketVendingMachine" parent="Node2D" instance=ExtResource("13_ao5iv")]
+position = Vector2(85, 427)
+
+[node name="TicketVendingMachine2" parent="Node2D" instance=ExtResource("13_ao5iv")]
+position = Vector2(85, 257)
+
+[node name="TicketVendingMachine3" parent="Node2D" instance=ExtResource("13_ao5iv")]
+position = Vector2(1142, 427)
+
+[node name="TicketVendingMachine4" parent="Node2D" instance=ExtResource("13_ao5iv")]
+position = Vector2(1142, 257)
+
+[node name="AnimationTrain" parent="Node2D" instance=ExtResource("2_xadlq")]
+position = Vector2(-1121, 104)
 
 [node name="Floor" type="Sprite2D" parent="Node2D"]
-y_sort_enabled = true
-position = Vector2(65, 188)
+position = Vector2(0, 186)
 texture = ExtResource("3_l3pjy")
 centered = false
-offset = Vector2(-65, -188)
+offset = Vector2(0, -186)
 
 [node name="Berliner" parent="Node2D" instance=ExtResource("6_h3ce4")]
 z_index = 0
-y_sort_enabled = true
 position = Vector2(180, 198)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/Berliner"]
@@ -188,8 +243,15 @@ limit_bottom = 658
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="AnimationTrain" parent="Node2D" instance=ExtResource("2_xadlq")]
-position = Vector2(-1121, 104)
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Node2D/Berliner"]
+radius = 5.0
+avoidance_layers = 7
+
+[node name="SmokingDude" parent="Node2D" instance=ExtResource("11_h1wtr")]
+position = Vector2(391, 346)
+
+[node name="TrashcanExtinguisher" parent="Node2D" instance=ExtResource("10_o38ik")]
+position = Vector2(811, 379)
 
 [node name="Escalator" type="CanvasGroup" parent="Node2D"]
 y_sort_enabled = true
@@ -218,10 +280,22 @@ position = Vector2(1163, 353)
 [node name="EscalatorFrontRight4" parent="Node2D/Escalator" instance=ExtResource("8_xs470")]
 position = Vector2(1162, 373)
 
-[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_6r4ry")
-autoplay = true
-bus = &"Music"
+[node name="SeatingAreas" type="CanvasGroup" parent="Node2D"]
+y_sort_enabled = true
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[node name="SeatingArea" parent="Node2D/SeatingAreas" instance=ExtResource("9_1wjs1")]
+position = Vector2(227, 323)
+
+[node name="SeatingArea2" parent="Node2D/SeatingAreas" instance=ExtResource("9_1wjs1")]
+position = Vector2(569, 323)
+
+[node name="SeatingArea3" parent="Node2D/SeatingAreas" instance=ExtResource("9_1wjs1")]
+position = Vector2(903, 323)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6ecwe")
+}
+
 [connection signal="body_entered" from="Node2D/AnimationTrain" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

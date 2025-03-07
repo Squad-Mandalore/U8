@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://5xm857oohqkc"]
+
+[ext_resource type="Script" uid="uid://d4b4knubk387v" path="res://items/consumables/consumable.gd" id="1_poohf"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_03ifs"]
+[ext_resource type="Texture2D" uid="uid://bsjb5ohivc0o0" path="res://items/consumables/assets/heroin.png" id="3_f8165"]
+
+[sub_resource type="Resource" id="Resource_8t62b"]
+script = ExtResource("2_03ifs")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 2
+
+[resource]
+script = ExtResource("1_poohf")
+effect_duration = 50
+stats = SubResource("Resource_8t62b")
+price = 50
+name = "Heroin"
+description = "So verführerisch der Kick auch scheint – der Preis ist hoch. Denk drüber nach."
+texture = ExtResource("3_f8165")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cmj3348ognt37"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_kgpoy"]
-[ext_resource type="Script" path="res://scenes/stations/24_hermannstrasse/hermannstrasse.gd" id="2_l272v"]
+[ext_resource type="Script" uid="uid://doi33jimqrkt5" path="res://scenes/stations/24_hermannstrasse/hermannstrasse.gd" id="2_l272v"]
 [ext_resource type="Texture2D" uid="uid://d3xawbt2blj64" path="res://scenes/stations/24_hermannstrasse/assets/hermannstrasse_background_fight.png" id="3_hljma"]
 [ext_resource type="Texture2D" uid="uid://cpbvfcrt0enk1" path="res://scenes/stations/24_hermannstrasse/assets/herrmannstrasse_fight_floor.png" id="4_hl8ag"]
 [ext_resource type="Texture2D" uid="uid://c8jx8pkbeui0n" path="res://scenes/stations/24_hermannstrasse/assets/hermannstrasse_background.png" id="5_56dfc"]
@@ -16,7 +16,7 @@ combat_floor = ExtResource("4_hl8ag")
 [node name="BackgroundWall" parent="Background" index="0"]
 texture = ExtResource("5_56dfc")
 
-[node name="CenterContainer" parent="Background" index="5"]
+[node name="CenterContainer" parent="Background" index="6"]
 offset_left = 539.0
 offset_top = 52.0
 offset_right = 633.0
@@ -27,7 +27,7 @@ grow_horizontal = 1
 text = "Hermann-
 straße"
 
-[node name="Floor" parent="Node2D" index="0"]
+[node name="Floor" parent="Node2D" index="1"]
 texture = ExtResource("6_elllx")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="4"]

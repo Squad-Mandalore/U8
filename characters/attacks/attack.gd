@@ -18,8 +18,8 @@ func _to_string() -> String:
     Token: %s
     Token Number: %d
     Effect: %s
-    Damage Multiplier: %.2f
-    """ % [name, damage, str(type), str(token), token_number, effect]
+    Formula: %s
+    """ % [name, damage, str(type), str(token), token_number, effect, str(formula)]
 
 func calculate_damage(stats: StatsSpecifier):
     damage = (
@@ -41,4 +41,3 @@ func calculate_damage(stats: StatsSpecifier):
         stats.bleed_level * formula.bleed_level_modifier +
         stats.drug_level * formula.drug_level_modifier
     ) * formula.effect_modifier + formula.effect_flat_modifier + formula.base
-

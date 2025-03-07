@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Map" load_steps=3 format=3 uid="uid://c42pfeuqo23vs"]
+
+[ext_resource type="Script" uid="uid://gpjoljnwyiur" path="res://items/meta/map.gd" id="2_apliw"]
+[ext_resource type="Texture2D" uid="uid://b54sytgb2piu0" path="res://items/meta/assets/map.png" id="3_2fpe1"]
+
+[resource]
+script = ExtResource("2_apliw")
+price = 3
+name = "BVG Flyer"
+description = "Irgendwie muss man sich ja in dem U-Bahn Netz zurechtfinden."
+texture = ExtResource("3_2fpe1")

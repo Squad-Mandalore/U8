@@ -1,10 +1,78 @@
-[gd_scene load_steps=3 format=3 uid="uid://dni73m7g8lip1"]
+[gd_scene load_steps=8 format=3 uid="uid://dni73m7g8lip1"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_amjx2"]
-[ext_resource type="Script" path="res://scenes/stations/04_lindauer_allee/lindauer_allee.gd" id="2_wlfl4"]
+[ext_resource type="Script" uid="uid://df1v8q384iwij" path="res://scenes/stations/04_lindauer_allee/lindauer_allee.gd" id="2_wlfl4"]
+[ext_resource type="Texture2D" uid="uid://frokf8u7mp5a" path="res://scenes/stations/04_lindauer_allee/assets/lindauer-allee-background.png" id="3_722bo"]
+[ext_resource type="Texture2D" uid="uid://cj1te5fknlc66" path="res://scenes/stations/04_lindauer_allee/assets/lindauer_allee_background_fight.png" id="3_swe21"]
+[ext_resource type="Texture2D" uid="uid://dog8wvcx8bhbd" path="res://scenes/stations/04_lindauer_allee/assets/lindauer-allee-floor.png" id="4_co1g7"]
+[ext_resource type="Texture2D" uid="uid://dhr14i1rb2irx" path="res://scenes/stations/04_lindauer_allee/assets/lindauer_allee_fight_floor.png" id="4_n72i5"]
+[ext_resource type="PackedScene" uid="uid://c7sosk2nymvw1" path="res://scenes/stations/04_lindauer_allee/subscenes/tower.tscn" id="5_elohs"]
 
 [node name="LindauerAllee" instance=ExtResource("1_amjx2")]
 script = ExtResource("2_wlfl4")
+combat_background = ExtResource("3_swe21")
+combat_floor = ExtResource("4_n72i5")
+
+[node name="BackgroundWall" parent="Background" index="0"]
+texture = ExtResource("3_722bo")
+
+[node name="CenterContainer" parent="Background" index="6"]
+offset_left = 560.0
+offset_top = 62.0
+offset_right = 654.0
+offset_bottom = 93.0
+grow_horizontal = 1
 
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Lindauer Allee"
+
+[node name="Floor" parent="Node2D" index="1"]
+texture = ExtResource("4_co1g7")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="5"]
+y_sort_enabled = true
+
+[node name="Tower" parent="Node2D/CanvasGroup" index="0" instance=ExtResource("5_elohs")]
+position = Vector2(204, 255)
+
+[node name="Tower2" parent="Node2D/CanvasGroup" index="1" instance=ExtResource("5_elohs")]
+position = Vector2(372, 255)
+
+[node name="Tower3" parent="Node2D/CanvasGroup" index="2" instance=ExtResource("5_elohs")]
+position = Vector2(540, 255)
+
+[node name="Tower4" parent="Node2D/CanvasGroup" index="3" instance=ExtResource("5_elohs")]
+position = Vector2(708, 255)
+
+[node name="Tower5" parent="Node2D/CanvasGroup" index="4" instance=ExtResource("5_elohs")]
+position = Vector2(876, 255)
+
+[node name="Tower6" parent="Node2D/CanvasGroup" index="5" instance=ExtResource("5_elohs")]
+position = Vector2(1044, 255)
+
+[node name="Tower7" parent="Node2D/CanvasGroup" index="6" instance=ExtResource("5_elohs")]
+position = Vector2(204, 425)
+
+[node name="Tower8" parent="Node2D/CanvasGroup" index="7" instance=ExtResource("5_elohs")]
+position = Vector2(372, 425)
+
+[node name="Tower9" parent="Node2D/CanvasGroup" index="8" instance=ExtResource("5_elohs")]
+position = Vector2(540, 425)
+
+[node name="Tower10" parent="Node2D/CanvasGroup" index="9" instance=ExtResource("5_elohs")]
+position = Vector2(708, 425)
+
+[node name="Tower11" parent="Node2D/CanvasGroup" index="10" instance=ExtResource("5_elohs")]
+position = Vector2(876, 425)
+
+[node name="Tower12" parent="Node2D/CanvasGroup" index="11" instance=ExtResource("5_elohs")]
+position = Vector2(1044, 425)
+
+[node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
+position = Vector2(285, 323)
+
+[node name="SeatingArea2" parent="Node2D/SeatingAreas" index="1"]
+position = Vector2(627, 323)
+
+[node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
+position = Vector2(961, 323)

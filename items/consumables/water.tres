@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://bqvkq1v21w4r1"]
+
+[ext_resource type="Script" uid="uid://d4b4knubk387v" path="res://items/consumables/consumable.gd" id="1_8pyee"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_7a7fn"]
+[ext_resource type="Texture2D" uid="uid://pixa8ml4dujx" path="res://items/consumables/assets/water.png" id="3_r2afi"]
+
+[sub_resource type="Resource" id="Resource_f76sd"]
+script = ExtResource("2_7a7fn")
+max_health = 0
+health = 25
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("1_8pyee")
+effect_duration = 0
+stats = SubResource("Resource_f76sd")
+price = 2
+name = "Wasser"
+description = "Der klare Beweis, dass auch im reinsten Fluss der Dinge tiefe Gedanken schlummern."
+texture = ExtResource("3_r2afi")

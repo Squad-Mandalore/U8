@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GunLicence" load_steps=3 format=3 uid="uid://clkj7o5ak0bdk"]
+
+[ext_resource type="Script" uid="uid://cxww4o1c7j7kv" path="res://items/meta/gun_licence.gd" id="1_22o55"]
+[ext_resource type="Texture2D" uid="uid://21sogoj4ivvq" path="res://items/meta/assets/gun_license.png" id="2_v1qwf"]
+
+[resource]
+script = ExtResource("1_22o55")
+weapon_class = 1
+price = 500
+name = "Waffenschein"
+description = "Man mag es nicht glauben, aber auch in Berlin sind Waffen ausweispflichtig. Mit diesem Waffenschein jedoch kannst du über deine Waffen frei verfügen und damit (fast) überall hinspazieren. "
+texture = ExtResource("2_v1qwf")

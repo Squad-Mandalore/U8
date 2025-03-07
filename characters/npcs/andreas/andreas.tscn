@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkj4b56eeb03x"]
+
+[ext_resource type="Script" uid="uid://cub5k4d3ikign" path="res://characters/npcs/andreas/andreas.gd" id="1_topah"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_mtjal"]
+[ext_resource type="Resource" uid="uid://oui3w7vat6ib" path="res://characters/attacks/assets/show_off.tres" id="3_pu3iv"]
+[ext_resource type="Resource" uid="uid://fngonw15cf5o" path="res://characters/classes/assets/honest_burgy.tres" id="4_gt0u4"]
+[ext_resource type="Texture2D" uid="uid://3hfvs0noiriy" path="res://characters/npcs/andreas/assets/AndreasEhrlich.png" id="5_rty23"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
+size = Vector2(20, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi1gq"]
+atlas = ExtResource("5_rty23")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdfr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vi1gq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["NPC"]]
+z_index = 50
+collision_layer = 5
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_snap_length = 0.0
+platform_on_leave = 2
+script = ExtResource("1_topah")
+attacks = Array[ExtResource("2_mtjal")]([ExtResource("3_pu3iv")])
+combat_animation = "idle"
+stats = ExtResource("4_gt0u4")
+texture = ExtResource("5_rty23")
+_name = "Andreas"
+_random_name = false
+_gender = "Male"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bg0ao")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bdfr3")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -16)

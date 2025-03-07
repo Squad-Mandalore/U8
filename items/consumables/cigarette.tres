@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://dyefx1h80soau"]
+
+[ext_resource type="Script" uid="uid://d4b4knubk387v" path="res://items/consumables/consumable.gd" id="1_mxbwg"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_sj8av"]
+[ext_resource type="Texture2D" uid="uid://ugift53k6dsw" path="res://items/consumables/assets/cigarette.png" id="3_polg6"]
+
+[sub_resource type="Resource" id="Resource_p53ou"]
+script = ExtResource("2_sj8av")
+max_health = 0
+health = 0
+armor = 0
+initiative = 2
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 1
+
+[resource]
+script = ExtResource("1_mxbwg")
+effect_duration = 5
+stats = SubResource("Resource_p53ou")
+price = 5
+name = "Zigarette"
+description = "Discord zwischen flüchtigem Genuss und bleibender Erinnerung. Jeder Zug nimmt dich mit auf ’ne kleine Reise..."
+texture = ExtResource("3_polg6")

@@ -1,11 +1,74 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh8p5cvwbvru1"]
+[gd_scene load_steps=9 format=3 uid="uid://dh8p5cvwbvru1"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_a4e58"]
-[ext_resource type="Script" path="res://scenes/stations/18_moritzplatz/moritzplatz.gd" id="2_f2bji"]
+[ext_resource type="Script" uid="uid://cxlsh8e7evomn" path="res://scenes/stations/18_moritzplatz/moritzplatz.gd" id="2_f2bji"]
+[ext_resource type="Texture2D" uid="uid://dr2gias5akcue" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_background_fight.png" id="3_ivk1n"]
+[ext_resource type="Texture2D" uid="uid://chcddawhixf27" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_fight_floor.png" id="4_l4s7x"]
+[ext_resource type="Texture2D" uid="uid://banru5a6yw6w4" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_background.png" id="5_rlb3x"]
+[ext_resource type="LabelSettings" uid="uid://dfcof0bqgjsys" path="res://scenes/stations/assets/station_name_label_settings_white_on_black.tres" id="6_aqh51"]
+[ext_resource type="Texture2D" uid="uid://c3kg4jodjsiyd" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_floor.png" id="7_du223"]
+[ext_resource type="PackedScene" uid="uid://vj27q0c8e2sh" path="res://scenes/stations/18_moritzplatz/subscenes/tower.tscn" id="8_fedqd"]
 
 [node name="Moritzplatz" instance=ExtResource("1_a4e58")]
 script = ExtResource("2_f2bji")
+combat_background = ExtResource("3_ivk1n")
+combat_floor = ExtResource("4_l4s7x")
+
+[node name="BackgroundWall" parent="Background" index="0"]
+texture = ExtResource("5_rlb3x")
 
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Moritzplatz
 "
+label_settings = ExtResource("6_aqh51")
+
+[node name="Floor" parent="Node2D" index="1"]
+texture = ExtResource("7_du223")
+
+[node name="Towers" type="CanvasGroup" parent="Node2D" index="4"]
+y_sort_enabled = true
+
+[node name="Tower" parent="Node2D/Towers" index="0" instance=ExtResource("8_fedqd")]
+position = Vector2(199, 264)
+
+[node name="Tower2" parent="Node2D/Towers" index="1" instance=ExtResource("8_fedqd")]
+position = Vector2(362, 264)
+
+[node name="Tower3" parent="Node2D/Towers" index="2" instance=ExtResource("8_fedqd")]
+position = Vector2(525, 264)
+
+[node name="Tower4" parent="Node2D/Towers" index="3" instance=ExtResource("8_fedqd")]
+position = Vector2(688, 264)
+
+[node name="Tower5" parent="Node2D/Towers" index="4" instance=ExtResource("8_fedqd")]
+position = Vector2(851, 264)
+
+[node name="Tower6" parent="Node2D/Towers" index="5" instance=ExtResource("8_fedqd")]
+position = Vector2(1014, 264)
+
+[node name="Tower7" parent="Node2D/Towers" index="6" instance=ExtResource("8_fedqd")]
+position = Vector2(199, 420)
+
+[node name="Tower8" parent="Node2D/Towers" index="7" instance=ExtResource("8_fedqd")]
+position = Vector2(362, 420)
+
+[node name="Tower9" parent="Node2D/Towers" index="8" instance=ExtResource("8_fedqd")]
+position = Vector2(525, 420)
+
+[node name="Tower10" parent="Node2D/Towers" index="9" instance=ExtResource("8_fedqd")]
+position = Vector2(688, 420)
+
+[node name="Tower11" parent="Node2D/Towers" index="10" instance=ExtResource("8_fedqd")]
+position = Vector2(851, 420)
+
+[node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("8_fedqd")]
+position = Vector2(1014, 420)
+
+[node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
+position = Vector2(283, 323)
+
+[node name="SeatingArea2" parent="Node2D/SeatingAreas" index="1"]
+position = Vector2(607, 323)
+
+[node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
+position = Vector2(931, 323)

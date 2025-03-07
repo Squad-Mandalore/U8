@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://t06m0njij5ku"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_icq6v"]
-[ext_resource type="Script" path="res://scenes/stations/19_kottbusser_tor/kottbusser_tor.gd" id="2_083p3"]
+[ext_resource type="Script" uid="uid://bf4qmhrgylk1o" path="res://scenes/stations/19_kottbusser_tor/kottbusser_tor.gd" id="2_083p3"]
 [ext_resource type="Texture2D" uid="uid://dvgwwhy1xchkd" path="res://scenes/stations/19_kottbusser_tor/assets/kottbusser_tor_background.png" id="3_ea010"]
 [ext_resource type="Texture2D" uid="uid://bswn1kitxuwd1" path="res://scenes/stations/19_kottbusser_tor/assets/kottbusser_tor_background_2_fight.png" id="3_nvfmb"]
 [ext_resource type="Texture2D" uid="uid://djuulqc1m8yab" path="res://scenes/stations/19_kottbusser_tor/assets/kottbusser_tor_floor.png" id="4_rjf1a"]
@@ -17,17 +17,6 @@ combat_floor = ExtResource("4_vjsi7")
 [node name="BackgroundWall" parent="Background" index="0"]
 texture = ExtResource("3_ea010")
 
-[node name="CenterContainer" parent="Background" index="5"]
-offset_left = 310.0
-offset_top = 69.0
-offset_right = 404.0
-offset_bottom = 100.0
-grow_horizontal = 1
-
-[node name="StationName" parent="Background/CenterContainer" index="0"]
-text = "Kottbusser Tor"
-label_settings = ExtResource("5_gnmpr")
-
 [node name="CenterContainer2" type="CenterContainer" parent="Background" index="6"]
 custom_minimum_size = Vector2(94, 31)
 offset_left = 752.0
@@ -42,7 +31,18 @@ label_settings = ExtResource("5_gnmpr")
 horizontal_alignment = 1
 uppercase = true
 
-[node name="Floor" parent="Node2D" index="0"]
+[node name="CenterContainer" parent="Background" index="7"]
+offset_left = 310.0
+offset_top = 69.0
+offset_right = 404.0
+offset_bottom = 100.0
+grow_horizontal = 1
+
+[node name="StationName" parent="Background/CenterContainer" index="0"]
+text = "Kottbusser Tor"
+label_settings = ExtResource("5_gnmpr")
+
+[node name="Floor" parent="Node2D" index="1"]
 texture = ExtResource("4_rjf1a")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="2"]
@@ -95,3 +95,12 @@ position = Vector2(907, 418)
 
 [node name="Tower16" parent="Node2D/CanvasGroup" index="15" instance=ExtResource("5_pkq03")]
 position = Vector2(1033, 418)
+
+[node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
+position = Vector2(343, 323)
+
+[node name="SeatingArea2" parent="Node2D/SeatingAreas" index="1"]
+position = Vector2(592, 323)
+
+[node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
+position = Vector2(845, 323)

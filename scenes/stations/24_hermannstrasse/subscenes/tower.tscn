@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://5krccpj44n6l"]
 
-[ext_resource type="Script" path="res://scenes/stations/24_hermannstrasse/subscenes/tower_herrmannstrasse.gd" id="1_18g1g"]
+[ext_resource type="Script" uid="uid://6mp0s45kryhd" path="res://scenes/stations/24_hermannstrasse/subscenes/tower_herrmannstrasse.gd" id="1_18g1g"]
 [ext_resource type="Texture2D" uid="uid://ccrtn2hjvm2os" path="res://scenes/stations/24_hermannstrasse/assets/tower_herrmannstr_1.png" id="2_a31wq"]
 [ext_resource type="Texture2D" uid="uid://dcu0qtjs1egch" path="res://scenes/stations/24_hermannstrasse/assets/tower_herrmannstr_2.png" id="3_1bqu3"]
 [ext_resource type="Texture2D" uid="uid://djue00peasknb" path="res://scenes/stations/24_hermannstrasse/assets/tower_herrmannstr_3.png" id="4_jpnyr"]

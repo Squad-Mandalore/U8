@@ -1,7 +1,7 @@
 [gd_scene load_steps=43 format=3 uid="uid://b6qdv1d0kofyo"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_1ep7u"]
-[ext_resource type="Script" path="res://ui/inventory/subscenes/inventory_hud.gd" id="1_frglc"]
+[ext_resource type="Script" uid="uid://b0hjps6did7lv" path="res://ui/inventory/subscenes/inventory_hud.gd" id="1_frglc"]
 [ext_resource type="Texture2D" uid="uid://s0a53et15ukx" path="res://ui/hud/assets/white_blood.svg" id="3_kdlbu"]
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="4_gluvy"]
 [ext_resource type="Texture2D" uid="uid://kytixtu7vost" path="res://characters/player/assets/riding.png" id="5_cx61w"]
@@ -498,21 +498,18 @@ unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
 [node name="MapItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
-[node name="DiaryItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
+[node name="UndefinedItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer" instance=ExtResource("8_rpjsw")]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer"]
 layout_mode = 2
@@ -523,19 +520,18 @@ unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
-[node name="ItemSlot2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+[node name="DiaryItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
-[node name="ItemSlot3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+[node name="GunLicenceItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5/VBoxContainer/HBoxContainer2" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
 [node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5"]
 layout_mode = 2
@@ -543,12 +539,12 @@ theme_override_constants/separation = 0
 theme_override_styles/separator = SubResource("StyleBoxLine_7k27a")
 
 [node name="TicketItemSlot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer5" instance=ExtResource("8_rpjsw")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("9_whkaq")
-script = null
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

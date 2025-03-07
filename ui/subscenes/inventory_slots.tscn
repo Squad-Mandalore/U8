@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjhsg8rtptnpa"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="1_atwgh"]
-[ext_resource type="Script" path="res://ui/subscenes/inventory_slots.gd" id="1_xejif"]
+[ext_resource type="Script" uid="uid://dmi3l686vryj8" path="res://ui/subscenes/inventory_slots.gd" id="1_xejif"]
 [ext_resource type="PackedScene" uid="uid://da2j1exv2p488" path="res://ui/subscenes/item_slot.tscn" id="2_hcft3"]
 
 [node name="InventorySlots" type="VBoxContainer"]

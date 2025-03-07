@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://bgr3g32dgkjnh"]
+
+[ext_resource type="Script" uid="uid://ssjpmawp0tgi" path="res://items/inventory_item.gd" id="1_gl0pf"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_4p5wh"]
+[ext_resource type="Texture2D" uid="uid://ds7w0323gbf1x" path="res://items/armor/assets/hawaii_shirt.png" id="3_sro2r"]
+
+[sub_resource type="Resource" id="Resource_hodkb"]
+script = ExtResource("2_4p5wh")
+max_health = 0
+health = 0
+armor = 1
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 1
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("1_gl0pf")
+stats = SubResource("Resource_hodkb")
+price = 200
+name = "Hawaiihemd"
+description = "Das Kleidungsstück, das sowohl 'Ich bin im Urlaub' als auch 'Ich habe die Kontrolle über mein Leben verloren' schreit – perfekt für einen Ausflug in die Tiefen der U8."
+texture = ExtResource("3_sro2r")

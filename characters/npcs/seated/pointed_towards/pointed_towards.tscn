@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://scdcnw8cg81y"]
 
-[ext_resource type="Script" path="res://characters/npcs/seated/seated_npc.gd" id="1_kth4h"]
+[ext_resource type="Script" uid="uid://bkwawhx4tf32j" path="res://characters/npcs/seated/seated_npc.gd" id="1_kth4h"]
 [ext_resource type="Texture2D" uid="uid://dfekrrgsejkga" path="res://characters/npcs/seated/pointed_towards/assets/las_ninas_y_los_ninos_mirando_hacia.png" id="2_86gox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo3t6"]
@@ -197,9 +197,11 @@ position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_mo3t6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 14)
 sprite_frames = SubResource("SpriteFrames_xm0tb")
 animation = &"first_girl1"
 autoplay = "first_guy1"
 frame_progress = 0.62045
+offset = Vector2(0, -14)
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://b6coqm2cvlo40"]
+
+[ext_resource type="Script" uid="uid://d4b4knubk387v" path="res://items/consumables/consumable.gd" id="1_hh6lg"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_pebbc"]
+[ext_resource type="Texture2D" uid="uid://1avrd7j1gfgv" path="res://items/consumables/assets/schnitzel.png" id="3_r8r7p"]
+
+[sub_resource type="Resource" id="Resource_hodkb"]
+script = ExtResource("2_pebbc")
+max_health = 0
+health = 15
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("1_hh6lg")
+effect_duration = 0
+stats = SubResource("Resource_hodkb")
+price = 20
+name = "Schnitzel mit Pommes Rot-Weiß"
+description = "Ein vollständiger Schnitzelteller wie man sich ihn nur vorstellen kann. "
+texture = ExtResource("3_r8r7p")

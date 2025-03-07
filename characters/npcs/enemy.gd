@@ -5,6 +5,8 @@ class_name Enemy
 @export var combat_animation: String = "battle_idle"
 @export var stats: StatsSpecifier
 @export var texture: Texture2D
+@export var winning_money: int = 10
+@export var battle_intro: String = "battle_intro"
 var initial_stats: StatsSpecifier
 
 
@@ -28,3 +30,12 @@ func reset_stats():
 func update_attack_damage():
     for attack in attacks:
         attack.calculate_damage(stats)
+
+func fight_lost(calculate_money: Callable = _calculate_win):
+    var win = calculate_money.call(winning_money)
+    print("Player won %d Euronen" % win)
+    SourceOfTruth.balance_changed(win)
+    # queue_free()
+
+func _calculate_win(money: int) -> int:
+    return money * (1.0 + GameState.get_current_station() / 10.0)

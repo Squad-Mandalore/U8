@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c2sg1i523d8qr"]
 
-[ext_resource type="Script" path="res://ui/combat/subscenes/status_panel.gd" id="1_j1sxw"]
+[ext_resource type="Script" uid="uid://6kb5s3sbe1ia" path="res://ui/combat/subscenes/status_panel.gd" id="1_j1sxw"]
 [ext_resource type="PackedScene" uid="uid://taiib681wkvl" path="res://ui/subscenes/progress_bar.tscn" id="1_xjmis"]
 [ext_resource type="Texture2D" uid="uid://cnkgu51qcpve1" path="res://ui/hud/assets/big_under_progressbar.svg" id="3_6v5bh"]
 [ext_resource type="Texture2D" uid="uid://c5wvjsj1orm8c" path="res://ui/hud/assets/big_health_progressbar.svg" id="3_e2ruq"]

@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=9 format=3 uid="uid://1mbap4gldwd3"]
+
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="1_qdqsd"]
+[ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="2_4ywm8"]
+[ext_resource type="Script" uid="uid://c0drmr3olu1ci" path="res://items/weapons/weapon.gd" id="3_a8uu1"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_d2mh8"]
+[ext_resource type="Texture2D" uid="uid://ckynv1p04uyjg" path="res://items/weapons/assets/brush.png" id="5_41mm7"]
+
+[sub_resource type="Resource" id="Resource_ayac1"]
+script = ExtResource("2_4ywm8")
+base = 10
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.5
+creativity_modifier = 0.3
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+
+[sub_resource type="Resource" id="Resource_di1hx"]
+script = ExtResource("1_qdqsd")
+name = "Ordnungsruf"
+damage = 0
+type = 3
+token = 2
+token_number = 1
+effect = "Silenced den Gegner"
+formula = SubResource("Resource_ayac1")
+
+[sub_resource type="Resource" id="Resource_qs242"]
+script = ExtResource("4_d2mh8")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 30
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("3_a8uu1")
+attacks = Array[ExtResource("1_qdqsd")]([SubResource("Resource_di1hx")])
+stats = SubResource("Resource_qs242")
+price = 40
+name = "Pinsel"
+description = "Ein Pinsel, womöglich geklaut aus dem Kunstmuseum. Mit genügend Kreativität kannst du andere möglicherweise damit verstören."
+texture = ExtResource("5_41mm7")

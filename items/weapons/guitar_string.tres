@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=9 format=3 uid="uid://c6sxkoby2otiv"]
+
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="1_gilae"]
+[ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="2_1y21v"]
+[ext_resource type="Script" uid="uid://c0drmr3olu1ci" path="res://items/weapons/weapon.gd" id="3_lgi13"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_lkf6w"]
+[ext_resource type="Texture2D" uid="uid://caliv71t2nuet" path="res://items/weapons/assets/guitar_string.png" id="5_jn8xx"]
+
+[sub_resource type="Resource" id="Resource_ayac1"]
+script = ExtResource("2_1y21v")
+base = 10
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.5
+creativity_modifier = 0.3
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+
+[sub_resource type="Resource" id="Resource_di1hx"]
+script = ExtResource("1_gilae")
+name = "Ordnungsruf"
+damage = 0
+type = 3
+token = 2
+token_number = 1
+effect = "Silenced den Gegner"
+formula = SubResource("Resource_ayac1")
+
+[sub_resource type="Resource" id="Resource_qs242"]
+script = ExtResource("4_lkf6w")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 30
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("3_lgi13")
+attacks = Array[ExtResource("1_gilae")]([SubResource("Resource_di1hx")])
+stats = SubResource("Resource_qs242")
+price = 40
+name = "Guitarrensaite"
+description = "Von einer Gittare abgeschnitten, so hart wie ein (offensichtlich) Metalldraht."
+texture = ExtResource("5_jn8xx")

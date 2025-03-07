@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://dquxwlu5pu5v"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://dquxwlu5pu5v"]
 
-[ext_resource type="Script" path="res://globals/attributes.gd" id="1_7tr7a"]
-[ext_resource type="Script" path="res://items/item.gd" id="2_wjiuo"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="1_7tr7a"]
+[ext_resource type="Script" uid="uid://ssjpmawp0tgi" path="res://items/inventory_item.gd" id="2_wjiuo"]
+[ext_resource type="Texture2D" uid="uid://cwo3tb0qigwp7" path="res://items/armor/assets/pullover.png" id="3_1t1td"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
 script = ExtResource("1_7tr7a")
@@ -23,12 +24,10 @@ poison_level = 0
 bleed_level = 0
 drug_level = 0
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cvpp7"]
-
 [resource]
 script = ExtResource("2_wjiuo")
+stats = SubResource("Resource_hodkb")
+price = 70
 name = "Pullover"
 description = "Ein Kleidungsstück, das so gemütlich ist, dass du es nie wieder ausziehen willst – und genau das scheint sein letzter Besitzer auch gedacht zu haben. Ideal für das vollkommene 'Mir doch egal'-Feeling im Waggon."
-stats = SubResource("Resource_hodkb")
-texture = SubResource("PlaceholderTexture2D_cvpp7")
-price = 70
+texture = ExtResource("3_1t1td")

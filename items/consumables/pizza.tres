@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://beksdl6t3f8nt"]
+
+[ext_resource type="Script" uid="uid://d4b4knubk387v" path="res://items/consumables/consumable.gd" id="1_g10ho"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_xq2c6"]
+[ext_resource type="Texture2D" uid="uid://bvvdoid053so4" path="res://items/consumables/assets/pizza.png" id="3_dvfn8"]
+
+[sub_resource type="Resource" id="Resource_hodkb"]
+script = ExtResource("2_xq2c6")
+max_health = 0
+health = 15
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[resource]
+script = ExtResource("1_g10ho")
+effect_duration = 0
+stats = SubResource("Resource_hodkb")
+price = 20
+name = "Pizza"
+description = "Eine gute klassische Pizza, nicht vom 5. Sterne Italiener, jedoch aber mit der größten Käsesschicht die man sich vorstellen kann."
+texture = ExtResource("3_dvfn8")

@@ -1,10 +1,176 @@
-[gd_scene load_steps=40 format=3 uid="uid://b4v2kxxwx22uq"]
+[gd_scene load_steps=51 format=3 uid="uid://b4v2kxxwx22uq"]
 
-[ext_resource type="Script" path="res://characters/npcs/lifeguard/lifeguard.gd" id="1_wtvpj"]
-[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="2_mngaj"]
+[ext_resource type="Script" uid="uid://cpxyxc3p64hqb" path="res://characters/npcs/lifeguard/lifeguard.gd" id="1_wtvpj"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_mngaj"]
 [ext_resource type="Resource" uid="uid://oui3w7vat6ib" path="res://characters/attacks/assets/show_off.tres" id="3_jhxo3"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="4_moqmy"]
+[ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="4_cnqhi"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_moqmy"]
 [ext_resource type="Texture2D" uid="uid://bhrsh1sjnml85" path="res://characters/npcs/lifeguard/assets/lifeguard.png" id="5_8noa3"]
+
+[sub_resource type="Resource" id="Resource_4rcr0"]
+script = ExtResource("4_cnqhi")
+base = 0
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+
+[sub_resource type="Resource" id="Resource_42jjr"]
+script = ExtResource("2_mngaj")
+name = "Bauchplatscher"
+damage = 5
+type = 1
+token = 1
+token_number = 1
+effect = ""
+formula = SubResource("Resource_4rcr0")
+
+[sub_resource type="Resource" id="Resource_e7lhq"]
+script = ExtResource("4_cnqhi")
+base = 0
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+
+[sub_resource type="Resource" id="Resource_iyodo"]
+script = ExtResource("2_mngaj")
+name = "Schwitzgriff"
+damage = 5
+type = 1
+token = 3
+token_number = 0
+effect = ""
+formula = SubResource("Resource_e7lhq")
+
+[sub_resource type="Resource" id="Resource_4qy3s"]
+script = ExtResource("4_cnqhi")
+base = 0
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+
+[sub_resource type="Resource" id="Resource_qiowf"]
+script = ExtResource("2_mngaj")
+name = "Baderegeln erklären"
+damage = 0
+type = 3
+token = 4
+token_number = 1
+effect = ""
+formula = SubResource("Resource_4qy3s")
+
+[sub_resource type="Resource" id="Resource_nbh4d"]
+script = ExtResource("4_cnqhi")
+base = 0
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+
+[sub_resource type="Resource" id="Resource_0nrwd"]
+script = ExtResource("2_mngaj")
+name = "Handtuch-Peitsche"
+damage = 5
+type = 3
+token = 1
+token_number = 1
+effect = ""
+formula = SubResource("Resource_nbh4d")
+
+[sub_resource type="Resource" id="Resource_gaypb"]
+script = ExtResource("4_cnqhi")
+base = 0
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+
+[sub_resource type="Resource" id="Resource_ohf0h"]
+script = ExtResource("2_mngaj")
+name = "Ausrutschen"
+damage = 0
+type = 0
+token = 2
+token_number = 0
+effect = ""
+formula = SubResource("Resource_gaypb")
 
 [sub_resource type="Resource" id="Resource_54qjx"]
 script = ExtResource("4_moqmy")
@@ -273,11 +439,12 @@ animations = [{
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_wtvpj")
-attacks = Array[ExtResource("2_mngaj")]([ExtResource("3_jhxo3")])
+attacks = Array[ExtResource("2_mngaj")]([ExtResource("3_jhxo3"), SubResource("Resource_42jjr"), SubResource("Resource_iyodo"), SubResource("Resource_qiowf"), SubResource("Resource_0nrwd"), SubResource("Resource_ohf0h")])
 stats = SubResource("Resource_54qjx")
 texture = ExtResource("5_8noa3")
+winning_money = 80
 _name = "Der Bademeister"
-RANDOM_NAME = false
+_random_name = false
 _gender = "Male"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
