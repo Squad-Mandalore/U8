@@ -1,14 +1,15 @@
-[gd_scene load_steps=28 format=3 uid="uid://dxtsv1xtfd42n"]
+[gd_scene load_steps=39 format=3 uid="uid://dxtsv1xtfd42n"]
 
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
-[ext_resource type="Script" path="res://scenes/stations/01_wittenau/wittenau.gd" id="1_vdt2h"]
+[ext_resource type="Script" uid="uid://dl0kwt8x355cv" path="res://scenes/stations/01_wittenau/wittenau.gd" id="1_vdt2h"]
 [ext_resource type="Texture2D" uid="uid://b36noacmhtswo" path="res://scenes/stations/01_wittenau/assets/hub.png" id="2_c8rit"]
 [ext_resource type="LabelSettings" uid="uid://c0xesi3rt8odi" path="res://scenes/stations/assets/station_name_label_settings_white.tres" id="3_job2n"]
 [ext_resource type="Texture2D" uid="uid://dyqe16uee6oon" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_fight_floor.png" id="3_rimlc"]
+[ext_resource type="Texture2D" uid="uid://b2oxlg4ka5fyl" path="res://scenes/stations/01_wittenau/assets/wittenau.png" id="4_23pnf"]
 [ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://scenes/stations/01_wittenau/subscenes/tower.tscn" id="4_wvqyq"]
+[ext_resource type="Script" uid="uid://br2eo0ik4vr0a" path="res://scenes/stations/navregion.gd" id="5_0xogt"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="6_fup5h"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="7_5owx3"]
-[ext_resource type="AudioStream" uid="uid://77spiseg4rer" path="res://assets/sounds/music/station_music.wav" id="8_4q2iq"]
 [ext_resource type="PackedScene" uid="uid://caniahfcrm3my" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren_1.tscn" id="10_krbe2"]
 [ext_resource type="PackedScene" uid="uid://cu2j876adtdfh" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren_2.tscn" id="11_1m7y8"]
 [ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politician/politician_1.tscn" id="11_qvo2e"]
@@ -17,12 +18,19 @@
 [ext_resource type="PackedScene" uid="uid://dv2v43jv13rjr" path="res://characters/automatas/drink/drink_vending_machine.tscn" id="13_i82bx"]
 [ext_resource type="PackedScene" uid="uid://bap2i51ju2efp" path="res://characters/automatas/ticket/ticket_vending_machine.tscn" id="14_nf21t"]
 [ext_resource type="PackedScene" uid="uid://40q6al2c4n4n" path="res://characters/automatas/snack/snack_vending_machine.tscn" id="15_htilo"]
+[ext_resource type="PackedScene" uid="uid://dbbc33em4xtbm" path="res://scenes/stations/subscenes/animation_train.tscn" id="17_a0cku"]
+[ext_resource type="PackedScene" uid="uid://dkxkayaw41poa" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/trashcan_extinguisher.tscn" id="18_1s6m8"]
+[ext_resource type="PackedScene" uid="uid://d3fhr38ytpe22" path="res://characters/automatas/clothes/clothing_container.tscn" id="19_ylri4"]
+[ext_resource type="PackedScene" uid="uid://diy1ckcdcgjg0" path="res://characters/automatas/doener-house/doener_house.tscn" id="20_mc4in"]
+[ext_resource type="PackedScene" uid="uid://jf1dhu624rgd" path="res://characters/automatas/speati/spaeti.tscn" id="21_5qhnv"]
+[ext_resource type="PackedScene" uid="uid://b2jd8d6sfebyi" path="res://characters/npcs/station_exclusive/smoking_dude/smoking_dude.tscn" id="22_5sgx3"]
+[ext_resource type="Texture2D" uid="uid://cb4flw484wjsc" path="res://scenes/stations/01_wittenau/assets/wittenau_floor.png" id="23_ige60"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgaoi"]
 b = Vector2(822, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fyc4f"]
-b = Vector2(1125, 0)
+b = Vector2(94, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_w2mii"]
 b = Vector2(0, 310)
@@ -33,6 +41,14 @@ b = Vector2(-1945, 0)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_a187x"]
 b = Vector2(-1, 312)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dx64d"]
+b = Vector2(-121, 0)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_6fvqj"]
+vertices = PackedVector2Array(857, 265, 760, 265, 264, 262, 382, 262, 905, 262, 955, 262, 1744.5, 312, 1623.5, 312, 883, 293, 883, 266, 1964.06, 489, 41.0938, 489.992, 264, 431.5, 382, 431.5, 1794, 398.5, 1744, 398.5, 383.5, 345, 603.5, 345, 1744.5, 345, 1794, 262, 1965.93, 201.977, 214, 431.5, 1179.24, 335.703, 1186, 337.508, 1074.5, 345, 1744, 262, 1174.3, 330.758, 1794, 229, 43.8984, 199.008, 1744, 229, 214, 398.5, 1289.5, 312, 1289.5, 345, 1199.51, 324, 1197.7, 317.242, 1173.88, 329.234, 1138, 331, 1074.5, 312, 1136, 326, 1627, 262, 1627, 229, 1577, 229, 857, 266, 905, 229, 760, 292, 843, 292, 843, 293, 1623.5, 345, 1410.5, 345, 1410.5, 312, 1168, 308, 1744, 431.5, 1627, 431.5, 1627, 398.5, 1577, 398.5, 724.5, 312, 603.5, 312, 768, 262, 768, 229, 1198.79, 326.664, 1199, 328, 1459, 262, 1459, 229, 1577, 262, 1197.7, 330.758, 1198.43, 328.023, 1794, 431.5, 1155, 308, 1192.76, 335.703, 262.5, 345, 264, 398.5, 214, 262, 1197.27, 316.812, 1197, 315, 1194.97, 314.508, 1192.76, 312.297, 1186, 310.492, 1182.35, 311.461, 1408, 229, 1408, 262, 1291, 262, 1291, 229, 1241, 229, 1577, 431.5, 1459, 431.5, 1459, 398.5, 1408, 398.5, 953.5, 312, 953.5, 345, 724.5, 345, 1408, 431.5, 1291, 431.5, 1291, 398.5, 1241, 398.5, 1241, 262, 1122, 262, 1122, 229, 1072, 229, 1241, 431.5, 1122, 431.5, 1122, 398.5, 1072, 398.5, 1072, 262, 955, 229, 718, 229, 383.5, 312, 1072, 431.5, 955, 431.5, 955, 398.5, 905, 398.5, 905, 431.5, 768, 431.5, 768, 398.5, 718, 398.5, 262.5, 312, 718, 431.5, 601, 431.5, 601, 398.5, 551, 398.5, 551, 431.5, 432, 398.5, 432, 431.5, 382, 398.5, 214, 229, 264, 229, 718, 262, 601, 262, 601, 229, 551, 229, 551, 262, 432, 262, 432, 229, 382, 229)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(18, 6, 19, 20, 10, 14), PackedInt32Array(21, 12, 11), PackedInt32Array(22, 23, 24), PackedInt32Array(25, 19, 6), PackedInt32Array(26, 22, 24), PackedInt32Array(20, 19, 27), PackedInt32Array(28, 20, 27, 29), PackedInt32Array(21, 11, 28, 30), PackedInt32Array(31, 32, 33, 34), PackedInt32Array(35, 26, 24, 36), PackedInt32Array(36, 24, 37, 38), PackedInt32Array(29, 25, 39, 40), PackedInt32Array(28, 29, 40), PackedInt32Array(28, 40, 41), PackedInt32Array(9, 42, 0, 43, 4), PackedInt32Array(44, 45, 46), PackedInt32Array(7, 47, 48, 49), PackedInt32Array(8, 7, 49), PackedInt32Array(8, 49, 31, 50), PackedInt32Array(15, 51, 52, 53), PackedInt32Array(16, 15, 53), PackedInt32Array(16, 53, 54), PackedInt32Array(2, 1, 44, 55, 56), PackedInt32Array(39, 25, 6), PackedInt32Array(0, 57, 58, 43), PackedInt32Array(59, 33, 32, 60), PackedInt32Array(6, 61, 62, 63), PackedInt32Array(64, 65, 60, 32), PackedInt32Array(10, 66, 14), PackedInt32Array(67, 38, 37), PackedInt32Array(68, 64, 32), PackedInt32Array(69, 70, 30, 28, 71), PackedInt32Array(31, 34, 72, 73), PackedInt32Array(47, 18, 14), PackedInt32Array(73, 74, 75, 31), PackedInt32Array(76, 77, 50), PackedInt32Array(63, 39, 6), PackedInt32Array(41, 63, 62), PackedInt32Array(28, 41, 62), PackedInt32Array(28, 62, 78), PackedInt32Array(23, 68, 32), PackedInt32Array(51, 66, 10), PackedInt32Array(48, 47, 14), PackedInt32Array(31, 75, 76), PackedInt32Array(52, 51, 10), PackedInt32Array(79, 61, 6), PackedInt32Array(79, 6, 80), PackedInt32Array(78, 79, 80, 81), PackedInt32Array(28, 78, 81), PackedInt32Array(28, 81, 82), PackedInt32Array(83, 52, 10), PackedInt32Array(83, 10, 84), PackedInt32Array(54, 83, 84, 85), PackedInt32Array(16, 54, 85), PackedInt32Array(16, 85, 86), PackedInt32Array(24, 23, 32, 14), PackedInt32Array(32, 48, 14), PackedInt32Array(31, 76, 50), PackedInt32Array(8, 50, 67), PackedInt32Array(8, 67, 37, 87), PackedInt32Array(8, 87, 88, 46), PackedInt32Array(44, 46, 88, 89, 55), PackedInt32Array(90, 84, 10), PackedInt32Array(90, 10, 91), PackedInt32Array(86, 90, 91, 92), PackedInt32Array(16, 86, 92), PackedInt32Array(16, 92, 93), PackedInt32Array(94, 80, 6), PackedInt32Array(94, 6, 95), PackedInt32Array(82, 94, 95, 96), PackedInt32Array(28, 82, 96), PackedInt32Array(28, 96, 97), PackedInt32Array(98, 91, 10), PackedInt32Array(98, 10, 99), PackedInt32Array(93, 98, 99, 100), PackedInt32Array(16, 93, 100), PackedInt32Array(16, 100, 101, 69), PackedInt32Array(102, 95, 6), PackedInt32Array(102, 6, 5), PackedInt32Array(97, 102, 5, 103), PackedInt32Array(28, 97, 103), PackedInt32Array(28, 103, 43), PackedInt32Array(28, 43, 58), PackedInt32Array(28, 58, 104), PackedInt32Array(88, 24, 14), PackedInt32Array(88, 14, 89), PackedInt32Array(71, 2, 56, 17, 105), PackedInt32Array(106, 99, 10), PackedInt32Array(106, 10, 107), PackedInt32Array(101, 106, 107, 108), PackedInt32Array(69, 101, 108), PackedInt32Array(69, 108, 109), PackedInt32Array(110, 107, 10), PackedInt32Array(110, 10, 111), PackedInt32Array(109, 110, 111, 112), PackedInt32Array(69, 109, 112), PackedInt32Array(69, 112, 113), PackedInt32Array(17, 89, 14), PackedInt32Array(17, 16, 105), PackedInt32Array(71, 105, 114), PackedInt32Array(71, 114, 69), PackedInt32Array(115, 111, 10), PackedInt32Array(115, 10, 116), PackedInt32Array(113, 115, 116, 117), PackedInt32Array(69, 113, 117), PackedInt32Array(69, 117, 118), PackedInt32Array(69, 118, 119, 120), PackedInt32Array(119, 116, 10), PackedInt32Array(119, 10, 121), PackedInt32Array(119, 121, 120), PackedInt32Array(69, 120, 122), PackedInt32Array(69, 122, 13, 70), PackedInt32Array(13, 121, 10), PackedInt32Array(13, 12, 70), PackedInt32Array(123, 71, 28), PackedInt32Array(124, 123, 28), PackedInt32Array(125, 57, 0), PackedInt32Array(125, 0, 126), PackedInt32Array(104, 125, 126, 127), PackedInt32Array(28, 104, 127), PackedInt32Array(28, 127, 128), PackedInt32Array(129, 126, 0), PackedInt32Array(129, 0, 130), PackedInt32Array(128, 129, 130, 131), PackedInt32Array(28, 128, 131), PackedInt32Array(28, 131, 132), PackedInt32Array(124, 28, 132), PackedInt32Array(124, 132, 3, 2), PackedInt32Array(0, 3, 130)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(34, 189, 1976, 192, 1974, 499, 31, 500)])
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0h8n"]
 size = Vector2(33, 20)
 
@@ -41,26 +57,52 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Berliner:position")
+tracks/0/path = NodePath("Node2D/OlafScholz:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(961, 210)]
+"values": [Vector2(962, 168)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/OlafScholz:position")
+tracks/1/path = NodePath("Node2D/AnimationTrain:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(962, 168)]
+"values": [Vector2(904, 95)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Berliner/Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/Berliner")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"set_physics_process"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_lqfb8"]
@@ -190,11 +232,57 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_87d8y"]
+resource_name = "train_leave"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/AnimationTrain:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector2(904, 95), Vector2(2054, 95)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Berliner/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1200, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Berliner")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [false],
+"method": &"set_physics_process"
+}, {
+"args": [true],
+"method": &"set_physics_process"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ltkc7"]
 _data = {
-"RESET": SubResource("Animation_dfl7g"),
-"olaf_initial_battle": SubResource("Animation_lqfb8"),
-"olaf_step_aside": SubResource("Animation_lsgha")
+&"RESET": SubResource("Animation_dfl7g"),
+&"olaf_initial_battle": SubResource("Animation_lqfb8"),
+&"olaf_step_aside": SubResource("Animation_lsgha"),
+&"train_leave": SubResource("Animation_87d8y")
 }
 
 [node name="Node2D" type="Node2D"]
@@ -207,7 +295,7 @@ combat_floor = ExtResource("3_rimlc")
 position = Vector2(1000, 330)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
-texture = ExtResource("2_c8rit")
+texture = ExtResource("4_23pnf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
 position = Vector2(-969, -143)
@@ -229,6 +317,10 @@ shape = SubResource("SegmentShape2D_luigf")
 position = Vector2(-969, -142)
 shape = SubResource("SegmentShape2D_a187x")
 
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Background"]
+position = Vector2(977, -140)
+shape = SubResource("SegmentShape2D_dx64d")
+
 [node name="CenterContainer" type="CenterContainer" parent="Background"]
 offset_left = 311.0
 offset_top = -267.0
@@ -245,13 +337,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="NavigationRegion2D" parent="."]
 y_sort_enabled = true
+navigation_polygon = SubResource("NavigationPolygon_6fvqj")
+script = ExtResource("5_0xogt")
+
+[node name="AnimationTrain" parent="Node2D" instance=ExtResource("17_a0cku")]
+position = Vector2(904, 95)
+
+[node name="Floor" type="Sprite2D" parent="Node2D"]
+position = Vector2(0, 188)
+texture = ExtResource("23_ige60")
+centered = false
+offset = Vector2(0, -188)
 
 [node name="Berliner" parent="Node2D" instance=ExtResource("1_gtc8i")]
 z_index = 0
 y_sort_enabled = true
-position = Vector2(961, 210)
+position = Vector2(1042, 286)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/Berliner"]
 zoom = Vector2(3.5, 3.5)
@@ -267,14 +370,62 @@ drag_top_margin = 0.1
 drag_right_margin = 0.1
 drag_bottom_margin = 0.1
 
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Node2D/Berliner"]
+radius = 5.0
+
+[node name="Eisbaeren" parent="Node2D" instance=ExtResource("10_krbe2")]
+z_index = 0
+position = Vector2(1164, 313)
+
+[node name="Eisbaeren2" parent="Node2D" instance=ExtResource("11_1m7y8")]
+z_index = 0
+position = Vector2(1186, 324)
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Node2D/Eisbaeren2"]
+radius = 13.51
+vertices = PackedVector2Array(14, -19, -18, -16, -31, -16, -50, 2, -48, 7, 14, 11)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Eisbaeren3" parent="Node2D" instance=ExtResource("12_485u2")]
+z_index = 0
+position = Vector2(1150, 329)
+
+[node name="OlafScholz" parent="Node2D" instance=ExtResource("11_qvo2e")]
+unique_name_in_owner = true
+z_index = 0
+position = Vector2(962, 168)
+_name = "Olof Scholtz"
+
+[node name="DoenerHouse" parent="Node2D" instance=ExtResource("20_mc4in")]
+position = Vector2(805, 189)
+
+[node name="Spaeti" parent="Node2D" instance=ExtResource("21_5qhnv")]
+position = Vector2(660, 189)
+
+[node name="TrashcanExtinguisher" parent="Node2D" instance=ExtResource("18_1s6m8")]
+position = Vector2(484, 333)
+
+[node name="SmokingDude" parent="Node2D" instance=ExtResource("22_5sgx3")]
+position = Vector2(471, 364)
+
+[node name="DrinkVendingMachine" parent="Node2D" instance=ExtResource("13_i82bx")]
+position = Vector2(837, 282)
+
+[node name="SnackVendingMachine2" parent="Node2D" instance=ExtResource("15_htilo")]
+position = Vector2(808, 282)
+
+[node name="TicketVendingMachine" parent="Node2D" instance=ExtResource("14_nf21t")]
+position = Vector2(780, 282)
+
+[node name="ClothingContainer" parent="Node2D" instance=ExtResource("19_ylri4")]
+position = Vector2(863, 282)
+
 [node name="Towers" type="CanvasGroup" parent="Node2D"]
 y_sort_enabled = true
 
 [node name="Tower" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(239, 251)
-
-[node name="Tower6" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1097, 251)
 
 [node name="Tower2" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(407, 251)
@@ -288,6 +439,9 @@ position = Vector2(743, 251)
 [node name="Tower5" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(930, 251)
 
+[node name="Tower6" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(1097, 251)
+
 [node name="Tower7" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(1266, 251)
 
@@ -295,46 +449,40 @@ position = Vector2(1266, 251)
 position = Vector2(1433, 251)
 
 [node name="Tower9" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1434, 251)
-
-[node name="Tower10" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(1602, 251)
 
-[node name="Tower11" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+[node name="Tower10" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
 position = Vector2(1769, 251)
 
+[node name="Tower11" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(239, 421)
+
 [node name="Tower12" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(239, 420.5)
+position = Vector2(407, 421)
 
-[node name="Tower13" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(407, 420.5)
+[node name="Towe13" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(576, 421)
 
-[node name="Towe14" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(576, 420.5)
+[node name="Tower14" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
+position = Vector2(743, 421)
 
 [node name="Tower15" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(743, 420.5)
+position = Vector2(930, 421)
 
 [node name="Tower16" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(930, 420.5)
+position = Vector2(1097, 421)
 
 [node name="Tower17" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1097, 420.5)
+position = Vector2(1266, 421)
 
 [node name="Tower18" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1266, 420.5)
+position = Vector2(1433, 421)
 
 [node name="Tower19" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1433, 420.5)
+position = Vector2(1602, 421)
 
 [node name="Tower20" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1434, 420.5)
-
-[node name="Tower21" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1602, 420.5)
-
-[node name="Tower22" parent="Node2D/Towers" instance=ExtResource("4_wvqyq")]
-position = Vector2(1769, 420.5)
+position = Vector2(1769, 421)
 
 [node name="Escalators" type="CanvasGroup" parent="Node2D"]
 y_sort_enabled = true
@@ -363,32 +511,6 @@ position = Vector2(64, 311)
 [node name="EscalatorFront8" parent="Node2D/Escalators" instance=ExtResource("6_fup5h")]
 position = Vector2(64, 373)
 
-[node name="Eisbaeren" parent="Node2D" instance=ExtResource("10_krbe2")]
-z_index = 0
-position = Vector2(1164, 313)
-
-[node name="Eisbaeren2" parent="Node2D" instance=ExtResource("11_1m7y8")]
-z_index = 0
-position = Vector2(1186, 324)
-
-[node name="Eisbaeren3" parent="Node2D" instance=ExtResource("12_485u2")]
-z_index = 0
-position = Vector2(1150, 329)
-
-[node name="OlafScholz" parent="Node2D" instance=ExtResource("11_qvo2e")]
-unique_name_in_owner = true
-z_index = 0
-position = Vector2(962, 168)
-
-[node name="DrinkVendingMachine" parent="Node2D" instance=ExtResource("13_i82bx")]
-position = Vector2(837, 282)
-
-[node name="SnackVendingMachine2" parent="Node2D" instance=ExtResource("15_htilo")]
-position = Vector2(808, 282)
-
-[node name="TicketVendingMachine" parent="Node2D" instance=ExtResource("14_nf21t")]
-position = Vector2(780, 282)
-
 [node name="SeatingAreas" type="CanvasGroup" parent="Node2D"]
 y_sort_enabled = true
 
@@ -416,16 +538,12 @@ collision_mask = 2
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_t0h8n")
 
-[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_4q2iq")
-autoplay = true
-bus = &"Music"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ltkc7")
+&"": SubResource("AnimationLibrary_ltkc7")
 }
 
 [connection signal="ready" from="." to="Node2D/Berliner" method="_enable_scooting"]
+[connection signal="body_entered" from="Node2D/AnimationTrain" to="." method="_on_animation_train_body_entered"]
 [connection signal="body_entered" from="TrainDoor" to="." method="_on_area_2d_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dy2upyyb8cu4q"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_3yle4"]
-[ext_resource type="Script" path="res://scenes/stations/12_bernauer_strasse/bernauer_strasse.gd" id="2_dw2ls"]
+[ext_resource type="Script" uid="uid://c6mg6ssxyw0y8" path="res://scenes/stations/12_bernauer_strasse/bernauer_strasse.gd" id="2_dw2ls"]
 [ext_resource type="Texture2D" uid="uid://b22urkg3gk3rx" path="res://scenes/stations/12_bernauer_strasse/assets/bernauer-strasse-wall.png" id="3_nwsxu"]
 [ext_resource type="Texture2D" uid="uid://wqhxp7whmt44" path="res://scenes/stations/12_bernauer_strasse/assets/bernauer-strasse-floor.png" id="4_bdenw"]
 [ext_resource type="PackedScene" uid="uid://dxbuituc3h167" path="res://scenes/stations/12_bernauer_strasse/subscenes/tower.tscn" id="5_a3mhv"]
@@ -15,7 +15,7 @@ texture = ExtResource("3_nwsxu")
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Bernauer Straße"
 
-[node name="Floor" parent="Node2D" index="0"]
+[node name="Floor" parent="Node2D" index="1"]
 texture = ExtResource("4_bdenw")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="4"]

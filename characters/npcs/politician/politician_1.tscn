@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://1qondgntsrqj"]
 
-[ext_resource type="Script" path="res://characters/npcs/politician/politician.gd" id="1_2022g"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="2_8xi5b"]
-[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="2_tau0d"]
+[ext_resource type="Script" uid="uid://d2he2c3ljrjyx" path="res://characters/npcs/politician/politician.gd" id="1_2022g"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_8xi5b"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_tau0d"]
 [ext_resource type="Texture2D" uid="uid://cjyyhybqiea5t" path="res://characters/npcs/politician/assets/politician_1.png" id="2_xo3q8"]
 [ext_resource type="Resource" uid="uid://oui3w7vat6ib" path="res://characters/attacks/assets/show_off.tres" id="3_u5euq"]
 
@@ -139,6 +139,7 @@ attacks = Array[ExtResource("2_tau0d")]([ExtResource("3_u5euq")])
 combat_animation = "idle"
 stats = SubResource("Resource_u8nwv")
 texture = ExtResource("2_xo3q8")
+battle_intro = "idle"
 _random_name = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -150,6 +151,6 @@ shape = SubResource("RectangleShape2D_bg0ao")
 sprite_frames = SubResource("SpriteFrames_7wqtt")
 animation = &"idle"
 autoplay = "idle"
-offset = Vector2(0, -16)
+offset = Vector2(-3, -16)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

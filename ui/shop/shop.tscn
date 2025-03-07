@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cdtplrex7l3fs"]
 
 [ext_resource type="PackedScene" uid="uid://c5u8dk88a3txs" path="res://ui/inventory/subscenes/info_panel.tscn" id="1_0lxc3"]
-[ext_resource type="Script" path="res://ui/shop/shop.gd" id="1_kpqwa"]
+[ext_resource type="Script" uid="uid://dlmyqepps6c55" path="res://ui/shop/shop.gd" id="1_kpqwa"]
 [ext_resource type="PackedScene" uid="uid://c74j5v0sdslx2" path="res://ui/shop/subscenes/shop_hud.tscn" id="1_pg612"]
 [ext_resource type="Texture2D" uid="uid://dn0jfcq1ly2go" path="res://ui/hud/assets/coin.svg" id="4_mkmvm"]
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="5_p0dhj"]

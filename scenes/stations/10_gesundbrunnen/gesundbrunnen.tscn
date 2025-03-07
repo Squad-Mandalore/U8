@@ -1,13 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://h7oswlqu4ie4"]
+[gd_scene load_steps=11 format=3 uid="uid://h7oswlqu4ie4"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_dogv2"]
-[ext_resource type="Script" path="res://scenes/stations/10_gesundbrunnen/gesundbrunnen.gd" id="2_547o6"]
+[ext_resource type="Script" uid="uid://lurkoiakuk0w" path="res://scenes/stations/10_gesundbrunnen/gesundbrunnen.gd" id="2_547o6"]
 [ext_resource type="Texture2D" uid="uid://djqtt3ylmvjco" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen-background-2-fight.png" id="3_an3mj"]
 [ext_resource type="Texture2D" uid="uid://d2ydwxrvslftd" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen_background.png" id="3_ek8a5"]
 [ext_resource type="Texture2D" uid="uid://dgftgtve5d87c" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen-fight-floor.png" id="4_2iy2d"]
 [ext_resource type="PackedScene" uid="uid://b1yn58qi28tmj" path="res://scenes/stations/10_gesundbrunnen/subscenes/tower.tscn" id="5_61ge1"]
 [ext_resource type="LabelSettings" uid="uid://dfcof0bqgjsys" path="res://scenes/stations/assets/station_name_label_settings_white_on_black.tres" id="5_pfb4y"]
-[ext_resource type="PackedScene" uid="uid://b4v2kxxwx22uq" path="res://characters/npcs/lifeguard/lifeguard.tscn" id="7_lnb3s"]
+[ext_resource type="Texture2D" uid="uid://b5laifyplcahj" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen_floor.png" id="7_65kk3"]
+[ext_resource type="PackedScene" uid="uid://cmo1bqievd0uc" path="res://characters/npcs/bodybuilder/bodybuilder.tscn" id="8_s5o5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jatpi"]
+size = Vector2(40, 19)
 
 [node name="Gesundbrunnen" instance=ExtResource("1_dogv2")]
 script = ExtResource("2_547o6")
@@ -38,7 +42,16 @@ grow_horizontal = 1
 text = "GESUNDBRUNNEN"
 label_settings = ExtResource("5_pfb4y")
 
-[node name="Towers" type="CanvasGroup" parent="Node2D" index="2"]
+[node name="Bodybuilder" parent="Node2D" index="0" instance=ExtResource("8_s5o5c")]
+unique_name_in_owner = true
+z_index = 0
+position = Vector2(407, 259)
+_name = "Bodybuilder"
+
+[node name="Floor" parent="Node2D" index="2"]
+texture = ExtResource("7_65kk3")
+
+[node name="Towers" type="CanvasGroup" parent="Node2D" index="3"]
 y_sort_enabled = true
 
 [node name="Tower" parent="Node2D/Towers" index="0" instance=ExtResource("5_61ge1")]
@@ -77,5 +90,12 @@ position = Vector2(820, 421)
 [node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("5_61ge1")]
 position = Vector2(988, 421)
 
-[node name="Lifeguard" parent="." index="4" instance=ExtResource("7_lnb3s")]
-position = Vector2(403, 242)
+[node name="BossArea" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossArea" index="0"]
+position = Vector2(181, 202.5)
+shape = SubResource("RectangleShape2D_jatpi")
+
+[connection signal="body_exited" from="BossArea" to="." method="_on_boss_area_body_exited"]

@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=28 format=3 uid="uid://2p6mgnqih68g"]
 
-[ext_resource type="Script" path="res://scenes/trains/basic_train/train.gd" id="1_1jt1h"]
-[ext_resource type="Script" path="res://scenes/trains/background.gd" id="2_20w01"]
+[ext_resource type="Script" uid="uid://b8uscfurk4y01" path="res://scenes/trains/basic_train/train.gd" id="1_1jt1h"]
+[ext_resource type="Script" uid="uid://dsdlr61txfl8d" path="res://scenes/trains/background.gd" id="2_20w01"]
 [ext_resource type="Texture2D" uid="uid://cjp87k02phlcp" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background-2-fight.png" id="2_h4wmi"]
 [ext_resource type="Texture2D" uid="uid://qkqvul6j2ky5" path="res://scenes/trains/assets/background.png" id="3_dfgt4"]
 [ext_resource type="Texture2D" uid="uid://cu657kuv6vc5n" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-floor.png" id="3_w6ait"]
@@ -14,7 +14,16 @@
 [ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politician/politician_1.tscn" id="10_rky5v"]
 [ext_resource type="PackedScene" uid="uid://4yblwinc1olu" path="res://scenes/trains/basic_train/subscenes/announcement_player.tscn" id="12_b844p"]
 [ext_resource type="PackedScene" uid="uid://bex812hcoh6pq" path="res://characters/npcs/ticket_inspector/ticket_inspector.tscn" id="12_rqh7o"]
+[ext_resource type="AudioStream" uid="uid://4m5ftnrvmt0r" path="res://assets/sounds/announcers/Ansage_Lindauer_Allee.wav" id="15_mpapf"]
 [ext_resource type="PackedScene" uid="uid://bkj4b56eeb03x" path="res://characters/npcs/andreas/andreas.tscn" id="16_qju6k"]
+[ext_resource type="AudioStream" uid="uid://d2ahdeo0qjf7c" path="res://assets/sounds/announcers/Ansage_Paracelsus_Bad.wav" id="16_rblve"]
+[ext_resource type="AudioStream" uid="uid://g1wtebs32e53" path="res://assets/sounds/announcers/Ansage_Osloer.wav" id="17_jgmye"]
+[ext_resource type="AudioStream" uid="uid://lhria81rq56y" path="res://assets/sounds/announcers/Ansage_Gesundbrunnen.wav" id="19_o335b"]
+[ext_resource type="AudioStream" uid="uid://cofsreij4lapx" path="res://assets/sounds/announcers/Ansage_Bernauerstrasse.wav" id="21_n53mw"]
+[ext_resource type="AudioStream" uid="uid://dmqaglodhl2sc" path="res://assets/sounds/announcers/Ansage_Alexanderplatz.wav" id="24_usa3t"]
+[ext_resource type="AudioStream" uid="uid://ce1otqmmchceo" path="res://assets/sounds/announcers/Ansage_Moritzplatz.wav" id="27_ygadh"]
+[ext_resource type="AudioStream" uid="uid://b7ptc2wvm4rvu" path="res://assets/sounds/announcers/Ansage_Kottbusser.wav" id="28_es3ee"]
+[ext_resource type="AudioStream" uid="uid://b5pm2l0ngttex" path="res://assets/sounds/announcers/Ansage_Herrmannstrasse.wav" id="33_fk6il"]
 
 [sub_resource type="Animation" id="Animation_ao4qn"]
 length = 0.001
@@ -69,8 +78,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aaf1y"]
 _data = {
-"RESET": SubResource("Animation_ao4qn"),
-"olaf_entrance": SubResource("Animation_x7huq")
+&"RESET": SubResource("Animation_ao4qn"),
+&"olaf_entrance": SubResource("Animation_x7huq")
 }
 
 [node name="Node2D" type="Node2D"]
@@ -122,7 +131,7 @@ _name = "Olof Scholtz"
 
 [node name="TicketInspector" parent="." groups=["NPC"] instance=ExtResource("12_rqh7o")]
 y_sort_enabled = true
-position = Vector2(604, 153)
+position = Vector2(572, 146)
 slide_on_ceiling = false
 floor_stop_on_slope = false
 floor_constant_speed = true
@@ -131,13 +140,14 @@ platform_on_leave = 2
 _name = "Schackeline"
 
 [node name="AnnouncementPlayer" parent="." instance=ExtResource("12_b844p")]
+_announcement = Array[AudioStreamWAV]([ExtResource("15_mpapf"), ExtResource("16_rblve"), ExtResource("17_jgmye"), ExtResource("19_o335b"), ExtResource("21_n53mw"), ExtResource("24_usa3t"), ExtResource("27_ygadh"), ExtResource("28_es3ee"), ExtResource("33_fk6il"), null])
 
 [node name="Andreas" parent="." instance=ExtResource("16_qju6k")]
 position = Vector2(172, 178)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_aaf1y")
+&"": SubResource("AnimationLibrary_aaf1y")
 }
 
 [connection signal="ready" from="." to="Player" method="_disable_scooting"]

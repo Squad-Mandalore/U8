@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://omid6fvq6gb4"]
+[gd_scene load_steps=89 format=3 uid="uid://buvxegclx72eh"]
 
 [ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="2_7ha4d"]
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="4_70rrf"]

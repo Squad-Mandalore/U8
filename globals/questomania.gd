@@ -51,4 +51,3 @@ func _add_quest_line(type): # dribbling the typesystem
     )
     quest_dict[type.NAME] = quest
     type.nnew(quest)
-

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bkj4b56eeb03x"]
 
-[ext_resource type="Script" path="res://characters/npcs/andreas/andreas.gd" id="1_topah"]
-[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="2_mtjal"]
+[ext_resource type="Script" uid="uid://cub5k4d3ikign" path="res://characters/npcs/andreas/andreas.gd" id="1_topah"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_mtjal"]
 [ext_resource type="Resource" uid="uid://oui3w7vat6ib" path="res://characters/attacks/assets/show_off.tres" id="3_pu3iv"]
 [ext_resource type="Resource" uid="uid://fngonw15cf5o" path="res://characters/classes/assets/honest_burgy.tres" id="4_gt0u4"]
 [ext_resource type="Texture2D" uid="uid://3hfvs0noiriy" path="res://characters/npcs/andreas/assets/AndreasEhrlich.png" id="5_rty23"]

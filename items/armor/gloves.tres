@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://crdg4nofkrp51"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://crdg4nofkrp51"]
 
-[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_6um4g"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="2_11u51"]
+[ext_resource type="Script" uid="uid://ssjpmawp0tgi" path="res://items/inventory_item.gd" id="1_6um4g"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_11u51"]
 [ext_resource type="Texture2D" uid="uid://cbmqm4n05g7qc" path="res://items/armor/assets/gloves.png" id="3_e4jnv"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_6um4g")
+stats = SubResource("Resource_hodkb")
+price = 100
 name = "Handschuhe"
 description = "Ein paar gute alte Handschuhe, praktisch für alles und um sich zu schützen vor Wind, Kälte und Handverletzungen wenn du etwas oder jemanden verprügelst!"
-stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_e4jnv")
-price = 100

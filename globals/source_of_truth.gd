@@ -139,10 +139,6 @@ static func set_damage_for_all_attacks():
             for attack in item.attacks:
                 attack.calculate_damage(stats)
 
-# Funciton gets a percentage and returns TRUE or FALSE dependant on the outcome
-static func chance(percent: float) -> bool:
-    return randf() * 100 < percent
-
 # AttackTypes and their effectiveness against each other
 static var effectiveness = {
     Utils.AttackTypes.Stark: {Utils.AttackTypes.Attraktiv: 2.0, Utils.AttackTypes.Cool: 0.5},
@@ -163,16 +159,29 @@ static func calculate_dmg_with_armor(armor: int, damage: int) -> int:
         return damage
     return max(0, damage - 1.04274 * armor + 5 * log(exp(armor / 5) + 148.413) - 25)
 
-static func calculate_damage(damage: int, defender_stats: StatsSpecifier, attacker_token: Utils.AttackTypes, defender_token: Utils.AttackTypes) -> int:
-    if chance(defender_stats.dodge_chance):
-        return 0
+static func calculate_damage(damage: int, defender_stats: StatsSpecifier, attacker_token: Utils.AttackTypes, defender_token: Utils.AttackTypes) -> Dictionary:
+    var result = {
+        "damage": damage,
+        "reason": ""
+    }
+
+    if Utils.chance(defender_stats.dodge_chance):
+        result["damage"] = 0
+        result["reason"] = "dodged"
+        return result
 
     # check for effective attack
-    damage *= get_effectiveness_value(attacker_token, defender_token)
+    var multiplier = get_effectiveness_value(attacker_token, defender_token)
+    result["damage"] *= multiplier
+
+    if multiplier > 1.0:
+        result["reason"] = "effective"
+    elif multiplier < 1.0:
+        result["reason"] = "weak"
 
     # apply armor to dmg
-    damage = calculate_dmg_with_armor(defender_stats.armor, damage)
-    return damage
+    result["damage"] = calculate_dmg_with_armor(defender_stats.armor, result["damage"])
+    return result
 
 static func calculate_selling_price(price: int) -> int:
     return price * 0.7

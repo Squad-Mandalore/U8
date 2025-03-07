@@ -5,7 +5,7 @@ const RED: Color = Color("FF4346")
 const GREEN: Color = Color("71F87A")
 const WHITE: Color = Color("FFFFFF")
 const PINK: Color = Color("FA71FF")
-const MAGENTA: Color = Color("E20074")
+const BROWN: Color = Color("5B3A29")
 const YELLOW: Color = Color("F1C40F")
 const GREY: Color = Color("DEDEDE")
 const DARK_GREY: Color = Color("414141")
@@ -37,7 +37,7 @@ const ATTACK_DICT = {
         "texture": preload("res://ui/combat/assets/stance_token_blue.svg")
     },
     "Kreativ": {
-        "color": MAGENTA,
+        "color": BROWN,
         "texture": preload("res://ui/combat/assets/stance_token_magenta.svg")
     },
     "Null": {
@@ -120,6 +120,10 @@ const STATS_DICT = {
         "display_name": "Inventar Größe"
     }
 }
+
+# Funciton gets a percentage and returns TRUE or FALSE dependant on the outcome
+func chance(percent: float) -> bool:
+    return randf() * 100 < percent
 
 func remove_all_children(parent: Node):
     for child in parent.get_children():
