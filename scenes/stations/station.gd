@@ -19,6 +19,7 @@ const AUTOMATAS: Array[PackedScene] = [
 const HUMAN_SHOPS: Array[PackedScene] = [
     preload("res://characters/automatas/speati/spaeti.tscn"),
     preload("res://characters/automatas/doener-house/doener_house.tscn"),
+    preload("res://characters/automatas/clothes/clothing_container.tscn"),
 ]
 const NPCS: Array[PackedScene] = [
     preload("res://characters/npcs/badman/badman.tscn"),
@@ -27,7 +28,7 @@ const NPCS: Array[PackedScene] = [
     preload("res://characters/npcs/big_child/big_child.tscn"),
 ]
 
-const NUMBER_NPCS: int = 10
+const NUMBER_NPCS: int = 20
 
 signal train_enter
 signal level_lost
@@ -40,7 +41,7 @@ func _ready() -> void:
     SignalDispatcher.sound_music.emit("station")
     spawn_npcs()
     spawn_automatas()
-    if Utils.chance(33):
+    if Utils.chance(50):
         spawn_human_shops()
 
 func spawn_npcs() -> void:
@@ -57,7 +58,8 @@ func spawn_human_shops() -> void:
 
 func spawn_objects(object_scenes: Array, spawn_points: Array, parent_node: Node) -> void:
     for spawn_point in spawn_points:
-        var instance = object_scenes[randi() % object_scenes.size()].instantiate()
+        var i = randi() % object_scenes.size()
+        var instance = object_scenes[i].instantiate()
         instance.position = spawn_point
         instance.z_index = 0
         parent_node.add_child(instance)

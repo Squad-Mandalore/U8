@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cr0oss7rkk1ta"]
+[gd_scene load_steps=24 format=3 uid="uid://cr0oss7rkk1ta"]
 
 [ext_resource type="Script" uid="uid://bc0bdgv8glxy7" path="res://scenes/stations/station.gd" id="1_ppg4l"]
 [ext_resource type="Texture2D" uid="uid://b6cx8ipuscfnl" path="res://scenes/stations/05_paracelsus_bad/assets/paracelsus-bad-background.png" id="1_q1w2b"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ltew4h5q07ud" path="res://scenes/stations/subscenes/seating_areas.tscn" id="9_1wjs1"]
 [ext_resource type="PackedScene" uid="uid://dkxkayaw41poa" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/trashcan_extinguisher.tscn" id="10_o38ik"]
 [ext_resource type="PackedScene" uid="uid://b2jd8d6sfebyi" path="res://characters/npcs/station_exclusive/smoking_dude/smoking_dude.tscn" id="11_h1wtr"]
+[ext_resource type="PackedScene" uid="uid://bap2i51ju2efp" path="res://characters/automatas/ticket/ticket_vending_machine.tscn" id="13_ao5iv"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kke8e"]
 b = Vector2(98, 0)
@@ -207,6 +208,18 @@ uppercase = true
 y_sort_enabled = true
 navigation_polygon = SubResource("NavigationPolygon_ufycs")
 script = ExtResource("4_jb3ik")
+
+[node name="TicketVendingMachine" parent="Node2D" instance=ExtResource("13_ao5iv")]
+position = Vector2(85, 427)
+
+[node name="TicketVendingMachine2" parent="Node2D" instance=ExtResource("13_ao5iv")]
+position = Vector2(85, 257)
+
+[node name="TicketVendingMachine3" parent="Node2D" instance=ExtResource("13_ao5iv")]
+position = Vector2(1142, 427)
+
+[node name="TicketVendingMachine4" parent="Node2D" instance=ExtResource("13_ao5iv")]
+position = Vector2(1142, 257)
 
 [node name="AnimationTrain" parent="Node2D" instance=ExtResource("2_xadlq")]
 position = Vector2(-1121, 104)
