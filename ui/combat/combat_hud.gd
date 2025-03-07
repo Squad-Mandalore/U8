@@ -54,26 +54,28 @@ func execute_attack(attack: Attack, active_combatant: String, passive_combatant:
         damage_receiver_panel = _player_status_panel
         damage_receiver_stats = SourceOfTruth.stats
 
+    var previous_stance = damage_donor_panel.stance
     for token_number in attack.token_number:
         damage_donor_panel.add_token(attack.token)
 
-    var damage_donor = active_combatant
-    var damage_receiver = passive_combatant
-    _feedback_box.add_message(str(damage_donor) + " setzt " + attack.name + " ein!")
-    attack_damage(attack, damage_receiver_stats, damage_receiver, damage_donor, damage_receiver_panel.stance)
+    if previous_stance != damage_donor_panel.stance:
+        _feedback_box.add_message(str(active_combatant) + " hat die Kampfhaltung zu " + Utils.AttackTypes.keys()[damage_donor_panel.stance] + " gewechselt")
+
+    _feedback_box.add_message(str(active_combatant) + " setzt " + attack.name + " ein!")
+    attack_damage(attack, damage_receiver_stats, passive_combatant, active_combatant, damage_receiver_panel.stance)
     damage_donor_panel.update_status_panel()
     damage_receiver_panel.update_status_panel()
-    get_parent().enable_aura(Utils.ATTACK_DICT[Utils.AttackTypes.find_key(damage_donor_panel.stance)].color, damage_donor)
+    get_parent().enable_aura(Utils.ATTACK_DICT[Utils.AttackTypes.find_key(damage_donor_panel.stance)].color, active_combatant)
 
     effect_damage()
     damage_donor_panel.update_status_panel()
     damage_receiver_panel.update_status_panel()
 
-    status_type_damage(damage_donor, damage_donor_stats)
+    status_type_damage(active_combatant, damage_donor_stats)
     damage_donor_panel.update_status_panel()
     damage_receiver_panel.update_status_panel()
 
-    if damage_donor == "Spieler":
+    if active_combatant == "Spieler":
         enemy_execute_attack()
 
 func enemy_execute_attack():
