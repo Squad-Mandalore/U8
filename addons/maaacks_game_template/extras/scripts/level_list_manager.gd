@@ -134,8 +134,8 @@ func _on_level_won():
 
 func _connect_level_signals():
     _try_connecting_signal_to_level(&"train_enter", _on_train_enter)
-    _try_connecting_signal_to_level(&"level_won", _on_level_won)
-    _try_connecting_signal_to_level(&"level_lost", _on_level_lost)
+    SignalDispatcher.level_won.connect(_on_level_won)
+    SignalDispatcher.level_lost.connect(_on_level_lost)
     _try_connecting_signal_to_level(&"level_skipped", _load_next_level)
 
 func _on_level_loader_level_loaded():
