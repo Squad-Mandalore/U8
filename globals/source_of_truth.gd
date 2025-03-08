@@ -138,7 +138,6 @@ static func set_damage_for_all_attacks():
         if item is Weapon:
             for attack in item.attacks:
                 attack.calculate_damage(stats)
-                print(attack)
 
 # AttackTypes and their effectiveness against each other
 static var effectiveness = {

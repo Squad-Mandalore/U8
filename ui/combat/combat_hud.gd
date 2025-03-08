@@ -130,8 +130,7 @@ func attack_damage(attack: Attack, defender_stats: StatsSpecifier, damage_receiv
     # damage is brutto dmg (so unreduced dmg the attacker would deal to defender)
     var attacker_token = attack.token
     var result = SourceOfTruth.calculate_damage(attack.damage, defender_stats, attacker_token, defender_token)
-    var received_damage = -result["damage"].health
-    _feedback_box.add_message(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch " + str(damage_donor) + " bekommen!")
+    _feedback_box.add_message(str(damage_receiver) + " hat " + str(-result["damage"].health) + " Schaden durch " + str(damage_donor) + " bekommen!")
     match result["reason"]:
         "dodged":
             _feedback_box.add_message(str(damage_receiver) + "ist dem Angriff " + attack.name + " ausgewichen!")
@@ -162,8 +161,6 @@ func status_type_damage(damage_receiver: String, damage_receiver_stats: StatsSpe
 func apply_damage(damage_receiver: String, received_damage: StatsSpecifier, damage_receiver_stats: StatsSpecifier):
     # TODO: use stats_changed when player stats are used
     if damage_receiver == "Spieler":
-        # var delta_stats = StatsSpecifier.new()
-        # delta_stats.health = -received_damage
         SourceOfTruth.stats_changed(received_damage)
     else:
         # damage_receiver_stats.health -= received_damage
