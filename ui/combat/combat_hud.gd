@@ -26,6 +26,7 @@ func _ready() -> void:
     SignalDispatcher.attack_swapper_toggle.connect(attack_swapper_toggled)
     half_turn_counter = 0
     first_start = calculate_first_start()
+    SignalDispatcher.attack_swapper_toggle.emit(false)
     _player_status_panel.stats = SourceOfTruth.stats
     _enemy_status_panel.stats = enemy.stats
     _attack_swapper.attacks = SourceOfTruth.get_all_attacks()
@@ -35,7 +36,6 @@ func _ready() -> void:
     else:
         _feedback_box.add_message("Der Gegner hat eine höhere Initiative als du.\nEr darf starten.")
         enemy_execute_attack()
-        SignalDispatcher.attack_swapper_toggle.emit(false)
 
 # after initialization this function starts the loop
 func execute_attack(attack: Attack, active_combatant: String, passive_combatant: String):
