@@ -67,12 +67,10 @@ vertical_alignment = 1
 [node name="QuestManagerViewerQuestEntriesViewTabContainer" type="TabContainer" parent="QuestManagerViewerHSplitContainer/QuestManagerViewerHSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-current_tab = 0
 
 [node name="Quest Data" type="VBoxContainer" parent="QuestManagerViewerHSplitContainer/QuestManagerViewerHSplitContainer/QuestManagerViewerQuestEntriesViewTabContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-metadata/_tab_index = 0
 
 [node name="QuestManagerViewerQuestDataViewTextEditLabel" type="TextEdit" parent="QuestManagerViewerHSplitContainer/QuestManagerViewerHSplitContainer/QuestManagerViewerQuestEntriesViewTabContainer/Quest Data"]
 layout_mode = 2
@@ -97,7 +95,6 @@ vertical_alignment = 1
 [node name="Quest Metadata" type="VBoxContainer" parent="QuestManagerViewerHSplitContainer/QuestManagerViewerHSplitContainer/QuestManagerViewerQuestEntriesViewTabContainer"]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 1
 
 [node name="QuestManagerViewerMetadataViewTextEditLabel" type="TextEdit" parent="QuestManagerViewerHSplitContainer/QuestManagerViewerHSplitContainer/QuestManagerViewerQuestEntriesViewTabContainer/Quest Metadata"]
 layout_mode = 2

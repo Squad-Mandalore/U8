@@ -168,7 +168,7 @@ func apply_damage(damage_receiver: String, received_damage: int, damage_receiver
         if damage_receiver_stats.health <= 0:
             enemy.fight_lost()
             _player_won()
-            
+
 func calc_status_type_dmg(defender_stats: StatsSpecifier) -> int:
     # apply dmg from status_types
     # bleed
