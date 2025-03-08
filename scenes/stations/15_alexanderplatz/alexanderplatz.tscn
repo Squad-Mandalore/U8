@@ -28,9 +28,6 @@ grow_horizontal = 1
 text = "Alexanderplatz"
 label_settings = ExtResource("5_33jly")
 
-[node name="Floor" parent="Node2D" index="1"]
-texture = ExtResource("4_4jwyb")
-
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="2"]
 y_sort_enabled = true
 
@@ -111,3 +108,6 @@ position = Vector2(1072, 419)
 
 [node name="Tower26" parent="Node2D/CanvasGroup" index="25" instance=ExtResource("6_gwvq1")]
 position = Vector2(1161, 419)
+
+[node name="Floor" parent="Node2D" index="6"]
+texture = ExtResource("4_4jwyb")

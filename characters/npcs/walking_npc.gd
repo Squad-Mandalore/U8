@@ -3,10 +3,15 @@ class_name WalkingNpc
 
 @export var movement_speed: float = 68.0
 var _direction: Vector2 = Vector2.ZERO
-@onready var _timer = $Timer
+@onready var _timer: Timer = Timer.new()
 
 enum SubState { NONE, MAKE_SPACE, WALK }
 var _sub_state = SubState.NONE
+
+func _ready() -> void:
+    super._ready()
+    _timer.timeout.connect(_on_timer_timeout)
+    # add_child(_timer)
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK:

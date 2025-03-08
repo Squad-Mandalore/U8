@@ -188,16 +188,14 @@ animations = [{
 }]
 
 [node name="PointedTowards" type="CharacterBody2D"]
-position = Vector2(0, -14)
 collision_layer = 5
 script = ExtResource("1_kth4h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 12.5)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_mo3t6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 14)
 sprite_frames = SubResource("SpriteFrames_xm0tb")
 animation = &"first_girl1"
 autoplay = "first_guy1"

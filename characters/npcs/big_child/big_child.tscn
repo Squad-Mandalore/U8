@@ -174,5 +174,3 @@ offset = Vector2(1, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_y7pol")
-
-[node name="Timer" type="Timer" parent="."]
