@@ -1,6 +1,7 @@
 extends Node2D
 
 signal train_enter
+signal level_lost
 
 @onready var animation_player = $AnimationPlayer
 @onready var olaf = %OlafScholz
@@ -15,6 +16,7 @@ var train_accessable = false
 var is_olaf_aside = false
 
 func _ready() -> void:
+    SignalDispatcher.player_zero_health.connect(_on_player_zero_health)
     SignalDispatcher.sound_music.emit("station")
     animation_train.activated = true
 
@@ -60,3 +62,6 @@ func _get_closest_door() -> Node:
             min_door = door
 
     return min_door
+
+func _on_player_zero_health() -> void:
+    level_lost.emit()
