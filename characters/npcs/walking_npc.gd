@@ -1,7 +1,7 @@
 extends Npc
 class_name WalkingNpc
 
-@export var movement_speed: float = 68.0
+@export var movement_speed: float = 34.0
 var _direction: Vector2 = Vector2.ZERO
 @onready var _timer: Timer = Timer.new()
 
@@ -10,8 +10,10 @@ var _sub_state = SubState.NONE
 
 func _ready() -> void:
     super._ready()
+    add_child(_timer)
     _timer.timeout.connect(_on_timer_timeout)
-    # add_child(_timer)
+    _timer.one_shot = true
+    _timer.start()
 
 func _physics_process(delta: float) -> void:
     if _current_state == State.TALK:
@@ -60,14 +62,14 @@ func _new_state() -> void:
     if _sub_state == SubState.MAKE_SPACE:
         return
 
-    if _current_state == State.IDLE:
+    if _sub_state == SubState.WALK:
+        _sub_state = SubState.NONE
+        _direction = Vector2.ZERO
+        _timer.start(5.0)
+    else:
         _sub_state = SubState.WALK
         _new_direction()
         _timer.start(1.0)
-    else:
-        _current_state = State.IDLE
-        _direction = Vector2.ZERO
-        _timer.start(5.0)
 
 func _on_timer_timeout() -> void:
     if _current_state == State.TALK:
@@ -76,9 +78,8 @@ func _on_timer_timeout() -> void:
     # If we were making space, revert sub-state afterwards
     if _sub_state == SubState.MAKE_SPACE:
         _sub_state = SubState.NONE
-        _new_state()
-    else:
-        _new_state()
+
+    _new_state()
 
 # Changed make_space to pick a direction and walk for a bit
 func make_space(_prescribed_direction: Vector2 = Vector2.ZERO) -> void:
