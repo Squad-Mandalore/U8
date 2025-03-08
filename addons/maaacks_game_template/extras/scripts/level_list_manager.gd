@@ -134,8 +134,6 @@ func _on_level_won():
 
 func _connect_level_signals():
     _try_connecting_signal_to_level(&"train_enter", _on_train_enter)
-    SignalDispatcher.level_won.connect(_on_level_won)
-    SignalDispatcher.level_lost.connect(_on_level_lost)
     _try_connecting_signal_to_level(&"level_skipped", _load_next_level)
 
 func _on_level_loader_level_loaded():
@@ -153,6 +151,8 @@ func _on_level_loader_level_load_started():
         level_loading_screen.reset()
 
 func _ready():
+    SignalDispatcher.level_won.connect(_on_level_won)
+    SignalDispatcher.level_lost.connect(_on_level_lost)
     level_list_loader.level_loaded.connect(_on_level_loader_level_loaded)
     level_list_loader.levels_finished.connect(_on_level_loader_levels_finished)
     level_list_loader.level_load_started.connect(_on_level_loader_level_load_started)
