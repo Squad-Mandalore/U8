@@ -69,6 +69,7 @@ position = Vector2(1014, 420)
 texture = ExtResource("7_du223")
 
 [node name="Moritz" parent="Node2D" index="7" instance=ExtResource("9_o2tus")]
+unique_name_in_owner = true
 position = Vector2(617, 270)
 
 [node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
@@ -87,3 +88,5 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BossArea" index="0"]
 position = Vector2(181, 202.5)
 shape = SubResource("RectangleShape2D_o2tus")
+
+[connection signal="body_exited" from="BossArea" to="." method="_on_boss_area_body_exited"]
