@@ -15,9 +15,6 @@ texture = ExtResource("3_nwsxu")
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Bernauer Straße"
 
-[node name="Floor" parent="Node2D" index="1"]
-texture = ExtResource("4_bdenw")
-
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="4"]
 y_sort_enabled = true
 
@@ -53,3 +50,6 @@ position = Vector2(983, 331)
 
 [node name="Tower11" parent="Node2D/CanvasGroup" index="10" instance=ExtResource("5_a3mhv")]
 position = Vector2(1071, 331)
+
+[node name="Floor" parent="Node2D" index="6"]
+texture = ExtResource("4_bdenw")

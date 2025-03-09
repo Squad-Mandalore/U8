@@ -11,12 +11,10 @@ var _map_ready: bool = false
 var _idling: bool = false
 var _current_target: Node2D = null
 
-@onready var _timer: Timer = $Timer
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 func _ready() -> void:
     super._ready()
-    _timer.start(randf_range(10.0, 25.0))
     call_deferred("_initialize_navigation")
 
     NavigationServer2D.map_changed.connect(_on_map_ready)
