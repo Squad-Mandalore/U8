@@ -119,12 +119,12 @@ drag_vertical_enabled = true
 
 [node name="Chris" parent="." instance=ExtResource("8_sempk")]
 position = Vector2(374, 151)
-_name = "obdachloser"
-RANDOM_NAME = false
-_gender = "Male"
+_name = "chris"
 
 [node name="Bettler1" parent="." instance=ExtResource("9_xenwl")]
 position = Vector2(488, 157)
+_name = "bwler"
+_random_name = false
 _gender = "Male"
 
 [node name="Politiker" parent="." instance=ExtResource("10_rky5v")]

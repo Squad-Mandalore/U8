@@ -376,10 +376,14 @@ radius = 5.0
 [node name="Eisbaeren" parent="Node2D" instance=ExtResource("10_krbe2")]
 z_index = 0
 position = Vector2(1164, 313)
+_name = "eisbaeren_fan"
+_random_name = false
 
 [node name="Eisbaeren2" parent="Node2D" instance=ExtResource("11_1m7y8")]
 z_index = 0
 position = Vector2(1186, 324)
+_name = "eisbaeren_fan"
+_random_name = false
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Node2D/Eisbaeren2"]
 radius = 13.51
@@ -390,6 +394,8 @@ carve_navigation_mesh = true
 [node name="Eisbaeren3" parent="Node2D" instance=ExtResource("12_485u2")]
 z_index = 0
 position = Vector2(1150, 329)
+_name = "eisbaeren_fan"
+_random_name = false
 
 [node name="OlafScholz" parent="Node2D" instance=ExtResource("11_qvo2e")]
 unique_name_in_owner = true
@@ -408,6 +414,8 @@ position = Vector2(484, 333)
 
 [node name="SmokingDude" parent="Node2D" instance=ExtResource("22_5sgx3")]
 position = Vector2(471, 364)
+_name = "tourist"
+_random_name = false
 
 [node name="DrinkVendingMachine" parent="Node2D" instance=ExtResource("13_i82bx")]
 position = Vector2(837, 282)
