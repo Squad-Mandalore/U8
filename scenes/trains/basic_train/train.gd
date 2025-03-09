@@ -12,7 +12,6 @@ const Y: int = 95
 @export var combat_background: Texture2D
 @export var combat_background_left: Texture2D
 @export var combat_floor: Texture2D
-@onready var animation_player = $AnimationPlayer
 
 var _rng = RandomNumberGenerator.new()
 var center: PackedScene  = preload("res://scenes/trains/basic_train/subscenes/center.tscn")
