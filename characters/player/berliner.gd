@@ -230,6 +230,7 @@ func _stop_talking(npc: Npc):
     switch_state(State.IDLE)
     set_active_hud(_hud)
     _hud.show_status_panel()
+    _dialogue_box.clear_contents()
     print("You are no longer talking to %s." % npc._name)
 
 func _disable_scooting():
