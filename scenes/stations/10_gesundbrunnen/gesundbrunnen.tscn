@@ -48,9 +48,6 @@ z_index = 0
 position = Vector2(407, 259)
 _name = "Bodybuilder"
 
-[node name="Floor" parent="Node2D" index="2"]
-texture = ExtResource("7_65kk3")
-
 [node name="Towers" type="CanvasGroup" parent="Node2D" index="3"]
 y_sort_enabled = true
 
@@ -89,6 +86,9 @@ position = Vector2(820, 421)
 
 [node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("5_61ge1")]
 position = Vector2(988, 421)
+
+[node name="Floor" parent="Node2D" index="7"]
+texture = ExtResource("7_65kk3")
 
 [node name="BossArea" type="Area2D" parent="." index="3"]
 collision_layer = 0

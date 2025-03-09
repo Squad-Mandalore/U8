@@ -42,9 +42,6 @@ grow_horizontal = 1
 text = "Kottbusser Tor"
 label_settings = ExtResource("5_gnmpr")
 
-[node name="Floor" parent="Node2D" index="1"]
-texture = ExtResource("4_rjf1a")
-
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="2"]
 y_sort_enabled = true
 
@@ -95,6 +92,9 @@ position = Vector2(907, 418)
 
 [node name="Tower16" parent="Node2D/CanvasGroup" index="15" instance=ExtResource("5_pkq03")]
 position = Vector2(1033, 418)
+
+[node name="Floor" parent="Node2D" index="6"]
+texture = ExtResource("4_rjf1a")
 
 [node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
 position = Vector2(343, 323)
