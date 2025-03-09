@@ -116,17 +116,16 @@ animations = [{
 }]
 
 [node name="PointedAway" type="CharacterBody2D"]
-position = Vector2(0, -14)
 collision_layer = 5
 script = ExtResource("1_83b4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 22)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_mo3t6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 10)
 sprite_frames = SubResource("SpriteFrames_0wuav")
 animation = &"other_guy"
+offset = Vector2(0, -4)
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

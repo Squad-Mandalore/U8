@@ -141,8 +141,6 @@ _gender = "Male"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6o7qv")
 
-[node name="Timer" type="Timer" parent="."]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jwvbx")
 animation = &"idle"

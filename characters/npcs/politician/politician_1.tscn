@@ -145,12 +145,8 @@ _random_name = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bg0ao")
 
-[node name="Timer" type="Timer" parent="."]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7wqtt")
 animation = &"idle"
 autoplay = "idle"
 offset = Vector2(-3, -16)
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
