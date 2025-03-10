@@ -86,8 +86,9 @@ func get_valid_smoking_position(trashcan: SeatingArea) -> Vector2:
     return trashcan.global_position
 
 func get_closest_empty_trashcan() -> SeatingArea:
-    if not get_tree():
-        return
+    if not is_inside_tree():
+        return null
+
     var trashcans = []
 
     for seating in get_tree().get_nodes_in_group("SeatingArea"):

@@ -19,7 +19,6 @@ func _on_panel_container_gui_input(event:InputEvent) -> void:
     if event is InputEventMouseButton:
         if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
             is_stuck = !is_stuck
-            print(is_stuck)
             if is_stuck:
                 SignalDispatcher.remove_info_hover.emit()
                 var habeck: Vector2 = global_position - frank_walter

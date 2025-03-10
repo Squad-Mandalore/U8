@@ -27,10 +27,11 @@ theme_override_constants/separation = 0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 64
+theme_override_constants/separation = 43
 
 [node name="RoundDescriptor" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("1_vipps")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(134, 51)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0

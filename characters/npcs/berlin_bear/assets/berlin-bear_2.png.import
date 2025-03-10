@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bs43pdjvpvgn1"
-path="res://.godot/imported/berliner-bear_2.png-f76889910f5cdf04003aafd5be5a3e91.ctex"
+path="res://.godot/imported/berlin-bear_2.png-70f166e510ed671db5e5255bf84370e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/npcs/berlin_bear/assets/berliner-bear_2.png"
-dest_files=["res://.godot/imported/berliner-bear_2.png-f76889910f5cdf04003aafd5be5a3e91.ctex"]
+source_file="res://characters/npcs/berlin_bear/assets/berlin-bear_2.png"
+dest_files=["res://.godot/imported/berlin-bear_2.png-70f166e510ed671db5e5255bf84370e3.ctex"]
 
 [params]
 
