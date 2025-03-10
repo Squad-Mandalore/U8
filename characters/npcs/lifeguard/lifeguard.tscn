@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://b4v2kxxwx22uq"]
+[gd_scene load_steps=56 format=3 uid="uid://b4v2kxxwx22uq"]
 
 [ext_resource type="Script" uid="uid://cpxyxc3p64hqb" path="res://characters/npcs/lifeguard/lifeguard.gd" id="1_wtvpj"]
 [ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_mngaj"]
@@ -7,9 +7,30 @@
 [ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_moqmy"]
 [ext_resource type="Texture2D" uid="uid://bhrsh1sjnml85" path="res://characters/npcs/lifeguard/assets/lifeguard.png" id="5_8noa3"]
 
+[sub_resource type="Resource" id="Resource_ddy8k"]
+script = ExtResource("4_moqmy")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
 [sub_resource type="Resource" id="Resource_4rcr0"]
 script = ExtResource("4_cnqhi")
-base = 0
+base = 5
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
@@ -33,16 +54,37 @@ effect_flat_modifier = 0
 [sub_resource type="Resource" id="Resource_42jjr"]
 script = ExtResource("2_mngaj")
 name = "Bauchplatscher"
-damage = 5
+damage = SubResource("Resource_ddy8k")
 type = 1
 token = 1
 token_number = 1
 effect = ""
 formula = SubResource("Resource_4rcr0")
 
+[sub_resource type="Resource" id="Resource_2gv3i"]
+script = ExtResource("4_moqmy")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
 [sub_resource type="Resource" id="Resource_e7lhq"]
 script = ExtResource("4_cnqhi")
-base = 0
+base = 5
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
@@ -66,12 +108,33 @@ effect_flat_modifier = 0
 [sub_resource type="Resource" id="Resource_iyodo"]
 script = ExtResource("2_mngaj")
 name = "Schwitzgriff"
-damage = 5
+damage = SubResource("Resource_2gv3i")
 type = 1
 token = 3
 token_number = 0
 effect = ""
 formula = SubResource("Resource_e7lhq")
+
+[sub_resource type="Resource" id="Resource_1yksw"]
+script = ExtResource("4_moqmy")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_4qy3s"]
 script = ExtResource("4_cnqhi")
@@ -99,16 +162,37 @@ effect_flat_modifier = 0
 [sub_resource type="Resource" id="Resource_qiowf"]
 script = ExtResource("2_mngaj")
 name = "Baderegeln erklären"
-damage = 0
+damage = SubResource("Resource_1yksw")
 type = 3
 token = 4
 token_number = 1
 effect = ""
 formula = SubResource("Resource_4qy3s")
 
+[sub_resource type="Resource" id="Resource_rs5pn"]
+script = ExtResource("4_moqmy")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
 [sub_resource type="Resource" id="Resource_nbh4d"]
 script = ExtResource("4_cnqhi")
-base = 0
+base = 5
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
@@ -132,12 +216,33 @@ effect_flat_modifier = 0
 [sub_resource type="Resource" id="Resource_0nrwd"]
 script = ExtResource("2_mngaj")
 name = "Handtuch-Peitsche"
-damage = 5
+damage = SubResource("Resource_rs5pn")
 type = 3
 token = 1
 token_number = 1
 effect = ""
 formula = SubResource("Resource_nbh4d")
+
+[sub_resource type="Resource" id="Resource_8g7un"]
+script = ExtResource("4_moqmy")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_gaypb"]
 script = ExtResource("4_cnqhi")
@@ -165,7 +270,7 @@ effect_flat_modifier = 0
 [sub_resource type="Resource" id="Resource_ohf0h"]
 script = ExtResource("2_mngaj")
 name = "Ausrutschen"
-damage = 0
+damage = SubResource("Resource_8g7un")
 type = 0
 token = 2
 token_number = 0
