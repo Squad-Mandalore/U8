@@ -42,64 +42,64 @@ polygon = PackedVector2Array(322, 48, 324, 49, 328, 50, 329, 50, 322, 47)
 z_index = 75
 
 [node name="PointedTowards" parent="." instance=ExtResource("4_xr5mi")]
-position = Vector2(101, 42)
+position = Vector2(101, 56)
 
 [node name="PointedTowards2" parent="." instance=ExtResource("4_xr5mi")]
-position = Vector2(117, 42)
+position = Vector2(117, 56)
 
 [node name="PointedTowards3" parent="." instance=ExtResource("4_xr5mi")]
-position = Vector2(133, 42)
+position = Vector2(133, 56)
 
 [node name="PointedTowards4" parent="." instance=ExtResource("4_xr5mi")]
-position = Vector2(150, 42)
+position = Vector2(150, 56)
 
 [node name="PointedTowards5" parent="." instance=ExtResource("4_xr5mi")]
-position = Vector2(200, 42)
+position = Vector2(200, 56)
 
 [node name="PointedTowards6" parent="." instance=ExtResource("4_xr5mi")]
-position = Vector2(216, 42)
+position = Vector2(216, 56)
 
 [node name="PointedTowards7" parent="." instance=ExtResource("4_xr5mi")]
-position = Vector2(304, 42)
+position = Vector2(304, 56)
 
 [node name="PointedTowards8" parent="." instance=ExtResource("4_xr5mi")]
-position = Vector2(232, 42)
+position = Vector2(232, 56)
 
 [node name="PointedTowards9" parent="." instance=ExtResource("4_xr5mi")]
-position = Vector2(249, 42)
+position = Vector2(249, 56)
 
 [node name="PointedAway10" parent="." instance=ExtResource("5_4kxwr")]
 z_index = 75
-position = Vector2(87, 58)
+position = Vector2(87, 72)
 
 [node name="PointedAway11" parent="." instance=ExtResource("5_4kxwr")]
 z_index = 75
-position = Vector2(100, 58)
+position = Vector2(100, 72)
 
 [node name="PointedAway12" parent="." instance=ExtResource("5_4kxwr")]
 z_index = 75
-position = Vector2(117, 58)
+position = Vector2(117, 72)
 
 [node name="PointedAway13" parent="." instance=ExtResource("5_4kxwr")]
 z_index = 75
-position = Vector2(131, 58)
+position = Vector2(131, 72)
 
 [node name="PointedAway14" parent="." instance=ExtResource("5_4kxwr")]
 z_index = 75
-position = Vector2(194, 58)
+position = Vector2(194, 72)
 
 [node name="PointedAway15" parent="." instance=ExtResource("5_4kxwr")]
 z_index = 75
-position = Vector2(209, 58)
+position = Vector2(209, 72)
 
 [node name="PointedAway16" parent="." instance=ExtResource("5_4kxwr")]
 z_index = 75
-position = Vector2(225, 58)
+position = Vector2(225, 72)
 
 [node name="PointedAway17" parent="." instance=ExtResource("5_4kxwr")]
 z_index = 75
-position = Vector2(241, 58)
+position = Vector2(241, 72)
 
 [node name="PointedAway18" parent="." instance=ExtResource("5_4kxwr")]
 z_index = 75
-position = Vector2(301, 58)
+position = Vector2(301, 72)

@@ -9,7 +9,6 @@ const Y: int = 95
 @export var combat_background: Texture2D
 @export var combat_background_left: Texture2D
 @export var combat_floor: Texture2D
-@onready var animation_player = $AnimationPlayer
 
 var _rng = RandomNumberGenerator.new()
 var center: PackedScene  = preload("res://scenes/trains/basic_train/subscenes/center.tscn")
@@ -36,11 +35,6 @@ func _ready() -> void:
     _right.position.x = _right_x(train_length)
     _spawn_ticket_inspector()
     SignalDispatcher.sound_music.emit("train")
-    if GameState.get_current_station() == 0:
-        animation_player.play("olaf_entrance")
-    else:
-        $Politiker.queue_free()
-
 
 func _spawn_ticket_inspector():
     if Utils.chance(5.0):

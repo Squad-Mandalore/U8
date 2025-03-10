@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw871utmya8a7"
-path="res://.godot/imported/bernauer-strasse-floor.png-5760e93d1456658044a7d868f86b60ec.ctex"
+uid="uid://bvk5g7xl2n6jd"
+path="res://.godot/imported/moritz.png-752a6c1feab3a569fab9ec31702cca8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/stations/12_bernauer_strasse/assets/bernauer-strasse-floor.png"
-dest_files=["res://.godot/imported/bernauer-strasse-floor.png-5760e93d1456658044a7d868f86b60ec.ctex"]
+source_file="res://characters/npcs/moritz/assets/moritz.png"
+dest_files=["res://.godot/imported/moritz.png-752a6c1feab3a569fab9ec31702cca8d.ctex"]
 
 [params]
 

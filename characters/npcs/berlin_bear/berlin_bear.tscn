@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://bd6v6onr1rbe5"]
+
+[ext_resource type="Script" uid="uid://46al0kqmg1gm" path="res://characters/npcs/berlin_bear/berlin_bear.gd" id="1_14ojo"]
+[ext_resource type="Texture2D" uid="uid://bs43pdjvpvgn1" path="res://characters/npcs/berlin_bear/assets/berliner-bear_2.png" id="2_526ll"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_ycp2m"]
+
+[sub_resource type="Resource" id="Resource_updai"]
+script = ExtResource("2_ycp2m")
+max_health = 1000
+health = 200
+armor = 2
+initiative = 0
+dodge_chance = 0
+strength = 10
+coolness = 2
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 2
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aweh0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_526ll")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7pol"]
+size = Vector2(32, 8)
+
+[node name="BerlinBear" type="CharacterBody2D"]
+collision_layer = 5
+script = ExtResource("1_14ojo")
+combat_animation = "idle"
+stats = SubResource("Resource_updai")
+texture = ExtResource("2_526ll")
+winning_money = 10000
+battle_intro = "idle"
+_name = "Berliner Bär"
+_gender = "Male"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aweh0")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(1, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -4)
+shape = SubResource("RectangleShape2D_y7pol")

@@ -1,10 +1,31 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=9 format=3 uid="uid://c6sxkoby2otiv"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=10 format=3 uid="uid://c6sxkoby2otiv"]
 
 [ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="1_gilae"]
 [ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="2_1y21v"]
 [ext_resource type="Script" uid="uid://c0drmr3olu1ci" path="res://items/weapons/weapon.gd" id="3_lgi13"]
 [ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_lkf6w"]
 [ext_resource type="Texture2D" uid="uid://caliv71t2nuet" path="res://items/weapons/assets/guitar_string.png" id="5_jn8xx"]
+
+[sub_resource type="Resource" id="Resource_1wown"]
+script = ExtResource("4_lkf6w")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_ayac1"]
 script = ExtResource("2_1y21v")
@@ -32,7 +53,7 @@ effect_flat_modifier = 0
 [sub_resource type="Resource" id="Resource_di1hx"]
 script = ExtResource("1_gilae")
 name = "Ordnungsruf"
-damage = 0
+damage = SubResource("Resource_1wown")
 type = 3
 token = 2
 token_number = 1

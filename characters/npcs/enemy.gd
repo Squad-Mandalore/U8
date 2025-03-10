@@ -15,7 +15,7 @@ func _ready() -> void:
     # Enemy needs duplicated attacks otherwise it could interfere with the players attacks
     initial_stats = stats.duplicate()
     for i in range(len(attacks)):
-        attacks[i] = attacks[i].duplicate()
+        attacks[i] = attacks[i].duplicate(true)
     update_attack_damage()
 
 func start_combat():

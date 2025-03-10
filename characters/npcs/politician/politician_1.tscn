@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_u8nwv"]
 script = ExtResource("2_8xi5b")
 max_health = 100
-health = 3
+health = 31
 armor = 0
 initiative = 0
 dodge_chance = 1
@@ -145,12 +145,8 @@ _random_name = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bg0ao")
 
-[node name="Timer" type="Timer" parent="."]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7wqtt")
 animation = &"idle"
 autoplay = "idle"
 offset = Vector2(-3, -16)
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

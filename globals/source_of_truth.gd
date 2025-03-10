@@ -125,7 +125,7 @@ static func swap_item(from: int, to: int):
     SignalDispatcher.reload_ui.emit()
 
 static func get_all_attacks() -> Array[Attack]:
-    var player_attacks = stats.attacks.duplicate()
+    var player_attacks = stats.attacks.duplicate(true)
     for item in inventory_slots:
         if item is Weapon:
             player_attacks.append_array(item.attacks)
@@ -149,7 +149,7 @@ static var effectiveness = {
 }
 
 # Function to determine attack effectiveness
-static func get_effectiveness_value(attacker_type:  Utils.AttackTypes, defender_type:  Utils.AttackTypes) -> float:
+static func get_effectiveness_value(attacker_type: Utils.AttackTypes, defender_type: Utils.AttackTypes) -> float:
     if attacker_type in effectiveness and defender_type in effectiveness[attacker_type]:
         return effectiveness[attacker_type][defender_type]
     return 1.0 # Neutral if no special effectiveness
@@ -159,20 +159,20 @@ static func calculate_dmg_with_armor(armor: int, damage: int) -> int:
         return damage
     return max(0, damage - 1.04274 * armor + 5 * log(exp(armor / 5) + 148.413) - 25)
 
-static func calculate_damage(damage: int, defender_stats: StatsSpecifier, attacker_token: Utils.AttackTypes, defender_token: Utils.AttackTypes) -> Dictionary:
+static func calculate_damage(damage: StatsSpecifier, defender_stats: StatsSpecifier, attacker_token: Utils.AttackTypes, defender_token: Utils.AttackTypes) -> Dictionary:
     var result = {
         "damage": damage,
         "reason": ""
     }
 
     if Utils.chance(defender_stats.dodge_chance):
-        result["damage"] = 0
+        result["damage"] = StatsSpecifier.new()
         result["reason"] = "dodged"
         return result
 
     # check for effective attack
     var multiplier = get_effectiveness_value(attacker_token, defender_token)
-    result["damage"] *= multiplier
+    result["damage"].health *= multiplier
 
     if multiplier > 1.0:
         result["reason"] = "effective"
@@ -180,7 +180,7 @@ static func calculate_damage(damage: int, defender_stats: StatsSpecifier, attack
         result["reason"] = "weak"
 
     # apply armor to dmg
-    result["damage"] = calculate_dmg_with_armor(defender_stats.armor, result["damage"])
+    result["damage"].health = -calculate_dmg_with_armor(defender_stats.armor, -result["damage"].health)
     return result
 
 static func calculate_selling_price(price: int) -> int:
