@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://2p6mgnqih68g"]
+[gd_scene load_steps=24 format=3 uid="uid://2p6mgnqih68g"]
 
 [ext_resource type="Script" uid="uid://b8uscfurk4y01" path="res://scenes/trains/basic_train/train.gd" id="1_1jt1h"]
 [ext_resource type="Script" uid="uid://dsdlr61txfl8d" path="res://scenes/trains/background.gd" id="2_20w01"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="7_c73gc"]
 [ext_resource type="PackedScene" uid="uid://bkaths3irgi7c" path="res://characters/npcs/chris/chris.tscn" id="8_sempk"]
 [ext_resource type="PackedScene" uid="uid://cph57sst3icgu" path="res://characters/npcs/beggar/beggar_1.tscn" id="9_xenwl"]
-[ext_resource type="PackedScene" uid="uid://1qondgntsrqj" path="res://characters/npcs/politician/politician_1.tscn" id="10_rky5v"]
 [ext_resource type="PackedScene" uid="uid://4yblwinc1olu" path="res://scenes/trains/basic_train/subscenes/announcement_player.tscn" id="12_b844p"]
 [ext_resource type="PackedScene" uid="uid://bex812hcoh6pq" path="res://characters/npcs/ticket_inspector/ticket_inspector.tscn" id="12_rqh7o"]
 [ext_resource type="AudioStream" uid="uid://4m5ftnrvmt0r" path="res://assets/sounds/announcers/Ansage_Lindauer_Allee.wav" id="15_mpapf"]
@@ -24,63 +23,6 @@
 [ext_resource type="AudioStream" uid="uid://ce1otqmmchceo" path="res://assets/sounds/announcers/Ansage_Moritzplatz.wav" id="27_ygadh"]
 [ext_resource type="AudioStream" uid="uid://b7ptc2wvm4rvu" path="res://assets/sounds/announcers/Ansage_Kottbusser.wav" id="28_es3ee"]
 [ext_resource type="AudioStream" uid="uid://b5pm2l0ngttex" path="res://assets/sounds/announcers/Ansage_Herrmannstrasse.wav" id="33_fk6il"]
-
-[sub_resource type="Animation" id="Animation_ao4qn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Politiker:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(374, 160)]
-}
-
-[sub_resource type="Animation" id="Animation_x7huq"]
-resource_name = "olaf_entrance"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Politiker:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(374, 160), Vector2(274, 160)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Politiker")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"values": [{
-"args": ["walk"],
-"method": &"start_animation"
-}, {
-"args": ["idle"],
-"method": &"start_animation"
-}, {
-"args": [],
-"method": &"start_combat"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_aaf1y"]
-_data = {
-&"RESET": SubResource("Animation_ao4qn"),
-&"olaf_entrance": SubResource("Animation_x7huq")
-}
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -124,11 +66,6 @@ position = Vector2(374, 151)
 position = Vector2(488, 157)
 _gender = "Male"
 
-[node name="Politiker" parent="." instance=ExtResource("10_rky5v")]
-position = Vector2(374, 160)
-scale = Vector2(-1, 1)
-_name = "Olof Scholtz"
-
 [node name="TicketInspector" parent="." groups=["NPC"] instance=ExtResource("12_rqh7o")]
 y_sort_enabled = true
 position = Vector2(572, 146)
@@ -144,11 +81,6 @@ _announcement = Array[AudioStreamWAV]([ExtResource("15_mpapf"), ExtResource("16_
 
 [node name="Andreas" parent="." instance=ExtResource("16_qju6k")]
 position = Vector2(172, 178)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_aaf1y")
-}
 
 [connection signal="ready" from="." to="Player" method="_disable_scooting"]
 [connection signal="body_entered" from="Right" to="." method="_on_area_2d_body_entered"]
