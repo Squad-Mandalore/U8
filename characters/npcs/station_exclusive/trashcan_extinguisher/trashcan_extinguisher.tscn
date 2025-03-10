@@ -178,7 +178,7 @@ frame_progress = 1.0
 offset = Vector2(0, -16)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 50.0
+path_desired_distance = 5.0
 target_desired_distance = 20.0
 navigation_layers = 7
 avoidance_enabled = true
@@ -186,6 +186,7 @@ neighbor_distance = 20.0
 max_speed = 60.0
 avoidance_layers = 7
 avoidance_mask = 7
+debug_enabled = true
 debug_path_custom_color = Color(8.66354e-07, 0.607798, 0.631536, 1)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

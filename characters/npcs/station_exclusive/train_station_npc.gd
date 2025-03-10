@@ -4,12 +4,14 @@ class_name TrainStationNpc
 @export var movement_speed: float = 50.0
 @export var max_roam_distance: float = 100.0
 @export var navigation_layers: int = 1
+@export var recalculation_interval: float = 2.0
 
 var _direction: Vector2 = Vector2.ZERO
 var _action_in_progress: bool = false
 var _map_ready: bool = false
 var _idling: bool = false
 var _current_target: Node2D = null
+var _recalculation_timer: Timer
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -17,9 +19,15 @@ func _ready() -> void:
     super._ready()
     call_deferred("_initialize_navigation")
 
+    # Initialize the path recalculation timer
+    _recalculation_timer = Timer.new()
+    _recalculation_timer.wait_time = recalculation_interval
+    _recalculation_timer.timeout.connect(_recalculate_path)
+    _recalculation_timer.autostart = true
+    add_child(_recalculation_timer)
+
     NavigationServer2D.map_changed.connect(_on_map_ready)
     nav_agent.target_reached.connect(_on_target_reached)
-    nav_agent.path_changed.connect(_on_path_changed)
     nav_agent.velocity_computed.connect(_on_velocity_computed)
     nav_agent.max_speed = movement_speed
 
@@ -105,11 +113,6 @@ func set_new_random_target() -> void:
 
     nav_agent.target_position = new_target
 
-var updating = false
-func _on_path_changed() -> void:
-    if updating:
-        return
-    updating = true
-    var next_point = nav_agent.get_next_path_position()
-    _direction = (next_point - global_position).normalized()
-    updating = false
+func _recalculate_path() -> void:
+    if not nav_agent.is_navigation_finished():
+        nav_agent.target_position = nav_agent.target_position

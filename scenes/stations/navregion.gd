@@ -1,9 +1,5 @@
 extends NavigationRegion2D
 
-
-func _ready() -> void:
-    self.bake_navigation_polygon()
-
 func random_point_in_polygon() -> Vector2:
     var polygon = navigation_polygon.get_vertices()
     # Determine the bounding box of the polygon.
@@ -25,4 +21,3 @@ func random_point_in_polygon() -> Vector2:
             return random_point
 
     return Vector2.ZERO  # This line is never reached.
-

@@ -222,14 +222,16 @@ frame_progress = 0.157415
 offset = Vector2(0, -16)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 40.0
+path_desired_distance = 5.0
 target_desired_distance = 20.0
+path_max_distance = 50.0
 navigation_layers = 7
 avoidance_enabled = true
 neighbor_distance = 20.0
 max_speed = 60.0
 avoidance_layers = 7
 avoidance_mask = 7
+debug_enabled = true
 debug_path_custom_color = Color(0.957007, 1.05888e-06, 0.509069, 1)
 
 [node name="smoke" type="GPUParticles2D" parent="."]

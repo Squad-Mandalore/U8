@@ -11,6 +11,7 @@ class_name Station
 @onready var upper_collision: CollisionShape2D = $Background/CollisionShape2D
 @export var automata_spawns: Array[Vector2] = []
 @export var human_shop_spawns: Array[Vector2] = []
+@onready var navigation_region: NavigationRegion2D = $Node2D
 
 const AUTOMATAS: Array[PackedScene] = [
     preload("res://characters/automatas/drink/drink_vending_machine.tscn"),
@@ -29,6 +30,8 @@ const NPCS: Array[PackedScene] = [
     preload("res://characters/npcs/sports_fans/eisbaeren/eisbaeren_2.tscn"),
     preload("res://characters/npcs/sports_fans/eisbaeren/eisbaeren_3.tscn"),
 ]
+
+const STATION_NPC: PackedScene = preload("res://characters/npcs/station_exclusive/basic_npc/train_station_npc.tscn")
 
 const SPECIAL_NPCS: Array[PackedScene] = [
     preload("res://characters/npcs/badman/badman.tscn"),
@@ -50,12 +53,14 @@ func _ready() -> void:
     spawn_automatas()
     if Utils.chance(50):
         spawn_human_shops()
+    navigation_region.bake_navigation_polygon()
+    
 
 func spawn_npcs() -> void:
     var npc_spawn_points = []
     for i in range(NUMBER_NPCS):
         npc_spawn_points.append(navigation_node.random_point_in_polygon())
-    spawn_objects(NPCS, npc_spawn_points, navigation_node)
+    spawn_objects_transform(NPCS, npc_spawn_points, navigation_node)
     npc_spawn_points.clear()
     for i in range(NUMBER_SPECIAL_NPCS):
         npc_spawn_points.append(navigation_node.random_point_in_polygon())
@@ -74,6 +79,41 @@ func spawn_objects(object_scenes: Array, spawn_points: Array, parent_node: Node)
         instance.position = spawn_point
         instance.z_index = 0
         parent_node.add_child(instance)
+        
+func spawn_objects_transform(object_scenes: Array, spawn_points: Array, parent_node: Node) -> void:
+    for spawn_point in spawn_points:
+        var i = randi() % object_scenes.size()
+        var instance = object_scenes[i].instantiate()
+
+        if instance.has_method("_ready") and instance is WalkingNpc:
+            var station_npc = STATION_NPC.instantiate()
+            station_npc.position = spawn_point
+            
+            var sprite_instance = instance.get_node_or_null("AnimatedSprite2D")
+            var sprite_station = station_npc.get_node_or_null("AnimatedSprite2D")
+
+            if sprite_instance and sprite_station:
+                if sprite_instance.sprite_frames:
+                    sprite_station.sprite_frames = sprite_instance.sprite_frames
+                sprite_station.animation = sprite_instance.animation
+                sprite_station.flip_h = sprite_instance.flip_h
+
+            if instance.has_meta("npc_name") and station_npc.has_meta("npc_name"):
+                station_npc.set_meta("npc_name", instance.get_meta("npc_name"))
+
+            instance.queue_free()
+            parent_node.add_child(station_npc)
+        else:
+            instance.position = spawn_point
+            instance.z_index = 0
+            parent_node.add_child(instance)
+            
+        var nav_obstacle = NavigationObstacle2D.new()
+        nav_obstacle.avoidance_enabled = true
+        nav_obstacle.radius = 12
+        instance.add_child(nav_obstacle)
+
+
 
 func _on_player_zero_health() -> void:
     level_lost.emit()
