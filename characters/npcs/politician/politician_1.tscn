@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_u8nwv"]
 script = ExtResource("2_8xi5b")
 max_health = 100
-health = 3
+health = 31
 armor = 0
 initiative = 0
 dodge_chance = 1
