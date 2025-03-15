@@ -231,7 +231,6 @@ neighbor_distance = 20.0
 max_speed = 60.0
 avoidance_layers = 7
 avoidance_mask = 7
-debug_enabled = true
 debug_path_custom_color = Color(0.957007, 1.05888e-06, 0.509069, 1)
 
 [node name="smoke" type="GPUParticles2D" parent="."]
