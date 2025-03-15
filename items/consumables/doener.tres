@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://c0k8eix7pojxm"]
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://bhqane6oc0sdd"]
 
 [ext_resource type="Script" uid="uid://d4b4knubk387v" path="res://items/consumables/consumable.gd" id="1_lyac2"]
 [ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_cm4xv"]

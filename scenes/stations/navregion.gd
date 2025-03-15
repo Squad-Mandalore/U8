@@ -25,4 +25,3 @@ func random_point_in_polygon() -> Vector2:
             return random_point
 
     return Vector2.ZERO  # This line is never reached.
-
