@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://dguubo4qcm8oa"]
+
+[ext_resource type="Script" uid="uid://cyvt4yptmfo1o" path="res://characters/npcs/walking-decoration-dudes/decoration_npc.gd" id="1_k7mbw"]
+[ext_resource type="Texture2D" uid="uid://bi214p4iayhkj" path="res://characters/npcs/walking-decoration-dudes/man1/assets/man_with_green_sweater.png" id="2_lyr3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
+size = Vector2(20, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avgbw"]
+atlas = ExtResource("2_lyr3d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyc33"]
+atlas = ExtResource("2_lyr3d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20u0r"]
+atlas = ExtResource("2_lyr3d")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ymjv"]
+atlas = ExtResource("2_lyr3d")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s08p8"]
+atlas = ExtResource("2_lyr3d")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cbca"]
+atlas = ExtResource("2_lyr3d")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18gq1"]
+atlas = ExtResource("2_lyr3d")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7gkr1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avgbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyc33")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20u0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ymjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s08p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cbca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18gq1")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[node name="Man1" type="CharacterBody2D" groups=["NPC"]]
+z_index = 50
+collision_layer = 5
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_snap_length = 0.0
+platform_on_leave = 2
+script = ExtResource("1_k7mbw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bg0ao")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7gkr1")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.686897
+offset = Vector2(0, -16)
