@@ -1,6 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8viibwcd8eui"]
+[gd_scene load_steps=15 format=3 uid="uid://c8viibwcd8eui"]
 
 [ext_resource type="Texture2D" uid="uid://cpnqt6gti5es2" path="res://scenes/trains/basic_train/assets/ubahn-v4-mitte-innen.png" id="1_g0617"]
+[ext_resource type="Script" uid="uid://ddxcn1hyuikfi" path="res://scenes/trains/basic_train/subscenes/interior_center.gd" id="1_tq8t7"]
+[ext_resource type="Texture2D" uid="uid://cpbjfhcq0vfe" path="res://scenes/trains/basic_train/assets/center_broken_window.png" id="2_d4j7s"]
+[ext_resource type="Texture2D" uid="uid://ylindkdov6nx" path="res://scenes/trains/basic_train/assets/center_dirt.png" id="4_h2xsq"]
+[ext_resource type="Texture2D" uid="uid://bfvt5ddp74ql1" path="res://scenes/trains/basic_train/assets/center_dirt2t.png" id="5_n2fnb"]
+[ext_resource type="Texture2D" uid="uid://brglxoqku0iki" path="res://scenes/trains/basic_train/assets/center_dirt3.png" id="6_0d0nr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1aqu"]
 size = Vector2(32, 10)
@@ -31,9 +36,30 @@ gradient = SubResource("Gradient_1q3vl")
 width = 35
 
 [node name="InteriorCenter" type="StaticBody2D"]
+script = ExtResource("1_tq8t7")
+
+[node name="BrokenWindow" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_d4j7s")
+centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_g0617")
+centered = false
+
+[node name="Dirt" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_h2xsq")
+centered = false
+
+[node name="Dirt2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_n2fnb")
+centered = false
+
+[node name="Dirt3" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("6_0d0nr")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
