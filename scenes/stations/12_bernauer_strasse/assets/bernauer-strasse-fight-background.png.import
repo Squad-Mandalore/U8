@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw871utmya8a7"
-path="res://.godot/imported/bernauer-strasse-floor.png-5760e93d1456658044a7d868f86b60ec.ctex"
+uid="uid://d30xy2gpt5k5s"
+path="res://.godot/imported/bernauer-strasse-fight-background.png-b132ee51c38eede81cb6a27d28bfc1ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/stations/12_bernauer_strasse/assets/bernauer-strasse-floor.png"
-dest_files=["res://.godot/imported/bernauer-strasse-floor.png-5760e93d1456658044a7d868f86b60ec.ctex"]
+source_file="res://scenes/stations/12_bernauer_strasse/assets/bernauer-strasse-fight-background.png"
+dest_files=["res://.godot/imported/bernauer-strasse-fight-background.png-b132ee51c38eede81cb6a27d28bfc1ad.ctex"]
 
 [params]
 

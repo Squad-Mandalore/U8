@@ -5,7 +5,7 @@ var attack: Attack:
         attack = value
         update_name(attack.name)
         update_type(attack.type)
-        update_damage(attack.damage)
+        update_damage(-attack.damage.health)
         update_token(attack.token, attack.token_number)
         update_icon(attack.effect)
 
@@ -47,7 +47,7 @@ func update_icon(effect: String):
 
 func _on_panel_container_gui_input(event: InputEvent) -> void:
     if event is InputEventMouseButton:
-            if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-                # TODO: play attack animation and hide hud
-                SignalDispatcher.attack_swapper_toggle.emit(false)
-                SignalDispatcher.execute_attack.emit(attack, "Spieler", "Enemy")
+        if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+            # TODO: play attack animation and hide hud
+            SignalDispatcher.attack_swapper_toggle.emit(false)
+            SignalDispatcher.execute_attack.emit(attack, "Spieler", "Enemy")

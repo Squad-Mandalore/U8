@@ -7,7 +7,7 @@ var info_hover: Control = null
 var enemy: Enemy
 var half_turn_counter: int
 var first_start: bool
-var can_attack: bool = true
+var is_fight_over: bool = false
 var pause_duration: float = 1
 @onready var _feedback_box = %FeedbackBox
 @onready var _player_status_panel = %PlayerStatusPanel
@@ -26,22 +26,22 @@ func _ready() -> void:
     SignalDispatcher.attack_swapper_toggle.connect(attack_swapper_toggled)
     half_turn_counter = 0
     first_start = calculate_first_start()
-    if first_start:
-        _feedback_box.add_message("Deine Initiative ist höher, als die des Gegners.\nDu darfst starten.")
-    else:
-        _feedback_box.add_message("Der Gegner hat eine höhere Initiative als du.\nEr darf starten.")
+    SignalDispatcher.attack_swapper_toggle.emit(false)
     _player_status_panel.stats = SourceOfTruth.stats
     _enemy_status_panel.stats = enemy.stats
     _attack_swapper.attacks = SourceOfTruth.get_all_attacks()
     _round_descriptor.counter = 1
+    if first_start:
+        _feedback_box.add_message("Deine Initiative ist höher, als die des Gegners.\nDu darfst starten.")
+    else:
+        _feedback_box.add_message("Der Gegner hat eine höhere Initiative als du.\nEr darf starten.")
+        enemy_execute_attack()
 
 # after initialization this function starts the loop
 func execute_attack(attack: Attack, active_combatant: String, passive_combatant: String):
-    if passive_combatant == "Enemy":
-        passive_combatant = enemy._name
-
-    if not can_attack && active_combatant == "Spieler":
+    if is_fight_over:
         return
+
     loop()
 
     var damage_donor_panel
@@ -53,6 +53,7 @@ func execute_attack(attack: Attack, active_combatant: String, passive_combatant:
         damage_donor_stats = SourceOfTruth.stats
         damage_receiver_panel = _enemy_status_panel
         damage_receiver_stats = enemy.stats
+        passive_combatant = enemy._name
     else:
         damage_donor_panel = _enemy_status_panel
         damage_donor_stats = enemy.stats
@@ -129,8 +130,7 @@ func attack_damage(attack: Attack, defender_stats: StatsSpecifier, damage_receiv
     # damage is brutto dmg (so unreduced dmg the attacker would deal to defender)
     var attacker_token = attack.token
     var result = SourceOfTruth.calculate_damage(attack.damage, defender_stats, attacker_token, defender_token)
-    var received_damage = result["damage"]
-    _feedback_box.add_message(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch " + str(damage_donor) + " bekommen!")
+    _feedback_box.add_message(str(damage_receiver) + " hat " + str(-result["damage"].health) + " Schaden durch " + str(damage_donor) + " bekommen!")
     match result["reason"]:
         "dodged":
             _feedback_box.add_message(str(damage_receiver) + "ist dem Angriff " + attack.name + " ausgewichen!")
@@ -139,7 +139,7 @@ func attack_damage(attack: Attack, defender_stats: StatsSpecifier, damage_receiv
         "weak":
             _feedback_box.add_message(attack.name + " war durch Kampfhaltung " + Utils.AttackTypes.keys()[defender_token] + " nicht effektiv!")
 
-    apply_damage(damage_receiver, received_damage, defender_stats)
+    apply_damage(damage_receiver, result["damage"], defender_stats)
 
 func effect_damage():
     # additional things for possible future
@@ -147,24 +147,24 @@ func effect_damage():
     return
 
 func status_type_damage(damage_receiver: String, damage_receiver_stats: StatsSpecifier):
-    var received_damage = calc_status_type_dmg(damage_receiver_stats)
+    var received_damage = StatsSpecifier.new()
+    received_damage.health = -calc_status_type_dmg(damage_receiver_stats)
 
-    if received_damage != 0:
-       _feedback_box.add_message(str(damage_receiver) + " hat " + str(received_damage) + " Schaden durch Status Effekte bekommen!")
+    if received_damage.health != 0:
+       _feedback_box.add_message(str(damage_receiver) + " hat " + str(-received_damage.health) + " Schaden durch Status Effekte bekommen!")
 
     apply_damage(damage_receiver, received_damage, damage_receiver_stats)
 
     if damage_receiver == enemy._name:
         _feedback_box.add_message("Bitte wähle deinen nächsten Angriff!")
 
-func apply_damage(damage_receiver: String, received_damage: int, damage_receiver_stats: StatsSpecifier):
+func apply_damage(damage_receiver: String, received_damage: StatsSpecifier, damage_receiver_stats: StatsSpecifier):
     # TODO: use stats_changed when player stats are used
     if damage_receiver == "Spieler":
-        var delta_stats = StatsSpecifier.new()
-        delta_stats.health = -received_damage
-        SourceOfTruth.stats_changed(delta_stats)
+        SourceOfTruth.stats_changed(received_damage)
     else:
-        damage_receiver_stats.health -= received_damage
+        # damage_receiver_stats.health -= received_damage
+        damage_receiver_stats.add(received_damage)
         if damage_receiver_stats.health <= 0:
             enemy.fight_lost()
             _player_won()
@@ -196,15 +196,17 @@ func calc_status_type_dmg(defender_stats: StatsSpecifier) -> int:
         _: pass
     return 0
 
-func pause_action():
-    can_attack = false
-    await Utils.create_timer(pause_duration)
-    can_attack = true
+# func pause_action():
+#     can_attack = false
+#     await Utils.create_timer(pause_duration)
+#     can_attack = true
 
 func _player_lost():
+    is_fight_over = true
     SignalDispatcher.player_lost_combat.emit(get_parent())
 
 func _player_won():
+    is_fight_over = true
     SignalDispatcher.player_won_combat.emit(get_parent())
 
 func attack_swapper_toggled(flag = null):

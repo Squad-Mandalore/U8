@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://d3ox22enoelsy" path="res://scenes/stations/01_wittenau/subscenes/tower.gd" id="1_jckyp"]
 [ext_resource type="Texture2D" uid="uid://p1isayh5rsm" path="res://scenes/stations/12_bernauer_strasse/assets/bernauer-strasse-tower.png" id="2_bpwit"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fb3fl"]
-size = Vector2(21, 14)
+[sub_resource type="CircleShape2D" id="CircleShape2D_wmgrh"]
+radius = 11.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gp1t3"]
-size = Vector2(17, 94)
+size = Vector2(21.5, 109)
 
 [node name="Tower" type="StaticBody2D"]
 script = ExtResource("1_jckyp")
@@ -17,15 +17,15 @@ texture = ExtResource("2_bpwit")
 offset = Vector2(0, -55.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -6)
-shape = SubResource("RectangleShape2D_fb3fl")
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_wmgrh")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, -60)
+position = Vector2(0.25, -53.5)
 shape = SubResource("RectangleShape2D_gp1t3")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

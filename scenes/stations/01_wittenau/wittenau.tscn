@@ -50,7 +50,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(34, 189, 1976, 192, 1974, 499, 31, 500)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0h8n"]
-size = Vector2(33, 20)
+size = Vector2(904, 22)
 
 [sub_resource type="Animation" id="Animation_dfl7g"]
 length = 0.001
@@ -64,7 +64,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(962, 168)]
+"values": [Vector2(962, 145)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -107,7 +107,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_lqfb8"]
 resource_name = "olaf_initial_battle"
-length = 2.0
+length = 2.5
 capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -145,7 +145,7 @@ tracks/2/path = NodePath("Node2D/Berliner")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [false],
@@ -176,7 +176,7 @@ tracks/4/path = NodePath("Node2D/Berliner")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": ["walk"],
@@ -193,7 +193,7 @@ tracks/5/path = NodePath("Node2D/Berliner:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(1.5, 2.5),
 "transitions": PackedFloat32Array(0.25, 1),
 "update": 2,
 "values": [Vector2(961, 190), Vector2(1000, 250)]
@@ -345,6 +345,33 @@ script = ExtResource("5_0xogt")
 [node name="AnimationTrain" parent="Node2D" instance=ExtResource("17_a0cku")]
 position = Vector2(904, 95)
 
+[node name="Marker2D" type="Marker2D" parent="Node2D/AnimationTrain"]
+position = Vector2(58, 95)
+
+[node name="Marker2D2" type="Marker2D" parent="Node2D/AnimationTrain"]
+position = Vector2(163, 95)
+
+[node name="Marker2D3" type="Marker2D" parent="Node2D/AnimationTrain"]
+position = Vector2(268, 95)
+
+[node name="Marker2D4" type="Marker2D" parent="Node2D/AnimationTrain"]
+position = Vector2(388, 95)
+
+[node name="Marker2D5" type="Marker2D" parent="Node2D/AnimationTrain"]
+position = Vector2(493, 95)
+
+[node name="Marker2D6" type="Marker2D" parent="Node2D/AnimationTrain"]
+position = Vector2(598, 95)
+
+[node name="Marker2D7" type="Marker2D" parent="Node2D/AnimationTrain"]
+position = Vector2(719, 95)
+
+[node name="Marker2D8" type="Marker2D" parent="Node2D/AnimationTrain"]
+position = Vector2(824, 95)
+
+[node name="Marker2D9" type="Marker2D" parent="Node2D/AnimationTrain"]
+position = Vector2(930, 95)
+
 [node name="Floor" type="Sprite2D" parent="Node2D"]
 position = Vector2(0, 188)
 texture = ExtResource("23_ige60")
@@ -394,7 +421,7 @@ position = Vector2(1150, 329)
 [node name="OlafScholz" parent="Node2D" instance=ExtResource("11_qvo2e")]
 unique_name_in_owner = true
 z_index = 0
-position = Vector2(962, 168)
+position = Vector2(962, 145)
 _name = "Olof Scholtz"
 
 [node name="DoenerHouse" parent="Node2D" instance=ExtResource("20_mc4in")]
@@ -535,7 +562,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrainDoor"]
-position = Vector2(0.5, 0)
+position = Vector2(436, 1)
 shape = SubResource("RectangleShape2D_t0h8n")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
