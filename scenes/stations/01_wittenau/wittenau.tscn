@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dxtsv1xtfd42n"]
+[gd_scene load_steps=40 format=3 uid="uid://dxtsv1xtfd42n"]
 
 [ext_resource type="PackedScene" uid="uid://csgdo87mltoha" path="res://characters/player/berliner.tscn" id="1_gtc8i"]
 [ext_resource type="Script" uid="uid://dl0kwt8x355cv" path="res://scenes/stations/01_wittenau/wittenau.gd" id="1_vdt2h"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b2oxlg4ka5fyl" path="res://scenes/stations/01_wittenau/assets/wittenau.png" id="4_23pnf"]
 [ext_resource type="PackedScene" uid="uid://dwhe6gna3hbr" path="res://scenes/stations/01_wittenau/subscenes/tower.tscn" id="4_wvqyq"]
 [ext_resource type="Script" uid="uid://br2eo0ik4vr0a" path="res://scenes/stations/navregion.gd" id="5_0xogt"]
+[ext_resource type="Script" uid="uid://cjsbck7xraxcw" path="res://scenes/stations/dirt.gd" id="5_mw33s"]
 [ext_resource type="PackedScene" uid="uid://clpidjj1y1dy" path="res://scenes/stations/subscenes/escalator_front_left.tscn" id="6_fup5h"]
 [ext_resource type="PackedScene" uid="uid://cmd87ow3onp7x" path="res://scenes/stations/subscenes/escalator_front_right.tscn" id="7_5owx3"]
 [ext_resource type="PackedScene" uid="uid://caniahfcrm3my" path="res://characters/npcs/sports_fans/eisbaeren/eisbaeren_1.tscn" id="10_krbe2"]
@@ -296,6 +297,9 @@ position = Vector2(1000, 330)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
 texture = ExtResource("4_23pnf")
+script = ExtResource("5_mw33s")
+puddle_intensity = 0.0
+trash_intensity = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
 position = Vector2(-969, -143)
@@ -377,6 +381,10 @@ position = Vector2(0, 188)
 texture = ExtResource("23_ige60")
 centered = false
 offset = Vector2(0, -188)
+script = ExtResource("5_mw33s")
+dirt_intensity = 0.2
+puddle_intensity = 0.6
+trash_intensity = 0.5
 
 [node name="Berliner" parent="Node2D" instance=ExtResource("1_gtc8i")]
 z_index = 0
