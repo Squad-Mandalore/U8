@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cg403mbbhg1io"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_g2wf8"]
-[ext_resource type="Script" path="res://scenes/stations/14_weinmeisterstrasse/weinmeisterstrasse.gd" id="2_3clca"]
+[ext_resource type="Script" uid="uid://dfs1kf5rbkgm0" path="res://scenes/stations/14_weinmeisterstrasse/weinmeisterstrasse.gd" id="2_3clca"]
 
 [node name="Weinmeisterstrasse" instance=ExtResource("1_g2wf8")]
 script = ExtResource("2_3clca")

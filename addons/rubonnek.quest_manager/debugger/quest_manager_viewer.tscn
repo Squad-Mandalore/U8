@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1rpq82pmvhum"]
 
-[ext_resource type="Script" path="res://addons/rubonnek.quest_manager/debugger/quest_manager_viewer.gd" id="1_tvtkg"]
+[ext_resource type="Script" uid="uid://gxc2fdnw5kxw" path="res://addons/rubonnek.quest_manager/debugger/quest_manager_viewer.gd" id="1_tvtkg"]
 
 [node name="QuestManager" type="PanelContainer" node_paths=PackedStringArray("quest_manager_viewer_manager_selection_line_edit_", "quest_manager_viewer_manager_selection_tree_", "quest_manager_viewer_quest_entries_tree_", "quest_manager_viewer_quest_entries_view_warning_label_", "quest_manager_viewer_quest_data_view_text_edit_", "quest_manager_viewer_quest_data_view_warning_label_", "quest_manager_viewer_quest_metadata_view_text_edit_", "quest_manager_viewer_quest_metadata_view_warning_label_")]
 custom_minimum_size = Vector2(0, 240)

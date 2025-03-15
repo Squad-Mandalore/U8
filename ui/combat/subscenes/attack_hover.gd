@@ -11,7 +11,7 @@ func _ready() -> void:
 func update_attack_hover(attack: Attack):
     update_name(attack.name)
     update_type(attack.type)
-    update_damage(attack.damage)
+    update_damage(-attack.damage.health)
     update_token(attack.token, attack.token_number)
     update_effect(attack.effect)
 

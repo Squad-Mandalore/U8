@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://chtqtvhbm6tpl"]
 
-[ext_resource type="Script" path="res://characters/npcs/berghain_guest/berghain_guest.gd" id="1_pgetp"]
+[ext_resource type="Script" uid="uid://cyhwvcp3phedq" path="res://characters/npcs/berghain_guest/berghain_guest.gd" id="1_pgetp"]
 [ext_resource type="Texture2D" uid="uid://b13n663o2tu2x" path="res://characters/npcs/berghain_guest/assets/berghain_guest.png" id="2_q6qgp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6o7qv"]
@@ -140,8 +140,6 @@ _gender = "Male"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6o7qv")
-
-[node name="Timer" type="Timer" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jwvbx")

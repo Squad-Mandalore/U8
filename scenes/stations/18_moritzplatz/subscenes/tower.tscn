@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://vj27q0c8e2sh"]
 
-[ext_resource type="Script" path="res://scenes/stations/01_wittenau/subscenes/tower.gd" id="1_vw365"]
+[ext_resource type="Script" uid="uid://d3ox22enoelsy" path="res://scenes/stations/01_wittenau/subscenes/tower.gd" id="1_vw365"]
 [ext_resource type="Texture2D" uid="uid://dsuwvapj8vbnn" path="res://scenes/stations/18_moritzplatz/assets/tower_moritzplatz.png" id="2_jl05g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fb3fl"]

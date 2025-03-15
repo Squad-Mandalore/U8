@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dmb5wwmu2hgkm"]
 
-[ext_resource type="Script" path="res://ui/combat/subscenes/attack_swapper.gd" id="1_md5jf"]
+[ext_resource type="Script" uid="uid://bi4x25gcwdd8f" path="res://ui/combat/subscenes/attack_swapper.gd" id="1_md5jf"]
 [ext_resource type="PackedScene" uid="uid://efuguptvmwgt" path="res://ui/combat/subscenes/attack.tscn" id="1_miyym"]
 [ext_resource type="PackedScene" uid="uid://lxoq5niymfyo" path="res://ui/combat/subscenes/swap_button.tscn" id="2_tcsvr"]
 [ext_resource type="Texture2D" uid="uid://duhkkvw53qryt" path="res://ui/combat/assets/swap_right.svg" id="3_k6ywn"]
@@ -132,9 +132,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pnpex"]
 _data = {
-"RESET": SubResource("Animation_mkrpd"),
-"fade_in": SubResource("Animation_1anor"),
-"fade_out": SubResource("Animation_42b60")
+&"RESET": SubResource("Animation_mkrpd"),
+&"fade_in": SubResource("Animation_1anor"),
+&"fade_out": SubResource("Animation_42b60")
 }
 
 [node name="AttackSwapper" type="Control"]
@@ -196,7 +196,7 @@ size_flags_vertical = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_pnpex")
+&"": SubResource("AnimationLibrary_pnpex")
 }
 speed_scale = 4.0
 

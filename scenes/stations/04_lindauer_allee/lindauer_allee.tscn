@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dni73m7g8lip1"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_amjx2"]
-[ext_resource type="Script" path="res://scenes/stations/04_lindauer_allee/lindauer_allee.gd" id="2_wlfl4"]
+[ext_resource type="Script" uid="uid://df1v8q384iwij" path="res://scenes/stations/04_lindauer_allee/lindauer_allee.gd" id="2_wlfl4"]
 [ext_resource type="Texture2D" uid="uid://frokf8u7mp5a" path="res://scenes/stations/04_lindauer_allee/assets/lindauer-allee-background.png" id="3_722bo"]
 [ext_resource type="Texture2D" uid="uid://cj1te5fknlc66" path="res://scenes/stations/04_lindauer_allee/assets/lindauer_allee_background_fight.png" id="3_swe21"]
 [ext_resource type="Texture2D" uid="uid://dog8wvcx8bhbd" path="res://scenes/stations/04_lindauer_allee/assets/lindauer-allee-floor.png" id="4_co1g7"]
@@ -25,18 +25,6 @@ grow_horizontal = 1
 
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Lindauer Allee"
-
-[node name="Floor" parent="Node2D" index="0"]
-texture = ExtResource("4_co1g7")
-
-[node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
-position = Vector2(285, 323)
-
-[node name="SeatingArea2" parent="Node2D/SeatingAreas" index="1"]
-position = Vector2(627, 323)
-
-[node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
-position = Vector2(961, 323)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="5"]
 y_sort_enabled = true
@@ -76,3 +64,15 @@ position = Vector2(876, 425)
 
 [node name="Tower12" parent="Node2D/CanvasGroup" index="11" instance=ExtResource("5_elohs")]
 position = Vector2(1044, 425)
+
+[node name="Floor" parent="Node2D" index="6"]
+texture = ExtResource("4_co1g7")
+
+[node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
+position = Vector2(285, 323)
+
+[node name="SeatingArea2" parent="Node2D/SeatingAreas" index="1"]
+position = Vector2(627, 323)
+
+[node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
+position = Vector2(961, 323)

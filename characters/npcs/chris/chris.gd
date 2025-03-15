@@ -23,6 +23,7 @@ func start_robbing():
     dishonest_brothers_quest.set_active(true)
     if SourceOfTruth.stats.intelligence < 6:
         _robbing()
+        dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID).set_completed(true)
     else:
         start_talking()
         _player_nearby._start_scripted_talking(self)

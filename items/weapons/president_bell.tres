@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Weapon" load_steps=9 format=3 uid="uid://w36ev7xurex"]
 
-[ext_resource type="Script" path="res://characters/attacks/attack.gd" id="1_qcv0i"]
-[ext_resource type="Script" path="res://characters/attacks/formula.gd" id="2_6evhg"]
-[ext_resource type="Script" path="res://items/weapons/weapon.gd" id="2_yuk1k"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="3_kd7lk"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="1_qcv0i"]
+[ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="2_6evhg"]
+[ext_resource type="Script" uid="uid://c0drmr3olu1ci" path="res://items/weapons/weapon.gd" id="2_yuk1k"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="3_kd7lk"]
 [ext_resource type="Texture2D" uid="uid://dvk6pvmy6n4xh" path="res://ui/shop/assets/shopping_cart_icon.svg" id="4_3py10"]
 
 [sub_resource type="Resource" id="Resource_ayac1"]
@@ -62,8 +62,8 @@ drug_level = 0
 [resource]
 script = ExtResource("2_yuk1k")
 attacks = Array[ExtResource("1_qcv0i")]([SubResource("Resource_di1hx")])
+stats = SubResource("Resource_qs242")
+price = 0
 name = "Präsidentenglocke"
 description = "Wenige Objekte haben so viel Autorität, ohne ein einziges Wort zu sprechen."
-stats = SubResource("Resource_qs242")
 texture = ExtResource("4_3py10")
-price = 0

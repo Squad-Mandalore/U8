@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkj14wl5ofnkb"]
+[gd_scene load_steps=7 format=3 uid="uid://bkj14wl5ofnkb"]
 
-[ext_resource type="Script" path="res://ui/combat/combat_hud.gd" id="1_gfe85"]
+[ext_resource type="Script" uid="uid://b1b6eokuevt5y" path="res://ui/combat/combat_hud.gd" id="1_gfe85"]
 [ext_resource type="PackedScene" uid="uid://c0m65l7xddw64" path="res://ui/combat/subscenes/round_descriptor.tscn" id="1_vipps"]
 [ext_resource type="PackedScene" uid="uid://c2sg1i523d8qr" path="res://ui/combat/subscenes/status_panel.tscn" id="2_h7yt2"]
+[ext_resource type="PackedScene" uid="uid://lg8x87a7s71a" path="res://ui/combat/subscenes/info.tscn" id="3_084s5"]
 [ext_resource type="PackedScene" uid="uid://q4yxjjlox2rt" path="res://ui/combat/subscenes/feedback_box.tscn" id="3_tt32e"]
 [ext_resource type="PackedScene" uid="uid://dmb5wwmu2hgkm" path="res://ui/combat/subscenes/attack_swapper.tscn" id="4_o6eoc"]
 
@@ -26,13 +27,16 @@ theme_override_constants/separation = 0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 64
 
 [node name="RoundDescriptor" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("1_vipps")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+
+[node name="Info" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("3_084s5")]
+layout_mode = 2
 
 [node name="EnemyStatusPanel" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_h7yt2")]
 unique_name_in_owner = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://dkxkayaw41poa"]
 
-[ext_resource type="Script" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/trashcan_extinguisher.gd" id="1_78yyv"]
+[ext_resource type="Script" uid="uid://dewdogfu0p8mf" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/trashcan_extinguisher.gd" id="1_78yyv"]
 [ext_resource type="Texture2D" uid="uid://d3vagbxpoqih7" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/assets/bahnhof_interactive.png" id="2_a5x7s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
@@ -154,7 +154,6 @@ animations = [{
 }]
 
 [node name="TrashcanExtinguisher" type="CharacterBody2D" groups=["NPC"]]
-y_sort_enabled = true
 collision_layer = 5
 motion_mode = 1
 slide_on_ceiling = false
@@ -169,8 +168,6 @@ _gender = "Male"
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_bg0ao")
 
-[node name="Timer" type="Timer" parent="."]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_u2l0o")
@@ -181,16 +178,14 @@ frame_progress = 1.0
 offset = Vector2(0, -16)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 50.0
 target_desired_distance = 20.0
-path_max_distance = 50.0
 navigation_layers = 7
 avoidance_enabled = true
-neighbor_distance = 200.0
+neighbor_distance = 20.0
 max_speed = 60.0
 avoidance_layers = 7
 avoidance_mask = 7
-debug_path_custom_color = Color(0.957007, 1.05888e-06, 0.509069, 1)
+debug_path_custom_color = Color(8.66354e-07, 0.607798, 0.631536, 1)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

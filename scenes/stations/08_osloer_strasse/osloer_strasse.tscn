@@ -1,28 +1,67 @@
 [gd_scene load_steps=8 format=3 uid="uid://dbog1wkc3h6mo"]
 
-[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_hr81g"]
-[ext_resource type="Script" path="res://scenes/stations/08_osloer_strasse/osloer_strasse.gd" id="2_juwhm"]
-[ext_resource type="Texture2D" uid="uid://ct167mf8c43wx" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_background_fight.png" id="3_e1cy4"]
-[ext_resource type="Texture2D" uid="uid://dyqe16uee6oon" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_fight_floor.png" id="4_e16up"]
-[ext_resource type="Texture2D" uid="uid://brwwyeencs5tq" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_wall.png" id="5_1s2x4"]
-[ext_resource type="Texture2D" uid="uid://b68npajaxghvw" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_floor.png" id="6_yamfh"]
-[ext_resource type="PackedScene" uid="uid://bibv5vj6f0dq0" path="res://scenes/stations/08_osloer_strasse/subscenes/tower.tscn" id="7_stosq"]
+[ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_iiy2e"]
+[ext_resource type="Script" uid="uid://embf36dmfn1l" path="res://scenes/stations/08_osloer_strasse/osloer_strasse.gd" id="2_u3rla"]
+[ext_resource type="Texture2D" uid="uid://ct167mf8c43wx" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_background_fight.png" id="3_gb80d"]
+[ext_resource type="Texture2D" uid="uid://dyqe16uee6oon" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_fight_floor.png" id="4_ut1dw"]
+[ext_resource type="Texture2D" uid="uid://brwwyeencs5tq" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_wall.png" id="5_m0lwi"]
+[ext_resource type="Texture2D" uid="uid://b68npajaxghvw" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_floor.png" id="6_70l0b"]
+[ext_resource type="PackedScene" uid="uid://bibv5vj6f0dq0" path="res://scenes/stations/08_osloer_strasse/subscenes/tower.tscn" id="7_23uk0"]
 
-[node name="OsloerStrasse" instance=ExtResource("1_hr81g")]
-script = ExtResource("2_juwhm")
-combat_background = ExtResource("3_e1cy4")
-combat_floor = ExtResource("4_e16up")
+[node name="OsloerStrasse" instance=ExtResource("1_iiy2e")]
+script = ExtResource("2_u3rla")
+combat_background = ExtResource("3_gb80d")
+combat_floor = ExtResource("4_ut1dw")
 
 [node name="BackgroundWall" parent="Background" index="0"]
-texture = ExtResource("5_1s2x4")
+texture = ExtResource("5_m0lwi")
 
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Osloer Straße"
 
-[node name="Floor" parent="Node2D" index="0"]
-texture = ExtResource("6_yamfh")
+[node name="Floor" parent="Node2D" index="5"]
+texture = ExtResource("6_70l0b")
 
-[node name="SeatingAreas" parent="Node2D" index="4"]
+[node name="Node2D#Towers" type="CanvasGroup" parent="Node2D" index="6"]
+y_sort_enabled = true
+
+[node name="Tower" parent="Node2D/Node2D#Towers" index="0" instance=ExtResource("7_23uk0")]
+position = Vector2(208, 264)
+
+[node name="Tower2" parent="Node2D/Node2D#Towers" index="1" instance=ExtResource("7_23uk0")]
+position = Vector2(364, 264)
+
+[node name="Tower3" parent="Node2D/Node2D#Towers" index="2" instance=ExtResource("7_23uk0")]
+position = Vector2(520, 264)
+
+[node name="Tower4" parent="Node2D/Node2D#Towers" index="3" instance=ExtResource("7_23uk0")]
+position = Vector2(676, 264)
+
+[node name="Tower5" parent="Node2D/Node2D#Towers" index="4" instance=ExtResource("7_23uk0")]
+position = Vector2(832, 264)
+
+[node name="Tower6" parent="Node2D/Node2D#Towers" index="5" instance=ExtResource("7_23uk0")]
+position = Vector2(988, 264)
+
+[node name="Tower7" parent="Node2D/Node2D#Towers" index="6" instance=ExtResource("7_23uk0")]
+position = Vector2(208, 426)
+
+[node name="Tower8" parent="Node2D/Node2D#Towers" index="7" instance=ExtResource("7_23uk0")]
+position = Vector2(364, 426)
+
+[node name="Tower9" parent="Node2D/Node2D#Towers" index="8" instance=ExtResource("7_23uk0")]
+position = Vector2(520, 426)
+
+[node name="Tower10" parent="Node2D/Node2D#Towers" index="9" instance=ExtResource("7_23uk0")]
+position = Vector2(676, 426)
+
+[node name="Tower11" parent="Node2D/Node2D#Towers" index="10" instance=ExtResource("7_23uk0")]
+position = Vector2(832, 426)
+
+[node name="Tower12" parent="Node2D/Node2D#Towers" index="11" instance=ExtResource("7_23uk0")]
+position = Vector2(988, 426)
+
+[node name="SeatingAreas" parent="Node2D" index="11"]
 position = Vector2(29, 0)
 
 [node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
@@ -30,42 +69,3 @@ position = Vector2(255, 323)
 
 [node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
 position = Vector2(884, 323)
-
-[node name="Node2D#Towers" type="CanvasGroup" parent="Node2D" index="6"]
-y_sort_enabled = true
-
-[node name="Tower" parent="Node2D/Node2D#Towers" index="0" instance=ExtResource("7_stosq")]
-position = Vector2(208, 264)
-
-[node name="Tower2" parent="Node2D/Node2D#Towers" index="1" instance=ExtResource("7_stosq")]
-position = Vector2(364, 264)
-
-[node name="Tower3" parent="Node2D/Node2D#Towers" index="2" instance=ExtResource("7_stosq")]
-position = Vector2(520, 264)
-
-[node name="Tower4" parent="Node2D/Node2D#Towers" index="3" instance=ExtResource("7_stosq")]
-position = Vector2(676, 264)
-
-[node name="Tower5" parent="Node2D/Node2D#Towers" index="4" instance=ExtResource("7_stosq")]
-position = Vector2(832, 264)
-
-[node name="Tower6" parent="Node2D/Node2D#Towers" index="5" instance=ExtResource("7_stosq")]
-position = Vector2(988, 264)
-
-[node name="Tower7" parent="Node2D/Node2D#Towers" index="6" instance=ExtResource("7_stosq")]
-position = Vector2(208, 426)
-
-[node name="Tower8" parent="Node2D/Node2D#Towers" index="7" instance=ExtResource("7_stosq")]
-position = Vector2(364, 426)
-
-[node name="Tower9" parent="Node2D/Node2D#Towers" index="8" instance=ExtResource("7_stosq")]
-position = Vector2(520, 426)
-
-[node name="Tower10" parent="Node2D/Node2D#Towers" index="9" instance=ExtResource("7_stosq")]
-position = Vector2(676, 426)
-
-[node name="Tower11" parent="Node2D/Node2D#Towers" index="10" instance=ExtResource("7_stosq")]
-position = Vector2(832, 426)
-
-[node name="Tower12" parent="Node2D/Node2D#Towers" index="11" instance=ExtResource("7_stosq")]
-position = Vector2(988, 426)

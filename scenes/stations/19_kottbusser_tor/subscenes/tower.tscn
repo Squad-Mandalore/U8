@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dsijy5iw3j30e"]
 
-[ext_resource type="Script" path="res://scenes/stations/01_wittenau/subscenes/tower.gd" id="1_f2j84"]
+[ext_resource type="Script" uid="uid://d3ox22enoelsy" path="res://scenes/stations/01_wittenau/subscenes/tower.gd" id="1_f2j84"]
 [ext_resource type="Texture2D" uid="uid://nbn28v5rmxv" path="res://scenes/stations/19_kottbusser_tor/assets/Tower_Kottbusser_Tor.png" id="2_kcxcn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fb3fl"]

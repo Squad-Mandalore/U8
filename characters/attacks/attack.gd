@@ -2,7 +2,7 @@ class_name Attack
 extends Resource
 
 @export var name: String
-@export var damage: int
+@export var damage: StatsSpecifier
 @export var type: Utils.AttackTypes
 @export var token: Utils.AttackTypes
 @export var token_number: int
@@ -13,16 +13,16 @@ extends Resource
 func _to_string() -> String:
     return """Attack Details:
     Name: %s
-    Damage: %d
+    Damage: %s
     Type: %s
     Token: %s
     Token Number: %d
     Effect: %s
-    Damage Multiplier: %.2f
-    """ % [name, damage, str(type), str(token), token_number, effect]
+    Formula: %s
+    """ % [name, str(damage), str(type), str(token), token_number, effect, str(formula)]
 
 func calculate_damage(stats: StatsSpecifier):
-    damage = (
+    damage.health = -((
         stats.max_health * formula.max_health_modifier +
         stats.health * formula.health_modifier +
         stats.armor * formula.armor_modifier +
@@ -40,4 +40,4 @@ func calculate_damage(stats: StatsSpecifier):
         stats.poison_level * formula.poison_level_modifier +
         stats.bleed_level * formula.bleed_level_modifier +
         stats.drug_level * formula.drug_level_modifier
-    ) * formula.effect_modifier + formula.effect_flat_modifier + formula.base
+    ) * formula.effect_modifier + formula.effect_flat_modifier + formula.base)

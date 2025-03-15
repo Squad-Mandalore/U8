@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cry0m1usu3kd6"]
+[gd_scene load_steps=17 format=3 uid="uid://cry0m1usu3kd6"]
 
 [ext_resource type="Texture2D" uid="uid://dvigphsbuhxpi" path="res://scenes/stations/assets/fire_pixel_1.png" id="1_7dixs"]
 [ext_resource type="Texture2D" uid="uid://b82eyau6uygl4" path="res://scenes/stations/assets/smoke_pixel_2.png" id="2_6ijvk"]
@@ -11,12 +11,12 @@ colors = PackedColorArray(1, 0.55, 0, 1, 1, 0.9595, 0.19, 1, 0.615686, 0.615686,
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_24voo"]
 gradient = SubResource("Gradient_66c3f")
 
-[sub_resource type="Curve" id="Curve_8rvrc"]
+[sub_resource type="Curve" id="Curve_wck4l"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.151899, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_uvgk6"]
-curve = SubResource("Curve_8rvrc")
+curve = SubResource("Curve_wck4l")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3xf0q"]
 particle_flag_disable_z = true
@@ -39,8 +39,15 @@ color_ramp = SubResource("GradientTexture1D_24voo")
 offsets = PackedFloat32Array(0, 0.778689, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.31, 0.31, 0.31, 0.227451, 0.615686, 0.615686, 0, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_t1lnt"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tyakt"]
 gradient = SubResource("Gradient_rvlfv")
+
+[sub_resource type="Curve" id="Curve_8rvrc"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.151899, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jesen"]
+curve = SubResource("Curve_8rvrc")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kok5x"]
 particle_flag_disable_z = true
@@ -56,8 +63,8 @@ linear_accel_max = 2.0
 radial_accel_min = -2.23517e-06
 radial_accel_max = 10.0
 scale_max = 3.0
-scale_curve = SubResource("CurveTexture_uvgk6")
-color_ramp = SubResource("GradientTexture1D_t1lnt")
+scale_curve = SubResource("CurveTexture_jesen")
+color_ramp = SubResource("GradientTexture1D_tyakt")
 
 [sub_resource type="Gradient" id="Gradient_h5kp1"]
 offsets = PackedFloat32Array(0, 0.47541, 0.778689, 1)
@@ -87,18 +94,18 @@ color_ramp = SubResource("GradientTexture1D_eknap")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 amount = 15
-process_material = SubResource("ParticleProcessMaterial_3xf0q")
 texture = ExtResource("1_7dixs")
+process_material = SubResource("ParticleProcessMaterial_3xf0q")
 
 [node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
 position = Vector2(1, 0)
 amount = 15
-process_material = SubResource("ParticleProcessMaterial_kok5x")
 texture = ExtResource("2_6ijvk")
 lifetime = 1.5
+process_material = SubResource("ParticleProcessMaterial_kok5x")
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
 position = Vector2(1, 0)
 amount = 15
-process_material = SubResource("ParticleProcessMaterial_2pbwq")
 texture = ExtResource("3_xh75r")
+process_material = SubResource("ParticleProcessMaterial_2pbwq")

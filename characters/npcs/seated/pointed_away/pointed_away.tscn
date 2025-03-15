@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cpexaj7c7wxu2"]
 
-[ext_resource type="Script" path="res://characters/npcs/seated/seated_npc.gd" id="1_83b4y"]
+[ext_resource type="Script" uid="uid://bkwawhx4tf32j" path="res://characters/npcs/seated/seated_npc.gd" id="1_83b4y"]
 [ext_resource type="Texture2D" uid="uid://3giwpc7ldtff" path="res://characters/npcs/seated/pointed_away/assets/las_chicas_y_los_chicos_mirando_hacia_otro_lado.png" id="2_4kdrd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo3t6"]
@@ -116,17 +116,16 @@ animations = [{
 }]
 
 [node name="PointedAway" type="CharacterBody2D"]
-position = Vector2(0, -14)
 collision_layer = 5
 script = ExtResource("1_83b4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 22)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_mo3t6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 10)
 sprite_frames = SubResource("SpriteFrames_0wuav")
 animation = &"other_guy"
+offset = Vector2(0, -4)
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://fm4vx7x48e2c"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://fm4vx7x48e2c"]
 
-[ext_resource type="Script" path="res://items/inventory_item.gd" id="1_28hli"]
-[ext_resource type="Script" path="res://globals/attributes.gd" id="2_rtl24"]
+[ext_resource type="Script" uid="uid://ssjpmawp0tgi" path="res://items/inventory_item.gd" id="1_28hli"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_rtl24"]
 [ext_resource type="Texture2D" uid="uid://dje1mlr1aqg0i" path="res://items/armor/assets/rainmantle.png" id="3_k4ptc"]
 
 [sub_resource type="Resource" id="Resource_hodkb"]
@@ -26,8 +26,8 @@ drug_level = 0
 
 [resource]
 script = ExtResource("1_28hli")
+stats = SubResource("Resource_hodkb")
+price = 120
 name = "Regenmantel"
 description = "Es gibt kein schlechtes Wetter, nur schlechte Ausweichwerte! Und in Berlin regnet es oft. Auch drinnen. In der Bahn. Von der Decke."
-stats = SubResource("Resource_hodkb")
 texture = ExtResource("3_k4ptc")
-price = 120

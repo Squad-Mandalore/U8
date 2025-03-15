@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cph57sst3icgu"]
 
-[ext_resource type="Script" path="res://characters/npcs/beggar/beggar.gd" id="1_jd2co"]
+[ext_resource type="Script" uid="uid://bbmihypqyx826" path="res://characters/npcs/beggar/beggar.gd" id="1_jd2co"]
 [ext_resource type="Texture2D" uid="uid://btahse7qq1uhd" path="res://characters/npcs/beggar/assets/beggar_1.png" id="2_q4hgs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
@@ -105,8 +105,6 @@ script = ExtResource("1_jd2co")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bg0ao")
 
-[node name="Timer" type="Timer" parent="."]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-5, 0)
 sprite_frames = SubResource("SpriteFrames_7wqtt")
@@ -114,5 +112,3 @@ animation = &"walk"
 autoplay = "idle"
 frame_progress = 0.316916
 offset = Vector2(5, -16)
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

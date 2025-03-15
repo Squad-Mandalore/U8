@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dbbc33em4xtbm"]
 
-[ext_resource type="Script" path="res://scenes/stations/animation_train.gd" id="1_v8o5s"]
+[ext_resource type="Script" uid="uid://d1hv6cj7fpj3c" path="res://scenes/stations/animation_train.gd" id="1_v8o5s"]
 [ext_resource type="PackedScene" uid="uid://1pg3o54ddnb3" path="res://scenes/stations/subscenes/inside_center_animation_train.tscn" id="4_6q7qr"]
 [ext_resource type="PackedScene" uid="uid://dq2ug6umgkqai" path="res://scenes/stations/subscenes/inside_left_animation_train.tscn" id="5_ds5bv"]
 [ext_resource type="PackedScene" uid="uid://0pt3nvilx4ga" path="res://scenes/stations/subscenes/inside_right_animation_train.tscn" id="6_fndob"]
@@ -20,7 +20,6 @@ script = ExtResource("1_v8o5s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(495, 66.125)
 shape = SubResource("RectangleShape2D_fctmn")
-disabled = true
 debug_color = Color(0.520177, 0.418196, 1, 0.42)
 
 [node name="Center" parent="." instance=ExtResource("4_6q7qr")]
@@ -32,10 +31,11 @@ y_sort_enabled = true
 
 [node name="Right" parent="." instance=ExtResource("6_fndob")]
 y_sort_enabled = true
+position = Vector2(658, 0)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 6
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(494.25, 100.25)

@@ -1,13 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://dh8p5cvwbvru1"]
+[gd_scene load_steps=11 format=3 uid="uid://dh8p5cvwbvru1"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_a4e58"]
-[ext_resource type="Script" path="res://scenes/stations/18_moritzplatz/moritzplatz.gd" id="2_f2bji"]
+[ext_resource type="Script" uid="uid://cxlsh8e7evomn" path="res://scenes/stations/18_moritzplatz/moritzplatz.gd" id="2_f2bji"]
 [ext_resource type="Texture2D" uid="uid://dr2gias5akcue" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_background_fight.png" id="3_ivk1n"]
 [ext_resource type="Texture2D" uid="uid://chcddawhixf27" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_fight_floor.png" id="4_l4s7x"]
 [ext_resource type="Texture2D" uid="uid://banru5a6yw6w4" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_background.png" id="5_rlb3x"]
 [ext_resource type="LabelSettings" uid="uid://dfcof0bqgjsys" path="res://scenes/stations/assets/station_name_label_settings_white_on_black.tres" id="6_aqh51"]
 [ext_resource type="Texture2D" uid="uid://c3kg4jodjsiyd" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_floor.png" id="7_du223"]
 [ext_resource type="PackedScene" uid="uid://vj27q0c8e2sh" path="res://scenes/stations/18_moritzplatz/subscenes/tower.tscn" id="8_fedqd"]
+[ext_resource type="PackedScene" uid="uid://b4otvyfs5p5ek" path="res://characters/npcs/moritz/moritz.tscn" id="9_o2tus"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2tus"]
+size = Vector2(40, 19)
 
 [node name="Moritzplatz" instance=ExtResource("1_a4e58")]
 script = ExtResource("2_f2bji")
@@ -22,10 +26,7 @@ text = "Moritzplatz
 "
 label_settings = ExtResource("6_aqh51")
 
-[node name="Floor" parent="Node2D" index="0"]
-texture = ExtResource("7_du223")
-
-[node name="Towers" type="CanvasGroup" parent="Node2D" index="4"]
+[node name="Towers" type="CanvasGroup" parent="Node2D" index="5"]
 y_sort_enabled = true
 
 [node name="Tower" parent="Node2D/Towers" index="0" instance=ExtResource("8_fedqd")]
@@ -64,6 +65,13 @@ position = Vector2(851, 420)
 [node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("8_fedqd")]
 position = Vector2(1014, 420)
 
+[node name="Floor" parent="Node2D" index="6"]
+texture = ExtResource("7_du223")
+
+[node name="Moritz" parent="Node2D" index="7" instance=ExtResource("9_o2tus")]
+unique_name_in_owner = true
+position = Vector2(617, 270)
+
 [node name="SeatingArea" parent="Node2D/SeatingAreas" index="0"]
 position = Vector2(283, 323)
 
@@ -72,3 +80,13 @@ position = Vector2(607, 323)
 
 [node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
 position = Vector2(931, 323)
+
+[node name="BossArea" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossArea" index="0"]
+position = Vector2(181, 202.5)
+shape = SubResource("RectangleShape2D_o2tus")
+
+[connection signal="body_exited" from="BossArea" to="." method="_on_boss_area_body_exited"]
