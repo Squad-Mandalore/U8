@@ -85,5 +85,5 @@ shape = SubResource("RectangleShape2D_bg0ao")
 sprite_frames = SubResource("SpriteFrames_sbwyy")
 animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.465007
+frame_progress = 0.578336
 offset = Vector2(0, -16)

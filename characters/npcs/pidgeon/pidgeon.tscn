@@ -92,5 +92,5 @@ shape = SubResource("RectangleShape2D_bg0ao")
 sprite_frames = SubResource("SpriteFrames_6yy51")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.666178
+frame_progress = 0.62475
 offset = Vector2(0, -10)
