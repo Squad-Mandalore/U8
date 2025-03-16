@@ -8,6 +8,7 @@ var _player_nearby: Player = null
 
 @onready var _sprite : AnimatedSprite2D = $AnimatedSprite2D
 @export var _name : String = "Random Dude"
+@export var _group : String = "obdachloser"
 @export var _random_name : bool = true
 @export_enum("Male", "Female", "Diverse") var _gender : String
 const outline_shader = preload("res://characters/npcs/assets/npc.gdshader")

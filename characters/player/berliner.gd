@@ -211,7 +211,7 @@ func _on_slowdown_area_body_exited(body: Node2D):
         _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
 func _start_talking(npc: Npc):
-    $EidolonHandler.set_agent(npc._name)
+    $EidolonHandler.set_agent(npc._group)
     switch_state(State.TALK)
     SignalDispatcher.sound_effect.emit("villager")
     _hud.hide_status_panel()

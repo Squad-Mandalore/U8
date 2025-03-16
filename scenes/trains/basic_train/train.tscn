@@ -123,7 +123,7 @@ _name = "chris"
 
 [node name="Bettler1" parent="." instance=ExtResource("9_xenwl")]
 position = Vector2(488, 157)
-_name = "bwler"
+_name = "obdachloser"
 _random_name = false
 _gender = "Male"
 
