@@ -20,70 +20,70 @@ offset = Vector2(0, -12)
 
 [node name="PointedAway10" parent="." instance=ExtResource("2_vpofo")]
 y_sort_enabled = true
-position = Vector2(-34, -24)
+position = Vector2(-34, -10)
 random_range = 1
 _name = "obdachloser"
 _random_name = false
 
 [node name="PointedAway11" parent="." instance=ExtResource("2_vpofo")]
 y_sort_enabled = true
-position = Vector2(-17, -24)
+position = Vector2(-17, -10)
 random_range = 1
 _name = "bwler"
 _random_name = false
 
 [node name="PointedAway12" parent="." instance=ExtResource("2_vpofo")]
 y_sort_enabled = true
-position = Vector2(0, -24)
+position = Vector2(0, -10)
 random_range = 1
 _name = "tourist"
 _random_name = false
 
 [node name="PointedAway13" parent="." instance=ExtResource("2_vpofo")]
 y_sort_enabled = true
-position = Vector2(17, -24)
+position = Vector2(17, -10)
 random_range = 1
 _name = "links_gruen_versueffter"
 _random_name = false
 
 [node name="PointedAway14" parent="." instance=ExtResource("2_vpofo")]
 y_sort_enabled = true
-position = Vector2(34, -24)
+position = Vector2(34, -10)
 random_range = 1
 _name = "philosoph"
 _random_name = false
 
 [node name="PointedTowards" parent="." instance=ExtResource("2_5o8vs")]
 y_sort_enabled = true
-position = Vector2(-34, 1)
+position = Vector2(-34, 15)
 random_range = 1
 _name = "philosoph"
 _random_name = false
 
 [node name="PointedTowards2" parent="." instance=ExtResource("2_5o8vs")]
 y_sort_enabled = true
-position = Vector2(-17, 1)
+position = Vector2(-17, 15)
 random_range = 1
 _name = "informatiker"
 _random_name = false
 
 [node name="PointedTowards3" parent="." instance=ExtResource("2_5o8vs")]
 y_sort_enabled = true
-position = Vector2(1, 1)
+position = Vector2(1, 15)
 random_range = 1
 _name = "links_gruen_versueffter"
 _random_name = false
 
 [node name="PointedTowards4" parent="." instance=ExtResource("2_5o8vs")]
 y_sort_enabled = true
-position = Vector2(18, 1)
+position = Vector2(18, 15)
 random_range = 1
 _name = "politiker"
 _random_name = false
 
 [node name="PointedTowards5" parent="." instance=ExtResource("2_5o8vs")]
 y_sort_enabled = true
-position = Vector2(34, 1)
+position = Vector2(34, 15)
 random_range = 1
 _name = "tourist"
 _random_name = false

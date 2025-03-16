@@ -113,7 +113,7 @@ script = ExtResource("6_o8n2l")
 script = ExtResource("8_lvsfu")
 level_list_loader = NodePath("../LevelLoader")
 main_menu_scene = "res://ui/main_menu/main_menu.tscn"
-ending_scene = "res://scenes/end_credits/end_credits.tscn"
+ending_scene = "uid://c0madt6baf3b0"
 level_loading_screen = NodePath("../LevelLoadingScreen")
 
 [connection signal="level_load_started" from="LevelLoader" to="." method="_on_level_loader_level_load_started"]

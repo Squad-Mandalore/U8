@@ -40,5 +40,6 @@ theme_override_fonts/font = ExtResource("2_23qgg")
 theme_override_font_sizes/font_size = 24
 text = "?"
 
+[connection signal="gui_input" from="PanelContainer" to="." method="_on_panel_container_gui_input"]
 [connection signal="mouse_entered" from="PanelContainer" to="." method="_on_panel_container_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer" to="." method="_on_panel_container_mouse_exited"]

@@ -1,10 +1,31 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=9 format=3 uid="uid://bjign78pbwiqg"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=10 format=3 uid="uid://bjign78pbwiqg"]
 
 [ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="1_1svhp"]
 [ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="2_ehlj2"]
 [ext_resource type="Script" uid="uid://c0drmr3olu1ci" path="res://items/weapons/weapon.gd" id="3_dl4uy"]
 [ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_4035q"]
 [ext_resource type="Texture2D" uid="uid://4p7u3uq1ow8m" path="res://items/weapons/assets/megaphone.png" id="5_y6lyy"]
+
+[sub_resource type="Resource" id="Resource_vdqx7"]
+script = ExtResource("4_4035q")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_ayac1"]
 script = ExtResource("2_ehlj2")
@@ -32,7 +53,7 @@ effect_flat_modifier = 0
 [sub_resource type="Resource" id="Resource_di1hx"]
 script = ExtResource("1_1svhp")
 name = "Ordnungsruf"
-damage = 0
+damage = SubResource("Resource_vdqx7")
 type = 3
 token = 2
 token_number = 1

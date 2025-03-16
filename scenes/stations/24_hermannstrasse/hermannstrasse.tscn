@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmj3348ognt37"]
+[gd_scene load_steps=10 format=3 uid="uid://cmj3348ognt37"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_kgpoy"]
 [ext_resource type="Script" uid="uid://doi33jimqrkt5" path="res://scenes/stations/24_hermannstrasse/hermannstrasse.gd" id="2_l272v"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://c8jx8pkbeui0n" path="res://scenes/stations/24_hermannstrasse/assets/hermannstrasse_background.png" id="5_56dfc"]
 [ext_resource type="Texture2D" uid="uid://drdkrndw6l5sj" path="res://scenes/stations/24_hermannstrasse/assets/hermannstrasse_floor.png" id="6_elllx"]
 [ext_resource type="PackedScene" uid="uid://5krccpj44n6l" path="res://scenes/stations/24_hermannstrasse/subscenes/tower.tscn" id="7_owj6y"]
+[ext_resource type="PackedScene" uid="uid://bd6v6onr1rbe5" path="res://characters/npcs/berlin_bear/berlin_bear.tscn" id="8_77hvd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ih577"]
+size = Vector2(40, 19)
 
 [node name="Hermannstrasse" instance=ExtResource("1_kgpoy")]
 script = ExtResource("2_l272v")
@@ -26,9 +30,6 @@ grow_horizontal = 1
 [node name="StationName" parent="Background/CenterContainer" index="0"]
 text = "Hermann-
 straße"
-
-[node name="Floor" parent="Node2D" index="1"]
-texture = ExtResource("6_elllx")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Node2D" index="4"]
 y_sort_enabled = true
@@ -86,3 +87,20 @@ position = Vector2(950, 417)
 
 [node name="Tower18" parent="Node2D/CanvasGroup" index="17" instance=ExtResource("7_owj6y")]
 position = Vector2(1062, 417)
+
+[node name="Floor" parent="Node2D" index="6"]
+texture = ExtResource("6_elllx")
+
+[node name="BerlinBear" parent="Node2D" index="7" instance=ExtResource("8_77hvd")]
+unique_name_in_owner = true
+
+[node name="BossArea" type="Area2D" parent="." index="3"]
+position = Vector2(0, 186)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossArea" index="0"]
+position = Vector2(180, 16)
+shape = SubResource("RectangleShape2D_ih577")
+
+[connection signal="body_exited" from="BossArea" to="." method="_on_boss_area_body_exited"]

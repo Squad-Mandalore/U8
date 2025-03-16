@@ -10,7 +10,7 @@ offset_top = 20.0
 offset_bottom = 20.0
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(382, 0)
+custom_minimum_size = Vector2(396, 237)
 layout_mode = 0
 offset_right = 396.0
 offset_bottom = 237.0

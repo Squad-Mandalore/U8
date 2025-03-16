@@ -228,6 +228,7 @@ func _start_scripted_talking(npc: Npc):
     print("You are now talking to %s." % npc._name)
 
 func _stop_talking(npc: Npc):
+    _allow_player_movement()
     switch_state(State.IDLE)
     set_active_hud(_hud)
     _hud.show_status_panel()
