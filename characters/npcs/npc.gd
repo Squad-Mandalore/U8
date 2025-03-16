@@ -8,15 +8,24 @@ var _player_nearby: Player = null
 
 @onready var _sprite : AnimatedSprite2D = $AnimatedSprite2D
 @export var _name : String = "Random Dude"
-@export var _group : String = "obdachloser"
 @export var _random_name : bool = true
+@export var _group : String = "obdachloser"
+@export var _assigngroup : bool = true
 @export_enum("Male", "Female", "Diverse") var _gender : String
 const outline_shader = preload("res://characters/npcs/assets/npc.gdshader")
+
+var groups = ["obdachloser", "politiker", "eisbaeren_fan", "bwler", "fashion_fan", "hipster", "informatiker", "links_gruen_versueffter", "philosoph", "tourist"]
 
 func _ready() -> void:
     _current_state = State.IDLE
     if _random_name:
         _name = NameGenerator.get_random_name(_gender)
+    if _assigngroup:
+        assign_random_group()
+
+func assign_random_group() -> void:
+    _group = groups[randi() % groups.size()]
+    print("NPC %s wurde der Gruppe %s zugeordnet" % [_name, _group])
 
 func start_talking() -> void:
     _current_state = State.TALK
