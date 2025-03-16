@@ -38,7 +38,6 @@ const NUMBER_NPCS: int = 20
 const NUMBER_SPECIAL_NPCS: int = 1
 
 signal train_enter
-signal level_lost
 
 func _ready() -> void:
     SignalDispatcher.player_zero_health.connect(_on_player_zero_health)
@@ -76,7 +75,7 @@ func spawn_objects(object_scenes: Array, spawn_points: Array, parent_node: Node)
         parent_node.add_child(instance)
 
 func _on_player_zero_health() -> void:
-    level_lost.emit()
+    SignalDispatcher.level_lost.emit()
 
 func _on_animation_player_animation_finished(anim_name:StringName) -> void:
     match anim_name:

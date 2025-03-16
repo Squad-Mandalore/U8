@@ -1,8 +1,5 @@
 extends Node2D
 
-signal level_won
-signal level_lost
-
 const _LEFT_WIDTH: int = 329
 const _CENTER_WIDTH: int = 329
 const Y: int = 95
@@ -17,7 +14,7 @@ var _rng = RandomNumberGenerator.new()
 var center: PackedScene  = preload("res://scenes/trains/basic_train/subscenes/center.tscn")
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-    level_won.emit()
+    SignalDispatcher.level_won.emit()
 
 func _right_x(train_length: int) -> float:
     assert(train_length >= 0)
@@ -46,4 +43,4 @@ func _spawn_ticket_inspector():
         get_tree().queue_delete(_ticket_inspector)
 
 func _on_player_zero_health() -> void:
-    level_lost.emit()
+    SignalDispatcher.level_lost.emit()

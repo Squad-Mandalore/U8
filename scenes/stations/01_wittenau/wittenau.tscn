@@ -425,10 +425,10 @@ position = Vector2(962, 145)
 _name = "Olof Scholtz"
 
 [node name="DoenerHouse" parent="Node2D" instance=ExtResource("20_mc4in")]
-position = Vector2(805, 189)
+position = Vector2(805, 187)
 
 [node name="Spaeti" parent="Node2D" instance=ExtResource("21_5qhnv")]
-position = Vector2(660, 189)
+position = Vector2(660, 187)
 
 [node name="TrashcanExtinguisher" parent="Node2D" instance=ExtResource("18_1s6m8")]
 position = Vector2(484, 333)

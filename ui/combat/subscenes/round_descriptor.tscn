@@ -21,7 +21,7 @@ grow_vertical = 2
 script = ExtResource("1_vukro")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(113, 51)
+custom_minimum_size = Vector2(134, 51)
 layout_mode = 2
 offset_right = 113.0
 offset_bottom = 51.0
@@ -41,6 +41,6 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_otl22")
 theme_override_font_sizes/font_size = 24
-text = "Runde 1"
+text = "Runde 88"
 
 [connection signal="mouse_entered" from="PanelContainer" to="." method="_on_panel_container_mouse_entered"]
