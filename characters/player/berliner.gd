@@ -212,6 +212,7 @@ func _on_slowdown_area_body_exited(body: Node2D):
 
 func _start_talking(npc: Npc):
     $EidolonHandler.set_agent(npc._group)
+    _disallow_player_movement()
     switch_state(State.TALK)
     SignalDispatcher.sound_effect.emit("villager")
     _hud.hide_status_panel()
