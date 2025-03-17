@@ -1,6 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://hkaxsjnqyfba"]
+[gd_scene load_steps=11 format=3 uid="uid://hkaxsjnqyfba"]
 
 [ext_resource type="Texture2D" uid="uid://xujcdxctbung" path="res://scenes/trains/basic_train/assets/ubahn-v4-links-innen.png" id="1_023y6"]
+[ext_resource type="Script" uid="uid://x2mp8v7dl127" path="res://scenes/trains/basic_train/subscenes/interior_sides.gd" id="1_chcbd"]
+[ext_resource type="Texture2D" uid="uid://du64irp2vx5q5" path="res://scenes/trains/basic_train/assets/left_dirt.png" id="3_e0cy2"]
+[ext_resource type="Texture2D" uid="uid://b82lq1egr5jai" path="res://scenes/trains/basic_train/assets/left_dirt2.png" id="4_7ta2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7j3ha"]
 size = Vector2(69, 10)
@@ -24,9 +27,18 @@ gradient = SubResource("Gradient_1q3vl")
 width = 33
 
 [node name="InteriorLeft" type="StaticBody2D"]
+script = ExtResource("1_chcbd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_023y6")
+centered = false
+
+[node name="Dirt" type="Sprite2D" parent="."]
+texture = ExtResource("3_e0cy2")
+centered = false
+
+[node name="Dirt2" type="Sprite2D" parent="."]
+texture = ExtResource("4_7ta2g")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

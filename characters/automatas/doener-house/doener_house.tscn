@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://gscj3hnm5oor" path="res://items/item.gd" id="2_jwfhu"]
 [ext_resource type="Texture2D" uid="uid://c622vs2a5o4uu" path="res://characters/automatas/doener-house/assets/doenerhouse_with_person.png" id="3_ah8hc"]
 [ext_resource type="Texture2D" uid="uid://dchf4axio55km" path="res://characters/automatas/doener-house/assets/dennis.png" id="3_bnwqg"]
-[ext_resource type="Resource" uid="uid://b6coqm2cvlo40" path="res://items/consumables/schnitzel.tres" id="3_ly4av"]
-[ext_resource type="Resource" uid="uid://beksdl6t3f8nt" path="res://items/consumables/pizza.tres" id="4_4ejdo"]
-[ext_resource type="Resource" uid="uid://c0k8eix7pojxm" path="res://items/consumables/doener.tres" id="5_h5ykq"]
+[ext_resource type="Resource" uid="uid://de3gcbxhylfi" path="res://items/consumables/schnitzel.tres" id="3_ly4av"]
+[ext_resource type="Resource" uid="uid://bttfrcbi5waxe" path="res://items/consumables/pizza.tres" id="4_4ejdo"]
+[ext_resource type="Resource" uid="uid://bhqane6oc0sdd" path="res://items/consumables/doener.tres" id="5_h5ykq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sr6sf"]
 animations = [{
