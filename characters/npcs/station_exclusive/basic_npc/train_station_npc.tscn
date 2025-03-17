@@ -1,0 +1,111 @@
+[gd_scene load_steps=13 format=3 uid="uid://c1duiwo82xi6a"]
+
+[ext_resource type="Script" uid="uid://bqjnt3kx2vi1p" path="res://characters/npcs/station_exclusive/basic_npc/basic_train_station_npc.gd" id="1_wsjt6"]
+[ext_resource type="Texture2D" uid="uid://d3vagbxpoqih7" path="res://characters/npcs/station_exclusive/trashcan_extinguisher/assets/bahnhof_interactive.png" id="2_4dgpg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
+size = Vector2(13, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tsds"]
+atlas = ExtResource("2_4dgpg")
+region = Rect2(192, 0, 32, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wetvj"]
+atlas = ExtResource("2_4dgpg")
+region = Rect2(224, 0, 32, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rym6h"]
+atlas = ExtResource("2_4dgpg")
+region = Rect2(0, 0, 32, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iivm"]
+atlas = ExtResource("2_4dgpg")
+region = Rect2(32, 0, 32, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hngiv"]
+atlas = ExtResource("2_4dgpg")
+region = Rect2(64, 0, 32, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0dfe"]
+atlas = ExtResource("2_4dgpg")
+region = Rect2(96, 0, 32, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtege"]
+atlas = ExtResource("2_4dgpg")
+region = Rect2(128, 0, 32, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2lal"]
+atlas = ExtResource("2_4dgpg")
+region = Rect2(160, 0, 32, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u2l0o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tsds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wetvj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rym6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iivm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hngiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0dfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtege")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2lal")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[node name="TrainStationNpc" type="CharacterBody2D" groups=["NPC"]]
+collision_layer = 5
+motion_mode = 1
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_snap_length = 0.0
+platform_on_leave = 2
+script = ExtResource("1_wsjt6")
+_gender = "Male"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_bg0ao")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_u2l0o")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -16)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 5.0
+target_desired_distance = 20.0
+navigation_layers = 7
+avoidance_enabled = true
+neighbor_distance = 20.0
+max_speed = 60.0
+avoidance_layers = 7
+avoidance_mask = 7
+debug_path_custom_color = Color(8.66354e-07, 0.607798, 0.631536, 1)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
