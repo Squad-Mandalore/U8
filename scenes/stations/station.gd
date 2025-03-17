@@ -29,6 +29,13 @@ const NPCS: Array[PackedScene] = [
     preload("res://characters/npcs/sports_fans/eisbaeren/eisbaeren_1.tscn"),
     preload("res://characters/npcs/sports_fans/eisbaeren/eisbaeren_2.tscn"),
     preload("res://characters/npcs/sports_fans/eisbaeren/eisbaeren_3.tscn"),
+    preload("res://characters/npcs/walking-decoration-dudes/man1/man1.tscn"),
+    preload("res://characters/npcs/walking-decoration-dudes/man2/man2.tscn"),
+    preload("res://characters/npcs/walking-decoration-dudes/man3/man3.tscn"),
+    preload("res://characters/npcs/walking-decoration-dudes/man4/man4.tscn"),
+    preload("res://characters/npcs/walking-decoration-dudes/man5/man5.tscn"),
+    preload("res://characters/npcs/walking-decoration-dudes/girl/girl.tscn"),
+    preload("res://characters/npcs/pidgeon/pidgeon.tscn")
 ]
 
 const STATION_NPC: PackedScene = preload("res://characters/npcs/station_exclusive/basic_npc/train_station_npc.tscn")

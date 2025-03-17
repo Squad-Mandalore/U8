@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://cira8w3ue7kon"]
+
+[ext_resource type="Script" uid="uid://cyvt4yptmfo1o" path="res://characters/npcs/walking-decoration-dudes/decoration_npc.gd" id="1_bg756"]
+[ext_resource type="Texture2D" uid="uid://cjpjweiyi8ws1" path="res://characters/npcs/walking-decoration-dudes/girl/assets/girl_with_phone_and_pink_top.png" id="2_plomb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
+size = Vector2(20, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vabhw"]
+atlas = ExtResource("2_plomb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uku4p"]
+atlas = ExtResource("2_plomb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f175w"]
+atlas = ExtResource("2_plomb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbprj"]
+atlas = ExtResource("2_plomb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tirt"]
+atlas = ExtResource("2_plomb")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qnyn"]
+atlas = ExtResource("2_plomb")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7j7c0"]
+atlas = ExtResource("2_plomb")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p2s0y"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_vabhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uku4p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f175w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbprj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tirt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qnyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7j7c0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[node name="Girl" type="CharacterBody2D" groups=["NPC"]]
+z_index = 50
+collision_layer = 5
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_snap_length = 0.0
+platform_on_leave = 2
+script = ExtResource("1_bg756")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bg0ao")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p2s0y")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.192862
+offset = Vector2(0, -16)

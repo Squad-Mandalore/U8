@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=3 uid="uid://dc1js1jsdklys"]
+
+[ext_resource type="Script" uid="uid://6gc65edk20q8" path="res://characters/npcs/pidgeon/pidgeon.gd" id="1_w7j7t"]
+[ext_resource type="Texture2D" uid="uid://bygxxxmr3mgic" path="res://characters/npcs/pidgeon/assets/pigeon.png" id="2_r243e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
+size = Vector2(20, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lskhv"]
+atlas = ExtResource("2_r243e")
+region = Rect2(192, 12, 32, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwlv7"]
+atlas = ExtResource("2_r243e")
+region = Rect2(224, 12, 32, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_peops"]
+atlas = ExtResource("2_r243e")
+region = Rect2(0, 12, 32, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5smt"]
+atlas = ExtResource("2_r243e")
+region = Rect2(32, 12, 32, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60ece"]
+atlas = ExtResource("2_r243e")
+region = Rect2(64, 12, 32, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2tsu"]
+atlas = ExtResource("2_r243e")
+region = Rect2(96, 12, 32, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nieh"]
+atlas = ExtResource("2_r243e")
+region = Rect2(128, 12, 32, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjbr3"]
+atlas = ExtResource("2_r243e")
+region = Rect2(160, 12, 32, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6yy51"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lskhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwlv7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peops")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5smt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60ece")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2tsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nieh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjbr3")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Pidgeon" type="CharacterBody2D" groups=["NPC"]]
+z_index = 50
+collision_layer = 5
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_snap_length = 0.0
+platform_on_leave = 2
+script = ExtResource("1_w7j7t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bg0ao")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6yy51")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.62475
+offset = Vector2(0, -10)
