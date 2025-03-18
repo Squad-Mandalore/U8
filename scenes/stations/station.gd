@@ -13,15 +13,6 @@ class_name Station
 @export var human_shop_spawns: Array[Vector2] = []
 @onready var navigation_region: NavigationRegion2D = $Node2D
 
-const AUTOMATAS: Array[PackedScene] = [
-    preload("res://characters/automatas/drink/drink_vending_machine.tscn"),
-    preload("res://characters/automatas/snack/snack_vending_machine.tscn"),
-]
-const HUMAN_SHOPS: Array[PackedScene] = [
-    preload("res://characters/automatas/speati/spaeti.tscn"),
-    preload("res://characters/automatas/doener-house/doener_house.tscn"),
-    preload("res://characters/automatas/clothes/clothing_container.tscn"),
-]
 const NPCS: Array[PackedScene] = [
     preload("res://characters/npcs/beggar/beggar_1.tscn"),
     preload("res://characters/npcs/berghain_guest/berghain_guest.tscn"),
@@ -56,9 +47,6 @@ func _ready() -> void:
     animation_player.play("train_enter")
     SignalDispatcher.sound_music.emit("station")
     spawn_npcs()
-    spawn_automatas()
-    if Utils.chance(50):
-        spawn_human_shops()
     navigation_region.bake_navigation_polygon()
     
 
@@ -71,12 +59,6 @@ func spawn_npcs() -> void:
     for i in range(NUMBER_SPECIAL_NPCS):
         npc_spawn_points.append(navigation_node.random_point_in_polygon())
     spawn_objects(SPECIAL_NPCS, npc_spawn_points, navigation_node)
-
-func spawn_automatas() -> void:
-    spawn_objects(AUTOMATAS, automata_spawns, navigation_node)
-
-func spawn_human_shops() -> void:
-    spawn_objects(HUMAN_SHOPS, human_shop_spawns, navigation_node)
 
 func spawn_objects(object_scenes: Array, spawn_points: Array, parent_node: Node) -> void:
     for spawn_point in spawn_points:

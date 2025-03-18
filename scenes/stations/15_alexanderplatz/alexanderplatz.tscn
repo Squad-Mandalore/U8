@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://5qnw3pf4n4fk"]
+[gd_scene load_steps=11 format=3 uid="uid://5qnw3pf4n4fk"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_f1phu"]
 [ext_resource type="Script" uid="uid://gn4dqwvdr5ty" path="res://scenes/stations/15_alexanderplatz/alexanderplatz.gd" id="2_2c26j"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://xas4y2o2llsr" path="res://scenes/stations/15_alexanderplatz/assets/Alexanderplatz-fight-floor.png" id="4_g4xob"]
 [ext_resource type="LabelSettings" uid="uid://c0xesi3rt8odi" path="res://scenes/stations/assets/station_name_label_settings_white.tres" id="5_33jly"]
 [ext_resource type="PackedScene" uid="uid://ck8ydr2u0x1tl" path="res://scenes/stations/15_alexanderplatz/subscenes/tower.tscn" id="6_gwvq1"]
+[ext_resource type="PackedScene" uid="uid://diy1ckcdcgjg0" path="res://characters/automatas/doener-house/doener_house.tscn" id="9_bituu"]
+[ext_resource type="PackedScene" uid="uid://jf1dhu624rgd" path="res://characters/automatas/speati/spaeti.tscn" id="10_5r8ck"]
 
 [node name="Alexanderplatz" instance=ExtResource("1_f1phu")]
 script = ExtResource("2_2c26j")
@@ -111,3 +113,12 @@ position = Vector2(1161, 419)
 
 [node name="Floor" parent="Node2D" index="6"]
 texture = ExtResource("4_4jwyb")
+
+[node name="SmokingDude" parent="Node2D" index="8"]
+position = Vector2(406, 371)
+
+[node name="DoenerHouse" parent="." index="3" instance=ExtResource("9_bituu")]
+position = Vector2(404, 333)
+
+[node name="Spaeti" parent="." index="4" instance=ExtResource("10_5r8ck")]
+position = Vector2(315, 333)

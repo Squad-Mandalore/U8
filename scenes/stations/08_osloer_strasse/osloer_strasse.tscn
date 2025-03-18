@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbog1wkc3h6mo"]
+[gd_scene load_steps=10 format=3 uid="uid://dbog1wkc3h6mo"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_iiy2e"]
 [ext_resource type="Script" uid="uid://embf36dmfn1l" path="res://scenes/stations/08_osloer_strasse/osloer_strasse.gd" id="2_u3rla"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://brwwyeencs5tq" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_wall.png" id="5_m0lwi"]
 [ext_resource type="Texture2D" uid="uid://b68npajaxghvw" path="res://scenes/stations/08_osloer_strasse/assets/osloerstrasse_floor.png" id="6_70l0b"]
 [ext_resource type="PackedScene" uid="uid://bibv5vj6f0dq0" path="res://scenes/stations/08_osloer_strasse/subscenes/tower.tscn" id="7_23uk0"]
+[ext_resource type="PackedScene" uid="uid://dv2v43jv13rjr" path="res://characters/automatas/drink/drink_vending_machine.tscn" id="8_gb80d"]
+[ext_resource type="PackedScene" uid="uid://jf1dhu624rgd" path="res://characters/automatas/speati/spaeti.tscn" id="9_ut1dw"]
 
 [node name="OsloerStrasse" instance=ExtResource("1_iiy2e")]
 script = ExtResource("2_u3rla")
@@ -69,3 +71,9 @@ position = Vector2(255, 323)
 
 [node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
 position = Vector2(884, 323)
+
+[node name="DrinkVendingMachine" parent="." index="3" instance=ExtResource("8_gb80d")]
+position = Vector2(417, 333)
+
+[node name="Spaeti" parent="." index="4" instance=ExtResource("9_ut1dw")]
+position = Vector2(462, 334)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://t06m0njij5ku"]
+[gd_scene load_steps=14 format=3 uid="uid://t06m0njij5ku"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_icq6v"]
 [ext_resource type="Script" uid="uid://bf4qmhrgylk1o" path="res://scenes/stations/19_kottbusser_tor/kottbusser_tor.gd" id="2_083p3"]
@@ -8,6 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://bdetweblw6pxm" path="res://scenes/stations/19_kottbusser_tor/assets/kottbusser_tor_fight_floor.png" id="4_vjsi7"]
 [ext_resource type="LabelSettings" uid="uid://c0xesi3rt8odi" path="res://scenes/stations/assets/station_name_label_settings_white.tres" id="5_gnmpr"]
 [ext_resource type="PackedScene" uid="uid://dsijy5iw3j30e" path="res://scenes/stations/19_kottbusser_tor/subscenes/tower.tscn" id="5_pkq03"]
+[ext_resource type="PackedScene" uid="uid://d3fhr38ytpe22" path="res://characters/automatas/clothes/clothing_container.tscn" id="9_dgeis"]
+[ext_resource type="PackedScene" uid="uid://diy1ckcdcgjg0" path="res://characters/automatas/doener-house/doener_house.tscn" id="10_1xcfg"]
+[ext_resource type="PackedScene" uid="uid://dv2v43jv13rjr" path="res://characters/automatas/drink/drink_vending_machine.tscn" id="11_1tghb"]
+[ext_resource type="PackedScene" uid="uid://40q6al2c4n4n" path="res://characters/automatas/snack/snack_vending_machine.tscn" id="12_00wdm"]
+[ext_resource type="PackedScene" uid="uid://jf1dhu624rgd" path="res://characters/automatas/speati/spaeti.tscn" id="13_jdrt0"]
 
 [node name="KottbusserTor" instance=ExtResource("1_icq6v")]
 script = ExtResource("2_083p3")
@@ -104,3 +109,18 @@ position = Vector2(592, 323)
 
 [node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
 position = Vector2(845, 323)
+
+[node name="ClothingContainer" parent="." index="3" instance=ExtResource("9_dgeis")]
+position = Vector2(435, 332)
+
+[node name="DoenerHouse" parent="." index="4" instance=ExtResource("10_1xcfg")]
+position = Vector2(481, 333)
+
+[node name="DrinkVendingMachine" parent="." index="5" instance=ExtResource("11_1tghb")]
+position = Vector2(708, 333)
+
+[node name="SnackVendingMachine" parent="." index="6" instance=ExtResource("12_00wdm")]
+position = Vector2(732, 333)
+
+[node name="Spaeti" parent="." index="7" instance=ExtResource("13_jdrt0")]
+position = Vector2(971, 333)

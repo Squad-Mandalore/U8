@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnueionl57e3i"]
+[gd_scene load_steps=10 format=3 uid="uid://dnueionl57e3i"]
 
 [ext_resource type="Script" uid="uid://baxwugb8i0u14" path="res://scenes/stations/05_paracelsus_bad/paracelsus_bad.gd" id="1_086u8"]
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_q4mp0"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b4v2kxxwx22uq" path="res://characters/npcs/lifeguard/lifeguard.tscn" id="3_cnday"]
 [ext_resource type="Texture2D" uid="uid://danl1iv176et" path="res://scenes/stations/05_paracelsus_bad/assets/Paracelsus-bad-fight-floor.png" id="4_mo6ep"]
 [ext_resource type="PackedScene" uid="uid://d3ntibgwuo4dv" path="res://scenes/stations/05_paracelsus_bad/subscenes/tower.tscn" id="5_rp8qx"]
+[ext_resource type="PackedScene" uid="uid://d3fhr38ytpe22" path="res://characters/automatas/clothes/clothing_container.tscn" id="7_u2gjw"]
+[ext_resource type="PackedScene" uid="uid://40q6al2c4n4n" path="res://characters/automatas/snack/snack_vending_machine.tscn" id="8_55a4i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atwmn"]
 size = Vector2(40, 19)
@@ -60,6 +62,12 @@ position = Vector2(820, 420)
 
 [node name="Tower12" parent="Node2D/Towers" index="11" instance=ExtResource("5_rp8qx")]
 position = Vector2(988, 420)
+
+[node name="ClothingContainer" parent="Node2D" index="13" instance=ExtResource("7_u2gjw")]
+position = Vector2(387, 333)
+
+[node name="SnackVendingMachine" parent="Node2D" index="14" instance=ExtResource("8_55a4i")]
+position = Vector2(413, 333)
 
 [node name="BossArea" type="Area2D" parent="." index="3"]
 collision_layer = 0
