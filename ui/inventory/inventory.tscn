@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dh8a5067wese3"]
+[gd_scene load_steps=11 format=3 uid="uid://dh8a5067wese3"]
 
 [ext_resource type="Script" uid="uid://cerdix5v67p4u" path="res://ui/inventory/inventory.gd" id="1_gj1qs"]
 [ext_resource type="PackedScene" uid="uid://cy1iar1dkomyr" path="res://ui/inventory/subscenes/stat_hud.tscn" id="1_w07gl"]
@@ -10,6 +10,12 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vu06r"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.74902)
+
+[sub_resource type="InputEventAction" id="InputEventAction_138qw"]
+action = &"map"
+
+[sub_resource type="Shortcut" id="Shortcut_8dyvk"]
+events = [SubResource("InputEventAction_138qw")]
 
 [node name="Inventory" type="CanvasLayer"]
 script = ExtResource("1_gj1qs")
@@ -93,6 +99,7 @@ text = "Interagieren   "
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 44)
 layout_mode = 2
+shortcut = SubResource("Shortcut_8dyvk")
 text = "Karte   "
 
 [node name="BalanceMargin" type="MarginContainer" parent="."]

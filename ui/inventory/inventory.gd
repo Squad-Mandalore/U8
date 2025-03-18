@@ -31,9 +31,11 @@ func update_inventory_balance(new_balance: int) -> void:
     (%BalanceLabel as Label).text = "%d Euronen" % [new_balance]
 
 func _on_map_button_pressed() -> void:
-    var slowpoke_tail = preload("res://items/weapons/slowpoke_tail.tres")
-    SourceOfTruth.add_item(slowpoke_tail)
-    SourceOfTruth.add_meta_item(preload("res://items/meta/map.tres"))
+    if not get_parent().close_map():
+        SourceOfTruth.meta_inventory_slots[1].interact(0)
+    # var slowpoke_tail = preload("res://items/weapons/slowpoke_tail.tres")
+    # SourceOfTruth.add_item(slowpoke_tail)
+    # SourceOfTruth.add_meta_item(preload("res://items/meta/map.tres"))
 
 func add_attack_hover(position: Vector2, attack: Attack):
     attack_hover = attack_hover_scene.instantiate()
