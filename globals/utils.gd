@@ -38,7 +38,7 @@ const ATTACK_DICT = {
     },
     "Kreativ": {
         "color": BROWN,
-        "texture": preload("res://ui/combat/assets/stance_token_magenta.svg")
+        "texture": preload("res://ui/combat/assets/stance_token_brown.svg")
     },
     "Null": {
         "color": WHITE,
