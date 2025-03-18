@@ -49,10 +49,9 @@ func is_hovered():
         return true
     return false
 
-func _unhandled_input(event: InputEvent):
+func _input(event: InputEvent):
     if event.is_action_pressed("talk") && is_hovered() && item && item.has_method("interact"):
         item.interact(index)
-        get_viewport().set_input_as_handled()
 
 func _on_mouse_entered() -> void:
     if is_enabled():
