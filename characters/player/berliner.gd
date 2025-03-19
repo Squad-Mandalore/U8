@@ -329,12 +329,14 @@ func _on_eidolon_handler_finish_message():
     _dialogue_box.waiting = false
 
 func _start_shopping():
-    _disallow_player_movement()
+    speed_multiplier = 0.0
+    _disable_scooting()
     set_active_hud(_shop_hud)
     switch_state(State.TALK)
 
 func _stop_shopping():
-    _allow_player_movement()
+    speed_multiplier = 1.0
+    _enable_scooting()
     set_active_hud(_hud)
     switch_state(State.IDLE)
 
