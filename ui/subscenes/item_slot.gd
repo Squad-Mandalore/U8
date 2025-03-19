@@ -50,22 +50,34 @@ func is_hovered():
     return false
 
 func _input(event: InputEvent):
-    if event.is_action_pressed("talk") && is_hovered() && item && item.has_method("interact"):
+    if not (is_hovered() && item && not is_shop_slot):
+        return
+
+    if event.is_action_pressed("talk") && item.has_method("interact"):
         item.interact(index)
+        get_viewport().set_input_as_handled()
+
+    if event.is_action_pressed("remove") && item is not MetaItem:
+        SourceOfTruth.remove_item(index)
+        get_viewport().set_input_as_handled()
 
 func _on_mouse_entered() -> void:
     if is_enabled():
         add_theme_stylebox_override("panel", preload("res://ui/assets/item_slot_enabled_hovered.tres"))
         SignalDispatcher.sound_effect.emit("hover_effect")
         if item:
-            if item.has_method("interact"):
-                SignalDispatcher.interact_button_toggle.emit(true)
             SignalDispatcher.toggle_item_hud.emit(item, is_shop_slot)
             if is_shop_slot:
                 SignalDispatcher.update_shop_dialogue_box.emit(item)
+                return
+            if item.has_method("interact"):
+                SignalDispatcher.interact_button_toggle.emit(true)
+            if item is not MetaItem:
+                SignalDispatcher.remove_button_toggle.emit(true)
 
 func _on_mouse_exited() -> void:
     SignalDispatcher.interact_button_toggle.emit(false)
+    SignalDispatcher.remove_button_toggle.emit(false)
     if is_enabled():
         add_theme_stylebox_override("panel", preload("res://ui/assets/item_slot_enabled.tres"))
         if ck3_progress_bar_value != 60:

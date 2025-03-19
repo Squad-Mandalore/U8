@@ -9,15 +9,12 @@ func _ready() -> void:
     SignalDispatcher.reload_ui.connect(update_shop_ui)
     SignalDispatcher.add_attack_hover.connect(add_attack_hover)
     SignalDispatcher.remove_attack_hover.connect(remove_attack_hover)
-    %ShopButton.set_key_icon("talk")
 
 func update_shop_ui():
     update_shop_balance(SourceOfTruth.balance)
 
-
 func update_shop_balance(new_balance: int) -> void:
     (%BalanceLabel as Label).text = "%d Euronen" % [new_balance]
-
 
 func add_attack_hover(position: Vector2, attack: Attack):
     attack_hover = attack_hover_scene.instantiate()
@@ -34,4 +31,3 @@ func remove_attack_hover():
 
 func _on_shop_button_pressed() -> void:
     (get_parent() as Player).toggle_interaction()
-

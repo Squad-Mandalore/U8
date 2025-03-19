@@ -11,13 +11,16 @@ func _ready() -> void:
     SignalDispatcher.add_attack_hover.connect(add_attack_hover)
     SignalDispatcher.remove_attack_hover.connect(remove_attack_hover)
     SignalDispatcher.interact_button_toggle.connect(interact_button_toggled)
-    %InteractButton.set_key_icon("talk")
+    SignalDispatcher.remove_button_toggle.connect(remove_button_toggled)
     %InteractButton.hide()
-    %MapButton.set_key_icon("map")
     %MapButton.hide()
+    %RemoveButton.hide()
 
 func interact_button_toggled(flag = null):
     %InteractButton.visible = flag if flag != null else !%InteractButton.visible
+
+func remove_button_toggled(flag = null):
+    %RemoveButton.visible = flag if flag != null else !%RemoveButton.visible
 
 func update_inventory_stats():
     %InventoryHud.update_debuff_stats()

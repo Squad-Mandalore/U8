@@ -12,7 +12,7 @@
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.74902)
 
 [sub_resource type="InputEventAction" id="InputEventAction_8dyvk"]
-action = &"talk"
+action = &"remove"
 
 [sub_resource type="Shortcut" id="Shortcut_galwr"]
 events = [SubResource("InputEventAction_8dyvk")]
@@ -103,12 +103,22 @@ mouse_filter = 1
 shortcut = SubResource("Shortcut_galwr")
 text = "Interagieren   "
 
+[node name="RemoveButton" parent="ButtonHudMargin/ButtonHBox" instance=ExtResource("4_qjhs6")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+mouse_filter = 1
+shortcut = SubResource("Shortcut_galwr")
+text = "Entfernen   "
+action_event_key = "remove"
+
 [node name="MapButton" parent="ButtonHudMargin/ButtonHBox" instance=ExtResource("4_qjhs6")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 44)
 layout_mode = 2
 shortcut = SubResource("Shortcut_8dyvk")
 text = "Karte   "
+action_event_key = "map"
 
 [node name="BalanceMargin" type="MarginContainer" parent="."]
 anchors_preset = 2

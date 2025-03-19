@@ -34,6 +34,7 @@ signal attack_swapper_toggle(flag)
 signal map_opened()
 signal map_exited()
 signal interact_button_toggle(flag)
+signal remove_button_toggle(flag)
 
 signal level_won()
 signal level_lost()
