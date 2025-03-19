@@ -1,10 +1,66 @@
-[gd_scene load_steps=9 format=3 uid="uid://bd6v6onr1rbe5"]
+[gd_scene load_steps=12 format=3 uid="uid://bd6v6onr1rbe5"]
 
 [ext_resource type="Script" uid="uid://46al0kqmg1gm" path="res://characters/npcs/berlin_bear/berlin_bear.gd" id="1_14ojo"]
 [ext_resource type="Texture2D" uid="uid://bs43pdjvpvgn1" path="res://characters/npcs/berlin_bear/assets/berlin-bear_2.png" id="2_526ll"]
 [ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_o70t1"]
 [ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_ycp2m"]
-[ext_resource type="Resource" uid="uid://cq1wjf5oviin5" path="res://characters/attacks/assets/boxing.tres" id="3_vfro5"]
+[ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="4_o70t1"]
+
+[sub_resource type="Resource" id="Resource_vfro5"]
+script = ExtResource("2_ycp2m")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 1
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_vncd6"]
+script = ExtResource("4_o70t1")
+base = 25
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
+
+[sub_resource type="Resource" id="Resource_oinw4"]
+script = ExtResource("2_o70t1")
+name = "Drogenklaue"
+damage = SubResource("Resource_vfro5")
+type = 0
+token = 0
+token_number = 0
+effect = ""
+formula = SubResource("Resource_vncd6")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_updai"]
 script = ExtResource("2_ycp2m")
@@ -44,7 +100,7 @@ size = Vector2(32, 8)
 [node name="BerlinBear" type="CharacterBody2D"]
 collision_layer = 5
 script = ExtResource("1_14ojo")
-attacks = Array[ExtResource("2_o70t1")]([ExtResource("3_vfro5")])
+attacks = Array[ExtResource("2_o70t1")]([SubResource("Resource_oinw4")])
 combat_animation = "idle"
 stats = SubResource("Resource_updai")
 texture = ExtResource("2_526ll")
