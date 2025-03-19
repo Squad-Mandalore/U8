@@ -196,11 +196,6 @@ func calc_status_type_dmg(defender_stats: StatsSpecifier) -> int:
         _: pass
     return 0
 
-# func pause_action():
-#     can_attack = false
-#     await Utils.create_timer(pause_duration)
-#     can_attack = true
-
 func _player_lost():
     is_fight_over = true
     SignalDispatcher.player_lost_combat.emit(get_parent())

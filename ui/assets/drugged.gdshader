@@ -38,7 +38,7 @@ void fragment()
     {
         // Base sample position:
         vec2 sample_uv = UV + offsets[i] * blur_radius;
-        
+
         // 1) Reduced Pincushion distortion:
         vec2 center = vec2(0.5, 0.5);
         vec2 coord = sample_uv - center;
