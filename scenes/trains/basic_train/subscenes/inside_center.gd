@@ -3,6 +3,14 @@ extends StaticBody2D
 @export var npc_scene: PackedScene = preload("res://characters/npcs/politician/politician_1.tscn")
 @onready var _spawn_area = $SpawnArea
 
+const GENERIC_ENEMYS: Array[PackedScene] = [
+    preload("res://characters/npcs/beggar/beggar_enemy.tscn"),
+    preload("res://characters/npcs/walking-decoration-dudes/girl/girl_enemy.tscn"),
+    preload("res://characters/npcs/walking-decoration-dudes/man1/man_1_enemy.tscn"),
+    preload("res://characters/npcs/walking-decoration-dudes/man2/man_2_enemy.tscn"),
+    preload("res://characters/npcs/walking-decoration-dudes/man3/man_3_enemy.tscn"),
+]
+
 func get_random_spawn_position():
     var rects = []
     var total_area = 0
@@ -39,6 +47,7 @@ func get_random_spawn_position():
 
 func spawn_npc():
     var spawn_position = get_random_spawn_position()
-    var npc = npc_scene.instantiate()
+    var index = randi() % GENERIC_ENEMYS.size()
+    var npc = GENERIC_ENEMYS[index].instantiate()
     npc.position = spawn_position
     return npc
