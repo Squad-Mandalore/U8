@@ -1,7 +1,152 @@
-[gd_scene load_steps=3 format=3 uid="uid://7mdlijanuc7g"]
+[gd_scene load_steps=49 format=3 uid="uid://7mdlijanuc7g"]
 
 [ext_resource type="PackedScene" uid="uid://cd0jbh4metflb" path="res://addons/maaacks_game_template/base/scenes/loading_screen/loading_screen.tscn" id="1_ksj4k"]
 [ext_resource type="Script" uid="uid://gmlu8qirp1ip" path="res://ui/loading_screen/loading_screen.gd" id="2_t7wbg"]
+[ext_resource type="Texture2D" uid="uid://glelvub4r4vn" path="res://ui/loading_screen/assets/BerlinerDance1.png" id="3_uhnhd"]
+[ext_resource type="Texture2D" uid="uid://pbp1yfb2dbo" path="res://ui/loading_screen/assets/BerlinerDance2.png" id="4_v6pvw"]
+[ext_resource type="Texture2D" uid="uid://bsj66p1q3vr44" path="res://ui/loading_screen/assets/BerlinerDance11.png" id="5_b6s5f"]
+[ext_resource type="Texture2D" uid="uid://cvne5ghhrheyo" path="res://ui/loading_screen/assets/BerlinerDance12.png" id="6_051sh"]
+[ext_resource type="Texture2D" uid="uid://c0xpiqwkytoeh" path="res://ui/loading_screen/assets/BerlinerDance13.png" id="7_6g6oc"]
+[ext_resource type="Texture2D" uid="uid://evc8s5630c75" path="res://ui/loading_screen/assets/BerlinerDance14.png" id="8_s6571"]
+[ext_resource type="Texture2D" uid="uid://dc1wxaing1u60" path="res://ui/loading_screen/assets/BerlinerDance15.png" id="9_gioao"]
+[ext_resource type="Texture2D" uid="uid://80b1j4eqiwlg" path="res://ui/loading_screen/assets/BerlinerDance16.png" id="10_rqwvu"]
+[ext_resource type="Texture2D" uid="uid://dovua0il3udjg" path="res://ui/loading_screen/assets/BerlinerDance17.png" id="11_lff7g"]
+[ext_resource type="Texture2D" uid="uid://b40cva5kg1rcv" path="res://ui/loading_screen/assets/BerlinerDance18.png" id="12_8slli"]
+[ext_resource type="Texture2D" uid="uid://cyxe80ghtkv0d" path="res://ui/loading_screen/assets/BerlinerDance19.png" id="13_kug50"]
+[ext_resource type="Texture2D" uid="uid://bbc2b142ecx77" path="res://ui/loading_screen/assets/BerlinerDance20.png" id="14_m0img"]
+[ext_resource type="Texture2D" uid="uid://djvk784o47wtc" path="res://ui/loading_screen/assets/BerlinerDance3.png" id="15_g6bqh"]
+[ext_resource type="Texture2D" uid="uid://cr2w21ni1kshp" path="res://ui/loading_screen/assets/BerlinerDance21.png" id="16_ubjel"]
+[ext_resource type="Texture2D" uid="uid://qy2mgj2k2m4u" path="res://ui/loading_screen/assets/BerlinerDance22.png" id="17_mvpgf"]
+[ext_resource type="Texture2D" uid="uid://bgq7l7or3ccmx" path="res://ui/loading_screen/assets/BerlinerDance23.png" id="18_bxjsg"]
+[ext_resource type="Texture2D" uid="uid://bgo207k3wmcrj" path="res://ui/loading_screen/assets/BerlinerDance24.png" id="19_jeg6q"]
+[ext_resource type="Texture2D" uid="uid://bg1tl1barsapi" path="res://ui/loading_screen/assets/BerlinerDance25.png" id="20_y6rgk"]
+[ext_resource type="Texture2D" uid="uid://busa0foufmt5y" path="res://ui/loading_screen/assets/BerlinerDance26.png" id="21_0c1w6"]
+[ext_resource type="Texture2D" uid="uid://degvhe4wabr2y" path="res://ui/loading_screen/assets/BerlinerDance27.png" id="22_b5b80"]
+[ext_resource type="Texture2D" uid="uid://p2d0bxlxp41v" path="res://ui/loading_screen/assets/BerlinerDance28.png" id="23_h7aft"]
+[ext_resource type="Texture2D" uid="uid://btop37uwf1v6p" path="res://ui/loading_screen/assets/BerlinerDance29.png" id="24_uuq0o"]
+[ext_resource type="Texture2D" uid="uid://dra1036jo4vmn" path="res://ui/loading_screen/assets/BerlinerDance30.png" id="25_6uqh6"]
+[ext_resource type="Texture2D" uid="uid://esnqq3ns41tg" path="res://ui/loading_screen/assets/BerlinerDance4.png" id="26_sqemh"]
+[ext_resource type="Texture2D" uid="uid://ch6d7yhfyotvf" path="res://ui/loading_screen/assets/BerlinerDance31.png" id="27_wrm6p"]
+[ext_resource type="Texture2D" uid="uid://tlbpfei0h8f5" path="res://ui/loading_screen/assets/BerlinerDance32.png" id="28_1w1d5"]
+[ext_resource type="Texture2D" uid="uid://c1rjwcf35q3n3" path="res://ui/loading_screen/assets/BerlinerDance33.png" id="29_r5pcq"]
+[ext_resource type="Texture2D" uid="uid://yhm4jeputp37" path="res://ui/loading_screen/assets/BerlinerDance34.png" id="30_fxxm3"]
+[ext_resource type="Texture2D" uid="uid://b2wnptlwid208" path="res://ui/loading_screen/assets/BerlinerDance35.png" id="31_4qrsv"]
+[ext_resource type="Texture2D" uid="uid://dhe2moquodcnb" path="res://ui/loading_screen/assets/BerlinerDance36.png" id="32_rsy06"]
+[ext_resource type="Texture2D" uid="uid://cgqb6wkxr6c3c" path="res://ui/loading_screen/assets/BerlinerDance37.png" id="33_rioc2"]
+[ext_resource type="Texture2D" uid="uid://biwfg4s8gwhgm" path="res://ui/loading_screen/assets/BerlinerDance38.png" id="34_3eelh"]
+[ext_resource type="Texture2D" uid="uid://bxxv0bvlprecu" path="res://ui/loading_screen/assets/BerlinerDance39.png" id="35_78txd"]
+[ext_resource type="Texture2D" uid="uid://ol1r13qsv1p8" path="res://ui/loading_screen/assets/BerlinerDance40.png" id="36_livj2"]
+[ext_resource type="Texture2D" uid="uid://cjoj3bkcgfksp" path="res://ui/loading_screen/assets/BerlinerDance5.png" id="37_1r6uu"]
+[ext_resource type="Texture2D" uid="uid://px0agsjyfg88" path="res://ui/loading_screen/assets/BerlinerDance41.png" id="38_tuihi"]
+[ext_resource type="Texture2D" uid="uid://c3pjx7mlr04r8" path="res://ui/loading_screen/assets/BerlinerDance42.png" id="39_tyswv"]
+[ext_resource type="Texture2D" uid="uid://cq0xj2d35ca8o" path="res://ui/loading_screen/assets/BerlinerDance43.png" id="40_jia3d"]
+[ext_resource type="Texture2D" uid="uid://bnhkq1hxtt1ox" path="res://ui/loading_screen/assets/BerlinerDance44.png" id="41_y7dud"]
+[ext_resource type="Texture2D" uid="uid://bwe3qlvflve1v" path="res://ui/loading_screen/assets/BerlinerDance45.png" id="42_a0e3w"]
+[ext_resource type="Texture2D" uid="uid://bdutxx2oequc6" path="res://ui/loading_screen/assets/BerlinerDance6.png" id="43_me8it"]
+[ext_resource type="Texture2D" uid="uid://du2aghsncihns" path="res://ui/loading_screen/assets/BerlinerDance7.png" id="44_ya2r2"]
+[ext_resource type="Texture2D" uid="uid://2mscv2pnd524" path="res://ui/loading_screen/assets/BerlinerDance8.png" id="45_fo2pl"]
+[ext_resource type="Texture2D" uid="uid://de2befg6axtkt" path="res://ui/loading_screen/assets/BerlinerDance9.png" id="46_h420d"]
+[ext_resource type="Texture2D" uid="uid://d3u64vyvjybcf" path="res://ui/loading_screen/assets/BerlinerDance10.png" id="47_e3tvo"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_l5dvl"]
+frames = 45
+speed_scale = 8.0
+frame_0/texture = ExtResource("3_uhnhd")
+frame_1/texture = ExtResource("4_v6pvw")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("15_g6bqh")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("26_sqemh")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("37_1r6uu")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("43_me8it")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("44_ya2r2")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("45_fo2pl")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("46_h420d")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("47_e3tvo")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("5_b6s5f")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("6_051sh")
+frame_11/duration = 1.0
+frame_12/texture = ExtResource("7_6g6oc")
+frame_12/duration = 1.0
+frame_13/texture = ExtResource("8_s6571")
+frame_13/duration = 1.0
+frame_14/texture = ExtResource("9_gioao")
+frame_14/duration = 1.0
+frame_15/texture = ExtResource("10_rqwvu")
+frame_15/duration = 1.0
+frame_16/texture = ExtResource("11_lff7g")
+frame_16/duration = 1.0
+frame_17/texture = ExtResource("12_8slli")
+frame_17/duration = 1.0
+frame_18/texture = ExtResource("13_kug50")
+frame_18/duration = 1.0
+frame_19/texture = ExtResource("14_m0img")
+frame_19/duration = 1.0
+frame_20/texture = ExtResource("16_ubjel")
+frame_20/duration = 1.0
+frame_21/texture = ExtResource("17_mvpgf")
+frame_21/duration = 1.0
+frame_22/texture = ExtResource("18_bxjsg")
+frame_22/duration = 1.0
+frame_23/texture = ExtResource("19_jeg6q")
+frame_23/duration = 1.0
+frame_24/texture = ExtResource("20_y6rgk")
+frame_24/duration = 1.0
+frame_25/texture = ExtResource("21_0c1w6")
+frame_25/duration = 1.0
+frame_26/texture = ExtResource("22_b5b80")
+frame_26/duration = 1.0
+frame_27/texture = ExtResource("23_h7aft")
+frame_27/duration = 1.0
+frame_28/texture = ExtResource("24_uuq0o")
+frame_28/duration = 1.0
+frame_29/texture = ExtResource("25_6uqh6")
+frame_29/duration = 1.0
+frame_30/texture = ExtResource("27_wrm6p")
+frame_30/duration = 1.0
+frame_31/texture = ExtResource("28_1w1d5")
+frame_31/duration = 1.0
+frame_32/texture = ExtResource("29_r5pcq")
+frame_32/duration = 1.0
+frame_33/texture = ExtResource("30_fxxm3")
+frame_33/duration = 1.0
+frame_34/texture = ExtResource("31_4qrsv")
+frame_34/duration = 1.0
+frame_35/texture = ExtResource("32_rsy06")
+frame_35/duration = 1.0
+frame_36/texture = ExtResource("33_rioc2")
+frame_36/duration = 1.0
+frame_37/texture = ExtResource("34_3eelh")
+frame_37/duration = 1.0
+frame_38/texture = ExtResource("35_78txd")
+frame_38/duration = 1.0
+frame_39/texture = ExtResource("36_livj2")
+frame_39/duration = 1.0
+frame_40/texture = ExtResource("38_tuihi")
+frame_40/duration = 1.0
+frame_41/texture = ExtResource("39_tyswv")
+frame_41/duration = 1.0
+frame_42/texture = ExtResource("40_jia3d")
+frame_42/duration = 1.0
+frame_43/texture = ExtResource("41_y7dud")
+frame_43/duration = 1.0
+frame_44/texture = ExtResource("42_a0e3w")
+frame_44/duration = 1.0
 
 [node name="LoadingScreen" instance=ExtResource("1_ksj4k")]
 script = ExtResource("2_t7wbg")
+
+[node name="TextureRect" type="TextureRect" parent="Control" index="6"]
+offset_left = 823.0
+offset_top = 209.0
+offset_right = 1094.0
+offset_bottom = 467.0
+texture = SubResource("AnimatedTexture_l5dvl")
