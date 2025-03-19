@@ -53,7 +53,6 @@ func _dialogue_ended(_resource):
 
 func _robbing(percent: float):
     var money = floor(SourceOfTruth.balance * percent)
-    print("Andreas stole %d Euronen" % money)
     SourceOfTruth.balance_changed(-money)
     _quest_robbery_complete()
 

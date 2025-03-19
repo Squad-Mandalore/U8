@@ -12,13 +12,13 @@ var button_clicked_effect = preload("res://assets/sounds/effects/button_clicked_
 func _ready() -> void:
     SignalDispatcher.sound_effect.connect(_on_sound_effect)
 
-func play_sound_effect(sound, volume_db: float = 0) -> void:
+func play_sound_effect(sound: AudioStream, volume_db: float = 0) -> void:
     if sound:
         self.stream = sound
         self.volume_db = volume_db
         self.play()
     else:
-        print("Error: Could not load sound at path")
+        printerr("Error: Could not load sound at path")
 
 
 func _on_sound_effect(sound_name: String) -> void:

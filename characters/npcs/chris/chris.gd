@@ -38,7 +38,6 @@ func _dialogue_ended(_resource):
 
 func _robbing():
     var money = floor(SourceOfTruth.balance * 0.1)
-    print("Chris stole %d Euronen" % money)
     SourceOfTruth.balance_changed(-money)
     dishonest_brothers_quest.get_subquest(ANDREAS_ROBBERY_ID).set_active(true)
     dishonest_brothers_quest.get_subquest(ANDREAS_REMEMBERS_ID).set_rejected(true)
