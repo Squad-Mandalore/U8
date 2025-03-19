@@ -232,7 +232,7 @@ metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_updai"]
 script = ExtResource("2_ycp2m")
-max_health = 1000
+max_health = 2000
 health = 200
 armor = 2
 initiative = 0

@@ -29,7 +29,7 @@ metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_7oqm7"]
 script = ExtResource("2_0g7o6")
-base = 40
+base = 200
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0

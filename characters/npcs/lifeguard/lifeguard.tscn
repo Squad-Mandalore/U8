@@ -334,8 +334,8 @@ formula = SubResource("Resource_gaypb")
 
 [sub_resource type="Resource" id="Resource_54qjx"]
 script = ExtResource("4_moqmy")
-max_health = 500
-health = 361
+max_health = 300
+health = 300
 armor = 10
 initiative = 5
 dodge_chance = 25

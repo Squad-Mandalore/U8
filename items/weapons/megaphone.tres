@@ -29,7 +29,7 @@ metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_ngoiq"]
 script = ExtResource("2_ehlj2")
-base = 10
+base = 35
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
