@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://c1jcttvh06k77"]
+[gd_scene load_steps=12 format=3 uid="uid://byrvn6nh6yeex"]
 
-[ext_resource type="PackedScene" uid="uid://byec1snmmls3p" path="res://characters/npcs/enemy.tscn" id="1_r1gx3"]
+[ext_resource type="PackedScene" path="res://characters/npcs/enemy.tscn" id="1_r1gx3"]
 [ext_resource type="Texture2D" uid="uid://bvtb4s8unxcie" path="res://characters/npcs/walking-decoration-dudes/man3/assets/man_with_phone_and_red_sweater.png" id="2_mejwv"]
 [ext_resource type="Texture2D" uid="uid://iy787e14u6fl" path="res://characters/npcs/walking-decoration-dudes/man5/assets/man_with_red_sweater.png" id="2_o2gh3"]
 
@@ -75,3 +75,4 @@ battle_intro = "idle"
 sprite_frames = SubResource("SpriteFrames_o2gh3")
 animation = &"idle"
 autoplay = "idle"
+offset = Vector2(0, -15)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://64innc8f636y"]
+[gd_scene load_steps=11 format=3 uid="uid://d010oximtdpb0"]
 
 [ext_resource type="PackedScene" uid="uid://byec1snmmls3p" path="res://characters/npcs/enemy.tscn" id="1_oa548"]
 [ext_resource type="Texture2D" uid="uid://x8ya14f2lsx4" path="res://characters/npcs/walking-decoration-dudes/man2/assets/man_with_phone_and_blue_sweater.png" id="2_lnegu"]
@@ -74,3 +74,4 @@ battle_intro = "idle"
 sprite_frames = SubResource("SpriteFrames_3uq2c")
 animation = &"idle"
 autoplay = "idle"
+offset = Vector2(0, -15)

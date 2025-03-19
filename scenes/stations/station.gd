@@ -101,6 +101,7 @@ func spawn_objects_transform(object_scenes: Array, spawn_points: Array, parent_n
             if sprite_instance and sprite_station:
                 if sprite_instance.sprite_frames:
                     sprite_station.sprite_frames = sprite_instance.sprite_frames
+                sprite_station.offset = sprite_instance.offset
                 sprite_station.animation = sprite_instance.animation
                 sprite_station.flip_h = sprite_instance.flip_h
 

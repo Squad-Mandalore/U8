@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxovfhmaof14i"]
+[gd_scene load_steps=11 format=3 uid="uid://c3axrnq57u4k3"]
 
 [ext_resource type="PackedScene" uid="uid://byec1snmmls3p" path="res://characters/npcs/enemy.tscn" id="1_xdbbp"]
 [ext_resource type="Texture2D" uid="uid://bi214p4iayhkj" path="res://characters/npcs/walking-decoration-dudes/man1/assets/man_with_green_sweater.png" id="2_54qgp"]
@@ -74,3 +74,4 @@ battle_intro = "idle"
 sprite_frames = SubResource("SpriteFrames_54qgp")
 animation = &"idle"
 autoplay = "idle"
+offset = Vector2(0, -15)
