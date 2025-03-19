@@ -27,7 +27,7 @@ drug_level = 0
 [resource]
 script = ExtResource("1_kdolv")
 stats = SubResource("Resource_hodkb")
-price = 70
+price = 90
 name = "Notizbuch"
 description = "Das Buch für die Dementen und Workaholics, wenn mal wieder das Gehirn nicht richtig arbeitet."
 texture = ExtResource("3_jxua5")

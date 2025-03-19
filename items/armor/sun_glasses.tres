@@ -27,7 +27,7 @@ drug_level = 0
 [resource]
 script = ExtResource("1_1kf5v")
 stats = SubResource("Resource_hodkb")
-price = 60
+price = 90
 name = "Sonnenbrille"
 description = "Auch wenn in der U-Bahn nie die Sonne scheint, kannst du stets von uncoolen Leuten und ihrer unsagbaren Hässlichkeit geblendet werden."
 texture = ExtResource("3_7ft3w")

@@ -1,10 +1,234 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4otvyfs5p5ek"]
+[gd_scene load_steps=21 format=3 uid="uid://b4otvyfs5p5ek"]
 
 [ext_resource type="Script" uid="uid://ugbc4t3rh41q" path="res://characters/npcs/moritz/moritz.gd" id="1_wp3ic"]
 [ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_e34y4"]
-[ext_resource type="Resource" uid="uid://oui3w7vat6ib" path="res://characters/attacks/assets/show_off.tres" id="3_10xgp"]
 [ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_c250q"]
+[ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="4_mn68h"]
 [ext_resource type="Texture2D" uid="uid://bvk5g7xl2n6jd" path="res://characters/npcs/moritz/assets/moritz.png" id="6_chcch"]
+
+[sub_resource type="Resource" id="Resource_ixmau"]
+script = ExtResource("4_c250q")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_cge6b"]
+script = ExtResource("4_mn68h")
+base = 70
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.3
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
+
+[sub_resource type="Resource" id="Resource_op1mv"]
+script = ExtResource("2_e34y4")
+name = "Schriller Gesang"
+damage = SubResource("Resource_ixmau")
+type = 4
+token = 4
+token_number = 1
+effect = ""
+formula = SubResource("Resource_cge6b")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
+
+[sub_resource type="Resource" id="Resource_uia2b"]
+script = ExtResource("4_c250q")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_d3dys"]
+script = ExtResource("4_mn68h")
+base = 60
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
+
+[sub_resource type="Resource" id="Resource_prmc1"]
+script = ExtResource("2_e34y4")
+name = "Violinen Streich"
+damage = SubResource("Resource_uia2b")
+type = 4
+token = 4
+token_number = 1
+effect = ""
+formula = SubResource("Resource_d3dys")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
+
+[sub_resource type="Resource" id="Resource_eahw6"]
+script = ExtResource("4_c250q")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_ql772"]
+script = ExtResource("4_mn68h")
+base = 65
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
+
+[sub_resource type="Resource" id="Resource_rf4q2"]
+script = ExtResource("2_e34y4")
+name = "Intelligenter Schachzug"
+damage = SubResource("Resource_eahw6")
+type = 3
+token = 3
+token_number = 0
+effect = ""
+formula = SubResource("Resource_ql772")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
+
+[sub_resource type="Resource" id="Resource_odp2v"]
+script = ExtResource("4_c250q")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_0s5sg"]
+script = ExtResource("4_mn68h")
+base = 30
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
+
+[sub_resource type="Resource" id="Resource_cry8v"]
+script = ExtResource("2_e34y4")
+name = "Labern"
+damage = SubResource("Resource_odp2v")
+type = 2
+token = 2
+token_number = 1
+effect = ""
+formula = SubResource("Resource_0s5sg")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_66nhw"]
 script = ExtResource("4_c250q")
@@ -44,10 +268,11 @@ animations = [{
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_wp3ic")
-attacks = Array[ExtResource("2_e34y4")]([ExtResource("3_10xgp")])
+attacks = Array[ExtResource("2_e34y4")]([SubResource("Resource_op1mv"), SubResource("Resource_prmc1"), SubResource("Resource_rf4q2"), SubResource("Resource_cry8v")])
 combat_animation = "idle"
 stats = SubResource("Resource_66nhw")
 texture = ExtResource("6_chcch")
+winning_money = 20
 battle_intro = "idle"
 _name = "Der Moritz"
 _random_name = false

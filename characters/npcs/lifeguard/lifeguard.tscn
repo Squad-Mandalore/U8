@@ -139,13 +139,13 @@ metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_e7lhq"]
 script = ExtResource("4_cnqhi")
-base = 5
+base = 15
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
 initiative_modifier = 0.0
 dodge_chance_modifier = 0.0
-strength_modifier = 0.0
+strength_modifier = 0.2
 coolness_modifier = 0.0
 attractiveness_modifier = 0.0
 intelligence_modifier = 0.0
@@ -247,7 +247,7 @@ metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_nbh4d"]
 script = ExtResource("4_cnqhi")
-base = 5
+base = 15
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
@@ -301,7 +301,7 @@ metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_gaypb"]
 script = ExtResource("4_cnqhi")
-base = 0
+base = 10
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
@@ -602,7 +602,7 @@ script = ExtResource("1_wtvpj")
 attacks = Array[ExtResource("2_mngaj")]([SubResource("Resource_kumvx"), SubResource("Resource_42jjr"), SubResource("Resource_iyodo"), SubResource("Resource_qiowf"), SubResource("Resource_0nrwd"), SubResource("Resource_ohf0h")])
 stats = SubResource("Resource_54qjx")
 texture = ExtResource("5_8noa3")
-winning_money = 80
+winning_money = 20
 _name = "Der Bademeister"
 _random_name = false
 _gender = "Male"

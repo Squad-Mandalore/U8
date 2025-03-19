@@ -1,11 +1,180 @@
-[gd_scene load_steps=31 format=3 uid="uid://cmo1bqievd0uc"]
+[gd_scene load_steps=41 format=3 uid="uid://cmo1bqievd0uc"]
 
 [ext_resource type="Script" uid="uid://d2he2c3ljrjyx" path="res://characters/npcs/politician/politician.gd" id="1_6eimy"]
 [ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_wnj3v"]
 [ext_resource type="Resource" uid="uid://oui3w7vat6ib" path="res://characters/attacks/assets/show_off.tres" id="3_ph7vf"]
 [ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_ppfdp"]
+[ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="5_5f6em"]
 [ext_resource type="Texture2D" uid="uid://cjyyhybqiea5t" path="res://characters/npcs/politician/assets/politician_1.png" id="5_lv7x6"]
 [ext_resource type="Texture2D" uid="uid://dfe5ditvg6awy" path="res://characters/npcs/bodybuilder/assets/bodybuilder.png" id="6_6m50o"]
+
+[sub_resource type="Resource" id="Resource_ms8wa"]
+script = ExtResource("4_ppfdp")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_8rr2n"]
+script = ExtResource("5_5f6em")
+base = 40
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.5
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
+
+[sub_resource type="Resource" id="Resource_1x6d4"]
+script = ExtResource("2_wnj3v")
+name = "Trizeps Punch"
+damage = SubResource("Resource_ms8wa")
+type = 1
+token = 1
+token_number = 1
+effect = ""
+formula = SubResource("Resource_8rr2n")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
+
+[sub_resource type="Resource" id="Resource_hy4q7"]
+script = ExtResource("4_ppfdp")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 1
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_myg70"]
+script = ExtResource("5_5f6em")
+base = 20
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
+
+[sub_resource type="Resource" id="Resource_lhfgl"]
+script = ExtResource("2_wnj3v")
+name = "Testo Spritze"
+damage = SubResource("Resource_hy4q7")
+type = 1
+token = 1
+token_number = 1
+effect = "Vergiften"
+formula = SubResource("Resource_myg70")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
+
+[sub_resource type="Resource" id="Resource_shfxx"]
+script = ExtResource("4_ppfdp")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_2hf3k"]
+script = ExtResource("5_5f6em")
+base = 45
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
+
+[sub_resource type="Resource" id="Resource_s6w73"]
+script = ExtResource("2_wnj3v")
+name = "Quadrizeps Kick"
+damage = SubResource("Resource_shfxx")
+type = 1
+token = 1
+token_number = 1
+effect = ""
+formula = SubResource("Resource_2hf3k")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_u8nwv"]
 script = ExtResource("4_ppfdp")
@@ -257,9 +426,10 @@ floor_block_on_wall = false
 floor_snap_length = 0.0
 platform_on_leave = 2
 script = ExtResource("1_6eimy")
-attacks = Array[ExtResource("2_wnj3v")]([ExtResource("3_ph7vf")])
+attacks = Array[ExtResource("2_wnj3v")]([ExtResource("3_ph7vf"), SubResource("Resource_1x6d4"), SubResource("Resource_lhfgl"), SubResource("Resource_s6w73")])
 stats = SubResource("Resource_u8nwv")
 texture = ExtResource("6_6m50o")
+winning_money = 20
 _random_name = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
