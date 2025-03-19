@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dcad5rbgw7rsl"]
 
-[ext_resource type="Script" uid="uid://x2mp8v7dl127" path="res://scenes/trains/basic_train/subscenes/interior_sides.gd" id="1_e7ahh"]
+[ext_resource type="Script" uid="uid://g5glkdvgxw80" path="res://scenes/trains/basic_train/subscenes/interior_sides.gd" id="1_e7ahh"]
 [ext_resource type="Texture2D" uid="uid://drt0nqrqgo4ky" path="res://scenes/trains/basic_train/assets/ubahn-v4-rechts-innen.png" id="1_fac5u"]
 [ext_resource type="Texture2D" uid="uid://du7bjciy23q7i" path="res://scenes/trains/basic_train/assets/right_dirt.png" id="3_51gmh"]
 [ext_resource type="Texture2D" uid="uid://brltrrqc3bg00" path="res://scenes/trains/basic_train/assets/right_dirt2.png" id="4_wq5lg"]

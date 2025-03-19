@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://c8viibwcd8eui"]
 
 [ext_resource type="Texture2D" uid="uid://cpnqt6gti5es2" path="res://scenes/trains/basic_train/assets/ubahn-v4-mitte-innen.png" id="1_g0617"]
-[ext_resource type="Script" uid="uid://ddxcn1hyuikfi" path="res://scenes/trains/basic_train/subscenes/interior_center.gd" id="1_tq8t7"]
+[ext_resource type="Script" uid="uid://b0t2ssn2wbaw" path="res://scenes/trains/basic_train/subscenes/interior_center.gd" id="1_tq8t7"]
 [ext_resource type="Texture2D" uid="uid://cpbjfhcq0vfe" path="res://scenes/trains/basic_train/assets/center_broken_window.png" id="2_d4j7s"]
 [ext_resource type="Texture2D" uid="uid://ylindkdov6nx" path="res://scenes/trains/basic_train/assets/center_dirt.png" id="4_h2xsq"]
 [ext_resource type="Texture2D" uid="uid://bfvt5ddp74ql1" path="res://scenes/trains/basic_train/assets/center_dirt2t.png" id="5_n2fnb"]
