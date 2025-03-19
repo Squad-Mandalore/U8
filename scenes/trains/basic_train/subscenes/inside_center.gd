@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-@export var npc_scene: PackedScene = preload("res://characters/npcs/politician/politician_1.tscn")
 @onready var _spawn_area = $SpawnArea
 
 const GENERIC_ENEMYS: Array[PackedScene] = [
