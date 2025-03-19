@@ -27,19 +27,19 @@ bleed_level = 0
 drug_level = 0
 metadata/_custom_type_script = "uid://1axonyyckejw"
 
-[sub_resource type="Resource" id="Resource_ayac1"]
+[sub_resource type="Resource" id="Resource_7oqm7"]
 script = ExtResource("2_0g7o6")
-base = 10
+base = 40
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
 initiative_modifier = 0.0
 dodge_chance_modifier = 0.0
-strength_modifier = 0.0
+strength_modifier = 1.0
 coolness_modifier = 0.0
 attractiveness_modifier = 0.0
-intelligence_modifier = 0.5
-creativity_modifier = 0.3
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
 luck_modifier = 0.0
 poison_resistance_modifier = 0.0
 bleed_resistance_modifier = 0.0
@@ -49,16 +49,18 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
-[sub_resource type="Resource" id="Resource_di1hx"]
+[sub_resource type="Resource" id="Resource_5waup"]
 script = ExtResource("1_l1k8t")
-name = "Ordnungsruf"
+name = "Abschiessen"
 damage = SubResource("Resource_c7aac")
-type = 3
-token = 2
+type = 1
+token = 1
 token_number = 1
-effect = "Silenced den Gegner"
-formula = SubResource("Resource_ayac1")
+effect = ""
+formula = SubResource("Resource_7oqm7")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_qs242"]
 script = ExtResource("4_53fe4")
@@ -82,7 +84,7 @@ drug_level = 0
 
 [resource]
 script = ExtResource("3_6slpj")
-attacks = Array[ExtResource("1_l1k8t")]([SubResource("Resource_di1hx")])
+attacks = Array[ExtResource("1_l1k8t")]([SubResource("Resource_5waup")])
 stats = SubResource("Resource_qs242")
 price = 40
 name = "P98 Pistole"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=9 format=3 uid="uid://dnuhhdg6ry7ua"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=10 format=3 uid="uid://dnuhhdg6ry7ua"]
 
 [ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="1_xssw7"]
 [ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_8udso"]
@@ -6,19 +6,40 @@
 [ext_resource type="Script" uid="uid://c0drmr3olu1ci" path="res://items/weapons/weapon.gd" id="3_wmok5"]
 [ext_resource type="Texture2D" uid="uid://da0ufdilu21i6" path="res://items/weapons/assets/baseball_bat.png" id="5_mi013"]
 
-[sub_resource type="Resource" id="Resource_ayac1"]
+[sub_resource type="Resource" id="Resource_n2dir"]
+script = ExtResource("2_8udso")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_s4osv"]
 script = ExtResource("2_g8hye")
-base = 10
+base = 15
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
 initiative_modifier = 0.0
 dodge_chance_modifier = 0.0
-strength_modifier = 0.0
+strength_modifier = 0.4
 coolness_modifier = 0.0
 attractiveness_modifier = 0.0
-intelligence_modifier = 0.5
-creativity_modifier = 0.3
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
 luck_modifier = 0.0
 poison_resistance_modifier = 0.0
 bleed_resistance_modifier = 0.0
@@ -28,16 +49,18 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
-[sub_resource type="Resource" id="Resource_di1hx"]
+[sub_resource type="Resource" id="Resource_5bin6"]
 script = ExtResource("1_xssw7")
-name = "Ordnungsruf"
-damage = 0
-type = 3
-token = 2
+name = "Zuschlagen"
+damage = SubResource("Resource_n2dir")
+type = 1
+token = 1
 token_number = 1
-effect = "Silenced den Gegner"
-formula = SubResource("Resource_ayac1")
+effect = ""
+formula = SubResource("Resource_s4osv")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_qs242"]
 script = ExtResource("2_8udso")
@@ -61,7 +84,7 @@ drug_level = 0
 
 [resource]
 script = ExtResource("3_wmok5")
-attacks = Array[ExtResource("1_xssw7")]([SubResource("Resource_di1hx")])
+attacks = Array[ExtResource("1_xssw7")]([SubResource("Resource_5bin6")])
 stats = SubResource("Resource_qs242")
 price = 40
 name = "Baseball Schläger"
