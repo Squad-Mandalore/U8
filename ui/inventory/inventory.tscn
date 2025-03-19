@@ -12,7 +12,7 @@
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.74902)
 
 [sub_resource type="InputEventAction" id="InputEventAction_8dyvk"]
-action = &"remove"
+action = &"talk"
 
 [sub_resource type="Shortcut" id="Shortcut_galwr"]
 events = [SubResource("InputEventAction_8dyvk")]
