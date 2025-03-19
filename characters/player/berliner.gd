@@ -151,7 +151,7 @@ func _unhandled_input(event: InputEvent):
         else:
             switch_state(State.DANCE)
 
-    if event.is_action_pressed("talk"):
+    if event.is_action_pressed("interact"):
         if close_map():
             return
 

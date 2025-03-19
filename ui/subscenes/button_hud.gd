@@ -1,7 +1,7 @@
 extends Button
 
 @onready var interaction_key_label: Label = $InteractionKeyMarginBox/InteractionKeyLabel
-@export var action_event_key: String = "talk"
+@export var action_event_key: String = "interact"
 
 func _ready() -> void:
     set_key_icon(action_event_key)

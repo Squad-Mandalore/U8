@@ -53,7 +53,7 @@ func _input(event: InputEvent):
     if not (is_hovered() && item && not is_shop_slot):
         return
 
-    if event.is_action_pressed("talk") && item.has_method("interact"):
+    if event.is_action_pressed("interact") && item.has_method("interact"):
         item.interact(index)
         get_viewport().set_input_as_handled()
 

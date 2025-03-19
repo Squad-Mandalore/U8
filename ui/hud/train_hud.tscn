@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b2utiw3nl1pqr" path="res://ui/hud/subscenes/status_panel.tscn" id="2_k8b6u"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_pnlg5"]
-action = &"talk"
+action = &"interact"
 
 [sub_resource type="Shortcut" id="Shortcut_8icef"]
 events = [SubResource("InputEventAction_pnlg5")]
