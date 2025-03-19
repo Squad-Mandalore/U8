@@ -157,6 +157,10 @@ func _unhandled_input(event: InputEvent):
         else:
             switch_state(State.DANCE)
 
+    if event.is_action_pressed("talk"):
+        if close_map():
+            return
+
     if event.is_action_pressed("ui_cancel"):
         if close_map():
             return

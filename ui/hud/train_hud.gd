@@ -3,7 +3,6 @@ extends CanvasLayer
 var talk_action_key: String
 
 func _ready() -> void:
-    %ButtonHud.set_key_icon("talk")
     %ButtonHud.hide()
 
 func show_interaction_button() -> void:
