@@ -223,7 +223,7 @@ func _start_scripted_talking(npc: Npc):
     SignalDispatcher.sound_effect.emit("villager")
     set_active_hud()
 
-func _stop_talking(npc: Npc):
+func _stop_talking():
     _allow_player_movement()
     switch_state(State.IDLE)
     set_active_hud(_hud)
@@ -306,7 +306,7 @@ func toggle_interaction():
             _start_talking(_interactable_npc)
         else:
             _interactable_npc.stop_talking()
-            _stop_talking(_interactable_npc)
+            _stop_talking()
 
 func set_active_hud(active_hud: CanvasLayer = null):
     for hud in huds:

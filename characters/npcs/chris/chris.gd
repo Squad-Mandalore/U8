@@ -34,7 +34,7 @@ func _dialogue_ended(_resource):
     DialogueManager.dialogue_ended.disconnect(_dialogue_ended)
     dishonest_brothers_quest.get_subquest(CHRIS_ROBBERY_ID).set_completed(true)
     stop_talking()
-    _player_nearby._stop_talking(self)
+    _player_nearby._stop_talking()
 
 func _robbing():
     var money = floor(SourceOfTruth.balance * 0.1)
