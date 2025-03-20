@@ -89,7 +89,6 @@ static func get_meta_slot_index(item):
         return 0
     elif item is Map:
         return 1
-    # If you add more meta item types (Manual, Diary, etc.), assign their slot indices here.
     elif item is GunLicence:
         return 5
     elif item is Ticket:
