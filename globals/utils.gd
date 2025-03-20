@@ -121,6 +121,9 @@ const STATS_DICT = {
     }
 }
 
+func _ready():
+    SignalDispatcher.level_won.connect(revoke_ticket)
+
 # Funciton gets a percentage and returns TRUE or FALSE dependant on the outcome
 func chance(percent: float) -> bool:
     return randf() * 100 < percent
@@ -131,3 +134,7 @@ func remove_all_children(parent: Node):
 
 func create_timer(seconds: float):
     return get_tree().create_timer(seconds, true, false, true).timeout
+
+static func revoke_ticket():
+    if Utils.chance(33):
+        SourceOfTruth.remove_meta_item(6)
