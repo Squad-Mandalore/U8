@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://h7oswlqu4ie4"]
+[gd_scene load_steps=13 format=3 uid="uid://h7oswlqu4ie4"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_dogv2"]
 [ext_resource type="Script" uid="uid://lurkoiakuk0w" path="res://scenes/stations/10_gesundbrunnen/gesundbrunnen.gd" id="2_547o6"]
@@ -9,6 +9,8 @@
 [ext_resource type="LabelSettings" uid="uid://dfcof0bqgjsys" path="res://scenes/stations/assets/station_name_label_settings_white_on_black.tres" id="5_pfb4y"]
 [ext_resource type="Texture2D" uid="uid://b5laifyplcahj" path="res://scenes/stations/10_gesundbrunnen/assets/gesundbrunnen_floor.png" id="7_65kk3"]
 [ext_resource type="PackedScene" uid="uid://cmo1bqievd0uc" path="res://characters/npcs/bodybuilder/bodybuilder.tscn" id="8_s5o5c"]
+[ext_resource type="PackedScene" uid="uid://diy1ckcdcgjg0" path="res://characters/automatas/doener-house/doener_house.tscn" id="10_2fsrn"]
+[ext_resource type="PackedScene" uid="uid://d3fhr38ytpe22" path="res://characters/automatas/clothes/clothing_container.tscn" id="11_q5yh3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jatpi"]
 size = Vector2(40, 19)
@@ -89,6 +91,12 @@ position = Vector2(988, 421)
 
 [node name="Floor" parent="Node2D" index="7"]
 texture = ExtResource("7_65kk3")
+
+[node name="ClothingContainer" parent="Node2D" index="13" instance=ExtResource("11_q5yh3")]
+position = Vector2(413, 333)
+
+[node name="DoenerHouse" parent="Node2D" index="14" instance=ExtResource("10_2fsrn")]
+position = Vector2(368, 333)
 
 [node name="BossArea" type="Area2D" parent="." index="3"]
 collision_layer = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dh8p5cvwbvru1"]
+[gd_scene load_steps=13 format=3 uid="uid://dh8p5cvwbvru1"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_a4e58"]
 [ext_resource type="Script" uid="uid://cxlsh8e7evomn" path="res://scenes/stations/18_moritzplatz/moritzplatz.gd" id="2_f2bji"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c3kg4jodjsiyd" path="res://scenes/stations/18_moritzplatz/assets/moritzplatz_floor.png" id="7_du223"]
 [ext_resource type="PackedScene" uid="uid://vj27q0c8e2sh" path="res://scenes/stations/18_moritzplatz/subscenes/tower.tscn" id="8_fedqd"]
 [ext_resource type="PackedScene" uid="uid://b4otvyfs5p5ek" path="res://characters/npcs/moritz/moritz.tscn" id="9_o2tus"]
+[ext_resource type="PackedScene" uid="uid://d3fhr38ytpe22" path="res://characters/automatas/clothes/clothing_container.tscn" id="10_3tlo1"]
+[ext_resource type="PackedScene" uid="uid://dv2v43jv13rjr" path="res://characters/automatas/drink/drink_vending_machine.tscn" id="11_qtaob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2tus"]
 size = Vector2(40, 19)
@@ -80,6 +82,12 @@ position = Vector2(607, 323)
 
 [node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
 position = Vector2(931, 323)
+
+[node name="ClothingContainer" parent="Node2D" index="13" instance=ExtResource("10_3tlo1")]
+position = Vector2(479, 332)
+
+[node name="DrinkVendingMachine" parent="Node2D" index="14" instance=ExtResource("11_qtaob")]
+position = Vector2(446, 332)
 
 [node name="BossArea" type="Area2D" parent="." index="3"]
 collision_layer = 0
