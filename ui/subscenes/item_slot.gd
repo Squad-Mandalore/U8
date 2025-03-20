@@ -111,7 +111,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
     var ext_item: Item = data["item"]
     if ext_is_shop_slot:
         # attempt to buy
-        if  SourceOfTruth.balance >= ext_item.price:
+        if SourceOfTruth.balance >= ext_item.price && SourceOfTruth.is_inventory_free():
             if ext_item is MetaItem:
                 SourceOfTruth.add_meta_item(ext_item)
             else:
