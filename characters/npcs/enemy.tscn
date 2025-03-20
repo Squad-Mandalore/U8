@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://byec1snmmls3p"]
+
+[ext_resource type="Script" uid="uid://captltgauxugq" path="res://characters/npcs/generic_enemy.gd" id="1_7qugo"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_hjtyb"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="2_v2nsg"]
+[ext_resource type="Resource" uid="uid://cq1wjf5oviin5" path="res://characters/attacks/assets/boxing.tres" id="3_vjxch"]
+
+[sub_resource type="Resource" id="Resource_p6nvl"]
+script = ExtResource("2_v2nsg")
+max_health = 50
+health = 50
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 1
+coolness = 1
+attractiveness = 1
+intelligence = 1
+creativity = 1
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Gradient" id="Gradient_7qugo"]
+offsets = PackedFloat32Array(0.396104, 0.961039, 1)
+colors = PackedColorArray(0.176471, 0.176471, 0.176471, 0.392157, 0.176471, 0.176471, 0.176471, 0.176471, 0.176471, 0.176471, 0.176471, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v2nsg"]
+gradient = SubResource("Gradient_7qugo")
+width = 440
+height = 220
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgi8b"]
+size = Vector2(16, 4)
+
+[node name="Enemy" type="CharacterBody2D" groups=["NPC"]]
+z_index = 50
+collision_layer = 5
+floor_stop_on_slope = false
+platform_on_leave = 2
+script = ExtResource("1_7qugo")
+attacks = Array[ExtResource("2_hjtyb")]([ExtResource("3_vjxch")])
+stats = SubResource("Resource_p6nvl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = SubResource("GradientTexture2D_v2nsg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fgi8b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+offset = Vector2(0, -16)

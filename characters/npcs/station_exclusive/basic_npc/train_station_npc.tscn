@@ -87,15 +87,13 @@ script = ExtResource("1_wsjt6")
 _gender = "Male"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_bg0ao")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_u2l0o")
 animation = &"idle"
 autoplay = "idle"
-offset = Vector2(0, -16)
+offset = Vector2(0, -20)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 5.0
