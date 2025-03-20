@@ -92,6 +92,12 @@ position = Vector2(988, 421)
 [node name="Floor" parent="Node2D" index="7"]
 texture = ExtResource("7_65kk3")
 
+[node name="ClothingContainer" parent="Node2D" index="13" instance=ExtResource("11_q5yh3")]
+position = Vector2(413, 333)
+
+[node name="DoenerHouse" parent="Node2D" index="14" instance=ExtResource("10_2fsrn")]
+position = Vector2(368, 333)
+
 [node name="BossArea" type="Area2D" parent="." index="3"]
 collision_layer = 0
 collision_mask = 2
@@ -99,11 +105,5 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BossArea" index="0"]
 position = Vector2(181, 202.5)
 shape = SubResource("RectangleShape2D_jatpi")
-
-[node name="DoenerHouse" parent="." index="4" instance=ExtResource("10_2fsrn")]
-position = Vector2(368, 333)
-
-[node name="ClothingContainer" parent="." index="5" instance=ExtResource("11_q5yh3")]
-position = Vector2(413, 333)
 
 [connection signal="body_exited" from="BossArea" to="." method="_on_boss_area_body_exited"]

@@ -83,6 +83,12 @@ position = Vector2(607, 323)
 [node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
 position = Vector2(931, 323)
 
+[node name="ClothingContainer" parent="Node2D" index="13" instance=ExtResource("10_3tlo1")]
+position = Vector2(479, 332)
+
+[node name="DrinkVendingMachine" parent="Node2D" index="14" instance=ExtResource("11_qtaob")]
+position = Vector2(446, 332)
+
 [node name="BossArea" type="Area2D" parent="." index="3"]
 collision_layer = 0
 collision_mask = 2
@@ -90,11 +96,5 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BossArea" index="0"]
 position = Vector2(181, 202.5)
 shape = SubResource("RectangleShape2D_o2tus")
-
-[node name="ClothingContainer" parent="." index="4" instance=ExtResource("10_3tlo1")]
-position = Vector2(479, 332)
-
-[node name="DrinkVendingMachine" parent="." index="5" instance=ExtResource("11_qtaob")]
-position = Vector2(446, 332)
 
 [connection signal="body_exited" from="BossArea" to="." method="_on_boss_area_body_exited"]

@@ -110,17 +110,17 @@ position = Vector2(592, 323)
 [node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
 position = Vector2(845, 323)
 
-[node name="ClothingContainer" parent="." index="3" instance=ExtResource("9_dgeis")]
+[node name="ClothingContainer" parent="Node2D" index="12" instance=ExtResource("9_dgeis")]
 position = Vector2(435, 332)
 
-[node name="DoenerHouse" parent="." index="4" instance=ExtResource("10_1xcfg")]
+[node name="DoenerHouse" parent="Node2D" index="13" instance=ExtResource("10_1xcfg")]
 position = Vector2(481, 333)
 
-[node name="DrinkVendingMachine" parent="." index="5" instance=ExtResource("11_1tghb")]
+[node name="DrinkVendingMachine" parent="Node2D" index="14" instance=ExtResource("11_1tghb")]
 position = Vector2(708, 333)
 
-[node name="SnackVendingMachine" parent="." index="6" instance=ExtResource("12_00wdm")]
+[node name="SnackVendingMachine" parent="Node2D" index="15" instance=ExtResource("12_00wdm")]
 position = Vector2(732, 333)
 
-[node name="Spaeti" parent="." index="7" instance=ExtResource("13_jdrt0")]
+[node name="Spaeti" parent="Node2D" index="16" instance=ExtResource("13_jdrt0")]
 position = Vector2(971, 333)

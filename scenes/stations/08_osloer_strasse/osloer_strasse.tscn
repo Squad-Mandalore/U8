@@ -72,8 +72,8 @@ position = Vector2(255, 323)
 [node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
 position = Vector2(884, 323)
 
-[node name="DrinkVendingMachine" parent="." index="3" instance=ExtResource("8_gb80d")]
+[node name="DrinkVendingMachine" parent="Node2D" index="12" instance=ExtResource("8_gb80d")]
 position = Vector2(417, 333)
 
-[node name="Spaeti" parent="." index="4" instance=ExtResource("9_ut1dw")]
+[node name="Spaeti" parent="Node2D" index="13" instance=ExtResource("9_ut1dw")]
 position = Vector2(462, 334)

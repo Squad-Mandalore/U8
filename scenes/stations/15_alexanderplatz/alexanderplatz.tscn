@@ -117,8 +117,8 @@ texture = ExtResource("4_4jwyb")
 [node name="SmokingDude" parent="Node2D" index="8"]
 position = Vector2(406, 371)
 
-[node name="DoenerHouse" parent="." index="3" instance=ExtResource("9_bituu")]
+[node name="DoenerHouse" parent="Node2D" index="12" instance=ExtResource("9_bituu")]
 position = Vector2(404, 333)
 
-[node name="Spaeti" parent="." index="4" instance=ExtResource("10_5r8ck")]
+[node name="Spaeti" parent="Node2D" index="13" instance=ExtResource("10_5r8ck")]
 position = Vector2(315, 333)
