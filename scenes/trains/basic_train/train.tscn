@@ -24,7 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://b7ptc2wvm4rvu" path="res://assets/sounds/announcers/Ansage_Kottbusser.wav" id="28_es3ee"]
 [ext_resource type="AudioStream" uid="uid://b5pm2l0ngttex" path="res://assets/sounds/announcers/Ansage_Herrmannstrasse.wav" id="33_fk6il"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_1jt1h")
 combat_background = ExtResource("2_h4wmi")
@@ -61,9 +61,12 @@ drag_vertical_enabled = true
 
 [node name="Chris" parent="." instance=ExtResource("8_sempk")]
 position = Vector2(374, 151)
+_name = "chris"
 
 [node name="Bettler1" parent="." instance=ExtResource("9_xenwl")]
 position = Vector2(488, 157)
+_name = "obdachloser"
+_random_name = false
 _gender = "Male"
 
 [node name="TicketInspector" parent="." groups=["NPC"] instance=ExtResource("12_rqh7o")]
