@@ -257,7 +257,7 @@ shape = SubResource("RectangleShape2D_mo3t6")
 sprite_frames = SubResource("SpriteFrames_xm0tb")
 animation = &"second_girl1"
 autoplay = "first_guy1"
-frame_progress = 0.92385
+frame_progress = 0.0143273
 offset = Vector2(0, -14)
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

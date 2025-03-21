@@ -410,10 +410,16 @@ radius = 5.0
 
 [node name="Eisbaeren" parent="Node2D" instance=ExtResource("10_krbe2")]
 z_index = 0
-position = Vector2(1164, 313)
+position = Vector2(1171, 313)
 _name = "eisbaeren_fan"
 _group = "eisbaeren_fan"
 _assigngroup = false
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Node2D/Eisbaeren"]
+position = Vector2(1, 0)
+radius = 21.0
+affect_navigation_mesh = true
+carve_navigation_mesh = true
 
 [node name="Eisbaeren2" parent="Node2D" instance=ExtResource("11_1m7y8")]
 z_index = 0
@@ -422,18 +428,23 @@ _name = "eisbaeren_fan"
 _group = "eisbaeren_fan"
 _assigngroup = false
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Node2D/Eisbaeren2"]
-radius = 26.62
-vertices = PackedVector2Array(14, -19, -16, -21, -33, -20, -51, 0, -49, 12, 18, 14)
+[node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="Node2D/Eisbaeren2"]
+radius = 21.0
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 
 [node name="Eisbaeren3" parent="Node2D" instance=ExtResource("12_485u2")]
 z_index = 0
-position = Vector2(1150, 331)
+position = Vector2(1159, 331)
 _name = "eisbaeren_fan"
 _group = "eisbaeren_fan"
 _assigngroup = false
+
+[node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="Node2D/Eisbaeren3"]
+position = Vector2(1, -1)
+radius = 21.0
+affect_navigation_mesh = true
+carve_navigation_mesh = true
 
 [node name="OlafScholz" parent="Node2D" instance=ExtResource("11_qvo2e")]
 unique_name_in_owner = true
