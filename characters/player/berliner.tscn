@@ -685,10 +685,10 @@ shape = SubResource("CapsuleShape2D_cjqwy")
 [node name="Inventory" parent="." instance=ExtResource("4_s04kq")]
 visible = false
 
-[node name="HUD" parent="." instance=ExtResource("6_f7a2w")]
+[node name="DialogueBox" parent="." instance=ExtResource("7_2lanu")]
 visible = false
 
-[node name="DialogueBox" parent="." instance=ExtResource("7_2lanu")]
+[node name="HUD" parent="." instance=ExtResource("6_f7a2w")]
 visible = false
 
 [node name="Shop" parent="." instance=ExtResource("8_ae2mv")]

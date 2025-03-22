@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0oxv1sd0jcnl"]
+
+[ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="1_4o85i"]
+[ext_resource type="Script" uid="uid://bywj5u5i83gn1" path="res://scenes/dialogue/subscenes/chat_message.gd" id="3_ensfi"]
+
+[node name="ChatMessage" type="Label"]
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_4o85i")
+theme_override_font_sizes/font_size = 16
+script = ExtResource("3_ensfi")
