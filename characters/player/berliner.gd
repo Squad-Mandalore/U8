@@ -169,6 +169,11 @@ func _unhandled_input(event: InputEvent):
             set_active_hud(_hud)
             SignalDispatcher.sound_effect.emit("exit")
             get_viewport().set_input_as_handled()
+        elif _dialogue_box.visible and _current_state == State.TALK:
+            if _interactable_npc:
+                _interactable_npc.stop_talking()
+                _stop_talking(_interactable_npc)
+            get_viewport().set_input_as_handled()
 
     if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and _inventory.inventory_info_panel.visible:
         SignalDispatcher.toggle_item_hud.emit(null)
@@ -217,6 +222,7 @@ func _on_slowdown_area_body_exited(body: Node2D):
 func _start_talking(npc: Npc):
     $EidolonHandler.set_agent(npc._group)
     _disallow_player_movement()
+    set_process_unhandled_input(true)
     switch_state(State.TALK)
     SignalDispatcher.sound_effect.emit("villager")
     _hud.hide_status_panel()
