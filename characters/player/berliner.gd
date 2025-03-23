@@ -327,14 +327,22 @@ func _on_dialogue_box_send_message(message):
     $EidolonHandler.post_message(message)
 
 func _on_eidolon_handler_get_process_id(process_id):
-    #var message = "Process ID: %s" % process_id
-    _dialogue_box.add_message(true, "Conversation started.")
+    # This function is for making the first message be a reply from the AI.
+    $EidolonHandler.post_message("hi")
+    #_dialogue_box.add_message(true, "Conversation started.")
 
 func _on_eidolon_handler_new_message():
     _dialogue_box.add_message(true)
 
 func _on_eidolon_handler_get_message(message):
-    _dialogue_box.update_last_message(message)
+    # This will receive the AI's response to our initial "hi"
+    if _dialogue_box.chat_history.get_child_count() == 0:
+        # If this is the first message (response to "hi"), add it as a new message
+        _dialogue_box.add_message(true, message)
+    else:
+        # Otherwise, update the last message as usual
+        _dialogue_box.update_last_message(message)
+    #_dialogue_box.update_last_message(message)
 
 func _on_eidolon_handler_finish_message():
     _dialogue_box.waiting = false
