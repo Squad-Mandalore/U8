@@ -27,8 +27,13 @@ func add_message(sender, text=""):
     last_message = text
 
 func update_last_message(text="", replace=false):
-    if replace: last_message = text
-    else: last_message += text
+    if replace:
+        last_message = text
+    else: 
+        last_message += text
+    if chat_history.get_child_count() > 0:
+        var last_container = chat_history.get_child(chat_history.get_child_count() - 1)
+        last_container.add_new_text(last_message)
 
 func validate_message(message):
     if not (

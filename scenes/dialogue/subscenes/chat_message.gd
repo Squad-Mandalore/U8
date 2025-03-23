@@ -13,5 +13,3 @@ func add_new_text(new_text: String):
     var content_width = font.get_string_size(new_text).x
     # TODO: custom minimum size ist hier evtl. nicht die beste Wahl
     custom_minimum_size.x = min(content_width, parent_width)
-    print(parent_width)
-    print(content_width)
