@@ -1,10 +1,28 @@
 extends Label
 
+var is_left: bool = false
+
 func set_side(is_left: bool):
+    self.is_left = is_left
+    
     if is_left:
+        # Chatbot messages (left side)
         add_theme_stylebox_override("normal", preload("res://scenes/dialogue/assets/chat_ui_left.tres"))
+        # Set horizontal alignment to left
+        size_flags_horizontal = SIZE_FILL
+        horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+        # Add left margin for spacing
+        add_theme_constant_override("margin_left", 10)
+        add_theme_constant_override("margin_right", 100)  # Leave space on right
     else:
+        # Player messages (right side)
         add_theme_stylebox_override("normal", preload("res://scenes/dialogue/assets/chat_ui_right.tres"))
+        # Set horizontal alignment to right
+        size_flags_horizontal = SIZE_FILL
+        horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+        # Add right margin for spacing
+        add_theme_constant_override("margin_right", 10)
+        add_theme_constant_override("margin_left", 100)  # Leave space on left
 
 func add_new_text(new_text: String):
     self.text = new_text
