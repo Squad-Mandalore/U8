@@ -75,6 +75,7 @@ func _combat_exit(to_free: Node):
 
 func _combat_won(to_free: Node):
     var combat_exit_won_scene = preload("res://scenes/combats/subscenes/combat_exit_won.tscn")
+    SignalDispatcher.sound_effect.emit("won")
 
     _combat_exit(to_free)
 
@@ -87,6 +88,7 @@ func _combat_won(to_free: Node):
 
 func _combat_lost(to_free: Node):
     var combat_exit_lost_scene = preload("res://scenes/combats/subscenes/combat_exit_lost.tscn")
+    SignalDispatcher.sound_effect.emit("lose")
 
     _combat_exit(to_free)
 
