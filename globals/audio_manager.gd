@@ -1,8 +1,9 @@
 extends Node
 
 var station_music = preload("res://assets/sounds/music/station_music.wav")
-var old_combat_music = preload("res://assets/sounds/music/boss_music_1.wav")
-var combat_music = preload("res://assets/sounds/music/combat_music.wav")
+var combat_music = preload("res://assets/sounds/music/boss_music_1.wav")
+var other_combat_music = preload("res://assets/sounds/music/combat_music.wav")
+var epic_combat_music = preload("res://assets/sounds/music/epic_combat.wav")
 var main_menu_music = preload("res://assets/sounds/music/main_menu_music.mp3")
 var train_music = preload("res://scenes/trains/basic_train/assets/sounds/music/train.wav")
 var last_emitted = ""

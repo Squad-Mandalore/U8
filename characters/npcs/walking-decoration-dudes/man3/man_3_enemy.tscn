@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bvtb4s8unxcie" path="res://characters/npcs/walking-decoration-dudes/man3/assets/man_with_phone_and_red_sweater.png" id="2_mejwv"]
 [ext_resource type="Texture2D" uid="uid://iy787e14u6fl" path="res://characters/npcs/walking-decoration-dudes/man5/assets/man_with_red_sweater.png" id="2_o2gh3"]
 [ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_wkc0e"]
-[ext_resource type="Resource" uid="uid://cq1wjf5oviin5" path="res://characters/attacks/assets/boxing.tres" id="3_ayw0y"]
+[ext_resource type="Resource" uid="uid://cqpi2s0ihe65p" path="res://characters/attacks/assets/dumb_attack.tres" id="3_wkc0e"]
 [ext_resource type="Resource" uid="uid://t830h01kxeh2" path="res://characters/attacks/assets/normal_hit.tres" id="4_grlbf"]
-[ext_resource type="Resource" uid="uid://oui3w7vat6ib" path="res://characters/attacks/assets/show_off.tres" id="5_b5hcp"]
+[ext_resource type="Resource" uid="uid://cgxg8cngbqnla" path="res://characters/attacks/assets/weak_attack.tres" id="5_ayw0y"]
 [ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="6_mvj68"]
 
 [sub_resource type="Resource" id="Resource_8rn15"]
@@ -93,7 +93,7 @@ animations = [{
 }]
 
 [node name="Man3Enemy" instance=ExtResource("1_r1gx3")]
-attacks = Array[ExtResource("2_wkc0e")]([ExtResource("3_ayw0y"), ExtResource("4_grlbf"), ExtResource("5_b5hcp")])
+attacks = Array[ExtResource("2_wkc0e")]([ExtResource("3_wkc0e"), ExtResource("4_grlbf"), ExtResource("5_ayw0y")])
 combat_animation = "idle"
 stats = SubResource("Resource_8rn15")
 texture = ExtResource("2_o2gh3")
