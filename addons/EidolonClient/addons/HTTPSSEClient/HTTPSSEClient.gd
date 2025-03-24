@@ -4,122 +4,127 @@ signal new_sse_event(headers, event, data)
 signal connected
 signal connection_error(error)
 
-const event_tag = "id:"
-const data_tag = "data:"
-const continue_internal = "continue_internal"
+const EVENT_TAG = "id:"
+const DATA_TAG = "data:"
+const CONTINUE_INTERNAL = "continue_internal"
 
-var httpclient = HTTPClient.new()
-var is_connected = false
+# Connection state enum for clarity.
+enum ConnectionState {
+    DISCONNECTED,
+    CONNECTING,
+    CONNECTED,
+    REQUEST_SENT
+}
 
-var domain
-var url_after_domain
-var port
-var use_ssl
-var verify_host
-var told_to_connect = false
-var outgoing_request = null
-var connection_in_progress = false
-var request_in_progress = false
-var is_requested = false
-var response_body = PackedByteArray()
+var httpclient : HTTPClient
+var state = ConnectionState.DISCONNECTED
 
-var process_id
+var domain = ""
+var url_after_domain = ""
+var port = 0
+var use_ssl = false
+var verify_host = true
+var json
 
-func connect_to_host(domain : String, url_after_domain : String, port : int = -1, use_ssl : bool = false, verify_host : bool = true):
+var outgoing_request : Dictionary = {}
+var response_buffer = ""  # Buffer to accumulate string data
+
+func _ready():
+    httpclient = HTTPClient.new()
+    json = JSON.new()
+
+func connect_to_host(domain: String, url_after_domain: String, port: int = -1, use_ssl: bool = false, verify_host: bool = true):
     self.domain = domain
     self.url_after_domain = url_after_domain
     self.port = port
     self.use_ssl = use_ssl
     self.verify_host = verify_host
-    told_to_connect = true
+    state = ConnectionState.DISCONNECTED
+    attempt_to_connect()
 
 func attempt_to_connect():
     var err = httpclient.connect_to_host(domain, port)
     if err == OK:
-        emit_signal("connected")
-        is_connected = true
+        state = ConnectionState.CONNECTING
     else:
-        emit_signal("connection_error", str(err))
-
-func attempt_to_request(httpclient_status):
-    if httpclient_status == HTTPClient.STATUS_CONNECTING or httpclient_status == HTTPClient.STATUS_RESOLVING:
-        return
-    # When Eidolon backend pings httpclient, httpclient_status is set to HTTPClient.STATUS_CONNECTION_ERROR
-    # To remedy this, the httpclient reconnects via attempt_to_connect
-    if httpclient_status == HTTPClient.STATUS_CONNECTION_ERROR: attempt_to_connect()
-    if httpclient_status == HTTPClient.STATUS_CONNECTED:
-        var err = httpclient.request(outgoing_request["method"], outgoing_request["url"], outgoing_request["headers"], outgoing_request["body"])
-        if err == OK:
-            outgoing_request = null
-            is_requested = true
-
-func _process(delta):
-    if !told_to_connect:
-        return
-        
-    if !is_connected:
-        if !connection_in_progress:
-            attempt_to_connect()
-            connection_in_progress = true
-        return
-        
-    httpclient.poll()
-    var httpclient_status = httpclient.get_status()
-    if outgoing_request:
-        if !is_requested:
-            if !request_in_progress:
-                attempt_to_request(httpclient_status)
-            return
-        
-    var httpclient_has_response = httpclient.has_response()
-        
-    if httpclient_has_response or httpclient_status == HTTPClient.STATUS_BODY:
-        var headers = httpclient.get_response_headers_as_dictionary()
-        httpclient.poll()
-        var chunk = httpclient.read_response_body_chunk()
-        if(chunk.size() == 0):
-            return
-        else:
-            response_body = response_body + chunk
-            
-        var json = JSON.new()
-        var body = response_body.get_string_from_utf8()
-        if body:
-            var event_data = get_event_data(body)
-            if event_data.event != "keep-alive" and event_data.event != continue_internal:
-                var result = event_data.data
-                if response_body.size() > 0 and result: # stop here if the value doesn't parse
-                    response_body.resize(0)
-                    emit_signal("new_sse_event", headers, event_data.event, result)
-            else:
-                if event_data.event != continue_internal:
-                    response_body.resize(0)
+        connection_error.emit("Connect error: " + str(err))
 
 func set_outgoing_request(method, url, headers, body):
-    if not outgoing_request:
-        outgoing_request = {"method":method, "url":url, "headers":headers, "body":body}
+    # Set the outgoing request only when connected.
+    if state == ConnectionState.CONNECTED:
+        outgoing_request = {"method": method, "url": url, "headers": headers, "body": body}
+        attempt_to_send_request()
 
-func get_event_data(body : String) -> Dictionary:
-    var json = JSON.new()
-    body = body.strip_edges()
-    var result = {}
-    var event_idx = body.find(event_tag)
-    if event_idx == -1:
-        result["event"] = continue_internal
-        return result
-    assert(event_idx != -1)
-    var data_idx = body.find(data_tag)
-    assert(data_idx != -1)
-    var event = body.substr(event_idx, data_idx)
-    event = event.replace(event_tag, "").strip_edges()
-    assert(event)
-    assert(event.length() > 0)
-    result["event"] = event
-    var data = body.right(-(data_idx + data_tag.length())).strip_edges()
-    assert(data)
-    assert(data.length() > 0)
-    result["data"] = JSON.parse_string(data)
-    return result
+func attempt_to_send_request():
+    if httpclient.get_status() == HTTPClient.STATUS_CONNECTED and outgoing_request:
+        var err = httpclient.request(outgoing_request["method"], outgoing_request["url"], outgoing_request["headers"], outgoing_request["body"])
+        if err == OK:
+            state = ConnectionState.REQUEST_SENT
+            outgoing_request = {}
+        else:
+            connection_error.emit("Request error: " + str(err))
+
+func _process(delta):
+    if state == ConnectionState.DISCONNECTED:
+        return
+
+    httpclient.poll()
+    var status = httpclient.get_status()
+
+    # Handle connection errors and reconnect if needed.
+    if status == HTTPClient.STATUS_CONNECTION_ERROR:
+        state = ConnectionState.DISCONNECTED
+        connection_error.emit("Connection error detected. Reconnecting...")
+        return
+
+    # Transition from connecting to connected.
+    if status == HTTPClient.STATUS_CONNECTED and state == ConnectionState.CONNECTING:
+        state = ConnectionState.CONNECTED
+        connected.emit()
+        # Optionally auto-send any pending outgoing request here.
+
+    # Read and process response chunks.
+    if httpclient.has_response() or status == HTTPClient.STATUS_BODY:
+        var headers = httpclient.get_response_headers_as_dictionary()
+        var chunk = httpclient.read_response_body_chunk()
+        if chunk.size() > 0:
+            response_buffer += chunk.get_string_from_utf8()
+            process_response_buffer(headers)
+
+func process_response_buffer(headers):
+    # Split the buffer into complete SSE messages (delimited by two newlines).
+    while true:
+        var delimiter_idx = response_buffer.find("\n\r")
+        if delimiter_idx == -1:
+            break
+        var raw_event = response_buffer.substr(0, delimiter_idx).strip_edges()
+        response_buffer = response_buffer.substr(delimiter_idx + 2, response_buffer.length())
+        if raw_event != "":
+            var event_data = parse_event(raw_event)
+            if event_data and event_data.has("event") and event_data["event"] != CONTINUE_INTERNAL:
+                new_sse_event.emit(headers, event_data["event"], event_data.get("data", null))
+
+func parse_event(raw_event: String) -> Dictionary:
+    # Process each line in the SSE event.
+    var lines = raw_event.split("\n")
+    var event_name = ""
+    var data_str = ""
+    for line in lines:
+        line = line.strip_edges()
+        if line.begins_with(EVENT_TAG):
+            event_name = line.substr(EVENT_TAG.length(), line.length()).strip_edges()
+        elif line.begins_with(DATA_TAG):
+            # Concatenate data if there are multiple data lines.
+            data_str += line.substr(DATA_TAG.length(), line.length()).strip_edges()
+    if event_name == "":
+        event_name = CONTINUE_INTERNAL
+    var parsed_data = null
+    if data_str != "":
+        var json_parse = JSON.parse_string(data_str)
+        parsed_data = json_parse
+        if !json_parse:
+            parsed_data = data_str  # Fallback to raw data if JSON parsing fails.
+    return {"event": event_name, "data": parsed_data}
 
 func _exit_tree():
     if httpclient:
