@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmj3348ognt37"]
+[gd_scene load_steps=11 format=3 uid="uid://cmj3348ognt37"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_kgpoy"]
 [ext_resource type="Script" uid="uid://doi33jimqrkt5" path="res://scenes/stations/24_hermannstrasse/hermannstrasse.gd" id="2_l272v"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://drdkrndw6l5sj" path="res://scenes/stations/24_hermannstrasse/assets/hermannstrasse_floor.png" id="6_elllx"]
 [ext_resource type="PackedScene" uid="uid://5krccpj44n6l" path="res://scenes/stations/24_hermannstrasse/subscenes/tower.tscn" id="7_owj6y"]
 [ext_resource type="PackedScene" uid="uid://bd6v6onr1rbe5" path="res://characters/npcs/berlin_bear/berlin_bear.tscn" id="8_77hvd"]
+[ext_resource type="Texture2D" uid="uid://bl0asyu2pubip" path="res://characters/npcs/berlin_bear/assets/berlin_bear.png" id="9_ih577"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ih577"]
 size = Vector2(40, 19)
@@ -93,6 +94,9 @@ texture = ExtResource("6_elllx")
 
 [node name="BerlinBear" parent="Node2D" index="7" instance=ExtResource("8_77hvd")]
 unique_name_in_owner = true
+position = Vector2(772, 288)
+texture = ExtResource("9_ih577")
+battle_intro = "battle_intro"
 
 [node name="BossArea" type="Area2D" parent="." index="3"]
 position = Vector2(0, 186)
