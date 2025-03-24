@@ -87,15 +87,13 @@ script = ExtResource("1_wsjt6")
 _gender = "Male"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_bg0ao")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_u2l0o")
 animation = &"idle"
 autoplay = "idle"
-offset = Vector2(0, -16)
+offset = Vector2(0, -20)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 5.0
@@ -106,6 +104,6 @@ neighbor_distance = 20.0
 max_speed = 60.0
 avoidance_layers = 7
 avoidance_mask = 7
-debug_path_custom_color = Color(8.66354e-07, 0.607798, 0.631536, 1)
+debug_path_custom_color = Color(0.704389, 0.372979, 0.795108, 1)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -84,6 +84,18 @@ static func add_meta_item(item: MetaItem):
         meta_inventory_slots[6] = item
     SignalDispatcher.load_meta_items.emit()
 
+static func get_meta_slot_index(item):
+    if item is Backpack:
+        return 0
+    elif item is Map:
+        return 1
+    elif item is GunLicence:
+        return 5
+    elif item is Ticket:
+        return 6
+    # Unknown meta item type
+    return -1
+
 static func remove_meta_item(i: int):
     # if backpack is removed reset cur_inventory_size to default size
     if i == 0:
@@ -117,6 +129,12 @@ static func remove_item(i: int):
                     await Utils.create_timer(ephemeral_item.effect_duration)
                     stats_changed(negated_stats)
         return
+
+static func is_inventory_free() -> bool:
+    for i in range(cur_inventory_size):
+        if inventory_slots[i] == null:
+            return true
+    return false
 
 static func swap_item(from: int, to: int):
     var tmp = inventory_slots[from]

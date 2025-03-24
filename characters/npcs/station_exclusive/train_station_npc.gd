@@ -33,6 +33,7 @@ func _ready() -> void:
 
 func _initialize_navigation() -> void:
     var nav_map: RID = nav_agent.get_navigation_map()
+    await self.get_tree().create_timer(randf_range(2,6)).timeout
     while NavigationServer2D.map_get_iteration_id(nav_map) == 0:
         await NavigationServer2D.map_changed
 

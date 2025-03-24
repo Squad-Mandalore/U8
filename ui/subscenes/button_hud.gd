@@ -1,6 +1,10 @@
 extends Button
 
 @onready var interaction_key_label: Label = $InteractionKeyMarginBox/InteractionKeyLabel
+@export var action_event_key: String = "talk"
+
+func _ready() -> void:
+    set_key_icon(action_event_key)
 
 func is_activated_by_shortcut(action: String) -> bool:
     return Input.is_action_just_pressed(action)

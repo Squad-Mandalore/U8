@@ -99,9 +99,9 @@ theme_override_constants/margin_bottom = 50
 
 [node name="ShopButton" parent="ButtonHudMargin" instance=ExtResource("6_qcng0")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(166, 44)
+custom_minimum_size = Vector2(180, 44)
 layout_mode = 2
 shortcut = SubResource("Shortcut_1w2ol")
-text = "Intergieren   "
+text = "Interagieren   "
 
 [connection signal="pressed" from="ButtonHudMargin/ShopButton" to="." method="_on_shop_button_pressed"]

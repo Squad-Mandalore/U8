@@ -59,10 +59,18 @@ func _on_button_pressed():
         var message = $MessageInput.text
         if validate_message(message):
             $MessageInput.clear()
-            add_message("USER", message)
+            add_message("ICH", message)
             waiting = true
             send_message.emit(message)
 
+func clear_contents():
+    var vbox_container = $ScrollContainer/VBoxContainer
+    if vbox_container:
+        for child in vbox_container.get_children():
+            vbox_container.remove_child(child)
+            child.queue_free()
+    else:
+        printerr("VBoxContainer not found!")
 
 func _on_node_2d_conversation_started(character: Npc) -> void:
     _update_sprite(character)

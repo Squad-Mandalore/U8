@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://byrvn6nh6yeex"]
+
+[ext_resource type="PackedScene" path="res://characters/npcs/enemy.tscn" id="1_r1gx3"]
+[ext_resource type="Texture2D" uid="uid://bvtb4s8unxcie" path="res://characters/npcs/walking-decoration-dudes/man3/assets/man_with_phone_and_red_sweater.png" id="2_mejwv"]
+[ext_resource type="Texture2D" uid="uid://iy787e14u6fl" path="res://characters/npcs/walking-decoration-dudes/man5/assets/man_with_red_sweater.png" id="2_o2gh3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqw8g"]
+atlas = ExtResource("2_mejwv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqy73"]
+atlas = ExtResource("2_mejwv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epb1j"]
+atlas = ExtResource("2_mejwv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx56u"]
+atlas = ExtResource("2_mejwv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxj0k"]
+atlas = ExtResource("2_mejwv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alfli"]
+atlas = ExtResource("2_mejwv")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c74x2"]
+atlas = ExtResource("2_mejwv")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2gh3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqw8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqy73")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epb1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx56u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxj0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alfli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c74x2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[node name="Man3Enemy" instance=ExtResource("1_r1gx3")]
+combat_animation = "idle"
+texture = ExtResource("2_o2gh3")
+battle_intro = "idle"
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_o2gh3")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -15)

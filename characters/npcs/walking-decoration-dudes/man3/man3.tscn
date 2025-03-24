@@ -86,4 +86,4 @@ sprite_frames = SubResource("SpriteFrames_uh131")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.613323
-offset = Vector2(0, -16)
+offset = Vector2(0, -15)

@@ -157,6 +157,10 @@ func _unhandled_input(event: InputEvent):
         else:
             switch_state(State.DANCE)
 
+    if event.is_action_pressed("talk"):
+        if close_map():
+            return
+
     if event.is_action_pressed("ui_cancel"):
         if close_map():
             return
@@ -211,6 +215,8 @@ func _on_slowdown_area_body_exited(body: Node2D):
         _update_talkable_npc(_slowdown_area.get_overlapping_bodies())
 
 func _start_talking(npc: Npc):
+    $EidolonHandler.set_agent(npc._group)
+    _disallow_player_movement()
     switch_state(State.TALK)
     SignalDispatcher.sound_effect.emit("villager")
     _hud.hide_status_panel()
@@ -226,9 +232,11 @@ func _start_scripted_talking(npc: Npc):
     print("You are now talking to %s." % npc._name)
 
 func _stop_talking(npc: Npc):
+    _allow_player_movement()
     switch_state(State.IDLE)
     set_active_hud(_hud)
     _hud.show_status_panel()
+    _dialogue_box.clear_contents()
     print("You are no longer talking to %s." % npc._name)
 
 func _disable_scooting():
@@ -319,8 +327,8 @@ func _on_dialogue_box_send_message(message):
     $EidolonHandler.post_message(message)
 
 func _on_eidolon_handler_get_process_id(process_id):
-    var message = "Process ID: %s" % process_id
-    _dialogue_box.add_message("SYSTEM", message)
+    #var message = "Process ID: %s" % process_id
+    _dialogue_box.add_message("SYSTEM", "Conversation started.")
 
 func _on_eidolon_handler_new_message():
     _dialogue_box.add_message("AGENT")

@@ -11,13 +11,16 @@ func _ready() -> void:
     SignalDispatcher.add_attack_hover.connect(add_attack_hover)
     SignalDispatcher.remove_attack_hover.connect(remove_attack_hover)
     SignalDispatcher.interact_button_toggle.connect(interact_button_toggled)
-    %InteractButton.set_key_icon("talk")
+    SignalDispatcher.remove_button_toggle.connect(remove_button_toggled)
     %InteractButton.hide()
-    %MapButton.set_key_icon("map")
     %MapButton.hide()
+    %RemoveButton.hide()
 
 func interact_button_toggled(flag = null):
     %InteractButton.visible = flag if flag != null else !%InteractButton.visible
+
+func remove_button_toggled(flag = null):
+    %RemoveButton.visible = flag if flag != null else !%RemoveButton.visible
 
 func update_inventory_stats():
     %InventoryHud.update_debuff_stats()
@@ -31,9 +34,11 @@ func update_inventory_balance(new_balance: int) -> void:
     (%BalanceLabel as Label).text = "%d Euronen" % [new_balance]
 
 func _on_map_button_pressed() -> void:
-    var slowpoke_tail = preload("res://items/weapons/slowpoke_tail.tres")
-    SourceOfTruth.add_item(slowpoke_tail)
-    SourceOfTruth.add_meta_item(preload("res://items/meta/map.tres"))
+    if not get_parent().close_map():
+        SourceOfTruth.meta_inventory_slots[1].interact(0)
+    # var slowpoke_tail = preload("res://items/weapons/slowpoke_tail.tres")
+    # SourceOfTruth.add_item(slowpoke_tail)
+    # SourceOfTruth.add_meta_item(preload("res://items/meta/map.tres"))
 
 func add_attack_hover(position: Vector2, attack: Attack):
     attack_hover = attack_hover_scene.instantiate()

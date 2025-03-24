@@ -83,7 +83,6 @@ shape = SubResource("RectangleShape2D_bg0ao")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7gkr1")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.608213
-offset = Vector2(0, -16)
+offset = Vector2(0, -15)

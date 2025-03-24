@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dni73m7g8lip1"]
+[gd_scene load_steps=10 format=3 uid="uid://dni73m7g8lip1"]
 
 [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_amjx2"]
 [ext_resource type="Script" uid="uid://df1v8q384iwij" path="res://scenes/stations/04_lindauer_allee/lindauer_allee.gd" id="2_wlfl4"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dog8wvcx8bhbd" path="res://scenes/stations/04_lindauer_allee/assets/lindauer-allee-floor.png" id="4_co1g7"]
 [ext_resource type="Texture2D" uid="uid://dhr14i1rb2irx" path="res://scenes/stations/04_lindauer_allee/assets/lindauer_allee_fight_floor.png" id="4_n72i5"]
 [ext_resource type="PackedScene" uid="uid://c7sosk2nymvw1" path="res://scenes/stations/04_lindauer_allee/subscenes/tower.tscn" id="5_elohs"]
+[ext_resource type="PackedScene" uid="uid://40q6al2c4n4n" path="res://characters/automatas/snack/snack_vending_machine.tscn" id="8_rt71p"]
+[ext_resource type="PackedScene" uid="uid://dv2v43jv13rjr" path="res://characters/automatas/drink/drink_vending_machine.tscn" id="9_2yhnk"]
 
 [node name="LindauerAllee" instance=ExtResource("1_amjx2")]
 script = ExtResource("2_wlfl4")
@@ -76,3 +78,9 @@ position = Vector2(627, 323)
 
 [node name="SeatingArea3" parent="Node2D/SeatingAreas" index="2"]
 position = Vector2(961, 323)
+
+[node name="SnackVendingMachine" parent="Node2D" index="12" instance=ExtResource("8_rt71p")]
+position = Vector2(443, 333)
+
+[node name="DrinkVendingMachine" parent="Node2D" index="13" instance=ExtResource("9_2yhnk")]
+position = Vector2(469, 333)

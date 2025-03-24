@@ -28,10 +28,10 @@ theme_override_constants/margin_bottom = 50
 
 [node name="ButtonHud" parent="ButtonHudMargin" instance=ExtResource("2_7ixmm")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(166, 44)
+custom_minimum_size = Vector2(180, 44)
 layout_mode = 2
 shortcut = SubResource("Shortcut_8icef")
-text = "Intergieren   "
+text = "Interagieren   "
 
 [node name="StatusPanelMargin" type="MarginContainer" parent="."]
 anchors_preset = 2
