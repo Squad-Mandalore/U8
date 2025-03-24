@@ -25,7 +25,6 @@ func _ready() -> void:
 
 func assign_random_group() -> void:
     _group = groups[randi() % groups.size()]
-    print("NPC %s wurde der Gruppe %s zugeordnet" % [_name, _group])
 
 func start_talking() -> void:
     _current_state = State.TALK
