@@ -27,7 +27,7 @@ drug_level = 0
 [resource]
 script = ExtResource("1_28hli")
 stats = SubResource("Resource_hodkb")
-price = 140
+price = 70
 name = "Regenmantel"
 description = "Es gibt kein schlechtes Wetter, nur schlechte Ausweichwerte! Und in Berlin regnet es oft. Auch drinnen. In der Bahn. Von der Decke."
 texture = ExtResource("3_k4ptc")

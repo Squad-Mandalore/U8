@@ -27,7 +27,7 @@ drug_level = 0
 [resource]
 script = ExtResource("1_6q3oq")
 stats = SubResource("Resource_hodkb")
-price = 100
+price = 50
 name = "Halskette"
 description = "Mit ihrem strahlenden Glanz verleiht sie dir den urbanen Glamour, der selbst die düstersten Tunnel Berlins in ein glitzerndes Abenteuer verwandelt. Ein Accessoire, das beweist: Wahre Eleganz findet man nicht nur an oberirdischen Catwalks, sondern auch in den Tiefen der Berliner U-Bahn – und das mit einem Augenzwinkern!"
 texture = ExtResource("3_csgsk")

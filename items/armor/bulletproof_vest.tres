@@ -27,7 +27,7 @@ drug_level = 0
 [resource]
 script = ExtResource("2_qfq6o")
 stats = SubResource("Resource_hodkb")
-price = 500
+price = 250
 name = "Kugelsichere Weste"
 description = "Weil man in Berlin nie wissen kann, was hinter der nächsten Haltestelle auf einen wartet. Sicher ist sicher – und in der U8 bist du definitiv nicht sicher."
 texture = ExtResource("3_tfa8c")

@@ -1,7 +1,33 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3axrnq57u4k3"]
+[gd_scene load_steps=17 format=3 uid="uid://c3axrnq57u4k3"]
 
 [ext_resource type="PackedScene" uid="uid://byec1snmmls3p" path="res://characters/npcs/enemy.tscn" id="1_xdbbp"]
 [ext_resource type="Texture2D" uid="uid://bi214p4iayhkj" path="res://characters/npcs/walking-decoration-dudes/man1/assets/man_with_green_sweater.png" id="2_54qgp"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_u2il7"]
+[ext_resource type="Resource" uid="uid://cq1wjf5oviin5" path="res://characters/attacks/assets/boxing.tres" id="3_vn524"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="3_vttry"]
+[ext_resource type="Resource" uid="uid://t830h01kxeh2" path="res://characters/attacks/assets/normal_hit.tres" id="4_f0m2d"]
+[ext_resource type="Resource" uid="uid://oui3w7vat6ib" path="res://characters/attacks/assets/show_off.tres" id="5_d3v57"]
+
+[sub_resource type="Resource" id="Resource_vn524"]
+script = ExtResource("3_vttry")
+max_health = 100
+health = 100
+armor = 0
+initiative = 20
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_avgbw"]
 atlas = ExtResource("2_54qgp")
@@ -66,8 +92,11 @@ animations = [{
 }]
 
 [node name="Man1Enemy" instance=ExtResource("1_xdbbp")]
+attacks = Array[ExtResource("2_u2il7")]([ExtResource("3_vn524"), ExtResource("4_f0m2d"), ExtResource("5_d3v57")])
 combat_animation = "idle"
+stats = SubResource("Resource_vn524")
 texture = ExtResource("2_54qgp")
+winning_money = 30
 battle_intro = "idle"
 
 [node name="AnimatedSprite2D" parent="." index="2"]

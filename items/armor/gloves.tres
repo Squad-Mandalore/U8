@@ -27,7 +27,7 @@ drug_level = 0
 [resource]
 script = ExtResource("1_6um4g")
 stats = SubResource("Resource_hodkb")
-price = 100
+price = 50
 name = "Handschuhe"
 description = "Ein paar gute alte Handschuhe, praktisch für alles und um sich zu schützen vor Wind, Kälte und Handverletzungen wenn du etwas oder jemanden verprügelst!"
 texture = ExtResource("3_e4jnv")

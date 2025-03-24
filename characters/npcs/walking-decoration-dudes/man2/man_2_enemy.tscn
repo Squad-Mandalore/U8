@@ -1,7 +1,144 @@
-[gd_scene load_steps=11 format=3 uid="uid://d010oximtdpb0"]
+[gd_scene load_steps=22 format=3 uid="uid://d010oximtdpb0"]
 
 [ext_resource type="PackedScene" uid="uid://byec1snmmls3p" path="res://characters/npcs/enemy.tscn" id="1_oa548"]
 [ext_resource type="Texture2D" uid="uid://x8ya14f2lsx4" path="res://characters/npcs/walking-decoration-dudes/man2/assets/man_with_phone_and_blue_sweater.png" id="2_lnegu"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_x3xm5"]
+[ext_resource type="Resource" uid="uid://t830h01kxeh2" path="res://characters/attacks/assets/normal_hit.tres" id="3_rlyrt"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_1torv"]
+[ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="5_jb3rv"]
+
+[sub_resource type="Resource" id="Resource_wtxvo"]
+script = ExtResource("4_1torv")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_1as0j"]
+script = ExtResource("5_jb3rv")
+base = 35
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
+
+[sub_resource type="Resource" id="Resource_j0fxf"]
+script = ExtResource("2_x3xm5")
+name = "Digitaler Angriff"
+damage = SubResource("Resource_wtxvo")
+type = 3
+token = 3
+token_number = 1
+effect = ""
+formula = SubResource("Resource_1as0j")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
+
+[sub_resource type="Resource" id="Resource_dx2ba"]
+script = ExtResource("4_1torv")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_1jmk3"]
+script = ExtResource("5_jb3rv")
+base = 50
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
+
+[sub_resource type="Resource" id="Resource_pw40v"]
+script = ExtResource("2_x3xm5")
+name = "Kollegen anrufen"
+damage = SubResource("Resource_dx2ba")
+type = 3
+token = 3
+token_number = 1
+effect = ""
+formula = SubResource("Resource_1jmk3")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
+
+[sub_resource type="Resource" id="Resource_gcw8p"]
+script = ExtResource("4_1torv")
+max_health = 80
+health = 80
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rnhbv"]
 atlas = ExtResource("2_lnegu")
@@ -66,8 +203,11 @@ animations = [{
 }]
 
 [node name="Man2Enemy" instance=ExtResource("1_oa548")]
+attacks = Array[ExtResource("2_x3xm5")]([ExtResource("3_rlyrt"), SubResource("Resource_j0fxf"), SubResource("Resource_pw40v")])
 combat_animation = "idle"
+stats = SubResource("Resource_gcw8p")
 texture = ExtResource("2_lnegu")
+winning_money = 30
 battle_intro = "idle"
 
 [node name="AnimatedSprite2D" parent="." index="2"]

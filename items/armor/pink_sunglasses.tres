@@ -27,7 +27,7 @@ drug_level = 0
 [resource]
 script = ExtResource("1_tygtv")
 stats = SubResource("Resource_hodkb")
-price = 80
+price = 40
 name = "Pinke Sonnenbrille"
 description = "Warum unauffällig sein, wenn man mit der pinken Sonnenbrille der Rebellion die Blicke auf sich ziehen kann? Dieses Accessoire ist ein lauter Aufschrei gegen den grauen Berliner Alltag – kühn, extravagant und so episch, dass selbst die U8-Beschilderung vor Neid erblasst. Ideal für Helden, die wissen, dass Stil immer ein bisschen verrückt sein darf!"
 texture = ExtResource("3_cfwbi")

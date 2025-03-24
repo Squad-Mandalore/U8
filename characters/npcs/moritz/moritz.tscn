@@ -232,8 +232,8 @@ metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_66nhw"]
 script = ExtResource("4_c250q")
-max_health = 150
-health = 2
+max_health = 1000
+health = 1000
 armor = 0
 initiative = 1
 dodge_chance = 0

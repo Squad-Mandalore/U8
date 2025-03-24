@@ -27,7 +27,7 @@ drug_level = 0
 [resource]
 script = ExtResource("1_gl0pf")
 stats = SubResource("Resource_hodkb")
-price = 200
+price = 100
 name = "Hawaiihemd"
 description = "Das Kleidungsstück, das sowohl 'Ich bin im Urlaub' als auch 'Ich habe die Kontrolle über mein Leben verloren' schreit – perfekt für einen Ausflug in die Tiefen der U8."
 texture = ExtResource("3_sro2r")

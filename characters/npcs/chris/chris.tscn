@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b3rhg6v5iv4dc" path="res://characters/npcs/chris/chris.gd" id="1_muxck"]
 [ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_twkw8"]
-[ext_resource type="Resource" uid="uid://cq1wjf5oviin5" path="res://characters/attacks/assets/boxing.tres" id="3_7g82s"]
+[ext_resource type="Resource" uid="uid://t830h01kxeh2" path="res://characters/attacks/assets/normal_hit.tres" id="3_eviri"]
 [ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_eviri"]
 [ext_resource type="Resource" uid="uid://fngonw15cf5o" path="res://characters/classes/assets/honest_burgy.tres" id="4_thv40"]
 [ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="5_iyqgk"]
@@ -87,7 +87,7 @@ metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_gw7bl"]
 script = ExtResource("5_iyqgk")
-base = 50
+base = 20
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
@@ -147,7 +147,7 @@ floor_block_on_wall = false
 floor_snap_length = 0.0
 platform_on_leave = 2
 script = ExtResource("1_muxck")
-attacks = Array[ExtResource("2_twkw8")]([ExtResource("3_7g82s"), SubResource("Resource_ibfy5"), SubResource("Resource_ya1pr")])
+attacks = Array[ExtResource("2_twkw8")]([ExtResource("3_eviri"), SubResource("Resource_ibfy5"), SubResource("Resource_ya1pr")])
 combat_animation = "idle"
 stats = ExtResource("4_thv40")
 texture = ExtResource("6_8mk7p")

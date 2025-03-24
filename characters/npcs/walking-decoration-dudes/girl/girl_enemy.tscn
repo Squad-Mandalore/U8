@@ -1,7 +1,199 @@
-[gd_scene load_steps=11 format=3 uid="uid://ub7yedi2xawo"]
+[gd_scene load_steps=24 format=3 uid="uid://ub7yedi2xawo"]
 
 [ext_resource type="PackedScene" uid="uid://byec1snmmls3p" path="res://characters/npcs/enemy.tscn" id="1_g3dvc"]
+[ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_6b7kj"]
 [ext_resource type="Texture2D" uid="uid://cjpjweiyi8ws1" path="res://characters/npcs/walking-decoration-dudes/girl/assets/girl_with_phone_and_pink_top.png" id="2_j3cex"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="3_rykek"]
+[ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="4_8bxsk"]
+
+[sub_resource type="Resource" id="Resource_stugs"]
+script = ExtResource("3_rykek")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_4stbv"]
+script = ExtResource("4_8bxsk")
+base = 25
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
+
+[sub_resource type="Resource" id="Resource_41cg4"]
+script = ExtResource("2_6b7kj")
+name = "Eleganter Schlag"
+damage = SubResource("Resource_stugs")
+type = 0
+token = 0
+token_number = 1
+effect = ""
+formula = SubResource("Resource_4stbv")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
+
+[sub_resource type="Resource" id="Resource_unpmr"]
+script = ExtResource("3_rykek")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 1
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_nqag0"]
+script = ExtResource("4_8bxsk")
+base = 25
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
+
+[sub_resource type="Resource" id="Resource_8ctdn"]
+script = ExtResource("2_6b7kj")
+name = "Schönheits OP"
+damage = SubResource("Resource_unpmr")
+type = 0
+token = 0
+token_number = 1
+effect = "Operiert den Gegner auf die Schnelle. Dieser blutet langsam aus"
+formula = SubResource("Resource_nqag0")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
+
+[sub_resource type="Resource" id="Resource_ncuhq"]
+script = ExtResource("3_rykek")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 1
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
+[sub_resource type="Resource" id="Resource_lvl6e"]
+script = ExtResource("4_8bxsk")
+base = 15
+max_health_modifier = 0.0
+health_modifier = 0.0
+armor_modifier = 0.0
+initiative_modifier = 0.0
+dodge_chance_modifier = 0.0
+strength_modifier = 0.0
+coolness_modifier = 0.0
+attractiveness_modifier = 0.0
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
+luck_modifier = 0.0
+poison_resistance_modifier = 0.0
+bleed_resistance_modifier = 0.0
+drug_resistance_modifier = 0.0
+poison_level_modifier = 0.0
+bleed_level_modifier = 0.0
+drug_level_modifier = 0.0
+effect_modifier = 1.0
+effect_flat_modifier = 0
+metadata/_custom_type_script = "uid://cfy8h0an8klxl"
+
+[sub_resource type="Resource" id="Resource_3qkha"]
+script = ExtResource("2_6b7kj")
+name = "Haarspray Angriff"
+damage = SubResource("Resource_ncuhq")
+type = 0
+token = 0
+token_number = 1
+effect = "vergiftet den Gegner"
+formula = SubResource("Resource_lvl6e")
+metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
+
+[sub_resource type="Resource" id="Resource_6aysx"]
+script = ExtResource("3_rykek")
+max_health = 70
+health = 70
+armor = 0
+initiative = 30
+dodge_chance = 5
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vabhw"]
 atlas = ExtResource("2_j3cex")
@@ -66,7 +258,9 @@ animations = [{
 }]
 
 [node name="GirlEnemy" instance=ExtResource("1_g3dvc")]
+attacks = Array[ExtResource("2_6b7kj")]([SubResource("Resource_41cg4"), SubResource("Resource_8ctdn"), SubResource("Resource_3qkha")])
 combat_animation = "idle"
+stats = SubResource("Resource_6aysx")
 texture = ExtResource("2_j3cex")
 battle_intro = "idle"
 
