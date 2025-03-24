@@ -335,12 +335,11 @@ size = Vector2(32, 8)
 collision_layer = 5
 script = ExtResource("1_14ojo")
 attacks = Array[ExtResource("2_o70t1")]([SubResource("Resource_oinw4")])
-combat_animation = "idle"
 stats = SubResource("Resource_updai")
 texture = SubResource("Resource_dl5hi")
 winning_money = 10000
-battle_intro = "idle"
 _name = "Berliner Bär"
+_random_name = false
 _gender = "Male"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

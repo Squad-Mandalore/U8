@@ -96,7 +96,6 @@ texture = ExtResource("6_elllx")
 unique_name_in_owner = true
 position = Vector2(772, 288)
 texture = ExtResource("9_ih577")
-battle_intro = "battle_intro"
 
 [node name="BossArea" type="Area2D" parent="." index="3"]
 position = Vector2(0, 186)

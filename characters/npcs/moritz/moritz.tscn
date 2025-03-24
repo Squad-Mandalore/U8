@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b4otvyfs5p5ek"]
+[gd_scene load_steps=37 format=3 uid="uid://b4otvyfs5p5ek"]
 
 [ext_resource type="Script" uid="uid://ugbc4t3rh41q" path="res://characters/npcs/moritz/moritz.gd" id="1_wp3ic"]
 [ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_e34y4"]
@@ -25,8 +25,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 1
 drug_level = 0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mn68h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bu3e"]
 size = Vector2(20, 4)
@@ -250,10 +248,8 @@ collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_wp3ic")
 attacks = Array[ExtResource("2_e34y4")]([ExtResource("3_10xgp")])
-combat_animation = "idle"
 stats = SubResource("Resource_66nhw")
-texture = SubResource("CompressedTexture2D_mn68h")
-battle_intro = "idle"
+texture = ExtResource("6_chcch")
 _name = "Der Moritz"
 _random_name = false
 _gender = "Male"
