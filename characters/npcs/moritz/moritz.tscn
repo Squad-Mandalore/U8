@@ -27,7 +27,6 @@ bleed_level = 1
 drug_level = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mn68h"]
-load_path = "res://.godot/imported/dasd.png-0846e841dbf4d3e24747a326fb70d453.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bu3e"]
 size = Vector2(20, 4)
@@ -200,10 +199,10 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2y51k")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_xlgsq")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_hc1ur")
 }, {
 "duration": 1.0,
@@ -212,7 +211,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_stpds")
 }, {
-"duration": 1.0,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_n13bj")
 }],
 "loop": true,
@@ -264,8 +263,9 @@ shape = SubResource("RectangleShape2D_4bu3e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sba5t")
-animation = &"idle"
+animation = &"battle_intro"
 autoplay = "idle"
+frame_progress = 0.941272
 offset = Vector2(0, -16)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
