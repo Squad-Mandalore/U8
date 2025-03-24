@@ -5,6 +5,7 @@ class_name Automata
 @onready var current_shop_inventory: Array[Item] = shop_inventory.duplicate()
 @export var shop_name: String
 @onready var sprite2D = $Sprite2D
+const outline_shader = preload("res://characters/npcs/assets/npc.gdshader")
 var shop_hud: Control
 var shop_info_panel: Control
 
@@ -27,7 +28,21 @@ func close_shop():
     pass
 
 func enable_outline(color : Color = Color(0, 1, 0, 1)) -> void:
-    pass
+    # Create and assign a ShaderMaterial with the given outline shader
+    if outline_shader:
+        var mat = ShaderMaterial.new()
+        mat.shader = outline_shader
+        # Adjust parameters as needed
+        mat.set_shader_parameter("outline_thickness", 0.5)
+        mat.set_shader_parameter("outline_color", color)
+        sprite2D.material = mat
+    else:
+        # No shader assigned
+        sprite2D.material = null
 
 func disable_outline() -> void:
-    pass
+    sprite2D.material = null
+
+# Constants for distances (tweak as needed)
+const CHECK_DISTANCE: float = 24.0
+const MOVE_OFFSET: float = 5.0
