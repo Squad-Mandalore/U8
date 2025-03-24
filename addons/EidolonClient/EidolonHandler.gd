@@ -35,7 +35,7 @@ func on_new_sse_event(headers, event, data):
     match data["category"]:
         "end":
             finish_message.emit()
-            $HTTPSSEClient.is_requested = false
+            $HTTPSSEClient.state = $HTTPSSEClient.ConnectionState.CONNECTED
         "output": get_message.emit(data["content"])
         "transform": pass
 
@@ -80,6 +80,5 @@ func set_agent(group: String):
 
 func _connect_sse():
     var sub_url = "" # Add the "/sub_list_url" stuff here, including query parameters as needed; for demo purposes, I use the list path in my Firebase database, combined with ".json?auth=" and whatever the auth token is.
-    $HTTPSSEClient.process_id = process_id
     $HTTPSSEClient.connected.connect(on_sse_connected)
-    $HTTPSSEClient.connect_to_host("localhost", sub_url, 8080, true, false)
+    $HTTPSSEClient.connect_to_host("localhost", sub_url, 8080)
