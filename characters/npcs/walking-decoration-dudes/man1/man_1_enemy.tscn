@@ -10,8 +10,8 @@
 
 [sub_resource type="Resource" id="Resource_vn524"]
 script = ExtResource("3_vttry")
-max_health = 100
-health = 100
+max_health = 70
+health = 70
 armor = 0
 initiative = 20
 dodge_chance = 0

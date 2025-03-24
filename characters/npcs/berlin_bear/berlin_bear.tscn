@@ -232,8 +232,8 @@ metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_updai"]
 script = ExtResource("2_ycp2m")
-max_health = 2000
-health = 200
+max_health = 500
+health = 500
 armor = 2
 initiative = 0
 dodge_chance = 0

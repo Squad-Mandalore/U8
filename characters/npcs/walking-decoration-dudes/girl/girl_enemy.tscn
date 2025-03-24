@@ -85,7 +85,7 @@ metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_nqag0"]
 script = ExtResource("4_8bxsk")
-base = 25
+base = 20
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
@@ -262,6 +262,7 @@ attacks = Array[ExtResource("2_6b7kj")]([SubResource("Resource_41cg4"), SubResou
 combat_animation = "idle"
 stats = SubResource("Resource_6aysx")
 texture = ExtResource("2_j3cex")
+winning_money = 30
 battle_intro = "idle"
 
 [node name="AnimatedSprite2D" parent="." index="2"]

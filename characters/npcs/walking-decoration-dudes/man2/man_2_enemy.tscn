@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_1as0j"]
 script = ExtResource("5_jb3rv")
-base = 35
+base = 25
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
@@ -86,7 +86,7 @@ metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_1jmk3"]
 script = ExtResource("5_jb3rv")
-base = 50
+base = 20
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
@@ -121,8 +121,8 @@ metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_gcw8p"]
 script = ExtResource("4_1torv")
-max_health = 80
-health = 80
+max_health = 70
+health = 70
 armor = 0
 initiative = 0
 dodge_chance = 0
