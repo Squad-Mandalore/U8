@@ -151,16 +151,6 @@ func switch_state(new_state: State):
                 _sprite.play("scooting_horizontal")
 
 func _unhandled_input(event: InputEvent):
-    if event.is_action_pressed("dance"):
-        if _current_state == State.DANCE:
-            switch_state(State.IDLE)
-        else:
-            switch_state(State.DANCE)
-
-    if event.is_action_pressed("interact"):
-        if close_map():
-            return
-
     if event.is_action_pressed("ui_cancel"):
         if close_map():
             return
@@ -174,6 +164,19 @@ func _unhandled_input(event: InputEvent):
                 _interactable_npc.stop_talking()
                 _stop_talking()
             get_viewport().set_input_as_handled()
+            
+    if _current_state == State.TALK:
+        return
+        
+    if event.is_action_pressed("dance"):
+        if _current_state == State.DANCE:
+            switch_state(State.IDLE)
+        else:
+            switch_state(State.DANCE)
+
+    if event.is_action_pressed("interact"):
+        if close_map():
+            return
 
     if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and _inventory.inventory_info_panel.visible:
         SignalDispatcher.toggle_item_hud.emit(null)
