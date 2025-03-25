@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_twkw8"]
 [ext_resource type="Resource" uid="uid://t830h01kxeh2" path="res://characters/attacks/assets/normal_hit.tres" id="3_eviri"]
 [ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_eviri"]
-[ext_resource type="Resource" uid="uid://fngonw15cf5o" path="res://characters/classes/assets/honest_burgy.tres" id="4_thv40"]
 [ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="5_iyqgk"]
 [ext_resource type="Texture2D" uid="uid://c7bmp1m2bwr3l" path="res://characters/npcs/chris/assets/ChrisEhrlich.png" id="6_8mk7p"]
 
@@ -120,6 +119,27 @@ effect = "Zauberspruch der Vergiftung"
 formula = SubResource("Resource_gw7bl")
 metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
+[sub_resource type="Resource" id="Resource_a7opu"]
+script = ExtResource("4_eviri")
+max_health = 70
+health = 70
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 5
+attractiveness = 0
+intelligence = 0
+creativity = 5
+luck = 10
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+metadata/_custom_type_script = "uid://1axonyyckejw"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
 size = Vector2(20, 4)
 
@@ -149,7 +169,7 @@ platform_on_leave = 2
 script = ExtResource("1_muxck")
 attacks = Array[ExtResource("2_twkw8")]([ExtResource("3_eviri"), SubResource("Resource_ibfy5"), SubResource("Resource_ya1pr")])
 combat_animation = "idle"
-stats = ExtResource("4_thv40")
+stats = SubResource("Resource_a7opu")
 texture = ExtResource("6_8mk7p")
 battle_intro = "idle"
 _name = "Chris Chistead"

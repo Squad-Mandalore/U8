@@ -178,8 +178,8 @@ metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_u8nwv"]
 script = ExtResource("4_ppfdp")
-max_health = 750
-health = 700
+max_health = 300
+health = 300
 armor = 0
 initiative = 0
 dodge_chance = 1

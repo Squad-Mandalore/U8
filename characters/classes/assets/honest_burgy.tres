@@ -10,7 +10,7 @@
 script = ExtResource("5_ro1kk")
 name = "Honest Burgy"
 attacks = Array[ExtResource("1_pp011")]([ExtResource("2_utxx7"), ExtResource("3_x0a7h"), ExtResource("4_s13dw")])
-max_health = 70
+max_health = 75
 health = 70
 armor = 0
 initiative = 10
