@@ -44,4 +44,3 @@ func set_margin_bottom(margin_bottom: int):
 func set_font_size(font_size: int):
     %StatNameLabel.add_theme_font_size_override("font_size", font_size)
     %StatNumberLabel.add_theme_font_size_override("font_size", font_size)
-    # %StatNumberLabel.add_theme_font_override("font_size", font_size)

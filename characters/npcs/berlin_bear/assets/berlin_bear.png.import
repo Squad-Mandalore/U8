@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs43pdjvpvgn1"
-path="res://.godot/imported/berlin-bear_2.png-70f166e510ed671db5e5255bf84370e3.ctex"
+uid="uid://ctr6mrpx66auy"
+path="res://.godot/imported/berlin_bear.png-f355b23d00ff265fa8a41768384def2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/npcs/berlin_bear/assets/berlin-bear_2.png"
-dest_files=["res://.godot/imported/berlin-bear_2.png-70f166e510ed671db5e5255bf84370e3.ctex"]
+source_file="res://characters/npcs/berlin_bear/assets/berlin_bear.png"
+dest_files=["res://.godot/imported/berlin_bear.png-f355b23d00ff265fa8a41768384def2b.ctex"]
 
 [params]
 

@@ -1,9 +1,5 @@
 extends Enemy
 
-func start_talking() -> void:
-    _current_state = State.TALK
-    enable_outline(Color(0, 0, 1, 1))
-
 func _on_animated_sprite_2d_animation_finished() -> void:
     if _sprite.animation == "idle2":
         _sprite.play("idle")

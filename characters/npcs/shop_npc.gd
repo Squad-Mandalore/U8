@@ -25,8 +25,7 @@ func open_shop(shop_canvas: CanvasLayer):
     shop_hud.reload(true, current_shop_inventory, _name, _sprite.sprite_frames)
 
 func close_shop():
-    var _sub_state = SubState.NONE
-    print("close shop")
+    _sub_state = SubState.NONE
 
 func is_shop_open() -> bool:
     return _sub_state == SubState.SHOP

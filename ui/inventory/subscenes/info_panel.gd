@@ -12,7 +12,6 @@ var resistance_hud_scene = preload("res://ui/inventory/subscenes/resistance_info
 var status_types_hud_scene = preload("res://ui/inventory/subscenes/resistance_info.tscn")
 
 func _ready() -> void:
-    # SignalDispatcher.start_timer.connect(start_timer)
     SignalDispatcher.toggle_item_hud.connect(toggle_item_hud)
     SignalDispatcher.toggle_resistance_hud.connect(toggle_resistance_hud)
     SignalDispatcher.toggle_status_types_hud.connect(toggle_status_types_hud)

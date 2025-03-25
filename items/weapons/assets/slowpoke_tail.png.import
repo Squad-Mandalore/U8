@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dydli3tg61uy4"
-path="res://.godot/imported/moritz.png-752a6c1feab3a569fab9ec31702cca8d.ctex"
+uid="uid://30dfomf3xlrl"
+path="res://.godot/imported/slowpoke_tail.png-c39f79455a05698d588bbdc53a302cbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/npcs/moritz/assets/moritz.png"
-dest_files=["res://.godot/imported/moritz.png-752a6c1feab3a569fab9ec31702cca8d.ctex"]
+source_file="res://items/weapons/assets/slowpoke_tail.png"
+dest_files=["res://.godot/imported/slowpoke_tail.png-c39f79455a05698d588bbdc53a302cbd.ctex"]
 
 [params]
 
