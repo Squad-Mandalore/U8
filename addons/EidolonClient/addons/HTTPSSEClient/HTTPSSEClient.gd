@@ -75,6 +75,7 @@ func _process(delta):
     if status == HTTPClient.STATUS_CONNECTION_ERROR:
         state = ConnectionState.DISCONNECTED
         connection_error.emit("Connection error detected. Reconnecting...")
+        attempt_to_connect()
         return
 
     # Transition from connecting to connected.

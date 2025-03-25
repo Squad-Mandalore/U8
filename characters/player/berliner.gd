@@ -151,6 +151,23 @@ func switch_state(new_state: State):
                 _sprite.play("scooting_horizontal")
 
 func _unhandled_input(event: InputEvent):
+    if event.is_action_pressed("ui_cancel"):
+        if close_map():
+            return
+        if _inventory.visible or _shop_hud.visible:
+            _stop_shopping()
+            set_active_hud(_hud)
+            SignalDispatcher.sound_effect.emit("exit")
+            get_viewport().set_input_as_handled()
+        elif _dialogue_box.visible and _current_state == State.TALK:
+            if _interactable_npc:
+                _interactable_npc.stop_talking()
+                _stop_talking()
+            get_viewport().set_input_as_handled()
+            
+    if _current_state == State.TALK:
+        return
+        
     if event.is_action_pressed("dance"):
         if _current_state == State.DANCE:
             switch_state(State.IDLE)
@@ -160,15 +177,6 @@ func _unhandled_input(event: InputEvent):
     if event.is_action_pressed("interact"):
         if close_map():
             return
-
-    if event.is_action_pressed("ui_cancel"):
-        if close_map():
-            return
-        if _inventory.visible or _shop_hud.visible:
-            _stop_shopping()
-            set_active_hud(_hud)
-            SignalDispatcher.sound_effect.emit("exit")
-            get_viewport().set_input_as_handled()
 
     if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and _inventory.inventory_info_panel.visible:
         SignalDispatcher.toggle_item_hud.emit(null)
@@ -217,6 +225,7 @@ func _on_slowdown_area_body_exited(body: Node2D):
 func _start_talking(npc: Npc):
     $EidolonHandler.set_agent(npc._group)
     _disallow_player_movement()
+    set_process_unhandled_input(true)
     switch_state(State.TALK)
     SignalDispatcher.sound_effect.emit("villager")
     _hud.hide_status_panel()
@@ -321,15 +330,23 @@ func set_active_hud(active_hud: CanvasLayer = null):
 func _on_dialogue_box_send_message(message):
     $EidolonHandler.post_message(message)
 
-func _on_eidolon_handler_get_process_id(process_id):
-    #var message = "Process ID: %s" % process_id
-    _dialogue_box.add_message("SYSTEM", "Conversation started.")
+#func _on_eidolon_handler_get_process_id(process_id):
+    # This function is for making the first message be a reply from the AI.
+    #$EidolonHandler.post_message("hi")
+    #_dialogue_box.add_message(true, "Conversation started.")
 
 func _on_eidolon_handler_new_message():
-    _dialogue_box.add_message("AGENT")
+    _dialogue_box.add_message(true)
 
 func _on_eidolon_handler_get_message(message):
-    _dialogue_box.update_last_message(message)
+    # This will receive the AI's response to our initial "hi"
+    if _dialogue_box.chat_history.get_child_count() == 0:
+        # If this is the first message (response to "hi"), add it as a new message
+        _dialogue_box.add_message(true, message)
+    else:
+        # Otherwise, update the last message as usual
+        _dialogue_box.update_last_message(message)
+    #_dialogue_box.update_last_message(message)
 
 func _on_eidolon_handler_finish_message():
     _dialogue_box.waiting = false
