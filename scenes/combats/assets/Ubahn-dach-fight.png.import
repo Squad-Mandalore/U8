@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://6cc22tmjjjyy"
 path.s3tc="res://.godot/imported/Ubahn-dach-fight.png-bf61472174785f715ea28ccf1f4d08bf.s3tc.ctex"
+path.etc2="res://.godot/imported/Ubahn-dach-fight.png-bf61472174785f715ea28ccf1f4d08bf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/combats/assets/Ubahn-dach-fight.png"
-dest_files=["res://.godot/imported/Ubahn-dach-fight.png-bf61472174785f715ea28ccf1f4d08bf.s3tc.ctex"]
+dest_files=["res://.godot/imported/Ubahn-dach-fight.png-bf61472174785f715ea28ccf1f4d08bf.s3tc.ctex", "res://.godot/imported/Ubahn-dach-fight.png-bf61472174785f715ea28ccf1f4d08bf.etc2.ctex"]
 
 [params]
 
