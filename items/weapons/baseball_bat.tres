@@ -32,7 +32,6 @@ effect_flat_modifier = 0
 [sub_resource type="Resource" id="Resource_di1hx"]
 script = ExtResource("1_xssw7")
 name = "Ordnungsruf"
-damage = 0
 type = 3
 token = 2
 token_number = 1

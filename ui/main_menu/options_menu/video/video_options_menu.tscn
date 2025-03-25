@@ -6,5 +6,8 @@
 [node name="Video" instance=ExtResource("1_601c8")]
 script = ExtResource("2_byx6q")
 
+[node name="FullscreenControl" parent="VBoxContainer" index="0"]
+option_name = "Vollbild"
+
 [node name="ResolutionControl" parent="VBoxContainer" index="1"]
-property_type = 6
+option_name = "Auflösung"

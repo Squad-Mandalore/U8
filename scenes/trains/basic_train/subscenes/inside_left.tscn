@@ -81,7 +81,6 @@ z_index = 75
 position = Vector2(87, 72)
 _group = "politiker"
 
-
 [node name="PointedAway11" parent="." instance=ExtResource("5_4kxwr")]
 z_index = 75
 position = Vector2(100, 72)

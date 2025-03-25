@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bc7wxl4cf36oe"]
 
 [ext_resource type="Script" uid="uid://bb6f8bwa2iwx2" path="res://ui/combat/subscenes/attack_hover.gd" id="1_7dsqd"]
-[ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="1_25r8k"]
 [ext_resource type="StyleBox" uid="uid://dx03p6kn7rnup" path="res://ui/combat/assets/floating_attack_info.tres" id="1_657hu"]
 [ext_resource type="Texture2D" uid="uid://cv8aem4xmtugh" path="res://ui/combat/assets/info_star.svg" id="2_5it3j"]
-[ext_resource type="FontFile" uid="uid://dxnffxcr65xja" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Light.ttf" id="3_leda1"]
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="3_es73l"]
+[ext_resource type="FontFile" uid="uid://vr6hpe1x812q" path="res://assets/fonts/nippo/OTF/Nippo-Light.otf" id="5_uy7rv"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_iuk4x"]
 color = Color(0.254902, 0.254902, 0.254902, 1)
@@ -45,7 +45,7 @@ theme_override_constants/separation = 0
 [node name="NameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_25r8k")
+theme_override_fonts/font = ExtResource("3_es73l")
 theme_override_font_sizes/font_size = 24
 text = "vergiften"
 
@@ -54,7 +54,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(1, 0.262745, 0.27451, 1)
-theme_override_fonts/font = ExtResource("1_25r8k")
+theme_override_fonts/font = ExtResource("3_es73l")
 theme_override_font_sizes/font_size = 20
 text = "10 Schaden"
 
@@ -79,7 +79,7 @@ theme_override_constants/separation = 0
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.870588, 0.870588, 0.870588, 1)
-theme_override_fonts/font = ExtResource("1_25r8k")
+theme_override_fonts/font = ExtResource("3_es73l")
 theme_override_font_sizes/font_size = 20
 text = "Angriffstyp:"
 
@@ -88,7 +88,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.980392, 0.443137, 1, 1)
-theme_override_fonts/font = ExtResource("1_25r8k")
+theme_override_fonts/font = ExtResource("3_es73l")
 theme_override_font_sizes/font_size = 20
 text = "Attraktivität"
 
@@ -99,7 +99,7 @@ theme_override_constants/separation = 0
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.870588, 0.870588, 0.870588, 1)
-theme_override_fonts/font = ExtResource("1_25r8k")
+theme_override_fonts/font = ExtResource("3_es73l")
 theme_override_font_sizes/font_size = 20
 text = "Token:"
 
@@ -108,7 +108,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.47451, 0.721569, 1, 1)
-theme_override_fonts/font = ExtResource("1_25r8k")
+theme_override_fonts/font = ExtResource("3_es73l")
 theme_override_font_sizes/font_size = 20
 text = "+1 Intelligenz"
 
@@ -145,7 +145,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.870588, 0.870588, 0.870588, 1)
-theme_override_fonts/normal_font = ExtResource("3_leda1")
+theme_override_fonts/normal_font = ExtResource("5_uy7rv")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Effekt: nachfolgende Angriffe verursachen mehr Schaden

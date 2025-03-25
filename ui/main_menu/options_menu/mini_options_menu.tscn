@@ -5,3 +5,10 @@
 
 [node name="MiniOptionsMenu" instance=ExtResource("1_wx2uh")]
 script = ExtResource("2_iaey5")
+
+[node name="MuteControl" parent="." index="1"]
+option_name = "Stumm"
+key = "Stumm"
+
+[node name="FullscreenControl" parent="." index="2"]
+option_name = "Vollbild"
