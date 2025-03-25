@@ -86,7 +86,7 @@ func _send_fallback_response():
 
     for char in fallback_text:
         get_message.emit(char)
-        await get_tree().create_timer(0.08).timeout
+        await get_tree().create_timer(0.02).timeout
 
     finish_message.emit()
 
