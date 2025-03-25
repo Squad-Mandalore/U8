@@ -38,7 +38,7 @@ func _set_process_id(result, response_code, headers, body):
     var json = JSON.new()
 
     if json.parse(body.get_string_from_utf8()) != OK:
-        print("Failed to parse JSON. Response body:", body.get_string_from_utf8())
+        printerr("Failed to parse JSON. Response body:", body.get_string_from_utf8())
 
     var response = json.get_data()
 
@@ -47,7 +47,7 @@ func _set_process_id(result, response_code, headers, body):
         get_process_id.emit(process_id)
         _connect_sse()
     else:
-        print("No 'process_id' in response or response is invalid. Response:", response)
+        printerr("No 'process_id' in response or response is invalid. Response:", response)
 
 func set_agent(group: String):
     agent = group

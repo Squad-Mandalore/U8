@@ -28,17 +28,17 @@ func _ready() -> void:
     huds = [_inventory, _hud, _shop_hud, _dialogue_box]
     set_active_hud(_hud)
     SourceOfTruth.set_damage_for_all_attacks()
-    SourceOfTruth.balance_changed(300)
     SignalDispatcher.load_meta_items.emit()
     SignalDispatcher.reload_ui.emit()
 
     SignalDispatcher.allow_player_movement.connect(_allow_player_movement)
     SignalDispatcher.disallow_player_movement.connect(_disallow_player_movement)
 
-# func _process(delta):
-#     pass
-    # print("Player Position: " + str(self.global_position))
-    # print("Camera Position: " + str(%InventoryCamera.global_position))
+    # DELTE ME:
+    for item: Item in SourceOfTruth.inventory_slots:
+        if item && item.name == "Flegmon-Rute":
+            return
+    SourceOfTruth.add_item(load("res://items/weapons/slowpoke_tail.tres"))
 
 func _allow_player_movement():
     set_physics_process(true)
@@ -157,7 +157,7 @@ func _unhandled_input(event: InputEvent):
         else:
             switch_state(State.DANCE)
 
-    if event.is_action_pressed("talk"):
+    if event.is_action_pressed("interact"):
         if close_map():
             return
 
@@ -222,30 +222,25 @@ func _start_talking(npc: Npc):
     _hud.hide_status_panel()
     _dialogue_box.show()
     _dialogue_box._on_node_2d_conversation_started(npc)
-    print("You are now talking to %s." % npc._name)
 
 func _start_scripted_talking(npc: Npc):
     _interactable_npc = npc
     switch_state(State.TALK)
     SignalDispatcher.sound_effect.emit("villager")
     set_active_hud()
-    print("You are now talking to %s." % npc._name)
 
-func _stop_talking(npc: Npc):
+func _stop_talking():
     _allow_player_movement()
     switch_state(State.IDLE)
     set_active_hud(_hud)
     _hud.show_status_panel()
     _dialogue_box.clear_contents()
-    print("You are no longer talking to %s." % npc._name)
 
 func _disable_scooting():
     _scooting_enabled = false
-    print("Scooting disabled")
 
 func _enable_scooting():
     _scooting_enabled = true
-    print("Scooting enabled")
 
 func _get_best_npc(npcs: Array[Node2D]) -> PhysicsBody2D:
     if npcs.is_empty():
@@ -317,7 +312,7 @@ func toggle_interaction():
             _start_talking(_interactable_npc)
         else:
             _interactable_npc.stop_talking()
-            _stop_talking(_interactable_npc)
+            _stop_talking()
 
 func set_active_hud(active_hud: CanvasLayer = null):
     for hud in huds:
@@ -341,11 +336,13 @@ func _on_eidolon_handler_finish_message():
 
 func _start_shopping():
     speed_multiplier = 0.0
+    _disable_scooting()
     set_active_hud(_shop_hud)
     switch_state(State.TALK)
 
 func _stop_shopping():
     speed_multiplier = 1.0
+    _enable_scooting()
     set_active_hud(_hud)
     switch_state(State.IDLE)
 

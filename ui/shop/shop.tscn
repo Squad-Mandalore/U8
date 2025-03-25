@@ -11,7 +11,7 @@
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.74902)
 
 [sub_resource type="InputEventAction" id="InputEventAction_pnlg5"]
-action = &"talk"
+action = &"interact"
 
 [sub_resource type="Shortcut" id="Shortcut_1w2ol"]
 events = [SubResource("InputEventAction_pnlg5")]

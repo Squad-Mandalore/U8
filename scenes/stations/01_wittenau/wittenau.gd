@@ -44,9 +44,8 @@ func _on_animation_player_animation_finished(anim_name:StringName) -> void:
 func _on_animation_train_body_entered(_body: Node2D) -> void:
     animation_train.deactivate_doors()
     player.hide()
-    player.speed_multiplier = 0.0
+    player._disallow_player_movement()
     animation_player.play("train_leave")
-
 
 func _get_closest_door() -> Node:
     var doors: Array[Node] = animation_train.find_children("Marker2D*", &"Marker2D", false, true)

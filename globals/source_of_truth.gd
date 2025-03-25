@@ -60,15 +60,15 @@ static func add_meta_item(item: MetaItem):
     if item is Map:
         meta_inventory_slots[1] = item
     # undefined has the index 2
-    # if item is TBD:
-    #     meta_inventory_slots[2] = item
-    # Manual has the index 3
-    # if item is Manual:
-    #     meta_inventory_slots[3] = item
-    # Diary has the index 4
-    # if item is Diary:
-    #     meta_inventory_slots[4] = item
-    # gun licence has the index 5
+    #if item is TBD:
+    #    meta_inventory_slots[2] = item
+    #Manual has the index 3
+    #if item is Manual:
+    #    meta_inventory_slots[3] = item
+    #Diary has the index 4
+    #if item is Diary:
+    #    meta_inventory_slots[4] = item
+    #gun licence has the index 5
     if item is GunLicence:
         # check if gun licence to add is bigger than current if it exists
         if meta_inventory_slots[5]:

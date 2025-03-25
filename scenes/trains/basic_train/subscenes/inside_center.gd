@@ -21,10 +21,6 @@ func get_random_spawn_position():
             var area = child_rect_size.x * child_rect_size.y  # Area of the rectangle
             total_area += area
             rects.append({"node": child, "size": child_rect_size, "area": area})
-
-    # if rects.is_empty():
-    #     return _spawn_area.global_position  # Default if no shapes exist
-
     # Select a rectangle weighted by its area
     var random_area_pick = randf() * total_area
     var accumulated_area = 0

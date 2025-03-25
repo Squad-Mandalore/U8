@@ -40,9 +40,6 @@ func _on_detect_characters_body_entered(body):
         _sprite.play("idle")
         if not player_has_ticket():
             SourceOfTruth.balance_changed(-60)
-            print("Player didn't have a ticket")
-        else:
-            print("Player had a ticket")
         _player_checked = true
 
         # Optional: If we also want to wait for the player to move:

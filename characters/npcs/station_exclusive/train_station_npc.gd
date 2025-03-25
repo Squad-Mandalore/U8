@@ -45,7 +45,7 @@ func _on_map_ready(_something = null) -> void:
         _map_ready = true
         set_new_random_target()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
     if _action_in_progress or _idling or not _map_ready:
         velocity = Vector2.ZERO
         nav_agent.velocity = Vector2.ZERO

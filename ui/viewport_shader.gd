@@ -1,6 +1,5 @@
 extends SubViewportContainer
 
-var _paused : bool = false
 var _accum_time: float = 0.0
 
 func _ready():
