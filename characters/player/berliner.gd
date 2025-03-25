@@ -330,9 +330,9 @@ func set_active_hud(active_hud: CanvasLayer = null):
 func _on_dialogue_box_send_message(message):
     $EidolonHandler.post_message(message)
 
-#func _on_eidolon_handler_get_process_id(process_id):
+func _on_eidolon_handler_get_process_id(process_id):
     # This function is for making the first message be a reply from the AI.
-    #$EidolonHandler.post_message("hi")
+    $EidolonHandler.post_message("hi")
     #_dialogue_box.add_message(true, "Conversation started.")
 
 func _on_eidolon_handler_new_message():

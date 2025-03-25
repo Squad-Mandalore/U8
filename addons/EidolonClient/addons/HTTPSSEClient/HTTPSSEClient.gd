@@ -11,7 +11,6 @@ const CONTINUE_INTERNAL = "continue_internal"
 # Connection state enum for clarity.
 enum ConnectionState {
     DISCONNECTED,
-    CONNECTING,
     CONNECTED,
     REQUEST_SENT
 }
@@ -39,24 +38,24 @@ func connect_to_host(domain: String, url_after_domain: String, port: int = -1, u
     self.port = port
     self.use_ssl = use_ssl
     self.verify_host = verify_host
-    state = ConnectionState.DISCONNECTED
-    attempt_to_connect()
+    if state == ConnectionState.DISCONNECTED:
+        attempt_to_connect()
 
 func attempt_to_connect():
     var err = httpclient.connect_to_host(domain, port)
     if err == OK:
-        state = ConnectionState.CONNECTING
+        state = ConnectionState.CONNECTED
     else:
         connection_error.emit("Connect error: " + str(err))
 
 func set_outgoing_request(method, url, headers, body):
     # Set the outgoing request only when connected.
-    if state == ConnectionState.CONNECTED:
-        outgoing_request = {"method": method, "url": url, "headers": headers, "body": body}
-        attempt_to_send_request()
+    # if state == ConnectionState.CONNECTED:
+    outgoing_request = {"method": method, "url": url, "headers": headers, "body": body}
+    attempt_to_send_request()
 
 func attempt_to_send_request():
-    if httpclient.get_status() == HTTPClient.STATUS_CONNECTED and outgoing_request:
+    if outgoing_request:
         var err = httpclient.request(outgoing_request["method"], outgoing_request["url"], outgoing_request["headers"], outgoing_request["body"])
         if err == OK:
             state = ConnectionState.REQUEST_SENT
@@ -79,10 +78,9 @@ func _process(delta):
         return
 
     # Transition from connecting to connected.
-    if status == HTTPClient.STATUS_CONNECTED and state == ConnectionState.CONNECTING:
-        state = ConnectionState.CONNECTED
+    if status == HTTPClient.STATUS_CONNECTED and state == ConnectionState.CONNECTED:
         connected.emit()
-        # Optionally auto-send any pending outgoing request here.
+        attempt_to_send_request()
 
     # Read and process response chunks.
     if httpclient.has_response() or status == HTTPClient.STATUS_BODY:
