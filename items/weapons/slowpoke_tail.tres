@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://bte0kpmn4dqic" path="res://characters/attacks/assets/tail_whip.tres" id="1_p0dad"]
 [ext_resource type="Script" uid="uid://c0drmr3olu1ci" path="res://items/weapons/weapon.gd" id="2_lymbw"]
 [ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="3_mc6jo"]
-[ext_resource type="Texture2D" uid="uid://jlhwn8jhrrab" path="res://ui/hud/assets/ck_3_bar_full.svg" id="4_l6ivm"]
+[ext_resource type="Texture2D" uid="uid://30dfomf3xlrl" path="res://items/weapons/assets/slowpoke_tail.png" id="5_pklfu"]
 
 [sub_resource type="Resource" id="Resource_hfqg5"]
 script = ExtResource("3_mc6jo")
@@ -33,4 +33,4 @@ stats = SubResource("Resource_hfqg5")
 price = 1
 name = "Flegmon-Rute"
 description = "Sehr lecker. Wert hoch. "
-texture = ExtResource("4_l6ivm")
+texture = ExtResource("5_pklfu")

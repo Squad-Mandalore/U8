@@ -49,11 +49,10 @@ func start_robbing():
 func _dialogue_ended(_resource):
     DialogueManager.dialogue_ended.disconnect(_dialogue_ended)
     stop_talking()
-    _player_nearby._stop_talking(self)
+    _player_nearby._stop_talking()
 
 func _robbing(percent: float):
     var money = floor(SourceOfTruth.balance * percent)
-    print("Andreas stole %d Euronen" % money)
     SourceOfTruth.balance_changed(-money)
     _quest_robbery_complete()
 

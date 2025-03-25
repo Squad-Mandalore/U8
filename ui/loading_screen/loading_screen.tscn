@@ -143,6 +143,10 @@ frame_44/duration = 1.0
 
 [node name="LoadingScreen" instance=ExtResource("1_ksj4k")]
 script = ExtResource("2_t7wbg")
+_in_progress = "Bereite Spiel vor..."
+_in_progress_waiting = "Am Kaffee trinken..."
+_in_progress_still_waiting = "Schalfen gehen... (%d seconds)"
+_complete = "Auf geht die Fahrt!"
 
 [node name="TextureRect" type="TextureRect" parent="Control" index="6"]
 offset_left = 823.0

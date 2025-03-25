@@ -10,18 +10,17 @@ func _ready():
         file.close()
 
         var json = JSON.new()
-        var data_to_send = ["a", "b", "c"]
         var error = json.parse(json_string)
         if error == OK:
             name_data = json.data
         else:
-            print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+            printerr("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
     else:
-        push_error("Could not open 'berlin_names.json' in NameGenerator.")
+        printerr("Could not open 'berlin_names.json' in NameGenerator.")
 
 func get_random_name(gender: String) -> String:
     # Fallback name if something goes wrong
-    var fallback_name = "Unknown Person"
+    var fallback_name = "Unbekannte Person"
 
     if not name_data:
         # If the file never loaded, return fallback
@@ -39,7 +38,7 @@ func get_random_name(gender: String) -> String:
             first_list = male_list
         "Female":
             first_list = female_list
-        "Diverse":
+        _:
             # Combine both lists, or pick randomly from female or male
             first_list = female_list + male_list
 

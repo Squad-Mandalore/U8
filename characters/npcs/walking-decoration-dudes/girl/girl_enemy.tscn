@@ -25,7 +25,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_4stbv"]
 script = ExtResource("4_8bxsk")
@@ -49,7 +48,6 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
-metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
 [sub_resource type="Resource" id="Resource_41cg4"]
 script = ExtResource("2_6b7kj")
@@ -60,7 +58,6 @@ token = 0
 token_number = 1
 effect = ""
 formula = SubResource("Resource_4stbv")
-metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_unpmr"]
 script = ExtResource("3_rykek")
@@ -81,7 +78,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 1
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_nqag0"]
 script = ExtResource("4_8bxsk")
@@ -105,7 +101,6 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
-metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
 [sub_resource type="Resource" id="Resource_8ctdn"]
 script = ExtResource("2_6b7kj")
@@ -116,7 +111,6 @@ token = 0
 token_number = 1
 effect = "Operiert den Gegner auf die Schnelle. Dieser blutet langsam aus"
 formula = SubResource("Resource_nqag0")
-metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_ncuhq"]
 script = ExtResource("3_rykek")
@@ -137,7 +131,6 @@ drug_resistance = 0
 poison_level = 1
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_lvl6e"]
 script = ExtResource("4_8bxsk")
@@ -161,7 +154,6 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
-metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
 [sub_resource type="Resource" id="Resource_3qkha"]
 script = ExtResource("2_6b7kj")
@@ -172,7 +164,6 @@ token = 0
 token_number = 1
 effect = "vergiftet den Gegner"
 formula = SubResource("Resource_lvl6e")
-metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_6aysx"]
 script = ExtResource("3_rykek")
@@ -193,7 +184,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vabhw"]
 atlas = ExtResource("2_j3cex")

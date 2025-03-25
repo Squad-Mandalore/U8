@@ -27,7 +27,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_8rr2n"]
 script = ExtResource("5_5f6em")
@@ -51,7 +50,6 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
-metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
 [sub_resource type="Resource" id="Resource_1x6d4"]
 script = ExtResource("2_wnj3v")
@@ -62,7 +60,6 @@ token = 1
 token_number = 1
 effect = ""
 formula = SubResource("Resource_8rr2n")
-metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_hy4q7"]
 script = ExtResource("4_ppfdp")
@@ -83,7 +80,6 @@ drug_resistance = 0
 poison_level = 1
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_myg70"]
 script = ExtResource("5_5f6em")
@@ -107,7 +103,6 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
-metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
 [sub_resource type="Resource" id="Resource_lhfgl"]
 script = ExtResource("2_wnj3v")
@@ -118,7 +113,6 @@ token = 1
 token_number = 1
 effect = "Vergiften"
 formula = SubResource("Resource_myg70")
-metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_shfxx"]
 script = ExtResource("4_ppfdp")
@@ -139,7 +133,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_2hf3k"]
 script = ExtResource("5_5f6em")
@@ -163,7 +156,6 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
-metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
 [sub_resource type="Resource" id="Resource_s6w73"]
 script = ExtResource("2_wnj3v")
@@ -174,7 +166,6 @@ token = 1
 token_number = 1
 effect = ""
 formula = SubResource("Resource_2hf3k")
-metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_u8nwv"]
 script = ExtResource("4_ppfdp")

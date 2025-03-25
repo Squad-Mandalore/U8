@@ -33,7 +33,6 @@ func update_attack_damage():
 
 func fight_lost(calculate_money: Callable = _calculate_win):
     var win = calculate_money.call(winning_money)
-    print("Player won %d Euronen" % win)
     SourceOfTruth.balance_changed(win)
     # queue_free()
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwjemtuhqivhd" path="res://ui/pause_menu/pause_menu.gd" id="2_j652y"]
 [ext_resource type="PackedScene" uid="uid://cnbxg6k45wmfm" path="res://ui/overlaid_menus/mini_options_overlaid_menu.tscn" id="3_5v3qd"]
-[ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="3_m7uhm"]
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="3_m7uhm"]
 [ext_resource type="Texture2D" uid="uid://uofg354rmvxe" path="res://ui/pause_menu/assets/pause.svg" id="4_gedng"]
 [ext_resource type="FontFile" uid="uid://b7fumj2g7rf8x" path="res://assets/fonts/hind/Hind-Light.ttf" id="5_ge20k"]
 [ext_resource type="Script" uid="uid://c07my54fcopf3" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="6_sbka7"]
@@ -181,7 +181,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_m7uhm")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = ExtResource("7_ujxx7")
-text = "Exit Game"
+text = "Beenden"
 icon = ExtResource("10_3rbax")
 alignment = 0
 icon_alignment = 2
@@ -208,17 +208,22 @@ text = "Weiterspielen"
 [node name="ConfirmRestart" type="ConfirmationDialog" parent="."]
 unique_name_in_owner = true
 auto_translate_mode = 1
+title = "Bitte Bestätigen..."
 dialog_text = "Restart the game?"
 
 [node name="ConfirmMainMenu" type="ConfirmationDialog" parent="."]
 unique_name_in_owner = true
 auto_translate_mode = 1
-dialog_text = "Go back to main menu?"
+title = "Bitte Bestätigen..."
+dialog_text = "Zurück zum Hauptmenü?"
+cancel_button_text = "Abbrechen"
 
 [node name="ConfirmExit" type="ConfirmationDialog" parent="."]
 unique_name_in_owner = true
 auto_translate_mode = 1
-dialog_text = "Quit the game?"
+title = "Bitte Bestätigen..."
+dialog_text = "Spiel Beenden?"
+cancel_button_text = "Abbrechen"
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="tree_exited" from="." to="." method="_on_menu_exited"]

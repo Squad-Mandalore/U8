@@ -25,7 +25,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_cge6b"]
 script = ExtResource("4_mn68h")
@@ -49,7 +48,6 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
-metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
 [sub_resource type="Resource" id="Resource_op1mv"]
 script = ExtResource("2_e34y4")
@@ -60,7 +58,6 @@ token = 4
 token_number = 1
 effect = ""
 formula = SubResource("Resource_cge6b")
-metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_uia2b"]
 script = ExtResource("4_c250q")
@@ -81,7 +78,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_d3dys"]
 script = ExtResource("4_mn68h")
@@ -105,7 +101,6 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
-metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
 [sub_resource type="Resource" id="Resource_prmc1"]
 script = ExtResource("2_e34y4")
@@ -116,7 +111,6 @@ token = 4
 token_number = 1
 effect = ""
 formula = SubResource("Resource_d3dys")
-metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_eahw6"]
 script = ExtResource("4_c250q")
@@ -137,7 +131,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_ql772"]
 script = ExtResource("4_mn68h")
@@ -161,7 +154,6 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
-metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
 [sub_resource type="Resource" id="Resource_rf4q2"]
 script = ExtResource("2_e34y4")
@@ -172,7 +164,6 @@ token = 3
 token_number = 0
 effect = ""
 formula = SubResource("Resource_ql772")
-metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_odp2v"]
 script = ExtResource("4_c250q")
@@ -193,7 +184,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_0s5sg"]
 script = ExtResource("4_mn68h")
@@ -217,7 +207,6 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 1.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
-metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
 [sub_resource type="Resource" id="Resource_cry8v"]
 script = ExtResource("2_e34y4")
@@ -228,7 +217,6 @@ token = 2
 token_number = 1
 effect = ""
 formula = SubResource("Resource_0s5sg")
-metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_66nhw"]
 script = ExtResource("4_c250q")

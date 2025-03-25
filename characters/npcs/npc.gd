@@ -25,7 +25,6 @@ func _ready() -> void:
 
 func assign_random_group() -> void:
     _group = groups[randi() % groups.size()]
-    print("NPC %s wurde der Gruppe %s zugeordnet" % [_name, _group])
 
 func start_talking() -> void:
     _current_state = State.TALK
@@ -71,7 +70,7 @@ func make_space(prescribed_direction: Vector2 = Vector2.ZERO) -> void:
         if valid_dirs.size() > 0:
             position += valid_dirs[0] * MOVE_OFFSET
         else:
-            print("No valid movement directions available.")
+            printerr("No valid movement directions available.")
 
 # Returns true if the path from global_position to target_position is obstructed.
 func is_position_obstructed(target_position: Vector2) -> bool:

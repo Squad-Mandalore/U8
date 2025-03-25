@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dh8a5067wese3"]
+[gd_scene load_steps=15 format=3 uid="uid://dh8a5067wese3"]
 
 [ext_resource type="Script" uid="uid://cerdix5v67p4u" path="res://ui/inventory/inventory.gd" id="1_gj1qs"]
 [ext_resource type="PackedScene" uid="uid://cy1iar1dkomyr" path="res://ui/inventory/subscenes/stat_hud.tscn" id="1_w07gl"]
@@ -12,10 +12,16 @@
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.74902)
 
 [sub_resource type="InputEventAction" id="InputEventAction_8dyvk"]
-action = &"remove"
+action = &"interact"
 
 [sub_resource type="Shortcut" id="Shortcut_galwr"]
 events = [SubResource("InputEventAction_8dyvk")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_fowqc"]
+action = &"remove"
+
+[sub_resource type="Shortcut" id="Shortcut_v2fgi"]
+events = [SubResource("InputEventAction_fowqc")]
 
 [sub_resource type="InputEventAction" id="InputEventAction_138qw"]
 action = &"map"
@@ -108,7 +114,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 44)
 layout_mode = 2
 mouse_filter = 1
-shortcut = SubResource("Shortcut_galwr")
+shortcut = SubResource("Shortcut_v2fgi")
 text = "Entfernen   "
 action_event_key = "remove"
 

@@ -13,14 +13,15 @@ var fight_lose = preload("res://assets/sounds/effects/fight_lose.wav")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     SignalDispatcher.sound_effect.connect(_on_sound_effect)
+    self.bus = "SFX"
 
-func play_sound_effect(sound, volume_db: float = 0) -> void:
+func play_sound_effect(sound: AudioStream, volume_db: float = 0) -> void:
     if sound:
         self.stream = sound
         self.volume_db = volume_db
         self.play()
     else:
-        print("Error: Could not load sound at path")
+        printerr("Error: Could not load sound at path")
 
 
 func _on_sound_effect(sound_name: String) -> void:

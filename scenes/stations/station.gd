@@ -42,13 +42,13 @@ signal train_enter
 
 func _ready() -> void:
     SignalDispatcher.player_zero_health.connect(_on_player_zero_health)
-    player.speed_multiplier = 0.0
+    player._disallow_player_movement()
     player.hide()
     animation_player.play("train_enter")
     SignalDispatcher.sound_music.emit("station")
     spawn_npcs()
     navigation_region.bake_navigation_polygon()
-    
+
 
 func spawn_npcs() -> void:
     var npc_spawn_points = []
@@ -67,7 +67,7 @@ func spawn_objects(object_scenes: Array, spawn_points: Array, parent_node: Node)
         instance.position = spawn_point
         instance.z_index = 0
         parent_node.add_child(instance)
-        
+
 func spawn_objects_transform(object_scenes: Array, spawn_points: Array, parent_node: Node) -> void:
     for spawn_point in spawn_points:
         var i = randi() % object_scenes.size()
@@ -76,7 +76,7 @@ func spawn_objects_transform(object_scenes: Array, spawn_points: Array, parent_n
         if instance.has_method("_ready") and instance is WalkingNpc:
             var station_npc = STATION_NPC.instantiate()
             station_npc.position = spawn_point
-            
+
             var sprite_instance = instance.get_node_or_null("AnimatedSprite2D")
             var sprite_station = station_npc.get_node_or_null("AnimatedSprite2D")
 
@@ -96,7 +96,7 @@ func spawn_objects_transform(object_scenes: Array, spawn_points: Array, parent_n
             instance.position = spawn_point
             instance.z_index = 0
             parent_node.add_child(instance)
-            
+
         var nav_obstacle = NavigationObstacle2D.new()
         nav_obstacle.avoidance_enabled = true
         nav_obstacle.radius = 12
@@ -116,14 +116,14 @@ func _on_animation_player_animation_finished(anim_name:StringName) -> void:
 
 func _on_animation_train_enter():
     animation_train.activate_doors()
-    player.speed_multiplier = 1.0
     player.show()
+    player._allow_player_movement()
 
 func _on_animation_train_leave():
     train_enter.emit()
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
     animation_train.deactivate_doors()
+    player._disallow_player_movement()
     player.hide()
-    player.speed_multiplier = 0.0
     animation_player.play("train_leave")

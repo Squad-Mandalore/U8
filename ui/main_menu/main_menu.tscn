@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://bk3s62niptypk" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/config_name_label.gd" id="7_i3lvj"]
 [ext_resource type="Script" uid="uid://c07my54fcopf3" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="8_d2jpe"]
 [ext_resource type="Texture2D" uid="uid://cl3p5uw8naa3v" path="res://ui/main_menu/assets/title.png" id="8_lghh0"]
-[ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="8_mcq1t"]
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="8_mcq1t"]
 [ext_resource type="StyleBox" uid="uid://01yk2v131qmi" path="res://ui/assets/color_eraser.tres" id="9_l3bui"]
 [ext_resource type="Script" uid="uid://cfi5ld00d4g1d" path="res://ui/main_menu/subscenes/auto_scrolling_label.gd" id="12_4fvel"]
 [ext_resource type="Texture2D" uid="uid://kb5f3l35yoru" path="res://ui/main_menu/assets/display.png" id="12_mdhhs"]
@@ -115,7 +115,9 @@ anchor_bottom = 1.0
 offset_top = -40.0
 offset_right = 62.0
 grow_vertical = 0
-text = "Back"
+theme_override_fonts/font = ExtResource("8_mcq1t")
+theme_override_font_sizes/font_size = 20
+text = "Zurück"
 
 [node name="MenuContainer" type="Control" parent="."]
 unique_name_in_owner = true
@@ -249,6 +251,8 @@ theme_override_constants/separation = 100
 [node name="VersionLabel" type="Label" parent="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("8_mcq1t")
+theme_override_font_sizes/font_size = 16
 text = "Version: 0.3.0"
 label_settings = SubResource("LabelSettings_d71xx")
 script = ExtResource("6_hwiir")
@@ -296,15 +300,15 @@ label_settings = SubResource("LabelSettings_ux5ru")
 
 [connection signal="pressed" from="FlowControlContainer/FlowControl/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="mouse_entered" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/NewGameButton" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/NewGameButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="mouse_entered" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/ContinueGameButton" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
 [connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/ContinueGameButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
 [connection signal="mouse_entered" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/OptionsButton" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/OptionsButton" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/ExitButton" to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/ExitButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/MenuButtonContainer/MenuButtonsBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="MenuContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]

@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://c01ayjblhcg1t"]
+[gd_scene load_steps=4 format=3 uid="uid://c01ayjblhcg1t"]
 
 [ext_resource type="PackedScene" uid="uid://b6bl3n5mp3m1e" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/option_control/list_option_control.tscn" id="1_jqwiw"]
 [ext_resource type="Script" uid="uid://cqrdopfbcxhpa" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/option_control/vector_2_list_option_control.gd" id="2_w33vs"]
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="3_x6nsa"]
 
 [node name="OptionControl" instance=ExtResource("1_jqwiw")]
 script = ExtResource("2_w33vs")
+
+[node name="OptionLabel" parent="." index="0"]
+theme_override_fonts/font = ExtResource("3_x6nsa")
+theme_override_font_sizes/font_size = 20
+
+[node name="OptionButton" parent="." index="1"]
+theme_override_fonts/font = ExtResource("3_x6nsa")
+theme_override_font_sizes/font_size = 20

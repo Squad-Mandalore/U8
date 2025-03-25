@@ -25,7 +25,6 @@ drug_resistance = 0
 poison_level = 1
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_3aewj"]
 script = ExtResource("4_cnqhi")
@@ -49,7 +48,6 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
-metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
 [sub_resource type="Resource" id="Resource_kumvx"]
 script = ExtResource("2_mngaj")
@@ -60,7 +58,6 @@ token = 4
 token_number = 1
 effect = "Vergiftet den Gegner"
 formula = SubResource("Resource_3aewj")
-metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_ddy8k"]
 script = ExtResource("4_moqmy")
@@ -81,7 +78,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_4rcr0"]
 script = ExtResource("4_cnqhi")
@@ -135,7 +131,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_e7lhq"]
 script = ExtResource("4_cnqhi")
@@ -189,7 +184,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_4qy3s"]
 script = ExtResource("4_cnqhi")
@@ -243,7 +237,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_nbh4d"]
 script = ExtResource("4_cnqhi")
@@ -297,7 +290,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_gaypb"]
 script = ExtResource("4_cnqhi")

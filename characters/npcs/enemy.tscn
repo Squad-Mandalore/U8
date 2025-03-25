@@ -24,7 +24,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Gradient" id="Gradient_7qugo"]
 offsets = PackedFloat32Array(0.396104, 0.961039, 1)

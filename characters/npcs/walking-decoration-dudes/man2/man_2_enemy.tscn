@@ -26,7 +26,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_1as0j"]
 script = ExtResource("5_jb3rv")
@@ -50,7 +49,6 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
-metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
 [sub_resource type="Resource" id="Resource_j0fxf"]
 script = ExtResource("2_x3xm5")
@@ -61,7 +59,6 @@ token = 3
 token_number = 1
 effect = ""
 formula = SubResource("Resource_1as0j")
-metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_dx2ba"]
 script = ExtResource("4_1torv")
@@ -82,7 +79,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_1jmk3"]
 script = ExtResource("5_jb3rv")
@@ -106,7 +102,6 @@ bleed_level_modifier = 0.0
 drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
-metadata/_custom_type_script = "uid://cfy8h0an8klxl"
 
 [sub_resource type="Resource" id="Resource_pw40v"]
 script = ExtResource("2_x3xm5")
@@ -117,7 +112,6 @@ token = 3
 token_number = 1
 effect = ""
 formula = SubResource("Resource_1jmk3")
-metadata/_custom_type_script = "uid://bfy4yc0tqosv1"
 
 [sub_resource type="Resource" id="Resource_gcw8p"]
 script = ExtResource("4_1torv")
@@ -138,7 +132,6 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rnhbv"]
 atlas = ExtResource("2_lnegu")
