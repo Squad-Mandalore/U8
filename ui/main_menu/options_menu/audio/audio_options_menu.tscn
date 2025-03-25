@@ -7,5 +7,9 @@
 [node name="Audio" instance=ExtResource("1_al1ye")]
 script = ExtResource("2_8la1d")
 
+[node name="MuteControl" parent="VBoxContainer" index="1"]
+option_name = "Stumm"
+key = "Stumm"
+
 [node name="AudioInputOptionControl" parent="VBoxContainer" index="2" instance=ExtResource("3_2e5kt")]
 layout_mode = 2

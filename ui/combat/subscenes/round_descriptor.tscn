@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0m65l7xddw64"]
 
-[ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="1_otl22"]
 [ext_resource type="Script" uid="uid://ynup2l7l6ug5" path="res://ui/combat/subscenes/round_descriptor.gd" id="1_vukro"]
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="2_8i7js"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qi54"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
@@ -39,7 +39,7 @@ theme_override_constants/margin_bottom = 10
 [node name="RoundDescriptorLabel" type="Label" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_otl22")
+theme_override_fonts/font = ExtResource("2_8i7js")
 theme_override_font_sizes/font_size = 24
 text = "Runde 88"
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dleder3ke8jp8"]
+[gd_scene load_steps=7 format=3 uid="uid://dleder3ke8jp8"]
 
 [ext_resource type="Script" uid="uid://c07my54fcopf3" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="2_2risq"]
 [ext_resource type="Script" uid="uid://hlb5ddcta1vt" path="res://ui/main_menu/options_menu/input/input_options_menu.gd" id="2_xmvgi"]
 [ext_resource type="PackedScene" uid="uid://bxp45814v6ydv" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/input/input_actions_list.tscn" id="3_7jaef"]
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="3_rvjk2"]
 [ext_resource type="PackedScene" uid="uid://ci6wgl2ngd35n" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/input/input_actions_tree.tscn" id="4_onox3"]
 [ext_resource type="Script" uid="uid://c62ma2410ffi4" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/input/key_assignment_dialog.gd" id="5_p50x2"]
 
@@ -30,12 +31,28 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/InputMappingContainer"]
 layout_mode = 2
-text = "Actions & Inputs"
+theme_override_fonts/font = ExtResource("3_rvjk2")
+theme_override_font_sizes/font_size = 20
+text = "Aktionen & Eingaben"
 horizontal_alignment = 1
 
 [node name="InputActionsList" parent="VBoxContainer/InputMappingContainer" instance=ExtResource("3_7jaef")]
 unique_name_in_owner = true
 layout_mode = 2
+input_action_names = Array[StringName]([&"move_up", &"move_down", &"move_left", &"move_right", &"interact", &"scoot", &"inventory", &"map", &"dance", &"remove"])
+readable_action_names = Array[String](["Hoch laufen", "Runter laufen", "Links laufen", "Rechts laufen", "Interagieren", "Scooten", "Inventar", "Karte", "Tanzen", "Entfernen"])
+action_name_map = {
+&"dance": "Tanzen",
+&"interact": "Interagieren",
+&"inventory": "Inventar",
+&"map": "Karte",
+&"move_down": "Runter laufen",
+&"move_left": "Links laufen",
+&"move_right": "Rechts laufen",
+&"move_up": "Hoch laufen",
+&"remove": "Entfernen",
+&"scoot": "Scooten"
+}
 
 [node name="InputActionsTree" parent="VBoxContainer/InputMappingContainer" instance=ExtResource("4_onox3")]
 unique_name_in_owner = true
@@ -48,7 +65,9 @@ alignment = 1
 
 [node name="ResetButton" type="Button" parent="VBoxContainer/InputMappingContainer/HBoxContainer"]
 layout_mode = 2
-text = "Reset"
+theme_override_fonts/font = ExtResource("3_rvjk2")
+theme_override_font_sizes/font_size = 20
+text = "Zurücksetzen"
 
 [node name="KeyAssignmentDialog" type="ConfirmationDialog" parent="."]
 title = "Assign Key"
@@ -57,6 +76,7 @@ dialog_text = "
 
 
 "
+cancel_button_text = "Abbrechen"
 script = ExtResource("5_p50x2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="KeyAssignmentDialog"]
@@ -95,9 +115,10 @@ wait_time = 0.1
 one_shot = true
 
 [node name="KeyDeletionDialog" type="ConfirmationDialog" parent="."]
-title = "Remove Key"
+title = "Eingabe Entfernen"
 size = Vector2i(419, 100)
 dialog_text = "Are you sure you want to remove KEY from ACTION?"
+cancel_button_text = "Abbrechen"
 
 [node name="OneInputMinimumDialog" type="AcceptDialog" parent="."]
 title = "Cannot Remove"
@@ -108,8 +129,10 @@ title = "Already Assigned"
 size = Vector2i(398, 100)
 
 [node name="ResetConfirmationDialog" type="ConfirmationDialog" parent="."]
+title = "Bitte Bestätigen..."
 size = Vector2i(486, 100)
-dialog_text = "Are you sure you want to reset controls back to the defaults?"
+dialog_text = "Bist du dir sicher die Eingabeeinstellungen auf die Standarteinstellungen zurückzusetzen?"
+cancel_button_text = "Abbrechen"
 
 [connection signal="already_assigned" from="VBoxContainer/InputMappingContainer/InputActionsList" to="." method="_on_input_actions_list_already_assigned"]
 [connection signal="button_clicked" from="VBoxContainer/InputMappingContainer/InputActionsList" to="." method="_on_input_actions_list_button_clicked"]

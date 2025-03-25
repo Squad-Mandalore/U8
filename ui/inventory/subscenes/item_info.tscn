@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf7f6kv02vipi"]
+[gd_scene load_steps=9 format=3 uid="uid://bf7f6kv02vipi"]
 
 [ext_resource type="Script" uid="uid://c5a51w4b0xhf0" path="res://ui/inventory/subscenes/item_info.gd" id="1_gkd7v"]
-[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="2_ui6pw"]
 [ext_resource type="Texture2D" uid="uid://u68l1bngaa7u" path="res://ui/hud/assets/ck_3_bar.svg" id="3_2phnt"]
 [ext_resource type="FontFile" uid="uid://pxyfff4ijb64" path="res://assets/fonts/nippo/OTF/Nippo-Medium.otf" id="5_0enwk"]
 [ext_resource type="Texture2D" uid="uid://dn0jfcq1ly2go" path="res://ui/hud/assets/coin.svg" id="5_kkabw"]
 [ext_resource type="FontFile" uid="uid://bkvompws14vh5" path="res://assets/fonts/hind/Hind-Regular.ttf" id="6_n3jf5"]
-[ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="6_vbcmo"]
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="6_vbcmo"]
 [ext_resource type="PackedScene" uid="uid://dmb5wwmu2hgkm" path="res://ui/combat/subscenes/attack_swapper.tscn" id="8_ulltl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_470qu"]
@@ -29,7 +28,7 @@ theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ui6pw")
+theme_override_fonts/font = ExtResource("6_vbcmo")
 theme_override_font_sizes/font_size = 32
 text = "Item-Info"
 

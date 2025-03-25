@@ -15,6 +15,7 @@ next_scene = "res://scenes/menus/main_menu/main_menu_with_animations.tscn"
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 autoplay = true
+bus = &"Musik"
 
 [node name="ImagesContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true

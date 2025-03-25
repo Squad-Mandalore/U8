@@ -20,7 +20,7 @@ func _ready():
 
 func get_random_name(gender: String) -> String:
     # Fallback name if something goes wrong
-    var fallback_name = "Unknown Person"
+    var fallback_name = "Unbekannte Person"
 
     if not name_data:
         # If the file never loaded, return fallback
@@ -38,7 +38,7 @@ func get_random_name(gender: String) -> String:
             first_list = male_list
         "Female":
             first_list = female_list
-        "Diverse":
+        _:
             # Combine both lists, or pick randomly from female or male
             first_list = female_list + male_list
 

@@ -15,11 +15,11 @@ var target_volume = 0.0
 func _ready() -> void:
     SignalDispatcher.sound_music.connect(_on_music_effect)
     current_music = AudioStreamPlayer.new()
-    current_music.bus = "Music"
+    current_music.bus = "Musik"
     add_child(current_music)
 
     dummy_player = AudioStreamPlayer.new()
-    dummy_player.bus = "Music"
+    dummy_player.bus = "Musik"
     add_child(dummy_player)
 
     current_music.connect("finished", _on_music_finished)

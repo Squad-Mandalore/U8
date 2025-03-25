@@ -30,7 +30,7 @@
 [node name="AnnouncementPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_qbosp")
 pitch_scale = 0.98
-bus = &"Soundeffects"
+bus = &"SFX"
 script = ExtResource("2_hvuk5")
 _basic_announcement = ExtResource("1_qbosp")
 _announcment_announcer = ExtResource("3_g276s")

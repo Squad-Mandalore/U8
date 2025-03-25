@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://lg8x87a7s71a"]
 
 [ext_resource type="Script" uid="uid://blpnfo31jhvxe" path="res://ui/combat/subscenes/info.gd" id="1_q4o7v"]
-[ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="2_23qgg"]
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="2_q4o7v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qi54"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
@@ -36,7 +36,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="QuestionmarkLabel" type="Label" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_23qgg")
+theme_override_fonts/font = ExtResource("2_q4o7v")
 theme_override_font_sizes/font_size = 24
 text = "?"
 
