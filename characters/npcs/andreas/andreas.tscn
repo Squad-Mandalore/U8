@@ -39,6 +39,7 @@ combat_animation = "idle"
 stats = ExtResource("4_gt0u4")
 texture = ExtResource("5_rty23")
 winning_money = 30
+battle_intro = "idle"
 _name = "Andreas"
 _random_name = false
 _gender = "Male"
