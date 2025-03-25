@@ -11,6 +11,7 @@ var button_clicked_effect = preload("res://assets/sounds/effects/button_clicked_
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     SignalDispatcher.sound_effect.connect(_on_sound_effect)
+    self.bus = "SFX"
 
 func play_sound_effect(sound: AudioStream, volume_db: float = 0) -> void:
     if sound:

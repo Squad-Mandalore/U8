@@ -19,7 +19,7 @@ h3_font_size = 32
 h4_font_size = 24
 
 [node name="BackgroundMusicPlayer" parent="." instance=ExtResource("3_txw08")]
-bus = &"Master"
+bus = &"Musik"
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 layout_mode = 1
