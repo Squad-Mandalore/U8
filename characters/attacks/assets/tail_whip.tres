@@ -23,11 +23,10 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
 [sub_resource type="Resource" id="Resource_jcw01"]
 script = ExtResource("1_8i4o1")
-base = 187
+base = 2000
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0

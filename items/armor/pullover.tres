@@ -27,7 +27,7 @@ drug_level = 0
 [resource]
 script = ExtResource("2_wjiuo")
 stats = SubResource("Resource_hodkb")
-price = 70
+price = 60
 name = "Pullover"
 description = "Ein Kleidungsstück, das so gemütlich ist, dass du es nie wieder ausziehen willst – und genau das scheint sein letzter Besitzer auch gedacht zu haben. Ideal für das vollkommene 'Mir doch egal'-Feeling im Waggon."
 texture = ExtResource("3_1t1td")

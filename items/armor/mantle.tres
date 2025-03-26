@@ -27,7 +27,7 @@ drug_level = 0
 [resource]
 script = ExtResource("1_m8vww")
 stats = SubResource("Resource_hodkb")
-price = 200
+price = 100
 name = "Grüner Mantel"
 description = "Ein Grüner Mantel für einfache Tage, dieser bewahrt dir wenigstens etwas Stil in der U-Bahn"
 texture = ExtResource("3_dljg8")

@@ -27,7 +27,7 @@ drug_level = 0
 [resource]
 script = ExtResource("1_ri2p7")
 stats = SubResource("Resource_hodkb")
-price = 230
+price = 110
 name = "Brille"
 description = "Eine gute alte Brille für die Leute mit einer Seheinschränkung. Wirkt aber demnach schlauer."
 texture = ExtResource("3_ik3bh")

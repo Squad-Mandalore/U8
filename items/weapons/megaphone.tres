@@ -25,11 +25,10 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
-[sub_resource type="Resource" id="Resource_ayac1"]
+[sub_resource type="Resource" id="Resource_ngoiq"]
 script = ExtResource("2_ehlj2")
-base = 10
+base = 35
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
@@ -38,8 +37,8 @@ dodge_chance_modifier = 0.0
 strength_modifier = 0.0
 coolness_modifier = 0.0
 attractiveness_modifier = 0.0
-intelligence_modifier = 0.5
-creativity_modifier = 0.3
+intelligence_modifier = 0.4
+creativity_modifier = 0.0
 luck_modifier = 0.0
 poison_resistance_modifier = 0.0
 bleed_resistance_modifier = 0.0
@@ -52,13 +51,13 @@ effect_flat_modifier = 0
 
 [sub_resource type="Resource" id="Resource_di1hx"]
 script = ExtResource("1_1svhp")
-name = "Ordnungsruf"
+name = "Überzeugen"
 damage = SubResource("Resource_vdqx7")
 type = 3
-token = 2
+token = 3
 token_number = 1
-effect = "Silenced den Gegner"
-formula = SubResource("Resource_ayac1")
+effect = ""
+formula = SubResource("Resource_ngoiq")
 
 [sub_resource type="Resource" id="Resource_qs242"]
 script = ExtResource("4_4035q")
@@ -84,7 +83,7 @@ drug_level = 0
 script = ExtResource("3_dl4uy")
 attacks = Array[ExtResource("1_1svhp")]([SubResource("Resource_di1hx")])
 stats = SubResource("Resource_qs242")
-price = 40
+price = 100
 name = "Megafon"
 description = "Die einzige Möglichkeit die Lautstärke der U-Bahn und des Bahnhofes zu übertönen. Beim präziesen einsetzten kann sogar das Trommelfell platzen."
 texture = ExtResource("5_y6lyy")

@@ -25,21 +25,20 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
-[sub_resource type="Resource" id="Resource_ayac1"]
+[sub_resource type="Resource" id="Resource_i8xla"]
 script = ExtResource("2_1y21v")
-base = 10
+base = 15
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
 initiative_modifier = 0.0
 dodge_chance_modifier = 0.0
-strength_modifier = 0.0
+strength_modifier = 0.3
 coolness_modifier = 0.0
 attractiveness_modifier = 0.0
-intelligence_modifier = 0.5
-creativity_modifier = 0.3
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
 luck_modifier = 0.0
 poison_resistance_modifier = 0.0
 bleed_resistance_modifier = 0.0
@@ -50,15 +49,15 @@ drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
 
-[sub_resource type="Resource" id="Resource_di1hx"]
+[sub_resource type="Resource" id="Resource_gxacc"]
 script = ExtResource("1_gilae")
-name = "Ordnungsruf"
+name = "Erwürgen"
 damage = SubResource("Resource_1wown")
-type = 3
-token = 2
+type = 1
+token = 1
 token_number = 1
-effect = "Silenced den Gegner"
-formula = SubResource("Resource_ayac1")
+effect = ""
+formula = SubResource("Resource_i8xla")
 
 [sub_resource type="Resource" id="Resource_qs242"]
 script = ExtResource("4_lkf6w")
@@ -82,9 +81,9 @@ drug_level = 0
 
 [resource]
 script = ExtResource("3_lgi13")
-attacks = Array[ExtResource("1_gilae")]([SubResource("Resource_di1hx")])
+attacks = Array[ExtResource("1_gilae")]([SubResource("Resource_gxacc")])
 stats = SubResource("Resource_qs242")
-price = 40
+price = 150
 name = "Guitarrensaite"
 description = "Von einer Gittare abgeschnitten, so hart wie ein (offensichtlich) Metalldraht."
 texture = ExtResource("5_jn8xx")

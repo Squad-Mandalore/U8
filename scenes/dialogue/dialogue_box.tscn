@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bbbn62o5veajy" path="res://scenes/dialogue/dialogue_box.gd" id="1_cl2i0"]
 [ext_resource type="PackedScene" uid="uid://b0oxv1sd0jcnl" path="res://scenes/dialogue/subscenes/chat_message.tscn" id="2_wiwis"]
-[ext_resource type="FontFile" uid="uid://cijb4lkv1fvbh" path="res://assets/fonts/nippo/WEB/fonts/Nippo-Regular.ttf" id="4_erktn"]
 [ext_resource type="Texture2D" uid="uid://mtrlbx66wkpj" path="res://characters/player/assets/berlinv3anim.png" id="4_w1pu5"]
+[ext_resource type="FontFile" uid="uid://cjg2va2gx341j" path="res://assets/fonts/nippo/OTF/Nippo-Regular.otf" id="4_wiwis"]
 [ext_resource type="Texture2D" uid="uid://bupdm83fmnhdy" path="res://scenes/dialogue/assets/send_icon.svg" id="5_erktn"]
 [ext_resource type="StyleBox" uid="uid://ylgtwupk6lt" path="res://scenes/dialogue/assets/chat_ui.tres" id="5_wiwis"]
 
@@ -138,7 +138,7 @@ theme_override_colors/caret_color = Color(0.447059, 0.447059, 0.447059, 1)
 theme_override_colors/font_placeholder_color = Color(0.447059, 0.447059, 0.447059, 1)
 theme_override_colors/font_outline_color = Color(0.447059, 0.447059, 0.447059, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_erktn")
+theme_override_fonts/font = ExtResource("4_wiwis")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("5_wiwis")
 placeholder_text = "Schreibe deine nächste Nachricht"

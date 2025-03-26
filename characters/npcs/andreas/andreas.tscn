@@ -1,10 +1,32 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkj4b56eeb03x"]
+[gd_scene load_steps=12 format=3 uid="uid://bkj4b56eeb03x"]
 
 [ext_resource type="Script" uid="uid://cub5k4d3ikign" path="res://characters/npcs/andreas/andreas.gd" id="1_topah"]
 [ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="2_mtjal"]
 [ext_resource type="Resource" uid="uid://oui3w7vat6ib" path="res://characters/attacks/assets/show_off.tres" id="3_pu3iv"]
-[ext_resource type="Resource" uid="uid://fngonw15cf5o" path="res://characters/classes/assets/honest_burgy.tres" id="4_gt0u4"]
+[ext_resource type="Resource" uid="uid://d4k5i6ua3pp0h" path="res://characters/attacks/assets/flirt.tres" id="4_va2qi"]
+[ext_resource type="Resource" uid="uid://cq1wjf5oviin5" path="res://characters/attacks/assets/boxing.tres" id="5_5as1y"]
 [ext_resource type="Texture2D" uid="uid://3hfvs0noiriy" path="res://characters/npcs/andreas/assets/AndreasEhrlich.png" id="5_rty23"]
+[ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="6_ljlw1"]
+
+[sub_resource type="Resource" id="Resource_hs7dp"]
+script = ExtResource("6_ljlw1")
+max_health = 80
+health = 80
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 5
+attractiveness = 0
+intelligence = 0
+creativity = 5
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bg0ao"]
 size = Vector2(20, 4)
@@ -33,10 +55,12 @@ floor_block_on_wall = false
 floor_snap_length = 0.0
 platform_on_leave = 2
 script = ExtResource("1_topah")
-attacks = Array[ExtResource("2_mtjal")]([ExtResource("3_pu3iv")])
+attacks = Array[ExtResource("2_mtjal")]([ExtResource("3_pu3iv"), ExtResource("4_va2qi"), ExtResource("5_5as1y")])
 combat_animation = "idle"
-stats = ExtResource("4_gt0u4")
+stats = SubResource("Resource_hs7dp")
 texture = ExtResource("5_rty23")
+winning_money = 30
+battle_intro = "idle"
 _name = "Andreas"
 _random_name = false
 _gender = "Male"

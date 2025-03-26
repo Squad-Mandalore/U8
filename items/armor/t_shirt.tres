@@ -27,7 +27,7 @@ drug_level = 0
 [resource]
 script = ExtResource("2_m2oou")
 stats = SubResource("Resource_hodkb")
-price = 50
+price = 40
 name = "T-Shirt"
 description = "StatsSpecifier"
 texture = ExtResource("3_7gl00")

@@ -25,9 +25,8 @@ drug_resistance = 0
 poison_level = 0
 bleed_level = 0
 drug_level = 0
-metadata/_custom_type_script = "uid://1axonyyckejw"
 
-[sub_resource type="Resource" id="Resource_ayac1"]
+[sub_resource type="Resource" id="Resource_lria6"]
 script = ExtResource("2_4ywm8")
 base = 10
 max_health_modifier = 0.0
@@ -38,7 +37,7 @@ dodge_chance_modifier = 0.0
 strength_modifier = 0.0
 coolness_modifier = 0.0
 attractiveness_modifier = 0.0
-intelligence_modifier = 0.5
+intelligence_modifier = 0.0
 creativity_modifier = 0.3
 luck_modifier = 0.0
 poison_resistance_modifier = 0.0
@@ -50,15 +49,15 @@ drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
 
-[sub_resource type="Resource" id="Resource_di1hx"]
+[sub_resource type="Resource" id="Resource_d8rr4"]
 script = ExtResource("1_qdqsd")
-name = "Ordnungsruf"
+name = "Bemalen"
 damage = SubResource("Resource_is71q")
-type = 3
-token = 2
+type = 4
+token = 4
 token_number = 1
-effect = "Silenced den Gegner"
-formula = SubResource("Resource_ayac1")
+effect = ""
+formula = SubResource("Resource_lria6")
 
 [sub_resource type="Resource" id="Resource_qs242"]
 script = ExtResource("4_d2mh8")
@@ -82,9 +81,9 @@ drug_level = 0
 
 [resource]
 script = ExtResource("3_a8uu1")
-attacks = Array[ExtResource("1_qdqsd")]([SubResource("Resource_di1hx")])
+attacks = Array[ExtResource("1_qdqsd")]([SubResource("Resource_d8rr4")])
 stats = SubResource("Resource_qs242")
-price = 40
+price = 120
 name = "Pinsel"
 description = "Ein Pinsel, womöglich geklaut aus dem Kunstmuseum. Mit genügend Kreativität kannst du andere möglicherweise damit verstören."
 texture = ExtResource("5_41mm7")

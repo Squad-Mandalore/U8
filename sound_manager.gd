@@ -7,6 +7,8 @@ var villager_effect = preload("res://assets/sounds/effects/villager_effect.wav")
 var exit_effect = preload("res://assets/sounds/effects/exit_effect.wav")
 var hover_effect = preload("res://assets/sounds/effects/hover_effect.wav")
 var button_clicked_effect = preload("res://assets/sounds/effects/button_clicked_effect.wav")
+var fight_won = preload("res://assets/sounds/effects/fight_won.wav")
+var fight_lose = preload("res://assets/sounds/effects/fight_lose.wav")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,4 +36,8 @@ func _on_sound_effect(sound_name: String) -> void:
             play_sound_effect(exit_effect)
         "villager":
             play_sound_effect(villager_effect)
+        "won":
+            play_sound_effect(fight_won)
+        "lose":
+            play_sound_effect(fight_lose)
 

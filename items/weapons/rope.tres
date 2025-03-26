@@ -1,24 +1,44 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=9 format=3 uid="uid://b0jpp0kqgoiye"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=10 format=3 uid="uid://b0jpp0kqgoiye"]
 
 [ext_resource type="Script" uid="uid://bfy4yc0tqosv1" path="res://characters/attacks/attack.gd" id="1_ql48l"]
 [ext_resource type="Script" uid="uid://cfy8h0an8klxl" path="res://characters/attacks/formula.gd" id="2_15pny"]
 [ext_resource type="Script" uid="uid://c0drmr3olu1ci" path="res://items/weapons/weapon.gd" id="3_2mcqv"]
 [ext_resource type="Script" uid="uid://1axonyyckejw" path="res://globals/attributes.gd" id="4_njeot"]
-[ext_resource type="Texture2D" uid="uid://dblkoo8rpxguy" path="res://items/weapons/assets/book.png" id="5_k011h"]
+[ext_resource type="Texture2D" uid="uid://c8jwd6kpib7p1" path="res://items/weapons/assets/item_rope.png" id="5_3tidw"]
 
-[sub_resource type="Resource" id="Resource_ayac1"]
+[sub_resource type="Resource" id="Resource_qtd5t"]
+script = ExtResource("4_njeot")
+max_health = 0
+health = 0
+armor = 0
+initiative = 0
+dodge_chance = 0
+strength = 0
+coolness = 0
+attractiveness = 0
+intelligence = 0
+creativity = 0
+luck = 0
+poison_resistance = 0
+bleed_resistance = 0
+drug_resistance = 0
+poison_level = 0
+bleed_level = 0
+drug_level = 0
+
+[sub_resource type="Resource" id="Resource_16u72"]
 script = ExtResource("2_15pny")
-base = 10
+base = 200
 max_health_modifier = 0.0
 health_modifier = 0.0
 armor_modifier = 0.0
 initiative_modifier = 0.0
 dodge_chance_modifier = 0.0
-strength_modifier = 0.0
-coolness_modifier = 0.0
+strength_modifier = 0.5
+coolness_modifier = 0.3
 attractiveness_modifier = 0.0
-intelligence_modifier = 0.5
-creativity_modifier = 0.3
+intelligence_modifier = 0.0
+creativity_modifier = 0.0
 luck_modifier = 0.0
 poison_resistance_modifier = 0.0
 bleed_resistance_modifier = 0.0
@@ -29,14 +49,15 @@ drug_level_modifier = 0.0
 effect_modifier = 1.0
 effect_flat_modifier = 0
 
-[sub_resource type="Resource" id="Resource_di1hx"]
+[sub_resource type="Resource" id="Resource_h7mes"]
 script = ExtResource("1_ql48l")
-name = "Ordnungsruf"
-type = 3
+name = "Erhängen"
+damage = SubResource("Resource_qtd5t")
+type = 2
 token = 2
 token_number = 1
-effect = "Silenced den Gegner"
-formula = SubResource("Resource_ayac1")
+effect = ""
+formula = SubResource("Resource_16u72")
 
 [sub_resource type="Resource" id="Resource_qs242"]
 script = ExtResource("4_njeot")
@@ -60,9 +81,9 @@ drug_level = 0
 
 [resource]
 script = ExtResource("3_2mcqv")
-attacks = Array[ExtResource("1_ql48l")]([SubResource("Resource_di1hx")])
+attacks = Array[ExtResource("1_ql48l")]([SubResource("Resource_h7mes")])
 stats = SubResource("Resource_qs242")
-price = 40
-name = "Buch"
-description = "Ein Buch aus der alten Zeit mit genügend Wissen um andere Menschen zu überfordern."
-texture = ExtResource("5_k011h")
+price = 250
+name = "Strick"
+description = "Legenden besagen, dass dieser Strick das Leben von hunderten von Leuten beendet haben soll. Er strahlt eine dunkle Aura aus."
+texture = ExtResource("5_3tidw")
