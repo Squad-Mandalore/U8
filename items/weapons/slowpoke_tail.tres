@@ -8,10 +8,10 @@
 
 [sub_resource type="Resource" id="Resource_hfqg5"]
 script = ExtResource("3_mc6jo")
-max_health = 1
+max_health = 500
 health = 0
 armor = 0
-initiative = 0
+initiative = 100
 dodge_chance = 0
 strength = 0
 coolness = 0
