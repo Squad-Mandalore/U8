@@ -34,12 +34,6 @@ func _ready() -> void:
     SignalDispatcher.allow_player_movement.connect(_allow_player_movement)
     SignalDispatcher.disallow_player_movement.connect(_disallow_player_movement)
 
-    # DELTE ME:
-    for item: Item in SourceOfTruth.inventory_slots:
-        if item && item.name == "Flegmon-Rute":
-            return
-    SourceOfTruth.add_item(load("res://items/weapons/slowpoke_tail.tres"))
-
 func _allow_player_movement():
     set_physics_process(true)
     set_process_unhandled_input(true)
