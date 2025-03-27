@@ -30,6 +30,7 @@ func _ready():
     post_req.request_completed.connect(_set_process_id)
     add_child(post_req)
     $HTTPSSEClient.new_sse_event.connect(on_new_sse_event)
+    $HTTPSSEClient.connection_error.connect(on_httpsseclient_error)
 
 func on_new_sse_event(headers, event, data):
     match data["category"]:
@@ -45,12 +46,13 @@ func post_message(message: String):
     if backend_unreachable:
         _send_fallback_response()
         return
-
+    
     var url = "/processes/%s/agent/%s/actions/converse" % [process_id, agent]
     var headers = ["Content-Type: application/json", "Accept: text/event-stream"]
     var method = HTTPClient.METHOD_POST
     var body = JSON.stringify(message)
-    $HTTPSSEClient.set_outgoing_request(method, url, headers, body)
+    var success = $HTTPSSEClient.set_outgoing_request(method, url, headers, body)
+    
     new_message.emit()
 
 func _set_process_id(result, response_code, headers, body):
@@ -105,3 +107,7 @@ func set_agent(group: String):
 func _connect_sse():
     var sub_url = ""
     $HTTPSSEClient.connect_to_host("localhost", sub_url, 8080)
+    
+func on_httpsseclient_error(message):
+    print(message)
+    _handle_backend_unreachable()
