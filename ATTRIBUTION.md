@@ -23,10 +23,6 @@ Marvin Hofmann
 
 ## Sourced / Unaffiliated
 ### Asset Type
-<!-- #### Use Case -->
-<!-- Author: [Name]() -->
-<!-- Source: [Domain : webpage.html]() -->
-<!-- License: [License]() -->
 
 #### Godot Engine Logo
 Author: Andrea Calabró

@@ -46,13 +46,13 @@ func post_message(message: String):
     if backend_unreachable:
         _send_fallback_response()
         return
-    
+
     var url = "/processes/%s/agent/%s/actions/converse" % [process_id, agent]
     var headers = ["Content-Type: application/json", "Accept: text/event-stream"]
     var method = HTTPClient.METHOD_POST
     var body = JSON.stringify(message)
     var success = $HTTPSSEClient.set_outgoing_request(method, url, headers, body)
-    
+
     new_message.emit()
 
 func _set_process_id(result, response_code, headers, body):
