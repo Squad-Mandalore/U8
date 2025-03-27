@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_pp2si"]
 script = ExtResource("2_ki2lp")
 max_health = 0
-health = 500
+health = 5
 armor = 0
 initiative = 0
 dodge_chance = 0
