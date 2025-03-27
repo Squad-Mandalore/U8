@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://40q6al2c4n4n"]
+[gd_scene load_steps=9 format=3 uid="uid://40q6al2c4n4n"]
 
 [ext_resource type="Script" uid="uid://b1efgwx06mllx" path="res://characters/automatas/automata.gd" id="1_0t7m3"]
 [ext_resource type="Script" uid="uid://gscj3hnm5oor" path="res://items/item.gd" id="2_vdv0g"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://brecpjrathqvd" path="res://items/consumables/potato.tres" id="4_lsxso"]
 [ext_resource type="Texture2D" uid="uid://bk62howen4nad" path="res://characters/automatas/snack/assets/snack_vending_machine.png" id="4_qdfgr"]
 [ext_resource type="Resource" uid="uid://dyefx1h80soau" path="res://items/consumables/cigarette.tres" id="5_ku304"]
+[ext_resource type="Resource" uid="uid://ckynd8kmolf6x" path="res://items/weapons/slowpoke_tail.tres" id="6_1mrxr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1eypk"]
 size = Vector2(20, 7)
@@ -13,7 +14,7 @@ size = Vector2(20, 7)
 [node name="SnackVendingMachine" type="StaticBody2D"]
 collision_layer = 5
 script = ExtResource("1_0t7m3")
-shop_inventory = Array[ExtResource("2_vdv0g")]([ExtResource("3_15wnu"), ExtResource("4_lsxso"), ExtResource("5_ku304"), null, null, null, null, null])
+shop_inventory = Array[ExtResource("2_vdv0g")]([ExtResource("3_15wnu"), ExtResource("4_lsxso"), ExtResource("5_ku304"), ExtResource("6_1mrxr"), null, null, null, null])
 shop_name = "Snackautomat"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

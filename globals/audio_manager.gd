@@ -29,8 +29,8 @@ func _ready() -> void:
 
 func _process(delta):
     if dummy_player.playing:
-        current_music.volume_db -= fade_speed * delta * 10
-        dummy_player.volume_db += fade_speed * delta * 10
+        current_music.volume_db -= fade_speed * delta * 50
+        dummy_player.volume_db += fade_speed * delta * 50
 
         if dummy_player.volume_db >= target_volume:
             current_music.volume_db = target_volume
@@ -74,4 +74,4 @@ func _on_music_effect(sound_name: String) -> void:
         "combat":
             play_music(combat_music, -5)
         "main_menu":
-            play_music(main_menu_music, -5)
+            play_music(main_menu_music, -20)

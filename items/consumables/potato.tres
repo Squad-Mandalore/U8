@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_pp2si"]
 script = ExtResource("2_ki2lp")
 max_health = 0
-health = 5
+health = 500
 armor = 0
 initiative = 0
 dodge_chance = 0
@@ -28,7 +28,7 @@ drug_level = 0
 script = ExtResource("1_whwh5")
 effect_duration = 0
 stats = SubResource("Resource_pp2si")
-price = 5
+price = 0
 name = "Kartoffel"
 description = "Eine normale rohe Kartoffel, für die nicht normalen Kartoffeln in der U-Bahn. "
 texture = ExtResource("3_j3t3a")
