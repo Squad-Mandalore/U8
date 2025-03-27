@@ -220,8 +220,8 @@ formula = SubResource("Resource_0s5sg")
 
 [sub_resource type="Resource" id="Resource_66nhw"]
 script = ExtResource("4_c250q")
-max_health = 1000
-health = 1000
+max_health = 500
+health = 500
 armor = 0
 initiative = 1
 dodge_chance = 0
