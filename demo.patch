@@ -1,0 +1,43 @@
+diff --git a/items/consumables/potato.tres b/items/consumables/potato.tres
+index ee19399..4298e7b 100644
+--- a/items/consumables/potato.tres
++++ b/items/consumables/potato.tres
+@@ -7,7 +7,7 @@
+ [sub_resource type="Resource" id="Resource_pp2si"]
+ script = ExtResource("2_ki2lp")
+ max_health = 0
+-health = 5
++health = 500
+ armor = 0
+ initiative = 0
+ dodge_chance = 0
+diff --git a/scenes/stations/04_lindauer_allee/lindauer_allee.tscn b/scenes/stations/04_lindauer_allee/lindauer_allee.tscn
+index 769912a..5a69763 100644
+--- a/scenes/stations/04_lindauer_allee/lindauer_allee.tscn
++++ b/scenes/stations/04_lindauer_allee/lindauer_allee.tscn
+@@ -1,4 +1,4 @@
+-[gd_scene load_steps=10 format=3 uid="uid://dni73m7g8lip1"]
++[gd_scene load_steps=15 format=3 uid="uid://dni73m7g8lip1"]
+ 
+ [ext_resource type="PackedScene" uid="uid://cr0oss7rkk1ta" path="res://scenes/stations/station.tscn" id="1_amjx2"]
+ [ext_resource type="Script" uid="uid://df1v8q384iwij" path="res://scenes/stations/04_lindauer_allee/lindauer_allee.gd" id="2_wlfl4"]
+@@ -9,6 +9,11 @@
+ [ext_resource type="PackedScene" uid="uid://c7sosk2nymvw1" path="res://scenes/stations/04_lindauer_allee/subscenes/tower.tscn" id="5_elohs"]
+ [ext_resource type="PackedScene" uid="uid://40q6al2c4n4n" path="res://characters/automatas/snack/snack_vending_machine.tscn" id="8_rt71p"]
+ [ext_resource type="PackedScene" uid="uid://dv2v43jv13rjr" path="res://characters/automatas/drink/drink_vending_machine.tscn" id="9_2yhnk"]
++[ext_resource type="Script" uid="uid://gscj3hnm5oor" path="res://items/item.gd" id="9_wt8xm"]
++[ext_resource type="Resource" uid="uid://d1wjxc7kupden" path="res://items/consumables/hash_brownies.tres" id="10_6r18t"]
++[ext_resource type="Resource" uid="uid://brecpjrathqvd" path="res://items/consumables/potato.tres" id="11_6q52i"]
++[ext_resource type="Resource" uid="uid://dyefx1h80soau" path="res://items/consumables/cigarette.tres" id="12_godyd"]
++[ext_resource type="Resource" uid="uid://ckynd8kmolf6x" path="res://items/weapons/slowpoke_tail.tres" id="13_f3vvf"]
+ 
+ [node name="LindauerAllee" instance=ExtResource("1_amjx2")]
+ script = ExtResource("2_wlfl4")
+@@ -81,6 +86,7 @@ position = Vector2(961, 323)
+ 
+ [node name="SnackVendingMachine" parent="Node2D" index="12" instance=ExtResource("8_rt71p")]
+ position = Vector2(443, 333)
++shop_inventory = Array[ExtResource("9_wt8xm")]([ExtResource("10_6r18t"), ExtResource("11_6q52i"), ExtResource("12_godyd"), null, null, null, null, ExtResource("13_f3vvf")])
+ 
+ [node name="DrinkVendingMachine" parent="Node2D" index="13" instance=ExtResource("9_2yhnk")]
+ position = Vector2(469, 333)
